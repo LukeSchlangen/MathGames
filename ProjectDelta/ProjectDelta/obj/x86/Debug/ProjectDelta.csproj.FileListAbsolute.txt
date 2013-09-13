@@ -1,0 +1,58 @@
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\ProjectDelta.exe.config
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\ProjectDelta.exe
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\ProjectDelta.pdb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDelta.exe
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDelta.pdb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDelta.csprojResolveAssemblyReference.cache
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\input_font.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_background.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_box.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_button.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_box.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\back_button.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_highlighter.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_error.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_5.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\enemy_ship_1.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_1.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_2.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_3.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_4.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\good_ship_1.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\background_stars.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\input_font.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_background.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_box.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_button.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_box.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\back_button.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_error.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_highlighter.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_5.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\enemy_ship_1.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_1.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_2.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_3.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_4.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\good_ship_1.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\background_stars.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\ProjectDelta.exe.config
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\ProjectDelta.exe
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\ProjectDelta.pdb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDelta.csprojResolveAssemblyReference.cache
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDelta.exe
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDelta.pdb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Background_Music.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Background_Music.wma
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\enemy_fleet_1.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\good_fleet_1.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\enemy_fleet_1.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\good_fleet_1.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Background_Music.xnb
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Background_Music.wma
+C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_error.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_error.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Internet Connection Error Message.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\password_match_error.xnb

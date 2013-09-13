@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>input_font.spritefont</Source>
+      <Name>input_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\input_font.xnb</Output>
+      <Time>2013-09-09T20:54:49.9895057-05:00</Time>
+    </Item>
+    <Item>
+      <Source>login_background.png</Source>
+      <Name>login_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_background.xnb</Output>
+      <Time>2013-09-09T20:28:52.8304412-05:00</Time>
+    </Item>
+    <Item>
+      <Source>login_box.png</Source>
+      <Name>login_box</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_box.xnb</Output>
+      <Time>2013-09-09T20:32:48.4479178-05:00</Time>
+    </Item>
+    <Item>
+      <Source>signup_button.png</Source>
+      <Name>signup_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_button.xnb</Output>
+      <Time>2013-09-09T21:15:50.4325989-05:00</Time>
+    </Item>
+    <Item>
+      <Source>signup_box.png</Source>
+      <Name>signup_box</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_box.xnb</Output>
+      <Time>2013-09-09T21:29:49.7086027-05:00</Time>
+    </Item>
+    <Item>
+      <Source>back_button.png</Source>
+      <Name>back_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\back_button.xnb</Output>
+      <Time>2013-09-10T20:08:02.238489-05:00</Time>
+    </Item>
+    <Item>
+      <Source>login_highlighter.png</Source>
+      <Name>login_highlighter</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_highlighter.xnb</Output>
+      <Time>2013-09-10T23:17:22.9832865-05:00</Time>
+    </Item>
+    <Item>
+      <Source>login_error.png</Source>
+      <Name>login_error</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_error.xnb</Output>
+      <Time>2013-09-10T22:52:53.5582402-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planet_5.png</Source>
+      <Name>planet_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_5.xnb</Output>
+      <Time>2013-09-11T21:09:11.1681664-05:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy_ship_1.png</Source>
+      <Name>enemy_ship_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\enemy_ship_1.xnb</Output>
+      <Time>2013-09-11T21:09:11.1711666-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planet_1.png</Source>
+      <Name>planet_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_1.xnb</Output>
+      <Time>2013-09-11T21:09:11.1721666-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planet_2.png</Source>
+      <Name>planet_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_2.xnb</Output>
+      <Time>2013-09-11T21:09:11.1741667-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planet_3.png</Source>
+      <Name>planet_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_3.xnb</Output>
+      <Time>2013-09-11T21:09:11.1761669-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planet_4.png</Source>
+      <Name>planet_4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_4.xnb</Output>
+      <Time>2013-09-11T21:09:11.1771669-05:00</Time>
+    </Item>
+    <Item>
+      <Source>good_ship_1.png</Source>
+      <Name>good_ship_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\good_ship_1.xnb</Output>
+      <Time>2013-09-11T21:09:11.179167-05:00</Time>
+    </Item>
+    <Item>
+      <Source>background_stars.png</Source>
+      <Name>background_stars</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\background_stars.xnb</Output>
+      <Time>2013-09-11T21:13:01.2823282-05:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy_fleet_1.png</Source>
+      <Name>enemy_fleet_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\enemy_fleet_1.xnb</Output>
+      <Time>2013-09-11T23:43:51.7059828-05:00</Time>
+    </Item>
+    <Item>
+      <Source>good_fleet_1.png</Source>
+      <Name>good_fleet_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\good_fleet_1.xnb</Output>
+      <Time>2013-09-11T23:43:51.7069829-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Background_Music.mp3</Source>
+      <Name>Background_Music</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Background_Music.xnb</Output>
+      <Extra>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Background_Music.wma</Extra>
+      <Time>2013-09-11T23:43:51.7029826-05:00</Time>
+    </Item>
+    <Item>
+      <Source>signup_error.png</Source>
+      <Name>signup_error</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_error.xnb</Output>
+      <Time>2013-09-13T01:40:08.7923015-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{29FBEE7A-53F1-459E-83FD-87CAFE9C4818}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDeltaContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T16:22:30-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-05-07T23:53:18.549354-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>input_font.spritefont</Source>
+      <Name>input_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\input_font.xnb</Output>
+      <Time>2013-09-13T09:55:53.0460315-05:00</Time>
+    </Item>
+    <Item>
+      <Source>login_background.png</Source>
+      <Name>login_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_background.xnb</Output>
+      <Time>2013-09-13T09:55:53.0490317-05:00</Time>
+    </Item>
+    <Item>
+      <Source>login_box.png</Source>
+      <Name>login_box</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_box.xnb</Output>
+      <Time>2013-09-13T09:55:53.0500317-05:00</Time>
+    </Item>
+    <Item>
+      <Source>signup_button.png</Source>
+      <Name>signup_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_button.xnb</Output>
+      <Time>2013-09-13T09:55:53.0750332-05:00</Time>
+    </Item>
+    <Item>
+      <Source>signup_box.png</Source>
+      <Name>signup_box</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_box.xnb</Output>
+      <Time>2013-09-13T09:55:53.073033-05:00</Time>
+    </Item>
+    <Item>
+      <Source>back_button.png</Source>
+      <Name>back_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\back_button.xnb</Output>
+      <Time>2013-09-13T09:55:53.037031-05:00</Time>
+    </Item>
+    <Item>
+      <Source>login_error.png</Source>
+      <Name>login_error</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_error.xnb</Output>
+      <Time>2013-09-13T09:55:53.0510318-05:00</Time>
+    </Item>
+    <Item>
+      <Source>login_highlighter.png</Source>
+      <Name>login_highlighter</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_highlighter.xnb</Output>
+      <Time>2013-09-13T09:55:53.0520318-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planet_5.png</Source>
+      <Name>planet_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_5.xnb</Output>
+      <Time>2013-09-13T09:55:53.072033-05:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy_ship_1.png</Source>
+      <Name>enemy_ship_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\enemy_ship_1.xnb</Output>
+      <Time>2013-09-13T09:55:53.0410312-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planet_1.png</Source>
+      <Name>planet_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_1.xnb</Output>
+      <Time>2013-09-13T09:55:53.0650326-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planet_2.png</Source>
+      <Name>planet_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_2.xnb</Output>
+      <Time>2013-09-13T09:55:53.0670327-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planet_3.png</Source>
+      <Name>planet_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_3.xnb</Output>
+      <Time>2013-09-13T09:55:53.0680328-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planet_4.png</Source>
+      <Name>planet_4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_4.xnb</Output>
+      <Time>2013-09-13T09:55:53.0700329-05:00</Time>
+    </Item>
+    <Item>
+      <Source>good_ship_1.png</Source>
+      <Name>good_ship_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\good_ship_1.xnb</Output>
+      <Time>2013-09-13T09:55:53.0430313-05:00</Time>
+    </Item>
+    <Item>
+      <Source>background_stars.png</Source>
+      <Name>background_stars</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\background_stars.xnb</Output>
+      <Time>2013-09-13T09:55:53.038031-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Background_Music.mp3</Source>
+      <Name>Background_Music</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Background_Music.xnb</Output>
+      <Extra>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Background_Music.wma</Extra>
+      <Time>2013-09-13T09:55:53.0310306-05:00</Time>
+    </Item>
+    <Item>
+      <Source>enemy_fleet_1.png</Source>
+      <Name>enemy_fleet_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\enemy_fleet_1.xnb</Output>
+      <Time>2013-09-13T09:55:53.0400312-05:00</Time>
+    </Item>
+    <Item>
+      <Source>good_fleet_1.png</Source>
+      <Name>good_fleet_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\good_fleet_1.xnb</Output>
+      <Time>2013-09-13T09:55:53.0420313-05:00</Time>
+    </Item>
+    <Item>
+      <Source>signup_error.png</Source>
+      <Name>signup_error</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_error.xnb</Output>
+      <Time>2013-09-13T09:55:53.0750332-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Internet Connection Error Message.png</Source>
+      <Name>Internet Connection Error Message</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Internet Connection Error Message.xnb</Output>
+      <Time>2013-09-13T14:03:31.0268594-05:00</Time>
+    </Item>
+    <Item>
+      <Source>password_match_error.png</Source>
+      <Name>password_match_error</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\password_match_error.xnb</Output>
+      <Time>2013-09-13T14:03:31.0288595-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDeltaContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDeltaContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-05:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-09-04T21:51:28.5802553-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
