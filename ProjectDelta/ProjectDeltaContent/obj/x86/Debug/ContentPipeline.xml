@@ -183,15 +183,6 @@
       <Time>2013-09-13T09:55:53.0750332-05:00</Time>
     </Item>
     <Item>
-      <Source>Internet Connection Error Message.png</Source>
-      <Name>Internet Connection Error Message</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Internet Connection Error Message.xnb</Output>
-      <Time>2013-09-13T14:03:31.0268594-05:00</Time>
-    </Item>
-    <Item>
       <Source>password_match_error.png</Source>
       <Name>password_match_error</Name>
       <Importer>TextureImporter</Importer>
@@ -199,6 +190,15 @@
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\password_match_error.xnb</Output>
       <Time>2013-09-13T14:03:31.0288595-05:00</Time>
+    </Item>
+    <Item>
+      <Source>internet_connection_error.png</Source>
+      <Name>internet_connection_error</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\internet_connection_error.xnb</Output>
+      <Time>2013-09-13T15:02:36.9486745-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

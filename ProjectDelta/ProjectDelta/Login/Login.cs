@@ -66,6 +66,7 @@ namespace ProjectDelta
         private Texture2D loginError;
         private Texture2D signupError;
         private Texture2D passwordMatchError;
+        private Texture2D internetConnectionError;
         private Texture2D planetOne;
         private Texture2D planetTwo;
         private Texture2D planetThree;
@@ -100,6 +101,7 @@ namespace ProjectDelta
         private Vector2 loginErrorPosition;
         private Vector2 signupErrorPosition;
         private Vector2 passwordMatchErrorPosition;
+        private Vector2 internetConnectionErrorPosition;
         private Vector2 movingPlanetOnePosition;
         private Vector2 movingPlanetTwoPosition;
         private Vector2 movingPlanetThreePosition;
@@ -171,6 +173,9 @@ namespace ProjectDelta
             signupErrorPosition = new Vector2((screenWidth / 2 - signupError.Width * scale / 2), (screenHeight / 2 - signupError.Height * scale / 2));
             passwordMatchError = content.Load<Texture2D>("password_match_error");
             passwordMatchErrorPosition = new Vector2((screenWidth / 2 - passwordMatchError.Width * scale / 2), (screenHeight / 2 - passwordMatchError.Height * scale / 2));
+            internetConnectionError = content.Load<Texture2D>("internet_connection_error");
+            internetConnectionErrorPosition = new Vector2((screenWidth / 2 - internetConnectionError.Width * scale / 2), (screenHeight / 2 - internetConnectionError.Height * scale / 2));
+
 
             backButton = content.Load<Texture2D>("back_button");
             backButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
@@ -324,7 +329,6 @@ namespace ProjectDelta
                     else
                     {
                         state = State.PasswordMatchError;
-
                     }
                 }
             }
@@ -346,6 +350,23 @@ namespace ProjectDelta
             }
 
             if (state == State.PasswordMatchError)
+            {
+                if (loginErrorCounter == 1000)
+                {
+                    loginErrorCounter = -3500;
+                }
+                if (loginErrorCounter < 0)
+                {
+                    loginErrorCounter += gameTime.ElapsedGameTime.Milliseconds;
+                }
+                if (loginErrorCounter >= 0)
+                {
+                    state = State.SignupButtonPressed;
+                    loginErrorCounter = 1000;
+                }
+            }
+
+            if (state == State.InternetConnectionError)
             {
                 if (loginErrorCounter == 1000)
                 {
@@ -437,6 +458,10 @@ namespace ProjectDelta
             {
                 spriteBatch.Draw(passwordMatchError, passwordMatchErrorPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
+            if (state == State.InternetConnectionError)
+            {
+                spriteBatch.Draw(internetConnectionError, internetConnectionErrorPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
         }
 
         private void checkClick()
@@ -472,6 +497,7 @@ namespace ProjectDelta
 
         private bool checkUserExists(string username)
         {
+
             user = context.Load<User>(username);
             if (user == null)
             {
@@ -479,6 +505,7 @@ namespace ProjectDelta
             }
 
             return true;
+
         }
     }      
 }

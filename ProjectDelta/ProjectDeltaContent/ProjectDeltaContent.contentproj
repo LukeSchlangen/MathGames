@@ -156,13 +156,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Internet Connection Error Message.png">
-      <Name>Internet Connection Error Message</Name>
+    <Compile Include="password_match_error.png">
+      <Name>password_match_error</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="password_match_error.png">
-      <Name>password_match_error</Name>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="internet_connection_error.png">
+      <Name>internet_connection_error</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

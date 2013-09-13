@@ -19,5 +19,5 @@ Content\Background_Music.wma
 Content\enemy_fleet_1.xnb
 Content\good_fleet_1.xnb
 Content\signup_error.xnb
-Content\Internet Connection Error Message.xnb
 Content\password_match_error.xnb
+Content\internet_connection_error.xnb
