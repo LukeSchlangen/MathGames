@@ -251,18 +251,26 @@ namespace ProjectDelta
             }
             if (state == State.PasswordEntered)
             {
-                user = context.Load<User>(username);
-                if (user == null)
+                try
                 {
-                    state = State.LoginError;
+
+                    user = context.Load<User>(username);
+                    if (user == null)
+                    {
+                        state = State.LoginError;
+                    }
+                    else if (password != user.password)
+                    {
+                        state = State.LoginError;
+                    }
+                    else
+                    {
+                        return true;
+                    }
                 }
-                else if (password != user.password)
+                catch
                 {
-                    state = State.LoginError;
-                }
-                else
-                {
-                    return true;
+                    state = State.InternetConnectionError;
                 }
             }
             if (state == State.LoginError)
@@ -308,23 +316,29 @@ namespace ProjectDelta
                 {
                     if (password.Equals(checkPassword))
                     {
-                        if (!checkUserExists(username))
+                        try
                         {
-                            user = new User
+                            if (!checkUserExists(username))
                             {
-                                username = username,
-                                password = password,
-                                skill = "0",
-                            };
+                                user = new User
+                                {
+                                    username = username,
+                                    password = password,
+                                    skill = "0",
+                                };
 
-                            context.Save<User>(user);
-                            state = State.None;
+                                context.Save<User>(user);
+                                state = State.None;
+                            }
+                            else
+                            {
+                                state = State.CreationError;
+                            }
                         }
-                        else
+                        catch
                         {
-                            state = State.CreationError;
+                            state = State.InternetConnectionError;
                         }
-
                     }
                     else
                     {
@@ -370,7 +384,7 @@ namespace ProjectDelta
             {
                 if (loginErrorCounter == 1000)
                 {
-                    loginErrorCounter = -3500;
+                    loginErrorCounter = -5000;
                 }
                 if (loginErrorCounter < 0)
                 {
@@ -378,7 +392,7 @@ namespace ProjectDelta
                 }
                 if (loginErrorCounter >= 0)
                 {
-                    state = State.SignupButtonPressed;
+                    state = State.None;
                     loginErrorCounter = 1000;
                 }
             }
