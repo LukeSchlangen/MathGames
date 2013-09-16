@@ -56,3 +56,7 @@ C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDe
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_error.xnb
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\password_match_error.xnb
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\internet_connection_error.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\resized_level1_background.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\level1_background_music.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\level1_background_music.wma
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\math_hero_character.xnb

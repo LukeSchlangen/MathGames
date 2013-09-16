@@ -31,6 +31,7 @@ namespace ProjectDelta
         {
             //add any relevant game states here
             Login,
+            Level1,
             Home,
             Exit,
         }
@@ -52,6 +53,8 @@ namespace ProjectDelta
         public State state;
         
         private Login login;
+
+        private Level1 level1;
         
         public Game1()
         {
@@ -85,12 +88,13 @@ namespace ProjectDelta
             state = State.Login;
 
             login = new Login(context);
+            level1 = new Level1(context);
 
             //when we initialize the login screen (and any screens
             //from here on out), we pass in the scale value to allow
             //us to scale the textures
             login.Initialize(scale);
-            
+            level1.Initialize(scale);
 
             base.Initialize();
         }
@@ -105,7 +109,6 @@ namespace ProjectDelta
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             login.LoadContent(Content, screenHeight, screenWidth);
-
             
         }
 
@@ -141,6 +144,17 @@ namespace ProjectDelta
             if (state == State.Home)
             {
                 Debug.Write("success");
+                level1.LoadContent(Content, screenHeight, screenWidth);
+                state = State.Level1;
+            }
+
+            if (state == State.Level1)
+            {
+                bool success = level1.Update(gameTime);
+                if (success == true)
+                {
+                    state = State.Home;
+                }
             }
 
             if (state == State.Exit)
@@ -166,11 +180,16 @@ namespace ProjectDelta
             {
                 login.Draw(spriteBatch);
             }
-
+            
             if (state == State.Home)
             {
                 //home screen code
                 login = null;   
+            }
+
+            if (state == State.Level1)
+            {
+                level1.Draw(spriteBatch);
             }
 
             if (state == State.Exit)
