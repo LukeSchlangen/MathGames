@@ -198,9 +198,9 @@ namespace ProjectDelta
             loginHighlighter = content.Load<Texture2D>("login_highlighter");
             loginUsernameHighlighterPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 2 / 5)), (screenHeight / 2 - loginBox.Height*scale * 19/ 90));
             loginPasswordHighlighterPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 2 / 5)), (screenHeight / 2 + loginBox.Height* scale * 1 / 9));
-            signupUsernameHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 - signupBox.Height * 18 / 90));
-            signupPasswordHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 - signupBox.Height * 2 / 90));
-            signupConfirmHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 + signupBox.Height * 31 / 180));
+            signupUsernameHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 - signupBox.Height * scale* 25 / 90));
+            signupPasswordHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 - signupBox.Height * scale * 5 / 180));
+            signupConfirmHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 + signupBox.Height * scale * 43 / 180));
 
             font = content.Load<SpriteFont>("input_font");
             loginUsernameTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 - loginBox.Height * scale * 12 / 90));
