@@ -1,2 +1,4 @@
 C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDeltaContent\obj\x86\Debug\ProjectDeltaContent.contentprojResolveAssemblyReference.cache
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDeltaContent\obj\x86\Debug\ProjectDeltaContent.contentprojResolveAssemblyReference.cache
+C:\Users\Tom\Desktop\MathGames\MathGames\ProjectDelta\ProjectDeltaContent\obj\x86\Debug\ProjectDeltaContent.contentprojResolveAssemblyReference.cache
+C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDeltaContent\obj\x86\Debug\ProjectDeltaContent.contentprojResolveAssemblyReference.cache

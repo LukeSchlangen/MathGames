@@ -135,24 +135,24 @@ namespace ProjectDelta
 
         public void LoadContent(ContentManager content, int screenHeight, int screenWidth)
         {
-            background = content.Load<Texture2D>("login_background");
+            background = content.Load<Texture2D>("Login/login_background");
 
             // Play music in repeating loop
             Song backgroundMusic;
-            backgroundMusic = content.Load<Song>("Background_Music");
+            backgroundMusic = content.Load<Song>("Login/Background_Music");
             MediaPlayer.Play(backgroundMusic);
             MediaPlayer.IsRepeating = true;   
 
-            planetOne = content.Load<Texture2D>("planet_1");
-            planetTwo = content.Load<Texture2D>("planet_2");
-            planetThree = content.Load<Texture2D>("planet_3");
-            planetFour = content.Load<Texture2D>("planet_4");
-            planetFive = content.Load<Texture2D>("planet_5");
+            planetOne = content.Load<Texture2D>("General/Planets/planet_1");
+            planetTwo = content.Load<Texture2D>("General/Planets/planet_2");
+            planetThree = content.Load<Texture2D>("General/Planets/planet_3");
+            planetFour = content.Load<Texture2D>("General/Planets/planet_4");
+            planetFive = content.Load<Texture2D>("General/Planets/planet_5");
 
-            shipOne = content.Load<Texture2D>("good_ship_1");
-            shipTwo = content.Load<Texture2D>("enemy_ship_1");
-            shipThree = content.Load<Texture2D>("good_fleet_1");
-            shipFour = content.Load<Texture2D>("enemy_fleet_1");
+            shipOne = content.Load<Texture2D>("General/Ships/good_ship_1");
+            shipTwo = content.Load<Texture2D>("General/Ships/enemy_ship_1");
+            shipThree = content.Load<Texture2D>("General/Ships/good_fleet_1");
+            shipFour = content.Load<Texture2D>("General/Ships/enemy_fleet_1");
 
             //any scalar value needs to take into consideration
             //the scale factor to fix resolution issues
@@ -166,25 +166,25 @@ namespace ProjectDelta
             shipTwoPosition = new Vector2(-6000 * scale, 900 * scale);
             shipThreePosition = new Vector2(-15000 * scale, 500 * scale);
             shipFourPosition = new Vector2(-23000 * scale, 300 * scale);
-            
-            loginError = content.Load<Texture2D>("login_error");
+
+            loginError = content.Load<Texture2D>("Login/login_error");
             loginErrorPosition = new Vector2((screenWidth / 2 - loginError.Width * scale / 2), (screenHeight / 2 - loginError.Height * scale / 2));
-            signupError = content.Load<Texture2D>("signup_error");
+            signupError = content.Load<Texture2D>("Login/signup_error");
             signupErrorPosition = new Vector2((screenWidth / 2 - signupError.Width * scale / 2), (screenHeight / 2 - signupError.Height * scale / 2));
-            passwordMatchError = content.Load<Texture2D>("password_match_error");
+            passwordMatchError = content.Load<Texture2D>("Login/password_match_error");
             passwordMatchErrorPosition = new Vector2((screenWidth / 2 - passwordMatchError.Width * scale / 2), (screenHeight / 2 - passwordMatchError.Height * scale / 2));
-            internetConnectionError = content.Load<Texture2D>("internet_connection_error");
+            internetConnectionError = content.Load<Texture2D>("Login/internet_connection_error");
             internetConnectionErrorPosition = new Vector2((screenWidth / 2 - internetConnectionError.Width * scale / 2), (screenHeight / 2 - internetConnectionError.Height * scale / 2));
 
 
-            backButton = content.Load<Texture2D>("back_button");
+            backButton = content.Load<Texture2D>("Login/back_button");
             backButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
             backButtonCollisionBox = new Rectangle(((int)(backButtonPosition.X)), ((int)(backButtonPosition.Y)), (int)(backButton.Width), (backButton.Height));
 
-            signupBox = content.Load<Texture2D>("signup_box");
+            signupBox = content.Load<Texture2D>("Login/signup_box");
             signupBoxPosition = new Vector2((screenWidth / 2 - signupBox.Width * scale / 2), (screenHeight / 2 - signupBox.Height * scale / 2));
 
-            signupButton = content.Load<Texture2D>("signup_button");
+            signupButton = content.Load<Texture2D>("Login/signup_button");
             signupButtonPosition = new Vector2(screenWidth * 3 / 4, screenHeight * 3 / 4);
             signupButtonCollisionBox = new Rectangle(((int)(signupButtonPosition.X)), ((int)(signupButtonPosition.Y)), (int)(signupButton.Width), (signupButton.Height));
 
@@ -192,25 +192,23 @@ namespace ProjectDelta
             signupBoxPasswordPosition = new Vector2((screenWidth / 2 - signupBox.Width * scale / 4), (screenHeight / 2 + signupBox.Height * scale / 16));
             signupBoxPasswordConfirmPosition = new Vector2((screenWidth / 2 - signupBox.Width * scale / 4), (screenHeight / 2 + signupBox.Height * scale / 3));
 
-            loginBox = content.Load<Texture2D>("login_box");
+            loginBox = content.Load<Texture2D>("Login/login_box");
             loginBoxPosition = new Vector2((screenWidth / 2 - loginBox.Width * scale / 2), (screenHeight / 2 - loginBox.Height * scale / 2));
 
-            loginHighlighter = content.Load<Texture2D>("login_highlighter");
+            loginHighlighter = content.Load<Texture2D>("Login/login_highlighter");
             loginUsernameHighlighterPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 2 / 5)), (screenHeight / 2 - loginBox.Height*scale * 19/ 90));
             loginPasswordHighlighterPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 2 / 5)), (screenHeight / 2 + loginBox.Height* scale * 1 / 9));
-            signupUsernameHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 - signupBox.Height * scale* 25 / 90));
-            signupPasswordHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 - signupBox.Height * scale * 5 / 180));
-            signupConfirmHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 + signupBox.Height * scale * 43 / 180));
+            signupUsernameHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 - signupBox.Height * 18 / 90));
+            signupPasswordHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 - signupBox.Height * 2 / 90));
+            signupConfirmHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 + signupBox.Height * 31 / 180));
 
-            font = content.Load<SpriteFont>("input_font");
+            font = content.Load<SpriteFont>("Login/input_font");
             loginUsernameTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 - loginBox.Height * scale * 12 / 90));
             loginPasswordTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 + loginBox.Height* scale * 19 / 90));
 
             signupUsernameTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 - loginBox.Height * scale * 25 / 90));
             signupPasswordTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 + loginBox.Height * scale * 6 / 90));
             signupPasswordConfirmTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 + loginBox.Height * scale * 38 / 90));
-
-
         }
 
         public bool Update(GameTime gameTime)

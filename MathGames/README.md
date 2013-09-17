@@ -1,4 +1,0 @@
-MathGames
-=========
-
-Project Delta

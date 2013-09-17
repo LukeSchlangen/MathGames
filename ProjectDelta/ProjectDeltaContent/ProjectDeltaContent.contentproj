@@ -30,161 +30,161 @@
     <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.VideoImporters, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="input_font.spritefont">
+    <Compile Include="Login\input_font.spritefont">
       <Name>input_font</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="login_background.png">
+    <Compile Include="Login\login_background.png">
       <Name>login_background</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="login_box.png">
+    <Compile Include="Login\login_box.png">
       <Name>login_box</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="signup_button.png">
+    <Compile Include="Login\signup_button.png">
       <Name>signup_button</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="signup_box.png">
+    <Compile Include="Login\signup_box.png">
       <Name>signup_box</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="back_button.png">
+    <Compile Include="Login\back_button.png">
       <Name>back_button</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="login_error.png">
+    <Compile Include="Login\login_error.png">
       <Name>login_error</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="login_highlighter.png">
+    <Compile Include="Login\login_highlighter.png">
       <Name>login_highlighter</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="planet_5.png">
+    <Compile Include="General\Planets\planet_5.png">
       <Name>planet_5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="enemy_ship_1.png">
+    <Compile Include="General\Ships\enemy_ship_1.png">
       <Name>enemy_ship_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="planet_1.png">
+    <Compile Include="General\Planets\planet_1.png">
       <Name>planet_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="planet_2.png">
+    <Compile Include="General\Planets\planet_2.png">
       <Name>planet_2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="planet_3.png">
+    <Compile Include="General\Planets\planet_3.png">
       <Name>planet_3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="planet_4.png">
+    <Compile Include="General\Planets\planet_4.png">
       <Name>planet_4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="good_ship_1.png">
+    <Compile Include="General\Ships\good_ship_1.png">
       <Name>good_ship_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="background_stars.png">
+    <Compile Include="Login\background_stars.png">
       <Name>background_stars</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Background_Music.mp3">
+    <Compile Include="Login\Background_Music.mp3">
       <Name>Background_Music</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="enemy_fleet_1.png">
+    <Compile Include="General\Ships\enemy_fleet_1.png">
       <Name>enemy_fleet_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="good_fleet_1.png">
+    <Compile Include="General\Ships\good_fleet_1.png">
       <Name>good_fleet_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="signup_error.png">
+    <Compile Include="Login\signup_error.png">
       <Name>signup_error</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="password_match_error.png">
+    <Compile Include="Login\password_match_error.png">
       <Name>password_match_error</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="internet_connection_error.png">
+    <Compile Include="Login\internet_connection_error.png">
       <Name>internet_connection_error</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="level1_background_music.mp3">
+    <Compile Include="Level1\level1_background_music.mp3">
       <Name>level1_background_music</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="resized_level1_background.png">
+    <Compile Include="Level1\resized_level1_background.png">
       <Name>resized_level1_background</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="math_hero_character.png">
+    <Compile Include="General\Hero\math_hero_character.png">
       <Name>math_hero_character</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

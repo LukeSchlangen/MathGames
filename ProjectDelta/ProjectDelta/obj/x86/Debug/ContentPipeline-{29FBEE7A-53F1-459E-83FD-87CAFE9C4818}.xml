@@ -2,185 +2,231 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>input_font.spritefont</Source>
-      <Name>input_font</Name>
+      <Source>Login\input_font.spritefont</Source>
+      <Name>Login\input_font</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\input_font.xnb</Output>
-      <Time>2013-09-09T20:54:49.9895057-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\input_font.xnb</Output>
+      <Time>2013-09-17T17:21:03.8905314-05:00</Time>
     </Item>
     <Item>
-      <Source>login_background.png</Source>
-      <Name>login_background</Name>
+      <Source>Login\login_background.png</Source>
+      <Name>Login\login_background</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_background.xnb</Output>
-      <Time>2013-09-09T20:28:52.8304412-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_background.xnb</Output>
+      <Time>2013-09-17T17:21:03.8925315-05:00</Time>
     </Item>
     <Item>
-      <Source>login_box.png</Source>
-      <Name>login_box</Name>
+      <Source>Login\login_box.png</Source>
+      <Name>Login\login_box</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_box.xnb</Output>
-      <Time>2013-09-09T20:32:48.4479178-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_box.xnb</Output>
+      <Time>2013-09-17T17:21:03.8925315-05:00</Time>
     </Item>
     <Item>
-      <Source>signup_button.png</Source>
-      <Name>signup_button</Name>
+      <Source>Login\signup_button.png</Source>
+      <Name>Login\signup_button</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_button.xnb</Output>
-      <Time>2013-09-09T21:15:50.4325989-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_button.xnb</Output>
+      <Time>2013-09-17T17:21:03.8945316-05:00</Time>
     </Item>
     <Item>
-      <Source>signup_box.png</Source>
-      <Name>signup_box</Name>
+      <Source>Login\signup_box.png</Source>
+      <Name>Login\signup_box</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_box.xnb</Output>
-      <Time>2013-09-09T21:29:49.7086027-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_box.xnb</Output>
+      <Time>2013-09-17T17:21:03.8945316-05:00</Time>
     </Item>
     <Item>
-      <Source>back_button.png</Source>
-      <Name>back_button</Name>
+      <Source>Login\back_button.png</Source>
+      <Name>Login\back_button</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\back_button.xnb</Output>
-      <Time>2013-09-10T20:08:02.238489-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\back_button.xnb</Output>
+      <Time>2013-09-17T17:21:03.8885313-05:00</Time>
     </Item>
     <Item>
-      <Source>login_highlighter.png</Source>
-      <Name>login_highlighter</Name>
+      <Source>Login\login_error.png</Source>
+      <Name>Login\login_error</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_highlighter.xnb</Output>
-      <Time>2013-09-10T23:17:22.9832865-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_error.xnb</Output>
+      <Time>2013-09-17T17:21:03.8935316-05:00</Time>
     </Item>
     <Item>
-      <Source>login_error.png</Source>
-      <Name>login_error</Name>
+      <Source>Login\login_highlighter.png</Source>
+      <Name>Login\login_highlighter</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\login_error.xnb</Output>
-      <Time>2013-09-10T22:52:53.5582402-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_highlighter.xnb</Output>
+      <Time>2013-09-17T17:21:03.8935316-05:00</Time>
     </Item>
     <Item>
-      <Source>planet_5.png</Source>
-      <Name>planet_5</Name>
+      <Source>General\Planets\planet_5.png</Source>
+      <Name>General\Planets\planet_5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_5.xnb</Output>
-      <Time>2013-09-11T21:09:11.1681664-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_5.xnb</Output>
+      <Time>2013-09-17T17:21:03.8745305-05:00</Time>
     </Item>
     <Item>
-      <Source>enemy_ship_1.png</Source>
-      <Name>enemy_ship_1</Name>
+      <Source>General\Ships\enemy_ship_1.png</Source>
+      <Name>General\Ships\enemy_ship_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\enemy_ship_1.xnb</Output>
-      <Time>2013-09-11T21:09:11.1711666-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_ship_1.xnb</Output>
+      <Time>2013-09-17T17:21:03.8765306-05:00</Time>
     </Item>
     <Item>
-      <Source>planet_1.png</Source>
-      <Name>planet_1</Name>
+      <Source>General\Planets\planet_1.png</Source>
+      <Name>General\Planets\planet_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_1.xnb</Output>
-      <Time>2013-09-11T21:09:11.1721666-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_1.xnb</Output>
+      <Time>2013-09-17T17:21:03.8705303-05:00</Time>
     </Item>
     <Item>
-      <Source>planet_2.png</Source>
-      <Name>planet_2</Name>
+      <Source>General\Planets\planet_2.png</Source>
+      <Name>General\Planets\planet_2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_2.xnb</Output>
-      <Time>2013-09-11T21:09:11.1741667-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_2.xnb</Output>
+      <Time>2013-09-17T17:21:03.8715303-05:00</Time>
     </Item>
     <Item>
-      <Source>planet_3.png</Source>
-      <Name>planet_3</Name>
+      <Source>General\Planets\planet_3.png</Source>
+      <Name>General\Planets\planet_3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_3.xnb</Output>
-      <Time>2013-09-11T21:09:11.1761669-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_3.xnb</Output>
+      <Time>2013-09-17T17:21:03.8725304-05:00</Time>
     </Item>
     <Item>
-      <Source>planet_4.png</Source>
-      <Name>planet_4</Name>
+      <Source>General\Planets\planet_4.png</Source>
+      <Name>General\Planets\planet_4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\planet_4.xnb</Output>
-      <Time>2013-09-11T21:09:11.1771669-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_4.xnb</Output>
+      <Time>2013-09-17T17:21:03.8735304-05:00</Time>
     </Item>
     <Item>
-      <Source>good_ship_1.png</Source>
-      <Name>good_ship_1</Name>
+      <Source>General\Ships\good_ship_1.png</Source>
+      <Name>General\Ships\good_ship_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\good_ship_1.xnb</Output>
-      <Time>2013-09-11T21:09:11.179167-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_ship_1.xnb</Output>
+      <Time>2013-09-17T17:21:03.8785307-05:00</Time>
     </Item>
     <Item>
-      <Source>background_stars.png</Source>
-      <Name>background_stars</Name>
+      <Source>Login\background_stars.png</Source>
+      <Name>Login\background_stars</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\background_stars.xnb</Output>
-      <Time>2013-09-11T21:13:01.2823282-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\background_stars.xnb</Output>
+      <Time>2013-09-17T17:21:03.8905314-05:00</Time>
     </Item>
     <Item>
-      <Source>enemy_fleet_1.png</Source>
-      <Name>enemy_fleet_1</Name>
+      <Source>General\Ships\enemy_fleet_1.png</Source>
+      <Name>General\Ships\enemy_fleet_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\enemy_fleet_1.xnb</Output>
-      <Time>2013-09-11T23:43:51.7059828-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_fleet_1.xnb</Output>
+      <Time>2013-09-17T17:21:03.8755306-05:00</Time>
     </Item>
     <Item>
-      <Source>good_fleet_1.png</Source>
-      <Name>good_fleet_1</Name>
+      <Source>General\Ships\good_fleet_1.png</Source>
+      <Name>General\Ships\good_fleet_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\good_fleet_1.xnb</Output>
-      <Time>2013-09-11T23:43:51.7069829-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_fleet_1.xnb</Output>
+      <Time>2013-09-17T17:21:03.8775307-05:00</Time>
     </Item>
     <Item>
-      <Source>Background_Music.mp3</Source>
-      <Name>Background_Music</Name>
+      <Source>Login\signup_error.png</Source>
+      <Name>Login\signup_error</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_error.xnb</Output>
+      <Time>2013-09-17T17:21:03.8955317-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Login\password_match_error.png</Source>
+      <Name>Login\password_match_error</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\password_match_error.xnb</Output>
+      <Time>2013-09-17T17:21:03.8945316-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Login\internet_connection_error.png</Source>
+      <Name>Login\internet_connection_error</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\internet_connection_error.xnb</Output>
+      <Time>2013-09-17T17:21:03.8915315-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\resized_level1_background.png</Source>
+      <Name>Level1\resized_level1_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\resized_level1_background.xnb</Output>
+      <Time>2013-09-17T17:21:03.883531-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Hero\math_hero_character.png</Source>
+      <Name>General\Hero\math_hero_character</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\math_hero_character.xnb</Output>
+      <Time>2013-09-17T17:21:03.8705303-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Login\Background_Music.mp3</Source>
+      <Name>Login\Background_Music</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Background_Music.xnb</Output>
-      <Extra>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Background_Music.wma</Extra>
-      <Time>2013-09-11T23:43:51.7029826-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\Background_Music.xnb</Output>
+      <Extra>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\Background_Music.wma</Extra>
+      <Time>2013-09-17T17:21:03.8885313-05:00</Time>
     </Item>
     <Item>
-      <Source>signup_error.png</Source>
-      <Name>signup_error</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
+      <Source>Level1\level1_background_music.mp3</Source>
+      <Name>Level1\level1_background_music</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\signup_error.xnb</Output>
-      <Time>2013-09-13T01:40:08.7923015-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.xnb</Output>
+      <Extra>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.wma</Extra>
+      <Time>2013-09-17T17:21:03.8805308-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -189,10 +235,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDeltaContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Games\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDeltaContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

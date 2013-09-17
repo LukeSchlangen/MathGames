@@ -53,13 +53,19 @@ namespace ProjectDelta
         public State state;
         
         private Login login;
-
         private Level1 level1;
+
+        ContentManager loginContentManager;
+        ContentManager level1ContentManager;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            loginContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
+            level1ContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
+
             screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
@@ -85,7 +91,11 @@ namespace ProjectDelta
         {
             this.IsMouseVisible = true;
             connectToDatabase();
+
+            //for debug can edit this to go to desired state
+            //default is State.Login
             state = State.Login;
+            //state = State.Level1;
 
             login = new Login(context);
             level1 = new Level1(context);
@@ -108,8 +118,7 @@ namespace ProjectDelta
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            login.LoadContent(Content, screenHeight, screenWidth);
-            
+            login.LoadContent(loginContentManager, screenHeight, screenWidth);            
         }
 
         /// <summary>
@@ -137,7 +146,9 @@ namespace ProjectDelta
                 bool success = login.Update(gameTime);
                 if (success == true)
                 {
-                    state = State.Home;
+                    state = State.Level1;
+                    loginContentManager.Unload();
+                    level1.LoadContent(Content, screenHeight, screenWidth);
                 }
             }
 
