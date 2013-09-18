@@ -77,7 +77,8 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Level1.cs" />
+    <Compile Include="Level1\Animation.cs" />
+    <Compile Include="Level1\Level1.cs" />
     <Compile Include="Login\LoginInput.cs" />
     <Compile Include="Login\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -128,3 +128,4 @@ C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDe
 C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDelta.exe
 C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDelta.pdb
+C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet.xnb

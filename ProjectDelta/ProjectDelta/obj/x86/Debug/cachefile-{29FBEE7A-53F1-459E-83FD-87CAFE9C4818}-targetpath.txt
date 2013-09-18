@@ -25,3 +25,4 @@ Content\Login\Background_Music.xnb
 Content\Login\Background_Music.wma
 Content\Level1\level1_background_music.xnb
 Content\Level1\level1_background_music.wma
+Content\General\Hero\running_sprite_sheet.xnb
