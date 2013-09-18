@@ -30,7 +30,7 @@ namespace ProjectDelta
         private int imageInY;
         private Rectangle spriteRectangle;
         private float timer = 0f;
-        private float interval = 70f;
+        private float interval = 1f;
         private int xFrame = 0;
         private int yFrame = 0;
 

@@ -125,7 +125,7 @@ namespace ProjectDelta
             shipThreePosition = new Vector2(-15000 * scale, 500 * scale);
             shipFourPosition = new Vector2(-23000 * scale, 300 * scale);
 
-            animation = new Animation(heroRunning, 3, 8);
+            animation = new Animation(heroRunning, 5, 10);
         }
 
         public bool Update(GameTime gameTime)
