@@ -26,6 +26,8 @@ namespace ProjectDelta
         private Texture2D spriteSheet;
         private int spriteWidth;
         private int spriteHeight;
+        private int imageInX;
+        private int imageInY;
         private Rectangle spriteRectangle;
         private float timer = 0f;
         private float interval = 70f;
@@ -35,6 +37,8 @@ namespace ProjectDelta
         public Animation(Texture2D spriteSheet, int imageInX, int imageInY)
         {
             this.spriteSheet = spriteSheet;
+            this.imageInX = imageInX;
+            this.imageInY = imageInY;
             spriteWidth = spriteSheet.Width / imageInX;
             spriteHeight = spriteSheet.Height / imageInY;
 
@@ -49,10 +53,10 @@ namespace ProjectDelta
             {
                 timer = 0;
                 xFrame++;
-                if (xFrame > 2)
+                if (xFrame > imageInX-1)
                 {
                     yFrame++;
-                    if (yFrame > 6)
+                    if (yFrame > imageInY-1)
                     {
                         yFrame = 0;
                     }
