@@ -28,7 +28,7 @@ namespace ProjectDelta
         private int spriteHeight;
         private Rectangle spriteRectangle;
         private float timer = 0f;
-        private float interval = 700f;
+        private float interval = 70f;
         private int xFrame = 0;
         private int yFrame = 0;
 
