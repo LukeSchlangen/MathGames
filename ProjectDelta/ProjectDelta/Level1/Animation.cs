@@ -30,7 +30,7 @@ namespace ProjectDelta
         private int imageInY;
         private Rectangle spriteRectangle;
         private float timer = 0f;
-        private float interval = 1f;
+        private float interval = 15f;
         private int xFrame = 0;
         private int yFrame = 0;
 
@@ -71,7 +71,7 @@ namespace ProjectDelta
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(spriteSheet, new Rectangle(100, 100, spriteWidth, spriteHeight), spriteRectangle, Color.White);
+            spriteBatch.Draw(spriteSheet, new Rectangle(0, 500, spriteWidth, spriteHeight), spriteRectangle, Color.White);
         }
     }
 }

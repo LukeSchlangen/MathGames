@@ -209,15 +209,6 @@
       <Time>2013-09-18T10:33:58.5620893-05:00</Time>
     </Item>
     <Item>
-      <Source>General\Hero\running_sprite_sheet.png</Source>
-      <Name>General\Hero\running_sprite_sheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet.xnb</Output>
-      <Time>2013-09-18T11:22:27.0644461-05:00</Time>
-    </Item>
-    <Item>
       <Source>Login\Background_Music.mp3</Source>
       <Name>Login\Background_Music</Name>
       <Importer>Mp3Importer</Importer>
@@ -236,6 +227,24 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.xnb</Output>
       <Extra>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.wma</Extra>
       <Time>2013-09-18T10:33:58.5900909-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Hero\running_sprite_sheet_5x10.png</Source>
+      <Name>General\Hero\running_sprite_sheet_5x10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x10.xnb</Output>
+      <Time>2013-09-18T11:22:27.0644461-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Hero\running_sprite_sheet_5x5.png</Source>
+      <Name>General\Hero\running_sprite_sheet_5x5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x5.xnb</Output>
+      <Time>2013-09-18T12:52:02.4629013-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

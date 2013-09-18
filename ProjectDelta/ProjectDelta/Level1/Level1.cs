@@ -99,7 +99,7 @@ namespace ProjectDelta
 
 
             hero = content.Load<Texture2D>("General/Hero/math_hero_character");
-            heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet");
+            heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
             heroPosition = new Vector2(-200 * scale, 800 * scale);
             heroCollisionBox = new Rectangle(((int)(heroPosition.X)), ((int)(heroPosition.Y)), (int)(hero.Width), (hero.Height));
 
@@ -125,7 +125,7 @@ namespace ProjectDelta
             shipThreePosition = new Vector2(-15000 * scale, 500 * scale);
             shipFourPosition = new Vector2(-23000 * scale, 300 * scale);
 
-            animation = new Animation(heroRunning, 5, 10);
+            animation = new Animation(heroRunning, 5, 5);
         }
 
         public bool Update(GameTime gameTime)

@@ -191,8 +191,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="General\Hero\running_sprite_sheet.png">
-      <Name>running_sprite_sheet</Name>
+    <Compile Include="General\Hero\running_sprite_sheet_5x10.png">
+      <Name>running_sprite_sheet_5x10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="General\Hero\running_sprite_sheet_5x5.png">
+      <Name>running_sprite_sheet_5x5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
