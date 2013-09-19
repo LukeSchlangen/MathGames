@@ -78,7 +78,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Level1\Animation.cs" />
+    <Compile Include="Level1\Hero.cs" />
     <Compile Include="Level1\Level1.cs" />
+    <Compile Include="Level1\Level1Input.cs" />
+    <Compile Include="Level1\Level1Monster.cs" />
+    <Compile Include="Level1\Question.cs" />
     <Compile Include="Login\LoginInput.cs" />
     <Compile Include="Login\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

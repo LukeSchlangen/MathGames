@@ -202,7 +202,7 @@ namespace ProjectDelta
             signupPasswordHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 - signupBox.Height * 2 / 90));
             signupConfirmHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 + signupBox.Height * 31 / 180));
 
-            font = content.Load<SpriteFont>("Login/input_font");
+            font = content.Load<SpriteFont>("input_font");
             loginUsernameTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 - loginBox.Height * scale * 12 / 90));
             loginPasswordTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 + loginBox.Height* scale * 19 / 90));
 

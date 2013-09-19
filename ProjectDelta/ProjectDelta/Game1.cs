@@ -148,14 +148,13 @@ namespace ProjectDelta
                 {
                     state = State.Level1;
                     loginContentManager.Unload();
-                    level1.LoadContent(Content, screenHeight, screenWidth);
+                    level1.LoadContent(Content);
                 }
             }
 
             if (state == State.Home)
             {
-                Debug.Write("success");
-                level1.LoadContent(Content, screenHeight, screenWidth);
+                level1.LoadContent(Content);
                 state = State.Level1;
             }
 

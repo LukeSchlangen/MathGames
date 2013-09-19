@@ -23,12 +23,12 @@ namespace ProjectDelta
 {
     public class Level1
     {
-        User user;
         DynamoDBContext context;
 
         private enum State
         {
             None,
+            
         }
 
         private State state;
@@ -39,13 +39,11 @@ namespace ProjectDelta
         private float backgroundSpeed = .1f;
                 
         Random random = new Random();
-        Animation animation;
-
+        
         //Textures for level 1
         private Texture2D backgroundOne;
         private Texture2D backgroundTwo;
         private Texture2D backgroundThree;
-        private Texture2D heroRunning;
         private Texture2D planetTwo;
         private Texture2D planetThree;
         private Texture2D planetFour;
@@ -55,11 +53,7 @@ namespace ProjectDelta
         private Texture2D shipThree;
         private Texture2D shipFour;
 
-        //Font for level 1
-        private SpriteFont font;
-
         //Vectors for level 1
-        private Vector2 heroPosition;
         private Vector2 movingPlanetTwoPosition;
         private Vector2 movingPlanetThreePosition;
         private Vector2 movingPlanetFourPosition;
@@ -71,13 +65,17 @@ namespace ProjectDelta
         private Vector2 backgroundOnePosition;
         private Vector2 backgroundTwoPosition;
         private Vector2 backgroundThreePosition;
-
-        //Rectangles for the collision boxes for the login
-        private Rectangle heroCollisionBox;
         
         //Mouse states
         private MouseState current;
         private MouseState previous;
+
+        private Hero hero;
+        private Level1Monster monsterOne;
+        private Level1Monster monsterTwo;
+        private Level1Input input;
+
+        string update;
 
         public Level1(DynamoDBContext context)
         {
@@ -88,18 +86,92 @@ namespace ProjectDelta
         {
             this.scale = scale;
             state = State.None;
+            update = "";
+            monsterOne = new Level1Monster(1600, 800, scale, backgroundSpeed);
+            monsterTwo = new Level1Monster(2600, 800, scale, backgroundSpeed);
+            hero = new Hero();
+            hero.Initialize(scale);
+            input = new Level1Input(scale);
         }
 
-        //Specifies which content is loaded for the login screen
+        //Specifies which content is loaded for level 1
 
-        public void LoadContent(ContentManager content, int screenHeight, int screenWidth)
+        public void LoadContent(ContentManager content)
+        {
+            loadExtraObjects(content);
+            input.LoadContent(content);
+            hero.LoadContent(content);
+            monsterOne.LoadContent(content);
+            monsterTwo.LoadContent(content);
+        }
+
+        public bool Update(GameTime gameTime)
+        {
+            updateExtraObjects(gameTime);
+            cycleBackground(gameTime);
+
+            if (state == State.None)
+            {
+                monsterOne.Update(gameTime);
+                monsterTwo.Update(gameTime);
+                
+                if (!update.Equals(""))
+                {
+                    hero.shieldUp();
+                    Debug.WriteLine("UP");
+                }
+
+                update = input.Update(gameTime);
+                hero.Update(gameTime);
+            }
+
+            return false;
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            drawExtraObjects(spriteBatch);
+            monsterOne.Draw(spriteBatch);
+            monsterTwo.Draw(spriteBatch);
+            input.Draw(spriteBatch);
+            hero.Draw(spriteBatch);
+        }
+
+        private void checkClick()
+        {
+            previous = current;
+            current = Mouse.GetState();
+            Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
+        }
+
+        private void cycleBackground(GameTime gameTime)
+        {
+            backgroundOnePosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            backgroundTwoPosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            backgroundThreePosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            
+            if (backgroundOnePosition.X < -backgroundOne.Width*scale)
+            {
+                backgroundOnePosition.X = backgroundThreePosition.X + backgroundThree.Width*scale;
+            }
+            if (backgroundTwoPosition.X < -backgroundTwo.Width*scale)
+            {
+                backgroundTwoPosition.X = backgroundOnePosition.X + backgroundOne.Width*scale;
+            }
+            if (backgroundThreePosition.X < -backgroundThree.Width*scale)
+            {
+                backgroundThreePosition.X = backgroundTwoPosition.X + backgroundTwo.Width*scale;
+            }
+        }
+
+        private void loadExtraObjects(ContentManager content)
         {
             backgroundOne = content.Load<Texture2D>("Level1/background_level_1a");
             backgroundTwo = content.Load<Texture2D>("Level1/background_level_1b");
             backgroundThree = content.Load<Texture2D>("Level1/background_level_1c");
-            backgroundOnePosition = new Vector2(0,0);
-            backgroundTwoPosition = new Vector2(backgroundOne.Width*scale, 0);
-            backgroundThreePosition = new Vector2(backgroundOne.Width*scale + backgroundTwo.Width*scale, 0);
+            backgroundOnePosition = new Vector2(0, 0);
+            backgroundTwoPosition = new Vector2(backgroundOne.Width * scale, 0);
+            backgroundThreePosition = new Vector2(backgroundOne.Width * scale + backgroundTwo.Width * scale, 0);
 
             //Play music in repeating loop
             Song backgroundMusic;
@@ -107,9 +179,6 @@ namespace ProjectDelta
             MediaPlayer.Play(backgroundMusic);
             MediaPlayer.IsRepeating = true;
 
-            heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
-            heroPosition = new Vector2(-200 * scale, 800 * scale);
-            
             planetTwo = content.Load<Texture2D>("General/Planets/planet_2");
             planetThree = content.Load<Texture2D>("General/Planets/planet_3");
             planetFour = content.Load<Texture2D>("General/Planets/planet_4");
@@ -131,14 +200,10 @@ namespace ProjectDelta
             shipTwoPosition = new Vector2(-6000 * scale, 900 * scale);
             shipThreePosition = new Vector2(-15000 * scale, 500 * scale);
             shipFourPosition = new Vector2(-23000 * scale, 300 * scale);
-
-            animation = new Animation(heroRunning, 5, 5, scale);
         }
 
-        public bool Update(GameTime gameTime)
+        private void updateExtraObjects(GameTime gameTime)
         {
-            //always update the planets flying
-                        
             movingPlanetTwoPosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
             movingPlanetTwoPosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             movingPlanetThreePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
@@ -152,19 +217,10 @@ namespace ProjectDelta
             shipTwoPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             shipThreePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             shipFourPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-            cycleBackground(gameTime);          
-
-            animation.stationaryScroll(gameTime);
-
-            return false;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        private void drawExtraObjects(SpriteBatch spriteBatch)
         {
-            //always draw the login background
-            //remember to scale stuff when appropriate!
-
             spriteBatch.Draw(backgroundOne, backgroundOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(backgroundTwo, backgroundTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(backgroundThree, backgroundThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
@@ -176,36 +232,6 @@ namespace ProjectDelta
             spriteBatch.Draw(shipTwo, shipTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(shipThree, shipThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(shipFour, shipFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-
-            animation.Draw(spriteBatch);
-        }
-
-        private void checkClick()
-        {
-            previous = current;
-            current = Mouse.GetState();
-            Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
-
-        }
-
-        private void cycleBackground(GameTime gameTime)
-        {
-            backgroundOnePosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            backgroundTwoPosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            backgroundThreePosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            
-            if (backgroundOnePosition.X < -backgroundOne.Width*scale)
-            {
-                backgroundOnePosition.X = backgroundThreePosition.X + backgroundThree.Width*scale;
-            }
-            if (backgroundTwoPosition.X < -backgroundTwo.Width*scale)
-            {
-                backgroundTwoPosition.X = backgroundOnePosition.X + backgroundOne.Width*scale;
-            }
-            if (backgroundThreePosition.X < -backgroundThree.Width*scale)
-            {
-                backgroundThreePosition.X = backgroundTwoPosition.X + backgroundTwo.Width*scale;
-            }
         }
     }
 }

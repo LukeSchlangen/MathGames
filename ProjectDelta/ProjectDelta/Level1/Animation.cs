@@ -24,6 +24,7 @@ namespace ProjectDelta
     class Animation
     {
         private Texture2D spriteSheet;
+        private Vector2 position;
         private int spriteWidth;
         private int spriteHeight;
         float scale;
@@ -45,6 +46,8 @@ namespace ProjectDelta
             spriteHeight = spriteSheet.Height / imageInY;
 
             spriteRectangle = new Rectangle(xFrame * spriteWidth, yFrame, spriteWidth, spriteHeight);
+
+            position = new Vector2(300 * scale, 800 * scale);
         }
 
         public void stationaryScroll(GameTime gameTime)
@@ -73,7 +76,12 @@ namespace ProjectDelta
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(spriteSheet, new Vector2(300 * scale,800 * scale), spriteRectangle, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(spriteSheet, position, spriteRectangle, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+        }
+
+        public Vector2 getAnimationPosition()
+        {
+            return position;
         }
     }
 }

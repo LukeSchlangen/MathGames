@@ -67,7 +67,6 @@ C:\Users\Tom\Desktop\MathGames\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug
 C:\Users\Tom\Desktop\MathGames\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.xnb
 C:\Users\Tom\Desktop\MathGames\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\Background_Music.wma
 C:\Users\Tom\Desktop\MathGames\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.wma
-C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\input_font.xnb
 C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_background.xnb
 C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_box.xnb
 C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_button.xnb
@@ -135,3 +134,10 @@ C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\G
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1a.xnb
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1b.xnb
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1c.xnb
+C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1a.xnb
+C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1b.xnb
+C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1c.xnb
+C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_1.xnb
+C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_2.xnb
+C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\input_font.xnb
+C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\shield.xnb
