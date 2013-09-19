@@ -229,13 +229,22 @@
       <Time>2013-09-17T17:21:03.8805308-05:00</Time>
     </Item>
     <Item>
-      <Source>General\Hero\running_sprite_sheet.png</Source>
-      <Name>General\Hero\running_sprite_sheet</Name>
+      <Source>General\Hero\running_sprite_sheet_5x10.png</Source>
+      <Name>General\Hero\running_sprite_sheet_5x10</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet.xnb</Output>
-      <Time>2013-09-17T20:23:13.0966463-05:00</Time>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x10.xnb</Output>
+      <Time>2013-09-18T16:35:47.9548695-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Hero\running_sprite_sheet_5x5.png</Source>
+      <Name>General\Hero\running_sprite_sheet_5x5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x5.xnb</Output>
+      <Time>2013-09-18T16:35:47.9588697-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

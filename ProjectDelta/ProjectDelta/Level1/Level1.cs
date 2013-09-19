@@ -35,14 +35,16 @@ namespace ProjectDelta
         private float scale;
 
         private float planetSpeed = .01f;
-        private float shipSpeed= .25f;
+        private float shipSpeed = .25f;
+        private float backgroundSpeed = .1f;
                 
         Random random = new Random();
         Animation animation;
 
         //Textures for level 1
-        private Texture2D background;
-        private Texture2D hero;
+        private Texture2D backgroundOne;
+        private Texture2D backgroundTwo;
+        private Texture2D backgroundThree;
         private Texture2D heroRunning;
         private Texture2D planetTwo;
         private Texture2D planetThree;
@@ -66,6 +68,9 @@ namespace ProjectDelta
         private Vector2 shipTwoPosition;
         private Vector2 shipThreePosition;
         private Vector2 shipFourPosition;
+        private Vector2 backgroundOnePosition;
+        private Vector2 backgroundTwoPosition;
+        private Vector2 backgroundThreePosition;
 
         //Rectangles for the collision boxes for the login
         private Rectangle heroCollisionBox;
@@ -89,7 +94,12 @@ namespace ProjectDelta
 
         public void LoadContent(ContentManager content, int screenHeight, int screenWidth)
         {
-            background = content.Load<Texture2D>("Level1/resized_level1_background");
+            backgroundOne = content.Load<Texture2D>("Level1/resized_level1_background");
+            backgroundTwo = content.Load<Texture2D>("Level1/resized_level1_background");
+            backgroundThree = content.Load<Texture2D>("Level1/resized_level1_background");
+            backgroundOnePosition = new Vector2(0,0);
+            backgroundTwoPosition = new Vector2(backgroundOne.Width, 0);
+            backgroundThreePosition = new Vector2(backgroundOne.Width + backgroundTwo.Width, 0);
 
             //Play music in repeating loop
             Song backgroundMusic;
@@ -97,12 +107,9 @@ namespace ProjectDelta
             MediaPlayer.Play(backgroundMusic);
             MediaPlayer.IsRepeating = true;
 
-
-            hero = content.Load<Texture2D>("General/Hero/math_hero_character");
             heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
             heroPosition = new Vector2(-200 * scale, 800 * scale);
-            heroCollisionBox = new Rectangle(((int)(heroPosition.X)), ((int)(heroPosition.Y)), (int)(hero.Width), (hero.Height));
-
+            
             planetTwo = content.Load<Texture2D>("General/Planets/planet_2");
             planetThree = content.Load<Texture2D>("General/Planets/planet_3");
             planetFour = content.Load<Texture2D>("General/Planets/planet_4");
@@ -125,7 +132,7 @@ namespace ProjectDelta
             shipThreePosition = new Vector2(-15000 * scale, 500 * scale);
             shipFourPosition = new Vector2(-23000 * scale, 300 * scale);
 
-            animation = new Animation(heroRunning, 5, 5);
+            animation = new Animation(heroRunning, 5, 5, scale);
         }
 
         public bool Update(GameTime gameTime)
@@ -146,6 +153,8 @@ namespace ProjectDelta
             shipThreePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             shipFourPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
+            cycleBackground(gameTime);          
+
             animation.stationaryScroll(gameTime);
 
             return false;
@@ -156,8 +165,9 @@ namespace ProjectDelta
             //always draw the login background
             //remember to scale stuff when appropriate!
 
-            spriteBatch.Draw(background, new Vector2(0,0), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(hero, heroPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(backgroundOne, backgroundOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(backgroundTwo, backgroundTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(backgroundThree, backgroundThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(planetTwo, movingPlanetTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(planetThree, movingPlanetThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(planetFour, movingPlanetFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
@@ -176,6 +186,26 @@ namespace ProjectDelta
             current = Mouse.GetState();
             Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
 
+        }
+
+        private void cycleBackground(GameTime gameTime)
+        {
+            backgroundOnePosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            backgroundTwoPosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            backgroundThreePosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            
+            if (backgroundOnePosition.X < -backgroundOne.Width)
+            {
+                backgroundOnePosition.X = backgroundThreePosition.X + backgroundThree.Width;
+            }
+            if (backgroundTwoPosition.X < -backgroundTwo.Width)
+            {
+                backgroundTwoPosition.X = backgroundOnePosition.X + backgroundOne.Width;
+            }
+            if (backgroundThreePosition.X < -backgroundThree.Width)
+            {
+                backgroundThreePosition.X = backgroundTwoPosition.X + backgroundTwo.Width;
+            }
         }
     }
 }

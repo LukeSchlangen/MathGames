@@ -26,19 +26,21 @@ namespace ProjectDelta
         private Texture2D spriteSheet;
         private int spriteWidth;
         private int spriteHeight;
+        float scale;
         private int imageInX;
         private int imageInY;
         private Rectangle spriteRectangle;
         private float timer = 0f;
-        private float interval = 15f;
+        private float interval = 30f;
         private int xFrame = 0;
         private int yFrame = 0;
 
-        public Animation(Texture2D spriteSheet, int imageInX, int imageInY)
+        public Animation(Texture2D spriteSheet, int imageInX, int imageInY, float scale)
         {
             this.spriteSheet = spriteSheet;
             this.imageInX = imageInX;
             this.imageInY = imageInY;
+            this.scale = scale;
             spriteWidth = spriteSheet.Width / imageInX;
             spriteHeight = spriteSheet.Height / imageInY;
 
@@ -71,7 +73,7 @@ namespace ProjectDelta
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(spriteSheet, new Rectangle(0, 500, spriteWidth, spriteHeight), spriteRectangle, Color.White);
+            spriteBatch.Draw(spriteSheet, new Vector2(300 * scale,800 * scale), spriteRectangle, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
     }
 }
