@@ -48,7 +48,6 @@ namespace ProjectDelta
 
             spriteRectangle = new Rectangle(xFrame * spriteWidth, yFrame, spriteWidth, spriteHeight);
 
-            //position = new Vector2(300 * scale, 800 * scale);
         }
 
         public void stationaryScroll(GameTime gameTime)

@@ -49,7 +49,8 @@ namespace ProjectDelta
 
         public void Update(GameTime gameTime)
         {
-            position.X -= speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            position.X -= 5/2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            position.Y += (float)Math.Sin(position.X/15);
             collisionBox.Y = (int)position.Y;
             collisionBox.X = (int)position.X;
         }
