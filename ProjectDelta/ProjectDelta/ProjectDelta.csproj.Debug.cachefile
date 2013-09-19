@@ -27,9 +27,11 @@ Content\General\Hero\running_sprite_sheet_5x5.xnb
 Content\Level1\background_level_1a.xnb
 Content\Level1\background_level_1b.xnb
 Content\Level1\background_level_1c.xnb
-Content\General\Monsters\enemy_1.xnb
-Content\General\Monsters\enemy_2.xnb
 Content\input_font.xnb
 Content\General\Hero\shield.xnb
+Content\General\Monsters\enemy_1.xnb
+Content\General\Monsters\enemy_2.xnb
+Content\General\Shield\QShield_sheet.xnb
+Content\General\Hero\jumping_sprite_sheet.xnb
 Content\Login\Background_Music.wma
 Content\Level1\level1_background_music.wma

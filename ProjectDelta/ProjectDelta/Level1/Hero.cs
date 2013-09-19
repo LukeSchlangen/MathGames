@@ -56,7 +56,7 @@ namespace ProjectDelta
             shield = content.Load<Texture2D>("General/Hero/shield");
             heroPosition = new Vector2(500 * scale, 800 * scale);
             heroCollisionBox = new Rectangle();
-            animation = new Animation(heroRunning, 5, 5, scale);
+            animation = new Animation(heroRunning, new Vector2(300 * scale, 800 * scale), 5, 5, scale);
             shieldPosition.X = animation.getAnimationPosition().X + 250*scale;
             shieldPosition.Y = animation.getAnimationPosition().Y - 100*scale;
             shieldCollisionBox = new Rectangle(((int)(shieldPosition.X - shield.Width / 2)), ((int)(shieldPosition.Y - shield.Height / 2)), (int)(shield.Width), (shield.Height));

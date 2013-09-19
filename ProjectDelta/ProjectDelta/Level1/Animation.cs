@@ -32,13 +32,14 @@ namespace ProjectDelta
         private int imageInY;
         private Rectangle spriteRectangle;
         private float timer = 0f;
-        private float interval = 30f;
+        private float interval = 10f;
         private int xFrame = 0;
         private int yFrame = 0;
 
-        public Animation(Texture2D spriteSheet, int imageInX, int imageInY, float scale)
+        public Animation(Texture2D spriteSheet, Vector2 position, int imageInX, int imageInY, float scale)
         {
             this.spriteSheet = spriteSheet;
+            this.position = position;
             this.imageInX = imageInX;
             this.imageInY = imageInY;
             this.scale = scale;
@@ -47,7 +48,7 @@ namespace ProjectDelta
 
             spriteRectangle = new Rectangle(xFrame * spriteWidth, yFrame, spriteWidth, spriteHeight);
 
-            position = new Vector2(300 * scale, 800 * scale);
+            //position = new Vector2(300 * scale, 800 * scale);
         }
 
         public void stationaryScroll(GameTime gameTime)
