@@ -184,20 +184,20 @@ namespace ProjectDelta
             planetFour = content.Load<Texture2D>("General/Planets/planet_4");
             planetFive = content.Load<Texture2D>("General/Planets/planet_5");
 
-            shipOne = content.Load<Texture2D>("General/Ships/good_ship_1");
-            shipTwo = content.Load<Texture2D>("General/Ships/enemy_ship_1");
+            shipOne = content.Load<Texture2D>("General/Ships/good_drone");
+            shipTwo = content.Load<Texture2D>("General/Ships/enemy_drones");
             shipThree = content.Load<Texture2D>("General/Ships/good_fleet_1");
             shipFour = content.Load<Texture2D>("General/Ships/enemy_fleet_1");
 
             //any scalar value needs to take into consideration
             //the scale factor to fix resolution issues
-            movingPlanetTwoPosition = new Vector2(-2800 * scale, 100 * scale);
-            movingPlanetThreePosition = new Vector2(-5250 * scale, 1000 * scale);
+            movingPlanetTwoPosition = new Vector2(-2800 * scale, 150 * scale);
+            movingPlanetThreePosition = new Vector2(-5250 * scale, 200 * scale);
             movingPlanetFourPosition = new Vector2(-9000 * scale, 1200 * scale);
             movingPlanetFivePosition = new Vector2(-12000 * scale, -800 * scale);
 
-            shipOnePosition = new Vector2(-2000 * scale, 100 * scale);
-            shipTwoPosition = new Vector2(-6000 * scale, 900 * scale);
+            shipOnePosition = new Vector2(-2000 * scale, 150 * scale);
+            shipTwoPosition = new Vector2(6000 * scale, 200 * scale);
             shipThreePosition = new Vector2(-15000 * scale, 500 * scale);
             shipFourPosition = new Vector2(-23000 * scale, 300 * scale);
         }
@@ -213,8 +213,8 @@ namespace ProjectDelta
             movingPlanetFivePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
             movingPlanetFivePosition.Y += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            shipOnePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            shipTwoPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            shipOnePosition.X += 4 * shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            shipTwoPosition.X -= 5 * shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             shipThreePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             shipFourPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
         }

@@ -36,3 +36,5 @@ Content\General\Monsters\enemy_2.xnb
 Content\General\Shield\QShield_sheet.xnb
 Content\General\Hero\jumping_sprite_sheet.xnb
 Content\General\Shield\question_box_explosion_sheet.xnb
+Content\General\Ships\good_drone.xnb
+Content\General\Ships\enemy_drones.xnb

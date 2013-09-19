@@ -327,6 +327,24 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_explosion_sheet.xnb</Output>
       <Time>2013-09-19T16:34:58.8074445-05:00</Time>
     </Item>
+    <Item>
+      <Source>General\Ships\good_drone.png</Source>
+      <Name>General\Ships\good_drone</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_drone.xnb</Output>
+      <Time>2013-09-19T17:29:00.9018817-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Ships\enemy_drones.png</Source>
+      <Name>General\Ships\enemy_drones</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_drones.xnb</Output>
+      <Time>2013-09-19T17:46:13.1299218-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
