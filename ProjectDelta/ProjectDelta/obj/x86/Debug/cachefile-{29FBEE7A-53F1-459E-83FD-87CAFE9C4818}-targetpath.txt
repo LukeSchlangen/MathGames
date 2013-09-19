@@ -27,3 +27,6 @@ Content\Level1\level1_background_music.xnb
 Content\Level1\level1_background_music.wma
 Content\General\Hero\running_sprite_sheet_5x10.xnb
 Content\General\Hero\running_sprite_sheet_5x5.xnb
+Content\Level1\background_level_1a.xnb
+Content\Level1\background_level_1b.xnb
+Content\Level1\background_level_1c.xnb

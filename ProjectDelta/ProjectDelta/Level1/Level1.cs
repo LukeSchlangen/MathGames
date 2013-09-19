@@ -94,12 +94,12 @@ namespace ProjectDelta
 
         public void LoadContent(ContentManager content, int screenHeight, int screenWidth)
         {
-            backgroundOne = content.Load<Texture2D>("Level1/resized_level1_background");
-            backgroundTwo = content.Load<Texture2D>("Level1/resized_level1_background");
-            backgroundThree = content.Load<Texture2D>("Level1/resized_level1_background");
+            backgroundOne = content.Load<Texture2D>("Level1/background_level_1a");
+            backgroundTwo = content.Load<Texture2D>("Level1/background_level_1b");
+            backgroundThree = content.Load<Texture2D>("Level1/background_level_1c");
             backgroundOnePosition = new Vector2(0,0);
-            backgroundTwoPosition = new Vector2(backgroundOne.Width, 0);
-            backgroundThreePosition = new Vector2(backgroundOne.Width + backgroundTwo.Width, 0);
+            backgroundTwoPosition = new Vector2(backgroundOne.Width*scale, 0);
+            backgroundThreePosition = new Vector2(backgroundOne.Width*scale + backgroundTwo.Width*scale, 0);
 
             //Play music in repeating loop
             Song backgroundMusic;
@@ -194,17 +194,17 @@ namespace ProjectDelta
             backgroundTwoPosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             backgroundThreePosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             
-            if (backgroundOnePosition.X < -backgroundOne.Width)
+            if (backgroundOnePosition.X < -backgroundOne.Width*scale)
             {
-                backgroundOnePosition.X = backgroundThreePosition.X + backgroundThree.Width;
+                backgroundOnePosition.X = backgroundThreePosition.X + backgroundThree.Width*scale;
             }
-            if (backgroundTwoPosition.X < -backgroundTwo.Width)
+            if (backgroundTwoPosition.X < -backgroundTwo.Width*scale)
             {
-                backgroundTwoPosition.X = backgroundOnePosition.X + backgroundOne.Width;
+                backgroundTwoPosition.X = backgroundOnePosition.X + backgroundOne.Width*scale;
             }
-            if (backgroundThreePosition.X < -backgroundThree.Width)
+            if (backgroundThreePosition.X < -backgroundThree.Width*scale)
             {
-                backgroundThreePosition.X = backgroundTwoPosition.X + backgroundTwo.Width;
+                backgroundThreePosition.X = backgroundTwoPosition.X + backgroundTwo.Width*scale;
             }
         }
     }
