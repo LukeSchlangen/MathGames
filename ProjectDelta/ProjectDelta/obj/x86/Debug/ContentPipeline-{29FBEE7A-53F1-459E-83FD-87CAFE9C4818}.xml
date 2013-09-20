@@ -300,6 +300,60 @@
       <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\shield.xnb</Output>
       <Time>2013-09-18T23:21:32.7633129-05:00</Time>
     </Item>
+    <Item>
+      <Source>General\Hero\jumping_sprite_sheet.png</Source>
+      <Name>General\Hero\jumping_sprite_sheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\jumping_sprite_sheet.xnb</Output>
+      <Time>2013-09-19T21:02:57.7064624-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Shield\QShield_sheet.png</Source>
+      <Name>General\Shield\QShield_sheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_sheet.xnb</Output>
+      <Time>2013-09-19T21:02:57.7074625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Shield\question_box_explosion_sheet.png</Source>
+      <Name>General\Shield\question_box_explosion_sheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_explosion_sheet.xnb</Output>
+      <Time>2013-09-19T21:02:57.7084625-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Ships\good_drone.png</Source>
+      <Name>General\Ships\good_drone</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_drone.xnb</Output>
+      <Time>2013-09-19T21:02:57.7094626-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Ships\enemy_drones.png</Source>
+      <Name>General\Ships\enemy_drones</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_drones.xnb</Output>
+      <Time>2013-09-19T21:02:57.7094626-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Shield\QShield_1.png</Source>
+      <Name>General\Shield\QShield_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_1.xnb</Output>
+      <Time>2013-09-19T21:13:58.0622326-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{29FBEE7A-53F1-459E-83FD-87CAFE9C4818}</ContentProjectGUID>

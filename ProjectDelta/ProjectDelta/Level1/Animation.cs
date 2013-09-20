@@ -32,17 +32,19 @@ namespace ProjectDelta
         private int imageInY;
         private Rectangle spriteRectangle;
         private float timer = 0f;
-        private float interval = 10f;
+        private float interval = 0f;
         private int xFrame = 0;
         private int yFrame = 0;
+        private bool done = false;
 
-        public Animation(Texture2D spriteSheet, Vector2 position, int imageInX, int imageInY, float scale)
+        public Animation(Texture2D spriteSheet, Vector2 position, int imageInX, int imageInY, float scale, float interval)
         {
             this.spriteSheet = spriteSheet;
             this.position = position;
             this.imageInX = imageInX;
             this.imageInY = imageInY;
             this.scale = scale;
+            this.interval = interval;
             spriteWidth = spriteSheet.Width / imageInX;
             spriteHeight = spriteSheet.Height / imageInY;
 
@@ -50,7 +52,7 @@ namespace ProjectDelta
 
         }
 
-        public void stationaryScroll(GameTime gameTime)
+        public void animateLoop(GameTime gameTime)
         {
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
@@ -72,6 +74,38 @@ namespace ProjectDelta
 
             spriteRectangle.Y = yFrame * spriteHeight;
             spriteRectangle.X = xFrame * spriteWidth;
+        }
+
+        public bool animateOnce(GameTime gameTime)
+        {
+            timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+            if (done == true)
+            {
+                return true;
+            }
+            
+            if (timer >= interval)
+            {
+                timer = 0;
+                xFrame++;
+                if (xFrame > imageInX - 1)
+                {
+                    yFrame++;
+                    if (yFrame > imageInY - 1)
+                    {
+                        yFrame = 0;
+                        done = true;
+                    }
+
+                    xFrame = 0;
+                }
+            }
+
+            spriteRectangle.Y = yFrame * spriteHeight;
+            spriteRectangle.X = xFrame * spriteWidth;
+
+            return false;
         }
 
         public void Draw(SpriteBatch spriteBatch)

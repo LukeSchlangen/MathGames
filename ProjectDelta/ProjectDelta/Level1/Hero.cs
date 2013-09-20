@@ -31,6 +31,7 @@ namespace ProjectDelta
 
         float scale;
         private State state;
+        private bool shieldAnimationDone = false;
 
         private Vector2 heroPosition;
         private Vector2 shieldPosition;
@@ -41,44 +42,50 @@ namespace ProjectDelta
         private Rectangle heroCollisionBox;
         private Rectangle shieldCollisionBox;
 
-        private Animation animation;
+        private Animation heroAnimation;
+        private Animation shieldAnimation;
 
         public void Initialize(float scale)
         {
             this.scale = scale;
             state = State.None;
-            Debug.WriteLine("DOWN");
         }
 
         public void LoadContent(ContentManager content)
         {
             heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
-            shield = content.Load<Texture2D>("General/Hero/shield");
+            shield = content.Load<Texture2D>("General/Shield/QShield_sheet");
             heroPosition = new Vector2(100 * scale, 800 * scale);
             heroCollisionBox = new Rectangle();
-            animation = new Animation(heroRunning, heroPosition, 5, 5, scale);
-            shieldPosition.X = animation.getAnimationPosition().X + 250*scale;
-            shieldPosition.Y = animation.getAnimationPosition().Y - 100*scale;
+            heroAnimation = new Animation(heroRunning, heroPosition, 5, 5, scale, 30f);
+            shieldPosition.X = heroAnimation.getAnimationPosition().X * scale;
+            shieldPosition.Y = heroAnimation.getAnimationPosition().Y * scale - 150 * scale;
+            shieldAnimation = new Animation(shield, shieldPosition, 2, 5, scale, 200f);
             shieldCollisionBox = new Rectangle(((int)(shieldPosition.X - shield.Width / 2)), ((int)(shieldPosition.Y - shield.Height / 2)), (int)(shield.Width), (shield.Height));
         }
 
         public void Update(GameTime gameTime)
         {
-            animation.stationaryScroll(gameTime);
-
+            heroAnimation.animateLoop(gameTime);
+            
             if (state == State.ShieldUp)
             {
-
+                shieldAnimationDone = shieldAnimation.animateOnce(gameTime);
+                if (shieldAnimationDone == true)
+                {
+                    state = State.None;
+                    shieldAnimationDone = false;
+                }
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            animation.Draw(spriteBatch);
-
+            heroAnimation.Draw(spriteBatch);
+            
             if (state == State.ShieldUp)
             {
-                spriteBatch.Draw(shield, shieldPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                shieldAnimation.Draw(spriteBatch);
             }
         }
 
