@@ -94,7 +94,6 @@ namespace ProjectDelta
                     yFrame++;
                     if (yFrame > imageInY - 1)
                     {
-                        yFrame = 0;
                         done = true;
                     }
 

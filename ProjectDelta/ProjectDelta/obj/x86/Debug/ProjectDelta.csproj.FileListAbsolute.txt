@@ -155,3 +155,9 @@ C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\G
 C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_drone.xnb
 C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_drones.xnb
 C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_1.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_1.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_3x5.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_6x5.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_3x3.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_2x3.xnb

@@ -54,13 +54,13 @@ namespace ProjectDelta
         public void LoadContent(ContentManager content)
         {
             heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
-            shield = content.Load<Texture2D>("General/Shield/QShield_sheet");
-            heroPosition = new Vector2(100 * scale, 800 * scale);
+            shield = content.Load<Texture2D>("General/Shield/question_box_to_shield_sheet_2x3");
+            heroPosition = new Vector2(275 * scale, 800 * scale);
             heroCollisionBox = new Rectangle();
-            heroAnimation = new Animation(heroRunning, heroPosition, 5, 5, scale, 30f);
-            shieldPosition.X = heroAnimation.getAnimationPosition().X * scale;
+            heroAnimation = new Animation(heroRunning, heroPosition, 5, 5, scale, 10f);
+            shieldPosition.X = heroAnimation.getAnimationPosition().X * scale - 200 * scale;
             shieldPosition.Y = heroAnimation.getAnimationPosition().Y * scale - 150 * scale;
-            shieldAnimation = new Animation(shield, shieldPosition, 2, 5, scale, 200f);
+            shieldAnimation = new Animation(shield, shieldPosition, 2, 3, scale, 30f);
             shieldCollisionBox = new Rectangle(((int)(shieldPosition.X - shield.Width / 2)), ((int)(shieldPosition.Y - shield.Height / 2)), (int)(shield.Width), (shield.Height));
         }
 

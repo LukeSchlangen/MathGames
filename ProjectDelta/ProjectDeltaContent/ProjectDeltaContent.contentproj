@@ -286,6 +286,56 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="General\Shield\question_box_to_shield_sheet.png">
+      <Name>question_box_to_shield_sheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="General\Shield\question_box_to_shield_sheet_3x5.png">
+      <Name>question_box_to_shield_sheet_3x5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="General\Shield\question_box_to_shield_sheet_6x5.png">
+      <Name>question_box_to_shield_sheet_6x5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="General\Shield\question_box_to_shield_sheet_3x3.png">
+      <Name>question_box_to_shield_sheet_3x3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="General\Shield\question_box_to_shield_sheet_2x3.png">
+      <Name>question_box_to_shield_sheet_2x3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Level2\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="General\Shield\question_box_image.png">
+      <Name>question_box_image</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="General\Shield\shield_image.png">
+      <Name>shield_image</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
