@@ -44,7 +44,7 @@ namespace ProjectDelta
             fontPosition = new Vector2(50 * scale, 50 * scale);
         }
 
-        public string Update(GameTime gameTime)
+        public bool Update(GameTime gameTime)
         {
             prevKeyboard = keyboard;
             keyboard = Keyboard.GetState();
@@ -128,12 +128,11 @@ namespace ProjectDelta
             }
             if (keyboard.IsKeyDown(Keys.Enter) && prevKeyboard.IsKeyDown(Keys.Enter) == false)
             {
-                string temp = input;
                 input = "";
-                return temp;
+                return true;
             }
 
-            return "";
+            return false;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -142,6 +141,11 @@ namespace ProjectDelta
             Vector2 FontOrigin = font.MeasureString(input) / 2;
 
             spriteBatch.DrawString(font, answer, fontPosition, Color.Blue);
+        }
+
+        public string getInput()
+        {
+            return input;
         }
 
     }

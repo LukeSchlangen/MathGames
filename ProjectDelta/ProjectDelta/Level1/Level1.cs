@@ -74,8 +74,9 @@ namespace ProjectDelta
         private Level1Monster monsterOne;
         private Level1Monster monsterTwo;
         private Level1Input input;
+        private Question question = new Question();
 
-        string update;
+        private bool answerDone = false;
 
         public Level1(DynamoDBContext context)
         {
@@ -86,12 +87,12 @@ namespace ProjectDelta
         {
             this.scale = scale;
             state = State.None;
-            update = "";
             monsterOne = new Level1Monster(1600, 800, scale, backgroundSpeed);
             monsterTwo = new Level1Monster(2600, 800, scale, backgroundSpeed);
             hero = new Hero();
             hero.Initialize(scale);
             input = new Level1Input(scale);
+            question.Initialize(scale);
         }
 
         //Specifies which content is loaded for level 1
@@ -103,26 +104,53 @@ namespace ProjectDelta
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
+            question.LoadContent(content);
         }
 
         public bool Update(GameTime gameTime)
         {
             updateExtraObjects(gameTime);
             cycleBackground(gameTime);
-
+            
             if (state == State.None)
             {
                 monsterOne.Update(gameTime);
                 monsterTwo.Update(gameTime);
+
+                answerDone = input.Update(gameTime);
                 
-                if (!update.Equals(""))
+                if (answerDone == true)
                 {
-                    Debug.WriteLine("here");
-                    hero.shieldUp();
+                    hero.shieldAnimate();
+                    hero.activateShield();
+                    answerDone = false;
                 }
 
-                update = input.Update(gameTime);
+                question.Update(input.getInput());
                 hero.Update(gameTime);
+                                
+                if (hero.getShieldCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                {
+                    hero.questionUp();
+                    hero.deactivateShield();
+                    monsterOne.setSpeed(0f);
+                    monsterOne.setX(5000);
+                    monsterOne.setY(5000);
+                }
+                if (hero.getShieldCollisionBox().Intersects(monsterTwo.getCollisionBox()))
+                {
+                    hero.questionUp();
+                    hero.deactivateShield();
+                    monsterTwo.setSpeed(0f);
+                    monsterTwo.setX(5000);
+                    monsterTwo.setY(5000);
+                }
+
+                if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()) || hero.getHeroCollisionBox().Intersects(monsterTwo.getCollisionBox()))
+                {
+                    stopAll();
+                }
+                
             }
 
             return false;
@@ -133,8 +161,8 @@ namespace ProjectDelta
             drawExtraObjects(spriteBatch);
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
-            input.Draw(spriteBatch);
             hero.Draw(spriteBatch);
+            question.Draw(spriteBatch);
         }
 
         private void checkClick()
@@ -142,6 +170,15 @@ namespace ProjectDelta
             previous = current;
             current = Mouse.GetState();
             Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
+        }
+
+        private void stopAll()
+        {
+            monsterOne.setSpeed(0);
+            monsterTwo.setSpeed(0);
+            backgroundSpeed = 0;
+            planetSpeed = 0;
+            hero.die();
         }
 
         private void cycleBackground(GameTime gameTime)

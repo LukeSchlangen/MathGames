@@ -26,9 +26,9 @@ namespace ProjectDelta
         private enum State
         {
             None,
-            QuestionUp,
+            Question,
             ShieldAnimation,
-            ShieldUp,
+            Shield,
         }
 
         float scale;
@@ -50,7 +50,7 @@ namespace ProjectDelta
         public void Initialize(float scale)
         {
             this.scale = scale;
-            state = State.QuestionUp;
+            state = State.Question;
         }
 
         public void LoadContent(ContentManager content)
@@ -58,57 +58,94 @@ namespace ProjectDelta
             heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
             shield = content.Load<Texture2D>("General/Shield/question_box_to_shield_sheet_3x3");
             heroPosition = new Vector2(275 * scale, 800 * scale);
-            heroCollisionBox = new Rectangle();
             heroAnimation = new Animation(heroRunning, heroPosition, 5, 5, scale, 10f);
+            heroCollisionBox = new Rectangle(((int)(heroPosition.X - heroAnimation.getWidth() / 4)), ((int)(heroPosition.Y - heroAnimation.getHeight() / 2)), heroAnimation.getWidth(), heroAnimation.getHeight());
             shieldPosition.X = heroAnimation.getAnimationPosition().X * scale - 250 * scale;
             shieldPosition.Y = heroAnimation.getAnimationPosition().Y * scale - 300 * scale;
             shieldAnimation = new Animation(shield, shieldPosition, 3, 3, scale, 30f);
-            shieldCollisionBox = new Rectangle(((int)(shieldPosition.X - shield.Width / 2)), ((int)(shieldPosition.Y - shield.Height / 2)), (int)(shield.Width), (shield.Height));
+            shieldCollisionBox = new Rectangle(((int)(shieldPosition.X - shieldAnimation.getWidth() / 16)), ((int)(shieldPosition.Y - shieldAnimation.getHeight() / 2)), shieldAnimation.getWidth(), shieldAnimation.getHeight() + 1000);
+            deactivateShield();
         }
 
         public void Update(GameTime gameTime)
         {
             heroAnimation.animateLoop(gameTime);
 
-            if (state == State.QuestionUp)
+            if (state == State.Question)
             {
                 shieldAnimation.getFirstState();
+                //Debug.WriteLine("QUESTION");
             }
 
             if (state == State.ShieldAnimation)
             {
-                Debug.WriteLine(shieldAnimationDone);
                 shieldAnimationDone = shieldAnimation.animateOnce(gameTime);
                 if (shieldAnimationDone == true)
                 {
-                    state = State.ShieldUp;
+                    state = State.Shield;
                     shieldAnimationDone = false;
                     shieldAnimation.resetAnimation();
-                }        
+                }
+                //Debug.WriteLine("ANIMATE");
             }
 
-            if (state == State.ShieldUp)
+            if (state == State.Shield)
             {
                 shieldAnimation.getLastState();
+                //Debug.WriteLine("SHIELD");
             }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             heroAnimation.Draw(spriteBatch);            
-            shieldAnimation.Draw(spriteBatch);
-            
+            shieldAnimation.Draw(spriteBatch);          
         }
 
-        public void shieldUp()
+        public void shieldAnimate()
         {
             state = State.ShieldAnimation;
             shieldAnimation.resetAnimation();
         }
 
-        public void shieldDown()
+        public void questionUp()
         {
-            state = State.QuestionUp;
+            state = State.Question;
+        }
+
+        public void shieldCollision()
+        {
+            state = State.Question;
+        }
+
+        public void die()
+        {
+            heroAnimation.stopAnimation();
+        }
+
+        public Rectangle getHeroCollisionBox()
+        {
+            return heroCollisionBox;
+        }
+
+        public Rectangle getShieldCollisionBox()
+        {
+            return shieldCollisionBox;
+        }
+
+        public bool getShieldAnimationDone()
+        {
+            return shieldAnimationDone;
+        }
+
+        public void deactivateShield()
+        {
+            shieldCollisionBox.X -= 1000;
+        }
+
+        public void activateShield()
+        {
+            shieldCollisionBox.X += 1000;
         }
     }
 }

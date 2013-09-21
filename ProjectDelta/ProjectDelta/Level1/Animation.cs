@@ -36,6 +36,7 @@ namespace ProjectDelta
         private int xFrame = 0;
         private int yFrame = 0;
         private bool done = false;
+        private bool kill = false;
 
         public Animation(Texture2D spriteSheet, Vector2 position, int imageInX, int imageInY, float scale, float interval)
         {
@@ -55,6 +56,11 @@ namespace ProjectDelta
         public void animateLoop(GameTime gameTime)
         {
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+            if (kill == true)
+            {
+                timer = 0;
+            }
 
             if (timer >= interval)
             {
@@ -117,6 +123,21 @@ namespace ProjectDelta
         {
             spriteRectangle.Y = (imageInY - 1) * spriteHeight;
             spriteRectangle.X = (imageInX - 1) * spriteWidth;
+        }
+
+        public void stopAnimation()
+        {
+            kill = true;
+        }
+
+        public int getHeight()
+        {
+            return spriteHeight;
+        }
+
+        public int getWidth()
+        {
+            return spriteWidth;
         }
 
         public void Draw(SpriteBatch spriteBatch)

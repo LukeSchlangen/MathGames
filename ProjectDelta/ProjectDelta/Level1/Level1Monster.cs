@@ -44,13 +44,12 @@ namespace ProjectDelta
         public void LoadContent(ContentManager content)
         {
             monster = content.Load<Texture2D>("General/Monsters/enemy_1");
-            collisionBox = new Rectangle(((int)(position.X - monster.Width / 2)), ((int)(position.Y - monster.Height / 2)), (int)(monster.Width), (monster.Height));
+            collisionBox = new Rectangle(((int)(position.X - monster.Width / 2)), ((int)(position.Y - monster.Height / 2)), (monster.Width), (monster.Height));
         }
 
         public void Update(GameTime gameTime)
         {
             position.X -= 5/2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            position.Y += (float)Math.Sin(position.X/15);
             collisionBox.Y = (int)position.Y;
             collisionBox.X = (int)position.X;
         }
@@ -70,6 +69,26 @@ namespace ProjectDelta
         {
             factorOne = random.Next(min, max);
             factorTwo = random.Next(min, max);
+        }
+
+        public Rectangle getCollisionBox()
+        {
+            return collisionBox;
+        }
+
+        public void setSpeed(float speed)
+        {
+            this.speed = speed;
+        }
+
+        public void setX(int x)
+        {
+            position.X = x;
+        }
+
+        public void setY(int y)
+        {
+            position.Y = y;
         }
     }
 }
