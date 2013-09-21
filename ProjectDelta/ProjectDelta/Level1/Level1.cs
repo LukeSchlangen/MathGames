@@ -117,8 +117,8 @@ namespace ProjectDelta
                 
                 if (!update.Equals(""))
                 {
+                    Debug.WriteLine("here");
                     hero.shieldUp();
-                    Debug.WriteLine("UP");
                 }
 
                 update = input.Update(gameTime);

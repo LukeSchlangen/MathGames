@@ -107,6 +107,18 @@ namespace ProjectDelta
             return false;
         }
 
+        public void getFirstState()
+        {
+            spriteRectangle.Y = 0;
+            spriteRectangle.X = 0;
+        }
+
+        public void getLastState()
+        {
+            spriteRectangle.Y = (imageInY - 1) * spriteHeight;
+            spriteRectangle.X = (imageInX - 1) * spriteWidth;
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(spriteSheet, position, spriteRectangle, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
@@ -115,6 +127,15 @@ namespace ProjectDelta
         public Vector2 getAnimationPosition()
         {
             return position;
+        }
+
+        public void resetAnimation()
+        {
+            spriteRectangle.Y = 0;
+            spriteRectangle.X = 0;
+            xFrame = 0;
+            yFrame = 0;
+            done = false;
         }
     }
 }
