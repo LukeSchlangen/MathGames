@@ -32,6 +32,7 @@ namespace ProjectDelta
         KeyboardState prevKeyboard;
 
         string input = "";
+        string lastInput = "";
 
         public Level1Input(float scale)
         {
@@ -49,7 +50,7 @@ namespace ProjectDelta
             prevKeyboard = keyboard;
             keyboard = Keyboard.GetState();
 
-            if ((keyboard.IsKeyDown(Keys.NumPad0) || keyboard.IsKeyDown(Keys.D0)) && ((prevKeyboard.IsKeyDown(Keys.NumPad0) == false) || (prevKeyboard.IsKeyDown(Keys.D0) == false)))
+            if (keyboard.IsKeyDown(Keys.NumPad0) && prevKeyboard.IsKeyDown(Keys.NumPad0) == false)
             {
                 input = input + "0";
 
@@ -128,6 +129,7 @@ namespace ProjectDelta
             }
             if (keyboard.IsKeyDown(Keys.Enter) && prevKeyboard.IsKeyDown(Keys.Enter) == false)
             {
+                lastInput = input;
                 input = "";
                 return true;
             }
@@ -143,9 +145,14 @@ namespace ProjectDelta
             spriteBatch.DrawString(font, answer, fontPosition, Color.Blue);
         }
 
-        public string getInput()
+        public string getCurrentInput()
         {
             return input;
+        }
+
+        public string getLastInput()
+        {
+            return lastInput;
         }
 
     }

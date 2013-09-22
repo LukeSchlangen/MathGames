@@ -37,8 +37,6 @@ namespace ProjectDelta
         private float planetSpeed = .01f;
         private float shipSpeed = .25f;
         private float backgroundSpeed = .1f;
-                
-        Random random = new Random();
         
         //Textures for level 1
         private Texture2D backgroundOne;
@@ -73,10 +71,13 @@ namespace ProjectDelta
         private Hero hero;
         private Level1Monster monsterOne;
         private Level1Monster monsterTwo;
+        private int currentMonster;
         private Level1Input input;
         private Question question = new Question();
+        private Random random = new Random();
 
         private bool answerDone = false;
+        private bool showQuestion = true;
 
         public Level1(DynamoDBContext context)
         {
@@ -93,6 +94,7 @@ namespace ProjectDelta
             hero.Initialize(scale);
             input = new Level1Input(scale);
             question.Initialize(scale);
+            currentMonster = 1;
         }
 
         //Specifies which content is loaded for level 1
@@ -104,6 +106,8 @@ namespace ProjectDelta
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
+            monsterOne.setFactors(random.Next(0,10),random.Next(0,10));
+            monsterTwo.setFactors(random.Next(0, 10), random.Next(0, 10));
             question.LoadContent(content);
         }
 
@@ -111,6 +115,7 @@ namespace ProjectDelta
         {
             updateExtraObjects(gameTime);
             cycleBackground(gameTime);
+            hero.Update(gameTime);
             
             if (state == State.None)
             {
@@ -118,39 +123,78 @@ namespace ProjectDelta
                 monsterTwo.Update(gameTime);
 
                 answerDone = input.Update(gameTime);
-                
+
                 if (answerDone == true)
                 {
-                    hero.shieldAnimate();
-                    hero.activateShield();
-                    answerDone = false;
+                    if (currentMonster == 1)
+                    {
+                        if (monsterOne.getExpectedAnswer() == Int32.Parse(input.getLastInput()))
+                        {
+                            hero.shieldAnimate();
+                            hero.activateShield();
+                            showQuestion = false;
+                            answerDone = false;
+                        }
+                        else
+                        {
+                            stopAll();
+                        }
+                    }
+                    if (currentMonster == 2)
+                    {
+                        if (monsterTwo.getExpectedAnswer() == Int32.Parse(input.getLastInput()))
+                        {
+                            hero.shieldAnimate();
+                            hero.activateShield();
+                            showQuestion = false;
+                            answerDone = false;
+                        }
+                        else
+                        {
+                            stopAll();
+                        }
+                    }
                 }
 
-                question.Update(input.getInput());
-                hero.Update(gameTime);
-                                
-                if (hero.getShieldCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                if (currentMonster == 1)
                 {
-                    hero.questionUp();
-                    hero.deactivateShield();
-                    monsterOne.setSpeed(0f);
-                    monsterOne.setX(5000);
-                    monsterOne.setY(5000);
-                }
-                if (hero.getShieldCollisionBox().Intersects(monsterTwo.getCollisionBox()))
-                {
-                    hero.questionUp();
-                    hero.deactivateShield();
-                    monsterTwo.setSpeed(0f);
-                    monsterTwo.setX(5000);
-                    monsterTwo.setY(5000);
+                    if (hero.getShieldCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                    {
+                        hero.questionUp();
+                        hero.deactivateShield();
+                        currentMonster = 2;
+                        monsterOne.setX(2600);
+                        monsterOne.setFactors(random.Next(0, 10), random.Next(0, 10));
+                        showQuestion = true;
+                    }
+
+                    if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                    {
+                        stopAll();
+                    }
+
+                    question.Update(monsterOne.getFactorOne(), monsterOne.getFactorTwo(), input.getCurrentInput());
                 }
 
-                if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()) || hero.getHeroCollisionBox().Intersects(monsterTwo.getCollisionBox()))
+                if (currentMonster == 2)
                 {
-                    stopAll();
+                    if (hero.getShieldCollisionBox().Intersects(monsterTwo.getCollisionBox()))
+                    {
+                        hero.questionUp();
+                        hero.deactivateShield();
+                        currentMonster = 1;
+                        monsterTwo.setX(2600);
+                        monsterTwo.setFactors(random.Next(0, 10), random.Next(0, 10));
+                        showQuestion = true;
+                    }
+
+                    if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                    {
+                        stopAll();
+                    }
+
+                    question.Update(monsterTwo.getFactorOne(), monsterTwo.getFactorTwo(), input.getCurrentInput());
                 }
-                
             }
 
             return false;
@@ -162,7 +206,10 @@ namespace ProjectDelta
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
             hero.Draw(spriteBatch);
-            question.Draw(spriteBatch);
+            if (showQuestion == true)
+            {
+                question.Draw(spriteBatch);
+            }
         }
 
         private void checkClick()

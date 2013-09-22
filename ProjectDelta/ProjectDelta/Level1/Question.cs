@@ -25,9 +25,6 @@ namespace ProjectDelta
     {
         SpriteFont font;
         Vector2 questionFontPosition;
-
-        int factorOne = 5;
-        int factorTwo = 10;
         
         float scale;
 
@@ -44,7 +41,7 @@ namespace ProjectDelta
             questionFontPosition = new Vector2(100*scale, 600*scale);
         }
 
-        public void Update(string myAnswer)
+        public void Update(int factorOne, int factorTwo, string myAnswer)
         {            
             question = factorOne + " x " + factorTwo + " = " + myAnswer;
         }

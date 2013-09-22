@@ -32,8 +32,6 @@ namespace ProjectDelta
         private int factorOne;
         private int factorTwo;
 
-        Random random = new Random();
-
         public Level1Monster(int x, int y, float scale, float speed)
         {
             this.scale = scale;
@@ -65,10 +63,19 @@ namespace ProjectDelta
             this.factorTwo = factorTwo;
         }
 
-        public void newRandomFactors(int min, int max)
+        public int getFactorOne()
         {
-            factorOne = random.Next(min, max);
-            factorTwo = random.Next(min, max);
+            return factorOne;
+        }
+
+        public int getFactorTwo()
+        {
+            return factorTwo;
+        }
+
+        public int getExpectedAnswer()
+        {
+            return factorOne * factorTwo;
         }
 
         public Rectangle getCollisionBox()
