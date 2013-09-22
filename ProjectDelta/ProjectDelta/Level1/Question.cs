@@ -38,7 +38,7 @@ namespace ProjectDelta
         public void LoadContent(ContentManager content)
         {
             font = content.Load<SpriteFont>("input_font");
-            questionFontPosition = new Vector2(100*scale, 600*scale);
+            questionFontPosition = new Vector2(100*scale, 500*scale);
         }
 
         public void Update(int factorOne, int factorTwo, string myAnswer)
@@ -48,7 +48,7 @@ namespace ProjectDelta
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, question, questionFontPosition, Color.SandyBrown, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(font, question, questionFontPosition, Color.SandyBrown, 0f, Vector2.Zero, 5 * scale, SpriteEffects.None, 0f);
         }
     }
 }
