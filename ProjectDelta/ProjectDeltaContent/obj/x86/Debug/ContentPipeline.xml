@@ -210,16 +210,6 @@
       <Time>2013-09-22T13:53:06.6487898-05:00</Time>
     </Item>
     <Item>
-      <Source>Level1\level1_background_music.mp3</Source>
-      <Name>Level1\level1_background_music</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.xnb</Output>
-      <Extra>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.wma</Extra>
-      <Time>2013-09-22T13:53:06.6207882-05:00</Time>
-    </Item>
-    <Item>
       <Source>General\Hero\running_sprite_sheet_5x10.png</Source>
       <Name>General\Hero\running_sprite_sheet_5x10</Name>
       <Importer>TextureImporter</Importer>
@@ -425,6 +415,25 @@
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_3x3.xnb</Output>
       <Time>2013-09-22T13:53:06.4757799-05:00</Time>
+    </Item>
+    <Item>
+      <Source>large_input_font.spritefont</Source>
+      <Name>large_input_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\large_input_font.xnb</Output>
+      <Time>2013-09-23T19:54:16.89841-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\level1_background_music.mp3</Source>
+      <Name>Level1\level1_background_music</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.xnb</Output>
+      <Extra>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.wma</Extra>
+      <Time>2013-09-23T19:47:56.4886518-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -21,7 +21,6 @@ Content\Login\internet_connection_error.xnb
 Content\Level1\resized_level1_background.xnb
 Content\General\Hero\math_hero_character.xnb
 Content\Login\Background_Music.xnb
-Content\Level1\level1_background_music.xnb
 Content\General\Hero\running_sprite_sheet_5x10.xnb
 Content\General\Hero\running_sprite_sheet_5x5.xnb
 Content\Level1\background_level_1a.xnb
@@ -45,5 +44,7 @@ Content\General\Shield\question_box_to_shield_sheet_2x3.xnb
 Content\General\Shield\question_box_image.xnb
 Content\General\Shield\shield_image.xnb
 Content\General\Shield\question_box_to_shield_3x3.xnb
+Content\large_input_font.xnb
+Content\Level1\level1_background_music.xnb
 Content\Login\Background_Music.wma
 Content\Level1\level1_background_music.wma

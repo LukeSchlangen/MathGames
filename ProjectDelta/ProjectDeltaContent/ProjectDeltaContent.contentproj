@@ -170,13 +170,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Level1\level1_background_music.mp3">
-      <Name>level1_background_music</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Level1\resized_level1_background.png">
       <Name>resized_level1_background</Name>
       <Importer>TextureImporter</Importer>
@@ -341,6 +334,20 @@
       <Name>question_box_to_shield_3x3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="large_input_font.spritefont">
+      <Name>large_input_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Level1\level1_background_music.mp3">
+      <Name>level1_background_music</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
