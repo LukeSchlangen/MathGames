@@ -21,9 +21,12 @@ using Amazon.DynamoDBv2.DataModel;
 
 namespace ProjectDelta
 {
-    public class Level1
+    public class World1
     {
+        private static int COUNT_TO_CONTINUE = 10;
         DynamoDBContext context;
+        private int correctInARow = 0;
+        private int worldStage = 1;
 
         private enum State
         {
@@ -37,6 +40,8 @@ namespace ProjectDelta
         private float planetSpeed = .01f;
         private float shipSpeed = .25f;
         private float backgroundSpeed = .1f;
+        private float backupPlanetSpeed = .01f;
+        private float backupBackgroundSpeed = .1f;
         
         //Textures for level 1
         private Texture2D backgroundOne;
@@ -73,13 +78,13 @@ namespace ProjectDelta
         private Level1Monster monsterTwo;
         private int currentMonster;
         private Level1Input input;
-        private Question question = new Question();
+        private Text text = new Text();
         private Random random = new Random();
 
         private bool answerDone = false;
         private bool showQuestion = true;
 
-        public Level1(DynamoDBContext context)
+        public World1(DynamoDBContext context)
         {
             this.context = context;
         }
@@ -93,7 +98,7 @@ namespace ProjectDelta
             hero = new Hero();
             hero.Initialize(scale);
             input = new Level1Input(scale);
-            question.Initialize(scale);
+            text.Initialize(scale);
             currentMonster = 1;
         }
 
@@ -106,97 +111,112 @@ namespace ProjectDelta
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
-            monsterOne.setFactors(random.Next(0,10),random.Next(0,10));
-            monsterTwo.setFactors(random.Next(0, 10), random.Next(0, 10));
-            question.LoadContent(content);
+            monsterOne.setFactors(random.Next(0,worldStage),random.Next(0,worldStage+1));
+            monsterTwo.setFactors(random.Next(0, worldStage), random.Next(0, worldStage+1));
+            text.LoadContent(content);
         }
 
         public bool Update(GameTime gameTime)
         {
-            updateExtraObjects(gameTime);
-            cycleBackground(gameTime);
-            hero.Update(gameTime);
-            
-            if (state == State.None)
+            if (correctInARow >= COUNT_TO_CONTINUE)
             {
-                monsterOne.Update(gameTime);
-                monsterTwo.Update(gameTime);
-
-                answerDone = input.Update(gameTime);
-
-                if (answerDone == true)
+                stopAll();
+                KeyboardState keyboard = Keyboard.GetState();
+                if(keyboard.IsKeyDown(Keys.Space))
                 {
+                    worldStage++;
+                    correctInARow = 0;
+                    resetStage();
+                }               
+            }
+            else
+            {
+                updateExtraObjects(gameTime);
+                cycleBackground(gameTime);
+                hero.Update(gameTime);
+
+                if (state == State.None)
+                {
+                    monsterOne.Update(gameTime);
+                    monsterTwo.Update(gameTime);
+
+                    answerDone = input.Update(gameTime);
+
+                    if (answerDone == true)
+                    {
+                        if (currentMonster == 1)
+                        {
+                            if (monsterOne.getExpectedAnswer() == Int32.Parse(input.getLastInput()))
+                            {
+                                hero.shieldAnimate();
+                                hero.activateShield();
+                                showQuestion = false;
+                                answerDone = false;
+                                correctInARow++;
+                            }
+                            else
+                            {
+                                stopAll();
+                            }
+                        }
+                        if (currentMonster == 2)
+                        {
+                            if (monsterTwo.getExpectedAnswer() == Int32.Parse(input.getLastInput()))
+                            {
+                                hero.shieldAnimate();
+                                hero.activateShield();
+                                showQuestion = false;
+                                answerDone = false;
+                                correctInARow++;
+                            }
+                            else
+                            {
+                                stopAll();
+                            }
+                        }
+                    }
+
                     if (currentMonster == 1)
                     {
-                        if (monsterOne.getExpectedAnswer() == Int32.Parse(input.getLastInput()))
+                        if (hero.getShieldCollisionBox().Intersects(monsterOne.getCollisionBox()))
                         {
-                            hero.shieldAnimate();
-                            hero.activateShield();
-                            showQuestion = false;
-                            answerDone = false;
+                            hero.questionUp();
+                            hero.deactivateShield();
+                            currentMonster = 2;
+                            monsterOne.setX((int)(2600*scale));
+                            monsterOne.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
+                            showQuestion = true;
                         }
-                        else
+
+                        if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
                         {
                             stopAll();
                         }
+
+                        text.Update(monsterOne.getFactorOne(), monsterOne.getFactorTwo(), input.getCurrentInput(), correctInARow, worldStage);
                     }
+
                     if (currentMonster == 2)
                     {
-                        if (monsterTwo.getExpectedAnswer() == Int32.Parse(input.getLastInput()))
+                        if (hero.getShieldCollisionBox().Intersects(monsterTwo.getCollisionBox()))
                         {
-                            hero.shieldAnimate();
-                            hero.activateShield();
-                            showQuestion = false;
-                            answerDone = false;
+                            hero.questionUp();
+                            hero.deactivateShield();
+                            currentMonster = 1;
+                            monsterTwo.setX((int)(2600*scale));
+                            monsterTwo.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
+                            showQuestion = true;
                         }
-                        else
+
+                        if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
                         {
                             stopAll();
                         }
+
+                        text.Update(monsterTwo.getFactorOne(), monsterTwo.getFactorTwo(), input.getCurrentInput(), correctInARow, worldStage);
                     }
-                }
-
-                if (currentMonster == 1)
-                {
-                    if (hero.getShieldCollisionBox().Intersects(monsterOne.getCollisionBox()))
-                    {
-                        hero.questionUp();
-                        hero.deactivateShield();
-                        currentMonster = 2;
-                        monsterOne.setX(2600);
-                        monsterOne.setFactors(random.Next(0, 10), random.Next(0, 10));
-                        showQuestion = true;
-                    }
-
-                    if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
-                    {
-                        stopAll();
-                    }
-
-                    question.Update(monsterOne.getFactorOne(), monsterOne.getFactorTwo(), input.getCurrentInput());
-                }
-
-                if (currentMonster == 2)
-                {
-                    if (hero.getShieldCollisionBox().Intersects(monsterTwo.getCollisionBox()))
-                    {
-                        hero.questionUp();
-                        hero.deactivateShield();
-                        currentMonster = 1;
-                        monsterTwo.setX(2600);
-                        monsterTwo.setFactors(random.Next(0, 10), random.Next(0, 10));
-                        showQuestion = true;
-                    }
-
-                    if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
-                    {
-                        stopAll();
-                    }
-
-                    question.Update(monsterTwo.getFactorOne(), monsterTwo.getFactorTwo(), input.getCurrentInput());
-                }
+                }                
             }
-
             return false;
         }
 
@@ -206,9 +226,14 @@ namespace ProjectDelta
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
             hero.Draw(spriteBatch);
+            text.DrawAnswerCount(spriteBatch);
             if (showQuestion == true)
             {
-                question.Draw(spriteBatch);
+                text.Draw(spriteBatch);
+            }
+            if (correctInARow >= COUNT_TO_CONTINUE)
+            {
+                text.DrawCongratsMsg(spriteBatch);
             }
         }
 
@@ -316,6 +341,23 @@ namespace ProjectDelta
             spriteBatch.Draw(shipTwo, shipTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(shipThree, shipThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(shipFour, shipFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+        }
+
+        private void resetStage()
+        {
+            monsterOne.setX((int)(1600*scale));
+            monsterTwo.setX((int)(2600*scale));
+            backgroundSpeed = backupBackgroundSpeed;
+            monsterOne.setSpeed(backgroundSpeed);
+            monsterTwo.setSpeed(backgroundSpeed);
+            planetSpeed = backupPlanetSpeed;
+            hero.live();
+            hero.questionUp();
+            hero.deactivateShield();
+            monsterOne.setFactors(random.Next(0, worldStage+1), random.Next(0, worldStage+1));
+            monsterTwo.setFactors(random.Next(0, worldStage+1), random.Next(0, worldStage+1));
+            currentMonster = 1;
+            showQuestion = true;
         }
     }
 }

@@ -130,6 +130,11 @@ namespace ProjectDelta
             kill = true;
         }
 
+        public void startAnimation()
+        {
+            kill = false;
+        }
+
         public int getHeight()
         {
             return spriteHeight;

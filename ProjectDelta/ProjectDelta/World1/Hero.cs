@@ -59,11 +59,11 @@ namespace ProjectDelta
             shield = content.Load<Texture2D>("General/Shield/question_box_to_shield_3x3");
             heroPosition = new Vector2(275 * scale, 800 * scale);
             heroAnimation = new Animation(heroRunning, heroPosition, 5, 5, scale, 10f);
-            heroCollisionBox = new Rectangle(((int)(heroPosition.X - heroAnimation.getWidth() / 4)), ((int)(heroPosition.Y - heroAnimation.getHeight() / 2)), heroAnimation.getWidth(), heroAnimation.getHeight());
-            shieldPosition.X = heroAnimation.getAnimationPosition().X - 300 * scale;
-            shieldPosition.Y = heroAnimation.getAnimationPosition().Y - 400 * scale;
-            shieldAnimation = new Animation(shield, shieldPosition, 3, 3, (float)1.7*scale, 30f);
-            shieldCollisionBox = new Rectangle(((int)(shieldPosition.X - shieldAnimation.getWidth() / 16)), ((int)(shieldPosition.Y - shieldAnimation.getHeight() / 2)), shieldAnimation.getWidth(), shieldAnimation.getHeight() + 1000);
+            heroCollisionBox = new Rectangle(((int)((heroPosition.X - heroAnimation.getWidth() / 4)*scale)), ((int)((heroPosition.Y - heroAnimation.getHeight() / 2)*scale)), heroAnimation.getWidth(), heroAnimation.getHeight());
+            shieldPosition.X = heroAnimation.getAnimationPosition().X;
+            shieldPosition.Y = heroAnimation.getAnimationPosition().Y - 200 * scale;
+            shieldAnimation = new Animation(shield, shieldPosition, 3, 3, scale, 30f);
+            shieldCollisionBox = new Rectangle(((int)(shieldPosition.X) + (int)(275*scale)), ((int)(shieldPosition.Y)), (int)(100*scale), (int)(1000*scale));
             deactivateShield();
         }
 
@@ -121,6 +121,11 @@ namespace ProjectDelta
         public void die()
         {
             heroAnimation.stopAnimation();
+        }
+
+        public void live()
+        {
+            heroAnimation.startAnimation();
         }
 
         public Rectangle getHeroCollisionBox()

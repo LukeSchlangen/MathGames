@@ -75,7 +75,7 @@ namespace ProjectDelta
 
         public int getExpectedAnswer()
         {
-            return factorOne * factorTwo;
+            return factorOne + factorTwo;
         }
 
         public Rectangle getCollisionBox()

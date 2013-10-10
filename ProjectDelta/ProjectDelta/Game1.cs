@@ -31,7 +31,7 @@ namespace ProjectDelta
         {
             //add any relevant game states here
             Login,
-            Level1,
+            World1,
             Home,
             Exit,
         }
@@ -53,7 +53,7 @@ namespace ProjectDelta
         public State state;
         
         private Login login;
-        private Level1 level1;
+        private World1 world1;
 
         ContentManager loginContentManager;
         ContentManager level1ContentManager;
@@ -68,6 +68,10 @@ namespace ProjectDelta
 
             screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+
+            //For Tom debug
+            //screenWidth = 1366;
+            //screenHeight = 768;
 
             //this specifies the actual resolution that the game displays at
             //we want to leave this at the natural screen resolution
@@ -98,13 +102,13 @@ namespace ProjectDelta
             //state = State.Level1;
 
             login = new Login(context);
-            level1 = new Level1(context);
+            world1 = new World1(context);
 
             //when we initialize the login screen (and any screens
             //from here on out), we pass in the scale value to allow
             //us to scale the textures
             login.Initialize(scale);
-            level1.Initialize(scale);
+            world1.Initialize(scale);
 
             base.Initialize();
         }
@@ -146,21 +150,21 @@ namespace ProjectDelta
                 bool success = login.Update(gameTime);
                 if (success == true)
                 {
-                    state = State.Level1;
+                    state = State.World1;
                     loginContentManager.Unload();
-                    level1.LoadContent(Content);
+                    world1.LoadContent(Content);
                 }
             }
 
             if (state == State.Home)
             {
-                level1.LoadContent(Content);
-                state = State.Level1;
+                world1.LoadContent(Content);
+                state = State.World1;
             }
 
-            if (state == State.Level1)
+            if (state == State.World1)
             {
-                bool success = level1.Update(gameTime);
+                bool success = world1.Update(gameTime);
                 if (success == true)
                 {
                     state = State.Home;
@@ -197,9 +201,9 @@ namespace ProjectDelta
                 login = null;   
             }
 
-            if (state == State.Level1)
+            if (state == State.World1)
             {
-                level1.Draw(spriteBatch);
+                world1.Draw(spriteBatch);
             }
 
             if (state == State.Exit)
