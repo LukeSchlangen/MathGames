@@ -27,6 +27,8 @@ namespace ProjectDelta
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        public static User globalUser = null;
+
         public enum State
         {
             //add any relevant game states here
@@ -158,8 +160,7 @@ namespace ProjectDelta
 
             if (state == State.Home)
             {
-                world1.LoadContent(Content);
-                state = State.World1;
+
             }
 
             if (state == State.World1)

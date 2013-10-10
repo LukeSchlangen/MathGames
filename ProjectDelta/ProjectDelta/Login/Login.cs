@@ -23,7 +23,6 @@ namespace ProjectDelta
 {
     public class Login
     {
-        User user;
         DynamoDBContext context;
 
         private enum State
@@ -252,12 +251,12 @@ namespace ProjectDelta
                 try
                 {
 
-                    user = context.Load<User>(username);
-                    if (user == null)
+                    Game1.globalUser = context.Load<User>(username);
+                    if (Game1.globalUser == null)
                     {
                         state = State.LoginError;
                     }
-                    else if (password != user.password)
+                    else if (password != Game1.globalUser.password)
                     {
                         state = State.LoginError;
                     }
@@ -318,14 +317,14 @@ namespace ProjectDelta
                         {
                             if (!checkUserExists(username))
                             {
-                                user = new User
+                                Game1.globalUser = new User
                                 {
                                     username = username,
                                     password = password,
                                     skill = "0",
                                 };
 
-                                context.Save<User>(user);
+                                context.Save<User>(Game1.globalUser);
                                 state = State.None;
                             }
                             else
@@ -510,8 +509,8 @@ namespace ProjectDelta
         private bool checkUserExists(string username)
         {
 
-            user = context.Load<User>(username);
-            if (user == null)
+            Game1.globalUser = context.Load<User>(username);
+            if (Game1.globalUser == null)
             {
                 return false;
             }

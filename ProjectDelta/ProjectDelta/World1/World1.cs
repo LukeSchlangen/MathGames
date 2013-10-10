@@ -28,13 +28,6 @@ namespace ProjectDelta
         private int correctInARow = 0;
         private int worldStage = 1;
 
-        private enum State
-        {
-            None,
-            
-        }
-
-        private State state;
         private float scale;
 
         private float planetSpeed = .01f;
@@ -92,7 +85,6 @@ namespace ProjectDelta
         public void Initialize(float scale)
         {
             this.scale = scale;
-            state = State.None;
             monsterOne = new Level1Monster(1600, 800, scale, backgroundSpeed);
             monsterTwo = new Level1Monster(2600, 800, scale, backgroundSpeed);
             hero = new Hero();
@@ -124,6 +116,8 @@ namespace ProjectDelta
                 KeyboardState keyboard = Keyboard.GetState();
                 if(keyboard.IsKeyDown(Keys.Space))
                 {
+                    Game1.globalUser.worldOne = worldStage;
+                    context.Save<User>(Game1.globalUser);
                     worldStage++;
                     correctInARow = 0;
                     resetStage();
@@ -135,88 +129,95 @@ namespace ProjectDelta
                 cycleBackground(gameTime);
                 hero.Update(gameTime);
 
-                if (state == State.None)
+
+                monsterOne.Update(gameTime);
+                monsterTwo.Update(gameTime);
+                
+                answerDone = input.Update(gameTime);
+
+                if (answerDone == true)
                 {
-                    monsterOne.Update(gameTime);
-                    monsterTwo.Update(gameTime);
-
-                    answerDone = input.Update(gameTime);
-
-                    if (answerDone == true)
-                    {
-                        if (currentMonster == 1)
-                        {
-                            if (monsterOne.getExpectedAnswer() == Int32.Parse(input.getLastInput()))
-                            {
-                                hero.shieldAnimate();
-                                hero.activateShield();
-                                showQuestion = false;
-                                answerDone = false;
-                                correctInARow++;
-                            }
-                            else
-                            {
-                                stopAll();
-                            }
-                        }
-                        if (currentMonster == 2)
-                        {
-                            if (monsterTwo.getExpectedAnswer() == Int32.Parse(input.getLastInput()))
-                            {
-                                hero.shieldAnimate();
-                                hero.activateShield();
-                                showQuestion = false;
-                                answerDone = false;
-                                correctInARow++;
-                            }
-                            else
-                            {
-                                stopAll();
-                            }
-                        }
-                    }
-
                     if (currentMonster == 1)
                     {
-                        if (hero.getShieldCollisionBox().Intersects(monsterOne.getCollisionBox()))
-                        {
-                            hero.questionUp();
-                            hero.deactivateShield();
-                            currentMonster = 2;
-                            monsterOne.setX((int)(2600*scale));
-                            monsterOne.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
-                            showQuestion = true;
-                        }
-
-                        if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                        if (input.getLastInput().Equals(""))
                         {
                             stopAll();
                         }
-
-                        text.Update(monsterOne.getFactorOne(), monsterOne.getFactorTwo(), input.getCurrentInput(), correctInARow, worldStage);
+                        else if (monsterOne.getExpectedAnswer() == Int32.Parse(input.getLastInput()))
+                        {
+                            hero.shieldAnimate();
+                            hero.activateShield();
+                            showQuestion = false;
+                            answerDone = false;
+                            correctInARow++;
+                        }
+                        else
+                        {
+                            stopAll();
+                        }
                     }
-
                     if (currentMonster == 2)
                     {
-                        if (hero.getShieldCollisionBox().Intersects(monsterTwo.getCollisionBox()))
-                        {
-                            hero.questionUp();
-                            hero.deactivateShield();
-                            currentMonster = 1;
-                            monsterTwo.setX((int)(2600*scale));
-                            monsterTwo.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
-                            showQuestion = true;
-                        }
-
-                        if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                        if (input.getLastInput().Equals(""))
                         {
                             stopAll();
                         }
-
-                        text.Update(monsterTwo.getFactorOne(), monsterTwo.getFactorTwo(), input.getCurrentInput(), correctInARow, worldStage);
+                        else if (monsterTwo.getExpectedAnswer() == Int32.Parse(input.getLastInput()))
+                        {
+                            hero.shieldAnimate();
+                            hero.activateShield();
+                            showQuestion = false;
+                            answerDone = false;
+                            correctInARow++;
+                        }
+                        else
+                        {
+                            stopAll();
+                        }
                     }
-                }                
-            }
+                }
+
+                if (currentMonster == 1)
+                {
+                    if (hero.getShieldCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                    {
+                        hero.questionUp();
+                        hero.deactivateShield();
+                        currentMonster = 2;
+                        monsterOne.setX((int)(2600*scale));
+                        monsterOne.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
+                        showQuestion = true;
+                    }
+
+                    if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                    {
+                        stopAll();
+                    }
+
+                    text.Update(monsterOne.getFactorOne(), monsterOne.getFactorTwo(), input.getCurrentInput(), correctInARow, worldStage);
+                }
+
+                if (currentMonster == 2)
+                {
+                    if (hero.getShieldCollisionBox().Intersects(monsterTwo.getCollisionBox()))
+                    {
+                        hero.questionUp();
+                        hero.deactivateShield();
+                        currentMonster = 1;
+                        monsterTwo.setX((int)(2600*scale));
+                        monsterTwo.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
+                        showQuestion = true;
+                    }
+
+                    if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                    {
+                        stopAll();
+                    }
+
+                    text.Update(monsterTwo.getFactorOne(), monsterTwo.getFactorTwo(), input.getCurrentInput(), correctInARow, worldStage);
+                }
+            }                
+            
             return false;
         }
 

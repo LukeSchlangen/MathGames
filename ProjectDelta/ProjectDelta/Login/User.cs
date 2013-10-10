@@ -34,5 +34,8 @@ namespace ProjectDelta
 
         [DynamoDBProperty("SKILL")]
         public string skill { get; set; }
+
+        [DynamoDBProperty("WORLD_1")]
+        public int worldOne { get; set; }
     }
 }

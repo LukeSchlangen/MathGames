@@ -42,15 +42,15 @@ namespace ProjectDelta
         public void LoadContent(ContentManager content)
         {
             font = content.Load<SpriteFont>("large_input_font");
-            questionFontPosition = new Vector2(200*scale, 600*scale);
-            correctAnswerCountPosition = new Vector2(1700 * scale, 50 * scale);
+            questionFontPosition = new Vector2(375*scale, 660*scale);
+            correctAnswerCountPosition = new Vector2(1250 * scale, 50 * scale);
             congratsPosition = new Vector2((1920/16) * scale, (1080/2) * scale);
         }
 
         public void Update(int factorOne, int factorTwo, string myAnswer, int answerCount, int stage)
         {            
             question = factorOne + " + " + factorTwo + " = " + myAnswer;
-            correctAnswerCount = answerCount + "";
+            correctAnswerCount = "Stage " + stage + ": " + answerCount + "/10";
             congrats = "Congratulations on finishing stage " + stage + "! \n Press SPACE to continue forward!";
         }
 
