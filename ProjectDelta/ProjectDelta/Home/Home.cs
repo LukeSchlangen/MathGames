@@ -31,6 +31,10 @@ namespace ProjectDelta
         private HomeInput input;
         private HomeText text;
 
+        private Texture2D mainMenuBox;
+
+        private Vector2 mainMenuBoxPosition;
+
         public void Initialize(float scale)
         {
             this.scale = scale;
@@ -38,11 +42,13 @@ namespace ProjectDelta
             text = new HomeText(scale);
         }
 
-        public void LoadContent(ContentManager content)
+        public void LoadContent(ContentManager content, int screenHeight, int screenWidth)
         {
             input.LoadContent(content);
             text.LoadContent(content);
             background = content.Load<Texture2D>("Login/login_background");
+            mainMenuBox = content.Load<Texture2D>("home/main_menu");
+            mainMenuBoxPosition = new Vector2((screenWidth / 2 - mainMenuBox.Width * scale / 2), (screenHeight / 2 - mainMenuBox.Height * scale / 2)); //hardcoded values for screenwidth and screenheight need to be replaced
         }
 
         public int Update(GameTime gameTime)
@@ -61,6 +67,7 @@ namespace ProjectDelta
         {
             spriteBatch.Draw(background, new Vector2(), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             text.Draw(spriteBatch);
+            spriteBatch.Draw(mainMenuBox, mainMenuBoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         public void resetUpdate()

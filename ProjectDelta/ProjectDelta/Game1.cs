@@ -162,7 +162,7 @@ namespace ProjectDelta
                 {
                     state = State.Home;
                     loginContentManager.Unload();
-                    home.LoadContent(homeContentManager);
+                    home.LoadContent(homeContentManager, screenHeight, screenWidth);
                     success = false;
                 }
             }
@@ -189,7 +189,7 @@ namespace ProjectDelta
                 {
                     state = State.Home;
                     world101ContentManager.Unload();
-                    home.LoadContent(homeContentManager);
+                    home.LoadContent(homeContentManager, screenHeight, screenWidth);
                     success = false;
                     world101.resetWorld();
                 }
