@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Diagnostics;
 
@@ -21,7 +22,7 @@ using Amazon.DynamoDBv2.DataModel;
 
 namespace ProjectDelta
 {
-    class Level1Input
+    class HomeInput
     {
         float scale;
 
@@ -34,7 +35,7 @@ namespace ProjectDelta
         string input = "";
         string lastInput = "";
 
-        public Level1Input(float scale)
+        public HomeInput(float scale)
         {
             this.scale = scale;
         }
@@ -155,5 +156,9 @@ namespace ProjectDelta
             return lastInput;
         }
 
+        public void resetLastInput()
+        {
+            lastInput = "";
+        }
     }
 }

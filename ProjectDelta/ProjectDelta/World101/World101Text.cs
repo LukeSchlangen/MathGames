@@ -21,7 +21,7 @@ using Amazon.DynamoDBv2.DataModel;
 
 namespace ProjectDelta
 {
-    class Text
+    class World101Text
     {
         SpriteFont font;
         Vector2 questionFontPosition;
@@ -44,14 +44,14 @@ namespace ProjectDelta
             font = content.Load<SpriteFont>("large_input_font");
             questionFontPosition = new Vector2(375*scale, 660*scale);
             correctAnswerCountPosition = new Vector2(1250 * scale, 50 * scale);
-            congratsPosition = new Vector2((1920/16) * scale, (1080/2) * scale);
+            congratsPosition = new Vector2((1920/16) * scale, (1080/4) * scale);
         }
 
         public void Update(int factorOne, int factorTwo, string myAnswer, int answerCount, int stage)
         {            
             question = factorOne + " + " + factorTwo + " = " + myAnswer;
             correctAnswerCount = "Stage " + stage + ": " + answerCount + "/10";
-            congrats = "Congratulations on finishing stage " + stage + "! \n Press SPACE to continue forward!";
+            congrats = "Congratulations on finishing stage " + stage + "! \nPress SPACE to continue forward.\nPress ESC to return home.";
         }
 
         public void Draw(SpriteBatch spriteBatch)

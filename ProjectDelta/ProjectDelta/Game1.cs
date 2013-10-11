@@ -33,8 +33,8 @@ namespace ProjectDelta
         {
             //add any relevant game states here
             Login,
-            World1,
             Home,
+            World101,
             Exit,
         }
 
@@ -53,12 +53,17 @@ namespace ProjectDelta
         private DynamoDBContext context;
 
         public State state;
+        private bool success;
         
         private Login login;
-        private World1 world1;
+        private Home home;
+        private World101 world101;
 
+        //ContentManagers: One manager for each set of 
+        //content (worlds, login, home, etc)
         ContentManager loginContentManager;
-        ContentManager level1ContentManager;
+        ContentManager homeContentManager;
+        ContentManager world101ContentManager;
         
         public Game1()
         {
@@ -66,7 +71,8 @@ namespace ProjectDelta
             Content.RootDirectory = "Content";
 
             loginContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
-            level1ContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
+            homeContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
+            world101ContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
 
             screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
@@ -104,13 +110,15 @@ namespace ProjectDelta
             //state = State.Level1;
 
             login = new Login(context);
-            world1 = new World1(context);
+            home = new Home();
+            world101 = new World101(context);
 
             //when we initialize the login screen (and any screens
             //from here on out), we pass in the scale value to allow
             //us to scale the textures
             login.Initialize(scale);
-            world1.Initialize(scale);
+            home.Initialize(scale);
+            world101.Initialize(scale);
 
             base.Initialize();
         }
@@ -146,29 +154,44 @@ namespace ProjectDelta
             //General Architecture:
             //Use the state variable to track where in the game
             //the user is and what needs to be updated
-            
+
             if (state == State.Login)
             {
-                bool success = login.Update(gameTime);
+                success = login.Update(gameTime);
                 if (success == true)
                 {
-                    state = State.World1;
+                    state = State.Home;
                     loginContentManager.Unload();
-                    world1.LoadContent(Content);
+                    home.LoadContent(homeContentManager);
+                    success = false;
                 }
             }
 
             if (state == State.Home)
             {
+                int whereTo = home.Update(gameTime);
 
+                if (whereTo == 101)
+                {
+                    state = State.World101;
+                    homeContentManager.Unload();
+                    world101.LoadContent(world101ContentManager);
+                    success = false;
+                    whereTo = 0;
+                    home.resetUpdate();
+                }               
             }
 
-            if (state == State.World1)
+            if (state == State.World101)
             {
-                bool success = world1.Update(gameTime);
+                bool success = world101.Update(gameTime);
                 if (success == true)
                 {
                     state = State.Home;
+                    world101ContentManager.Unload();
+                    home.LoadContent(homeContentManager);
+                    success = false;
+                    world101.resetWorld();
                 }
             }
 
@@ -198,13 +221,12 @@ namespace ProjectDelta
             
             if (state == State.Home)
             {
-                //home screen code
-                login = null;   
+                home.Draw(spriteBatch);      
             }
 
-            if (state == State.World1)
+            if (state == State.World101)
             {
-                world1.Draw(spriteBatch);
+                world101.Draw(spriteBatch);
             }
 
             if (state == State.Exit)

@@ -21,7 +21,7 @@ using Amazon.DynamoDBv2.DataModel;
 
 namespace ProjectDelta
 {
-    class Level1Monster
+    class World101Monster
     {
         private Texture2D monster;
         private Vector2 position;
@@ -32,7 +32,7 @@ namespace ProjectDelta
         private int factorOne;
         private int factorTwo;
 
-        public Level1Monster(int x, int y, float scale, float speed)
+        public World101Monster(int x, int y, float scale, float speed)
         {
             this.scale = scale;
             this.speed = speed;

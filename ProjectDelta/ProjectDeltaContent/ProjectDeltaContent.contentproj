@@ -313,6 +313,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Home\" />
     <Folder Include="Level2\" />
   </ItemGroup>
   <ItemGroup>
