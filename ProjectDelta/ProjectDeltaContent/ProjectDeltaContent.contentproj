@@ -313,7 +313,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Home\" />
     <Folder Include="Level2\" />
   </ItemGroup>
   <ItemGroup>
@@ -349,6 +348,18 @@
       <Name>level1_background_music</Name>
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Home\main_menu.png">
+      <Name>main_menu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Home\start_next_level_button.png">
+      <Name>start_next_level_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
