@@ -26,38 +26,46 @@ namespace ProjectDelta
     {
         private float scale;
 
-        private Texture2D background;
-
-        private HomeInput input;
         private HomeText text;
 
-        private Texture2D mainMenuBox;
+        //Mouse states
+        private MouseState current;
+        private MouseState previous;
 
+        //Textures
+        private Texture2D background;
+        private Texture2D mainMenuBox;
+        private Texture2D nextLevelButton;
+
+        //Vectors
         private Vector2 mainMenuBoxPosition;
+        private Vector2 nextLevelButtonPosition;
+
+        //Collision Boxes
+        private Rectangle nextLevelButtonCollisionBox;
 
         public void Initialize(float scale)
         {
             this.scale = scale;
-            input = new HomeInput(scale);
             text = new HomeText(scale);
         }
 
         public void LoadContent(ContentManager content, int screenHeight, int screenWidth)
         {
-            input.LoadContent(content);
-            text.LoadContent(content);
+            text.LoadContent(content, screenHeight, screenWidth);
             background = content.Load<Texture2D>("Login/login_background");
-            mainMenuBox = content.Load<Texture2D>("home/main_menu");
+            mainMenuBox = content.Load<Texture2D>("Home/main_menu");
+            nextLevelButton = content.Load<Texture2D>("Home/start_next_level_button");
             mainMenuBoxPosition = new Vector2((screenWidth / 2 - mainMenuBox.Width * scale / 2), (screenHeight / 2 - mainMenuBox.Height * scale / 2)); //hardcoded values for screenwidth and screenheight need to be replaced
+            nextLevelButtonPosition = new Vector2((screenWidth / 2 - nextLevelButton.Width * scale / 2), (screenHeight / 2 +  (125 * scale)));
+            nextLevelButtonCollisionBox = new Rectangle(((int)(nextLevelButtonPosition.X)), ((int)(nextLevelButtonPosition.Y)), (int)(nextLevelButton.Width), (nextLevelButton.Height));
         }
 
         public int Update(GameTime gameTime)
         {
-            input.Update(gameTime);
-            text.Update(input.getCurrentInput());
-            if (!input.getLastInput().Equals(""))
+            if (checkClick())
             {
-                return Int32.Parse(input.getLastInput());
+                return 101;
             }
 
             return 0;
@@ -66,13 +74,23 @@ namespace ProjectDelta
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(background, new Vector2(), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            text.Draw(spriteBatch);
             spriteBatch.Draw(mainMenuBox, mainMenuBoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(nextLevelButton, nextLevelButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            text.Draw(spriteBatch);
         }
 
-        public void resetUpdate()
+        private bool checkClick()
         {
-            input.resetLastInput();
+            previous = current;
+            current = Mouse.GetState();
+            Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
+
+            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(nextLevelButtonCollisionBox))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

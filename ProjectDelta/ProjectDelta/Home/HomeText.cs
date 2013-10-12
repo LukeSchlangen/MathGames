@@ -24,36 +24,48 @@ namespace ProjectDelta
 {
     class HomeText
     {
-        SpriteFont font;
-        Vector2 worldFontPosition;
+        SpriteFont welcomeFont;
+        SpriteFont skillFont;
+
+        Vector2 welcomePosition;
+        Vector2 skillPosition;
 
         float scale;
-
-        string world = "";
-
-
+        
+        string welcome = "";
+        string skill = "";
 
         public HomeText(float scale)
         {
             this.scale = scale;
         }
 
-        public void LoadContent(ContentManager content)
+        public void LoadContent(ContentManager content, int screenHeight, int screenWidth)
         {
-            font = content.Load<SpriteFont>("large_input_font");
-            worldFontPosition = new Vector2(375 * scale, 660 * scale);
-                    }
+            welcome = "Welcome back " + Game1.globalUser.username + "!";
+            skill = getSkillValue() + "";
+            welcomeFont = content.Load<SpriteFont>("small_input_font");
+            skillFont = content.Load<SpriteFont>("tiny_input_font");
+            welcomePosition = new Vector2(screenWidth / 2 - (welcomeFont.MeasureString(welcome).X) / 2 * scale, 300 * scale);  
+            skillPosition = new Vector2(screenWidth / 2 - (skillFont.MeasureString(skill).X) / 2 * scale, 765 * scale);
+        }
 
         public void Update(String whereTo)
         {
-            world = "Travel to world: " + whereTo;
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, world, worldFontPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-
+            spriteBatch.DrawString(welcomeFont, welcome, welcomePosition, Color.Black, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(skillFont, skill, skillPosition, Color.Black, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
+        private int getSkillValue()
+        {
+            int skillValue = Game1.globalUser.world101;
+
+            return skillValue;
+        }
     }
 }

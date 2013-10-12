@@ -78,8 +78,8 @@ namespace ProjectDelta
             screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
             //For Tom debug
-            //screenWidth = 1366;
-            //screenHeight = 768;
+            screenWidth = 1366;
+            screenHeight = 768;
 
             //this specifies the actual resolution that the game displays at
             //we want to leave this at the natural screen resolution
@@ -178,7 +178,6 @@ namespace ProjectDelta
                     world101.LoadContent(world101ContentManager);
                     success = false;
                     whereTo = 0;
-                    home.resetUpdate();
                 }               
             }
 

@@ -435,6 +435,42 @@
       <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\large_input_font.xnb</Output>
       <Time>2013-10-09T21:55:29.8037542-05:00</Time>
     </Item>
+    <Item>
+      <Source>Home\main_menu.png</Source>
+      <Name>Home\main_menu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\main_menu.xnb</Output>
+      <Time>2013-10-11T19:41:04.9756733-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Home\start_next_level_button.png</Source>
+      <Name>Home\start_next_level_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\start_next_level_button.xnb</Output>
+      <Time>2013-10-11T19:41:04.9776734-05:00</Time>
+    </Item>
+    <Item>
+      <Source>small_input_font.spritefont</Source>
+      <Name>small_input_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\small_input_font.xnb</Output>
+      <Time>2013-10-11T22:59:36.0259464-05:00</Time>
+    </Item>
+    <Item>
+      <Source>tiny_input_font.spritefont</Source>
+      <Name>tiny_input_font</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\tiny_input_font.xnb</Output>
+      <Time>2013-10-11T23:20:40.4722686-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{29FBEE7A-53F1-459E-83FD-87CAFE9C4818}</ContentProjectGUID>
