@@ -58,7 +58,7 @@ namespace ProjectDelta
             nextLevelButton = content.Load<Texture2D>("Home/start_next_level_button");
             mainMenuBoxPosition = new Vector2((screenWidth / 2 - mainMenuBox.Width * scale / 2), (screenHeight / 2 - mainMenuBox.Height * scale / 2)); //hardcoded values for screenwidth and screenheight need to be replaced
             nextLevelButtonPosition = new Vector2((screenWidth / 2 - nextLevelButton.Width * scale / 2), (screenHeight / 2 +  (125 * scale)));
-            nextLevelButtonCollisionBox = new Rectangle(((int)(nextLevelButtonPosition.X)), ((int)(nextLevelButtonPosition.Y)), (int)(nextLevelButton.Width), (nextLevelButton.Height));
+            nextLevelButtonCollisionBox = new Rectangle(((int)(nextLevelButtonPosition.X)), ((int)(nextLevelButtonPosition.Y)), (int) (nextLevelButton.Width * scale), (int) (nextLevelButton.Height * scale));
         }
 
         public int Update(GameTime gameTime)
