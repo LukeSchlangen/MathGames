@@ -111,6 +111,7 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
+            Debug.WriteLine(hero.getHeroCollisionBox().X + " " + monsterOne.getCollisionBox().X + " " + monsterTwo.getCollisionBox().X + " "+ currentMonster);
             if (correctInARow >= COUNT_TO_CONTINUE)
             {
                 stopAll();
@@ -221,7 +222,7 @@ namespace ProjectDelta
                         showQuestion = true;
                     }
 
-                    if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                    if (hero.getHeroCollisionBox().Intersects(monsterTwo.getCollisionBox()))
                     {
                         stopAll();
                     }
