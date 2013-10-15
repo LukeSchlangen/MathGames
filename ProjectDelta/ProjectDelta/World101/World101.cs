@@ -77,6 +77,7 @@ namespace ProjectDelta
 
         private bool answerDone = false;
         private bool showQuestion = true;
+        private bool badInput = false;
 
         public World101(DynamoDBContext context)
         {
@@ -129,7 +130,7 @@ namespace ProjectDelta
                     }
                     worldStage++;
                     correctInARow = 0;
-                    resetStage();
+                    resetStageSuccess();
                 }
                 if (keyboard.IsKeyDown(Keys.Escape))
                 {
@@ -144,7 +145,6 @@ namespace ProjectDelta
                 updateExtraObjects(gameTime);
                 cycleBackground(gameTime);
                 hero.Update(gameTime);
-
 
                 monsterOne.Update(gameTime);
                 monsterTwo.Update(gameTime);
@@ -170,6 +170,7 @@ namespace ProjectDelta
                         else
                         {
                             stopAll();
+                            badInput = true;
                         }
                     }
                     if (currentMonster == 2)
@@ -189,12 +190,14 @@ namespace ProjectDelta
                         else
                         {
                             stopAll();
+                            badInput = true;
                         }
                     }
                 }
 
                 if (currentMonster == 1)
                 {
+                    Debug.WriteLine("NOW HERE");
                     if (hero.getShieldCollisionBox().Intersects(monsterOne.getCollisionBox()))
                     {
                         hero.questionUp();
@@ -208,6 +211,17 @@ namespace ProjectDelta
                     if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
                     {
                         stopAll();
+
+                        KeyboardState keyboard = Keyboard.GetState();
+                        if (keyboard.IsKeyDown(Keys.Space))
+                        {
+                            correctInARow = 0;
+                            resetStageFailure();
+                        }
+                        if (keyboard.IsKeyDown(Keys.Escape))
+                        {
+                            return true;
+                        }
                     }
 
                     world101Text.Update(monsterOne.getFactorOne(), monsterOne.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
@@ -228,9 +242,34 @@ namespace ProjectDelta
                     if (hero.getHeroCollisionBox().Intersects(monsterTwo.getCollisionBox()))
                     {
                         stopAll();
+
+                        KeyboardState keyboard = Keyboard.GetState();
+                        if (keyboard.IsKeyDown(Keys.Space))
+                        {
+                            correctInARow = 0;
+                            resetStageFailure();
+                        }
+                        if (keyboard.IsKeyDown(Keys.Escape))
+                        {
+                            return true;
+                        }
                     }
 
                     world101Text.Update(monsterTwo.getFactorOne(), monsterTwo.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
+                }
+
+                if (badInput)
+                {
+                    KeyboardState keyboard = Keyboard.GetState();
+                    if (keyboard.IsKeyDown(Keys.Space))
+                    {
+                        correctInARow = 0;
+                        resetStageFailure();
+                    }
+                    if (keyboard.IsKeyDown(Keys.Escape))
+                    {
+                        return true;
+                    }
                 }
             }                
             
@@ -360,7 +399,7 @@ namespace ProjectDelta
             spriteBatch.Draw(shipFour, shipFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
-        private void resetStage()
+        private void resetStageSuccess()
         {
             monsterOne.setX((int)(1600*scale));
             monsterTwo.setX((int)(2600*scale));
@@ -370,11 +409,30 @@ namespace ProjectDelta
             planetSpeed = backupPlanetSpeed;
             hero.live();
             hero.questionUp();
-            hero.deactivateShield();
+            hero.deactivateShield(); //On success we need to deactivate the shield
             monsterOne.setFactors(random.Next(0, worldStage+1), random.Next(0, worldStage+1));
             monsterTwo.setFactors(random.Next(0, worldStage+1), random.Next(0, worldStage+1));
             currentMonster = 1;
             showQuestion = true;
+        }
+
+        private void resetStageFailure()
+        {
+            monsterOne.setX((int)(1600 * scale));
+            monsterTwo.setX((int)(2600 * scale));
+            backgroundSpeed = backupBackgroundSpeed;
+            monsterOne.setSpeed(backgroundSpeed);
+            monsterTwo.setSpeed(backgroundSpeed);
+            planetSpeed = backupPlanetSpeed;
+            hero.live();
+            hero.questionUp();
+            //hero.deactivateShield(); //On failure don't deactivate the shield
+            monsterOne.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
+            monsterTwo.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
+            currentMonster = 1;
+            showQuestion = true;
+            badInput = false;
+
         }
 
         public void resetWorld()
@@ -392,6 +450,7 @@ namespace ProjectDelta
             monsterTwo.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
             currentMonster = 1;
             showQuestion = true;
+            badInput = false;
             correctInARow = 0;
             worldStage = 1;
         }
