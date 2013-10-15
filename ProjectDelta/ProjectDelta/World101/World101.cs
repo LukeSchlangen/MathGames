@@ -97,8 +97,9 @@ namespace ProjectDelta
 
         //Specifies which content is loaded for level 1
 
-        public void LoadContent(ContentManager content)
+        public void LoadContent(ContentManager content, int worldStage)
         {
+            this.worldStage = worldStage;
             loadExtraObjects(content);
             world101Input.LoadContent(content);
             hero.LoadContent(content);
@@ -111,7 +112,6 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
-            Debug.WriteLine(hero.getHeroCollisionBox().X + " " + monsterOne.getCollisionBox().X + " " + monsterTwo.getCollisionBox().X + " "+ currentMonster);
             if (correctInARow >= COUNT_TO_CONTINUE)
             {
                 stopAll();
@@ -122,8 +122,11 @@ namespace ProjectDelta
                     {
                         return true;
                     }
-                    Game1.globalUser.world101 = worldStage;
-                    context.Save<User>(Game1.globalUser);
+                    if (worldStage > Game1.globalUser.world101)
+                    {
+                        Game1.globalUser.world101 = worldStage;
+                        context.Save<User>(Game1.globalUser);
+                    }
                     worldStage++;
                     correctInARow = 0;
                     resetStage();

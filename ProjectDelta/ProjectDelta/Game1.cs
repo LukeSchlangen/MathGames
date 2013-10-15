@@ -175,7 +175,7 @@ namespace ProjectDelta
                 {
                     state = State.World101;
                     homeContentManager.Unload();
-                    world101.LoadContent(world101ContentManager);
+                    world101.LoadContent(world101ContentManager, globalUser.world101 + 1);
                     success = false;
                     whereTo = 0;
                 }               
