@@ -60,7 +60,7 @@ namespace ProjectDelta
             heroPosition = new Vector2(275 * scale, 800 * scale);
             heroAnimation = new Animation(heroRunning, heroPosition, 5, 5, scale, 10f);
             heroCollisionBox = new Rectangle((int)((heroPosition.X) - 100*scale), (int)(heroPosition.Y), (int)(heroAnimation.getWidth()*scale), heroAnimation.getHeight());
-            shieldPosition.X = heroAnimation.getAnimationPosition().X;
+            shieldPosition.X = heroAnimation.getAnimationPosition().X - 40*scale;
             shieldPosition.Y = heroAnimation.getAnimationPosition().Y - 200 * scale;
             shieldAnimation = new Animation(shield, shieldPosition, 3, 3, scale, 30f);
             shieldCollisionBox = new Rectangle(((int)(shieldPosition.X) + (int)(275*scale)), ((int)(shieldPosition.Y)), (int)(100*scale), (int)(1000*scale));

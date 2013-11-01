@@ -29,13 +29,21 @@ namespace ProjectDelta
         private float speed = 0f;
         private float scale;
 
+        private int y;
         private int factorOne;
         private int factorTwo;
+        private int deathTrajectory;
+
+        private bool dead;
+        
+        private Random random = new Random();
 
         public World101Monster(int x, int y, float scale, float speed)
         {
             this.scale = scale;
             this.speed = speed;
+            this.y = y;
+
             position = new Vector2(x*scale, y*scale);
         }
 
@@ -47,7 +55,22 @@ namespace ProjectDelta
 
         public void Update(GameTime gameTime)
         {
-            position.X -= 5/2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (position.X > 2000)
+            {
+                dead = false;
+                position.Y = y * scale;
+            }
+
+            if (dead)
+            {
+                position.X += 40 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                position.Y += deathTrajectory * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            }
+            else
+            {
+                position.X -= 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale;
+            }
             collisionBox.Y = (int)position.Y;
             collisionBox.X = (int)position.X;
         }
@@ -61,6 +84,25 @@ namespace ProjectDelta
         {
             this.factorOne = factorOne;
             this.factorTwo = factorTwo;
+        }
+
+        public void monsterDeath()
+        {
+            dead = true;
+            deathTrajectory = random.Next(0, 2);
+            switch (deathTrajectory)
+            {
+                case 1:
+                deathTrajectory = -55;
+                break;
+                case 2:
+                deathTrajectory = -15;
+                break;
+                default:
+                deathTrajectory = 25;
+                break;
+            }
+
         }
 
         public int getFactorOne()

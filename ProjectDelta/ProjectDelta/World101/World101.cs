@@ -203,7 +203,8 @@ namespace ProjectDelta
                         hero.questionUp();
                         hero.deactivateShield();
                         currentMonster = 2;
-                        monsterOne.setX((int)(2600*scale));
+                        monsterOne.monsterDeath();
+                        //monsterOne.setX((int)(2600*scale));
                         monsterOne.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
                         showQuestion = true;
                     }
@@ -234,7 +235,8 @@ namespace ProjectDelta
                         hero.questionUp();
                         hero.deactivateShield();
                         currentMonster = 1;
-                        monsterTwo.setX((int)(2600*scale));
+                        monsterTwo.monsterDeath();
+                        //monsterTwo.setX((int)(2600*scale));
                         monsterTwo.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
                         showQuestion = true;
                     }
