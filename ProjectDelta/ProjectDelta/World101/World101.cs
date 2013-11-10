@@ -84,11 +84,11 @@ namespace ProjectDelta
             this.context = context;
         }
 
-        public void Initialize(float scale)
+        public void Initialize(float scale, int screenX)
         {
             this.scale = scale;
-            monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed);
-            monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed);
+            monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
+            monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
             hero = new Hero();
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
@@ -197,7 +197,6 @@ namespace ProjectDelta
 
                 if (currentMonster == 1)
                 {
-                    Debug.WriteLine("NOW HERE");
                     if (hero.getShieldCollisionBox().Intersects(monsterOne.getCollisionBox()))
                     {
                         hero.questionUp();

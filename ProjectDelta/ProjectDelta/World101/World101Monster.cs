@@ -33,16 +33,18 @@ namespace ProjectDelta
         private int factorOne;
         private int factorTwo;
         private int deathTrajectory;
+        private int screenX;
 
         private bool dead;
         
         private Random random = new Random();
 
-        public World101Monster(int x, int y, float scale, float speed)
+        public World101Monster(int x, int y, float scale, float speed, int screenX)
         {
             this.scale = scale;
             this.speed = speed;
             this.y = y;
+            this.screenX = screenX;
 
             position = new Vector2(x*scale, y*scale);
         }
@@ -55,7 +57,7 @@ namespace ProjectDelta
 
         public void Update(GameTime gameTime)
         {
-            if (position.X > 2000)
+            if (position.X > screenX + (800*scale))
             {
                 dead = false;
                 position.Y = y * scale;
