@@ -119,7 +119,8 @@ namespace ProjectDelta
             {
                 monsterOne.monsterDeath();
                 monsterTwo.monsterDeath();
-                
+
+                hero.stageSuccess();
                 hero.Update(gameTime);
 
                 monsterOne.Update(gameTime);

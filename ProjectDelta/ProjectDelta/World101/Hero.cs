@@ -29,6 +29,7 @@ namespace ProjectDelta
             Question,
             ShieldAnimation,
             Shield,
+            StageSuccess,
         }
 
         float scale;
@@ -91,12 +92,21 @@ namespace ProjectDelta
             {
                 shieldAnimation.getLastState();
             }
+            //if (state == State.StageSuccess)
+            //{
+                heroPosition.X = 2000;
+            //}
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            heroAnimation.Draw(spriteBatch);            
-            shieldAnimation.Draw(spriteBatch);          
+
+            heroAnimation.Draw(spriteBatch);
+     
+            if (state != State.StageSuccess)
+            {
+                shieldAnimation.Draw(spriteBatch);
+            }
         }
 
         public void shieldAnimate()
@@ -113,6 +123,11 @@ namespace ProjectDelta
         public void shieldCollision()
         {
             state = State.Question;
+        }
+
+        public void stageSuccess()
+        {
+            state = State.StageSuccess;
         }
 
         public void die()
