@@ -23,7 +23,7 @@ namespace ProjectDelta
 {
     public class World101
     {
-        private static int COUNT_TO_CONTINUE = 10;
+        private static int COUNT_TO_CONTINUE = 1;
         private static int MAX_STAGE = 10;
         DynamoDBContext context;
         private int correctInARow = 0;
@@ -41,6 +41,7 @@ namespace ProjectDelta
         private Texture2D backgroundOne;
         private Texture2D backgroundTwo;
         private Texture2D backgroundThree;
+        private Texture2D creature;
         private Texture2D planetTwo;
         private Texture2D planetThree;
         private Texture2D planetFour;
@@ -51,6 +52,7 @@ namespace ProjectDelta
         private Texture2D shipFour;
 
         //Vectors for level 1
+        private Vector2 creaturePosition;
         private Vector2 movingPlanetTwoPosition;
         private Vector2 movingPlanetThreePosition;
         private Vector2 movingPlanetFourPosition;
@@ -115,7 +117,15 @@ namespace ProjectDelta
         {
             if (correctInARow >= COUNT_TO_CONTINUE)
             {
-                stopAll();
+                monsterOne.monsterDeath();
+                monsterTwo.monsterDeath();
+                
+                hero.Update(gameTime);
+
+                monsterOne.Update(gameTime);
+                monsterTwo.Update(gameTime);
+                
+                //stopAll();
                 KeyboardState keyboard = Keyboard.GetState();
                 if(keyboard.IsKeyDown(Keys.Space))
                 {
