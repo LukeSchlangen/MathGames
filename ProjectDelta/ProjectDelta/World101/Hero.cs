@@ -32,7 +32,8 @@ namespace ProjectDelta
             StageSuccess,
         }
 
-        float scale;
+        private float scale;
+        private float speed = .1f;
         private State state;
         private bool shieldAnimationDone = false;
 
@@ -92,20 +93,25 @@ namespace ProjectDelta
             {
                 shieldAnimation.getLastState();
             }
-            //if (state == State.StageSuccess)
-            //{
-                heroPosition.X = 2000;
-            //}
+
+            if (state == State.StageSuccess)
+            {
+                Debug.WriteLine("AND HERE");
+                heroPosition.X += 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;;
+            }
+
+            heroCollisionBox.X = (int)heroPosition.X;
+            heroCollisionBox.Y = (int)heroPosition.Y;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
 
-            heroAnimation.Draw(spriteBatch);
+            heroAnimation.Draw(spriteBatch, heroPosition);
      
             if (state != State.StageSuccess)
             {
-                shieldAnimation.Draw(spriteBatch);
+                shieldAnimation.Draw(spriteBatch, shieldPosition);
             }
         }
 

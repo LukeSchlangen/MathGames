@@ -1,3 +1,7 @@
+Content\input_font.xnb
+Content\large_input_font.xnb
+Content\small_input_font.xnb
+Content\tiny_input_font.xnb
 Content\Login\login_background.xnb
 Content\Login\login_box.xnb
 Content\Login\signup_button.xnb
@@ -20,19 +24,16 @@ Content\Login\password_match_error.xnb
 Content\Login\internet_connection_error.xnb
 Content\Level1\resized_level1_background.xnb
 Content\General\Hero\math_hero_character.xnb
-Content\Login\Background_Music.xnb
-Content\Login\Background_Music.wma
 Content\General\Hero\running_sprite_sheet_5x10.xnb
 Content\General\Hero\running_sprite_sheet_5x5.xnb
 Content\Level1\background_level_1a.xnb
 Content\Level1\background_level_1b.xnb
 Content\Level1\background_level_1c.xnb
-Content\input_font.xnb
 Content\General\Hero\shield.xnb
 Content\General\Monsters\enemy_1.xnb
 Content\General\Monsters\enemy_2.xnb
-Content\General\Shield\QShield_sheet.xnb
 Content\General\Hero\jumping_sprite_sheet.xnb
+Content\General\Shield\QShield_sheet.xnb
 Content\General\Shield\question_box_explosion_sheet.xnb
 Content\General\Ships\good_drone.xnb
 Content\General\Ships\enemy_drones.xnb
@@ -45,13 +46,8 @@ Content\General\Shield\question_box_to_shield_sheet_2x3.xnb
 Content\General\Shield\question_box_image.xnb
 Content\General\Shield\shield_image.xnb
 Content\General\Shield\question_box_to_shield_3x3.xnb
-Content\large_input_font.xnb
-Content\Level1\level1_background_music.xnb
-Content\Level1\level1_background_music.wma
 Content\Home\main_menu.xnb
 Content\Home\start_next_level_button.xnb
-Content\small_input_font.xnb
-Content\tiny_input_font.xnb
 Content\Creatures\Creature 1\Creature 1 Stage 1.xnb
 Content\Creatures\Creature 1\Creature 1 Stage 10.xnb
 Content\Creatures\Creature 1\Creature 1 Stage 11.xnb
@@ -68,3 +64,7 @@ Content\Creatures\Creature 1\Creature 1 Stage 6.xnb
 Content\Creatures\Creature 1\Creature 1 Stage 7.xnb
 Content\Creatures\Creature 1\Creature 1 Stage 8.xnb
 Content\Creatures\Creature 1\Creature 1 Stage 9.xnb
+Content\Login\Background_Music.xnb
+Content\Login\Background_Music.wma
+Content\Level1\level1_background_music.xnb
+Content\Level1\level1_background_music.wma

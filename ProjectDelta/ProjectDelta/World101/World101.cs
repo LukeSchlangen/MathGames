@@ -119,13 +119,14 @@ namespace ProjectDelta
             {
                 monsterOne.monsterDeath();
                 monsterTwo.monsterDeath();
+                monsterOne.Update(gameTime);
+                monsterTwo.Update(gameTime);
 
                 hero.stageSuccess();
                 hero.Update(gameTime);
 
-                monsterOne.Update(gameTime);
-                monsterTwo.Update(gameTime);
-                
+                updateExtraObjects(gameTime);
+
                 //stopAll();
                 KeyboardState keyboard = Keyboard.GetState();
                 if(keyboard.IsKeyDown(Keys.Space))

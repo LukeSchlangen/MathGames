@@ -145,7 +145,7 @@ namespace ProjectDelta
             return spriteWidth;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, Vector2 position)
         {
             spriteBatch.Draw(spriteSheet, position, spriteRectangle, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
