@@ -38,6 +38,7 @@ namespace ProjectDelta
         private bool shieldAnimationDone = false;
 
         private Vector2 heroPosition;
+        private Vector2 heroStartingPosition;
         private Vector2 shieldPosition;
 
         private Texture2D heroRunning;
@@ -59,7 +60,8 @@ namespace ProjectDelta
         {
             heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
             shield = content.Load<Texture2D>("General/Shield/question_box_to_shield_3x3");
-            heroPosition = new Vector2(275 * scale, 800 * scale);
+            heroStartingPosition = new Vector2(275*scale, 800*scale);
+            heroPosition = heroStartingPosition;
             heroAnimation = new Animation(heroRunning, heroPosition, 5, 5, scale, 10f);
             heroCollisionBox = new Rectangle((int)((heroPosition.X) - 100*scale), (int)(heroPosition.Y), (int)(heroAnimation.getWidth()*scale), heroAnimation.getHeight());
             shieldPosition.X = heroAnimation.getAnimationPosition().X - 40*scale;
@@ -76,6 +78,7 @@ namespace ProjectDelta
             if (state == State.Question)
             {
                 shieldAnimation.getFirstState();
+                heroPosition = heroStartingPosition;
             }
 
             if (state == State.ShieldAnimation)
@@ -97,7 +100,7 @@ namespace ProjectDelta
             if (state == State.StageSuccess)
             {
                 Debug.WriteLine("AND HERE");
-                heroPosition.X += 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;;
+                heroPosition.X += 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
 
             heroCollisionBox.X = (int)heroPosition.X;
