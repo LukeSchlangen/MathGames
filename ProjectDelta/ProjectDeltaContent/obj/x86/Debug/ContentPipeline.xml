@@ -472,148 +472,148 @@
       <Time>2013-11-25T19:03:32.9959416-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 1.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 1</Name>
+      <Source>Creatures\Creature1\Creature1_Stage1.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 1.xnb</Output>
-      <Time>2013-11-25T19:03:32.669923-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage1.xnb</Output>
+      <Time>2013-11-25T20:49:02.2229527-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 10.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 10</Name>
+      <Source>Creatures\Creature1\Creature1_Stage10.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage10</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 10.xnb</Output>
-      <Time>2013-11-25T19:03:32.6739232-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage10.xnb</Output>
+      <Time>2013-11-25T20:49:02.3929624-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 11.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 11</Name>
+      <Source>Creatures\Creature1\Creature1_Stage11.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage11</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 11.xnb</Output>
-      <Time>2013-11-25T19:03:32.6789235-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage11.xnb</Output>
+      <Time>2013-11-25T20:49:02.3959626-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 12.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 12</Name>
+      <Source>Creatures\Creature1\Creature1_Stage12.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage12</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 12.xnb</Output>
-      <Time>2013-11-25T19:03:32.6839238-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage12.xnb</Output>
+      <Time>2013-11-25T20:49:02.3999628-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 13.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 13</Name>
+      <Source>Creatures\Creature1\Creature1_Stage13.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage13</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 13.xnb</Output>
-      <Time>2013-11-25T19:03:32.6889241-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage13.xnb</Output>
+      <Time>2013-11-25T20:49:02.402963-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 14.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 14</Name>
+      <Source>Creatures\Creature1\Creature1_Stage14.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage14</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 14.xnb</Output>
-      <Time>2013-11-25T19:03:32.6939243-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage14.xnb</Output>
+      <Time>2013-11-25T20:49:02.4069632-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 15.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 15</Name>
+      <Source>Creatures\Creature1\Creature1_Stage15.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage15</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 15.xnb</Output>
-      <Time>2013-11-25T19:03:32.6989246-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage15.xnb</Output>
+      <Time>2013-11-25T20:49:02.4099634-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 16.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 16</Name>
+      <Source>Creatures\Creature1\Creature1_Stage16.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage16</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 16.xnb</Output>
-      <Time>2013-11-25T19:03:32.704925-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage16.xnb</Output>
+      <Time>2013-11-25T20:49:02.4479656-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 2.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 2</Name>
+      <Source>Creatures\Creature1\Creature1_Stage2.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 2.xnb</Output>
-      <Time>2013-11-25T19:03:32.7069251-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage2.xnb</Output>
+      <Time>2013-11-25T20:49:02.2249528-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 3.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 3</Name>
+      <Source>Creatures\Creature1\Creature1_Stage3.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 3.xnb</Output>
-      <Time>2013-11-25T19:03:32.7099253-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage3.xnb</Output>
+      <Time>2013-11-25T20:49:02.245954-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 4.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 4</Name>
+      <Source>Creatures\Creature1\Creature1_Stage4.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 4.xnb</Output>
-      <Time>2013-11-25T19:03:32.7109253-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage4.xnb</Output>
+      <Time>2013-11-25T20:49:02.2709554-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 5.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 5</Name>
+      <Source>Creatures\Creature1\Creature1_Stage5.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 5.xnb</Output>
-      <Time>2013-11-25T19:03:32.7139255-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage5.xnb</Output>
+      <Time>2013-11-25T20:49:02.2999571-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 6.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 6</Name>
+      <Source>Creatures\Creature1\Creature1_Stage6.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage6</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 6.xnb</Output>
-      <Time>2013-11-25T19:03:32.7169257-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage6.xnb</Output>
+      <Time>2013-11-25T20:49:02.3319589-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 7.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 7</Name>
+      <Source>Creatures\Creature1\Creature1_Stage7.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage7</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 7.xnb</Output>
-      <Time>2013-11-25T19:03:32.7199258-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage7.xnb</Output>
+      <Time>2013-11-25T20:49:02.3829619-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 8.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 8</Name>
+      <Source>Creatures\Creature1\Creature1_Stage8.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage8</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 8.xnb</Output>
-      <Time>2013-11-25T19:03:32.7249261-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage8.xnb</Output>
+      <Time>2013-11-25T20:49:02.385962-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 9.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 9</Name>
+      <Source>Creatures\Creature1\Creature1_Stage9.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage9</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 9.xnb</Output>
-      <Time>2013-11-25T19:03:32.7289263-06:00</Time>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage9.xnb</Output>
+      <Time>2013-11-25T20:49:02.3889622-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

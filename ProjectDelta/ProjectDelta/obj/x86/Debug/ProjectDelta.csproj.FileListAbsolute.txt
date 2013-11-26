@@ -182,22 +182,6 @@ C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\s
 C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\tiny_input_font.xnb
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\small_input_font.xnb
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\tiny_input_font.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 1.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 10.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 11.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 12.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 13.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 14.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 15.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 16.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 2.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 3.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 4.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 5.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 6.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 7.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 8.xnb
-C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 9.xnb
 C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\input_font.xnb
 C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\large_input_font.xnb
 C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\small_input_font.xnb
@@ -275,3 +259,19 @@ C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDe
 C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDelta.exe
 C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDelta.pdb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage1.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage10.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage11.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage12.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage13.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage14.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage15.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage16.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage2.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage3.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage4.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage5.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage6.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage7.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage8.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage9.xnb

@@ -377,83 +377,83 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 1.png">
-      <Name>Creature 1 Stage 1</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage1.png">
+      <Name>Creature1_Stage1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 10.png">
-      <Name>Creature 1 Stage 10</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage10.png">
+      <Name>Creature1_Stage10</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 11.png">
-      <Name>Creature 1 Stage 11</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage11.png">
+      <Name>Creature1_Stage11</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 12.png">
-      <Name>Creature 1 Stage 12</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage12.png">
+      <Name>Creature1_Stage12</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 13.png">
-      <Name>Creature 1 Stage 13</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage13.png">
+      <Name>Creature1_Stage13</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 14.png">
-      <Name>Creature 1 Stage 14</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage14.png">
+      <Name>Creature1_Stage14</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 15.png">
-      <Name>Creature 1 Stage 15</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage15.png">
+      <Name>Creature1_Stage15</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 16.png">
-      <Name>Creature 1 Stage 16</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage16.png">
+      <Name>Creature1_Stage16</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 2.png">
-      <Name>Creature 1 Stage 2</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage2.png">
+      <Name>Creature1_Stage2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 3.png">
-      <Name>Creature 1 Stage 3</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage3.png">
+      <Name>Creature1_Stage3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 4.png">
-      <Name>Creature 1 Stage 4</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage4.png">
+      <Name>Creature1_Stage4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 5.png">
-      <Name>Creature 1 Stage 5</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage5.png">
+      <Name>Creature1_Stage5</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 6.png">
-      <Name>Creature 1 Stage 6</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage6.png">
+      <Name>Creature1_Stage6</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 7.png">
-      <Name>Creature 1 Stage 7</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage7.png">
+      <Name>Creature1_Stage7</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 8.png">
-      <Name>Creature 1 Stage 8</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage8.png">
+      <Name>Creature1_Stage8</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Creatures\Creature 1\Creature 1 Stage 9.png">
-      <Name>Creature 1 Stage 9</Name>
+    <Compile Include="Creatures\Creature1\Creature1_Stage9.png">
+      <Name>Creature1_Stage9</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

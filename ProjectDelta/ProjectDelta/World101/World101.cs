@@ -41,7 +41,6 @@ namespace ProjectDelta
         private Texture2D backgroundOne;
         private Texture2D backgroundTwo;
         private Texture2D backgroundThree;
-        private Texture2D creature;
         private Texture2D planetTwo;
         private Texture2D planetThree;
         private Texture2D planetFour;
@@ -52,7 +51,6 @@ namespace ProjectDelta
         private Texture2D shipFour;
 
         //Vectors for level 1
-        private Vector2 creaturePosition;
         private Vector2 movingPlanetTwoPosition;
         private Vector2 movingPlanetThreePosition;
         private Vector2 movingPlanetFourPosition;
@@ -72,6 +70,7 @@ namespace ProjectDelta
         private Hero hero;
         private World101Monster monsterOne;
         private World101Monster monsterTwo;
+        private World101Creature creatureOne;
         private int currentMonster;
         private World101Input world101Input;
         private World101Text world101Text = new World101Text();
@@ -91,6 +90,7 @@ namespace ProjectDelta
             this.scale = scale;
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
+            creatureOne = new World101Creature(2800, 800, scale, backgroundSpeed, screenX);
             hero = new Hero();
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
@@ -108,6 +108,7 @@ namespace ProjectDelta
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
+            creatureOne.LoadContent(content);
             monsterOne.setFactors(random.Next(0,worldStage),random.Next(0,worldStage+1));
             monsterTwo.setFactors(random.Next(0, worldStage), random.Next(0, worldStage+1));
             world101Text.LoadContent(content);
@@ -124,6 +125,8 @@ namespace ProjectDelta
 
                 hero.stageSuccess();
                 hero.Update(gameTime);
+
+                creatureOne.Update(gameTime);
 
                 updateExtraObjects(gameTime);
 
@@ -295,6 +298,7 @@ namespace ProjectDelta
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
             hero.Draw(spriteBatch);
+            creatureOne.Draw(spriteBatch);
             world101Text.DrawAnswerCount(spriteBatch);
             if (showQuestion == true)
             {
