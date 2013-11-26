@@ -452,150 +452,6 @@
       <Time>2013-11-22T03:11:38.5444575-06:00</Time>
     </Item>
     <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 1.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 1.xnb</Output>
-      <Time>2013-11-22T03:11:38.4734535-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 10.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 10</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 10.xnb</Output>
-      <Time>2013-11-22T03:11:38.4754536-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 11.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 11</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 11.xnb</Output>
-      <Time>2013-11-22T03:11:38.4774537-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 12.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 12</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 12.xnb</Output>
-      <Time>2013-11-22T03:11:38.4804539-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 13.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 13</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 13.xnb</Output>
-      <Time>2013-11-22T03:11:38.482454-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 14.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 14</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 14.xnb</Output>
-      <Time>2013-11-22T03:11:38.4844541-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 15.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 15</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 15.xnb</Output>
-      <Time>2013-11-22T03:11:38.4864542-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 16.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 16</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 16.xnb</Output>
-      <Time>2013-11-22T03:11:38.4894544-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 2.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 2.xnb</Output>
-      <Time>2013-11-22T03:11:38.4904545-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 3.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 3.xnb</Output>
-      <Time>2013-11-22T03:11:38.4914545-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 4.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 4</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 4.xnb</Output>
-      <Time>2013-11-22T03:11:38.4914545-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 5.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 5</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 5.xnb</Output>
-      <Time>2013-11-22T03:11:38.4924546-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 6.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 6</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 6.xnb</Output>
-      <Time>2013-11-22T03:11:38.4934546-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 7.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 7</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 7.xnb</Output>
-      <Time>2013-11-22T03:11:38.4954547-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 8.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 8</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 8.xnb</Output>
-      <Time>2013-11-22T03:11:38.4974549-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature 1\Creature 1 Stage 9.png</Source>
-      <Name>Creatures\Creature 1\Creature 1 Stage 9</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature 1\Creature 1 Stage 9.xnb</Output>
-      <Time>2013-11-22T03:11:38.4984549-06:00</Time>
-    </Item>
-    <Item>
       <Source>Login\Background_Music.mp3</Source>
       <Name>Login\Background_Music</Name>
       <Importer>Mp3Importer</Importer>
@@ -614,6 +470,150 @@
       <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.xnb</Output>
       <Extra>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.wma</Extra>
       <Time>2013-11-22T03:11:38.5604585-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage1.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage1.xnb</Output>
+      <Time>2013-11-26T14:18:52.7282188-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage10.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage10.xnb</Output>
+      <Time>2013-11-26T14:18:52.7412195-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage11.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage11.xnb</Output>
+      <Time>2013-11-26T14:18:52.785222-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage12.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage12.xnb</Output>
+      <Time>2013-11-26T14:18:52.7972227-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage13.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage13.xnb</Output>
+      <Time>2013-11-26T14:18:52.9182296-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage14.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage14.xnb</Output>
+      <Time>2013-11-26T14:18:53.0072347-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage15.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage15</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage15.xnb</Output>
+      <Time>2013-11-26T14:18:53.0322362-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage16.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage16.xnb</Output>
+      <Time>2013-11-26T14:18:53.1192411-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage2.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage2.xnb</Output>
+      <Time>2013-11-26T14:18:53.1252415-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage3.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage3.xnb</Output>
+      <Time>2013-11-26T14:18:53.1372422-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage4.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage4.xnb</Output>
+      <Time>2013-11-26T14:18:53.7042746-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage5.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage5.xnb</Output>
+      <Time>2013-11-26T14:18:54.4003144-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage6.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage6.xnb</Output>
+      <Time>2013-11-26T14:18:54.4683183-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage7.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage7.xnb</Output>
+      <Time>2013-11-26T14:18:54.5553233-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage8.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage8.xnb</Output>
+      <Time>2013-11-26T14:18:54.7313333-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\Creature1\Creature1_Stage9.png</Source>
+      <Name>Creatures\Creature1\Creature1_Stage9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage9.xnb</Output>
+      <Time>2013-11-26T14:18:54.7373337-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
