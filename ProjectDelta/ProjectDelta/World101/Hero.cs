@@ -62,8 +62,8 @@ namespace ProjectDelta
             shield = content.Load<Texture2D>("General/Shield/question_box_to_shield_3x3");
             heroStartingPosition = new Vector2(275*scale, 800*scale);
             heroPosition = heroStartingPosition;
-            heroAnimation = new Animation(heroRunning, heroPosition, 5, 5, scale, 10f);
-            heroCollisionBox = new Rectangle((int)((heroPosition.X) - 100*scale), (int)(heroPosition.Y), (int)(heroAnimation.getWidth()*scale), heroAnimation.getHeight());
+            heroAnimation = new Animation(heroRunning, heroStartingPosition, 5, 5, scale, 10f);
+            heroCollisionBox = new Rectangle((int)((heroStartingPosition.X) - 100*scale), (int)(heroStartingPosition.Y), (int)(heroAnimation.getWidth()*scale), heroAnimation.getHeight());
             shieldPosition.X = heroAnimation.getAnimationPosition().X - 40*scale;
             shieldPosition.Y = heroAnimation.getAnimationPosition().Y - 200 * scale;
             shieldAnimation = new Animation(shield, shieldPosition, 3, 3, scale, 30f);
@@ -103,7 +103,7 @@ namespace ProjectDelta
                 heroPosition.X += 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
 
-            heroCollisionBox.X = (int)heroPosition.X;
+            heroCollisionBox.X = (int)(heroPosition.X - 150 * scale);
             heroCollisionBox.Y = (int)heroPosition.Y;
         }
 
