@@ -28,14 +28,15 @@ namespace ProjectDelta
         private Rectangle collisionBox;
         private float speed = 0f;
         private float scale;
+        private float bounceTimerFloat;
 
         private int y;
-        private int factorOne;
-        private int factorTwo;
-        private int deathTrajectory;
+        //private int factorOne;
+        //private int factorTwo;
+        //private int deathTrajectory;
         private int screenX;
 
-        private bool dead;
+        //private bool dead;
 
         private Random random = new Random();
 
@@ -47,6 +48,7 @@ namespace ProjectDelta
             this.screenX = screenX;
 
             position = new Vector2(x * scale, y * scale);
+            bounceTimerFloat = position.X;
         }
 
         public void LoadContent(ContentManager content)
@@ -57,22 +59,14 @@ namespace ProjectDelta
 
         public void Update(GameTime gameTime)
         {
-            //if (position.X > screenX + (800 * scale))
-            //{
-            //    dead = false;
-            //    position.Y = y * scale;
-            //}
-            //if (dead)
-            //{
-            //    position.X += 40 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            //    position.Y += deathTrajectory * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            //}
+
             if (position.X > screenX - (200 * scale))
             {
                 position.X -= 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
-            
-            position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale;
+
+            bounceTimerFloat -= 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            position.Y = y * scale + 10 * (float)Math.Sin(bounceTimerFloat / 15) * scale;
 
             collisionBox.Y = (int)position.Y;
             collisionBox.X = (int)position.X;
@@ -83,46 +77,6 @@ namespace ProjectDelta
             spriteBatch.Draw(creature, position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
-        //public void setFactors(int factorOne, int factorTwo)
-        //{
-        //    this.factorOne = factorOne;
-        //    this.factorTwo = factorTwo;
-        //}
-
-        //public void creatureDeath()
-        //{
-        //    dead = true;
-        //    deathTrajectory = random.Next(0, 2);
-        //    switch (deathTrajectory)
-        //    {
-        //        case 1:
-        //            deathTrajectory = -55;
-        //            break;
-        //        case 2:
-        //            deathTrajectory = -15;
-        //            break;
-        //        default:
-        //            deathTrajectory = 25;
-        //            break;
-        //    }
-
-        //}
-
-        public int getFactorOne()
-        {
-            return factorOne;
-        }
-
-        public int getFactorTwo()
-        {
-            return factorTwo;
-        }
-
-        public int getExpectedAnswer()
-        {
-            return factorOne + factorTwo;
-        }
-
         public Rectangle getCollisionBox()
         {
             return collisionBox;
@@ -131,6 +85,12 @@ namespace ProjectDelta
         public void setSpeed(float speed)
         {
             this.speed = speed;
+        }
+
+        public void displayNewCreature()
+        {
+            //setX((int)(1000 * scale));
+            //setY((int)(200 * scale));
         }
 
         public void setX(int x)

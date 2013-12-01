@@ -23,7 +23,7 @@ namespace ProjectDelta
 {
     public class World101
     {
-        private static int COUNT_TO_CONTINUE = 10;
+        private static int COUNT_TO_CONTINUE = 3;
         private static int MAX_STAGE = 10;
         DynamoDBContext context;
         private int correctInARow = 0;
@@ -90,7 +90,7 @@ namespace ProjectDelta
             this.scale = scale;
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
-            creatureOne = new World101Creature(2800, 800, scale, backgroundSpeed, screenX);
+            creatureOne = new World101Creature(2000, 800, scale, backgroundSpeed, screenX);
             hero = new Hero();
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
@@ -130,6 +130,11 @@ namespace ProjectDelta
 
                 updateExtraObjects(gameTime);
 
+                if (hero.getHeroCollisionBox().Intersects(creatureOne.getCollisionBox()))
+                {
+                    hero.collectCreature();
+                    creatureOne.displayNewCreature();
+                }
                 //stopAll();
                 KeyboardState keyboard = Keyboard.GetState();
                 if(keyboard.IsKeyDown(Keys.Space))
@@ -420,6 +425,7 @@ namespace ProjectDelta
         {
             monsterOne.setX((int)(1600*scale));
             monsterTwo.setX((int)(2600*scale));
+            creatureOne.setX((int)(2000 * scale));
             backgroundSpeed = backupBackgroundSpeed;
             monsterOne.setSpeed(backgroundSpeed);
             monsterTwo.setSpeed(backgroundSpeed);
