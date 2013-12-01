@@ -108,7 +108,7 @@ namespace ProjectDelta
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
-            creatureOne.LoadContent(content);
+            creatureOne.LoadContent(content, worldStage);
             monsterOne.setFactors(random.Next(0,worldStage),random.Next(0,worldStage+1));
             monsterTwo.setFactors(random.Next(0, worldStage), random.Next(0, worldStage+1));
             world101Text.LoadContent(content);

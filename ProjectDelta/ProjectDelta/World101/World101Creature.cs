@@ -26,6 +26,7 @@ namespace ProjectDelta
         private Texture2D creature;
         private Vector2 position;
         private Rectangle collisionBox;
+        private String creatureString;
         private float speed = 0f;
         private float scale;
         private float bounceTimerFloat;
@@ -51,9 +52,10 @@ namespace ProjectDelta
             bounceTimerFloat = position.X;
         }
 
-        public void LoadContent(ContentManager content)
+        public void LoadContent(ContentManager content, int worldStage)
         {
-            creature = content.Load<Texture2D>("Creatures/Creature1/Creature1_Stage1");
+            creatureString = "Creatures/Creature1/Creature1_Stage" + worldStage;
+            creature = content.Load<Texture2D>(creatureString);
             collisionBox = new Rectangle(((int)(position.X - creature.Width / 2)), ((int)(position.Y - creature.Height / 2)), (creature.Width), (creature.Height));
         }
 
