@@ -70,7 +70,6 @@ namespace ProjectDelta
         private Hero hero;
         private World101Monster monsterOne;
         private World101Monster monsterTwo;
-        private World101Creature creatureOne;
         private int currentMonster;
         private World101Input world101Input;
         private World101Text world101Text = new World101Text();
@@ -79,6 +78,7 @@ namespace ProjectDelta
         private bool answerDone = false;
         private bool showQuestion = true;
         private bool badInput = false;
+        private bool heroDead = false;
 
         public World101(DynamoDBContext context)
         {
@@ -90,7 +90,6 @@ namespace ProjectDelta
             this.scale = scale;
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
-            creatureOne = new World101Creature(2800, 800, scale, backgroundSpeed, screenX);
             hero = new Hero();
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
@@ -108,15 +107,28 @@ namespace ProjectDelta
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
-            creatureOne.LoadContent(content);
-            monsterOne.setFactors(random.Next(0,worldStage),random.Next(0,worldStage+1));
-            monsterTwo.setFactors(random.Next(0, worldStage), random.Next(0, worldStage+1));
+            if (worldStage == -1)
+            {
+                monsterOne.setFactors(random.Next(0, 10), random.Next(0, 10));
+                monsterTwo.setFactors(random.Next(0, 10), random.Next(0, 10));
+            }
+            else
+            {
+                monsterOne.setFactors(random.Next(0, worldStage), random.Next(0, worldStage + 1));
+                monsterTwo.setFactors(random.Next(0, worldStage), random.Next(0, worldStage + 1));
+            }
             world101Text.LoadContent(content);
+
+            //Play music in repeating loop
+            Song backgroundMusic;
+            backgroundMusic = content.Load<Song>("Level1/level1_background_music");
+            MediaPlayer.Play(backgroundMusic);
+            MediaPlayer.IsRepeating = true;
         }
 
         public bool Update(GameTime gameTime)
         {
-            if (correctInARow >= COUNT_TO_CONTINUE)
+            if (correctInARow >= COUNT_TO_CONTINUE && worldStage != -1)
             {
                 monsterOne.monsterDeath();
                 monsterTwo.monsterDeath();
@@ -126,16 +138,16 @@ namespace ProjectDelta
                 hero.stageSuccess();
                 hero.Update(gameTime);
 
-                creatureOne.Update(gameTime);
-
                 updateExtraObjects(gameTime);
 
                 //stopAll();
                 KeyboardState keyboard = Keyboard.GetState();
                 if(keyboard.IsKeyDown(Keys.Space))
                 {
-                    if (worldStage > MAX_STAGE)
+                    if (worldStage >= MAX_STAGE)
                     {
+                        Game1.globalUser.world101 = MAX_STAGE;
+                        context.Save<User>(Game1.globalUser);
                         return true;
                     }
                     if (worldStage > Game1.globalUser.world101)
@@ -219,13 +231,21 @@ namespace ProjectDelta
                         currentMonster = 2;
                         monsterOne.monsterDeath();
                         //monsterOne.setX((int)(2600*scale));
-                        monsterOne.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
+                        if (worldStage == -1)
+                        {
+                            monsterOne.setFactors(random.Next(0, 10), random.Next(0, 10));
+                        }
+                        else
+                        {
+                            monsterOne.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
+                        }
                         showQuestion = true;
                     }
 
                     if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
                     {
                         stopAll();
+                        heroDead = true;
 
                         KeyboardState keyboard = Keyboard.GetState();
                         if (keyboard.IsKeyDown(Keys.Space))
@@ -251,13 +271,21 @@ namespace ProjectDelta
                         currentMonster = 1;
                         monsterTwo.monsterDeath();
                         //monsterTwo.setX((int)(2600*scale));
-                        monsterTwo.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
+                        if (worldStage == -1)
+                        {
+                            monsterTwo.setFactors(random.Next(0, 10), random.Next(0, 10));
+                        }
+                        else
+                        {
+                            monsterTwo.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
+                        }
                         showQuestion = true;
                     }
 
                     if (hero.getHeroCollisionBox().Intersects(monsterTwo.getCollisionBox()))
                     {
                         stopAll();
+                        heroDead = true;
 
                         KeyboardState keyboard = Keyboard.GetState();
                         if (keyboard.IsKeyDown(Keys.Space))
@@ -298,15 +326,18 @@ namespace ProjectDelta
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
             hero.Draw(spriteBatch);
-            creatureOne.Draw(spriteBatch);
             world101Text.DrawAnswerCount(spriteBatch);
-            if (showQuestion == true)
+            if (showQuestion)
             {
                 world101Text.Draw(spriteBatch);
             }
             if (correctInARow >= COUNT_TO_CONTINUE)
             {
                 world101Text.DrawCongratsMsg(spriteBatch);
+            }
+            if (heroDead)
+            {
+                world101Text.DrawDeadMsg(spriteBatch);
             }
         }
 
@@ -354,12 +385,6 @@ namespace ProjectDelta
             backgroundOnePosition = new Vector2(0, 0);
             backgroundTwoPosition = new Vector2(backgroundOne.Width * scale, 0);
             backgroundThreePosition = new Vector2(backgroundOne.Width * scale + backgroundTwo.Width * scale, 0);
-
-            //Play music in repeating loop
-            Song backgroundMusic;
-            backgroundMusic = content.Load<Song>("Level1/level1_background_music");
-            MediaPlayer.Play(backgroundMusic);
-            MediaPlayer.IsRepeating = true;
 
             planetTwo = content.Load<Texture2D>("General/Planets/planet_2");
             planetThree = content.Load<Texture2D>("General/Planets/planet_3");
@@ -431,6 +456,7 @@ namespace ProjectDelta
             monsterTwo.setFactors(random.Next(0, worldStage+1), random.Next(0, worldStage+1));
             currentMonster = 1;
             showQuestion = true;
+            heroDead = false;
         }
 
         private void resetStageFailure()
@@ -449,7 +475,7 @@ namespace ProjectDelta
             currentMonster = 1;
             showQuestion = true;
             badInput = false;
-
+            heroDead = false;
         }
 
         public void resetWorld()
@@ -468,6 +494,7 @@ namespace ProjectDelta
             currentMonster = 1;
             showQuestion = true;
             badInput = false;
+            heroDead = false;
             correctInARow = 0;
             worldStage = 1;
         }

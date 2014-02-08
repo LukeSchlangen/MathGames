@@ -3,3 +3,4 @@ C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta
 C:\Users\Tom\Desktop\MathGames\MathGames\ProjectDelta\ProjectDeltaContent\obj\x86\Debug\ProjectDeltaContent.contentprojResolveAssemblyReference.cache
 C:\Users\Tom\Desktop\MathGames\ProjectDelta\ProjectDeltaContent\obj\x86\Debug\ProjectDeltaContent.contentprojResolveAssemblyReference.cache
 C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDeltaContent\obj\x86\Debug\ProjectDeltaContent.contentprojResolveAssemblyReference.cache
+C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDeltaContent\obj\x86\Debug\ProjectDeltaContent.contentprojResolveAssemblyReference.cache

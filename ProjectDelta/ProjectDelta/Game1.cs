@@ -29,6 +29,7 @@ namespace ProjectDelta
     {
         public static User globalUser = null;
 
+
         public enum State
         {
             //add any relevant game states here
@@ -78,8 +79,8 @@ namespace ProjectDelta
             screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
             //For Tom debug
-            //screenWidth = 1366;
-            //screenHeight = 768;
+            screenWidth = 1366;
+            screenHeight = 768;
 
             //this specifies the actual resolution that the game displays at
             //we want to leave this at the natural screen resolution
@@ -91,6 +92,10 @@ namespace ProjectDelta
             
             //Initializes the game in full screen
             //graphics.IsFullScreen = true;
+
+            this.IsFixedTimeStep = false;
+
+            
         }
 
         /// <summary>
@@ -175,7 +180,15 @@ namespace ProjectDelta
                 {
                     state = State.World101;
                     homeContentManager.Unload();
-                    world101.LoadContent(world101ContentManager, globalUser.world101 + 1);
+                    int difficulty = globalUser.world101;
+                    if (difficulty < 10)
+                    {
+                        world101.LoadContent(world101ContentManager, globalUser.world101 + 1);
+                    }
+                    else
+                    {
+                        world101.LoadContent(world101ContentManager, -1);
+                    }
                     success = false;
                     whereTo = 0;
                 }               

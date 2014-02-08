@@ -28,11 +28,13 @@ namespace ProjectDelta
         Vector2 correctAnswerCountPosition;
         Vector2 congratsPosition;
         
+        
         float scale;
 
         string question = "";
         string correctAnswerCount = "";
         string congrats = "";
+        string dead = "";
 
         public void Initialize(float scale)
         {
@@ -48,10 +50,20 @@ namespace ProjectDelta
         }
 
         public void Update(int factorOne, int factorTwo, string myAnswer, int answerCount, int stage)
-        {            
-            question = factorOne + " + " + factorTwo + " = " + myAnswer;
-            correctAnswerCount = "Stage " + stage + ": " + answerCount + "/10";
-            congrats = "Congratulations on finishing stage " + stage + "! \nPress SPACE to continue forward.\nPress ESC to return home.";
+        {
+            if (stage == -1)
+            {
+                question = factorOne + " + " + factorTwo + " = " + myAnswer;
+                correctAnswerCount = "Endless score: " + answerCount;
+                dead = "You vanquished " + answerCount + " monsters before death! \nPress SPACE to try again.\nPress ESC to return home.";
+            }
+            else
+            {
+                question = factorOne + " + " + factorTwo + " = " + myAnswer;
+                correctAnswerCount = "Stage " + stage + ": " + answerCount + "/10";
+                congrats = "Congratulations on finishing stage " + stage + "! \nPress SPACE to continue forward.\nPress ESC to return home.";
+                dead = "Aww... you died. \nPress SPACE to try again.\nPress ESC to return home.";
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -67,6 +79,11 @@ namespace ProjectDelta
         public void DrawCongratsMsg(SpriteBatch spriteBatch)
         {
             spriteBatch.DrawString(font, congrats, congratsPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+        }
+
+        public void DrawDeadMsg(SpriteBatch spriteBatch)
+        {
+            spriteBatch.DrawString(font, dead, congratsPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
     }
 }

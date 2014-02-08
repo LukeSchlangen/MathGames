@@ -7,7 +7,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\input_font.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\input_font.xnb</Output>
       <Time>2013-11-22T03:11:38.5764594-06:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\large_input_font.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\large_input_font.xnb</Output>
       <Time>2013-11-22T03:11:38.5764594-06:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\small_input_font.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\small_input_font.xnb</Output>
       <Time>2013-11-22T03:11:38.5804596-06:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\tiny_input_font.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\tiny_input_font.xnb</Output>
       <Time>2013-11-22T03:11:38.5804596-06:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_background.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_background.xnb</Output>
       <Time>2013-11-22T03:11:38.5724592-06:00</Time>
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_box.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_box.xnb</Output>
       <Time>2013-11-22T03:11:38.5724592-06:00</Time>
     </Item>
     <Item>
@@ -61,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_button.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_button.xnb</Output>
       <Time>2013-11-22T03:11:38.5754593-06:00</Time>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_box.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_box.xnb</Output>
       <Time>2013-11-22T03:11:38.5744593-06:00</Time>
     </Item>
     <Item>
@@ -79,7 +79,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\back_button.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\back_button.xnb</Output>
       <Time>2013-11-22T03:11:38.569459-06:00</Time>
     </Item>
     <Item>
@@ -88,7 +88,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_error.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_error.xnb</Output>
       <Time>2013-11-22T03:11:38.5734592-06:00</Time>
     </Item>
     <Item>
@@ -97,7 +97,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_highlighter.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_highlighter.xnb</Output>
       <Time>2013-11-22T03:11:38.5734592-06:00</Time>
     </Item>
     <Item>
@@ -106,7 +106,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_5.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_5.xnb</Output>
       <Time>2013-11-22T03:11:38.5114557-06:00</Time>
     </Item>
     <Item>
@@ -115,7 +115,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_ship_1.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_ship_1.xnb</Output>
       <Time>2013-11-22T03:11:38.5424574-06:00</Time>
     </Item>
     <Item>
@@ -124,7 +124,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_1.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_1.xnb</Output>
       <Time>2013-11-22T03:11:38.5084555-06:00</Time>
     </Item>
     <Item>
@@ -133,7 +133,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_2.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_2.xnb</Output>
       <Time>2013-11-22T03:11:38.5084555-06:00</Time>
     </Item>
     <Item>
@@ -142,7 +142,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_3.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_3.xnb</Output>
       <Time>2013-11-22T03:11:38.5094555-06:00</Time>
     </Item>
     <Item>
@@ -151,7 +151,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_4.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_4.xnb</Output>
       <Time>2013-11-22T03:11:38.5104556-06:00</Time>
     </Item>
     <Item>
@@ -160,7 +160,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_ship_1.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_ship_1.xnb</Output>
       <Time>2013-11-22T03:11:38.5434575-06:00</Time>
     </Item>
     <Item>
@@ -169,7 +169,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\background_stars.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\background_stars.xnb</Output>
       <Time>2013-11-22T03:11:38.570459-06:00</Time>
     </Item>
     <Item>
@@ -178,7 +178,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_fleet_1.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_fleet_1.xnb</Output>
       <Time>2013-11-22T03:11:38.535457-06:00</Time>
     </Item>
     <Item>
@@ -187,7 +187,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_fleet_1.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_fleet_1.xnb</Output>
       <Time>2013-11-22T03:11:38.5434575-06:00</Time>
     </Item>
     <Item>
@@ -196,7 +196,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_error.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_error.xnb</Output>
       <Time>2013-11-22T03:11:38.5754593-06:00</Time>
     </Item>
     <Item>
@@ -205,7 +205,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\password_match_error.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\password_match_error.xnb</Output>
       <Time>2013-11-22T03:11:38.5744593-06:00</Time>
     </Item>
     <Item>
@@ -214,7 +214,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\internet_connection_error.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\internet_connection_error.xnb</Output>
       <Time>2013-11-22T03:11:38.5714591-06:00</Time>
     </Item>
     <Item>
@@ -223,7 +223,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\resized_level1_background.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\resized_level1_background.xnb</Output>
       <Time>2013-11-22T03:11:38.5634586-06:00</Time>
     </Item>
     <Item>
@@ -232,7 +232,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\math_hero_character.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\math_hero_character.xnb</Output>
       <Time>2013-11-22T03:11:38.500455-06:00</Time>
     </Item>
     <Item>
@@ -241,7 +241,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x10.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x10.xnb</Output>
       <Time>2013-11-22T03:11:38.5044553-06:00</Time>
     </Item>
     <Item>
@@ -250,7 +250,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x5.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x5.xnb</Output>
       <Time>2013-11-22T03:11:38.5054553-06:00</Time>
     </Item>
     <Item>
@@ -259,7 +259,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1a.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1a.xnb</Output>
       <Time>2013-11-22T03:11:38.5484578-06:00</Time>
     </Item>
     <Item>
@@ -268,7 +268,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1b.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1b.xnb</Output>
       <Time>2013-11-22T03:11:38.552458-06:00</Time>
     </Item>
     <Item>
@@ -277,7 +277,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1c.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1c.xnb</Output>
       <Time>2013-11-22T03:11:38.5564582-06:00</Time>
     </Item>
     <Item>
@@ -286,7 +286,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\shield.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\shield.xnb</Output>
       <Time>2013-11-22T03:11:38.5064554-06:00</Time>
     </Item>
     <Item>
@@ -295,7 +295,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_1.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_1.xnb</Output>
       <Time>2013-11-22T03:11:38.5064554-06:00</Time>
     </Item>
     <Item>
@@ -304,7 +304,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_2.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_2.xnb</Output>
       <Time>2013-11-22T03:11:38.5074554-06:00</Time>
     </Item>
     <Item>
@@ -313,7 +313,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\jumping_sprite_sheet.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\jumping_sprite_sheet.xnb</Output>
       <Time>2013-11-22T03:11:38.500455-06:00</Time>
     </Item>
     <Item>
@@ -322,7 +322,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_sheet.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_sheet.xnb</Output>
       <Time>2013-11-22T03:11:38.5134558-06:00</Time>
     </Item>
     <Item>
@@ -331,7 +331,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_explosion_sheet.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_explosion_sheet.xnb</Output>
       <Time>2013-11-22T03:11:38.5204562-06:00</Time>
     </Item>
     <Item>
@@ -340,7 +340,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_drone.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_drone.xnb</Output>
       <Time>2013-11-22T03:11:38.5424574-06:00</Time>
     </Item>
     <Item>
@@ -349,7 +349,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_drones.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_drones.xnb</Output>
       <Time>2013-11-22T03:11:38.534457-06:00</Time>
     </Item>
     <Item>
@@ -358,7 +358,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_1.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_1.xnb</Output>
       <Time>2013-11-22T03:11:38.5124557-06:00</Time>
     </Item>
     <Item>
@@ -367,7 +367,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet.xnb</Output>
       <Time>2013-11-22T03:11:38.5254565-06:00</Time>
     </Item>
     <Item>
@@ -376,7 +376,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_3x5.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_3x5.xnb</Output>
       <Time>2013-11-22T03:11:38.5314568-06:00</Time>
     </Item>
     <Item>
@@ -385,7 +385,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_6x5.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_6x5.xnb</Output>
       <Time>2013-11-22T03:11:38.5334569-06:00</Time>
     </Item>
     <Item>
@@ -394,7 +394,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_3x3.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_3x3.xnb</Output>
       <Time>2013-11-22T03:11:38.5294567-06:00</Time>
     </Item>
     <Item>
@@ -403,7 +403,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_2x3.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_2x3.xnb</Output>
       <Time>2013-11-22T03:11:38.5274566-06:00</Time>
     </Item>
     <Item>
@@ -412,7 +412,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_image.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_image.xnb</Output>
       <Time>2013-11-22T03:11:38.5214562-06:00</Time>
     </Item>
     <Item>
@@ -421,7 +421,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\shield_image.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\shield_image.xnb</Output>
       <Time>2013-11-22T03:11:38.5334569-06:00</Time>
     </Item>
     <Item>
@@ -430,7 +430,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_3x3.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_3x3.xnb</Output>
       <Time>2013-11-22T03:11:38.5234563-06:00</Time>
     </Item>
     <Item>
@@ -439,7 +439,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\main_menu.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\main_menu.xnb</Output>
       <Time>2013-11-22T03:11:38.5444575-06:00</Time>
     </Item>
     <Item>
@@ -448,28 +448,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\start_next_level_button.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\start_next_level_button.xnb</Output>
       <Time>2013-11-22T03:11:38.5444575-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Login\Background_Music.mp3</Source>
-      <Name>Login\Background_Music</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\Background_Music.xnb</Output>
-      <Extra>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\Background_Music.wma</Extra>
-      <Time>2013-11-22T03:11:38.569459-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Level1\level1_background_music.mp3</Source>
-      <Name>Level1\level1_background_music</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.xnb</Output>
-      <Extra>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.wma</Extra>
-      <Time>2013-11-22T03:11:38.5604585-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage1.png</Source>
@@ -477,7 +457,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage1.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage1.xnb</Output>
       <Time>2013-11-26T14:18:52.7282188-06:00</Time>
     </Item>
     <Item>
@@ -486,7 +466,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage10.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage10.xnb</Output>
       <Time>2013-11-26T14:18:52.7412195-06:00</Time>
     </Item>
     <Item>
@@ -495,7 +475,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage11.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage11.xnb</Output>
       <Time>2013-11-26T14:18:52.785222-06:00</Time>
     </Item>
     <Item>
@@ -504,7 +484,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage12.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage12.xnb</Output>
       <Time>2013-11-26T14:18:52.7972227-06:00</Time>
     </Item>
     <Item>
@@ -513,7 +493,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage13.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage13.xnb</Output>
       <Time>2013-11-26T14:18:52.9182296-06:00</Time>
     </Item>
     <Item>
@@ -522,7 +502,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage14.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage14.xnb</Output>
       <Time>2013-11-26T14:18:53.0072347-06:00</Time>
     </Item>
     <Item>
@@ -531,7 +511,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage15.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage15.xnb</Output>
       <Time>2013-11-26T14:18:53.0322362-06:00</Time>
     </Item>
     <Item>
@@ -540,7 +520,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage16.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage16.xnb</Output>
       <Time>2013-11-26T14:18:53.1192411-06:00</Time>
     </Item>
     <Item>
@@ -549,7 +529,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage2.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage2.xnb</Output>
       <Time>2013-11-26T14:18:53.1252415-06:00</Time>
     </Item>
     <Item>
@@ -558,7 +538,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage3.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage3.xnb</Output>
       <Time>2013-11-26T14:18:53.1372422-06:00</Time>
     </Item>
     <Item>
@@ -567,7 +547,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage4.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage4.xnb</Output>
       <Time>2013-11-26T14:18:53.7042746-06:00</Time>
     </Item>
     <Item>
@@ -576,7 +556,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage5.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage5.xnb</Output>
       <Time>2013-11-26T14:18:54.4003144-06:00</Time>
     </Item>
     <Item>
@@ -585,7 +565,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage6.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage6.xnb</Output>
       <Time>2013-11-26T14:18:54.4683183-06:00</Time>
     </Item>
     <Item>
@@ -594,7 +574,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage7.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage7.xnb</Output>
       <Time>2013-11-26T14:18:54.5553233-06:00</Time>
     </Item>
     <Item>
@@ -603,7 +583,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage8.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage8.xnb</Output>
       <Time>2013-11-26T14:18:54.7313333-06:00</Time>
     </Item>
     <Item>
@@ -612,8 +592,28 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage9.xnb</Output>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage9.xnb</Output>
       <Time>2013-11-26T14:18:54.7373337-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Login\Background_Music.mp3</Source>
+      <Name>Login\Background_Music</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\Background_Music.xnb</Output>
+      <Extra>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\Background_Music.wma</Extra>
+      <Time>2013-11-22T03:11:38.569459-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\level1_background_music.mp3</Source>
+      <Name>Level1\level1_background_music</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.xnb</Output>
+      <Extra>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.wma</Extra>
+      <Time>2013-11-22T03:11:38.5604585-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -622,10 +622,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDeltaContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Tom\Desktop\Tom's Stuff\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDeltaContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

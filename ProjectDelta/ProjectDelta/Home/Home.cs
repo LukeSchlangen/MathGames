@@ -59,6 +59,12 @@ namespace ProjectDelta
             mainMenuBoxPosition = new Vector2((screenWidth / 2 - mainMenuBox.Width * scale / 2), (screenHeight / 2 - mainMenuBox.Height * scale / 2)); //hardcoded values for screenwidth and screenheight need to be replaced
             nextLevelButtonPosition = new Vector2((screenWidth / 2 - nextLevelButton.Width * scale / 2), (screenHeight / 2 +  (125 * scale)));
             nextLevelButtonCollisionBox = new Rectangle(((int)(nextLevelButtonPosition.X)), ((int)(nextLevelButtonPosition.Y)), (int) (nextLevelButton.Width * scale), (int) (nextLevelButton.Height * scale));
+
+            // Play music in repeating loop
+            Song backgroundMusic;
+            backgroundMusic = content.Load<Song>("Login/Background_Music");
+            MediaPlayer.Play(backgroundMusic);
+            MediaPlayer.IsRepeating = true;  
         }
 
         public int Update(GameTime gameTime)

@@ -48,8 +48,6 @@ Content\General\Shield\shield_image.xnb
 Content\General\Shield\question_box_to_shield_3x3.xnb
 Content\Home\main_menu.xnb
 Content\Home\start_next_level_button.xnb
-Content\Login\Background_Music.xnb
-Content\Level1\level1_background_music.xnb
 Content\Creatures\Creature1\Creature1_Stage1.xnb
 Content\Creatures\Creature1\Creature1_Stage10.xnb
 Content\Creatures\Creature1\Creature1_Stage11.xnb
@@ -66,5 +64,7 @@ Content\Creatures\Creature1\Creature1_Stage6.xnb
 Content\Creatures\Creature1\Creature1_Stage7.xnb
 Content\Creatures\Creature1\Creature1_Stage8.xnb
 Content\Creatures\Creature1\Creature1_Stage9.xnb
+Content\Login\Background_Music.xnb
+Content\Level1\level1_background_music.xnb
 Content\Login\Background_Music.wma
 Content\Level1\level1_background_music.wma
