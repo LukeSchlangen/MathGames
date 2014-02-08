@@ -36,6 +36,7 @@ namespace ProjectDelta
         private float speed = .1f;
         private State state;
         private bool shieldAnimationDone = false;
+        private bool heroStop = false;
 
         private Vector2 heroPosition;
         private Vector2 heroStartingPosition;
@@ -79,6 +80,7 @@ namespace ProjectDelta
             {
                 shieldAnimation.getFirstState();
                 heroPosition = heroStartingPosition;
+                heroStop = false;
             }
 
             if (state == State.ShieldAnimation)
@@ -97,9 +99,8 @@ namespace ProjectDelta
                 shieldAnimation.getLastState();
             }
 
-            if (state == State.StageSuccess)
+            if (state == State.StageSuccess && heroStop == false)
             {
-                Debug.WriteLine("AND HERE");
                 heroPosition.X += 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
 
@@ -137,6 +138,12 @@ namespace ProjectDelta
         public void stageSuccess()
         {
             state = State.StageSuccess;
+        }
+
+        public void collectCreature()
+        {
+            heroAnimation.stopAnimation();
+            heroStop = true;
         }
 
         public void die()

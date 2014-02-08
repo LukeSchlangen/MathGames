@@ -23,7 +23,7 @@ namespace ProjectDelta
 {
     public class World101
     {
-        private static int COUNT_TO_CONTINUE = 10;
+        private static int COUNT_TO_CONTINUE = 3;
         private static int MAX_STAGE = 10;
         DynamoDBContext context;
         private int correctInARow = 0;
@@ -107,6 +107,7 @@ namespace ProjectDelta
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
+
             if (worldStage == -1)
             {
                 monsterOne.setFactors(random.Next(0, 10), random.Next(0, 10));
@@ -117,6 +118,7 @@ namespace ProjectDelta
                 monsterOne.setFactors(random.Next(0, worldStage), random.Next(0, worldStage + 1));
                 monsterTwo.setFactors(random.Next(0, worldStage), random.Next(0, worldStage + 1));
             }
+
             world101Text.LoadContent(content);
 
             //Play music in repeating loop
