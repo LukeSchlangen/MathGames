@@ -21,7 +21,7 @@ using Amazon.DynamoDBv2.DataModel;
 
 namespace ProjectDelta
 {
-    public class World101
+    public class World201
     {
         private static int COUNT_TO_CONTINUE = 3;
         private static int MAX_STAGE = 10;
@@ -68,11 +68,11 @@ namespace ProjectDelta
         private MouseState previous;
 
         private Hero hero;
-        private World101Monster monsterOne;
-        private World101Monster monsterTwo;
+        private World201Monster monsterOne;
+        private World201Monster monsterTwo;
         private int currentMonster;
-        private World101Input world101Input;
-        private World101Text world101Text = new World101Text();
+        private World201Input world201Input;
+        private World201Text world201Text = new World201Text();
         private Random random = new Random();
 
         private bool answerDone = false;
@@ -80,7 +80,7 @@ namespace ProjectDelta
         private bool badInput = false;
         private bool heroDead = false;
 
-        public World101(DynamoDBContext context)
+        public World201(DynamoDBContext context)
         {
             this.context = context;
         }
@@ -88,12 +88,12 @@ namespace ProjectDelta
         public void Initialize(float scale, int screenX)
         {
             this.scale = scale;
-            monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
-            monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
+            monsterOne = new World201Monster(1600, 800, scale, backgroundSpeed, screenX);
+            monsterTwo = new World201Monster(2600, 800, scale, backgroundSpeed, screenX);
             hero = new Hero();
             hero.Initialize(scale);
-            world101Input = new World101Input(scale);
-            world101Text.Initialize(scale);
+            world201Input = new World201Input(scale);
+            world201Text.Initialize(scale);
             currentMonster = 1;
         }
 
@@ -103,7 +103,7 @@ namespace ProjectDelta
         {
             this.worldStage = worldStage;
             loadExtraObjects(content);
-            world101Input.LoadContent(content);
+            world201Input.LoadContent(content);
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
@@ -119,7 +119,7 @@ namespace ProjectDelta
                 monsterTwo.setFactors(random.Next(0, worldStage), random.Next(0, worldStage + 1));
             }
 
-            world101Text.LoadContent(content);
+            world201Text.LoadContent(content);
 
             //Play music in repeating loop
             Song backgroundMusic;
@@ -178,17 +178,17 @@ namespace ProjectDelta
                 monsterOne.Update(gameTime);
                 monsterTwo.Update(gameTime);
 
-                answerDone = world101Input.Update(gameTime);
+                answerDone = world201Input.Update(gameTime);
 
                 if (answerDone == true)
                 {
                     if (currentMonster == 1)
                     {
-                        if (world101Input.getLastInput().Equals(""))
+                        if (world201Input.getLastInput().Equals(""))
                         {
                             
                         }
-                        else if (monsterOne.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
+                        else if (monsterOne.getExpectedAnswer() == Int32.Parse(world201Input.getLastInput()))
                         {
                             hero.shieldAnimate();
                             hero.activateShield();
@@ -204,11 +204,11 @@ namespace ProjectDelta
                     }
                     if (currentMonster == 2)
                     {
-                        if (world101Input.getLastInput().Equals(""))
+                        if (world201Input.getLastInput().Equals(""))
                         {
                             
                         }
-                        else if (monsterTwo.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
+                        else if (monsterTwo.getExpectedAnswer() == Int32.Parse(world201Input.getLastInput()))
                         {
                             hero.shieldAnimate();
                             hero.activateShield();
@@ -261,7 +261,7 @@ namespace ProjectDelta
                         }
                     }
 
-                    world101Text.Update(monsterOne.getFactorOne(), monsterOne.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
+                    world201Text.Update(monsterOne.getFactorOne(), monsterOne.getFactorTwo(), world201Input.getCurrentInput(), correctInARow, worldStage);
                 }
 
                 if (currentMonster == 2)
@@ -301,7 +301,7 @@ namespace ProjectDelta
                         }
                     }
 
-                    world101Text.Update(monsterTwo.getFactorOne(), monsterTwo.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
+                    world201Text.Update(monsterTwo.getFactorOne(), monsterTwo.getFactorTwo(), world201Input.getCurrentInput(), correctInARow, worldStage);
                 }
 
                 if (badInput)
@@ -328,18 +328,18 @@ namespace ProjectDelta
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
             hero.Draw(spriteBatch);
-            world101Text.DrawAnswerCount(spriteBatch);
+            world201Text.DrawAnswerCount(spriteBatch);
             if (showQuestion)
             {
-                world101Text.Draw(spriteBatch);
+                world201Text.Draw(spriteBatch);
             }
             if (correctInARow >= COUNT_TO_CONTINUE)
             {
-                world101Text.DrawCongratsMsg(spriteBatch);
+                world201Text.DrawCongratsMsg(spriteBatch);
             }
             if (heroDead)
             {
-                world101Text.DrawDeadMsg(spriteBatch);
+                world201Text.DrawDeadMsg(spriteBatch);
             }
         }
 

@@ -37,5 +37,14 @@ namespace ProjectDelta
 
         [DynamoDBProperty("WORLD_101")]
         public int world101 { get; set; }
+
+        [DynamoDBProperty("WORLD_101_ENDLESS")]
+        public int world101Endless { get; set; }
+
+        [DynamoDBProperty("WORLD_201")]
+        public int world201 { get; set; }
+
+        [DynamoDBProperty("WORLD_201_ENDLESS")]
+        public int world201Endless { get; set; }
     }
 }

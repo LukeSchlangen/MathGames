@@ -351,8 +351,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Home\main_menu.png">
-      <Name>main_menu</Name>
+    <Compile Include="Home\menu_box.png">
+      <Name>menu_box</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

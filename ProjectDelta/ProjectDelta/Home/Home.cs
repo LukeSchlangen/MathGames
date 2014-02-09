@@ -34,15 +34,20 @@ namespace ProjectDelta
 
         //Textures
         private Texture2D background;
-        private Texture2D mainMenuBox;
-        private Texture2D nextLevelButton;
+        private Texture2D world101Box;
+        private Texture2D world201Box;
+        private Texture2D world101Button;
+        private Texture2D world201Button;
 
         //Vectors
-        private Vector2 mainMenuBoxPosition;
-        private Vector2 nextLevelButtonPosition;
+        private Vector2 world101BoxPosition;
+        private Vector2 world201BoxPosition;
+        private Vector2 world101ButtonPosition;
+        private Vector2 world201ButtonPosition;
 
         //Collision Boxes
-        private Rectangle nextLevelButtonCollisionBox;
+        private Rectangle world101ButtonCollisionBox;
+        private Rectangle world201ButtonCollisionBox;
 
         public void Initialize(float scale)
         {
@@ -54,11 +59,16 @@ namespace ProjectDelta
         {
             text.LoadContent(content, screenHeight, screenWidth);
             background = content.Load<Texture2D>("Login/login_background");
-            mainMenuBox = content.Load<Texture2D>("Home/main_menu");
-            nextLevelButton = content.Load<Texture2D>("Home/start_next_level_button");
-            mainMenuBoxPosition = new Vector2((screenWidth / 2 - mainMenuBox.Width * scale / 2), (screenHeight / 2 - mainMenuBox.Height * scale / 2)); //hardcoded values for screenwidth and screenheight need to be replaced
-            nextLevelButtonPosition = new Vector2((screenWidth / 2 - nextLevelButton.Width * scale / 2), (screenHeight / 2 +  (125 * scale)));
-            nextLevelButtonCollisionBox = new Rectangle(((int)(nextLevelButtonPosition.X)), ((int)(nextLevelButtonPosition.Y)), (int) (nextLevelButton.Width * scale), (int) (nextLevelButton.Height * scale));
+            world101Box = content.Load<Texture2D>("Home/menu_box");
+            world201Box = content.Load<Texture2D>("Home/menu_box");
+            world101Button = content.Load<Texture2D>("Home/start_next_level_button");
+            world201Button = content.Load<Texture2D>("Home/start_next_level_button");
+            world101BoxPosition = new Vector2((screenWidth / 4 - world101Box.Width * scale / 2), (screenHeight / 2 - world101Box.Height * scale / 2));
+            world201BoxPosition = new Vector2((3*screenWidth / 4 - world101Box.Width * scale / 2), (screenHeight / 2 - world101Box.Height * scale / 2));
+            world101ButtonPosition = new Vector2((screenWidth / 4 - world101Button.Width * scale / 2), (screenHeight / 2 +  (125 * scale)));
+            world201ButtonPosition = new Vector2((3*screenWidth / 4 - world101Button.Width * scale / 2), (screenHeight / 2 + (125 * scale)));
+            world101ButtonCollisionBox = new Rectangle(((int)(world101ButtonPosition.X)), ((int)(world101ButtonPosition.Y)), (int) (world101Button.Width * scale), (int) (world101Button.Height * scale));
+            world201ButtonCollisionBox = new Rectangle(((int)(world201ButtonPosition.X)), ((int)(world201ButtonPosition.Y)), (int)(world201Button.Width * scale), (int)(world201Button.Height * scale));
 
             // Play music in repeating loop
             Song backgroundMusic;
@@ -69,34 +79,35 @@ namespace ProjectDelta
 
         public int Update(GameTime gameTime)
         {
-            if (checkClick())
-            {
-                return 101;
-            }
-
-            return 0;
+            return checkClick();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(background, new Vector2(), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(mainMenuBox, mainMenuBoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(nextLevelButton, nextLevelButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(world101Box, world101BoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(world201Box, world201BoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(world101Button, world101ButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(world201Button, world201ButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             text.Draw(spriteBatch);
         }
 
-        private bool checkClick()
+        private int checkClick()
         {
             previous = current;
             current = Mouse.GetState();
             Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
 
-            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(nextLevelButtonCollisionBox))
+            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(world101ButtonCollisionBox))
             {
-                return true;
+                return 101;
+            }
+            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(world201ButtonCollisionBox))
+            {
+                return 201;
             }
 
-            return false;
+            return 0;
         }
     }
 }
