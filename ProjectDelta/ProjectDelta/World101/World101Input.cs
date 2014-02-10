@@ -127,7 +127,7 @@ namespace ProjectDelta
                 prevKeyboard = keyboard;
                 keyboard = Keyboard.GetState();
             }
-            if (keyboard.IsKeyDown(Keys.Enter) && prevKeyboard.IsKeyDown(Keys.Enter) == false)
+            if (keyboard.IsKeyDown(Keys.Enter) && prevKeyboard.IsKeyDown(Keys.Enter) == false && !input.Equals(""))
             {
                 lastInput = input;
                 input = "";
