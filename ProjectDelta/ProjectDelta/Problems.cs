@@ -12,63 +12,42 @@ namespace ProjectDelta
     {
         public static Dictionary<string, int>[] determineProblems()
         {
+            //A *better* example
+
+            //This is the array of dictionary objects that we will return to the game loop
             Dictionary<string, int>[] problemsToReturn = new Dictionary<string, int>[10];
 
-            //Adding some examples to show how to use a dictionary.
-
-            //To add a key/value pair to the array, simply specify which
-            //element you wish to access (problemsToReturn[i]) and then use
-            //the Add function to specify your key/value pair
-
-            Dictionary<string, int> problemsDictionary = new Dictionary<string,int>();
-
-            problemsDictionary.Add("factorOne", 1);
-            problemsDictionary.Add("factorTwo", 2);
-            problemsDictionary.Add("answer", 3);
-
-
-
-
-            //When you want to get the contents from a specific Dictionary
-            //Choose once again the element you wish to access (problemsToReturn[i]) and then
-            //use a pair of [] to specify a key for which value you want
-
-            //int factorOne = problemsToReturn[0]["factorOne"];
-            //int factorTwo = problemsToReturn[0]["factorTwo"];
-            //int answer = problemsToReturn[0]["answer"];
-
-            //You probably won't need to pull the data from them in this class,
-            //but in the game loop you'll need to access the info that you set.
-            //Note: You'll throw an exception if you try to pull a value with an
-            //invalid key, and their won't be a compilation error, so be careful
-
-            //Also realize that because the type of the values all have to be ints
-            //You'll need to parse the operators. 
-            //ex. 0 -> +
-
+            //Let's just use a random number for the time being as our factors
+            Random random = new Random();
 
             //This is where the magic happens...
             //TODO: Your algorithm here.
 
             for (int i = 0; i < 10; i++)
             {
-                problemsDictionary["factorOne"] = i;
-                problemsDictionary["factorTwo"] = i;
-                problemsDictionary["answer"] = problemsDictionary["factorOne"] + problemsDictionary["factorTwo"];
+                //make an instance of the dictionary to be added to the array
+                //this is where I was concerned with scope. If this dictionary
+                //object is outside the for-loop, you end up adding a bunch of the
+                //same keys with different values (i.e. "factorOne"/1, "factorOne"/5)
+                //to the same dictionary
+
+                Dictionary<string, int> problemsDictionary = new Dictionary<string, int>();
+
+                //set the values of the factors to be some random number between 1 and 9
+                problemsDictionary.Add("factorOne", random.Next(0, 10));
+                problemsDictionary.Add("factorTwo", random.Next(0, 10));
+
+                //figure out the answer based on our factors, and set it accordingly
+                //note: this assumes all questions are addition, more work will need to be
+                //done for subtraction, multiplication, etc.
+
+                problemsDictionary.Add("answer", problemsDictionary["factorOne"] + problemsDictionary["factorTwo"]);
                 problemsToReturn[i] = problemsDictionary;
             }
 
-            //Randomize order in which problems are presented
-            Random random = new Random();
-            int randomPosition;
-
-            for (int i = 0; i < 10; i++)
-            {
-                randomPosition = random.Next(0, 9);
-                problemsDictionary = problemsToReturn[randomPosition];
-                problemsToReturn[randomPosition] = problemsToReturn[i];
-                problemsToReturn[i] = problemsDictionary;
-            }  
+            //We now have an array containing 10 different dictionary objects, whose contents are randomized
+            //in the above for-loop. I wouldn't worry about randomizing the objects here, but rather take care
+            //of that in the actually game loop with another random
 
             return problemsToReturn;
         }
