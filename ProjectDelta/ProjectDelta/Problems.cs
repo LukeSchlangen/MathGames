@@ -58,17 +58,17 @@ namespace ProjectDelta
                 problemsToReturn[i] = problemsDictionary;
             }
 
-            ////Randomize order in which problems are presented
-            //Random random = new Random();
-            //int randomPosition;
+            //Randomize order in which problems are presented
+            Random random = new Random();
+            int randomPosition;
 
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    randomPosition = random.Next(0,9);
-            //    problemsDictionary = problemsToReturn[randomPosition];
-            //    problemsToReturn[randomPosition] = problemsToReturn[i];
-            //    problemsToReturn[i] = problemsDictionary;
-            //}  
+            for (int i = 0; i < 10; i++)
+            {
+                randomPosition = random.Next(0, 9);
+                problemsDictionary = problemsToReturn[randomPosition];
+                problemsToReturn[randomPosition] = problemsToReturn[i];
+                problemsToReturn[i] = problemsDictionary;
+            }  
 
             return problemsToReturn;
         }
