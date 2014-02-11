@@ -30,8 +30,11 @@ namespace ProjectDelta
         private float scale;
 
         private int y;
+
+
         private int factorOne;
         private int factorTwo;
+
         private int deathTrajectory;
         private int screenX;
 
