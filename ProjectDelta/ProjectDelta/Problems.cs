@@ -20,24 +20,22 @@ namespace ProjectDelta
             //element you wish to access (problemsToReturn[i]) and then use
             //the Add function to specify your key/value pair
 
-            Dictionary<string, int> d = new Dictionary<string,int>();
+            Dictionary<string, int> problemsDictionary = new Dictionary<string,int>();
 
-            d.Add("factorOne", 1);
-            d.Add("factorTwo", 2);
-            d.Add("answer", 3);
+            problemsDictionary.Add("factorOne", 1);
+            problemsDictionary.Add("factorTwo", 2);
+            problemsDictionary.Add("answer", 3);
 
-            for (int i = 0; i < 10; i++)
-            {
-                problemsToReturn[i] = d;
-            }
+
+
 
             //When you want to get the contents from a specific Dictionary
             //Choose once again the element you wish to access (problemsToReturn[i]) and then
             //use a pair of [] to specify a key for which value you want
 
-            int factorOne = problemsToReturn[0]["factorOne"];
-            int factorTwo = problemsToReturn[0]["factorTwo"];
-            int answer = problemsToReturn[0]["answer"];
+            //int factorOne = problemsToReturn[0]["factorOne"];
+            //int factorTwo = problemsToReturn[0]["factorTwo"];
+            //int answer = problemsToReturn[0]["answer"];
 
             //You probably won't need to pull the data from them in this class,
             //but in the game loop you'll need to access the info that you set.
@@ -52,14 +50,25 @@ namespace ProjectDelta
             //This is where the magic happens...
             //TODO: Your algorithm here.
 
-            //for (int i = 1; i <= 10; i++)
-            //{
-            //    problemsToReturn[i]["operator"] = 1;
-            //    problemsToReturn[i]["factorOne"] = 1;
-            //    problemsToReturn[i]["factorTwo"] = 1;
-            //    problemsToReturn[i]["answer"] = problemsToReturn[0]["factorOne"] + problemsToReturn[0]["factorTwo"];
-            //}
+            for (int i = 0; i < 10; i++)
+            {
+                problemsDictionary["factorOne"] = i;
+                problemsDictionary["factorTwo"] = i;
+                problemsDictionary["answer"] = problemsDictionary["factorOne"] + problemsDictionary["factorTwo"];
+                problemsToReturn[i] = problemsDictionary;
+            }
 
+            ////Randomize order in which problems are presented
+            //Random random = new Random();
+            //int randomPosition;
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    randomPosition = random.Next(0,9);
+            //    problemsDictionary = problemsToReturn[randomPosition];
+            //    problemsToReturn[randomPosition] = problemsToReturn[i];
+            //    problemsToReturn[i] = problemsDictionary;
+            //}  
 
             return problemsToReturn;
         }

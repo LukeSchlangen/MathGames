@@ -23,7 +23,7 @@ namespace ProjectDelta
 {
     public class World101
     {
-        private static int COUNT_TO_CONTINUE = 3;
+        private static int COUNT_TO_CONTINUE = 10;
         private static int MAX_STAGE = 10;
         DynamoDBContext context;
         private int correctInARow = 0;
