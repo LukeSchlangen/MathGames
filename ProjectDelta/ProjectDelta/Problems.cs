@@ -48,11 +48,18 @@ namespace ProjectDelta
             //You'll need to parse the operators. 
             //ex. 0 -> +
 
-            
-
 
             //This is where the magic happens...
             //TODO: Your algorithm here.
+
+            //for (int i = 1; i <= 10; i++)
+            //{
+            //    problemsToReturn[i]["operator"] = 1;
+            //    problemsToReturn[i]["factorOne"] = 1;
+            //    problemsToReturn[i]["factorTwo"] = 1;
+            //    problemsToReturn[i]["answer"] = problemsToReturn[0]["factorOne"] + problemsToReturn[0]["factorTwo"];
+            //}
+
 
             return problemsToReturn;
         }
