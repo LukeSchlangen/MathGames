@@ -20,10 +20,16 @@ namespace ProjectDelta
             //element you wish to access (problemsToReturn[i]) and then use
             //the Add function to specify your key/value pair
 
-            problemsToReturn[0].Add("factorOne", 1);
-            problemsToReturn[0].Add("factorTwo", 2);
-            problemsToReturn[0].Add("operator", 0);
-            problemsToReturn[0].Add("answer", 3);
+            Dictionary<string, int> d = new Dictionary<string,int>();
+
+            d.Add("factorOne", 1);
+            d.Add("factorTwo", 2);
+            d.Add("answer", 3);
+
+            for (int i = 0; i < 10; i++)
+            {
+                problemsToReturn[i] = d;
+            }
 
             //When you want to get the contents from a specific Dictionary
             //Choose once again the element you wish to access (problemsToReturn[i]) and then
@@ -42,14 +48,7 @@ namespace ProjectDelta
             //You'll need to parse the operators. 
             //ex. 0 -> +
 
-            if (problemsToReturn[5]["operator"] == 0)
-            {
-                answer = factorOne + factorTwo;
-            }
-            else if (problemsToReturn[5]["operator"] == 1)
-            {
-                answer = factorOne - factorTwo;
-            }
+            
 
 
             //This is where the magic happens...
