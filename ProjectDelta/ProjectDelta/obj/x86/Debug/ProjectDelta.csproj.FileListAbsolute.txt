@@ -352,3 +352,4 @@ C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\obj\
 C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\obj\x86\Debug\ProjectDelta.pdb
 C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\menu_box.xnb
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\menu_box.xnb
+C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\abamath.xnb

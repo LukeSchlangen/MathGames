@@ -615,6 +615,15 @@
       <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\menu_box.xnb</Output>
       <Time>2013-11-22T03:11:38.5444575-06:00</Time>
     </Item>
+    <Item>
+      <Source>General\abamath.jpg</Source>
+      <Name>General\abamath</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\abamath.xnb</Output>
+      <Time>2014-02-11T15:59:52.5411097-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{29FBEE7A-53F1-459E-83FD-87CAFE9C4818}</ContentProjectGUID>

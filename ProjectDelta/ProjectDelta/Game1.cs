@@ -33,6 +33,7 @@ namespace ProjectDelta
         public enum State
         {
             //add any relevant game states here
+            Splash,
             Login,
             Home,
             World101,
@@ -56,7 +57,8 @@ namespace ProjectDelta
 
         public State state;
         private bool success;
-        
+
+        private Splash splash;
         private Login login;
         private Home home;
         private World101 world101;
@@ -64,6 +66,7 @@ namespace ProjectDelta
 
         //ContentManagers: One manager for each set of 
         //content (worlds, login, home, etc)
+        ContentManager splashContentManager;
         ContentManager loginContentManager;
         ContentManager homeContentManager;
         ContentManager world101ContentManager;
@@ -74,6 +77,7 @@ namespace ProjectDelta
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
+            splashContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             loginContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             homeContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             world101ContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
@@ -115,9 +119,10 @@ namespace ProjectDelta
 
             //for debug can edit this to go to desired state
             //default is State.Login
-            state = State.Login;
+            state = State.Splash;
             //state = State.Level1;
 
+            splash = new Splash(screenWidth, screenHeight, scale);
             login = new Login(context);
             home = new Home();
             world101 = new World101(context);
@@ -143,7 +148,7 @@ namespace ProjectDelta
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            login.LoadContent(loginContentManager, screenHeight, screenWidth);            
+            splash.LoadContent(splashContentManager);            
         }
 
         /// <summary>
@@ -165,6 +170,18 @@ namespace ProjectDelta
             //General Architecture:
             //Use the state variable to track where in the game
             //the user is and what needs to be updated
+
+            if (state == State.Splash)
+            {
+                success = splash.Update(gameTime);
+                if (success == true)
+                {
+                    state = State.Login;
+                    splashContentManager.Unload();
+                    login.LoadContent(loginContentManager, screenHeight, screenWidth);
+                    success = false;
+                }
+            }
 
             if (state == State.Login)
             {
@@ -255,9 +272,14 @@ namespace ProjectDelta
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(Color.White);
 
             spriteBatch.Begin();
+
+            if (state == State.Splash)
+            {
+                splash.Draw(spriteBatch);
+            }
 
             if (state == State.Login)
             {

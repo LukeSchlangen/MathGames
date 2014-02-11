@@ -82,6 +82,7 @@
     <Compile Include="Home\HomeText.cs" />
     <Compile Include="Animation.cs" />
     <Compile Include="Problems.cs" />
+    <Compile Include="Splash.cs" />
     <Compile Include="World101\World101Creature.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="World101\World101.cs" />
