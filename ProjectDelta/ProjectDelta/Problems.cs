@@ -15,7 +15,7 @@ namespace ProjectDelta
             //A *better* example
 
             //This is the array of dictionary objects that we will return to the game loop
-            Dictionary<string, int>[] problemsToReturn = new Dictionary<string, int>[11];
+            Dictionary<string, int>[] problemsToReturn = new Dictionary<string, int>[12];
 
             //Let's just use a random number for the time being as our factors
             Random random = new Random();
@@ -23,7 +23,7 @@ namespace ProjectDelta
             //This is where the magic happens...
             //TODO: Your algorithm here.
 
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < 12; i++)
             {
                 //make an instance of the dictionary to be added to the array
                 //this is where I was concerned with scope. If this dictionary
