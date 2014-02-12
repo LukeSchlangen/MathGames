@@ -130,6 +130,7 @@ namespace ProjectDelta
         public void questionUp()
         {
             state = State.Question;
+            deactivateShield();
         }
 
         public void shieldCollision()

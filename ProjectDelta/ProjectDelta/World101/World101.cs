@@ -122,16 +122,9 @@ namespace ProjectDelta
             //Note: when worldStage = -1 is the hook for endless mode.
             //It can be ignored if there is not going to be an endless mode.
 
-            if (worldStage == -1)
-            {
-                monsterOne.setFactors(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
-                monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-            }
-            else
-            {
-                monsterOne.setFactors(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
-                monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-            }
+            monsterOne.setFactors(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
+            monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
+
 
             world101Text.LoadContent(content);
 
@@ -144,6 +137,9 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
+            updateCharacters(gameTime);
+            updateExtraObjects(gameTime);
+
             if (correctInARow >= COUNT_TO_CONTINUE && worldStage != -1)
             {
                 //This is where we go when we finish a stage and
@@ -155,48 +151,24 @@ namespace ProjectDelta
                 //instead of the usual 60 times per second.
                 monsterOne.monsterDeath();
                 monsterTwo.monsterDeath();
-                monsterOne.Update(gameTime);
-                monsterTwo.Update(gameTime);
-
                 hero.stageSuccess();
-                hero.Update(gameTime);
 
-                updateExtraObjects(gameTime);
-
-                //stopAll();
                 KeyboardState keyboard = Keyboard.GetState();
                 if (keyboard.IsKeyDown(Keys.Space))
                 {
-                    if (worldStage >= MAX_STAGE)
-                    {
-                        Game1.globalUser.world101 = MAX_STAGE;
-                        context.Save<User>(Game1.globalUser);
-                        return true;
-                    }
-                    if (worldStage > Game1.globalUser.world101)
-                    {
-                        Game1.globalUser.world101 = worldStage;
-                        context.Save<User>(Game1.globalUser);
-                    }
+                    saveStage();
                     worldStage++;
                     resetStage();
                 }
                 if (keyboard.IsKeyDown(Keys.Escape))
                 {
-                    Game1.globalUser.world101 = worldStage;
-                    context.Save<User>(Game1.globalUser);
-
+                    saveStage();
                     return true;
                 }
             }
             else
             {
-                updateExtraObjects(gameTime);
                 cycleBackground(gameTime);
-                hero.Update(gameTime);
-
-                monsterOne.Update(gameTime);
-                monsterTwo.Update(gameTime);
 
                 answerDone = world101Input.Update(gameTime, heroDead);
 
@@ -210,7 +182,6 @@ namespace ProjectDelta
                     if (hero.getShieldCollisionBox().Intersects(monsterOne.getCollisionBox()))
                     {
                         hero.questionUp();
-                        hero.deactivateShield();
                         currentMonster = 2;
                         monsterOne.monsterDeath();
                         //monsterOne.setX((int)(2600*scale));
@@ -219,15 +190,8 @@ namespace ProjectDelta
                         //You'll need to make a call similar to the one in the load content method
                         //I'm not 100% if you'll need correctInARow or correctInARow+1, play around with it
 
-                        if (worldStage == -1)
-                        {
-                            //still for endless mode
-                            monsterOne.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-                        }
-                        else
-                        {
-                            monsterOne.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-                        }
+                        monsterOne.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
+
                         showQuestion = true;
                     }
 
@@ -256,38 +220,21 @@ namespace ProjectDelta
                     if (hero.getShieldCollisionBox().Intersects(monsterTwo.getCollisionBox()))
                     {
                         hero.questionUp();
-                        hero.deactivateShield();
                         currentMonster = 1;
                         monsterTwo.monsterDeath();
 
                         //Don't forget to check both monsterOne and monsterTwo or you
                         //might end up with some funky bugs!
 
-                        if (worldStage == -1)
-                        {
-                            monsterTwo.setFactors(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
-                        }
-                        else
-                        {
-                            monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-                        }
+                        monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
+
                         showQuestion = true;
                     }
 
                     if (hero.getHeroCollisionBox().Intersects(monsterTwo.getCollisionBox()))
                     {
                         stopAll();
-
-                        KeyboardState keyboard = Keyboard.GetState();
-                        if (keyboard.IsKeyDown(Keys.Space))
-                        {
-                            resetStage();
-                        }
-                        if (keyboard.IsKeyDown(Keys.Escape))
-                        {
-                            return true;
-                        }
-                    }
+                                      }
 
                     //The other text update. Don't forget about me!
                     world101Text.Update(monsterTwo.getFactorOne(), monsterTwo.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
@@ -346,6 +293,7 @@ namespace ProjectDelta
             planetSpeed = 0;
             heroDead = true;
             hero.die();
+            badInput = true;
         }
 
         private void cycleBackground(GameTime gameTime)
@@ -451,7 +399,6 @@ namespace ProjectDelta
             world101Input.resetInput();
             correctInARow = 0;
             badInput = false;
-            hero.deactivateShield();
         }
 
         private void checkAnswer()
@@ -471,7 +418,7 @@ namespace ProjectDelta
                     }
                     else
                     {
-                        incorrectAnswer();
+                        stopAll();
                     }
                 }
                 if (currentMonster == 2)
@@ -484,7 +431,7 @@ namespace ProjectDelta
                     }
                     else
                     {
-                        incorrectAnswer();
+                        stopAll();
                     }
                 }
             }
@@ -499,10 +446,25 @@ namespace ProjectDelta
             correctInARow++;
         }
 
-        private void incorrectAnswer()
+        private void saveStage()
         {
-            stopAll();
-            badInput = true;
+            if (worldStage >= MAX_STAGE)
+            {
+                worldStage = MAX_STAGE;
+            }
+            if (worldStage > Game1.globalUser.world101)
+            {
+                Game1.globalUser.world101 = worldStage;
+                context.Save<User>(Game1.globalUser);
+            }
+        }
+
+        private void updateCharacters(GameTime gameTime)
+        {
+            hero.Update(gameTime);
+
+            monsterOne.Update(gameTime);
+            monsterTwo.Update(gameTime);
         }
     }
 }
