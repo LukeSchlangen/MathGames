@@ -47,6 +47,7 @@ namespace ProjectDelta
 
         private Rectangle heroCollisionBox;
         private Rectangle shieldCollisionBox;
+        private Rectangle activatedShieldCollisionBoxPosition;
 
         private Animation heroAnimation;
         private Animation shieldAnimation;
@@ -64,11 +65,12 @@ namespace ProjectDelta
             heroStartingPosition = new Vector2(275*scale, 800*scale);
             heroPosition = heroStartingPosition;
             heroAnimation = new Animation(heroRunning, heroStartingPosition, 5, 5, scale, 10f);
-            heroCollisionBox = new Rectangle((int)((heroStartingPosition.X) - 100*scale), (int)(heroStartingPosition.Y), (int)(heroAnimation.getWidth()*scale), heroAnimation.getHeight());
+            heroCollisionBox = new Rectangle((int)((heroStartingPosition.X) - 150*scale), (int)(heroStartingPosition.Y), (int)(heroAnimation.getWidth()*scale), heroAnimation.getHeight());
             shieldPosition.X = heroAnimation.getAnimationPosition().X - 40*scale;
             shieldPosition.Y = heroAnimation.getAnimationPosition().Y - 200 * scale;
             shieldAnimation = new Animation(shield, shieldPosition, 3, 3, scale, 30f);
             shieldCollisionBox = new Rectangle(((int)(shieldPosition.X) + (int)(275*scale)), ((int)(shieldPosition.Y)), (int)(100*scale), (int)(1000*scale));
+            activatedShieldCollisionBoxPosition = shieldCollisionBox;
             deactivateShield();
         }
 
@@ -173,12 +175,12 @@ namespace ProjectDelta
 
         public void deactivateShield()
         {
-            shieldCollisionBox.X -= 1000;
+            shieldCollisionBox.X = activatedShieldCollisionBoxPosition.X - 1000;
         }
 
         public void activateShield()
         {
-            shieldCollisionBox.X += 1000;
+            shieldCollisionBox.X = activatedShieldCollisionBoxPosition.X;
         }
     }
 }

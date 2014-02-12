@@ -240,7 +240,7 @@ namespace ProjectDelta
                     world101ContentManager.Unload();
                     home.LoadContent(homeContentManager, screenHeight, screenWidth);
                     success = false;
-                    world101.resetWorld();
+                    world101.resetStage();
                 }
             }
 

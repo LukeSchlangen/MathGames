@@ -32,37 +32,37 @@ namespace ProjectDelta
         private float scale;
 
         private float planetSpeed = .01f;
-        private float shipSpeed = .25f;
+        //private float shipSpeed = .25f;
         private float backgroundSpeed = .1f;
         private float backupPlanetSpeed = .01f;
         private float backupBackgroundSpeed = .1f;
-        
+
         //Textures for level 1
         private Texture2D backgroundOne;
         private Texture2D backgroundTwo;
         private Texture2D backgroundThree;
-        private Texture2D planetTwo;
-        private Texture2D planetThree;
-        private Texture2D planetFour;
-        private Texture2D planetFive;
-        private Texture2D shipOne;
-        private Texture2D shipTwo;
-        private Texture2D shipThree;
-        private Texture2D shipFour;
+        //private Texture2D planetTwo;
+        //private Texture2D planetThree;
+        //private Texture2D planetFour;
+        //private Texture2D planetFive;
+        //private Texture2D shipOne;
+        //private Texture2D shipTwo;
+        //private Texture2D shipThree;
+        //private Texture2D shipFour;
 
-        //Vectors for level 1
-        private Vector2 movingPlanetTwoPosition;
-        private Vector2 movingPlanetThreePosition;
-        private Vector2 movingPlanetFourPosition;
-        private Vector2 movingPlanetFivePosition;
-        private Vector2 shipOnePosition;
-        private Vector2 shipTwoPosition;
-        private Vector2 shipThreePosition;
-        private Vector2 shipFourPosition;
+        ////Vectors for level 1
+        //private Vector2 movingPlanetTwoPosition;
+        //private Vector2 movingPlanetThreePosition;
+        //private Vector2 movingPlanetFourPosition;
+        //private Vector2 movingPlanetFivePosition;
+        //private Vector2 shipOnePosition;
+        //private Vector2 shipTwoPosition;
+        //private Vector2 shipThreePosition;
+        //private Vector2 shipFourPosition;
         private Vector2 backgroundOnePosition;
         private Vector2 backgroundTwoPosition;
         private Vector2 backgroundThreePosition;
-        
+
         //Mouse states
         private MouseState current;
         private MouseState previous;
@@ -165,7 +165,7 @@ namespace ProjectDelta
 
                 //stopAll();
                 KeyboardState keyboard = Keyboard.GetState();
-                if(keyboard.IsKeyDown(Keys.Space))
+                if (keyboard.IsKeyDown(Keys.Space))
                 {
                     if (worldStage >= MAX_STAGE)
                     {
@@ -179,8 +179,7 @@ namespace ProjectDelta
                         context.Save<User>(Game1.globalUser);
                     }
                     worldStage++;
-                    correctInARow = 0;
-                    resetStageSuccess();
+                    resetStage();
                 }
                 if (keyboard.IsKeyDown(Keys.Escape))
                 {
@@ -203,54 +202,7 @@ namespace ProjectDelta
 
                 if (answerDone == true)
                 {
-                    if (currentMonster == 1)
-                    {
-                        if (world101Input.getLastInput().Equals(""))
-                        {
-                            
-                        }
-
-                        //This is where the hook for the expected answer takes place.
-                        //You'll need to pull from your dictionary the expect answer here.
-                        //I won't change this particular line, because I don't know what you'll
-                        //call the keys in the dictionary pair (I just assumed factorOne factorTwo for the factors
-                        //change as neccessary
-                        else if (monsterOne.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
-                        {
-                            hero.shieldAnimate();
-                            hero.activateShield();
-                            showQuestion = false;
-                            answerDone = false;
-                            correctInARow++;
-                        }
-                        else
-                        {
-                            stopAll();
-                            badInput = true;
-                        }
-                    }
-                    if (currentMonster == 2)
-                    {
-                        if (world101Input.getLastInput().Equals(""))
-                        {
-                            
-                        }
-
-                        //The other place where we check answers, don't forget it!
-                        else if (monsterTwo.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
-                        {
-                            hero.shieldAnimate();
-                            hero.activateShield();
-                            showQuestion = false;
-                            answerDone = false;
-                            correctInARow++;
-                        }
-                        else
-                        {
-                            stopAll();
-                            badInput = true;
-                        }
-                    }
+                    checkAnswer();
                 }
 
                 if (currentMonster == 1)
@@ -270,11 +222,11 @@ namespace ProjectDelta
                         if (worldStage == -1)
                         {
                             //still for endless mode
-                            monsterOne.setFactors(stageProblems[correctInARow+1]["factorOne"], stageProblems[correctInARow+1]["factorTwo"]);
+                            monsterOne.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
                         }
                         else
                         {
-                            monsterOne.setFactors(stageProblems[correctInARow+1]["factorOne"], stageProblems[correctInARow+1]["factorTwo"]);
+                            monsterOne.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
                         }
                         showQuestion = true;
                     }
@@ -282,13 +234,11 @@ namespace ProjectDelta
                     if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
                     {
                         stopAll();
-                        heroDead = true;
 
                         KeyboardState keyboard = Keyboard.GetState();
                         if (keyboard.IsKeyDown(Keys.Space))
                         {
-                            correctInARow = 0;
-                            resetStageFailure();
+                            resetStage();
                         }
                         if (keyboard.IsKeyDown(Keys.Escape))
                         {
@@ -309,7 +259,7 @@ namespace ProjectDelta
                         hero.deactivateShield();
                         currentMonster = 1;
                         monsterTwo.monsterDeath();
-                        
+
                         //Don't forget to check both monsterOne and monsterTwo or you
                         //might end up with some funky bugs!
 
@@ -319,7 +269,7 @@ namespace ProjectDelta
                         }
                         else
                         {
-                            monsterTwo.setFactors(stageProblems[correctInARow+1]["factorOne"], stageProblems[correctInARow+1]["factorTwo"]);
+                            monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
                         }
                         showQuestion = true;
                     }
@@ -327,13 +277,11 @@ namespace ProjectDelta
                     if (hero.getHeroCollisionBox().Intersects(monsterTwo.getCollisionBox()))
                     {
                         stopAll();
-                        heroDead = true;
 
                         KeyboardState keyboard = Keyboard.GetState();
                         if (keyboard.IsKeyDown(Keys.Space))
                         {
-                            correctInARow = 0;
-                            resetStageFailure();
+                            resetStage();
                         }
                         if (keyboard.IsKeyDown(Keys.Escape))
                         {
@@ -350,16 +298,15 @@ namespace ProjectDelta
                     KeyboardState keyboard = Keyboard.GetState();
                     if (keyboard.IsKeyDown(Keys.Space))
                     {
-                        correctInARow = 0;
-                        resetStageFailure();
+                        resetStage();
                     }
                     if (keyboard.IsKeyDown(Keys.Escape))
                     {
                         return true;
                     }
                 }
-            }                
-            
+            }
+
             return false;
         }
 
@@ -397,6 +344,7 @@ namespace ProjectDelta
             monsterTwo.setSpeed(0);
             backgroundSpeed = 0;
             planetSpeed = 0;
+            heroDead = true;
             hero.die();
         }
 
@@ -405,18 +353,18 @@ namespace ProjectDelta
             backgroundOnePosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             backgroundTwoPosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             backgroundThreePosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            
-            if (backgroundOnePosition.X < -backgroundOne.Width*scale)
+
+            if (backgroundOnePosition.X < -backgroundOne.Width * scale)
             {
-                backgroundOnePosition.X = backgroundThreePosition.X + backgroundThree.Width*scale;
+                backgroundOnePosition.X = backgroundThreePosition.X + backgroundThree.Width * scale;
             }
-            if (backgroundTwoPosition.X < -backgroundTwo.Width*scale)
+            if (backgroundTwoPosition.X < -backgroundTwo.Width * scale)
             {
-                backgroundTwoPosition.X = backgroundOnePosition.X + backgroundOne.Width*scale;
+                backgroundTwoPosition.X = backgroundOnePosition.X + backgroundOne.Width * scale;
             }
-            if (backgroundThreePosition.X < -backgroundThree.Width*scale)
+            if (backgroundThreePosition.X < -backgroundThree.Width * scale)
             {
-                backgroundThreePosition.X = backgroundTwoPosition.X + backgroundTwo.Width*scale;
+                backgroundThreePosition.X = backgroundTwoPosition.X + backgroundTwo.Width * scale;
             }
         }
 
@@ -429,44 +377,44 @@ namespace ProjectDelta
             backgroundTwoPosition = new Vector2(backgroundOne.Width * scale, 0);
             backgroundThreePosition = new Vector2(backgroundOne.Width * scale + backgroundTwo.Width * scale, 0);
 
-            planetTwo = content.Load<Texture2D>("General/Planets/planet_2");
-            planetThree = content.Load<Texture2D>("General/Planets/planet_3");
-            planetFour = content.Load<Texture2D>("General/Planets/planet_4");
-            planetFive = content.Load<Texture2D>("General/Planets/planet_5");
+            //planetTwo = content.Load<Texture2D>("General/Planets/planet_2");
+            //planetThree = content.Load<Texture2D>("General/Planets/planet_3");
+            //planetFour = content.Load<Texture2D>("General/Planets/planet_4");
+            //planetFive = content.Load<Texture2D>("General/Planets/planet_5");
 
-            shipOne = content.Load<Texture2D>("General/Ships/good_drone");
-            shipTwo = content.Load<Texture2D>("General/Ships/enemy_drones");
-            shipThree = content.Load<Texture2D>("General/Ships/good_fleet_1");
-            shipFour = content.Load<Texture2D>("General/Ships/enemy_fleet_1");
+            //shipOne = content.Load<Texture2D>("General/Ships/good_drone");
+            //shipTwo = content.Load<Texture2D>("General/Ships/enemy_drones");
+            //shipThree = content.Load<Texture2D>("General/Ships/good_fleet_1");
+            //shipFour = content.Load<Texture2D>("General/Ships/enemy_fleet_1");
 
-            //any scalar value needs to take into consideration
-            //the scale factor to fix resolution issues
-            movingPlanetTwoPosition = new Vector2(-2800 * scale, 150 * scale);
-            movingPlanetThreePosition = new Vector2(-5250 * scale, 200 * scale);
-            movingPlanetFourPosition = new Vector2(-9000 * scale, 1200 * scale);
-            movingPlanetFivePosition = new Vector2(-12000 * scale, -800 * scale);
+            ////any scalar value needs to take into consideration
+            ////the scale factor to fix resolution issues
+            //movingPlanetTwoPosition = new Vector2(-2800 * scale, 150 * scale);
+            //movingPlanetThreePosition = new Vector2(-5250 * scale, 200 * scale);
+            //movingPlanetFourPosition = new Vector2(-9000 * scale, 1200 * scale);
+            //movingPlanetFivePosition = new Vector2(-12000 * scale, -800 * scale);
 
-            shipOnePosition = new Vector2(-2000 * scale, 150 * scale);
-            shipTwoPosition = new Vector2(6000 * scale, 200 * scale);
-            shipThreePosition = new Vector2(-15000 * scale, 500 * scale);
-            shipFourPosition = new Vector2(-23000 * scale, 300 * scale);
+            //shipOnePosition = new Vector2(-2000 * scale, 150 * scale);
+            //shipTwoPosition = new Vector2(6000 * scale, 200 * scale);
+            //shipThreePosition = new Vector2(-15000 * scale, 500 * scale);
+            //shipFourPosition = new Vector2(-23000 * scale, 300 * scale);
         }
 
         private void updateExtraObjects(GameTime gameTime)
         {
-            movingPlanetTwoPosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            movingPlanetTwoPosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            movingPlanetThreePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            movingPlanetThreePosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            movingPlanetFourPosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            movingPlanetFourPosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            movingPlanetFivePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            movingPlanetFivePosition.Y += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //movingPlanetTwoPosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
+            //movingPlanetTwoPosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //movingPlanetThreePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
+            //movingPlanetThreePosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //movingPlanetFourPosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
+            //movingPlanetFourPosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //movingPlanetFivePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
+            //movingPlanetFivePosition.Y += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            shipOnePosition.X += 4 * shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            shipTwoPosition.X -= 5 * shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            shipThreePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            shipFourPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //shipOnePosition.X += 4 * shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //shipTwoPosition.X -= 5 * shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //shipThreePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            //shipFourPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
         }
 
         private void drawExtraObjects(SpriteBatch spriteBatch)
@@ -474,17 +422,17 @@ namespace ProjectDelta
             spriteBatch.Draw(backgroundOne, backgroundOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(backgroundTwo, backgroundTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(backgroundThree, backgroundThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(planetTwo, movingPlanetTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(planetThree, movingPlanetThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(planetFour, movingPlanetFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(planetFive, movingPlanetFivePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(shipOne, shipOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(shipTwo, shipTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(shipThree, shipThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(shipFour, shipFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            //spriteBatch.Draw(planetTwo, movingPlanetTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            //spriteBatch.Draw(planetThree, movingPlanetThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            //spriteBatch.Draw(planetFour, movingPlanetFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            //spriteBatch.Draw(planetFive, movingPlanetFivePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            //spriteBatch.Draw(shipOne, shipOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            //spriteBatch.Draw(shipTwo, shipTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            //spriteBatch.Draw(shipThree, shipThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            //spriteBatch.Draw(shipFour, shipFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
-        private void resetStage()
+        public void resetStage()
         {
             monsterOne.setX((int)(1600 * scale));
             monsterTwo.setX((int)(2600 * scale));
@@ -501,29 +449,60 @@ namespace ProjectDelta
             showQuestion = true;
             heroDead = false;
             world101Input.resetInput();
-        }
-
-        private void resetStageSuccess()
-        {
-            resetStage();
-            hero.deactivateShield(); //On success we need to deactivate the shield
-        }
-
-        private void resetStageFailure()
-        {
-            resetStage();
-            badInput = false;
-        }
-
-        public void resetWorld()
-        {
-            resetStage();
-            heroDead = false;
             correctInARow = 0;
-            worldStage = 1;
-            hero.deactivateShield();
             badInput = false;
+            hero.deactivateShield();
+        }
 
+        private void checkAnswer()
+        {
+            if (world101Input.getLastInput().Equals("") == false)
+            {
+                if (currentMonster == 1)
+                {
+                    //This is where the hook for the expected answer takes place.
+                    //You'll need to pull from your dictionary the expect answer here.
+                    //I won't change this particular line, because I don't know what you'll
+                    //call the keys in the dictionary pair (I just assumed factorOne factorTwo for the factors
+                    //change as neccessary
+                    if (monsterOne.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
+                    {
+                        correctAnswer();
+                    }
+                    else
+                    {
+                        incorrectAnswer();
+                    }
+                }
+                if (currentMonster == 2)
+                {
+
+                    //The other place where we check answers, don't forget it!
+                    if (monsterTwo.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
+                    {
+                        correctAnswer();
+                    }
+                    else
+                    {
+                        incorrectAnswer();
+                    }
+                }
+            }
+        }
+
+        private void correctAnswer()
+        {
+            hero.shieldAnimate();
+            hero.activateShield();
+            showQuestion = false;
+            answerDone = false;
+            correctInARow++;
+        }
+
+        private void incorrectAnswer()
+        {
+            stopAll();
+            badInput = true;
         }
     }
 }
