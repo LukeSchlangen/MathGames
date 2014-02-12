@@ -34,6 +34,8 @@ namespace ProjectDelta
         string input = "";
         string lastInput = "";
 
+        private bool heroDead = false;
+
         public World101Input(float scale)
         {
             this.scale = scale;
@@ -45,8 +47,10 @@ namespace ProjectDelta
             fontPosition = new Vector2(50 * scale, 50 * scale);
         }
 
-        public bool Update(GameTime gameTime)
+        public bool Update(GameTime gameTime, bool heroDead)
         {
+            this.heroDead = heroDead;
+
             prevKeyboard = keyboard;
             keyboard = Keyboard.GetState();
 
@@ -127,7 +131,7 @@ namespace ProjectDelta
                 prevKeyboard = keyboard;
                 keyboard = Keyboard.GetState();
             }
-            if (keyboard.IsKeyDown(Keys.Enter) && prevKeyboard.IsKeyDown(Keys.Enter) == false && !input.Equals(""))
+            if (keyboard.IsKeyDown(Keys.Enter) && prevKeyboard.IsKeyDown(Keys.Enter) == false && !input.Equals("") && !heroDead)
             {
                 lastInput = input;
                 input = "";
@@ -153,6 +157,11 @@ namespace ProjectDelta
         public string getLastInput()
         {
             return lastInput;
+        }
+
+        public void resetInput()
+        {
+            input = "";
         }
     }
 }

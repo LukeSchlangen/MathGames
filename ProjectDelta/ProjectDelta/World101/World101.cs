@@ -199,7 +199,7 @@ namespace ProjectDelta
                 monsterOne.Update(gameTime);
                 monsterTwo.Update(gameTime);
 
-                answerDone = world101Input.Update(gameTime);
+                answerDone = world101Input.Update(gameTime, heroDead);
 
                 if (answerDone == true)
                 {
@@ -500,6 +500,7 @@ namespace ProjectDelta
             currentMonster = 1;
             showQuestion = true;
             heroDead = false;
+            world101Input.resetInput();
         }
 
         private void resetStageSuccess()
