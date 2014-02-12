@@ -116,7 +116,7 @@ namespace ProjectDelta
             //and before the first set of factors is determined, you'll want to
             //load your first set of values into the array
 
-            stageProblems = Problems.determineProblems();
+            stageProblems = Problems.determineProblems(worldStage);
 
             //Load up the first set of factors into the monster objects
             //Note: when worldStage = -1 is the hook for endless mode.
@@ -274,7 +274,7 @@ namespace ProjectDelta
                         }
                         else
                         {
-                            monsterOne.setFactors(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
+                            monsterOne.setFactors(stageProblems[correctInARow+1]["factorOne"], stageProblems[correctInARow+1]["factorTwo"]);
                         }
                         showQuestion = true;
                     }
@@ -319,7 +319,7 @@ namespace ProjectDelta
                         }
                         else
                         {
-                            monsterTwo.setFactors(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
+                            monsterTwo.setFactors(stageProblems[correctInARow+1]["factorOne"], stageProblems[correctInARow+1]["factorTwo"]);
                         }
                         showQuestion = true;
                     }
@@ -484,62 +484,45 @@ namespace ProjectDelta
             spriteBatch.Draw(shipFour, shipFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
-        private void resetStageSuccess()
+        private void resetStage()
         {
-            monsterOne.setX((int)(1600*scale));
-            monsterTwo.setX((int)(2600*scale));
+            monsterOne.setX((int)(1600 * scale));
+            monsterTwo.setX((int)(2600 * scale));
             backgroundSpeed = backupBackgroundSpeed;
             monsterOne.setSpeed(backgroundSpeed);
             monsterTwo.setSpeed(backgroundSpeed);
             planetSpeed = backupPlanetSpeed;
             hero.live();
             hero.questionUp();
-            hero.deactivateShield(); //On success we need to deactivate the shield
-            monsterOne.setFactors(random.Next(0, worldStage+1), random.Next(0, worldStage+1));
-            monsterTwo.setFactors(random.Next(0, worldStage+1), random.Next(0, worldStage+1));
+            stageProblems = Problems.determineProblems(worldStage);
+            monsterOne.setFactors(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
+            monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
             currentMonster = 1;
             showQuestion = true;
             heroDead = false;
+        }
+
+        private void resetStageSuccess()
+        {
+            resetStage();
+            hero.deactivateShield(); //On success we need to deactivate the shield
         }
 
         private void resetStageFailure()
         {
-            monsterOne.setX((int)(1600 * scale));
-            monsterTwo.setX((int)(2600 * scale));
-            backgroundSpeed = backupBackgroundSpeed;
-            monsterOne.setSpeed(backgroundSpeed);
-            monsterTwo.setSpeed(backgroundSpeed);
-            planetSpeed = backupPlanetSpeed;
-            hero.live();
-            hero.questionUp();
-            //hero.deactivateShield(); //On failure don't deactivate the shield
-            monsterOne.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
-            monsterTwo.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
-            currentMonster = 1;
-            showQuestion = true;
+            resetStage();
             badInput = false;
-            heroDead = false;
         }
 
         public void resetWorld()
         {
-            monsterOne.setX((int)(1600 * scale));
-            monsterTwo.setX((int)(2600 * scale));
-            backgroundSpeed = backupBackgroundSpeed;
-            monsterOne.setSpeed(backgroundSpeed);
-            monsterTwo.setSpeed(backgroundSpeed);
-            planetSpeed = backupPlanetSpeed;
-            hero.live();
-            hero.questionUp();
-            hero.deactivateShield();
-            monsterOne.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
-            monsterTwo.setFactors(random.Next(0, worldStage + 1), random.Next(0, worldStage + 1));
-            currentMonster = 1;
-            showQuestion = true;
-            badInput = false;
+            resetStage();
             heroDead = false;
             correctInARow = 0;
             worldStage = 1;
+            hero.deactivateShield();
+            badInput = false;
+
         }
     }
 }

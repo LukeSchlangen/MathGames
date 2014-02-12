@@ -10,12 +10,12 @@ namespace ProjectDelta
     //classes
     static class Problems
     {
-        public static Dictionary<string, int>[] determineProblems()
+        public static Dictionary<string, int>[] determineProblems(int worldStage)
         {
             //A *better* example
 
             //This is the array of dictionary objects that we will return to the game loop
-            Dictionary<string, int>[] problemsToReturn = new Dictionary<string, int>[10];
+            Dictionary<string, int>[] problemsToReturn = new Dictionary<string, int>[11];
 
             //Let's just use a random number for the time being as our factors
             Random random = new Random();
@@ -23,7 +23,7 @@ namespace ProjectDelta
             //This is where the magic happens...
             //TODO: Your algorithm here.
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 11; i++)
             {
                 //make an instance of the dictionary to be added to the array
                 //this is where I was concerned with scope. If this dictionary
@@ -34,8 +34,8 @@ namespace ProjectDelta
                 Dictionary<string, int> problemsDictionary = new Dictionary<string, int>();
 
                 //set the values of the factors to be some random number between 1 and 9
-                problemsDictionary.Add("factorOne", random.Next(0, 10));
-                problemsDictionary.Add("factorTwo", random.Next(0, 10));
+                problemsDictionary.Add("factorOne", i + worldStage);
+                problemsDictionary.Add("factorTwo", i + worldStage);
 
                 //figure out the answer based on our factors, and set it accordingly
                 //note: this assumes all questions are addition, more work will need to be
