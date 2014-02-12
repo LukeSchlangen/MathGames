@@ -77,7 +77,6 @@ namespace ProjectDelta
 
         private bool answerDone = false;
         private bool showQuestion = true;
-        private bool badInput = false;
         private bool heroDead = false;
 
         //This is an array of HashSets that should allow you store data
@@ -140,31 +139,36 @@ namespace ProjectDelta
             updateCharacters(gameTime);
             updateExtraObjects(gameTime);
 
+            KeyboardState keyboard = Keyboard.GetState();
+
+            if (keyboard.IsKeyDown(Keys.Escape))
+            {
+                saveStage();
+                return true;
+            }
+
+            if (keyboard.IsKeyDown(Keys.Space))
+            {
+                saveStage();
+                if (correctInARow >= COUNT_TO_CONTINUE && worldStage != -1)
+                {
+                    //This is where we go when we finish a stage and
+                    //want to wrap up the level (notice the sole return condition!)
+                    //You might want to throw your logic for determining what the next
+                    //Set of questions is in here somewhere.
+                    //Also, if you need to make an additional DB reads or writes, this
+                    //is a great place to do it, as this block of code is only executed once
+                    //instead of the usual 60 times per second.
+                    worldStage++;
+                }
+                resetStage();
+            }
+
             if (correctInARow >= COUNT_TO_CONTINUE && worldStage != -1)
             {
-                //This is where we go when we finish a stage and
-                //want to wrap up the level (notice the sole return condition!)
-                //You might want to throw your logic for determining what the next
-                //Set of questions is in here somewhere.
-                //Also, if you need to make an additional DB reads or writes, this
-                //is a great place to do it, as this block of code is only executed once
-                //instead of the usual 60 times per second.
                 monsterOne.monsterDeath();
                 monsterTwo.monsterDeath();
                 hero.stageSuccess();
-
-                KeyboardState keyboard = Keyboard.GetState();
-                if (keyboard.IsKeyDown(Keys.Space))
-                {
-                    saveStage();
-                    worldStage++;
-                    resetStage();
-                }
-                if (keyboard.IsKeyDown(Keys.Escape))
-                {
-                    saveStage();
-                    return true;
-                }
             }
             else
             {
@@ -198,16 +202,6 @@ namespace ProjectDelta
                     if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
                     {
                         stopAll();
-
-                        KeyboardState keyboard = Keyboard.GetState();
-                        if (keyboard.IsKeyDown(Keys.Space))
-                        {
-                            resetStage();
-                        }
-                        if (keyboard.IsKeyDown(Keys.Escape))
-                        {
-                            return true;
-                        }
                     }
 
                     //You'll also need to make some changes here to the text class to properly display
@@ -234,24 +228,12 @@ namespace ProjectDelta
                     if (hero.getHeroCollisionBox().Intersects(monsterTwo.getCollisionBox()))
                     {
                         stopAll();
-                                      }
+                    }
 
                     //The other text update. Don't forget about me!
                     world101Text.Update(monsterTwo.getFactorOne(), monsterTwo.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
                 }
 
-                if (badInput)
-                {
-                    KeyboardState keyboard = Keyboard.GetState();
-                    if (keyboard.IsKeyDown(Keys.Space))
-                    {
-                        resetStage();
-                    }
-                    if (keyboard.IsKeyDown(Keys.Escape))
-                    {
-                        return true;
-                    }
-                }
             }
 
             return false;
@@ -293,7 +275,6 @@ namespace ProjectDelta
             planetSpeed = 0;
             heroDead = true;
             hero.die();
-            badInput = true;
         }
 
         private void cycleBackground(GameTime gameTime)
@@ -382,6 +363,7 @@ namespace ProjectDelta
 
         public void resetStage()
         {
+            correctInARow = 0;
             monsterOne.setX((int)(1600 * scale));
             monsterTwo.setX((int)(2600 * scale));
             backgroundSpeed = backupBackgroundSpeed;
@@ -397,8 +379,6 @@ namespace ProjectDelta
             showQuestion = true;
             heroDead = false;
             world101Input.resetInput();
-            correctInARow = 0;
-            badInput = false;
         }
 
         private void checkAnswer()
