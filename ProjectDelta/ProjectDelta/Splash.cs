@@ -41,7 +41,7 @@ namespace ProjectDelta
         {
             if (splashCounter == 1000)
             {
-                splashCounter = -3500;
+                splashCounter = -2000;
             }
             if (splashCounter < 0)
             {

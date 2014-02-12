@@ -70,7 +70,8 @@ namespace ProjectDelta
         private Hero hero;
         private World101Monster monsterOne;
         private World101Monster monsterTwo;
-        private int currentMonster;
+        private World101Monster currentMonster;
+        //private int currentMonsterNumber;
         private World101Input world101Input;
         private World101Text world101Text = new World101Text();
         private Random random = new Random();
@@ -93,11 +94,12 @@ namespace ProjectDelta
             this.scale = scale;
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
+            currentMonster = monsterOne;
             hero = new Hero();
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
             world101Text.Initialize(scale);
-            currentMonster = 1;
+            //currentMonsterNumber = 1;
         }
 
         //Specifies which content is loaded for level 1
@@ -150,21 +152,10 @@ namespace ProjectDelta
             if (keyboard.IsKeyDown(Keys.Space))
             {
                 saveStage();
-                if (correctInARow >= COUNT_TO_CONTINUE && worldStage != -1)
-                {
-                    //This is where we go when we finish a stage and
-                    //want to wrap up the level (notice the sole return condition!)
-                    //You might want to throw your logic for determining what the next
-                    //Set of questions is in here somewhere.
-                    //Also, if you need to make an additional DB reads or writes, this
-                    //is a great place to do it, as this block of code is only executed once
-                    //instead of the usual 60 times per second.
-                    worldStage++;
-                }
                 resetStage();
             }
 
-            if (correctInARow >= COUNT_TO_CONTINUE && worldStage != -1)
+            if (correctInARow >= COUNT_TO_CONTINUE)
             {
                 monsterOne.monsterDeath();
                 monsterTwo.monsterDeath();
@@ -176,64 +167,65 @@ namespace ProjectDelta
 
                 answerDone = world101Input.Update(gameTime, heroDead);
 
+                //if (currentMonsterNumber == 1)
+                //{
+                //    currentMonster = monsterOne;
+                //}
+
+                //if (currentMonsterNumber == 2)
+                //{
+                //    currentMonster = monsterTwo;
+                //}
+
+
                 if (answerDone == true)
                 {
-                    checkAnswer();
+                    if (world101Input.getLastInput().Equals("") == false)
+                    {
+                        if (currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
+                        {
+                            correctAnswer();
+                        }
+                        else
+                        {
+                            stopAll();
+                        }
+                    }
                 }
 
-                if (currentMonster == 1)
+                if (hero.getShieldCollisionBox().Intersects(currentMonster.getCollisionBox()))
                 {
-                    if (hero.getShieldCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                    hero.questionUp();
+
+                    currentMonster.monsterDeath();
+                    //monsterOne.setX((int)(2600*scale));
+
+                    //Any time we need to set the factors for the monster when it dies,
+                    //You'll need to make a call similar to the one in the load content method
+                    //I'm not 100% if you'll need correctInARow or correctInARow+1, play around with it
+
+                    currentMonster.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
+
+                    showQuestion = true;
+
+                    if (currentMonster == monsterOne)
                     {
-                        hero.questionUp();
-                        currentMonster = 2;
-                        monsterOne.monsterDeath();
-                        //monsterOne.setX((int)(2600*scale));
-
-                        //Any time we need to set the factors for the monster when it dies,
-                        //You'll need to make a call similar to the one in the load content method
-                        //I'm not 100% if you'll need correctInARow or correctInARow+1, play around with it
-
-                        monsterOne.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-
-                        showQuestion = true;
+                        currentMonster = monsterTwo;
                     }
-
-                    if (hero.getHeroCollisionBox().Intersects(monsterOne.getCollisionBox()))
+                    else
                     {
-                        stopAll();
+                        currentMonster = monsterOne;
                     }
-
-                    //You'll also need to make some changes here to the text class to properly display
-                    //the questions operator (right now it always assumes its the + operator)
-                    world101Text.Update(monsterOne.getFactorOne(), monsterOne.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
                 }
 
-                if (currentMonster == 2)
+                if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
                 {
-                    if (hero.getShieldCollisionBox().Intersects(monsterTwo.getCollisionBox()))
-                    {
-                        hero.questionUp();
-                        currentMonster = 1;
-                        monsterTwo.monsterDeath();
-
-                        //Don't forget to check both monsterOne and monsterTwo or you
-                        //might end up with some funky bugs!
-
-                        monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-
-                        showQuestion = true;
-                    }
-
-                    if (hero.getHeroCollisionBox().Intersects(monsterTwo.getCollisionBox()))
-                    {
-                        stopAll();
-                    }
-
-                    //The other text update. Don't forget about me!
-                    world101Text.Update(monsterTwo.getFactorOne(), monsterTwo.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
+                    stopAll();
                 }
 
+                //You'll also need to make some changes here to the text class to properly display
+                //the questions operator (right now it always assumes its the + operator)
+                world101Text.Update(currentMonster.getFactorOne(), currentMonster.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
             }
 
             return false;
@@ -329,6 +321,13 @@ namespace ProjectDelta
             //shipFourPosition = new Vector2(-23000 * scale, 300 * scale);
         }
 
+        private void updateCharacters(GameTime gameTime)
+        {
+            hero.Update(gameTime);
+            monsterOne.Update(gameTime);
+            monsterTwo.Update(gameTime);
+        }
+
         private void updateExtraObjects(GameTime gameTime)
         {
             //movingPlanetTwoPosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
@@ -363,6 +362,17 @@ namespace ProjectDelta
 
         public void resetStage()
         {
+            if (correctInARow >= COUNT_TO_CONTINUE)
+            {
+                //This is where we go when we finish a stage and
+                //want to wrap up the level (notice the sole return condition!)
+                //You might want to throw your logic for determining what the next
+                //Set of questions is in here somewhere.
+                //Also, if you need to make an additional DB reads or writes, this
+                //is a great place to do it, as this block of code is only executed once
+                //instead of the usual 60 times per second.
+                worldStage++;
+            }
             correctInARow = 0;
             monsterOne.setX((int)(1600 * scale));
             monsterTwo.setX((int)(2600 * scale));
@@ -375,46 +385,11 @@ namespace ProjectDelta
             stageProblems = Problems.determineProblems(worldStage);
             monsterOne.setFactors(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
             monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-            currentMonster = 1;
+            //currentMonsterNumber = 1;
+            currentMonster = monsterOne;
             showQuestion = true;
             heroDead = false;
             world101Input.resetInput();
-        }
-
-        private void checkAnswer()
-        {
-            if (world101Input.getLastInput().Equals("") == false)
-            {
-                if (currentMonster == 1)
-                {
-                    //This is where the hook for the expected answer takes place.
-                    //You'll need to pull from your dictionary the expect answer here.
-                    //I won't change this particular line, because I don't know what you'll
-                    //call the keys in the dictionary pair (I just assumed factorOne factorTwo for the factors
-                    //change as neccessary
-                    if (monsterOne.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
-                    {
-                        correctAnswer();
-                    }
-                    else
-                    {
-                        stopAll();
-                    }
-                }
-                if (currentMonster == 2)
-                {
-
-                    //The other place where we check answers, don't forget it!
-                    if (monsterTwo.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
-                    {
-                        correctAnswer();
-                    }
-                    else
-                    {
-                        stopAll();
-                    }
-                }
-            }
         }
 
         private void correctAnswer()
@@ -439,12 +414,5 @@ namespace ProjectDelta
             }
         }
 
-        private void updateCharacters(GameTime gameTime)
-        {
-            hero.Update(gameTime);
-
-            monsterOne.Update(gameTime);
-            monsterTwo.Update(gameTime);
-        }
     }
 }
