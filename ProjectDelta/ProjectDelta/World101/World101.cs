@@ -23,11 +23,20 @@ namespace ProjectDelta
 {
     public class World101
     {
+        private enum State
+        {
+            None,
+            InternetConnectionError,
+        }
+
+        private State state;
+
         private static int COUNT_TO_CONTINUE = 10;
         private static int MAX_STAGE = 10;
         DynamoDBContext context;
         private int correctInARow = 0;
         private int worldStage;
+        private int errorCounter;
 
         private float scale;
 
@@ -41,6 +50,7 @@ namespace ProjectDelta
         private Texture2D backgroundOne;
         private Texture2D backgroundTwo;
         private Texture2D backgroundThree;
+        private Texture2D internetConnectionError;
         //private Texture2D planetTwo;
         //private Texture2D planetThree;
         //private Texture2D planetFour;
@@ -62,6 +72,7 @@ namespace ProjectDelta
         private Vector2 backgroundOnePosition;
         private Vector2 backgroundTwoPosition;
         private Vector2 backgroundThreePosition;
+        private Vector2 internetConnectionErrorPosition;
 
         //Mouse states
         private MouseState current;
@@ -91,6 +102,7 @@ namespace ProjectDelta
 
         public void Initialize(float scale, int screenX)
         {
+            state = State.None;
             this.scale = scale;
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
@@ -99,6 +111,7 @@ namespace ProjectDelta
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
             world101Text.Initialize(scale);
+            errorCounter = 1000;
             //currentMonsterNumber = 1;
         }
 
@@ -113,6 +126,9 @@ namespace ProjectDelta
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
 
+            internetConnectionError = content.Load<Texture2D>("Login/internet_connection_error");
+            internetConnectionErrorPosition = new Vector2((1920 / 2 * scale - internetConnectionError.Width * scale / 2), (1080 / 2 *scale - internetConnectionError.Height * scale / 2));
+
             //After the world stage has been initialized (directly above this)
             //and before the first set of factors is determined, you'll want to
             //load your first set of values into the array
@@ -123,8 +139,8 @@ namespace ProjectDelta
             //Note: when worldStage = -1 is the hook for endless mode.
             //It can be ignored if there is not going to be an endless mode.
             monsterOne.setFactors(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
-            monsterTwo.setFactors(stageProblems[correctInARow+1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-            
+            monsterTwo.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
+
             world101Text.LoadContent(content);
 
             //Play music in repeating loop
@@ -136,6 +152,8 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
+
+
             updateCharacters(gameTime);
             updateExtraObjects(gameTime);
 
@@ -226,11 +244,31 @@ namespace ProjectDelta
                 world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
             }
 
+            if (state == State.InternetConnectionError)
+            {
+                if (errorCounter == 1000)
+                {
+                    errorCounter = -5000;
+                }
+                if (errorCounter < 0)
+                {
+                    errorCounter += gameTime.ElapsedGameTime.Milliseconds;
+                }
+                if (errorCounter >= 0)
+                {
+                    state = State.None;
+                    errorCounter = 1000;
+                    return true;
+                }
+            }
+
             return false;
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
+
             drawExtraObjects(spriteBatch);
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
@@ -248,6 +286,13 @@ namespace ProjectDelta
             {
                 world101Text.DrawDeadMsg(spriteBatch);
             }
+
+            if (state == State.InternetConnectionError)
+            {
+                spriteBatch.Draw(internetConnectionError, internetConnectionErrorPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
+
+
         }
 
         private void checkClick()
@@ -402,11 +447,19 @@ namespace ProjectDelta
             {
                 worldStage = MAX_STAGE;
             }
-            if (worldStage > Game1.globalUser.world101)
+            try
             {
-                Game1.globalUser.world101 = worldStage;
-                context.Save<User>(Game1.globalUser);
+                if (worldStage > Game1.globalUser.world101)
+                {
+                    Game1.globalUser.world101 = worldStage;
+                    context.Save<User>(Game1.globalUser);
+                }
             }
+            catch
+            {
+                state = State.InternetConnectionError;
+            }
+
         }
 
     }
