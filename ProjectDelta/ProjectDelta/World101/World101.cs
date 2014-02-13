@@ -41,7 +41,6 @@ namespace ProjectDelta
         private float scale;
 
         private float planetSpeed = .01f;
-        //private float shipSpeed = .25f;
         private float backgroundSpeed = .1f;
         private float backupPlanetSpeed = .01f;
         private float backupBackgroundSpeed = .1f;
@@ -51,24 +50,8 @@ namespace ProjectDelta
         private Texture2D backgroundTwo;
         private Texture2D backgroundThree;
         private Texture2D internetConnectionError;
-        //private Texture2D planetTwo;
-        //private Texture2D planetThree;
-        //private Texture2D planetFour;
-        //private Texture2D planetFive;
-        //private Texture2D shipOne;
-        //private Texture2D shipTwo;
-        //private Texture2D shipThree;
-        //private Texture2D shipFour;
 
-        ////Vectors for level 1
-        //private Vector2 movingPlanetTwoPosition;
-        //private Vector2 movingPlanetThreePosition;
-        //private Vector2 movingPlanetFourPosition;
-        //private Vector2 movingPlanetFivePosition;
-        //private Vector2 shipOnePosition;
-        //private Vector2 shipTwoPosition;
-        //private Vector2 shipThreePosition;
-        //private Vector2 shipFourPosition;
+        //Vectors for level 1
         private Vector2 backgroundOnePosition;
         private Vector2 backgroundTwoPosition;
         private Vector2 backgroundThreePosition;
@@ -127,10 +110,8 @@ namespace ProjectDelta
             monsterTwo.LoadContent(content);
 
             internetConnectionError = content.Load<Texture2D>("Login/internet_connection_error");
-            internetConnectionErrorPosition = new Vector2((1920 / 2 * scale - internetConnectionError.Width * scale / 2), (1080 / 2 *scale - internetConnectionError.Height * scale / 2));
+            internetConnectionErrorPosition = new Vector2((1920 / 2 * scale - internetConnectionError.Width * scale / 2), (1080 / 2 * scale - internetConnectionError.Height * scale / 2));
 
-            //After the world stage has been initialized (directly above this)
-            //and before the first set of factors is determined, you'll want to
             //load your first set of values into the array
 
             stageProblems = Problems.determineProblems(worldStage);
@@ -155,7 +136,6 @@ namespace ProjectDelta
 
 
             updateCharacters(gameTime);
-            updateExtraObjects(gameTime);
 
             KeyboardState keyboard = Keyboard.GetState();
 
@@ -183,17 +163,6 @@ namespace ProjectDelta
 
                 answerDone = world101Input.Update(gameTime, heroDead);
 
-                //if (currentMonsterNumber == 1)
-                //{
-                //    currentMonster = monsterOne;
-                //}
-
-                //if (currentMonsterNumber == 2)
-                //{
-                //    currentMonster = monsterTwo;
-                //}
-
-
                 if (answerDone == true)
                 {
                     if (world101Input.getLastInput().Equals("") == false)
@@ -216,10 +185,7 @@ namespace ProjectDelta
                     currentMonster.monsterDeath();
                     //monsterOne.setX((int)(2600*scale));
 
-                    //Any time we need to set the factors for the monster when it dies,
-                    //You'll need to make a call similar to the one in the load content method
-                    //I'm not 100% if you'll need correctInARow or correctInARow+1, play around with it
-
+                    //Update factors when a monster dies
                     currentMonster.setFactors(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
 
                     showQuestion = true;
@@ -340,28 +306,6 @@ namespace ProjectDelta
             backgroundOnePosition = new Vector2(0, 0);
             backgroundTwoPosition = new Vector2(backgroundOne.Width * scale, 0);
             backgroundThreePosition = new Vector2(backgroundOne.Width * scale + backgroundTwo.Width * scale, 0);
-
-            //planetTwo = content.Load<Texture2D>("General/Planets/planet_2");
-            //planetThree = content.Load<Texture2D>("General/Planets/planet_3");
-            //planetFour = content.Load<Texture2D>("General/Planets/planet_4");
-            //planetFive = content.Load<Texture2D>("General/Planets/planet_5");
-
-            //shipOne = content.Load<Texture2D>("General/Ships/good_drone");
-            //shipTwo = content.Load<Texture2D>("General/Ships/enemy_drones");
-            //shipThree = content.Load<Texture2D>("General/Ships/good_fleet_1");
-            //shipFour = content.Load<Texture2D>("General/Ships/enemy_fleet_1");
-
-            ////any scalar value needs to take into consideration
-            ////the scale factor to fix resolution issues
-            //movingPlanetTwoPosition = new Vector2(-2800 * scale, 150 * scale);
-            //movingPlanetThreePosition = new Vector2(-5250 * scale, 200 * scale);
-            //movingPlanetFourPosition = new Vector2(-9000 * scale, 1200 * scale);
-            //movingPlanetFivePosition = new Vector2(-12000 * scale, -800 * scale);
-
-            //shipOnePosition = new Vector2(-2000 * scale, 150 * scale);
-            //shipTwoPosition = new Vector2(6000 * scale, 200 * scale);
-            //shipThreePosition = new Vector2(-15000 * scale, 500 * scale);
-            //shipFourPosition = new Vector2(-23000 * scale, 300 * scale);
         }
 
         private void updateCharacters(GameTime gameTime)
@@ -371,49 +315,19 @@ namespace ProjectDelta
             monsterTwo.Update(gameTime);
         }
 
-        private void updateExtraObjects(GameTime gameTime)
-        {
-            //movingPlanetTwoPosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            //movingPlanetTwoPosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            //movingPlanetThreePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            //movingPlanetThreePosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            //movingPlanetFourPosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            //movingPlanetFourPosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            //movingPlanetFivePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            //movingPlanetFivePosition.Y += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-            //shipOnePosition.X += 4 * shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            //shipTwoPosition.X -= 5 * shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            //shipThreePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            //shipFourPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-        }
-
         private void drawExtraObjects(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(backgroundOne, backgroundOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(backgroundTwo, backgroundTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(backgroundThree, backgroundThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            //spriteBatch.Draw(planetTwo, movingPlanetTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            //spriteBatch.Draw(planetThree, movingPlanetThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            //spriteBatch.Draw(planetFour, movingPlanetFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            //spriteBatch.Draw(planetFive, movingPlanetFivePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            //spriteBatch.Draw(shipOne, shipOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            //spriteBatch.Draw(shipTwo, shipTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            //spriteBatch.Draw(shipThree, shipThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            //spriteBatch.Draw(shipFour, shipFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         public void resetStage()
         {
             if (correctInARow >= COUNT_TO_CONTINUE)
             {
-                //This is where we go when we finish a stage and
-                //want to wrap up the level (notice the sole return condition!)
-                //You might want to throw your logic for determining what the next
-                //Set of questions is in here somewhere.
-                //Also, if you need to make an additional DB reads or writes, this
-                //is a great place to do it, as this block of code is only executed once
-                //instead of the usual 60 times per second.
+                //This block of code is only executed once between successful level
+                //completion instead of the usual 60 times per second.
                 worldStage++;
             }
             correctInARow = 0;
@@ -425,7 +339,6 @@ namespace ProjectDelta
             planetSpeed = backupPlanetSpeed;
             hero.live();
             hero.questionUp();
-            //currentMonsterNumber = 1;
             showQuestion = true;
             heroDead = false;
             world101Input.resetInput();
@@ -447,18 +360,20 @@ namespace ProjectDelta
             {
                 worldStage = MAX_STAGE;
             }
-            try
+
+            if (worldStage > Game1.globalUser.world101)
             {
-                if (worldStage > Game1.globalUser.world101)
+                try
                 {
                     Game1.globalUser.world101 = worldStage;
                     context.Save<User>(Game1.globalUser);
                 }
+                catch
+                {
+                    state = State.InternetConnectionError;
+                }
             }
-            catch
-            {
-                state = State.InternetConnectionError;
-            }
+
 
         }
 

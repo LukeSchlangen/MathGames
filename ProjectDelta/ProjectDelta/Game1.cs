@@ -204,14 +204,9 @@ namespace ProjectDelta
                     state = State.World101;
                     homeContentManager.Unload();
                     int difficulty = globalUser.world101;
-                    if (difficulty < 10)
-                    {
+
                         world101.LoadContent(world101ContentManager, globalUser.world101);
-                    }
-                    else
-                    {
-                        world101.LoadContent(world101ContentManager, -1);
-                    }
+
                     success = false;
                     whereTo = 0;
                 }
@@ -220,14 +215,9 @@ namespace ProjectDelta
                     state = State.World201;
                     homeContentManager.Unload();
                     int difficulty = globalUser.world201;
-                    if (difficulty < 10)
-                    {
-                        world201.LoadContent(world201ContentManager, globalUser.world201 + 1);
-                    }
-                    else
-                    {
-                        world201.LoadContent(world201ContentManager, -1);
-                    }
+
+                        world201.LoadContent(world201ContentManager, globalUser.world201);
+
                 }
             }
 
