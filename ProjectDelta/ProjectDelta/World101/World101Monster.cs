@@ -35,6 +35,7 @@ namespace ProjectDelta
 
         private int factorOne;
         private int factorTwo;
+        private int operationValue;
 
         private int deathTrajectory;
         private int screenX;
@@ -87,8 +88,9 @@ namespace ProjectDelta
             spriteBatch.Draw(monster, position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
-        public void setFactors(int factorOne, int factorTwo)
+        public void setFactors(int operationValue, int factorOne, int factorTwo)
         {
+            this.operationValue = operationValue;
             this.factorOne = factorOne;
             this.factorTwo = factorTwo;
         }
@@ -122,9 +124,26 @@ namespace ProjectDelta
             return factorTwo;
         }
 
+        public int getOperationValue()
+        {
+            return operationValue;
+        }
+
         public int getExpectedAnswer()
         {
-            return factorOne + factorTwo;
+            switch (operationValue)
+            {
+                case 0:
+                    return factorOne + factorTwo;
+                case 1:
+                    return factorOne - factorTwo;
+                case 2:
+                    return factorOne * factorTwo;
+                case 3:
+                    return factorOne / factorTwo;
+                default:
+                    return 0;
+            }
         }
 
         public Rectangle getCollisionBox()
@@ -147,11 +166,11 @@ namespace ProjectDelta
             position.Y = y;
         }
 
-        public void reset(int factorOne, int factorTwo, float speed)
+        public void reset(int operationValue, int factorOne, int factorTwo, float speed)
         {
             dead = false;
             position = startingPosition;
-            setFactors(factorOne, factorTwo);
+            setFactors(operationValue, factorOne, factorTwo);
             setSpeed(speed);
         }
     }

@@ -49,21 +49,27 @@ namespace ProjectDelta
             congratsPosition = new Vector2((1920/16) * scale, (1080/4) * scale);
         }
 
-        public void Update(int factorOne, int factorTwo, string myAnswer, int answerCount, int stage)
+        public void Update(int operationValue, int factorOne, int factorTwo, string myAnswer, int answerCount, int stage)
         {
-            if (stage == -1)
+            if (operationValue == 0)
             {
                 question = factorOne + " + " + factorTwo + " = " + myAnswer;
-                correctAnswerCount = "Endless score: " + answerCount;
-                dead = "You vanquished " + answerCount + " monsters before death! \nPress SPACE to try again.\nPress ESC to return home.";
             }
-            else
+            else if (operationValue == 1)
             {
-                question = factorOne + " + " + factorTwo + " = " + myAnswer;
+                question = factorOne + " - " + factorTwo + " = " + myAnswer;
+            }
+            else if (operationValue == 2)
+            {
+                question = factorOne + " * " + factorTwo + " = " + myAnswer;
+            }
+            else if (operationValue == 3)
+            {
+                question = factorOne + " / " + factorTwo + " = " + myAnswer;
+            }
                 correctAnswerCount = "Stage " + stage + ": " + answerCount + "/10";
                 congrats = "Congratulations on finishing stage " + stage + "! \nPress SPACE to continue forward.\nPress ESC to return home.";
                 dead = "Aww... you died. \nPress SPACE to try again.\nPress ESC to return home.";
-            }
         }
 
         public void Draw(SpriteBatch spriteBatch)

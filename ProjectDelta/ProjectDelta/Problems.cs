@@ -34,6 +34,7 @@ namespace ProjectDelta
                 Dictionary<string, int> problemsDictionary = new Dictionary<string, int>();
 
                 //set the values of the factors to be some random number between 1 and 9
+                problemsDictionary.Add("operation", i/3);
                 problemsDictionary.Add("factorOne", i + worldStage);
                 problemsDictionary.Add("factorTwo", i + worldStage);
 

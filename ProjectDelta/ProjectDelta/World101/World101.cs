@@ -122,8 +122,8 @@ namespace ProjectDelta
             //Load up the first set of factors into the monster objects
             //Note: when worldStage = -1 is the hook for endless mode.
             //It can be ignored if there is not going to be an endless mode.
-            monsterOne.setFactors(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
-            monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
+            monsterOne.setFactors(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
+            monsterTwo.setFactors(stageProblems[correctInARow+1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
             
             world101Text.LoadContent(content);
 
@@ -202,7 +202,7 @@ namespace ProjectDelta
                     //You'll need to make a call similar to the one in the load content method
                     //I'm not 100% if you'll need correctInARow or correctInARow+1, play around with it
 
-                    currentMonster.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
+                    currentMonster.setFactors(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
 
                     showQuestion = true;
 
@@ -223,7 +223,7 @@ namespace ProjectDelta
 
                 //You'll also need to make some changes here to the text class to properly display
                 //the questions operator (right now it always assumes its the + operator)
-                world101Text.Update(currentMonster.getFactorOne(), currentMonster.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
+                world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
             }
 
             return false;
@@ -374,8 +374,8 @@ namespace ProjectDelta
             correctInARow = 0;
             stageProblems = Problems.determineProblems(worldStage);
             backgroundSpeed = backupBackgroundSpeed;
-            monsterOne.reset(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
-            monsterTwo.reset(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
+            monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
+            monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
             currentMonster = monsterOne;
             planetSpeed = backupPlanetSpeed;
             hero.live();
