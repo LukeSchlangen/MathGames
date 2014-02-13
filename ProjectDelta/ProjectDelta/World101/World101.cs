@@ -70,8 +70,6 @@ namespace ProjectDelta
         private Hero hero;
         private World101Monster monsterOne;
         private World101Monster monsterTwo;
-        private World101Monster monsterOneStart;
-        private World101Monster monsterTwoStart;
         private World101Monster currentMonster;
         //private int currentMonsterNumber;
         private World101Input world101Input;
@@ -96,9 +94,6 @@ namespace ProjectDelta
             this.scale = scale;
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
-            monsterOneStart = monsterOne;
-            monsterTwoStart = monsterTwo;
-
             currentMonster = monsterOne;
             hero = new Hero();
             hero.Initialize(scale);
@@ -127,11 +122,9 @@ namespace ProjectDelta
             //Load up the first set of factors into the monster objects
             //Note: when worldStage = -1 is the hook for endless mode.
             //It can be ignored if there is not going to be an endless mode.
-
             monsterOne.setFactors(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
             monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-
-
+            
             world101Text.LoadContent(content);
 
             //Play music in repeating loop
@@ -150,19 +143,17 @@ namespace ProjectDelta
 
             if (keyboard.IsKeyDown(Keys.Escape))
             {
-                worldStage--;
                 saveStage();
                 return true;
             }
 
             if (keyboard.IsKeyDown(Keys.Space))
             {
-                
                 saveStage();
                 resetStage();
             }
 
-            if (correctInARow >= COUNT_TO_CONTINUE)
+            else if (correctInARow >= COUNT_TO_CONTINUE)
             {
                 monsterOne.monsterDeath();
                 monsterTwo.monsterDeath();
@@ -381,19 +372,15 @@ namespace ProjectDelta
                 worldStage++;
             }
             correctInARow = 0;
-            monsterOne = monsterOneStart;
-            monsterTwo = monsterTwoStart;
+            stageProblems = Problems.determineProblems(worldStage);
             backgroundSpeed = backupBackgroundSpeed;
-            monsterOne.setSpeed(backgroundSpeed);
-            monsterTwo.setSpeed(backgroundSpeed);
+            monsterOne.reset(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
+            monsterTwo.reset(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
+            currentMonster = monsterOne;
             planetSpeed = backupPlanetSpeed;
             hero.live();
             hero.questionUp();
-            stageProblems = Problems.determineProblems(worldStage);
-            monsterOne.setFactors(stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
-            monsterTwo.setFactors(stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
             //currentMonsterNumber = 1;
-            currentMonster = monsterOne;
             showQuestion = true;
             heroDead = false;
             world101Input.resetInput();
@@ -410,6 +397,7 @@ namespace ProjectDelta
 
         private void saveStage()
         {
+            stopAll();
             if (worldStage >= MAX_STAGE)
             {
                 worldStage = MAX_STAGE;

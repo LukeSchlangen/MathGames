@@ -25,6 +25,7 @@ namespace ProjectDelta
     {
         private Texture2D monster;
         private Vector2 position;
+        private Vector2 startingPosition;
         private Rectangle collisionBox;
         private float speed = 0f;
         private float scale;
@@ -38,8 +39,8 @@ namespace ProjectDelta
         private int deathTrajectory;
         private int screenX;
 
-        private bool dead;
-        
+        public bool dead;
+
         private Random random = new Random();
 
         public World101Monster(int x, int y, float scale, float speed, int screenX)
@@ -49,7 +50,8 @@ namespace ProjectDelta
             this.y = y;
             this.screenX = screenX;
 
-            position = new Vector2(x*scale, y*scale);
+            position = new Vector2(x * scale, y * scale);
+            startingPosition = position;
         }
 
         public void LoadContent(ContentManager content)
@@ -60,7 +62,7 @@ namespace ProjectDelta
 
         public void Update(GameTime gameTime)
         {
-            if (position.X > screenX + (800*scale))
+            if (position.X > screenX + (800 * scale))
             {
                 dead = false;
                 position.Y = y * scale;
@@ -98,14 +100,14 @@ namespace ProjectDelta
             switch (deathTrajectory)
             {
                 case 1:
-                deathTrajectory = -55;
-                break;
+                    deathTrajectory = -55;
+                    break;
                 case 2:
-                deathTrajectory = -15;
-                break;
+                    deathTrajectory = -15;
+                    break;
                 default:
-                deathTrajectory = 25;
-                break;
+                    deathTrajectory = 25;
+                    break;
             }
 
         }
@@ -143,6 +145,14 @@ namespace ProjectDelta
         public void setY(int y)
         {
             position.Y = y;
+        }
+
+        public void reset(int factorOne, int factorTwo, float speed)
+        {
+            dead = false;
+            position = startingPosition;
+            setFactors(factorOne, factorTwo);
+            setSpeed(speed);
         }
     }
 }
