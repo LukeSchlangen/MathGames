@@ -206,7 +206,7 @@ namespace ProjectDelta
                     int difficulty = globalUser.world101;
                     if (difficulty < 10)
                     {
-                        world101.LoadContent(world101ContentManager, globalUser.world101 + 1);
+                        world101.LoadContent(world101ContentManager, globalUser.world101);
                     }
                     else
                     {

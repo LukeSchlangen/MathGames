@@ -27,7 +27,7 @@ namespace ProjectDelta
         private static int MAX_STAGE = 10;
         DynamoDBContext context;
         private int correctInARow = 0;
-        private int worldStage = 1;
+        private int worldStage;
 
         private float scale;
 
@@ -70,6 +70,8 @@ namespace ProjectDelta
         private Hero hero;
         private World101Monster monsterOne;
         private World101Monster monsterTwo;
+        private World101Monster monsterOneStart;
+        private World101Monster monsterTwoStart;
         private World101Monster currentMonster;
         //private int currentMonsterNumber;
         private World101Input world101Input;
@@ -94,6 +96,9 @@ namespace ProjectDelta
             this.scale = scale;
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
+            monsterOneStart = monsterOne;
+            monsterTwoStart = monsterTwo;
+
             currentMonster = monsterOne;
             hero = new Hero();
             hero.Initialize(scale);
@@ -145,12 +150,14 @@ namespace ProjectDelta
 
             if (keyboard.IsKeyDown(Keys.Escape))
             {
+                worldStage--;
                 saveStage();
                 return true;
             }
 
             if (keyboard.IsKeyDown(Keys.Space))
             {
+                
                 saveStage();
                 resetStage();
             }
@@ -374,8 +381,8 @@ namespace ProjectDelta
                 worldStage++;
             }
             correctInARow = 0;
-            monsterOne.setX((int)(1600 * scale));
-            monsterTwo.setX((int)(2600 * scale));
+            monsterOne = monsterOneStart;
+            monsterTwo = monsterTwoStart;
             backgroundSpeed = backupBackgroundSpeed;
             monsterOne.setSpeed(backgroundSpeed);
             monsterTwo.setSpeed(backgroundSpeed);
