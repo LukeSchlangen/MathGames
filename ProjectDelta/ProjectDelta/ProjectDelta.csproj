@@ -95,10 +95,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="World201\World201.cs" />
-    <Compile Include="World201\World201Input.cs" />
-    <Compile Include="World201\World201Monster.cs" />
-    <Compile Include="World201\World201Text.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

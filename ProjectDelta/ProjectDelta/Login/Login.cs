@@ -262,6 +262,7 @@ namespace ProjectDelta
                     }
                     else
                     {
+                        state = State.None;
                         return true;
                     }
                 }

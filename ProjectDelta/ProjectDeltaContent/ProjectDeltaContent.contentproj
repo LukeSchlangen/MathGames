@@ -313,7 +313,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Level2\" />
+    <Compile Include="Home\log_out_button.png">
+      <Name>log_out_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="General\Shield\question_box_image.png">

@@ -29,7 +29,6 @@ namespace ProjectDelta
     {
         public static User globalUser = null;
 
-
         public enum State
         {
             //add any relevant game states here
@@ -37,7 +36,6 @@ namespace ProjectDelta
             Login,
             Home,
             World101,
-            World201,
             Exit,
         }
 
@@ -62,7 +60,6 @@ namespace ProjectDelta
         private Login login;
         private Home home;
         private World101 world101;
-        private World201 world201;
 
         //ContentManagers: One manager for each set of 
         //content (worlds, login, home, etc)
@@ -70,7 +67,6 @@ namespace ProjectDelta
         ContentManager loginContentManager;
         ContentManager homeContentManager;
         ContentManager world101ContentManager;
-        ContentManager world201ContentManager;
         
         public Game1()
         {
@@ -81,7 +77,6 @@ namespace ProjectDelta
             loginContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             homeContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             world101ContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
-            world201ContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
 
             screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
@@ -126,7 +121,6 @@ namespace ProjectDelta
             login = new Login(context);
             home = new Home();
             world101 = new World101(context);
-            world201 = new World201(context);
 
             //when we initialize the login screen (and any screens
             //from here on out), we pass in the scale value to allow
@@ -134,7 +128,6 @@ namespace ProjectDelta
             login.Initialize(scale);
             home.Initialize(scale);
             world101.Initialize(scale, screenWidth);
-            world201.Initialize(scale, screenWidth);
 
             base.Initialize();
         }
@@ -205,19 +198,19 @@ namespace ProjectDelta
                     homeContentManager.Unload();
                     int difficulty = globalUser.world101;
 
-                        world101.LoadContent(world101ContentManager, globalUser.world101);
+                    world101.LoadContent(world101ContentManager, globalUser.world101);
 
                     success = false;
                     whereTo = 0;
                 }
-                if (whereTo == 201)
+
+                if (whereTo == -1)
                 {
-                    state = State.World201;
+                    state = State.Login;
                     homeContentManager.Unload();
-                    int difficulty = globalUser.world201;
-
-                        world201.LoadContent(world201ContentManager, globalUser.world201);
-
+                    globalUser = null;
+                    login.LoadContent(loginContentManager, screenHeight, screenWidth);
+                    whereTo = 0;
                 }
             }
 
@@ -231,19 +224,6 @@ namespace ProjectDelta
                     home.LoadContent(homeContentManager, screenHeight, screenWidth);
                     success = false;
                     world101.resetStage();
-                }
-            }
-
-            if (state == State.World201)
-            {
-                bool success = world201.Update(gameTime);
-                if (success == true)
-                {
-                    state = State.Home;
-                    world201ContentManager.Unload();
-                    home.LoadContent(homeContentManager, screenHeight, screenWidth);
-                    success = false;
-                    world201.resetWorld();
                 }
             }
 
