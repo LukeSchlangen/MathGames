@@ -10,20 +10,29 @@ namespace ProjectDelta
     //classes
     static class Problems
     {
-        public static Dictionary<string, int>[] determineProblems(int worldStage)
+        public static Dictionary<string, int>[] determineProblems(int worldStage, int numberOfProblems)
         {
             //A *better* example
-
+            int randomSpot;
+            numberOfProblems += 2;
             //This is the array of dictionary objects that we will return to the game loop
-            Dictionary<string, int>[] problemsToReturn = new Dictionary<string, int>[12];
+            Dictionary<string, int>[] problemsToReturn = new Dictionary<string, int>[numberOfProblems];
 
             //Let's just use a random number for the time being as our factors
             Random random = new Random();
 
+            bool[] spotTaken = new bool[numberOfProblems];
+
+            for (int i = 0; i < numberOfProblems; i++)
+            {
+                spotTaken[i] = false;
+            }
+
             //This is where the magic happens...
             //TODO: Your algorithm here.
 
-            for (int i = 0; i < 12; i++)
+
+            for (int i = 0; i < numberOfProblems; i++)
             {
                 //make an instance of the dictionary to be added to the array
                 //this is where I was concerned with scope. If this dictionary
@@ -35,16 +44,27 @@ namespace ProjectDelta
 
                 //set the values of the factors to be some random number between 1 and 9
                 problemsDictionary.Add("operation", i/3);
-                problemsDictionary.Add("factorOne", i + worldStage);
-                problemsDictionary.Add("factorTwo", i + worldStage);
+                problemsDictionary.Add("factorOne", i);
+                problemsDictionary.Add("factorTwo", i);
 
                 //figure out the answer based on our factors, and set it accordingly
                 //note: this assumes all questions are addition, more work will need to be
                 //done for subtraction, multiplication, etc.
 
-                problemsDictionary.Add("answer", problemsDictionary["factorOne"] + problemsDictionary["factorTwo"]);
-                problemsToReturn[i] = problemsDictionary;
+                //randomize order and determine order of problem
+                randomSpot = random.Next(0, numberOfProblems);
+                while (spotTaken[randomSpot] == true)
+                {
+                    randomSpot = random.Next(0, numberOfProblems);
+                }
+
+                spotTaken[randomSpot] = true;
+                
+                //place problem in return array
+                problemsToReturn[randomSpot] = problemsDictionary;
+
             }
+
 
             //We now have an array containing 10 different dictionary objects, whose contents are randomized
             //in the above for-loop. I wouldn't worry about randomizing the objects here, but rather take care

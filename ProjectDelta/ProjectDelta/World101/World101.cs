@@ -114,11 +114,12 @@ namespace ProjectDelta
 
             //load your first set of values into the array
 
-            stageProblems = Problems.determineProblems(worldStage);
+            stageProblems = Problems.determineProblems(worldStage, COUNT_TO_CONTINUE);
 
             //Load up the first set of factors into the monster objects
             //Note: when worldStage = -1 is the hook for endless mode.
             //It can be ignored if there is not going to be an endless mode.
+
             monsterOne.setFactors(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
             monsterTwo.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
 
@@ -186,7 +187,7 @@ namespace ProjectDelta
                     //monsterOne.setX((int)(2600*scale));
 
                     //Update factors when a monster dies
-                    currentMonster.setFactors(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
+                    currentMonster.setFactors(stageProblems[correctInARow+1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
 
                     showQuestion = true;
 
@@ -331,7 +332,7 @@ namespace ProjectDelta
                 worldStage++;
             }
             correctInARow = 0;
-            stageProblems = Problems.determineProblems(worldStage);
+            stageProblems = Problems.determineProblems(worldStage, COUNT_TO_CONTINUE);
             backgroundSpeed = backupBackgroundSpeed;
             monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
             monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
