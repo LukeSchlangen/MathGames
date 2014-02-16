@@ -35,17 +35,44 @@ namespace ProjectDelta
             for (int i = 0; i < numberOfProblems; i++)
             {
                 //make an instance of the dictionary to be added to the array
-                //this is where I was concerned with scope. If this dictionary
-                //object is outside the for-loop, you end up adding a bunch of the
-                //same keys with different values (i.e. "factorOne"/1, "factorOne"/5)
-                //to the same dictionary
 
                 Dictionary<string, int> problemsDictionary = new Dictionary<string, int>();
+                int operation = 0;
+                int factorOne = 0;
+                int factorTwo = 0;
 
-                //set the values of the factors to be some random number between 1 and 9
-                problemsDictionary.Add("operation", i/3);
-                problemsDictionary.Add("factorOne", i);
-                problemsDictionary.Add("factorTwo", i);
+                switch (worldStage)
+                {
+                    case 0: //0+0, 0+1, 1+0
+                        if (i > 7) { factorOne = 1; } else if (i > 3) { factorTwo = 1; }
+                        break;
+                    case 1: //small numbers + 0
+                        if (i > 7) { factorOne = i - 6; } else if (i > 3) { factorTwo = i - 4; } else { factorTwo = i; }
+                        break;
+                    case 2: //small numbers + 1
+                        factorOne = 1;
+                        factorTwo = 1;
+                        if (i > 7) { factorOne = i - 6; } else if (i > 3) { factorTwo = i - 4; } else { factorTwo = i; }
+                        break;
+                    case 3: //small numbers + 1 or small numbers + 0
+                        if (i / 2 == 1)
+                        {
+                            factorOne = 1;
+                            factorTwo = 1;
+                        }
+                        if (i > 7) { factorOne = i - 6; } else if (i > 3) { factorTwo = i - 4; } else { factorTwo = i; }
+                        break;
+                    default:
+                        factorOne = i;
+                        factorTwo = i;
+                        break;
+                }
+
+
+                //set the values of the factors
+                problemsDictionary.Add("operation", operation);
+                problemsDictionary.Add("factorOne", factorOne);
+                problemsDictionary.Add("factorTwo", factorTwo);
 
                 //figure out the answer based on our factors, and set it accordingly
                 //note: this assumes all questions are addition, more work will need to be
@@ -59,18 +86,15 @@ namespace ProjectDelta
                 }
 
                 spotTaken[randomSpot] = true;
-                
+
                 //place problem in return array
                 problemsToReturn[randomSpot] = problemsDictionary;
 
             }
 
-
             //We now have an array containing 10 different dictionary objects, whose contents are randomized
-            //in the above for-loop. I wouldn't worry about randomizing the objects here, but rather take care
-            //of that in the actually game loop with another random
-
             return problemsToReturn;
         }
+
     }
 }
