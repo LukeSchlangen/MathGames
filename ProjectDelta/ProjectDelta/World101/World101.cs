@@ -32,7 +32,7 @@ namespace ProjectDelta
         private State state;
 
         private static int COUNT_TO_CONTINUE = 10;
-        private static int MAX_STAGE = 10;
+        private static int MAX_STAGE = 100;
         DynamoDBContext context;
         private int correctInARow = 0;
         private int worldStage;
@@ -208,7 +208,7 @@ namespace ProjectDelta
 
                 //You'll also need to make some changes here to the text class to properly display
                 //the questions operator (right now it always assumes its the + operator)
-                world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage);
+                world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage, COUNT_TO_CONTINUE);
             }
 
             if (state == State.InternetConnectionError)

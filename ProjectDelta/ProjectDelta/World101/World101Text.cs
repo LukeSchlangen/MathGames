@@ -49,7 +49,7 @@ namespace ProjectDelta
             congratsPosition = new Vector2((1920/16) * scale, (1080/4) * scale);
         }
 
-        public void Update(int operationValue, int factorOne, int factorTwo, string myAnswer, int answerCount, int stage)
+        public void Update(int operationValue, int factorOne, int factorTwo, string myAnswer, int answerCount, int stage, int countToContinue)
         {
             if (operationValue == 0)
             {
@@ -67,7 +67,7 @@ namespace ProjectDelta
             {
                 question = factorOne + " / " + factorTwo + " = " + myAnswer;
             }
-                correctAnswerCount = "Stage " + stage + ": " + answerCount + "/10";
+                correctAnswerCount = "Stage " + stage + ": " + answerCount + "/" + countToContinue;
                 congrats = "Congratulations on finishing stage " + stage + "! \nPress SPACE to continue forward.\nPress ESC to return home.";
                 dead = "Aww... you died. \nPress SPACE to try again.\nPress ESC to return home.";
         }
