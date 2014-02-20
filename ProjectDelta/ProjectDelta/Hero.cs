@@ -183,5 +183,6 @@ namespace ProjectDelta
         {
             shieldCollisionBox.X = activatedShieldCollisionBoxPosition.X;
         }
+
     }
 }

@@ -32,7 +32,7 @@ namespace ProjectDelta
         private State state;
 
         private static int COUNT_TO_CONTINUE = 10;
-        private static int MAX_STAGE = 100;
+        private static int MAX_STAGE = 1000;
         DynamoDBContext context;
         private int correctInARow = 0;
         private int worldStage;
@@ -43,7 +43,8 @@ namespace ProjectDelta
         private float planetSpeed = .01f;
         private float backgroundSpeed = .1f;
         private float backupPlanetSpeed = .01f;
-        private float backupBackgroundSpeed = .1f;
+        private float backupBackgroundSpeed = .1f; //speed of background for game, also used to set monster speed
+        private float timePerProblem = 10000f; //10000f is about 3.5 seconds per problem
 
         //Textures for level 1
         private Texture2D backgroundOne;
@@ -164,6 +165,8 @@ namespace ProjectDelta
 
                 answerDone = world101Input.Update(gameTime, heroDead);
 
+                world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage, COUNT_TO_CONTINUE);
+
                 if (answerDone == true)
                 {
                     if (world101Input.getLastInput().Equals("") == false)
@@ -171,6 +174,7 @@ namespace ProjectDelta
                         if (currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
                         {
                             correctAnswer();
+                            currentMonster.setSpeed(backgroundSpeed*2);
                         }
                         else
                         {
@@ -199,6 +203,8 @@ namespace ProjectDelta
                     {
                         currentMonster = monsterOne;
                     }
+
+                    currentMonster.setSpeed((currentMonster.getCollisionBox().X - hero.getHeroCollisionBox().X)/timePerProblem);
                 }
 
                 if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
@@ -208,8 +214,7 @@ namespace ProjectDelta
 
                 //You'll also need to make some changes here to the text class to properly display
                 //the questions operator (right now it always assumes its the + operator)
-                world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage, COUNT_TO_CONTINUE);
-            }
+                            }
 
             if (state == State.InternetConnectionError)
             {

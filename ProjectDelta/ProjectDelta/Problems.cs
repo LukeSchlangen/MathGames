@@ -14,25 +14,23 @@ namespace ProjectDelta
 
         public static Dictionary<string, int>[] determineProblems(int worldStage, int numberOfProblems)
         {
-            //A *better* example
-            int randomSpot;
-            numberOfProblems += 2;
+            int randomSpot; //randomSpot will later be used to decide the order of the problem as presented to player
+            numberOfProblems += 2; //two problems will not be used, but must be generated because after the last two monsters die, they will still be looking for problems to present
+            
             //This is the array of dictionary objects that we will return to the game loop
             Dictionary<string, int>[] problemsToReturn = new Dictionary<string, int>[numberOfProblems];
+            
+            Random random = new Random(); //A random is used to pick the order of the problems and 2+3 vs 3+2 later in the code
 
-            //Let's just use a random number for the time being as our factors
-            Random random = new Random();
+            bool[] spotTaken = new bool[numberOfProblems]; //array to keep track of which spots already have problems in them
 
-            bool[] spotTaken = new bool[numberOfProblems];
-
+            //make all of the spots "open" meaning they can have a new problem placed there
             for (int i = 0; i < numberOfProblems; i++)
             {
                 spotTaken[i] = false;
             }
 
-            //This is where the magic happens...
-            //TODO: Your algorithm here.
-
+            //This is where the magic happens... operation, factorOne, and factorTwo are all set based on level
 
             for (int i = 0; i < numberOfProblems; i++)
             {
@@ -43,144 +41,149 @@ namespace ProjectDelta
                 int factorOne = 0;
                 int factorTwo = 0;
 
-                if (worldStage < 40) { operation = 0; } else if (worldStage < 117) { operation = 1; } else { operation = 2; }
+                //based on worldStage, determine the operation
+                if (worldStage < 40) { operation = 0; } else if (worldStage < 117) { operation = 1; } else if (worldStage < 157) { operation = 2; } else { operation = 3; }
+
+                //based on worldStage, this switch case determines which factors to show
+                //factorOneGenerator and factorTwoGenerator pick one of the 2,3, or 4 options and return them
+                //all possible combinations are created and used so student will never randomly
+                // get lucky and skip a problem they are supposed to learn on that level
 
                 switch (worldStage)
                 {
-                    case 0: //0+0, 0+1, 1+0
-                        //if (i > 7) { factorOne = 1; } else if (i > 3) { factorTwo = 1; }
+                    case 0: //0 through 1 + 0
                         factorOne = factorOneGenerator(0, 1, i);
                         factorTwo = 0;
                         break;
-                    case 1: //small numbers + 0
+                    case 1: //0 through 2 + 0
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = 0;
                         break;
-                    case 2: //small numbers + 1
+                    case 2: //0 through 2 + 1
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = 1;
                         break;
-                    case 3: //small numbers + 1 or small numbers + 0
+                    case 3: //0 through 2 + 0 through 1
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(0, 1, i, numberOfProblems);
                         break;
-                    case 4: //small numbers + 1 or small numbers + 2
+                    case 4: //0 through 2 + 1 through 2
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(1, 2, i, numberOfProblems);
                         break;
-                    case 5: //small number + 2 or small number + 3
+                    case 5: //0 through 2 + 2 through 3
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(2, 3, i, numberOfProblems);
                         break;
-                    case 6: //1 to 4 + 2 or 3
+                    case 6: //1 through 3 + 2 through 3
                         factorOne = factorOneGenerator(1, 2, 3, i);
                         factorTwo = factorTwoGenerator(2, 3, i, numberOfProblems);
                         break;
-                    case 7: // 2 to 5 + 2 or 3
+                    case 7: //0 through 2 + 3 through 4
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(3, 4, i, numberOfProblems);
                         break;
-                    case 8: // 2 to 5 + 4 or 3
+                    case 8: //1 through 3 + 3 through 4
                         factorOne = factorOneGenerator(1, 2, 3, i);
                         factorTwo = factorTwoGenerator(3, 4, i, numberOfProblems);
                         break;
-                    case 9: // 4 to 7 + 1 or 2
+                    case 9: //2 through 4 + 3 through 4
                         factorOne = factorOneGenerator(2, 3, 4, i);
                         factorTwo = factorTwoGenerator(3, 4, i, numberOfProblems);
                         break;
-                    case 10: // 3 to 6 + 4 or 3
+                    case 10: //0 through 2 + 4 through 5
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(4, 5, i, numberOfProblems);
                         break;
-                    case 11: // 3 to 6 + 5 or 4
+                    case 11: //1 through 3 + 4 through 5
                         factorOne = factorOneGenerator(1, 2, 3, i);
                         factorTwo = factorTwoGenerator(4, 5, i, numberOfProblems);
                         break;
-                    case 12: // 4 to 7 + 2 or 3
+                    case 12: //2 through 4 + 4 through 5
                         factorOne = factorOneGenerator(2, 3, 4, i);
                         factorTwo = factorTwoGenerator(4, 5, i, numberOfProblems);
                         break;
-                    case 13: // 4 to 7 + 4 or 3
+                    case 13: //3 through 5 + 4 through 5
                         factorOne = factorOneGenerator(3, 4, 5, i);
                         factorTwo = factorTwoGenerator(4, 5, i, numberOfProblems);
                         break;
-                    case 14: // 4 to 7 + 5 or 4
+                    case 14: //0 through 2 + 5 through 6
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(6, 5, i, numberOfProblems);
                         break;
-                    case 15: // 5 to 8 + 1 or 2
+                    case 15: //1 through 2 + 5 through 6
                         factorOne = factorOneGenerator(3, 1, 2, i);
                         factorTwo = factorTwoGenerator(6, 5, i, numberOfProblems);
                         break;
-                    case 16:
+                    case 16: //2 through 4 + 5 through 6
                         factorOne = factorOneGenerator(2, 3, 4, i);
                         factorTwo = factorTwoGenerator(6, 5, i, numberOfProblems);
                         break;
-                    case 17: // 5 to 8 + 2 or 3
+                    case 17: //3 through 5 + 5 through 6
                         factorOne = factorOneGenerator(3, 4, 5, i);
                         factorTwo = factorTwoGenerator(6, 5, i, numberOfProblems);
                         break;
-                    case 18: // 5 to 8 + 4 or 3
+                    case 18: //0 through 2 + 6 through 7
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 19: // 5 to 8 + 4 or 5
+                    case 19: //1 through 3 + 6 through 7
                         factorOne = factorOneGenerator(3, 1, 2, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 20: // 6 to 9 + 2 or 1
+                    case 20: //0 through 2 + 7 through 8
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(8, 7, i, numberOfProblems);
                         break;
-                    case 21: // 6 to 9 + 2 or 3
+                    case 21: //4 through 5 + 5 through 6
                         factorOne = factorOneGenerator(4, 5, 6, i);
                         factorTwo = factorTwoGenerator(6, 5, i, numberOfProblems);
                         break;
-                    case 22: // 6 to 9 + 4 or 3
+                    case 22: //the remainder of these continue in this way factorOne and factorTwo
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
-                    case 23: // 6 to 9 + 4 or 5
+                    case 23:
                         factorOne = factorOneGenerator(3, 4, 2, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 24: // 3 to 6 + 6 or 5
+                    case 24:
                         factorOne = factorOneGenerator(3, 1, 2, i);
                         factorTwo = factorTwoGenerator(7, 8, i, numberOfProblems);
                         break;
-                    case 25: // 4 to 7 + 6 or 5
+                    case 25:
                         factorOne = factorOneGenerator(3, 4, 5, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 26: // 4 to 7 + 6 or 7
+                    case 26:
                         factorOne = factorOneGenerator(3, 4, 2, i);
                         factorTwo = factorTwoGenerator(7, 8, i, numberOfProblems);
                         break;
-                    case 27: // 5 to 8 + 6 or 7
+                    case 27:
                         factorOne = factorOneGenerator(3, 1, 2, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
-                    case 28: // 5 to 8 + 8 or 7
+                    case 28:
                         factorOne = factorOneGenerator(4, 5, 6, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 29: // 6 to 9 + 5 or 6
+                    case 29:
                         factorOne = factorOneGenerator(3, 4, 2, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
-                    case 30: // 6 to 9 + 7 or 6
+                    case 30:
                         factorOne = factorOneGenerator(5, 6, 7, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 31: // 6 to 9 + 7 or 8
+                    case 31:
                         factorOne = factorOneGenerator(3, 4, 5, i);
                         factorTwo = factorTwoGenerator(7, 8, i, numberOfProblems);
                         break;
-                    case 32: // 6 to 9 + 9 or 8
+                    case 32:
                         factorOne = factorOneGenerator(5, 4, 6, i);
                         factorTwo = factorTwoGenerator(7, 8, i, numberOfProblems);
                         break;
-                    case 33: // 6 to 9 + 9 or 10
+                    case 33: 
                         factorOne = factorOneGenerator(3, 4, 5, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
@@ -204,21 +207,21 @@ namespace ProjectDelta
                         factorOne = factorOneGenerator(8, 6, 7, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
-                    case 39:
+                    case 39: //last level of addition: 7 through 9 + 8 through 9
                         factorOne = factorOneGenerator(8, 9, 7, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
 
                         //end of addition, begin subtraction
-                    case 40:
+                    case 40: //1 minus 0 through 1
                         factorOne = 1;
                         factorTwo = factorTwoGenerator(0,1, i, numberOfProblems);
                         break;
-                    case 41:
+                    case 41:// 1 through 2 minus 0 through 1
                         factorOne = factorOneGenerator(1,2,i);
                         factorTwo = factorTwoGenerator(0, 1, i, numberOfProblems);
                         break;
-                    case 42:
+                    case 42:// remainder of subtraction continue this way: factorOne minus factorTwo
                         factorOne = factorOneGenerator(1, 2, 3, i);
                         factorTwo = factorTwoGenerator(0, 1, i, numberOfProblems);
                         break;
@@ -514,74 +517,73 @@ namespace ProjectDelta
                         factorOne = factorOneGenerator(11, 12, 13, 14, i);
                         factorTwo = 9;
                         break;
-                    case 116:
+                    case 116:// last level of subtraction: 15 through 18 minus 9
                         factorOne = factorOneGenerator(15, 16, 17, 18, i);
                         factorTwo = 9;
                         break;
 
                        //end of subtraction begin multiplication
-                    case 117: //0+0, 0+1, 1+0
-                        //if (i > 7) { factorOne = 1; } else if (i > 3) { factorTwo = 1; }
+                    case 117: //these factors are the same as addition: begins with 0 through 1 * 0
                         factorOne = factorOneGenerator(0, 1, i);
                         factorTwo = 0;
                         break;
-                    case 118: //small numbers + 0
+                    case 118:
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = 0;
                         break;
-                    case 119: //small numbers + 1
+                    case 119:
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = 1;
                         break;
-                    case 120: //small numbers + 1 or small numbers + 0
+                    case 120:
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(0, 1, i, numberOfProblems);
                         break;
-                    case 121: //small numbers + 1 or small numbers + 2
+                    case 121:
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(1, 2, i, numberOfProblems);
                         break;
-                    case 122: //small number + 2 or small number + 3
+                    case 122:
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(2, 3, i, numberOfProblems);
                         break;
-                    case 123: //1 to 4 + 2 or 3
+                    case 123:
                         factorOne = factorOneGenerator(1, 2, 3, i);
                         factorTwo = factorTwoGenerator(2, 3, i, numberOfProblems);
                         break;
-                    case 124: // 2 to 5 + 2 or 3
+                    case 124:
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(3, 4, i, numberOfProblems);
                         break;
-                    case 125: // 2 to 5 + 4 or 3
+                    case 125:
                         factorOne = factorOneGenerator(1, 2, 3, i);
                         factorTwo = factorTwoGenerator(3, 4, i, numberOfProblems);
                         break;
-                    case 126: // 4 to 7 + 1 or 2
+                    case 126:
                         factorOne = factorOneGenerator(2, 3, 4, i);
                         factorTwo = factorTwoGenerator(3, 4, i, numberOfProblems);
                         break;
-                    case 127: // 3 to 6 + 4 or 3
+                    case 127:
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(4, 5, i, numberOfProblems);
                         break;
-                    case 128: // 3 to 6 + 5 or 4
+                    case 128:
                         factorOne = factorOneGenerator(1, 2, 3, i);
                         factorTwo = factorTwoGenerator(4, 5, i, numberOfProblems);
                         break;
-                    case 129: // 4 to 7 + 2 or 3
+                    case 129:
                         factorOne = factorOneGenerator(2, 3, 4, i);
                         factorTwo = factorTwoGenerator(4, 5, i, numberOfProblems);
                         break;
-                    case 130: // 4 to 7 + 4 or 3
+                    case 130:
                         factorOne = factorOneGenerator(3, 4, 5, i);
                         factorTwo = factorTwoGenerator(4, 5, i, numberOfProblems);
                         break;
-                    case 131: // 4 to 7 + 5 or 4
+                    case 131:
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(6, 5, i, numberOfProblems);
                         break;
-                    case 132: // 5 to 8 + 1 or 2
+                    case 132:
                         factorOne = factorOneGenerator(3, 1, 2, i);
                         factorTwo = factorTwoGenerator(6, 5, i, numberOfProblems);
                         break;
@@ -589,71 +591,71 @@ namespace ProjectDelta
                         factorOne = factorOneGenerator(2, 3, 4, i);
                         factorTwo = factorTwoGenerator(6, 5, i, numberOfProblems);
                         break;
-                    case 134: // 5 to 8 + 2 or 3
+                    case 134:
                         factorOne = factorOneGenerator(3, 4, 5, i);
                         factorTwo = factorTwoGenerator(6, 5, i, numberOfProblems);
                         break;
-                    case 135: // 5 to 8 + 4 or 3
+                    case 135:
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 136: // 5 to 8 + 4 or 5
+                    case 136:
                         factorOne = factorOneGenerator(3, 1, 2, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 137: // 6 to 9 + 2 or 1
+                    case 137:
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(8, 7, i, numberOfProblems);
                         break;
-                    case 138: // 6 to 9 + 2 or 3
+                    case 138:
                         factorOne = factorOneGenerator(4, 5, 6, i);
                         factorTwo = factorTwoGenerator(6, 5, i, numberOfProblems);
                         break;
-                    case 139: // 6 to 9 + 4 or 3
+                    case 139:
                         factorOne = factorOneGenerator(0, 1, 2, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
-                    case 140: // 6 to 9 + 4 or 5
+                    case 140:
                         factorOne = factorOneGenerator(3, 4, 2, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 141: // 3 to 6 + 6 or 5
+                    case 141:
                         factorOne = factorOneGenerator(3, 1, 2, i);
                         factorTwo = factorTwoGenerator(7, 8, i, numberOfProblems);
                         break;
-                    case 142: // 4 to 7 + 6 or 5
+                    case 142:
                         factorOne = factorOneGenerator(3, 4, 5, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 143: // 4 to 7 + 6 or 7
+                    case 143:
                         factorOne = factorOneGenerator(3, 4, 2, i);
                         factorTwo = factorTwoGenerator(7, 8, i, numberOfProblems);
                         break;
-                    case 144: // 5 to 8 + 6 or 7
+                    case 144: 
                         factorOne = factorOneGenerator(3, 1, 2, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
-                    case 145: // 5 to 8 + 8 or 7
+                    case 145:
                         factorOne = factorOneGenerator(4, 5, 6, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 146: // 6 to 9 + 5 or 6
+                    case 146:
                         factorOne = factorOneGenerator(3, 4, 2, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
-                    case 147: // 6 to 9 + 7 or 6
+                    case 147: 
                         factorOne = factorOneGenerator(5, 6, 7, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
-                    case 148: // 6 to 9 + 7 or 8
+                    case 148:
                         factorOne = factorOneGenerator(3, 4, 5, i);
                         factorTwo = factorTwoGenerator(7, 8, i, numberOfProblems);
                         break;
-                    case 149: // 6 to 9 + 9 or 8
+                    case 149:
                         factorOne = factorOneGenerator(5, 4, 6, i);
                         factorTwo = factorTwoGenerator(7, 8, i, numberOfProblems);
                         break;
-                    case 150: // 6 to 9 + 9 or 10
+                    case 150:
                         factorOne = factorOneGenerator(3, 4, 5, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
@@ -682,10 +684,28 @@ namespace ProjectDelta
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
 
+                        //end of multiplication, begin division
+                        //addition, subtraction, and multiplication were the same... this is tricky... so listen up
+                        //unlike addition, subtraction, and multiplication where you can put any two numbers together willy-nilly
+                        //so... we have to get creative
+
+                        //factorOneGenerator given 4 inputs (and i) has a period of 4
+                        //factorOneGenerator given 2 inputs (and i) has a period of 2
+                        //because of this, let's say we want 16/4, 25/5, 12/4, and 15/5
+                        // we can write this as
+                        //factorOne = factorOneGenerator(16,25,12,15,i);
+                        //factorTwo = factorOneGenerator(4,5,i)
+
+                    case 157:
+                        factorOne = factorOneGenerator(9, 3, 18, 6, i);
+                        factorTwo = factorOneGenerator(9, 3, i);
+                        break;
+
+                        //end of division, if a student is still going, give them some tough addition and subtraction problems
                     default:
-                        operation = 0;
-                        factorOne = i;
-                        factorTwo = i;
+                        operation = random.Next(0,2);
+                        factorOne = random.Next(worldStage*3/2, worldStage*2);
+                        factorTwo = random.Next(worldStage/4, worldStage*3/2);
                         break;
                 }
 
@@ -706,17 +726,14 @@ namespace ProjectDelta
                 problemsDictionary.Add("factorOne", factorOne);
                 problemsDictionary.Add("factorTwo", factorTwo);
 
-                //figure out the answer based on our factors, and set it accordingly
-                //note: this assumes all questions are addition, more work will need to be
-                //done for subtraction, multiplication, etc.
-
-                //randomize order and determine order of problem
+                //randomize order and determine order of problem (find a spot that isn't taken)
                 randomSpot = random.Next(0, numberOfProblems);
                 while (spotTaken[randomSpot] == true)
                 {
                     randomSpot = random.Next(0, numberOfProblems);
                 }
 
+                //mark which spot was taken so that it won't be overwritten
                 spotTaken[randomSpot] = true;
 
                 //place problem in return array
@@ -730,8 +747,13 @@ namespace ProjectDelta
 
         }
 
+        //factorOneGenerator and factorTwoGenerator differ in order to allow them to be used to generate all possibilities
+        //ex. factorOneGenerator(1,2,3,4, i) and factorOneGenerator(1,2,i) would never present 1+2 because they would be periodic
+        //this periodic nature of only presenting 4 of the 8 possible problems could be useful for division
+
         private static int factorOneGenerator(int integerOne, int integerTwo, int timeThroughLoop)
         {
+            //alternate number based on which pass i through the dictionary loop
             int factor;
             if (timeThroughLoop % 2 == 0) { factor = integerOne; }
             else { factor = integerTwo; }
@@ -739,6 +761,7 @@ namespace ProjectDelta
         }
         private static int factorOneGenerator(int integerOne, int integerTwo, int integerThree, int timeThroughLoop)
         {
+            //alternate number returned every third number is the same
             int factor;
             if (timeThroughLoop % 3 == 0) { factor = integerOne; }
             else if (timeThroughLoop % 3 == 1) { factor = integerTwo; }
@@ -747,6 +770,7 @@ namespace ProjectDelta
         }
         private static int factorOneGenerator(int integerOne, int integerTwo, int integerThree, int integerFour, int timeThroughLoop)
         {
+            //alternate number returned, every fourth number is the same
             int factor;
             if (timeThroughLoop % 4 == 0) { factor = integerOne; }
             else if (timeThroughLoop % 4 == 1) { factor = integerTwo; }
@@ -757,6 +781,7 @@ namespace ProjectDelta
 
         private static int factorTwoGenerator(int integerOne, int integerTwo, int timeThroughLoop, int numberOfProblems)
         {
+            //first half of times through the loop return the same number, second half return the other number
             int factor;
             if (timeThroughLoop < numberOfProblems / 2) { factor = integerOne; }
             else { factor = integerTwo; }
@@ -764,6 +789,7 @@ namespace ProjectDelta
         }
         private static int factorTwoGenerator(int integerOne, int integerTwo, int integerThree, int timeThroughLoop, int numberOfProblems)
         {
+            //first third of times through the loop return the first number, second third return the second number, final third return the third number
             int factor;
             if (timeThroughLoop < numberOfProblems / 3) { factor = integerOne; }
             else if (timeThroughLoop < numberOfProblems * 2 / 3) { factor = integerTwo; }
@@ -772,6 +798,8 @@ namespace ProjectDelta
         }
         private static int factorTwoGenerator(int integerOne, int integerTwo, int integerThree, int integerFour, int timeThroughLoop, int numberOfProblems)
         {
+            //first fourth of times through the loop return the first number, second fourth return the second number
+            //thrid foruth return the thrid number, final fourth return the fourth number
             int factor;
             if (timeThroughLoop < numberOfProblems / 4) { factor = integerOne; }
             else if (timeThroughLoop < numberOfProblems * 2 / 4) { factor = integerTwo; }

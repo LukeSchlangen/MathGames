@@ -28,6 +28,7 @@ namespace ProjectDelta
         private Vector2 startingPosition;
         private Rectangle collisionBox;
         private float speed = 0f;
+        private float startingSpeed = 0f;
         private float scale;
 
         private int y;
@@ -48,6 +49,7 @@ namespace ProjectDelta
         {
             this.scale = scale;
             this.speed = speed;
+            this.startingSpeed = speed;
             this.y = y;
             this.screenX = screenX;
 
@@ -63,10 +65,11 @@ namespace ProjectDelta
 
         public void Update(GameTime gameTime)
         {
-            if (position.X > screenX + (800 * scale))
+            if (position.X > screenX + (100 * scale))
             {
                 dead = false;
                 position.Y = y * scale;
+                speed = startingSpeed;
             }
 
             if (dead)
