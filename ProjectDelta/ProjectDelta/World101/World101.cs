@@ -50,6 +50,12 @@ namespace ProjectDelta
         private Texture2D backgroundOne;
         private Texture2D backgroundTwo;
         private Texture2D backgroundThree;
+        private Texture2D secondBackgroundOne;
+        private Texture2D secondBackgroundTwo;
+        private Texture2D secondBackgroundThree;
+        private Texture2D thirdBackgroundOne;
+        private Texture2D thirdBackgroundTwo;
+        private Texture2D thirdBackgroundThree;
         private Texture2D internetConnectionError;
 
         //Vectors for level 1
@@ -74,6 +80,7 @@ namespace ProjectDelta
         private bool answerDone = false;
         private bool showQuestion = true;
         private bool heroDead = false;
+        private int bgToDraw = 1;
 
         //This is an array of HashSets that should allow you store data
         //as you explained in email.
@@ -306,12 +313,34 @@ namespace ProjectDelta
 
         private void loadExtraObjects(ContentManager content)
         {
+            if(worldStage < 10)
+            {
+                bgToDraw = 1;
+            }
+            if (worldStage >= 10 && worldStage < 20)
+            {
+                bgToDraw = 2;
+            }
+            if (worldStage >= 20)
+            {
+                bgToDraw = 3;
+            }
+
             backgroundOne = content.Load<Texture2D>("Level1/background_level_1a");
             backgroundTwo = content.Load<Texture2D>("Level1/background_level_1b");
             backgroundThree = content.Load<Texture2D>("Level1/background_level_1c");
+            
             backgroundOnePosition = new Vector2(0, 0);
             backgroundTwoPosition = new Vector2(backgroundOne.Width * scale, 0);
             backgroundThreePosition = new Vector2(backgroundOne.Width * scale + backgroundTwo.Width * scale, 0);
+
+            secondBackgroundOne = content.Load<Texture2D>("Level1/background_level_2a");
+            secondBackgroundTwo = content.Load<Texture2D>("Level1/background_level_2b");
+            secondBackgroundThree = content.Load<Texture2D>("Level1/background_level_2c");
+
+            thirdBackgroundOne = content.Load<Texture2D>("Level1/background_level_3a");
+            thirdBackgroundTwo = content.Load<Texture2D>("Level1/background_level_3b");
+            thirdBackgroundThree = content.Load<Texture2D>("Level1/background_level_3c");
         }
 
         private void updateCharacters(GameTime gameTime)
@@ -323,9 +352,24 @@ namespace ProjectDelta
 
         private void drawExtraObjects(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(backgroundOne, backgroundOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(backgroundTwo, backgroundTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(backgroundThree, backgroundThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            if (bgToDraw == 1)
+            {
+                spriteBatch.Draw(backgroundOne, backgroundOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(backgroundTwo, backgroundTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(backgroundThree, backgroundThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
+            if (bgToDraw == 2)
+            {
+                spriteBatch.Draw(secondBackgroundOne, backgroundOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(secondBackgroundTwo, backgroundTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(secondBackgroundThree, backgroundThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
+            if (bgToDraw == 3)
+            {
+                spriteBatch.Draw(thirdBackgroundOne, backgroundOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(thirdBackgroundTwo, backgroundTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(thirdBackgroundThree, backgroundThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
         }
 
         public void resetStage()
@@ -333,8 +377,21 @@ namespace ProjectDelta
             if (correctInARow >= COUNT_TO_CONTINUE)
             {
                 //This block of code is only executed once between successful level
-                //completion instead of the usual 60 times per second.
+                //completion instead of the usual 60 times per second.              
                 worldStage++;
+                if (worldStage < 10)
+                {
+                    bgToDraw = 1;
+                }
+                if (worldStage >= 10 && worldStage < 20)
+                {
+                    bgToDraw = 2;
+                }
+                if (worldStage >= 20)
+                {
+                    bgToDraw = 3;
+                }
+
             }
             correctInARow = 0;
             stageProblems = Problems.determineProblems(worldStage, COUNT_TO_CONTINUE);

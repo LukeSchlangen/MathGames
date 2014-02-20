@@ -633,6 +633,60 @@
       <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\log_out_button.xnb</Output>
       <Time>2014-02-13T17:50:40.403786-06:00</Time>
     </Item>
+    <Item>
+      <Source>Level1\background_level_3a.png</Source>
+      <Name>Level1\background_level_3a</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_3a.xnb</Output>
+      <Time>2014-02-20T01:20:10.4824307-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\background_level_3b.png</Source>
+      <Name>Level1\background_level_3b</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_3b.xnb</Output>
+      <Time>2014-02-20T01:20:10.4834308-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\background_level_3c.png</Source>
+      <Name>Level1\background_level_3c</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_3c.xnb</Output>
+      <Time>2014-02-20T01:20:10.4854309-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\background_level_2a.png</Source>
+      <Name>Level1\background_level_2a</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2a.xnb</Output>
+      <Time>2014-02-20T01:49:20.132505-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\background_level_2b.png</Source>
+      <Name>Level1\background_level_2b</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2b.xnb</Output>
+      <Time>2014-02-20T01:49:20.1345051-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\background_level_2c.png</Source>
+      <Name>Level1\background_level_2c</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2c.xnb</Output>
+      <Time>2014-02-20T01:49:20.1365052-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{29FBEE7A-53F1-459E-83FD-87CAFE9C4818}</ContentProjectGUID>

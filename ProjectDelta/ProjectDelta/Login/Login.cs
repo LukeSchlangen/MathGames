@@ -114,10 +114,14 @@ namespace ProjectDelta
         //Rectangles for the collision boxes for the login
         private Rectangle signupButtonCollisionBox;
         private Rectangle backButtonCollisionBox;
+        private Rectangle usernameCollisionBox;
+        private Rectangle passwordCollisionBox;
 
         //Mouse states
         private MouseState current;
         private MouseState previous;
+
+        private bool clicked = false;
 
         public Login(DynamoDBContext context)
         {
@@ -126,6 +130,8 @@ namespace ProjectDelta
 
         public void Initialize(float scale)
         {
+            username = "";
+            password = " ";
             this.scale = scale;
             state = State.None;
         }
@@ -179,7 +185,7 @@ namespace ProjectDelta
             backButton = content.Load<Texture2D>("Login/back_button");
             backButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
             backButtonCollisionBox = new Rectangle(((int)(backButtonPosition.X)), ((int)(backButtonPosition.Y)), (int)(backButton.Width), (backButton.Height));
-
+           
             signupBox = content.Load<Texture2D>("Login/signup_box");
             signupBoxPosition = new Vector2((screenWidth / 2 - signupBox.Width * scale / 2), (screenHeight / 2 - signupBox.Height * scale / 2));
 
@@ -208,6 +214,9 @@ namespace ProjectDelta
             signupUsernameTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 - loginBox.Height * scale * 25 / 90));
             signupPasswordTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 + loginBox.Height * scale * 6 / 90));
             signupPasswordConfirmTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 + loginBox.Height * scale * 38 / 90));
+
+            usernameCollisionBox = new Rectangle(((int)(loginUsernameHighlighterPosition.X)), ((int)(loginUsernameHighlighterPosition.Y)), (int)(loginHighlighter.Width), (loginHighlighter.Height));
+            passwordCollisionBox = new Rectangle(((int)(loginPasswordHighlighterPosition.X)), ((int)(loginPasswordHighlighterPosition.Y)), (int)(loginHighlighter.Width), (loginHighlighter.Height));
         }
 
         public bool Update(GameTime gameTime)
@@ -231,9 +240,9 @@ namespace ProjectDelta
             
             if (state == State.None)
             {
-                checkClick();
                 username = input.Update();
-                if (username != null)
+                checkClick();
+                if (username != "")
                 {
                     state = State.UsernameEntered;
                 }
@@ -241,7 +250,7 @@ namespace ProjectDelta
             if (state == State.UsernameEntered)
             {
                 password = input.Update();
-                if (password != null)
+                if (password != "")
                 {
                     state = State.PasswordEntered;
                 }
@@ -255,14 +264,17 @@ namespace ProjectDelta
                     if (Game1.globalUser == null)
                     {
                         state = State.LoginError;
+                        clicked = false;
                     }
                     else if (password != Game1.globalUser.password)
                     {
                         state = State.LoginError;
+                        clicked = false;
                     }
                     else
                     {
                         state = State.None;
+                        clicked = false;
                         return true;
                     }
                 }
@@ -291,18 +303,20 @@ namespace ProjectDelta
             {
                 checkClick();
                 username = input.Update();
-                if (username != null)
+                if (username != "")
                 {
                     state = State.UsernameCreated;
+                    clicked = false;
                 }
             }
             if (state == State.UsernameCreated)
             {
                 checkClick();
                 password = input.Update();
-                if (password != null)
+                if (password != "")
                 {
                     state = State.PasswordCreated;
+                    clicked = false;
                 }
 
             }
@@ -310,7 +324,7 @@ namespace ProjectDelta
             {
                 checkClick();
                 checkPassword = input.Update();
-                if (checkPassword != null)
+                if (checkPassword != "")
                 {
                     if (password.Equals(checkPassword))
                     {
@@ -492,6 +506,14 @@ namespace ProjectDelta
                 username = null;
                 password = null;
                 checkPassword = null;
+            }
+            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(usernameCollisionBox))
+            {
+                state = State.None;
+            }
+            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(passwordCollisionBox))
+            {
+                state = State.UsernameEntered;
             }
         }
 

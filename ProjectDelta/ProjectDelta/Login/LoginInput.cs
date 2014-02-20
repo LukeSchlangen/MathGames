@@ -228,7 +228,7 @@ namespace ProjectDelta
                     input = input.Substring(0, input.Length - 1);
                 }
             }
-            if (current.IsKeyDown(Keys.Enter) && previous.IsKeyDown(Keys.Enter) == false)
+            if (input != "" & current.IsKeyDown(Keys.Enter) && previous.IsKeyDown(Keys.Enter) == false)
             {
                 string temp = input;
                 input = "";
@@ -241,7 +241,7 @@ namespace ProjectDelta
                 return temp;
             }
 
-            return null;
+            return "";
         }
 
         public string getInput()
