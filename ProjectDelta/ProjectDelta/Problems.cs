@@ -16,10 +16,10 @@ namespace ProjectDelta
         {
             int randomSpot; //randomSpot will later be used to decide the order of the problem as presented to player
             numberOfProblems += 2; //two problems will not be used, but must be generated because after the last two monsters die, they will still be looking for problems to present
-            
+
             //This is the array of dictionary objects that we will return to the game loop
             Dictionary<string, int>[] problemsToReturn = new Dictionary<string, int>[numberOfProblems];
-            
+
             Random random = new Random(); //A random is used to pick the order of the problems and 2+3 vs 3+2 later in the code
 
             bool[] spotTaken = new bool[numberOfProblems]; //array to keep track of which spots already have problems in them
@@ -183,7 +183,7 @@ namespace ProjectDelta
                         factorOne = factorOneGenerator(5, 4, 6, i);
                         factorTwo = factorTwoGenerator(7, 8, i, numberOfProblems);
                         break;
-                    case 33: 
+                    case 33:
                         factorOne = factorOneGenerator(3, 4, 5, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
@@ -212,13 +212,13 @@ namespace ProjectDelta
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
 
-                        //end of addition, begin subtraction
+                    //end of addition, begin subtraction
                     case 40: //1 minus 0 through 1
                         factorOne = 1;
-                        factorTwo = factorTwoGenerator(0,1, i, numberOfProblems);
+                        factorTwo = factorTwoGenerator(0, 1, i, numberOfProblems);
                         break;
                     case 41:// 1 through 2 minus 0 through 1
-                        factorOne = factorOneGenerator(1,2,i);
+                        factorOne = factorOneGenerator(1, 2, i);
                         factorTwo = factorTwoGenerator(0, 1, i, numberOfProblems);
                         break;
                     case 42:// remainder of subtraction continue this way: factorOne minus factorTwo
@@ -243,7 +243,7 @@ namespace ProjectDelta
                         break;
                     case 47:
                         factorOne = factorOneGenerator(5, 6, i);
-                        factorTwo = factorTwoGenerator(0, 1,2, i, numberOfProblems);
+                        factorTwo = factorTwoGenerator(0, 1, 2, i, numberOfProblems);
                         break;
                     case 48:
                         factorOne = factorOneGenerator(5, 4, i);
@@ -362,7 +362,7 @@ namespace ProjectDelta
                         factorTwo = factorTwoGenerator(6, 7, 8, i, numberOfProblems);
                         break;
                     case 77:
-                        factorOne = factorOneGenerator(10,11, 12, i);
+                        factorOne = factorOneGenerator(10, 11, 12, i);
                         factorTwo = factorTwoGenerator(4, 5, i, numberOfProblems);
                         break;
                     case 78:
@@ -522,7 +522,7 @@ namespace ProjectDelta
                         factorTwo = 9;
                         break;
 
-                       //end of subtraction begin multiplication
+                    //end of subtraction begin multiplication
                     case 117: //these factors are the same as addition: begins with 0 through 1 * 0
                         factorOne = factorOneGenerator(0, 1, i);
                         factorTwo = 0;
@@ -631,7 +631,7 @@ namespace ProjectDelta
                         factorOne = factorOneGenerator(3, 4, 2, i);
                         factorTwo = factorTwoGenerator(7, 8, i, numberOfProblems);
                         break;
-                    case 144: 
+                    case 144:
                         factorOne = factorOneGenerator(3, 1, 2, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
@@ -643,7 +643,7 @@ namespace ProjectDelta
                         factorOne = factorOneGenerator(3, 4, 2, i);
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
-                    case 147: 
+                    case 147:
                         factorOne = factorOneGenerator(5, 6, 7, i);
                         factorTwo = factorTwoGenerator(6, 7, i, numberOfProblems);
                         break;
@@ -684,28 +684,44 @@ namespace ProjectDelta
                         factorTwo = factorTwoGenerator(9, 8, i, numberOfProblems);
                         break;
 
-                        //end of multiplication, begin division
-                        //addition, subtraction, and multiplication were the same... this is tricky... so listen up
-                        //unlike addition, subtraction, and multiplication where you can put any two numbers together willy-nilly
-                        //so... we have to get creative
+                    //end of multiplication, begin division
+                    //addition, subtraction, and multiplication were the same... this is tricky... so listen up
+                    //unlike addition, subtraction, and multiplication where you can put any two numbers together willy-nilly
+                    //so... we have to get creative
 
-                        //factorOneGenerator given 4 inputs (and i) has a period of 4
-                        //factorOneGenerator given 2 inputs (and i) has a period of 2
-                        //because of this, let's say we want 16/4, 25/5, 12/4, and 15/5
-                        // we can write this as
-                        //factorOne = factorOneGenerator(16,25,12,15,i);
-                        //factorTwo = factorOneGenerator(4,5,i)
+                    //factorOneGenerator given 4 inputs (and i) has a period of 4
+                    //factorOneGenerator given 2 inputs (and i) has a period of 2
+                    //because of this, let's say we want 16/4, 25/5, 12/4, and 15/5
+                    // we can write this as
+                    //factorOne = factorOneGenerator(16,25,12,15,i);
+                    //factorTwo = factorOneGenerator(4,5,i); 
 
                     case 157:
-                        factorOne = factorOneGenerator(9, 3, 18, 6, i);
-                        factorTwo = factorOneGenerator(9, 3, i);
+                        factorOne = factorOneGenerator(0, 2, 1, 0, i);
+                        factorTwo = factorOneGenerator(1, 2, i);
+                        break;
+                    case 158:
+                        factorOne = factorOneGenerator(0, 7, 6, 0, i);
+                        factorTwo = factorOneGenerator(6, 7, i);
+                        break;
+                    case 159:
+                        factorOne = factorOneGenerator(5, 8, 1, 0, i);
+                        factorTwo = factorOneGenerator(1, 8, i);
+                        break;
+                    case 160:
+                        factorOne = factorOneGenerator(4, 4, 0, 9, i);
+                            factorTwo = factorOneGenerator(4,1,i);
+                            break;
+                    case 161:
+                            factorOne = factorOneGenerator(3, 3, 0, 2);
+                            factorTwo = factorOneGenerator(3,1,i);
                         break;
 
-                        //end of division, if a student is still going, give them some tough addition and subtraction problems
+                    //end of division, if a student is still going, give them some tough addition and subtraction problems
                     default:
-                        operation = random.Next(0,2);
-                        factorOne = random.Next(worldStage*3/2, worldStage*2);
-                        factorTwo = random.Next(worldStage/4, worldStage*3/2);
+                        operation = random.Next(0, 2);
+                        factorOne = random.Next(worldStage * 3 / 2, worldStage * 2);
+                        factorTwo = random.Next(worldStage / 4, worldStage * 3 / 2);
                         break;
                 }
 
