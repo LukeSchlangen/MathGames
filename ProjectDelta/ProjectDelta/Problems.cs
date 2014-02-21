@@ -710,11 +710,299 @@ namespace ProjectDelta
                         break;
                     case 160:
                         factorOne = factorOneGenerator(4, 4, 0, 9, i);
-                            factorTwo = factorOneGenerator(4,1,i);
-                            break;
+                        factorTwo = factorOneGenerator(4, 1, i);
+                        break;
                     case 161:
-                            factorOne = factorOneGenerator(3, 3, 0, 2);
-                            factorTwo = factorOneGenerator(3,1,i);
+                        factorOne = factorOneGenerator(3, 3, 0, 2);
+                        factorTwo = factorOneGenerator(3, 1, i);
+                        break;
+                    case 162:
+                        factorOne = factorOneGenerator(0, 4, 5, 0, i);
+                        factorTwo = factorOneGenerator(5, 2, i);
+                        break;
+                    case 163:
+                        factorOne = factorOneGenerator(0, 6, 7, 8, i);
+                        factorTwo = 1;
+                        break;
+                    case 164:
+                        factorOne = factorOneGenerator(9, 9, 6, 0);
+                        factorTwo = factorOneGenerator(3, 9, i);
+                        break;
+                    case 165:
+                        factorOne = factorOneGenerator(4, 6, 6, 9, i);
+                        factorTwo = factorOneGenerator(2, 3, i);
+                        break;
+                    case 166:
+                        factorOne = factorOneGenerator(6, 6, 8, 9, i);
+                        factorTwo = factorOneGenerator(2, 3, i);
+                        break;
+                    case 167:
+                        factorOne = factorOneGenerator(4, 6, 8, 10, i);
+                        factorTwo = 2;
+                        break;
+                    case 168:
+                        factorOne = factorOneGenerator(8, 12, 12, 15, i);
+                        factorTwo = factorOneGenerator(2, 3, i);
+                        break;
+                    case 169:
+                        factorOne = factorOneGenerator(12, 10, 15, 12, i);
+                        factorTwo = factorOneGenerator(3, 2, i);
+                        break;
+                    case 170:
+                        factorOne = factorOneGenerator(8, 12, 12, 18, i);
+                        factorTwo = factorOneGenerator(4, 3, i);
+                        break;
+                    case 171:
+                        factorOne = factorOneGenerator(8, 15, 12, 18, i);
+                        factorTwo = factorOneGenerator(4, 3, i);
+                        break;
+                    case 172:
+                        factorOne = factorOneGenerator(10, 8, 15, 12, i);
+                        factorTwo = factorOneGenerator(5, 4, i);
+                        break;
+                    case 173:
+                        factorOne = factorOneGenerator(10, 12, 14, 18, i);
+                        factorTwo = factorOneGenerator(2, 3, i);
+                        break;
+                    case 174:
+                        factorOne = factorOneGenerator(12, 12, 14, 16, i);
+                        factorTwo = factorOneGenerator(2, 4, i);
+                        break;
+                    case 175:
+                        factorOne = factorOneGenerator(16, 16, 18, 20, i);
+                        factorTwo = factorOneGenerator(2, 4, i);
+                        break;
+                    case 176:
+                        factorOne = factorOneGenerator(4, 9, 18, 18, i);
+                        factorTwo = factorOneGenerator(2, 3, i);
+                        break;
+                    case 177:
+                        factorOne = factorOneGenerator(6, 6, 21, 16, i);
+                        factorTwo = factorOneGenerator(3, 2, i);
+                        break;
+                    case 178://this is the point where I gave up on the original scheme,
+                        factorOne = factorOneGenerator(14, 21, 20, 15, i); //each number
+                        factorTwo = factorOneGenerator(2, 3, 4, 5, i);//matches with is divisor here
+                        break;
+                    case 179:
+                        factorOne = factorOneGenerator(18, 21, 20, 15, i);
+                        factorTwo = factorOneGenerator(2, 3, 4, 5, i);
+                        break;
+                    case 180:
+                        factorOne = factorOneGenerator(20, 20, 16, 10, i);
+                        factorTwo = factorOneGenerator(4, 5, i);
+                        break;
+                    case 181:
+                        factorOne = factorOneGenerator(24, 24, 20, 12, i);
+                        factorTwo = factorOneGenerator(3, 4, 5, 6, i);
+                        break;
+                    case 182:
+                        factorOne = factorOneGenerator(24, 12, i);
+                        factorTwo = factorOneGenerator(4, 3, 6, 4, i);
+                        break;
+                    case 183:
+                        factorOne = factorOneGenerator(24, 25, 18, 14, i);
+                        factorTwo = factorOneGenerator(4, 5, 6, 7, i);
+                        break;
+                    case 184:
+                        factorOne = factorOneGenerator(14, 18, 21, 24, i);
+                        factorTwo = factorOneGenerator(7, 6, i);
+                        break;
+                    case 185:
+                        factorOne = factorOneGenerator(12, 14, 21, 25, i);
+                        factorTwo = factorOneGenerator(6, 7, 7, 5, i);
+                        break;
+                    case 186:
+                        factorOne = factorOneGenerator(18, 14, 21, 25, i);
+                        factorTwo = factorOneGenerator(6, 7, 7, 5, i);
+                        break;
+                    case 187:
+                        factorOne = factorOneGenerator(24, 24, 16, 30, i);
+                        factorTwo = factorOneGenerator(8, 6, i);
+                        break;
+                    case 188:
+                        factorOne = factorOneGenerator(30, 30, 16, 28, i);
+                        factorTwo = factorOneGenerator(5, 6, 8, 7, i);
+                        break;
+                    case 189:
+                        factorOne = factorOneGenerator(18, 24, 28, 30, i);
+                        factorTwo = factorOneGenerator(9, 3, 4, 5, i);
+                        break;
+                    case 190:
+                        factorOne = factorOneGenerator(18, 24, 28, 30, i);
+                        factorTwo = factorOneGenerator(9, 8, 7, 6, i);
+                        break;
+                    case 191:
+                        factorOne = factorOneGenerator(28, 30, 16, 18, i);
+                        factorTwo = factorOneGenerator(4, 5, 8, 9, i);
+                        break;
+                    case 192:
+                        factorOne = factorOneGenerator(24, 28, 12, 8, i);
+                        factorTwo = factorOneGenerator(8, 7, 4, 2, i);
+                        break;
+                    case 193:
+                        factorOne = factorOneGenerator(24, 28, 27, 32, i);
+                        factorTwo = factorOneGenerator(3, 4, i);
+                        break;
+                    case 194:
+                        factorOne = factorOneGenerator(27, 32, 35, 35, i);
+                        factorTwo = factorOneGenerator(3, 4, 7, 5, i);
+                        break;
+                    case 195:
+                        factorOne = factorOneGenerator(36, 35, 32, 27, i);
+                        factorTwo = factorOneGenerator(6, 7, 8, 9, i);
+                        break;
+                    case 196:
+                        factorOne = factorOneGenerator(27, 35, 32, 27, i);
+                        factorTwo = factorOneGenerator(3, 7, 8, 9, i);
+                        break;
+                    case 197:
+                        factorOne = factorOneGenerator(32, 36, 35, 32, i);
+                        factorTwo = factorOneGenerator(4, 6, 5, 8, i);
+                        break;
+                    case 198:
+                        factorOne = factorOneGenerator(12, 27, i);
+                        factorTwo = factorOneGenerator(3, 3, 6, 9, i);
+                        break;
+                    case 199:
+                        factorOne = factorOneGenerator(12, 18, 8, 15, i);
+                        factorTwo = factorOneGenerator(2, 3, 4, 5, i);
+                        break;
+                    case 200:
+                        factorOne = factorOneGenerator(15, 35, 16, 32, i);
+                        factorTwo = factorOneGenerator(3, 5, 4, 8, i);
+                        break;
+                    case 201:
+                        factorOne = factorOneGenerator(36, 32, i);
+                        factorTwo = factorOneGenerator(6, 8, 9, 4, i);
+                        break;
+                    case 202:
+                        factorOne = factorOneGenerator(36, 35, 36, 40, i);
+                        factorTwo = factorOneGenerator(6, 5, 4, 8, i);
+                        break;
+                    case 203:
+                        factorOne = factorOneGenerator(20, 30, 36, 40, i);
+                        factorTwo = factorOneGenerator(4, 5, i);
+                        break;
+                    case 204:
+                        factorOne = factorOneGenerator(10, 30, 40, 42, i);
+                        factorTwo = factorOneGenerator(5, 6, i);
+                        break;
+                    case 205:
+                        factorOne = factorOneGenerator(49, 42, 40, 36, i);
+                        factorTwo = factorOneGenerator(7, 7, 8, 9, i);
+                        break;
+                    case 206:
+                        factorOne = factorOneGenerator(24, 18, 24, 42, i);
+                        factorTwo = factorOneGenerator(6, 6, 4, 6, i);
+                        break;
+                    case 207:
+                        factorOne = factorOneGenerator(16, 21, 40, 42, i);
+                        factorTwo = factorOneGenerator(8, 7, i);
+                        break;
+                    case 208:
+                        factorOne = factorOneGenerator(20, 28, 40, 42, i);
+                        factorTwo = factorOneGenerator(4, 7, i);
+                        break;
+                    case 209:
+                        factorOne = factorOneGenerator(18, 24, 45, 49, i);
+                        factorTwo = factorOneGenerator(9, 8, 9, 7, i);
+                        break;
+                    case 210:
+                        factorOne = factorOneGenerator(25, 45, 48, 32, i);
+                        factorTwo = factorOneGenerator(5, 5, 8, 8, i);
+                        break;
+                    case 211:
+                        factorOne = factorOneGenerator(25, 45, 48, 32, i);
+                        factorTwo = factorOneGenerator(5, 5, 8, 8, i);
+                        break;
+                    case 212:
+                        factorOne = factorOneGenerator(36, 45, 42, 36, i);
+                        factorTwo = factorOneGenerator(6, 9, 7, 9, i);
+                        break;
+                    case 213:
+                        factorOne = factorOneGenerator(48, 42, 49, 48, i);
+                        factorTwo = factorOneGenerator(6, 6, 7, 8, i);
+                        break;
+                    case 214:
+                        factorOne = factorOneGenerator(36,45,48,42, i);
+                        factorTwo = factorOneGenerator(4, 5, 6, 7, i);
+                        break;
+                    case 215:
+                        factorOne = factorOneGenerator(36, 45, 48, 42, i);
+                        factorTwo = factorOneGenerator(9, 5, 8, 6, i);
+                        break;
+                    case 216:
+                        factorOne = factorOneGenerator(21,24,45,56, i);
+                        factorTwo = factorOneGenerator(3,3,9,7, i);
+                        break;
+                    case 217:
+                        factorOne = factorOneGenerator(27, 54, 35, 56, i);
+                        factorTwo = factorOneGenerator(3, 6, 7, 8, i);
+                        break;
+                    case 218:
+                        factorOne = factorOneGenerator(54,48,28,56, i);
+                        factorTwo = factorOneGenerator(9,6,4,7, i);
+                        break;
+                    case 219:
+                        factorOne = factorOneGenerator(54, 48, 28, 56, i);
+                        factorTwo = factorOneGenerator(9, 6, 4, 7, i);
+                        break;
+                    case 220:
+                        factorOne = factorOneGenerator(27, 48, 32, 56, i);
+                        factorTwo = factorOneGenerator(9, 6, 4, 8, i);
+                        break;
+                    case 221:
+                        factorOne = factorOneGenerator(54, 64, 63, 54, i);
+                        factorTwo = factorOneGenerator(6, 8, 9, 9, i);
+                        break;
+                    case 222:
+                        factorOne = factorOneGenerator(54, 64, 63, 72, i);
+                        factorTwo = factorOneGenerator(9, 8, 7, 9, i);
+                        break;
+                    case 223:
+                        factorOne = factorOneGenerator(54, 72, 63, 72, i);
+                        factorTwo = factorOneGenerator(6, 8, 9, 9, i);
+                        break;
+                    case 224:
+                        factorOne = factorOneGenerator(42,56,72,81, i);
+                        factorTwo = factorOneGenerator(6, 8, 9, 9, i);
+                        break;
+                    case 225:
+                        factorOne = factorOneGenerator(54,49,40,81, i);
+                        factorTwo = factorOneGenerator(9,7,5,9, i);
+                        break;
+                    case 226:
+                        factorOne = factorOneGenerator(63,42,28,56, i);
+                        factorTwo = factorOneGenerator(9, 7, 4, 8, i);
+                        break;
+                    case 227:
+                        factorOne = factorOneGenerator(40,36,45,81, i);
+                        factorTwo = factorOneGenerator(8,6,5,9, i);
+                        break;
+                    case 228:
+                        factorOne = factorOneGenerator(36,56,42,27, i);
+                        factorTwo = factorOneGenerator(9, 8, 7, 3, i);
+                        break;
+                    case 229:
+                        factorOne = factorOneGenerator(54, 56, 42, 18, i);
+                        factorTwo = factorOneGenerator(9, 8, 7, 2, i);
+                        break;
+                    case 230:
+                        factorOne = factorOneGenerator(36, 48, 63, 54, i);
+                        factorTwo = factorOneGenerator(9, 8, 7, 6, i);
+                        break;
+                    case 231:
+                        factorOne = factorOneGenerator(63, 56, 42, 72, i);
+                        factorTwo = factorOneGenerator(9, 8, 6, 8, i);
+                        break;
+                    case 232:
+                        factorOne = factorOneGenerator(63,56,72,81, i);
+                        factorTwo = factorOneGenerator(9, 7, 8, 9, i);
+                        break;
+                    case 233:
+                        factorOne = factorOneGenerator(63, 64, 72, 42, i);
+                        factorTwo = factorOneGenerator(7, 8, 8, 7, i);
                         break;
 
                     //end of division, if a student is still going, give them some tough addition and subtraction problems
