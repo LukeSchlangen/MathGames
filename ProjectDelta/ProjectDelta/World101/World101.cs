@@ -27,6 +27,7 @@ namespace ProjectDelta
         {
             None,
             InternetConnectionError,
+            ResetTimer,
         }
 
         private State state;
@@ -165,14 +166,13 @@ namespace ProjectDelta
                 monsterOne.monsterDeath();
                 monsterTwo.monsterDeath();
                 hero.stageSuccess();
+                resetTimer();
             }
             else
             {
                 cycleBackground(gameTime);
 
                 answerDone = world101Input.Update(gameTime, heroDead);
-
-                world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage, COUNT_TO_CONTINUE);
 
                 if (answerDone == true)
                 {
@@ -241,6 +241,26 @@ namespace ProjectDelta
                 }
             }
 
+            if (state == State.ResetTimer)
+            {
+                if (errorCounter == 1000)
+                {
+                    errorCounter = -15000;
+                }
+                if (errorCounter < 0)
+                {
+                    errorCounter += gameTime.ElapsedGameTime.Milliseconds;
+                }
+                if (errorCounter >= 0)
+                {
+                    state = State.None;
+                    errorCounter = 1000;
+                    saveStage();
+                    resetStage();
+                }
+            }
+            world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage, COUNT_TO_CONTINUE);
+
             return false;
 
         }
@@ -253,7 +273,7 @@ namespace ProjectDelta
             monsterTwo.Draw(spriteBatch);
             hero.Draw(spriteBatch);
             world101Text.DrawAnswerCount(spriteBatch);
-            if (showQuestion)
+            if (showQuestion && correctInARow<COUNT_TO_CONTINUE)
             {
                 world101Text.Draw(spriteBatch);
             }
@@ -289,6 +309,7 @@ namespace ProjectDelta
             planetSpeed = 0;
             heroDead = true;
             hero.die();
+            resetTimer();
         }
 
         private void cycleBackground(GameTime gameTime)
@@ -439,6 +460,9 @@ namespace ProjectDelta
 
 
         }
-
+        private void resetTimer()
+        {
+            state = State.ResetTimer;
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace ProjectDelta
             ShieldAnimation,
             Shield,
             StageSuccess,
+            Death,
         }
 
         private float scale;
@@ -105,6 +106,11 @@ namespace ProjectDelta
             {
                 heroPosition.X += 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             }
+            if (state == State.Death)
+            {
+                heroPosition.X -= 25 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                heroPosition.Y -= 25 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            }
 
             heroCollisionBox.X = (int)(heroPosition.X - 150 * scale);
             heroCollisionBox.Y = (int)heroPosition.Y;
@@ -152,6 +158,7 @@ namespace ProjectDelta
         public void die()
         {
             heroAnimation.stopAnimation();
+            state = State.Death;
         }
 
         public void live()
