@@ -101,7 +101,7 @@ namespace ProjectDelta
         public void monsterDeath()
         {
             dead = true;
-            deathTrajectory = random.Next(0, 2);
+            deathTrajectory = random.Next(0, 3);
             switch (deathTrajectory)
             {
                 case 1:

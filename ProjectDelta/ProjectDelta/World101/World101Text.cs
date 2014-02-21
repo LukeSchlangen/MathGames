@@ -44,7 +44,7 @@ namespace ProjectDelta
         public void LoadContent(ContentManager content)
         {
             font = content.Load<SpriteFont>("large_input_font");
-            questionFontPosition = new Vector2(345*scale, 660*scale);
+            questionFontPosition = new Vector2(285*scale, 660*scale);
             correctAnswerCountPosition = new Vector2(1250 * scale, 50 * scale);
             congratsPosition = new Vector2((1920/16) * scale, (1080/4) * scale);
         }

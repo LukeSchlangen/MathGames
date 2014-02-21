@@ -83,6 +83,8 @@ namespace ProjectDelta
         private bool heroDead = false;
         private int bgToDraw = 1;
 
+        private string myAnswer;
+
         //This is an array of HashSets that should allow you store data
         //as you explained in email.
         private Dictionary<string, int>[] stageProblems;
@@ -181,7 +183,7 @@ namespace ProjectDelta
                         if (currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
                         {
                             correctAnswer();
-                            currentMonster.setSpeed(backgroundSpeed*2);
+                            currentMonster.setSpeed(backgroundSpeed * 2);
                         }
                         else
                         {
@@ -198,7 +200,7 @@ namespace ProjectDelta
                     //monsterOne.setX((int)(2600*scale));
 
                     //Update factors when a monster dies
-                    currentMonster.setFactors(stageProblems[correctInARow+1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
+                    currentMonster.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
 
                     showQuestion = true;
 
@@ -211,7 +213,7 @@ namespace ProjectDelta
                         currentMonster = monsterOne;
                     }
 
-                    currentMonster.setSpeed((currentMonster.getCollisionBox().X - hero.getHeroCollisionBox().X)/timePerProblem);
+                    currentMonster.setSpeed((currentMonster.getCollisionBox().X - hero.getHeroCollisionBox().X) / timePerProblem);
                 }
 
                 if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
@@ -221,7 +223,7 @@ namespace ProjectDelta
 
                 //You'll also need to make some changes here to the text class to properly display
                 //the questions operator (right now it always assumes its the + operator)
-                            }
+            }
 
             if (state == State.InternetConnectionError)
             {
@@ -259,7 +261,15 @@ namespace ProjectDelta
                     resetStage();
                 }
             }
-            world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), world101Input.getCurrentInput(), correctInARow, worldStage, COUNT_TO_CONTINUE);
+            if (hero.getDead())
+            {
+                myAnswer = currentMonster.getExpectedAnswer().ToString();
+            }
+            else
+            {
+                myAnswer = world101Input.getCurrentInput();
+            }
+            world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), myAnswer, correctInARow, worldStage, COUNT_TO_CONTINUE);
 
             return false;
 
@@ -273,7 +283,7 @@ namespace ProjectDelta
             monsterTwo.Draw(spriteBatch);
             hero.Draw(spriteBatch);
             world101Text.DrawAnswerCount(spriteBatch);
-            if (showQuestion && correctInARow<COUNT_TO_CONTINUE)
+            if (showQuestion && correctInARow < COUNT_TO_CONTINUE)
             {
                 world101Text.Draw(spriteBatch);
             }
@@ -334,7 +344,7 @@ namespace ProjectDelta
 
         private void loadExtraObjects(ContentManager content)
         {
-            if(worldStage < 10)
+            if (worldStage < 10)
             {
                 bgToDraw = 1;
             }
@@ -350,7 +360,7 @@ namespace ProjectDelta
             backgroundOne = content.Load<Texture2D>("Level1/background_level_1a");
             backgroundTwo = content.Load<Texture2D>("Level1/background_level_1b");
             backgroundThree = content.Load<Texture2D>("Level1/background_level_1c");
-            
+
             backgroundOnePosition = new Vector2(0, 0);
             backgroundTwoPosition = new Vector2(backgroundOne.Width * scale, 0);
             backgroundThreePosition = new Vector2(backgroundOne.Width * scale + backgroundTwo.Width * scale, 0);
@@ -426,6 +436,7 @@ namespace ProjectDelta
             showQuestion = true;
             heroDead = false;
             world101Input.resetInput();
+            state = State.None;
         }
 
         private void correctAnswer()

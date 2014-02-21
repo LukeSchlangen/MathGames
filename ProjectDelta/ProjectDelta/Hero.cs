@@ -38,6 +38,7 @@ namespace ProjectDelta
         private State state;
         private bool shieldAnimationDone = false;
         private bool heroStop = false;
+        private bool dead = false;
 
         private Vector2 heroPosition;
         private Vector2 heroStartingPosition;
@@ -159,11 +160,13 @@ namespace ProjectDelta
         {
             heroAnimation.stopAnimation();
             state = State.Death;
+            dead = true;
         }
 
         public void live()
         {
             heroAnimation.startAnimation();
+            dead = false;
         }
 
         public Rectangle getHeroCollisionBox()
@@ -179,6 +182,11 @@ namespace ProjectDelta
         public bool getShieldAnimationDone()
         {
             return shieldAnimationDone;
+        }
+
+        public bool getDead()
+        {
+            return dead;
         }
 
         public void deactivateShield()
