@@ -51,7 +51,7 @@ namespace ProjectDelta
         private string username = null;
         private string password = null;
         private string checkPassword = null;
-        
+
         LoginInput input = new LoginInput();
         Random random = new Random();
 
@@ -118,8 +118,12 @@ namespace ProjectDelta
         private Rectangle passwordCollisionBox;
 
         //Mouse states
-        private MouseState current;
-        private MouseState previous;
+        private MouseState currentMouseState;
+        private MouseState previousMouseState;
+
+        //keyboard states
+        private KeyboardState currentKeyboardState;
+        private KeyboardState previousKeyboardState;
 
         private bool clicked = false;
 
@@ -131,7 +135,7 @@ namespace ProjectDelta
         public void Initialize(float scale)
         {
             username = "";
-            password = " ";
+            password = "";
             this.scale = scale;
             state = State.None;
         }
@@ -146,7 +150,7 @@ namespace ProjectDelta
             Song backgroundMusic;
             backgroundMusic = content.Load<Song>("Login/Background_Music");
             MediaPlayer.Play(backgroundMusic);
-            MediaPlayer.IsRepeating = true;   
+            MediaPlayer.IsRepeating = true;
 
             planetOne = content.Load<Texture2D>("General/Planets/planet_1");
             planetTwo = content.Load<Texture2D>("General/Planets/planet_2");
@@ -185,7 +189,7 @@ namespace ProjectDelta
             backButton = content.Load<Texture2D>("Login/back_button");
             backButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
             backButtonCollisionBox = new Rectangle(((int)(backButtonPosition.X)), ((int)(backButtonPosition.Y)), (int)(backButton.Width), (backButton.Height));
-           
+
             signupBox = content.Load<Texture2D>("Login/signup_box");
             signupBoxPosition = new Vector2((screenWidth / 2 - signupBox.Width * scale / 2), (screenHeight / 2 - signupBox.Height * scale / 2));
 
@@ -201,15 +205,15 @@ namespace ProjectDelta
             loginBoxPosition = new Vector2((screenWidth / 2 - loginBox.Width * scale / 2), (screenHeight / 2 - loginBox.Height * scale / 2));
 
             loginHighlighter = content.Load<Texture2D>("Login/login_highlighter");
-            loginUsernameHighlighterPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 2 / 5)), (screenHeight / 2 - loginBox.Height*scale * 19/ 90));
-            loginPasswordHighlighterPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 2 / 5)), (screenHeight / 2 + loginBox.Height* scale * 1 / 9));
+            loginUsernameHighlighterPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 2 / 5)), (screenHeight / 2 - loginBox.Height * scale * 19 / 90));
+            loginPasswordHighlighterPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 2 / 5)), (screenHeight / 2 + loginBox.Height * scale * 1 / 9));
             signupUsernameHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 - signupBox.Height * 18 / 90));
             signupPasswordHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 - signupBox.Height * 2 / 90));
             signupConfirmHighlighterPosition = new Vector2((screenWidth / 2 - (signupBox.Width * scale * 2 / 5)), (screenHeight / 2 + signupBox.Height * 31 / 180));
 
             font = content.Load<SpriteFont>("input_font");
             loginUsernameTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 - loginBox.Height * scale * 12 / 90));
-            loginPasswordTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 + loginBox.Height* scale * 19 / 90));
+            loginPasswordTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 + loginBox.Height * scale * 19 / 90));
 
             signupUsernameTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 - loginBox.Height * scale * 25 / 90));
             signupPasswordTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 + loginBox.Height * scale * 6 / 90));
@@ -222,7 +226,7 @@ namespace ProjectDelta
         public bool Update(GameTime gameTime)
         {
             //always update the planets flying
-            movingPlanetOnePosition.X -=(float)(planetSpeed *  100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
+            movingPlanetOnePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
             movingPlanetOnePosition.Y += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             movingPlanetTwoPosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
             movingPlanetTwoPosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -237,20 +241,23 @@ namespace ProjectDelta
             shipTwoPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             shipThreePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             shipFourPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            
+
+            currentKeyboardState = Keyboard.GetState();
+
             if (state == State.None)
             {
-                username = input.Update();
+                username = updateText(username);
                 checkClick();
-                if (username != "")
+                if (username != "" && checkEnterAndTab())
                 {
                     state = State.UsernameEntered;
                 }
             }
             if (state == State.UsernameEntered)
             {
-                password = input.Update();
-                if (password != "")
+                password = updateText(password);
+                checkClick();
+                if (password != "" && checkEnterAndTab())
                 {
                     state = State.PasswordEntered;
                 }
@@ -409,6 +416,8 @@ namespace ProjectDelta
                 }
             }
 
+            previousKeyboardState = currentKeyboardState;
+
             return false;
         }
 
@@ -428,21 +437,22 @@ namespace ProjectDelta
             spriteBatch.Draw(shipThree, shipThreePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(shipFour, shipFourPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
-            if (state == State.None)
+            if (state == State.None || state == State.UsernameEntered)
             {
                 spriteBatch.Draw(signupButton, signupButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(loginBox, loginBoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.Draw(loginHighlighter, loginUsernameHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                username = input.getInput();
+                if (currentMouseState.LeftButton != ButtonState.Pressed)
+                {
+                    if (state == State.UsernameEntered)
+                    {
+                        spriteBatch.Draw(loginHighlighter, loginPasswordHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(loginHighlighter, loginUsernameHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                    }
+                }
                 spriteBatch.DrawString(font, username, loginUsernameTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            }
-            if (state == State.UsernameEntered)
-            {
-                spriteBatch.Draw(signupButton, signupButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.Draw(loginBox, loginBoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.DrawString(font, username, loginUsernameTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.Draw(loginHighlighter, loginPasswordHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                password = input.getInput();
                 spriteBatch.DrawString(font, hidePassword(password), loginPasswordTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             if (state == State.LoginError)
@@ -454,7 +464,6 @@ namespace ProjectDelta
                 spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(signupBox, signupBoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(loginHighlighter, signupUsernameHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                username = input.getInput();
                 spriteBatch.DrawString(font, username, signupUsernameTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             if (state == State.UsernameCreated)
@@ -463,7 +472,6 @@ namespace ProjectDelta
                 spriteBatch.Draw(signupBox, signupBoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.DrawString(font, username, signupUsernameTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(loginHighlighter, signupPasswordHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                password = input.getInput();
                 spriteBatch.DrawString(font, hidePassword(password), signupPasswordTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             if (state == State.PasswordCreated)
@@ -473,7 +481,6 @@ namespace ProjectDelta
                 spriteBatch.DrawString(font, username, signupUsernameTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.DrawString(font, hidePassword(password), signupPasswordTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(loginHighlighter, signupConfirmHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                checkPassword = input.getInput();
                 spriteBatch.DrawString(font, hidePassword(checkPassword), signupPasswordConfirmTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             if (state == State.CreationError)
@@ -492,29 +499,38 @@ namespace ProjectDelta
 
         private void checkClick()
         {
-            previous = current;
-            current = Mouse.GetState();
-            Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
-
-            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(signupButtonCollisionBox))
+            previousMouseState = currentMouseState;
+            currentMouseState = Mouse.GetState();
+            if (rectangleClick(signupButtonCollisionBox))
             {
                 state = State.SignupButtonPressed;
             }
-            if(current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(backButtonCollisionBox))
+            if (rectangleClick(backButtonCollisionBox))
             {
                 state = State.None;
                 username = null;
                 password = null;
                 checkPassword = null;
             }
-            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(usernameCollisionBox))
+            if (rectangleClick(usernameCollisionBox))
             {
                 state = State.None;
             }
-            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(passwordCollisionBox))
+            if (rectangleClick(passwordCollisionBox))
             {
                 state = State.UsernameEntered;
             }
+        }
+
+        private bool rectangleClick(Rectangle rectangle)
+        {
+
+            Rectangle mousePosition = new Rectangle(currentMouseState.X, currentMouseState.Y, 1, 1);
+            if (currentMouseState.LeftButton == ButtonState.Pressed && previousMouseState.LeftButton == ButtonState.Released && mousePosition.Intersects(rectangle))
+            {
+                return true;
+            }
+            return false;
         }
 
         private string hidePassword(string password)
@@ -541,5 +557,27 @@ namespace ProjectDelta
             return true;
 
         }
-    }      
+        private string updateText(string textString)
+        {
+
+            textString = textString + input.Update();
+
+            if (currentKeyboardState.IsKeyDown(Keys.Back) && previousKeyboardState.IsKeyDown(Keys.Back) == false)
+            {
+                if (textString.Length > 0)
+                {
+                    textString = textString.Substring(0, textString.Length - 1);
+                }
+            }
+            return textString;
+        }
+        private bool checkEnterAndTab()
+        {
+            if ((currentKeyboardState.IsKeyDown(Keys.Tab) && previousKeyboardState.IsKeyDown(Keys.Tab) == false) || (currentKeyboardState.IsKeyDown(Keys.Enter) && previousKeyboardState.IsKeyDown(Keys.Enter) == false))
+            {
+                return true;
+            }
+            return false;
+        }
+    }
 }
