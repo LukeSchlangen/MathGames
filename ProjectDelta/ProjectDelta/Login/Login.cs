@@ -117,6 +117,10 @@ namespace ProjectDelta
         private Rectangle usernameCollisionBox;
         private Rectangle passwordCollisionBox;
 
+        private Rectangle signupUsernameCollisionBox;
+        private Rectangle signupPasswordCollisionBox;
+        private Rectangle passwordConfirmCollisionBox;
+
         //Mouse states
         private MouseState currentMouseState;
         private MouseState previousMouseState;
@@ -124,8 +128,6 @@ namespace ProjectDelta
         //keyboard states
         private KeyboardState currentKeyboardState;
         private KeyboardState previousKeyboardState;
-
-        private bool clicked = false;
 
         public Login(DynamoDBContext context)
         {
@@ -136,6 +138,8 @@ namespace ProjectDelta
         {
             username = "";
             password = "";
+            checkPassword = "";
+
             this.scale = scale;
             state = State.None;
         }
@@ -219,12 +223,17 @@ namespace ProjectDelta
             signupPasswordTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 + loginBox.Height * scale * 6 / 90));
             signupPasswordConfirmTextPosition = new Vector2((screenWidth / 2 - (loginBox.Width * scale * 28 / 90)), (screenHeight / 2 + loginBox.Height * scale * 38 / 90));
 
-            usernameCollisionBox = new Rectangle(((int)(loginUsernameHighlighterPosition.X)), ((int)(loginUsernameHighlighterPosition.Y)), (int)(loginHighlighter.Width), (loginHighlighter.Height));
-            passwordCollisionBox = new Rectangle(((int)(loginPasswordHighlighterPosition.X)), ((int)(loginPasswordHighlighterPosition.Y)), (int)(loginHighlighter.Width), (loginHighlighter.Height));
+            usernameCollisionBox = new Rectangle((int)(loginUsernameHighlighterPosition.X), (int)(loginUsernameHighlighterPosition.Y), loginHighlighter.Width, loginHighlighter.Height);
+            passwordCollisionBox = new Rectangle((int)(loginPasswordHighlighterPosition.X), (int)(loginPasswordHighlighterPosition.Y), loginHighlighter.Width, loginHighlighter.Height);
+
+            signupUsernameCollisionBox = new Rectangle((int)(signupUsernameHighlighterPosition.X), (int)(signupUsernameHighlighterPosition.Y), loginHighlighter.Width, loginHighlighter.Height);
+            signupPasswordCollisionBox = new Rectangle((int)(signupPasswordHighlighterPosition.X), (int)(signupPasswordHighlighterPosition.Y), loginHighlighter.Width, loginHighlighter.Height);
+            passwordConfirmCollisionBox = new Rectangle((int)(signupConfirmHighlighterPosition.X), (int)(signupConfirmHighlighterPosition.Y), loginHighlighter.Width, loginHighlighter.Height);
         }
 
         public bool Update(GameTime gameTime)
         {
+            //This first part is just pretty background things
             //always update the planets flying
             movingPlanetOnePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
             movingPlanetOnePosition.Y += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -242,13 +251,18 @@ namespace ProjectDelta
             shipThreePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             shipFourPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
+            //get the current keyboard state 
+            //(we'll use it later to see if it's different from the last one "clicked")
             currentKeyboardState = Keyboard.GetState();
 
+            //checkClick() looks to see if any of the buttons are being clicked
+            checkClick();
+
+            //player enters into State.None
             if (state == State.None)
             {
                 username = updateText(username);
-                checkClick();
-                if (username != "" && checkEnterAndTab())
+                if (checkEnterAndTab())
                 {
                     state = State.UsernameEntered;
                 }
@@ -256,10 +270,12 @@ namespace ProjectDelta
             if (state == State.UsernameEntered)
             {
                 password = updateText(password);
-                checkClick();
-                if (password != "" && checkEnterAndTab())
+                if (checkEnterAndTab())
                 {
-                    state = State.PasswordEntered;
+                    if (password != "" && username != "")
+                    {
+                        state = State.PasswordEntered;
+                    }
                 }
             }
             if (state == State.PasswordEntered)
@@ -271,17 +287,14 @@ namespace ProjectDelta
                     if (Game1.globalUser == null)
                     {
                         state = State.LoginError;
-                        clicked = false;
                     }
                     else if (password != Game1.globalUser.password)
                     {
                         state = State.LoginError;
-                        clicked = false;
                     }
                     else
                     {
                         state = State.None;
-                        clicked = false;
                         return true;
                     }
                 }
@@ -290,48 +303,27 @@ namespace ProjectDelta
                     state = State.InternetConnectionError;
                 }
             }
-            if (state == State.LoginError)
-            {
-                if (loginErrorCounter == 1000)
-                {
-                    loginErrorCounter = -3500;
-                }
-                if (loginErrorCounter < 0)
-                {
-                    loginErrorCounter += gameTime.ElapsedGameTime.Milliseconds;
-                }
-                if (loginErrorCounter >= 0)
-                {
-                    state = State.None;
-                    loginErrorCounter = 1000;
-                }
-            }
             if (state == State.SignupButtonPressed)
             {
-                checkClick();
-                username = input.Update();
-                if (username != "")
+                username = updateText(username);
+                if (checkEnterAndTab())
                 {
                     state = State.UsernameCreated;
-                    clicked = false;
                 }
             }
             if (state == State.UsernameCreated)
             {
-                checkClick();
-                password = input.Update();
-                if (password != "")
+                password = updateText(password);
+                if (checkEnterAndTab())
                 {
                     state = State.PasswordCreated;
-                    clicked = false;
                 }
 
             }
             if (state == State.PasswordCreated)
             {
-                checkClick();
-                checkPassword = input.Update();
-                if (checkPassword != "")
+                checkPassword = updateText(checkPassword);
+                if (username != "" && checkPassword != "" && checkEnterAndTab())
                 {
                     if (password.Equals(checkPassword))
                     {
@@ -365,55 +357,42 @@ namespace ProjectDelta
                     }
                 }
             }
-            if (state == State.CreationError)
-            {
-                if (loginErrorCounter == 1000)
-                {
-                    loginErrorCounter = -3500;
-                }
-                if (loginErrorCounter < 0)
-                {
-                    loginErrorCounter += gameTime.ElapsedGameTime.Milliseconds;
-                }
-                if (loginErrorCounter >= 0)
-                {
-                    state = State.SignupButtonPressed;
-                    loginErrorCounter = 1000;
-                }
-            }
 
-            if (state == State.PasswordMatchError)
-            {
-                if (loginErrorCounter == 1000)
-                {
-                    loginErrorCounter = -3500;
-                }
-                if (loginErrorCounter < 0)
-                {
-                    loginErrorCounter += gameTime.ElapsedGameTime.Milliseconds;
-                }
-                if (loginErrorCounter >= 0)
-                {
-                    state = State.SignupButtonPressed;
-                    loginErrorCounter = 1000;
-                }
-            }
 
-            if (state == State.InternetConnectionError)
+            //below are a series of errors that could occur as a user is logging in
+            //this section is only the timer for these errors
+            //the first error addressed is if there is not a matching username and password
+            if (state == State.LoginError || state == State.CreationError || state == State.PasswordMatchError || state == State.InternetConnectionError)
             {
-                if (loginErrorCounter == 1000)
+                if (loginErrorCounter == 1000) //loginErrorCounter == 1000 is the trigger for "no current error"
                 {
-                    loginErrorCounter = -5000;
+                    loginErrorCounter = -5000; //this controls how long the error message will stay
                 }
                 if (loginErrorCounter < 0)
                 {
                     loginErrorCounter += gameTime.ElapsedGameTime.Milliseconds;
                 }
-                if (loginErrorCounter >= 0)
+
+                if (loginErrorCounter >= 0 || (loginErrorCounter >= -3000 && (previousKeyboardState != currentKeyboardState || previousMouseState != currentMouseState)))
                 {
-                    state = State.None;
                     loginErrorCounter = 1000;
+                    switch (state)
+                    {
+                        case State.LoginError:
+                            state = State.None;
+                            break;
+                        case State.CreationError:
+                            state = State.SignupButtonPressed;
+                            break;
+                        case State.PasswordMatchError:
+                            state = State.SignupButtonPressed;
+                            break;
+                        case State.InternetConnectionError:
+                            state = State.None;
+                            break;
+                    }
                 }
+
             }
 
             previousKeyboardState = currentKeyboardState;
@@ -459,30 +438,30 @@ namespace ProjectDelta
             {
                 spriteBatch.Draw(loginError, loginErrorPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
-            if (state == State.SignupButtonPressed)
+            if (state == State.SignupButtonPressed || state == State.UsernameCreated || state == State.PasswordCreated)
             {
                 spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(signupBox, signupBoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.Draw(loginHighlighter, signupUsernameHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                if (currentMouseState.LeftButton != ButtonState.Pressed)
+                {
+                    if (state == State.SignupButtonPressed)
+                    {
+                        spriteBatch.Draw(loginHighlighter, signupUsernameHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                    }
+                    else if (state == State.UsernameCreated)
+                    {
+                        spriteBatch.Draw(loginHighlighter, signupPasswordHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(loginHighlighter, signupConfirmHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                    }
+                }
                 spriteBatch.DrawString(font, username, signupUsernameTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            }
-            if (state == State.UsernameCreated)
-            {
-                spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.Draw(signupBox, signupBoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.DrawString(font, username, signupUsernameTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.Draw(loginHighlighter, signupPasswordHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.DrawString(font, hidePassword(password), signupPasswordTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            }
-            if (state == State.PasswordCreated)
-            {
-                spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.Draw(signupBox, signupBoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.DrawString(font, username, signupUsernameTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.DrawString(font, hidePassword(password), signupPasswordTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.Draw(loginHighlighter, signupConfirmHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.DrawString(font, hidePassword(checkPassword), signupPasswordConfirmTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
+
             if (state == State.CreationError)
             {
                 spriteBatch.Draw(signupError, signupErrorPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
@@ -508,17 +487,34 @@ namespace ProjectDelta
             if (rectangleClick(backButtonCollisionBox))
             {
                 state = State.None;
-                username = null;
-                password = null;
-                checkPassword = null;
+                password = "";
+                checkPassword = "";
             }
-            if (rectangleClick(usernameCollisionBox))
+            if (state == State.None || state == State.UsernameEntered)
             {
-                state = State.None;
+                if (rectangleClick(usernameCollisionBox))
+                {
+                    state = State.None;
+                }
+                else if (rectangleClick(passwordCollisionBox))
+                {
+                    state = State.UsernameEntered;
+                }
             }
-            if (rectangleClick(passwordCollisionBox))
+            if (state == State.SignupButtonPressed || state == State.UsernameCreated || state == State.PasswordCreated)
             {
-                state = State.UsernameEntered;
+                if (rectangleClick(signupUsernameCollisionBox))
+                {
+                    state = State.SignupButtonPressed;
+                }
+                else if (rectangleClick(signupPasswordCollisionBox))
+                {
+                    state = State.UsernameCreated;
+                }
+                else if (rectangleClick(passwordConfirmCollisionBox))
+                {
+                    state = State.PasswordCreated;
+                }
             }
         }
 
