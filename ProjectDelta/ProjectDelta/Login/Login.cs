@@ -173,10 +173,10 @@ CreateUser,
             //any scalar value needs to take into consideration
             //the scale factor to fix resolution issues
             movingPlanetOnePosition = new Vector2(-200 * scale, 0 * scale);
-            movingPlanetTwoPosition = new Vector2(-2800 * scale, 0 * scale);
-            movingPlanetThreePosition = new Vector2(-5250 * scale, 0 * scale);
-            movingPlanetFourPosition = new Vector2(-9000 * scale, 0 * scale);
-            movingPlanetFivePosition = new Vector2(-12000 * scale, 0 * scale);
+            movingPlanetTwoPosition = new Vector2(-2400 * scale, 0 * scale);
+            movingPlanetThreePosition = new Vector2(-4500 * scale, -1000 * scale);
+            movingPlanetFourPosition = new Vector2(-6800 * scale, 0 * scale);
+            movingPlanetFivePosition = new Vector2(-8000 * scale, 0 * scale);
 
             shipOnePosition = new Vector2(-2000 * scale, 100 * scale);
             shipTwoPosition = new Vector2(-6000 * scale, 900 * scale);
@@ -249,7 +249,7 @@ CreateUser,
             movingPlanetThreePosition.Y += (float)Math.Sin(movingPlanetOnePosition.X / 1000) * scale;
             movingPlanetFourPosition.X += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             movingPlanetFourPosition.Y += (float)Math.Sin(movingPlanetOnePosition.X / 1000) * scale;
-            movingPlanetFivePosition.X += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            movingPlanetFivePosition.X += planetSpeed * (float)(1.2 * gameTime.ElapsedGameTime.TotalMilliseconds);
             movingPlanetFivePosition.Y += (float)Math.Sin(movingPlanetOnePosition.X / 500) * scale;
 
             shipOnePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
