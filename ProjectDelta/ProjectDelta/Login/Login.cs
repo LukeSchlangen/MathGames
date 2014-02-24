@@ -290,6 +290,8 @@ namespace ProjectDelta
                     else
                     {
                         state = State.None;
+                        username = "";
+                        password = "";
                         return true;
                     }
                 }
@@ -635,6 +637,9 @@ namespace ProjectDelta
 
                         context.Save<User>(Game1.globalUser); //save the user
                         state = State.None; //send them to the login screen to sign in
+                        username = "";
+                        password = "";
+                        checkPassword = "";
                     }
                     else
                     {
