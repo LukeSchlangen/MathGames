@@ -368,3 +368,4 @@ C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2a.xnb
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2b.xnb
 C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2c.xnb
+C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\go_button.xnb

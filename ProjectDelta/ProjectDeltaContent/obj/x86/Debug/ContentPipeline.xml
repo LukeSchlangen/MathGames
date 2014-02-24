@@ -687,6 +687,15 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2c.xnb</Output>
       <Time>2014-02-22T12:37:10.710246-06:00</Time>
     </Item>
+    <Item>
+      <Source>Login\go_button.png</Source>
+      <Name>Login\go_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\go_button.xnb</Output>
+      <Time>2014-02-24T13:50:32.6226385-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

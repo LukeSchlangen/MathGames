@@ -34,7 +34,7 @@ namespace ProjectDelta
             SignupButtonPressed,
             UsernameCreated,
             PasswordCreated,
-            PasswordConfirmed,
+CreateUser,
             LoginError,
             CreationError,
             PasswordMatchError,
@@ -45,7 +45,7 @@ namespace ProjectDelta
         private float scale;
         private int loginErrorCounter = 1000;
 
-        private float planetSpeed = .01f;
+        private float planetSpeed = .075f;
         private float shipSpeed = .25f;
 
         private string username = null;
@@ -61,6 +61,7 @@ namespace ProjectDelta
         private Texture2D signupButton;
         private Texture2D signupBox;
         private Texture2D backButton;
+        private Texture2D goButton;
         private Texture2D loginHighlighter;
         private Texture2D loginError;
         private Texture2D signupError;
@@ -91,6 +92,7 @@ namespace ProjectDelta
         private Vector2 signupUsernameTextPosition;
         private Vector2 signupPasswordTextPosition;
         private Vector2 signupPasswordConfirmTextPosition;
+        private Vector2 goButtonPosition;
         private Vector2 backButtonPosition;
         private Vector2 loginUsernameHighlighterPosition;
         private Vector2 loginPasswordHighlighterPosition;
@@ -113,6 +115,7 @@ namespace ProjectDelta
 
         //Rectangles for the collision boxes for the login
         private Rectangle signupButtonCollisionBox;
+        private Rectangle goButtonCollisionBox;
         private Rectangle backButtonCollisionBox;
         private Rectangle usernameCollisionBox;
         private Rectangle passwordCollisionBox;
@@ -169,11 +172,11 @@ namespace ProjectDelta
 
             //any scalar value needs to take into consideration
             //the scale factor to fix resolution issues
-            movingPlanetOnePosition = new Vector2(-200 * scale, 500 * scale);
-            movingPlanetTwoPosition = new Vector2(-2800 * scale, 100 * scale);
-            movingPlanetThreePosition = new Vector2(-5250 * scale, 1000 * scale);
-            movingPlanetFourPosition = new Vector2(-9000 * scale, 1200 * scale);
-            movingPlanetFivePosition = new Vector2(-12000 * scale, -800 * scale);
+            movingPlanetOnePosition = new Vector2(-200 * scale, 0 * scale);
+            movingPlanetTwoPosition = new Vector2(-2800 * scale, 0 * scale);
+            movingPlanetThreePosition = new Vector2(-5250 * scale, 0 * scale);
+            movingPlanetFourPosition = new Vector2(-9000 * scale, 0 * scale);
+            movingPlanetFivePosition = new Vector2(-12000 * scale, 0 * scale);
 
             shipOnePosition = new Vector2(-2000 * scale, 100 * scale);
             shipTwoPosition = new Vector2(-6000 * scale, 900 * scale);
@@ -189,10 +192,13 @@ namespace ProjectDelta
             internetConnectionError = content.Load<Texture2D>("Login/internet_connection_error");
             internetConnectionErrorPosition = new Vector2((screenWidth / 2 - internetConnectionError.Width * scale / 2), (screenHeight / 2 - internetConnectionError.Height * scale / 2));
 
+            goButton = content.Load<Texture2D>("Login/go_button");
+            goButtonPosition = new Vector2(screenWidth *2 / 3, screenHeight /2);
+            goButtonCollisionBox = new Rectangle(((int)(goButtonPosition.X)), (int)(goButtonPosition.Y), (int)(goButton.Width), (int)(goButton.Height));
 
             backButton = content.Load<Texture2D>("Login/back_button");
             backButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
-            backButtonCollisionBox = new Rectangle(((int)(backButtonPosition.X)), ((int)(backButtonPosition.Y)), (int)(backButton.Width), (backButton.Height));
+            backButtonCollisionBox = new Rectangle(((int)(backButtonPosition.X)), (int)(backButtonPosition.Y), (int)(backButton.Width), (backButton.Height));
 
             signupBox = content.Load<Texture2D>("Login/signup_box");
             signupBoxPosition = new Vector2((screenWidth / 2 - signupBox.Width * scale / 2), (screenHeight / 2 - signupBox.Height * scale / 2));
@@ -235,16 +241,16 @@ namespace ProjectDelta
         {
             //This first part is just pretty background things
             //always update the planets flying
-            movingPlanetOnePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            movingPlanetOnePosition.Y += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            movingPlanetTwoPosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            movingPlanetTwoPosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            movingPlanetThreePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            movingPlanetThreePosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            movingPlanetFourPosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            movingPlanetFourPosition.Y -= planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            movingPlanetFivePosition.X -= (float)(planetSpeed * 100 * Math.Sin((double)gameTime.ElapsedGameTime.TotalMilliseconds) * MathHelper.Pi / 2);
-            movingPlanetFivePosition.Y += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            movingPlanetOnePosition.X += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            movingPlanetOnePosition.Y += (float)Math.Sin(movingPlanetOnePosition.X / 1000) * scale;
+            movingPlanetTwoPosition.X += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            movingPlanetTwoPosition.Y += (float)Math.Sin(movingPlanetOnePosition.X / 1000) * scale;
+            movingPlanetThreePosition.X += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            movingPlanetThreePosition.Y += (float)Math.Sin(movingPlanetOnePosition.X / 1000) * scale;
+            movingPlanetFourPosition.X += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            movingPlanetFourPosition.Y += (float)Math.Sin(movingPlanetOnePosition.X / 1000) * scale;
+            movingPlanetFivePosition.X += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            movingPlanetFivePosition.Y += (float)Math.Sin(movingPlanetOnePosition.X / 500) * scale;
 
             shipOnePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             shipTwoPosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -323,8 +329,12 @@ namespace ProjectDelta
             if (state == State.PasswordCreated)
             {
                 checkPassword = updateText(checkPassword);
-                if (username != "" && checkPassword != "" && checkEnterAndTab())
+                if (username != "" && password != "" && checkPassword != "" && checkEnterAndTab())
                 {
+                    state = State.CreateUser;
+                }
+            }
+            if (state == State.CreateUser){
                     if (password.Equals(checkPassword))
                     {
                         try
@@ -355,7 +365,6 @@ namespace ProjectDelta
                     {
                         state = State.PasswordMatchError;
                     }
-                }
             }
 
 
@@ -373,9 +382,11 @@ namespace ProjectDelta
                     loginErrorCounter += gameTime.ElapsedGameTime.Milliseconds;
                 }
 
-                if (loginErrorCounter >= 0 || (loginErrorCounter >= -3000 && (previousKeyboardState != currentKeyboardState || previousMouseState != currentMouseState)))
+                if (loginErrorCounter >= 0 || (loginErrorCounter >= -4000 && (previousKeyboardState != currentKeyboardState || previousMouseState != currentMouseState)))
                 {
                     loginErrorCounter = 1000;
+                    password = "";
+                    checkPassword = "";
                     switch (state)
                     {
                         case State.LoginError:
@@ -431,6 +442,10 @@ namespace ProjectDelta
                         spriteBatch.Draw(loginHighlighter, loginUsernameHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                     }
                 }
+                if (username != "" && password != "")
+                {
+                    spriteBatch.Draw(goButton, goButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                }
                 spriteBatch.DrawString(font, username, loginUsernameTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.DrawString(font, hidePassword(password), loginPasswordTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
@@ -457,6 +472,12 @@ namespace ProjectDelta
                         spriteBatch.Draw(loginHighlighter, signupConfirmHighlighterPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                     }
                 }
+
+                if (username != "" && password != "" && checkPassword != "")
+                {
+                    spriteBatch.Draw(goButton, goButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                }
+
                 spriteBatch.DrawString(font, username, signupUsernameTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.DrawString(font, hidePassword(password), signupPasswordTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.DrawString(font, hidePassword(checkPassword), signupPasswordConfirmTextPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
@@ -480,6 +501,7 @@ namespace ProjectDelta
         {
             previousMouseState = currentMouseState;
             currentMouseState = Mouse.GetState();
+
             if (rectangleClick(signupButtonCollisionBox))
             {
                 state = State.SignupButtonPressed;
@@ -500,6 +522,10 @@ namespace ProjectDelta
                 {
                     state = State.UsernameEntered;
                 }
+                else if (rectangleClick(goButtonCollisionBox) && password != "" && username != "")
+                {
+                    state = State.PasswordEntered;
+                }
             }
             if (state == State.SignupButtonPressed || state == State.UsernameCreated || state == State.PasswordCreated)
             {
@@ -514,6 +540,10 @@ namespace ProjectDelta
                 else if (rectangleClick(passwordConfirmCollisionBox))
                 {
                     state = State.PasswordCreated;
+                }
+                else if (rectangleClick(goButtonCollisionBox) && password != "" && username != "")
+                {
+                    state = State.CreateUser;
                 }
             }
         }
