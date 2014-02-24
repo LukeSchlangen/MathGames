@@ -34,7 +34,7 @@ namespace ProjectDelta
             SignupButtonPressed,
             UsernameCreated,
             PasswordCreated,
-CreateUser,
+            CreateUser,
             LoginError,
             CreationError,
             PasswordMatchError,
@@ -176,7 +176,7 @@ CreateUser,
             movingPlanetTwoPosition = new Vector2(-2400 * scale, 0 * scale);
             movingPlanetThreePosition = new Vector2(-4500 * scale, -1000 * scale);
             movingPlanetFourPosition = new Vector2(-6800 * scale, 0 * scale);
-            movingPlanetFivePosition = new Vector2(-8000 * scale, 0 * scale);
+            movingPlanetFivePosition = new Vector2(-9000 * scale, 0 * scale);
 
             shipOnePosition = new Vector2(-2000 * scale, 100 * scale);
             shipTwoPosition = new Vector2(-6000 * scale, 900 * scale);
@@ -193,7 +193,7 @@ CreateUser,
             internetConnectionErrorPosition = new Vector2((screenWidth / 2 - internetConnectionError.Width * scale / 2), (screenHeight / 2 - internetConnectionError.Height * scale / 2));
 
             goButton = content.Load<Texture2D>("Login/go_button");
-            goButtonPosition = new Vector2(screenWidth *2 / 3, screenHeight /2);
+            goButtonPosition = new Vector2(screenWidth * 2 / 3, screenHeight / 2);
             goButtonCollisionBox = new Rectangle(((int)(goButtonPosition.X)), (int)(goButtonPosition.Y), (int)(goButton.Width), (int)(goButton.Height));
 
             backButton = content.Load<Texture2D>("Login/back_button");
@@ -249,7 +249,7 @@ CreateUser,
             movingPlanetThreePosition.Y += (float)Math.Sin(movingPlanetOnePosition.X / 1000) * scale;
             movingPlanetFourPosition.X += planetSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             movingPlanetFourPosition.Y += (float)Math.Sin(movingPlanetOnePosition.X / 1000) * scale;
-            movingPlanetFivePosition.X += planetSpeed * (float)(1.2 * gameTime.ElapsedGameTime.TotalMilliseconds);
+            movingPlanetFivePosition.X += planetSpeed * (float)(1.3 * gameTime.ElapsedGameTime.TotalMilliseconds);
             movingPlanetFivePosition.Y += (float)Math.Sin(movingPlanetOnePosition.X / 500) * scale;
 
             shipOnePosition.X += shipSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -320,7 +320,7 @@ CreateUser,
             if (state == State.UsernameCreated)
             {
                 password = updateText(password);
-                if (checkEnterAndTab())
+                if (checkEnterAndTab() && password != "")
                 {
                     state = State.PasswordCreated;
                 }
@@ -334,37 +334,38 @@ CreateUser,
                     state = State.CreateUser;
                 }
             }
-            if (state == State.CreateUser){
-                    if (password.Equals(checkPassword))
+            if (state == State.CreateUser)
+            {
+                if (password.Equals(checkPassword))
+                {
+                    try
                     {
-                        try
+                        if (!checkUserExists(username))
                         {
-                            if (!checkUserExists(username))
+                            Game1.globalUser = new User
                             {
-                                Game1.globalUser = new User
-                                {
-                                    username = username,
-                                    password = password,
-                                    skill = "0",
-                                };
+                                username = username,
+                                password = password,
+                                skill = "0",
+                            };
 
-                                context.Save<User>(Game1.globalUser);
-                                state = State.None;
-                            }
-                            else
-                            {
-                                state = State.CreationError;
-                            }
+                            context.Save<User>(Game1.globalUser);
+                            state = State.None;
                         }
-                        catch
+                        else
                         {
-                            state = State.InternetConnectionError;
+                            state = State.CreationError;
                         }
                     }
-                    else
+                    catch
                     {
-                        state = State.PasswordMatchError;
+                        state = State.InternetConnectionError;
                     }
+                }
+                else
+                {
+                    state = State.PasswordMatchError;
+                }
             }
 
 
