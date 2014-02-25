@@ -31,9 +31,11 @@ namespace ProjectDelta
             Shield,
             StageSuccess,
             Death,
+            Stop
         }
 
         private float scale;
+        private float originalSpeed;
         private float speed = .1f;
         private State state;
         private bool shieldAnimationDone = false;
@@ -199,5 +201,16 @@ namespace ProjectDelta
             shieldCollisionBox.X = activatedShieldCollisionBoxPosition.X;
         }
 
+        public void stop()
+        {
+            heroAnimation.stopAnimation();
+            speed = 0f;
+        }
+
+        public void start()
+        {
+            state = State.Question;
+            speed = .1f;
+        }
     }
 }

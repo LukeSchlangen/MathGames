@@ -73,7 +73,7 @@ namespace ProjectDelta
         private World101Monster monsterOne;
         private World101Monster monsterTwo;
         private World101Monster currentMonster;
-        //private int currentMonsterNumber;
+        private World101Creature creature;
         private World101Input world101Input;
         private World101Text world101Text = new World101Text();
         private Random random = new Random();
@@ -81,6 +81,7 @@ namespace ProjectDelta
         private bool answerDone = false;
         private bool showQuestion = true;
         private bool heroDead = false;
+        private bool collected = false;
         private int bgToDraw = 1;
 
         private string myAnswer;
@@ -100,6 +101,7 @@ namespace ProjectDelta
             this.scale = scale;
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
+            creature = new World101Creature(2600, 800, scale, backgroundSpeed, screenX);
             currentMonster = monsterOne;
             hero = new Hero();
             hero.Initialize(scale);
@@ -119,6 +121,7 @@ namespace ProjectDelta
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
+            creature.LoadContent(content);
 
             internetConnectionError = content.Load<Texture2D>("Login/internet_connection_error");
             internetConnectionErrorPosition = new Vector2((1920 / 2 * scale - internetConnectionError.Width * scale / 2), (1080 / 2 * scale - internetConnectionError.Height * scale / 2));
@@ -145,8 +148,6 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
-
-
             updateCharacters(gameTime);
 
             KeyboardState keyboard = Keyboard.GetState();
@@ -169,6 +170,11 @@ namespace ProjectDelta
                 monsterTwo.monsterDeath();
                 hero.stageSuccess();
                 resetTimer();
+                if(hero.getHeroCollisionBox().Intersects(creature.getCollisionBox()))
+                {
+                    hero.stop();
+                    creature.stop();
+                }
             }
             else
             {
@@ -295,6 +301,10 @@ namespace ProjectDelta
             {
                 world101Text.DrawDeadMsg(spriteBatch);
             }
+            if (!collected)
+            {
+                creature.Draw(spriteBatch, worldStage);
+            }
 
             if (state == State.InternetConnectionError)
             {
@@ -379,6 +389,10 @@ namespace ProjectDelta
             hero.Update(gameTime);
             monsterOne.Update(gameTime);
             monsterTwo.Update(gameTime);
+            if (correctInARow >= COUNT_TO_CONTINUE)
+            {
+                creature.Update(gameTime);
+            }
         }
 
         private void drawExtraObjects(SpriteBatch spriteBatch)
@@ -429,12 +443,15 @@ namespace ProjectDelta
             backgroundSpeed = backupBackgroundSpeed;
             monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
             monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
+            creature.reset();
             currentMonster = monsterOne;
             planetSpeed = backupPlanetSpeed;
             hero.live();
             hero.questionUp();
+            hero.start();
             showQuestion = true;
             heroDead = false;
+            collected = false;
             world101Input.resetInput();
             state = State.None;
         }

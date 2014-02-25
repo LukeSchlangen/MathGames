@@ -23,60 +23,53 @@ namespace ProjectDelta
 {
     class World101Creature
     {
-        private Texture2D creature;
+        private Texture2D[] creatures = new Texture2D[200];
         private Vector2 position;
+        private Vector2 startingPosition;
         private Rectangle collisionBox;
-        private String creatureString;
         private float speed = 0f;
+        private float startSpeed = 0f;
         private float scale;
-        private float bounceTimerFloat;
-
+        private int x;
         private int y;
-        //private int factorOne;
-        //private int factorTwo;
-        //private int deathTrajectory;
         private int screenX;
-
-        //private bool dead;
-
-        private Random random = new Random();
 
         public World101Creature(int x, int y, float scale, float speed, int screenX)
         {
             this.scale = scale;
-            this.speed = speed;
+            this.x = x;
             this.y = y;
+            this.speed = speed;
+            this.startSpeed = speed;
             this.screenX = screenX;
 
+            startingPosition = new Vector2(x * scale, y * scale);
             position = new Vector2(x * scale, y * scale);
-            bounceTimerFloat = position.X;
         }
 
-        public void LoadContent(ContentManager content, int worldStage)
+        public void LoadContent(ContentManager content)
         {
-            creatureString = "Creatures/Creature1/Creature1_Stage" + worldStage;
-            creature = content.Load<Texture2D>(creatureString);
-            collisionBox = new Rectangle(((int)(position.X - creature.Width / 2)), ((int)(position.Y - creature.Height / 2)), (creature.Width), (creature.Height));
+            for (int i = 0; i < creatures.Length; i++)
+            {
+                Texture2D creatureToLoad = content.Load<Texture2D>("Creatures/test_creature"); //can do some clever text manipulation here to quickly load the creatures
+                creatures[i] = creatureToLoad;
+            }
+
+            collisionBox = new Rectangle(((int)(position.X - creatures[0].Width / 2)), ((int)(position.Y - creatures[0].Height / 2)), (creatures[0].Width), (creatures[0].Height));
         }
 
         public void Update(GameTime gameTime)
         {
-
-            if (position.X > screenX - (200 * scale))
-            {
-                position.X -= 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            }
-
-            bounceTimerFloat -= 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            position.Y = y * scale + 10 * (float)Math.Sin(bounceTimerFloat / 15) * scale;
-
+            Debug.WriteLine(position);
+            position.X -= 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale;
             collisionBox.Y = (int)position.Y;
             collisionBox.X = (int)position.X;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, int worldStage)
         {
-            spriteBatch.Draw(creature, position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(creatures[worldStage], position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         public Rectangle getCollisionBox()
@@ -84,25 +77,16 @@ namespace ProjectDelta
             return collisionBox;
         }
 
-        public void setSpeed(float speed)
+        public void stop()
         {
-            this.speed = speed;
+            startSpeed = speed;
+            speed = 0f;
         }
 
-        public void displayNewCreature()
+        public void reset()
         {
-            //setX((int)(1000 * scale));
-            //setY((int)(200 * scale));
-        }
-
-        public void setX(int x)
-        {
-            position.X = x;
-        }
-
-        public void setY(int y)
-        {
-            position.Y = y;
+            position = new Vector2(2600 * scale, 800 * scale);
+            speed = .1f;
         }
     }
 }
