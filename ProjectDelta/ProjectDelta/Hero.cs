@@ -152,7 +152,7 @@ namespace ProjectDelta
             state = State.StageSuccess;
         }
 
-        public void collectCreature()
+        public void collectWildCreature()
         {
             heroAnimation.stopAnimation();
             heroStop = true;
@@ -211,6 +211,11 @@ namespace ProjectDelta
         {
             state = State.Question;
             speed = .1f;
+        }
+
+        public int getHeroPosition()
+        {
+            return (int)heroPosition.X;
         }
     }
 }

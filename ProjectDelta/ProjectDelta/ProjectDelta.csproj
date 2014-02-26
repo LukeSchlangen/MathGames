@@ -83,7 +83,8 @@
     <Compile Include="Animation.cs" />
     <Compile Include="Problems.cs" />
     <Compile Include="Splash.cs" />
-    <Compile Include="World101\World101Creature.cs" />
+    <Compile Include="World101\World101FriendlyCreature.cs" />
+    <Compile Include="World101\World101WildCreature.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="World101\World101.cs" />
     <Compile Include="World101\World101Input.cs" />

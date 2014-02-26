@@ -73,7 +73,8 @@ namespace ProjectDelta
         private World101Monster monsterOne;
         private World101Monster monsterTwo;
         private World101Monster currentMonster;
-        private World101Creature creature;
+        private World101WildCreature wildCreature;
+        private World101FreindlyCreature friendlyCreature;
         private World101Input world101Input;
         private World101Text world101Text = new World101Text();
         private Random random = new Random();
@@ -101,7 +102,8 @@ namespace ProjectDelta
             this.scale = scale;
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
-            creature = new World101Creature(2600, 800, scale, backgroundSpeed, screenX);
+            wildCreature = new World101WildCreature(2600, 800, scale, backgroundSpeed, screenX);
+            friendlyCreature = new World101FreindlyCreature(100, 800, scale, backgroundSpeed, screenX);
             currentMonster = monsterOne;
             hero = new Hero();
             hero.Initialize(scale);
@@ -121,7 +123,8 @@ namespace ProjectDelta
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
-            creature.LoadContent(content);
+            wildCreature.LoadContent(content);
+            friendlyCreature.LoadContent(content);
 
             internetConnectionError = content.Load<Texture2D>("Login/internet_connection_error");
             internetConnectionErrorPosition = new Vector2((1920 / 2 * scale - internetConnectionError.Width * scale / 2), (1080 / 2 * scale - internetConnectionError.Height * scale / 2));
@@ -170,10 +173,10 @@ namespace ProjectDelta
                 monsterTwo.monsterDeath();
                 hero.stageSuccess();
                 resetTimer();
-                if(hero.getHeroCollisionBox().Intersects(creature.getCollisionBox()))
+                if(hero.getHeroCollisionBox().Intersects(wildCreature.getCollisionBox()))
                 {
                     hero.stop();
-                    creature.stop();
+                    wildCreature.stop();
                 }
             }
             else
@@ -288,6 +291,7 @@ namespace ProjectDelta
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
             hero.Draw(spriteBatch);
+            friendlyCreature.Draw(spriteBatch, worldStage);
             world101Text.DrawAnswerCount(spriteBatch);
             if (showQuestion && correctInARow < COUNT_TO_CONTINUE)
             {
@@ -303,7 +307,7 @@ namespace ProjectDelta
             }
             if (!collected)
             {
-                creature.Draw(spriteBatch, worldStage);
+                wildCreature.Draw(spriteBatch, worldStage);
             }
 
             if (state == State.InternetConnectionError)
@@ -389,9 +393,10 @@ namespace ProjectDelta
             hero.Update(gameTime);
             monsterOne.Update(gameTime);
             monsterTwo.Update(gameTime);
+            friendlyCreature.Update(gameTime, hero.getHeroPosition());
             if (correctInARow >= COUNT_TO_CONTINUE)
             {
-                creature.Update(gameTime);
+                wildCreature.Update(gameTime);
             }
         }
 
@@ -443,7 +448,8 @@ namespace ProjectDelta
             backgroundSpeed = backupBackgroundSpeed;
             monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
             monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
-            creature.reset();
+            friendlyCreature.reset();
+            wildCreature.reset();
             currentMonster = monsterOne;
             planetSpeed = backupPlanetSpeed;
             hero.live();
