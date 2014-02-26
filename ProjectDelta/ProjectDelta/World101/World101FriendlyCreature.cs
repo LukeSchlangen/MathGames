@@ -25,8 +25,6 @@ namespace ProjectDelta
     {
         private Texture2D[] freindlyCreatures = new Texture2D[200];
         private Vector2 position;
-        private Vector2 startingPosition;
-        private Rectangle collisionBox;
         private float speed = 0f;
         private float startSpeed = 0f;
         private float scale;
@@ -47,8 +45,9 @@ namespace ProjectDelta
             this.startSpeed = speed;
             this.screenX = screenX;
 
-            startingPosition = new Vector2(x * scale, y * scale);
-            position = new Vector2(x * scale, y * scale);
+            Debug.WriteLine(position);
+            position.X = x - 200;
+            position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale;
         }
 
         public void LoadContent(ContentManager content)
@@ -59,26 +58,19 @@ namespace ProjectDelta
                 freindlyCreatures[i] = FreindlyCreatureToLoad;
             }
 
-            collisionBox = new Rectangle(((int)(position.X - freindlyCreatures[0].Width / 2)), ((int)(position.Y - freindlyCreatures[0].Height / 2)), (freindlyCreatures[0].Width), (freindlyCreatures[0].Height));
-        }
+                    }
 
         public void Update(GameTime gameTime, int heroPosition)
         {
             Debug.WriteLine(position);
-            position.X = heroPosition - 200;
+            position.X = heroPosition - 200 * scale;
             position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale;
-            collisionBox.Y = (int)position.Y;
-            collisionBox.X = (int)position.X;
+
         }
 
         public void Draw(SpriteBatch spriteBatch, int worldStage)
         {
             spriteBatch.Draw(freindlyCreatures[worldStage], position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-        }
-
-        public Rectangle getCollisionBox()
-        {
-            return collisionBox;
         }
 
         public void stop()
@@ -87,9 +79,9 @@ namespace ProjectDelta
             speed = 0f;
         }
 
-        public void reset()
+        public void reset(int heroPosition)
         {
-            position = new Vector2(2600 * scale, 800 * scale);
+            position = new Vector2(heroPosition - 200*scale, 800 * scale);
             speed = .1f;
             powerupUseCount = 0;
         }

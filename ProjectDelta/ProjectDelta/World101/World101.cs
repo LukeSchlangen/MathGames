@@ -100,17 +100,16 @@ namespace ProjectDelta
         {
             state = State.None;
             this.scale = scale;
+            hero = new Hero();
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
             wildCreature = new World101WildCreature(2600, 800, scale, backgroundSpeed, screenX);
-            friendlyCreature = new World101FreindlyCreature(100, 800, scale, backgroundSpeed, screenX);
+            friendlyCreature = new World101FreindlyCreature(hero.getHeroPosition(), 800, scale, backgroundSpeed, screenX);
             currentMonster = monsterOne;
-            hero = new Hero();
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
             world101Text.Initialize(scale);
             errorCounter = 1000;
-            //currentMonsterNumber = 1;
         }
 
         //Specifies which content is loaded for level 1
@@ -175,7 +174,7 @@ namespace ProjectDelta
                 monsterTwo.monsterDeath();
                 hero.stageSuccess();
                 resetTimer();
-                if(hero.getHeroCollisionBox().Intersects(wildCreature.getCollisionBox()))
+                if (hero.getHeroCollisionBox().Intersects(wildCreature.getCollisionBox()))
                 {
                     hero.stop();
                     wildCreature.stop();
@@ -188,7 +187,16 @@ namespace ProjectDelta
                 if (friendlyCreature.remainingPowerUp() && keyboard.IsKeyDown(Keys.S))
                 {
                     useCreaturePowerUp(scale);
-                    friendlyCreature.usePowerup();
+                }
+
+                //if both monsters are off screen, make sure they are in order
+                if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X && !monsterOne.dead)
+                {
+                    monsterOne.setX(currentMonster.getCollisionBox().X + (int)(500 * scale));
+                }
+                if (monsterTwo.getCollisionBox().X < currentMonster.getCollisionBox().X && !monsterTwo.dead)
+                {
+                    monsterTwo.setX(currentMonster.getCollisionBox().X + (int)(500 * scale));
                 }
 
                 answerDone = world101Input.Update(gameTime, heroDead);
@@ -211,26 +219,7 @@ namespace ProjectDelta
 
                 if (hero.getShieldCollisionBox().Intersects(currentMonster.getCollisionBox()))
                 {
-                    hero.questionUp();
-
-                    currentMonster.monsterDeath();
-                    //monsterOne.setX((int)(2600*scale));
-
-                    //Update factors when a monster dies
-                    currentMonster.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-
-                    showQuestion = true;
-
-                    if (currentMonster == monsterOne)
-                    {
-                        currentMonster = monsterTwo;
-                    }
-                    else
-                    {
-                        currentMonster = monsterOne;
-                    }
-
-                    currentMonster.setSpeed((currentMonster.getCollisionBox().X - hero.getHeroCollisionBox().X) / timePerProblem);
+                    beatMonster();
                 }
 
                 if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
@@ -456,10 +445,9 @@ namespace ProjectDelta
             backgroundSpeed = backupBackgroundSpeed;
             monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
             monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
-            friendlyCreature.reset();
+            friendlyCreature.reset(hero.getHeroPosition());
             wildCreature.reset();
             currentMonster = monsterOne;
-            planetSpeed = backupPlanetSpeed;
             hero.live();
             hero.questionUp();
             hero.start();
@@ -509,9 +497,49 @@ namespace ProjectDelta
 
         private void useCreaturePowerUp(float scale)
         {
+            friendlyCreature.usePowerup();
+            if (worldStage < 20)
+            {
+                shockWave(scale);
+            }
+            else
+            {
+                beatMonster();
+            }
+
+        }
+
+        private void shockWave(float scale)
+        {
             monsterOne.setX((int)(monsterOne.getCollisionBox().X + 700 * scale));
             monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 700 * scale));
             currentMonster.setX((int)(currentMonster.getCollisionBox().X + 700 * scale));
+        }
+
+        private void beatMonster()
+        {
+
+            hero.questionUp();
+
+            currentMonster.monsterDeath();
+            world101Input.resetInput();
+
+            //Update factors when a monster dies
+            currentMonster.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
+
+            showQuestion = true;
+
+            if (currentMonster == monsterOne)
+            {
+                currentMonster = monsterTwo;
+            }
+            else
+            {
+                currentMonster = monsterOne;
+            }
+
+            currentMonster.setSpeed((currentMonster.getCollisionBox().X - hero.getHeroCollisionBox().X) / timePerProblem);
+
         }
     }
 }

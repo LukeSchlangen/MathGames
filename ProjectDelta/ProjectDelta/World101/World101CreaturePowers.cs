@@ -27,13 +27,13 @@ namespace ProjectDelta
         {
             if (power == 0)
             {
-                shockwave();
+                //shockwave();
             }
         }
 
-        public void shockwave()
+        public void shockwave(World101Monster monster, float scale)
         {
-            
+            monster.setX((int)(monster.getCollisionBox().X + 700 * scale));
         }
 
     }
