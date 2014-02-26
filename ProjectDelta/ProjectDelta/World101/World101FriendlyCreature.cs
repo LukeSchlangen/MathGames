@@ -33,6 +33,10 @@ namespace ProjectDelta
         private int x;
         private int y;
         private int screenX;
+        private int powerupUseCount = 0;
+        private int maxNumberOfPowerUpUses;
+
+        private bool usingPowerup = false;
 
         public World101FreindlyCreature(int x, int y, float scale, float speed, int screenX)
         {
@@ -87,6 +91,28 @@ namespace ProjectDelta
         {
             position = new Vector2(2600 * scale, 800 * scale);
             speed = .1f;
+            powerupUseCount = 0;
+        }
+        public void setMaxNumberOfPowerupUses(int maxNumberOfPowerUpUses)
+        {
+            this.maxNumberOfPowerUpUses = maxNumberOfPowerUpUses;
+        }
+
+        public void usePowerup()
+        {
+            powerupUseCount += 1;
+            usingPowerup = true;
+        }
+        public bool remainingPowerUp()
+        {
+            if (powerupUseCount < maxNumberOfPowerUpUses)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

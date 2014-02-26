@@ -140,6 +140,8 @@ namespace ProjectDelta
             monsterOne.setFactors(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
             monsterTwo.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
 
+            friendlyCreature.setMaxNumberOfPowerupUses(1);
+
             world101Text.LoadContent(content);
 
             //Play music in repeating loop
@@ -182,6 +184,12 @@ namespace ProjectDelta
             else
             {
                 cycleBackground(gameTime);
+
+                if (friendlyCreature.remainingPowerUp() && keyboard.IsKeyDown(Keys.S))
+                {
+                    useCreaturePowerUp(scale);
+                    friendlyCreature.usePowerup();
+                }
 
                 answerDone = world101Input.Update(gameTime, heroDead);
 
@@ -497,6 +505,13 @@ namespace ProjectDelta
         private void resetTimer()
         {
             state = State.ResetTimer;
+        }
+
+        private void useCreaturePowerUp(float scale)
+        {
+            monsterOne.setX((int)(monsterOne.getCollisionBox().X + 700 * scale));
+            monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 700 * scale));
+            currentMonster.setX((int)(currentMonster.getCollisionBox().X + 700 * scale));
         }
     }
 }
