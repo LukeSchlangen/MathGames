@@ -41,9 +41,7 @@ namespace ProjectDelta
 
         private float scale;
 
-        private float planetSpeed = .01f;
         private float backgroundSpeed = .1f;
-        private float backupPlanetSpeed = .01f;
         private float backupBackgroundSpeed = .1f; //speed of background for game, also used to set monster speed
         private float timePerProblem = 10000f; //10000f is about 3.5 seconds per problem
 
@@ -207,8 +205,8 @@ namespace ProjectDelta
                     {
                         if (currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
                         {
-                            correctAnswer();
-                            currentMonster.setSpeed(backgroundSpeed * 2);
+                            correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
+                            currentMonster.setSpeed(backgroundSpeed * 2); //monster speeds up so player doesn't have to wait
                         }
                         else
                         {
@@ -327,7 +325,6 @@ namespace ProjectDelta
             monsterOne.setSpeed(0);
             monsterTwo.setSpeed(0);
             backgroundSpeed = 0;
-            planetSpeed = 0;
             heroDead = true;
             hero.die();
             resetTimer();
