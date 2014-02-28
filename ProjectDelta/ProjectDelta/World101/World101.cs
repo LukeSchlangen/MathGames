@@ -26,7 +26,7 @@ namespace ProjectDelta
         private enum State
         {
             None,
-            InternetConnectionError,
+            //InternetConnectionError,
             ResetTimer,
         }
 
@@ -55,13 +55,15 @@ namespace ProjectDelta
         private Texture2D thirdBackgroundOne;
         private Texture2D thirdBackgroundTwo;
         private Texture2D thirdBackgroundThree;
-        private Texture2D internetConnectionError;
+        //private Texture2D internetConnectionError;
+        private Texture2D internetConnectionWarning;
 
         //Vectors for level 1
         private Vector2 backgroundOnePosition;
         private Vector2 backgroundTwoPosition;
         private Vector2 backgroundThreePosition;
-        private Vector2 internetConnectionErrorPosition;
+        //private Vector2 internetConnectionErrorPosition;
+        private Vector2 internetConnectionWarningPosition;
 
         //Mouse states
         private MouseState current;
@@ -81,6 +83,8 @@ namespace ProjectDelta
         private bool showQuestion = true;
         private bool heroDead = false;
         private bool collected = false;
+        private bool internetConnection = true;
+
         private int bgToDraw = 1;
 
         private string myAnswer;
@@ -123,8 +127,12 @@ namespace ProjectDelta
             wildCreature.LoadContent(content);
             friendlyCreature.LoadContent(content);
 
-            internetConnectionError = content.Load<Texture2D>("Login/internet_connection_error");
-            internetConnectionErrorPosition = new Vector2((1920 / 2 * scale - internetConnectionError.Width * scale / 2), (1080 / 2 * scale - internetConnectionError.Height * scale / 2));
+            //internetConnectionError = content.Load<Texture2D>("Login/internet_connection_error");
+            //internetConnectionErrorPosition = new Vector2((1920 / 2 * scale - internetConnectionError.Width * scale / 2), (1080 / 2 * scale - internetConnectionError.Height * scale / 2));
+
+            internetConnectionWarning = content.Load<Texture2D>("General/internet_connection_warning");
+            internetConnectionWarningPosition = new Vector2(50 * scale, 50 * scale);
+
 
             //load your first set of values into the array
 
@@ -167,7 +175,7 @@ namespace ProjectDelta
                 saveStage();
                 resetStage();
             }
-            
+
             //if they have answered all of the questions and the level is over...
             else if (correctInARow >= COUNT_TO_CONTINUE)
             {
@@ -236,25 +244,26 @@ namespace ProjectDelta
                 //the questions operator (right now it always assumes its the + operator)
             }
 
-            //if there is an internet connection error when saving, show the error and return to menu
-            //in the future, it might be good to save this information locally and allow play to continue
-            if (state == State.InternetConnectionError)
-            {
-                if (errorCounter == 1000)
-                {
-                    errorCounter = -5000;
-                }
-                if (errorCounter < 0)
-                {
-                    errorCounter += gameTime.ElapsedGameTime.Milliseconds;
-                }
-                if (errorCounter >= 0)
-                {
-                    state = State.None;
-                    errorCounter = 1000;
-                    return true;
-                }
-            }
+
+            ////if there is an internet connection error when saving, show the error and return to menu
+            ////in the future, it might be good to save this information locally and allow play to continue
+            //if (state == State.InternetConnectionError)
+            //{
+            //    if (errorCounter == 1000)
+            //    {
+            //        errorCounter = -5000;
+            //    }
+            //    if (errorCounter < 0)
+            //    {
+            //        errorCounter += gameTime.ElapsedGameTime.Milliseconds;
+            //    }
+            //    if (errorCounter >= 0)
+            //    {
+            //        state = State.None;
+            //        errorCounter = 1000;
+            //        internetConnection = false;
+            //    }
+            //}
 
             //This determines if the level should restart on the student
             //it's to make sure the student doesn't just stop playing,
@@ -322,9 +331,13 @@ namespace ProjectDelta
                 wildCreature.Draw(spriteBatch, worldStage); //show the wild creature if it hasn't been collected (not used right now, but might be later)
             }
 
-            if (state == State.InternetConnectionError)
+            //if (state == State.InternetConnectionError)
+            //{
+            //    spriteBatch.Draw(internetConnectionError, internetConnectionErrorPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            //}
+            if (internetConnection == false)
             {
-                spriteBatch.Draw(internetConnectionError, internetConnectionErrorPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(internetConnectionWarning, internetConnectionWarningPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
 
 
@@ -497,10 +510,12 @@ namespace ProjectDelta
                 {
                     Game1.globalUser.world101 = worldStage;
                     context.Save<User>(Game1.globalUser);
+                    internetConnection = true;
                 }
                 catch
                 {
-                    state = State.InternetConnectionError;
+                    //state = State.InternetConnectionError;
+                    internetConnection = false;
                 }
             }
         }

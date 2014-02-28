@@ -705,6 +705,15 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\test_creature.xnb</Output>
       <Time>2014-02-26T12:45:19.639617-06:00</Time>
     </Item>
+    <Item>
+      <Source>General\internet_connection_warning.png</Source>
+      <Name>General\internet_connection_warning</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\internet_connection_warning.xnb</Output>
+      <Time>2014-02-28T12:44:06.7596521-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
