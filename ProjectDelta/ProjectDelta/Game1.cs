@@ -96,9 +96,7 @@ namespace ProjectDelta
             //Initializes the game in full screen
             //graphics.IsFullScreen = true;
 
-            this.IsFixedTimeStep = false;
-
-            
+            this.IsFixedTimeStep = false;         
         }
 
         /// <summary>
@@ -109,10 +107,10 @@ namespace ProjectDelta
         /// </summary>
         protected override void Initialize()
         {
-            string test = GameUtils.encrypt("asdf");
-            Debug.WriteLine(test);
             this.IsMouseVisible = true;
             connectToDatabase();
+
+            //GameUtils.databaseEncryptionHelper("tomrude", context);
 
             //for debug can edit this to go to desired state
             //default is State.Login

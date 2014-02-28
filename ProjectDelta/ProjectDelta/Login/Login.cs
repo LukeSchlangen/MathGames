@@ -283,7 +283,7 @@ namespace ProjectDelta
                     {
                         state = State.LoginError;
                     }
-                    else if (password != Game1.globalUser.password)
+                    else if (GameUtils.encrypt(password, username) != Game1.globalUser.password)
                     {
                         state = State.LoginError;
                     }
@@ -631,7 +631,7 @@ namespace ProjectDelta
                         Game1.globalUser = new User
                         {
                             username = username, //create their username
-                            password = password, //create their password
+                            password = GameUtils.encrypt(password, username), //create their password, storing an encrypted value in the db
                             skill = "0", //start them on level 0
                         };
 
