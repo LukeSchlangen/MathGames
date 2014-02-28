@@ -58,7 +58,7 @@ namespace ProjectDelta
                 freindlyCreatures[i] = FreindlyCreatureToLoad;
             }
 
-                    }
+        }
 
         public void Update(GameTime gameTime, int heroPosition)
         {
@@ -81,10 +81,11 @@ namespace ProjectDelta
 
         public void reset(int heroPosition)
         {
-            position = new Vector2(heroPosition - 200*scale, 800 * scale);
+            position = new Vector2(heroPosition - 200 * scale, 800 * scale);
             speed = .1f;
             powerupUseCount = 0;
         }
+        
         public void setMaxNumberOfPowerupUses(int maxNumberOfPowerUpUses)
         {
             this.maxNumberOfPowerUpUses = maxNumberOfPowerUpUses;
@@ -95,6 +96,7 @@ namespace ProjectDelta
             powerupUseCount += 1;
             usingPowerup = true;
         }
+
         public bool remainingPowerUp()
         {
             if (powerupUseCount < maxNumberOfPowerUpUses)

@@ -150,28 +150,34 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
-            updateCharacters(gameTime);
+            updateCharacters(gameTime); //update the positions of all of the characters
 
-            KeyboardState keyboard = Keyboard.GetState();
+            KeyboardState keyboard = Keyboard.GetState(); //determine what button is being pressed
 
+            //if the player hits esc, save, and return them to the main level
             if (keyboard.IsKeyDown(Keys.Escape))
             {
                 saveStage();
                 return true;
             }
 
+            //if the player hits space, save and restart the level
             if (keyboard.IsKeyDown(Keys.Space))
             {
                 saveStage();
                 resetStage();
             }
-
+            
+            //if they have answered all of the questions and the level is over...
             else if (correctInARow >= COUNT_TO_CONTINUE)
             {
+                //if the level is over, get rid of the monsters
                 monsterOne.monsterDeath();
                 monsterTwo.monsterDeath();
-                hero.stageSuccess();
-                resetTimer();
+                hero.stageSuccess(); //hero goes accross screen to collect creature
+                resetTimer(); //reset the error timer
+
+                //when the hero gets to the creature, have him stop
                 if (hero.getHeroCollisionBox().Intersects(wildCreature.getCollisionBox()))
                 {
                     hero.stop();
@@ -180,14 +186,15 @@ namespace ProjectDelta
             }
             else
             {
-                cycleBackground(gameTime);
+                cycleBackground(gameTime); //advance the background to make it look like the hero is moving
 
+                //if the creature has a powerup remaining, and the player presses "S", use the powerup
                 if (friendlyCreature.remainingPowerUp() && keyboard.IsKeyDown(Keys.S))
                 {
                     useCreaturePowerUp(scale);
                 }
 
-                //if both monsters are off screen, make sure they are in order
+                //if both monsters are off screen, make sure they are in order (special powers can make this out of sync)
                 if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X && !monsterOne.dead)
                 {
                     monsterOne.setX(currentMonster.getCollisionBox().X + (int)(500 * scale));
@@ -197,9 +204,9 @@ namespace ProjectDelta
                     monsterTwo.setX(currentMonster.getCollisionBox().X + (int)(500 * scale));
                 }
 
-                answerDone = world101Input.Update(gameTime, heroDead);
+                answerDone = world101Input.Update(gameTime, heroDead); //if the player has entered an answer
 
-                if (answerDone == true)
+                if (answerDone == true) //if the player has entered an answer, do some stuff
                 {
                     if (world101Input.getLastInput().Equals("") == false)
                     {
@@ -210,25 +217,27 @@ namespace ProjectDelta
                         }
                         else
                         {
-                            stopAll();
+                            stopAll(); //if the player has the wrong answer, stop everything
                         }
                     }
                 }
 
                 if (hero.getShieldCollisionBox().Intersects(currentMonster.getCollisionBox()))
                 {
-                    beatMonster();
+                    beatMonster(); //if the monster hits the shield, send the monster flying
                 }
 
                 if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
                 {
-                    stopAll();
+                    stopAll(); //if the monster collides with the hero, stop everything
                 }
 
                 //You'll also need to make some changes here to the text class to properly display
                 //the questions operator (right now it always assumes its the + operator)
             }
 
+            //if there is an internet connection error when saving, show the error and return to menu
+            //in the future, it might be good to save this information locally and allow play to continue
             if (state == State.InternetConnectionError)
             {
                 if (errorCounter == 1000)
@@ -247,6 +256,9 @@ namespace ProjectDelta
                 }
             }
 
+            //This determines if the level should restart on the student
+            //it's to make sure the student doesn't just stop playing,
+            //but nothing bad happens if they walk away
             if (state == State.ResetTimer)
             {
                 if (errorCounter == 1000)
@@ -261,48 +273,53 @@ namespace ProjectDelta
                 {
                     state = State.None;
                     errorCounter = 1000;
-                    saveStage();
+                    saveStage(); //save their game (in case they just made it to the end of a level
                     resetStage();
                 }
             }
+
+            //if the hero is dead, show the correct answer
             if (hero.getDead())
             {
                 myAnswer = currentMonster.getExpectedAnswer().ToString();
             }
             else
             {
-                myAnswer = world101Input.getCurrentInput();
+                myAnswer = world101Input.getCurrentInput(); //if the hero is alive, show the current input
             }
+
+            //show the problem
             world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), myAnswer, correctInARow, worldStage, COUNT_TO_CONTINUE);
 
-            return false;
+            return false; //don't go back to home screen, keep playing the game
 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            //draw the backgrounds and characters
             drawExtraObjects(spriteBatch);
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
             hero.Draw(spriteBatch);
             friendlyCreature.Draw(spriteBatch, worldStage);
             world101Text.DrawAnswerCount(spriteBatch);
+
             if (showQuestion && correctInARow < COUNT_TO_CONTINUE)
             {
-                world101Text.Draw(spriteBatch);
+                world101Text.Draw(spriteBatch); //show the question to the student
             }
             if (correctInARow >= COUNT_TO_CONTINUE)
             {
-                world101Text.DrawCongratsMsg(spriteBatch);
+                world101Text.DrawCongratsMsg(spriteBatch); //draw the congratulations message to the student upon completion
             }
             if (heroDead)
             {
-                world101Text.DrawDeadMsg(spriteBatch);
+                world101Text.DrawDeadMsg(spriteBatch); //if the hero is dead, show them the message telling them how to restart
             }
             if (!collected)
             {
-                wildCreature.Draw(spriteBatch, worldStage);
+                wildCreature.Draw(spriteBatch, worldStage); //show the wild creature if it hasn't been collected (not used right now, but might be later)
             }
 
             if (state == State.InternetConnectionError)
@@ -313,12 +330,13 @@ namespace ProjectDelta
 
         }
 
-        private void checkClick()
-        {
-            previous = current;
-            current = Mouse.GetState();
-            Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
-        }
+        ////If we decide to use clicking at some point, this will let us do it
+        //private void checkClick()
+        //{
+        //    previous = current;
+        //    current = Mouse.GetState();
+        //    Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
+        //}
 
         private void stopAll()
         {
@@ -330,6 +348,7 @@ namespace ProjectDelta
             resetTimer();
         }
 
+        //make the background move and cycle through the three images that make up the background
         private void cycleBackground(GameTime gameTime)
         {
             backgroundOnePosition.X -= backgroundSpeed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -484,8 +503,6 @@ namespace ProjectDelta
                     state = State.InternetConnectionError;
                 }
             }
-
-
         }
         private void resetTimer()
         {
@@ -508,9 +525,9 @@ namespace ProjectDelta
 
         private void shockWave(float scale)
         {
-            monsterOne.setX((int)(monsterOne.getCollisionBox().X + 700 * scale));
-            monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 700 * scale));
-            currentMonster.setX((int)(currentMonster.getCollisionBox().X + 700 * scale));
+            monsterOne.setX((int)(monsterOne.getCollisionBox().X + 600 * scale));
+            monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 600 * scale));
+            currentMonster.setX((int)(currentMonster.getCollisionBox().X + 600 * scale));
         }
 
         private void beatMonster()
