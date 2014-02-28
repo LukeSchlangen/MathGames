@@ -111,7 +111,6 @@ namespace ProjectDelta
         {
             string test = GameUtils.encrypt("asdf");
             Debug.WriteLine(test);
-            Debug.WriteLine(GameUtils.decrypt("test"));
             this.IsMouseVisible = true;
             connectToDatabase();
 

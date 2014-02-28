@@ -705,6 +705,15 @@
       <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\test_creature.xnb</Output>
       <Time>2014-02-24T18:43:14.0760593-06:00</Time>
     </Item>
+    <Item>
+      <Source>General\internet_connection_warning.png</Source>
+      <Name>General\internet_connection_warning</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\internet_connection_warning.xnb</Output>
+      <Time>2014-02-28T17:06:12.7765645-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{29FBEE7A-53F1-459E-83FD-87CAFE9C4818}</ContentProjectGUID>

@@ -84,6 +84,7 @@
     <Compile Include="Animation.cs" />
     <Compile Include="Problems.cs" />
     <Compile Include="Splash.cs" />
+    <Compile Include="World101\World101CreaturePowers.cs" />
     <Compile Include="World101\World101FriendlyCreature.cs" />
     <Compile Include="World101\World101WildCreature.cs" />
     <Compile Include="Hero.cs" />

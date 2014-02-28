@@ -78,3 +78,4 @@ Content\Level1\background_level_2b.xnb
 Content\Level1\background_level_2c.xnb
 Content\Login\go_button.xnb
 Content\Creatures\test_creature.xnb
+Content\General\internet_connection_warning.xnb
