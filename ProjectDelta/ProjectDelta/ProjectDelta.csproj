@@ -77,6 +77,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameUtils.cs" />
     <Compile Include="Home\Home.cs" />
     <Compile Include="Home\HomeInput.cs" />
     <Compile Include="Home\HomeText.cs" />

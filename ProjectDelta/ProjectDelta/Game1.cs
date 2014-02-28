@@ -109,6 +109,9 @@ namespace ProjectDelta
         /// </summary>
         protected override void Initialize()
         {
+            string test = GameUtils.encrypt("asdf");
+            Debug.WriteLine(test);
+            Debug.WriteLine(GameUtils.decrypt("test"));
             this.IsMouseVisible = true;
             connectToDatabase();
 
