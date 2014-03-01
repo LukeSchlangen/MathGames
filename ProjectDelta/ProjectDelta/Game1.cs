@@ -110,7 +110,16 @@ namespace ProjectDelta
             this.IsMouseVisible = true;
             connectToDatabase();
 
-            //GameUtils.databaseEncryptionHelper("tomrude", context);
+            //GameUtils.databaseEncryptionHelper("charliethebos", context);
+            //GameUtils.databaseEncryptionHelper("rayan", context);
+            //GameUtils.databaseEncryptionHelper("aj", context);
+            //GameUtils.databaseEncryptionHelper("new", context);
+            //GameUtils.databaseEncryptionHelper("teamusarocks", context);
+            //GameUtils.databaseEncryptionHelper("bilal", context);
+            //GameUtils.databaseEncryptionHelper("babyblue", context);
+            //GameUtils.databaseEncryptionHelper("divya", context);
+            //GameUtils.databaseEncryptionHelper("gracie", context);
+            //GameUtils.databaseEncryptionHelper("mohamed", context);
 
             //for debug can edit this to go to desired state
             //default is State.Login
