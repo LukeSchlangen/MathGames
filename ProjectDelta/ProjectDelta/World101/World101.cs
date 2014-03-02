@@ -203,13 +203,19 @@ namespace ProjectDelta
                 }
 
                 //if both monsters are off screen, make sure they are in order (special powers can make this out of sync)
-                if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X && !monsterOne.dead)
+                if (monsterOne != currentMonster)
                 {
-                    monsterOne.setX(currentMonster.getCollisionBox().X + (int)(500 * scale));
+                    if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterOne.dead)
+                    {
+                        monsterOne.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+                    }
                 }
-                if (monsterTwo.getCollisionBox().X < currentMonster.getCollisionBox().X && !monsterTwo.dead)
+                else if (monsterTwo != currentMonster)
                 {
-                    monsterTwo.setX(currentMonster.getCollisionBox().X + (int)(500 * scale));
+                    if (monsterTwo.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterTwo.dead)
+                    {
+                        monsterTwo.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+                    }
                 }
 
                 answerDone = world101Input.Update(gameTime, heroDead); //if the player has entered an answer
@@ -494,6 +500,9 @@ namespace ProjectDelta
             showQuestion = false;
             answerDone = false;
             correctInARow++;
+            //Update factors after an answer is correct (it's here instead of beatmonster because a powerup could be used for that)
+            currentMonster.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
+
         }
 
         private void saveStage()
@@ -552,9 +561,6 @@ namespace ProjectDelta
 
             currentMonster.monsterDeath();
             world101Input.resetInput();
-
-            //Update factors when a monster dies
-            currentMonster.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
 
             showQuestion = true;
 
