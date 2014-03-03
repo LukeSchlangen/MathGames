@@ -167,7 +167,7 @@ namespace ProjectDelta
             {
                 sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
             }
-            
+
             updateCharacters(gameTime); //update the positions of all of the characters
 
             KeyboardState keyboard = Keyboard.GetState(); //determine what button is being pressed
@@ -526,9 +526,14 @@ namespace ProjectDelta
             {
                 try
                 {
+                    new DailyStats(context).resetDailyStats();
                     Game1.globalUser.answersAttempted += sessionAnswersAttempted;
+                    Game1.globalUser.answersAttemptedToday += sessionAnswersAttempted;
                     Game1.globalUser.answersCorrect += sessionAnswersCorrect;
+                    Game1.globalUser.answersCorrectToday += sessionAnswersCorrect;
                     Game1.globalUser.timePlayed += sessionTimePlayed;
+                    Game1.globalUser.timePlayedToday += sessionTimePlayed;
+                    Game1.globalUser.lastDatePlayed = DateTime.Today;
                     context.Save<User>(Game1.globalUser);
                     sessionAnswersAttempted = 0;
                     sessionAnswersCorrect = 0;

@@ -65,7 +65,6 @@ namespace ProjectDelta
             Debug.WriteLine(position);
             position.X = heroPosition - 200 * scale;
             position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale;
-
         }
 
         public void Draw(SpriteBatch spriteBatch, int worldStage)

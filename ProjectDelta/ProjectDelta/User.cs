@@ -41,10 +41,22 @@ namespace ProjectDelta
         [DynamoDBProperty("TIME_PLAYED")]
         public int timePlayed { get; set; }
 
+        [DynamoDBProperty("TIME_PLAYED_TODAY")]
+        public int timePlayedToday { get; set; }
+
+        [DynamoDBProperty("LAST_DATE_PLAYED")]
+        public DateTime lastDatePlayed { get; set; }
+
         [DynamoDBProperty("ANSWERS_ATTEMPTED")]
         public int answersAttempted { get; set; }
 
+        [DynamoDBProperty("ANSWERS_ATTEMPTED_TODAY")]
+        public int answersAttemptedToday { get; set; }
+        
         [DynamoDBProperty("ANSWERS_CORRECT")]
         public int answersCorrect { get; set; }
+
+        [DynamoDBProperty("ANSWERS_CORRECT_TODAY")]
+        public int answersCorrectToday { get; set; }
     }
 }
