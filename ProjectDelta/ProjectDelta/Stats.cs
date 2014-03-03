@@ -58,11 +58,14 @@ namespace ProjectDelta
             backButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
             backButtonCollisionBox = new Rectangle(((int)(backButtonPosition.X)), (int)(backButtonPosition.Y), (int)(backButton.Width), (backButton.Height));
 
-            font = content.Load<SpriteFont>("large_input_font");
+            font = content.Load<SpriteFont>("input_font");
 
             displayedStats =
                 "Stats for " + Game1.globalUser.username + "\n\n" +
-                "SOME_STATS_HERE";
+                "Time Played: " + Game1.globalUser.timePlayed / 60000 + " minutes\n" +
+                "Answers Attempted: " + Game1.globalUser.answersAttempted + "\n" +
+                "Answers Correct: " + Game1.globalUser.answersCorrect + "\n" +
+                "Percent Correct: " + (float)Game1.globalUser.answersCorrect / (float)Game1.globalUser.answersAttempted;
 
             statsPosition = new Vector2((screenWidth / 2 - (font.MeasureString(displayedStats).X) / 2 * scale), 300 * scale);
         }

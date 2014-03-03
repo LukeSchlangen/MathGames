@@ -37,5 +37,14 @@ namespace ProjectDelta
 
         [DynamoDBProperty("WORLD_101")]
         public int world101 { get; set; }
+
+        [DynamoDBProperty("TIME_PLAYED")]
+        public int timePlayed { get; set; }
+
+        [DynamoDBProperty("ANSWERS_ATTEMPTED")]
+        public int answersAttempted { get; set; }
+
+        [DynamoDBProperty("ANSWERS_CORRECT")]
+        public int answersCorrect { get; set; }
     }
 }

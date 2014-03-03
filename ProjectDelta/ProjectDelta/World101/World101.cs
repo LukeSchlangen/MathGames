@@ -85,6 +85,10 @@ namespace ProjectDelta
 
         private string myAnswer;
 
+        private int sessionTimePlayed;
+        private int sessionAnswersAttempted;
+        private int sessionAnswersCorrect;
+
         //This is an array of HashSets that should allow you store data
         //as you explained in email.
         private Dictionary<string, int>[] stageProblems;
@@ -150,10 +154,15 @@ namespace ProjectDelta
             backgroundMusic = content.Load<Song>("Level1/level1_background_music");
             MediaPlayer.Play(backgroundMusic);
             MediaPlayer.IsRepeating = true;
+
+            sessionTimePlayed = 0;
+            sessionAnswersAttempted = 0;
+            sessionAnswersCorrect = 0;
         }
 
         public bool Update(GameTime gameTime)
         {
+            sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
             updateCharacters(gameTime); //update the positions of all of the characters
 
             KeyboardState keyboard = Keyboard.GetState(); //determine what button is being pressed
@@ -161,6 +170,7 @@ namespace ProjectDelta
             //if the player hits esc, save, and return them to the main level
             if (keyboard.IsKeyDown(Keys.Escape))
             {
+                saveStats();
                 saveStage();
                 return true;
             }
@@ -168,6 +178,7 @@ namespace ProjectDelta
             //if the player hits space, save and restart the level
             if (keyboard.IsKeyDown(Keys.Space))
             {
+                saveStats();
                 saveStage();
                 resetStage();
             }
@@ -227,6 +238,7 @@ namespace ProjectDelta
                         }
                         else
                         {
+                            sessionAnswersAttempted++;
                             stopAll(); //if the player has the wrong answer, stop everything
                         }
                     }
@@ -239,6 +251,7 @@ namespace ProjectDelta
 
                 if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
                 {
+                    sessionAnswersAttempted++;
                     stopAll(); //if the monster collides with the hero, stop everything
                 }
 
@@ -496,9 +509,22 @@ namespace ProjectDelta
             showQuestion = false;
             answerDone = false;
             correctInARow++;
+            sessionAnswersAttempted++;
+            sessionAnswersCorrect++;
             //Update factors after an answer is correct (it's here instead of beatmonster because a powerup could be used for that)
             currentMonster.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
 
+        }
+
+        private void saveStats()
+        {
+            Game1.globalUser.answersAttempted += sessionAnswersAttempted;
+            Game1.globalUser.answersCorrect += sessionAnswersCorrect;
+            Game1.globalUser.timePlayed += sessionTimePlayed;
+            context.Save<User>(Game1.globalUser);
+            sessionAnswersAttempted = 0;
+            sessionAnswersCorrect = 0;
+            sessionTimePlayed = 0;
         }
 
         private void saveStage()
@@ -524,6 +550,7 @@ namespace ProjectDelta
                 }
             }
         }
+
         private void resetTimer()
         {
             state = State.ResetTimer;
