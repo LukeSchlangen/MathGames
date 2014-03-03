@@ -714,6 +714,15 @@
       <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\internet_connection_warning.xnb</Output>
       <Time>2014-02-28T17:06:12.7765645-06:00</Time>
     </Item>
+    <Item>
+      <Source>Home\stats_button.png</Source>
+      <Name>Home\stats_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Tom\Desktop\Tom\Projects\Other\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\stats_button.xnb</Output>
+      <Time>2014-03-02T18:16:05.2231042-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{29FBEE7A-53F1-459E-83FD-87CAFE9C4818}</ContentProjectGUID>

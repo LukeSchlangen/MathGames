@@ -65,10 +65,6 @@ namespace ProjectDelta
         //private Vector2 internetConnectionErrorPosition;
         private Vector2 internetConnectionWarningPosition;
 
-        //Mouse states
-        private MouseState current;
-        private MouseState previous;
-
         private Hero hero;
         private World101Monster monsterOne;
         private World101Monster monsterTwo;

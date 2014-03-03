@@ -1,0 +1,96 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+
+using Amazon;
+using Amazon.S3;
+using Amazon.S3.Model;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.DataModel;
+
+namespace ProjectDelta
+{
+    class Stats
+    {
+        private DynamoDBContext context;
+        private MouseState current;
+        private MouseState previous;
+
+        private SpriteFont font;
+        
+        private float scale;
+        private int screenHeight;
+        private int screenWidth;
+
+        private Texture2D background;
+        private Texture2D backButton;
+
+        private Vector2 backButtonPosition;
+        private Vector2 statsPosition;
+
+        private Rectangle backButtonCollisionBox;
+
+        private string displayedStats = "";
+
+        public Stats(DynamoDBContext context, float scale)
+        {
+            this.context = context;
+            this.scale = scale;
+        }
+
+        public void LoadContent(ContentManager content, int screenX, int screenY)
+        {
+            screenHeight = screenY;
+            screenWidth = screenX;
+
+            background = content.Load<Texture2D>("Login/login_background");
+            backButton = content.Load<Texture2D>("Login/back_button");
+            backButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
+            backButtonCollisionBox = new Rectangle(((int)(backButtonPosition.X)), (int)(backButtonPosition.Y), (int)(backButton.Width), (backButton.Height));
+
+            font = content.Load<SpriteFont>("large_input_font");
+
+            displayedStats =
+                "Stats for " + Game1.globalUser.username + "\n\n" +
+                "SOME_STATS_HERE";
+
+            statsPosition = new Vector2((screenWidth / 2 - (font.MeasureString(displayedStats).X) / 2 * scale), 300 * scale);
+        }
+
+        public bool Update(GameTime gameTime)
+        {
+            return checkBack();
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(background, new Vector2(), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(font, displayedStats, statsPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+        }
+
+        private bool checkBack()
+        {
+            previous = current;
+            current = Mouse.GetState();
+            Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
+
+            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(backButtonCollisionBox))
+            {
+                return true;
+            }
+
+            return false;
+        }
+    }
+}

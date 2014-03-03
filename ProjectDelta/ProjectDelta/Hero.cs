@@ -35,7 +35,6 @@ namespace ProjectDelta
         }
 
         private float scale;
-        private float originalSpeed;
         private float speed = .1f;
         private State state;
         private bool shieldAnimationDone = false;

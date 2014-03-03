@@ -36,7 +36,8 @@ namespace ProjectDelta
             Login,
             Home,
             World101,
-            Exit,
+            Stats,
+            Exit,         
         }
 
         private int screenWidth;
@@ -60,6 +61,7 @@ namespace ProjectDelta
         private Login login;
         private Home home;
         private World101 world101;
+        private Stats stats;
 
         //ContentManagers: One manager for each set of 
         //content (worlds, login, home, etc)
@@ -67,6 +69,7 @@ namespace ProjectDelta
         ContentManager loginContentManager;
         ContentManager homeContentManager;
         ContentManager world101ContentManager;
+        ContentManager statsContentManager;
         
         public Game1()
         {
@@ -77,6 +80,7 @@ namespace ProjectDelta
             loginContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             homeContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             world101ContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
+            statsContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
 
             screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
@@ -130,6 +134,7 @@ namespace ProjectDelta
             login = new Login(context);
             home = new Home();
             world101 = new World101(context);
+            stats = new Stats(context, scale);
 
             //when we initialize the login screen (and any screens
             //from here on out), we pass in the scale value to allow
@@ -219,7 +224,29 @@ namespace ProjectDelta
                     homeContentManager.Unload();
                     globalUser = null;
                     login.LoadContent(loginContentManager, screenHeight, screenWidth);
+                    success = false;
                     whereTo = 0;
+                }
+
+                if (whereTo == -2)
+                {
+                    state = State.Stats;
+                    homeContentManager.Unload();
+                    stats.LoadContent(statsContentManager, screenWidth, screenHeight);
+                    success = false;
+                    whereTo = 0;
+                }
+            }
+
+            if(state == State.Stats)
+            {
+                success = stats.Update(gameTime);
+                if (success == true)
+                {
+                    state = State.Home;
+                    statsContentManager.Unload();
+                    home.LoadContent(homeContentManager, screenHeight, screenWidth);
+                    success = false;
                 }
             }
 
@@ -273,6 +300,11 @@ namespace ProjectDelta
             if (state == State.World101)
             {
                 world101.Draw(spriteBatch);
+            }
+
+            if (state == State.Stats)
+            {
+                stats.Draw(spriteBatch);
             }
 
             if (state == State.Exit)
