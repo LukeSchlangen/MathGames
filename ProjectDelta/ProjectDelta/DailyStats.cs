@@ -33,20 +33,13 @@ namespace ProjectDelta
 
         public void resetDailyStats()
         {
-            try
+            if (Game1.globalUser.lastDatePlayed != DateTime.Today)
             {
-                if (Game1.globalUser.lastDatePlayed != DateTime.Today)
-                {
-                    Game1.globalUser.answersAttemptedToday = 0;
-                    Game1.globalUser.answersCorrectToday = 0;
-                    Game1.globalUser.timePlayedToday = 0;
-                    Game1.globalUser.lastDatePlayed = DateTime.Today;
-                    context.Save<User>(Game1.globalUser);
-                }
-            }
-            catch
-            {
-                //for some reason, Game1.globalUser.lastDatePlayed keeps equaling null... this should fix it
+                Game1.globalUser.answersAttemptedToday = 0;
+                Game1.globalUser.answersCorrectToday = 0;
+                Game1.globalUser.timePlayedToday = 0;
+                Game1.globalUser.lastDatePlayed = DateTime.Today;
+                context.Save<User>(Game1.globalUser);
             }
         }
     }

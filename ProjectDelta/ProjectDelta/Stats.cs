@@ -50,11 +50,11 @@ namespace ProjectDelta
         {
             this.context = context;
             this.scale = scale;
-            new DailyStats(context).resetDailyStats();
         }
 
         public void LoadContent(ContentManager content, int worldStage, int COUNT_TO_CONTINUE, int screenX, int screenY)
         {
+            new DailyStats(context).resetDailyStats();
             screenHeight = screenY;
             screenWidth = screenX;
 
@@ -73,7 +73,7 @@ namespace ProjectDelta
                 "Answers Attempted Today: " + Game1.globalUser.answersAttemptedToday + "\n" +
                 "Answers Correct Today: " + Game1.globalUser.answersCorrectToday + "\n" +
                 //"Percent Correct Today: " + (float)((int)(1000 * (float)Game1.globalUser.answersCorrectToday / (float)Game1.globalUser.answersAttemptedToday)) / 10 + "%" + "\n" +
- "\n" +
+                "\n" +
                 "Time Played: " + Game1.globalUser.timePlayed / 60000 + " minutes\n" +
                 "Answers Attempted: " + Game1.globalUser.answersAttempted + "\n" +
                 "Answers Correct: " + Game1.globalUser.answersCorrect + "\n" +
