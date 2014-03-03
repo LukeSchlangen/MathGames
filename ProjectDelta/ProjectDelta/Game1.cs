@@ -40,6 +40,8 @@ namespace ProjectDelta
             Exit,         
         }
 
+        private static int COUNT_TO_CONTINUE = 10;
+
         private int screenWidth;
         private int screenHeight;
 
@@ -114,16 +116,8 @@ namespace ProjectDelta
             this.IsMouseVisible = true;
             connectToDatabase();
 
-            //GameUtils.databaseEncryptionHelper("charliethebos", context);
-            //GameUtils.databaseEncryptionHelper("rayan", context);
-            //GameUtils.databaseEncryptionHelper("aj", context);
-            //GameUtils.databaseEncryptionHelper("new", context);
-            //GameUtils.databaseEncryptionHelper("teamusarocks", context);
-            //GameUtils.databaseEncryptionHelper("bilal", context);
-            //GameUtils.databaseEncryptionHelper("babyblue", context);
-            //GameUtils.databaseEncryptionHelper("divya", context);
-            //GameUtils.databaseEncryptionHelper("gracie", context);
-            //GameUtils.databaseEncryptionHelper("mohamed", context);
+            //How to encrpyt an unencrypted password, only run uncommented one time
+            //GameUtils.databaseEncryptionHelper("usernameOfPasswordNeedingEncryption", context);
 
             //for debug can edit this to go to desired state
             //default is State.Login
@@ -212,7 +206,7 @@ namespace ProjectDelta
                     homeContentManager.Unload();
                     int difficulty = globalUser.world101;
 
-                    world101.LoadContent(world101ContentManager, globalUser.world101);
+                    world101.LoadContent(world101ContentManager, globalUser.world101, COUNT_TO_CONTINUE);
 
                     success = false;
                     whereTo = 0;
@@ -232,7 +226,7 @@ namespace ProjectDelta
                 {
                     state = State.Stats;
                     homeContentManager.Unload();
-                    stats.LoadContent(statsContentManager, screenWidth, screenHeight);
+                    stats.LoadContent(statsContentManager, globalUser.world101, COUNT_TO_CONTINUE, screenWidth, screenHeight);
                     success = false;
                     whereTo = 0;
                 }

@@ -22,12 +22,14 @@ namespace ProjectDelta
 {
     class Stats
     {
+        private QuestionFormat question = new QuestionFormat();
+
         private DynamoDBContext context;
         private MouseState current;
         private MouseState previous;
 
         private SpriteFont font;
-        
+
         private float scale;
         private int screenHeight;
         private int screenWidth;
@@ -42,13 +44,15 @@ namespace ProjectDelta
 
         private string displayedStats = "";
 
+        private Dictionary<string, int>[] stageProblems;
+
         public Stats(DynamoDBContext context, float scale)
         {
             this.context = context;
             this.scale = scale;
         }
 
-        public void LoadContent(ContentManager content, int screenX, int screenY)
+        public void LoadContent(ContentManager content, int worldStage, int COUNT_TO_CONTINUE, int screenX, int screenY)
         {
             screenHeight = screenY;
             screenWidth = screenX;
@@ -60,14 +64,22 @@ namespace ProjectDelta
 
             font = content.Load<SpriteFont>("input_font");
 
+            stageProblems = Problems.determineProblems(worldStage, COUNT_TO_CONTINUE);
+
             displayedStats =
                 "Stats for " + Game1.globalUser.username + "\n\n" +
                 "Time Played: " + Game1.globalUser.timePlayed / 60000 + " minutes\n" +
                 "Answers Attempted: " + Game1.globalUser.answersAttempted + "\n" +
                 "Answers Correct: " + Game1.globalUser.answersCorrect + "\n" +
-                "Percent Correct: " + (float)Game1.globalUser.answersCorrect / (float)Game1.globalUser.answersAttempted;
+                "Percent Correct: " + (float)((int)(1000 * (float)Game1.globalUser.answersCorrect / (float)Game1.globalUser.answersAttempted)) / 10 + "%" + "\n" +
+                "Currently Working On:\n";
 
-            statsPosition = new Vector2((screenWidth / 2 - (font.MeasureString(displayedStats).X) / 2 * scale), 300 * scale);
+            for (int i = 0; i < COUNT_TO_CONTINUE + 2; i++)
+            {
+                displayedStats += question.question(stageProblems[i]["operation"], stageProblems[i]["factorOne"], stageProblems[i]["factorTwo"]) + "\n";
+            }
+
+            statsPosition = new Vector2((screenWidth / 2 - (font.MeasureString(displayedStats).X) / 2 * scale), 100 * scale);
         }
 
         public bool Update(GameTime gameTime)

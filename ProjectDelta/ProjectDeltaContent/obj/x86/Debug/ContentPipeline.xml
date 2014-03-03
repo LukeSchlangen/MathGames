@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_background.xnb</Output>
-      <Time>2014-02-28T19:02:12.8721086-06:00</Time>
+      <Time>2014-03-03T09:34:51.8582107-06:00</Time>
     </Item>
     <Item>
       <Source>Login\login_box.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_box.xnb</Output>
-      <Time>2014-02-28T19:02:12.8751088-06:00</Time>
+      <Time>2014-03-03T09:34:51.8622109-06:00</Time>
     </Item>
     <Item>
       <Source>Login\signup_button.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_button.xnb</Output>
-      <Time>2014-02-28T19:02:12.8831093-06:00</Time>
+      <Time>2014-03-03T09:34:51.8792119-06:00</Time>
     </Item>
     <Item>
       <Source>Login\signup_box.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_box.xnb</Output>
-      <Time>2014-02-28T19:02:12.8821092-06:00</Time>
+      <Time>2014-03-03T09:34:51.8762117-06:00</Time>
     </Item>
     <Item>
       <Source>Login\back_button.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\back_button.xnb</Output>
-      <Time>2014-02-28T19:02:12.8311063-06:00</Time>
+      <Time>2014-03-03T09:34:51.6691999-06:00</Time>
     </Item>
     <Item>
       <Source>Login\login_error.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_error.xnb</Output>
-      <Time>2014-02-28T19:02:12.8771089-06:00</Time>
+      <Time>2014-03-03T09:34:51.8652111-06:00</Time>
     </Item>
     <Item>
       <Source>Login\login_highlighter.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_highlighter.xnb</Output>
-      <Time>2014-02-28T19:02:12.878109-06:00</Time>
+      <Time>2014-03-03T09:34:51.8682113-06:00</Time>
     </Item>
     <Item>
       <Source>General\Planets\planet_5.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_5.xnb</Output>
-      <Time>2014-02-28T19:02:11.8740515-06:00</Time>
+      <Time>2014-03-03T09:34:50.1251116-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\enemy_ship_1.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_ship_1.xnb</Output>
-      <Time>2014-02-28T19:02:12.5070878-06:00</Time>
+      <Time>2014-03-03T09:34:50.6531418-06:00</Time>
     </Item>
     <Item>
       <Source>General\Planets\planet_1.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_1.xnb</Output>
-      <Time>2014-02-28T19:02:11.8550505-06:00</Time>
+      <Time>2014-03-03T09:34:50.1161111-06:00</Time>
     </Item>
     <Item>
       <Source>General\Planets\planet_2.png</Source>
@@ -98,7 +98,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_2.xnb</Output>
-      <Time>2014-02-28T19:02:11.8590507-06:00</Time>
+      <Time>2014-03-03T09:34:50.1181112-06:00</Time>
     </Item>
     <Item>
       <Source>General\Planets\planet_3.png</Source>
@@ -107,7 +107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_3.xnb</Output>
-      <Time>2014-02-28T19:02:11.864051-06:00</Time>
+      <Time>2014-03-03T09:34:50.1211113-06:00</Time>
     </Item>
     <Item>
       <Source>General\Planets\planet_4.png</Source>
@@ -116,7 +116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_4.xnb</Output>
-      <Time>2014-02-28T19:02:11.8680512-06:00</Time>
+      <Time>2014-03-03T09:34:50.1221114-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\good_ship_1.png</Source>
@@ -125,7 +125,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_ship_1.xnb</Output>
-      <Time>2014-02-28T19:02:12.5180884-06:00</Time>
+      <Time>2014-03-03T09:34:50.6801433-06:00</Time>
     </Item>
     <Item>
       <Source>Login\background_stars.png</Source>
@@ -134,7 +134,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\background_stars.xnb</Output>
-      <Time>2014-02-28T19:02:12.8661083-06:00</Time>
+      <Time>2014-03-03T09:34:51.84621-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\enemy_fleet_1.png</Source>
@@ -143,7 +143,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_fleet_1.xnb</Output>
-      <Time>2014-02-28T19:02:12.1310662-06:00</Time>
+      <Time>2014-03-03T09:34:50.3701256-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\good_fleet_1.png</Source>
@@ -152,7 +152,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_fleet_1.xnb</Output>
-      <Time>2014-02-28T19:02:12.5140882-06:00</Time>
+      <Time>2014-03-03T09:34:50.6781432-06:00</Time>
     </Item>
     <Item>
       <Source>Login\signup_error.png</Source>
@@ -161,7 +161,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_error.xnb</Output>
-      <Time>2014-02-28T19:02:12.8851094-06:00</Time>
+      <Time>2014-03-03T09:34:51.8832121-06:00</Time>
     </Item>
     <Item>
       <Source>Login\password_match_error.png</Source>
@@ -170,7 +170,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\password_match_error.xnb</Output>
-      <Time>2014-02-28T19:02:12.8801091-06:00</Time>
+      <Time>2014-03-03T09:34:51.8712114-06:00</Time>
     </Item>
     <Item>
       <Source>Login\internet_connection_error.png</Source>
@@ -179,7 +179,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\internet_connection_error.xnb</Output>
-      <Time>2014-02-28T19:02:12.8691085-06:00</Time>
+      <Time>2014-03-03T09:34:51.8522104-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\resized_level1_background.png</Source>
@@ -188,7 +188,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\resized_level1_background.xnb</Output>
-      <Time>2014-02-28T19:02:12.8151054-06:00</Time>
+      <Time>2014-03-03T09:34:51.443187-06:00</Time>
     </Item>
     <Item>
       <Source>General\Hero\math_hero_character.png</Source>
@@ -197,7 +197,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\math_hero_character.xnb</Output>
-      <Time>2014-02-28T19:02:11.7780461-06:00</Time>
+      <Time>2014-03-03T09:34:50.0841092-06:00</Time>
     </Item>
     <Item>
       <Source>Login\Background_Music.mp3</Source>
@@ -207,7 +207,7 @@
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\Background_Music.xnb</Output>
       <Extra>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\Background_Music.wma</Extra>
-      <Time>2014-02-28T19:02:12.8301062-06:00</Time>
+      <Time>2014-03-03T09:34:51.6661997-06:00</Time>
     </Item>
     <Item>
       <Source>General\Hero\running_sprite_sheet_5x10.png</Source>
@@ -216,7 +216,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x10.xnb</Output>
-      <Time>2014-02-28T19:02:11.8350493-06:00</Time>
+      <Time>2014-03-03T09:34:50.1011102-06:00</Time>
     </Item>
     <Item>
       <Source>General\Hero\running_sprite_sheet_5x5.png</Source>
@@ -225,7 +225,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x5.xnb</Output>
-      <Time>2014-02-28T19:02:11.8420497-06:00</Time>
+      <Time>2014-03-03T09:34:50.1041104-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_1a.png</Source>
@@ -234,7 +234,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1a.xnb</Output>
-      <Time>2014-02-28T19:02:12.6930984-06:00</Time>
+      <Time>2014-03-03T09:34:50.7201456-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_1b.png</Source>
@@ -243,7 +243,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1b.xnb</Output>
-      <Time>2014-02-28T19:02:12.7080993-06:00</Time>
+      <Time>2014-03-03T09:34:50.7291461-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_1c.png</Source>
@@ -252,7 +252,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1c.xnb</Output>
-      <Time>2014-02-28T19:02:12.7180998-06:00</Time>
+      <Time>2014-03-03T09:34:51.0811663-06:00</Time>
     </Item>
     <Item>
       <Source>input_font.spritefont</Source>
@@ -261,7 +261,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\input_font.xnb</Output>
-      <Time>2014-02-28T19:02:12.8901097-06:00</Time>
+      <Time>2014-03-03T09:34:51.8952128-06:00</Time>
     </Item>
     <Item>
       <Source>General\Hero\shield.png</Source>
@@ -270,7 +270,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\shield.xnb</Output>
-      <Time>2014-02-28T19:02:11.8440498-06:00</Time>
+      <Time>2014-03-03T09:34:50.1081106-06:00</Time>
     </Item>
     <Item>
       <Source>General\Monsters\enemy_1.png</Source>
@@ -279,7 +279,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_1.xnb</Output>
-      <Time>2014-02-28T19:02:11.8480501-06:00</Time>
+      <Time>2014-03-03T09:34:50.1111108-06:00</Time>
     </Item>
     <Item>
       <Source>General\Monsters\enemy_2.png</Source>
@@ -288,7 +288,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_2.xnb</Output>
-      <Time>2014-02-28T19:02:11.8510502-06:00</Time>
+      <Time>2014-03-03T09:34:50.1131109-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\QShield_sheet.png</Source>
@@ -297,7 +297,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_sheet.xnb</Output>
-      <Time>2014-02-28T19:02:11.882052-06:00</Time>
+      <Time>2014-03-03T09:34:50.1431126-06:00</Time>
     </Item>
     <Item>
       <Source>General\Hero\jumping_sprite_sheet.png</Source>
@@ -306,7 +306,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\jumping_sprite_sheet.xnb</Output>
-      <Time>2014-02-28T19:02:11.7760459-06:00</Time>
+      <Time>2014-03-03T09:34:50.0821091-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_explosion_sheet.png</Source>
@@ -315,7 +315,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_explosion_sheet.xnb</Output>
-      <Time>2014-02-28T19:02:12.0700628-06:00</Time>
+      <Time>2014-03-03T09:34:50.1511131-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\good_drone.png</Source>
@@ -324,7 +324,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_drone.xnb</Output>
-      <Time>2014-02-28T19:02:12.5100879-06:00</Time>
+      <Time>2014-03-03T09:34:50.6551419-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\enemy_drones.png</Source>
@@ -333,7 +333,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_drones.xnb</Output>
-      <Time>2014-02-28T19:02:12.1280661-06:00</Time>
+      <Time>2014-03-03T09:34:50.3671254-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\QShield_1.png</Source>
@@ -342,7 +342,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_1.xnb</Output>
-      <Time>2014-02-28T19:02:11.8770517-06:00</Time>
+      <Time>2014-03-03T09:34:50.1311119-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_sheet.png</Source>
@@ -351,7 +351,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet.xnb</Output>
-      <Time>2014-02-28T19:02:12.0940641-06:00</Time>
+      <Time>2014-03-03T09:34:50.1651139-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_sheet_3x5.png</Source>
@@ -360,7 +360,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_3x5.xnb</Output>
-      <Time>2014-02-28T19:02:12.1180655-06:00</Time>
+      <Time>2014-03-03T09:34:50.1801147-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_sheet_6x5.png</Source>
@@ -369,7 +369,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_6x5.xnb</Output>
-      <Time>2014-02-28T19:02:12.1240658-06:00</Time>
+      <Time>2014-03-03T09:34:50.1861151-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_sheet_3x3.png</Source>
@@ -378,7 +378,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_3x3.xnb</Output>
-      <Time>2014-02-28T19:02:12.1120652-06:00</Time>
+      <Time>2014-03-03T09:34:50.1751144-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_sheet_2x3.png</Source>
@@ -387,7 +387,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_2x3.xnb</Output>
-      <Time>2014-02-28T19:02:12.1070649-06:00</Time>
+      <Time>2014-03-03T09:34:50.1701141-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_image.png</Source>
@@ -396,7 +396,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_image.xnb</Output>
-      <Time>2014-02-28T19:02:12.075063-06:00</Time>
+      <Time>2014-03-03T09:34:50.1531132-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\shield_image.png</Source>
@@ -405,7 +405,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\shield_image.xnb</Output>
-      <Time>2014-02-28T19:02:12.126066-06:00</Time>
+      <Time>2014-03-03T09:34:50.1891152-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_3x3.png</Source>
@@ -414,7 +414,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_3x3.xnb</Output>
-      <Time>2014-02-28T19:02:12.0830635-06:00</Time>
+      <Time>2014-03-03T09:34:50.1581135-06:00</Time>
     </Item>
     <Item>
       <Source>large_input_font.spritefont</Source>
@@ -423,7 +423,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\large_input_font.xnb</Output>
-      <Time>2014-02-28T19:02:12.8931098-06:00</Time>
+      <Time>2014-03-03T09:34:51.9002131-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\level1_background_music.mp3</Source>
@@ -433,7 +433,7 @@
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.xnb</Output>
       <Extra>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.wma</Extra>
-      <Time>2014-02-28T19:02:12.8061049-06:00</Time>
+      <Time>2014-03-03T09:34:51.4321863-06:00</Time>
     </Item>
     <Item>
       <Source>Home\start_next_level_button.png</Source>
@@ -442,7 +442,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\start_next_level_button.xnb</Output>
-      <Time>2014-02-28T19:02:12.6790976-06:00</Time>
+      <Time>2014-03-03T09:34:50.7061448-06:00</Time>
     </Item>
     <Item>
       <Source>small_input_font.spritefont</Source>
@@ -451,7 +451,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\small_input_font.xnb</Output>
-      <Time>2014-02-28T19:02:12.9101108-06:00</Time>
+      <Time>2014-03-03T09:34:51.9522161-06:00</Time>
     </Item>
     <Item>
       <Source>tiny_input_font.spritefont</Source>
@@ -460,7 +460,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\tiny_input_font.xnb</Output>
-      <Time>2014-02-28T19:02:12.9111109-06:00</Time>
+      <Time>2014-03-03T09:34:51.9562163-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage1.png</Source>
@@ -469,7 +469,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage1.xnb</Output>
-      <Time>2014-02-28T19:02:11.6730401-06:00</Time>
+      <Time>2014-03-03T09:34:50.0151053-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage10.png</Source>
@@ -478,7 +478,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage10.xnb</Output>
-      <Time>2014-02-28T19:02:11.6790404-06:00</Time>
+      <Time>2014-03-03T09:34:50.0191055-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage11.png</Source>
@@ -487,7 +487,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage11.xnb</Output>
-      <Time>2014-02-28T19:02:11.6860408-06:00</Time>
+      <Time>2014-03-03T09:34:50.0241058-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage12.png</Source>
@@ -496,7 +496,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage12.xnb</Output>
-      <Time>2014-02-28T19:02:11.6930412-06:00</Time>
+      <Time>2014-03-03T09:34:50.0291061-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage13.png</Source>
@@ -505,7 +505,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage13.xnb</Output>
-      <Time>2014-02-28T19:02:11.7000416-06:00</Time>
+      <Time>2014-03-03T09:34:50.0351064-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage14.png</Source>
@@ -514,7 +514,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage14.xnb</Output>
-      <Time>2014-02-28T19:02:11.7080421-06:00</Time>
+      <Time>2014-03-03T09:34:50.0401067-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage15.png</Source>
@@ -523,7 +523,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage15.xnb</Output>
-      <Time>2014-02-28T19:02:11.7150425-06:00</Time>
+      <Time>2014-03-03T09:34:50.0461071-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage16.png</Source>
@@ -532,7 +532,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage16.xnb</Output>
-      <Time>2014-02-28T19:02:11.724043-06:00</Time>
+      <Time>2014-03-03T09:34:50.0521074-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage2.png</Source>
@@ -541,7 +541,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage2.xnb</Output>
-      <Time>2014-02-28T19:02:11.7270431-06:00</Time>
+      <Time>2014-03-03T09:34:50.0531075-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage3.png</Source>
@@ -550,7 +550,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage3.xnb</Output>
-      <Time>2014-02-28T19:02:11.7300433-06:00</Time>
+      <Time>2014-03-03T09:34:50.0561076-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage4.png</Source>
@@ -559,7 +559,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage4.xnb</Output>
-      <Time>2014-02-28T19:02:11.7340435-06:00</Time>
+      <Time>2014-03-03T09:34:50.0591078-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage5.png</Source>
@@ -568,7 +568,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage5.xnb</Output>
-      <Time>2014-02-28T19:02:11.7390438-06:00</Time>
+      <Time>2014-03-03T09:34:50.0611079-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage6.png</Source>
@@ -577,7 +577,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage6.xnb</Output>
-      <Time>2014-02-28T19:02:11.7430441-06:00</Time>
+      <Time>2014-03-03T09:34:50.0641081-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage7.png</Source>
@@ -586,7 +586,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage7.xnb</Output>
-      <Time>2014-02-28T19:02:11.7490444-06:00</Time>
+      <Time>2014-03-03T09:34:50.0681083-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage8.png</Source>
@@ -595,7 +595,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage8.xnb</Output>
-      <Time>2014-02-28T19:02:11.7630452-06:00</Time>
+      <Time>2014-03-03T09:34:50.0731086-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\Creature1\Creature1_Stage9.png</Source>
@@ -604,7 +604,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage9.xnb</Output>
-      <Time>2014-02-28T19:02:11.7690455-06:00</Time>
+      <Time>2014-03-03T09:34:50.0761088-06:00</Time>
     </Item>
     <Item>
       <Source>Home\menu_box.png</Source>
@@ -613,7 +613,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\menu_box.xnb</Output>
-      <Time>2014-02-28T19:02:12.6780975-06:00</Time>
+      <Time>2014-03-03T09:34:50.7041447-06:00</Time>
     </Item>
     <Item>
       <Source>General\abamath.jpg</Source>
@@ -622,7 +622,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\abamath.xnb</Output>
-      <Time>2014-02-28T19:02:12.528089-06:00</Time>
+      <Time>2014-03-03T09:34:50.6841435-06:00</Time>
     </Item>
     <Item>
       <Source>Home\log_out_button.png</Source>
@@ -631,7 +631,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\log_out_button.xnb</Output>
-      <Time>2014-02-28T19:02:12.6750974-06:00</Time>
+      <Time>2014-03-03T09:34:50.7021446-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_3a.png</Source>
@@ -640,7 +640,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_3a.xnb</Output>
-      <Time>2014-02-28T19:02:12.773103-06:00</Time>
+      <Time>2014-03-03T09:34:51.391184-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_3b.png</Source>
@@ -649,7 +649,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_3b.xnb</Output>
-      <Time>2014-02-28T19:02:12.7871038-06:00</Time>
+      <Time>2014-03-03T09:34:51.408185-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_3c.png</Source>
@@ -658,7 +658,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_3c.xnb</Output>
-      <Time>2014-02-28T19:02:12.7971043-06:00</Time>
+      <Time>2014-03-03T09:34:51.4201856-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_2a.png</Source>
@@ -667,7 +667,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2a.xnb</Output>
-      <Time>2014-02-28T19:02:12.7321006-06:00</Time>
+      <Time>2014-03-03T09:34:51.3341807-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_2b.png</Source>
@@ -676,7 +676,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2b.xnb</Output>
-      <Time>2014-02-28T19:02:12.7441013-06:00</Time>
+      <Time>2014-03-03T09:34:51.356182-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_2c.png</Source>
@@ -685,7 +685,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2c.xnb</Output>
-      <Time>2014-02-28T19:02:12.7601022-06:00</Time>
+      <Time>2014-03-03T09:34:51.3771832-06:00</Time>
     </Item>
     <Item>
       <Source>Login\go_button.png</Source>
@@ -694,7 +694,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\go_button.xnb</Output>
-      <Time>2014-02-28T19:02:12.8671083-06:00</Time>
+      <Time>2014-03-03T09:34:51.8492102-06:00</Time>
     </Item>
     <Item>
       <Source>Creatures\test_creature.png</Source>
@@ -703,7 +703,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\test_creature.xnb</Output>
-      <Time>2014-02-28T19:02:11.7720457-06:00</Time>
+      <Time>2014-03-03T09:34:50.0781089-06:00</Time>
     </Item>
     <Item>
       <Source>General\internet_connection_warning.png</Source>
@@ -712,7 +712,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\internet_connection_warning.xnb</Output>
-      <Time>2014-02-28T19:02:12.6710971-06:00</Time>
+      <Time>2014-03-03T09:34:50.7001445-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Home\stats_button.png</Source>
+      <Name>Home\stats_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\stats_button.xnb</Output>
+      <Time>2014-03-03T09:34:50.709145-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

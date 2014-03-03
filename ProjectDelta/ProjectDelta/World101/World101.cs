@@ -32,9 +32,9 @@ namespace ProjectDelta
 
         private State state;
 
-        private static int COUNT_TO_CONTINUE = 10;
         private static int MAX_STAGE = 1000;
         DynamoDBContext context;
+        private int countToContinue = 10;
         private int correctInARow = 0;
         private int worldStage;
         private int errorCounter;
@@ -116,9 +116,10 @@ namespace ProjectDelta
 
         //Specifies which content is loaded for level 1
 
-        public void LoadContent(ContentManager content, int worldStage)
+        public void LoadContent(ContentManager content, int worldStage, int COUNT_TO_CONTINUE)
         {
             this.worldStage = worldStage;
+            this.countToContinue = COUNT_TO_CONTINUE;
             loadExtraObjects(content);
             world101Input.LoadContent(content);
             hero.LoadContent(content);
@@ -162,7 +163,11 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
-            sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
+            if (sessionAnswersAttempted > 0)
+            {
+                sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
+            }
+            
             updateCharacters(gameTime); //update the positions of all of the characters
 
             KeyboardState keyboard = Keyboard.GetState(); //determine what button is being pressed
@@ -184,7 +189,7 @@ namespace ProjectDelta
             }
 
             //if they have answered all of the questions and the level is over...
-            else if (correctInARow >= COUNT_TO_CONTINUE)
+            else if (correctInARow >= countToContinue)
             {
                 //if the level is over, get rid of the monsters
                 monsterOne.monsterDeath();
@@ -251,7 +256,6 @@ namespace ProjectDelta
 
                 if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
                 {
-                    sessionAnswersAttempted++;
                     stopAll(); //if the monster collides with the hero, stop everything
                 }
 
@@ -313,7 +317,7 @@ namespace ProjectDelta
             }
 
             //show the problem
-            world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), myAnswer, correctInARow, worldStage, COUNT_TO_CONTINUE);
+            world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), myAnswer, correctInARow, worldStage, countToContinue);
 
             return false; //don't go back to home screen, keep playing the game
 
@@ -329,11 +333,11 @@ namespace ProjectDelta
             friendlyCreature.Draw(spriteBatch, worldStage);
             world101Text.DrawAnswerCount(spriteBatch);
 
-            if (showQuestion && correctInARow < COUNT_TO_CONTINUE)
+            if (showQuestion && correctInARow < countToContinue)
             {
                 world101Text.Draw(spriteBatch); //show the question to the student
             }
-            if (correctInARow >= COUNT_TO_CONTINUE)
+            if (correctInARow >= countToContinue)
             {
                 world101Text.DrawCongratsMsg(spriteBatch); //draw the congratulations message to the student upon completion
             }
@@ -435,7 +439,7 @@ namespace ProjectDelta
             monsterOne.Update(gameTime);
             monsterTwo.Update(gameTime);
             friendlyCreature.Update(gameTime, hero.getHeroPosition());
-            if (correctInARow >= COUNT_TO_CONTINUE)
+            if (correctInARow >= countToContinue)
             {
                 wildCreature.Update(gameTime);
             }
@@ -465,7 +469,7 @@ namespace ProjectDelta
 
         public void resetStage()
         {
-            if (correctInARow >= COUNT_TO_CONTINUE)
+            if (correctInARow >= countToContinue)
             {
                 //This block of code is only executed once between successful level
                 //completion instead of the usual 60 times per second.              
@@ -485,7 +489,7 @@ namespace ProjectDelta
 
             }
             correctInARow = 0;
-            stageProblems = Problems.determineProblems(worldStage, COUNT_TO_CONTINUE);
+            stageProblems = Problems.determineProblems(worldStage, countToContinue);
             backgroundSpeed = backupBackgroundSpeed;
             monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
             monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
@@ -518,13 +522,24 @@ namespace ProjectDelta
 
         private void saveStats()
         {
-            Game1.globalUser.answersAttempted += sessionAnswersAttempted;
-            Game1.globalUser.answersCorrect += sessionAnswersCorrect;
-            Game1.globalUser.timePlayed += sessionTimePlayed;
-            context.Save<User>(Game1.globalUser);
-            sessionAnswersAttempted = 0;
-            sessionAnswersCorrect = 0;
-            sessionTimePlayed = 0;
+            if (sessionAnswersAttempted > 0)
+            {
+                try
+                {
+                    Game1.globalUser.answersAttempted += sessionAnswersAttempted;
+                    Game1.globalUser.answersCorrect += sessionAnswersCorrect;
+                    Game1.globalUser.timePlayed += sessionTimePlayed;
+                    context.Save<User>(Game1.globalUser);
+                    sessionAnswersAttempted = 0;
+                    sessionAnswersCorrect = 0;
+                    sessionTimePlayed = 0;
+                    internetConnection = true;
+                }
+                catch
+                {
+                    internetConnection = false;
+                }
+            }
         }
 
         private void saveStage()

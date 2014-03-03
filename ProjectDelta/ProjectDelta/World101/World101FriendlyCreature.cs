@@ -84,6 +84,7 @@ namespace ProjectDelta
             position = new Vector2(heroPosition - 200 * scale, 800 * scale);
             speed = .1f;
             powerupUseCount = 0;
+            usingPowerup = false;
         }
         
         public void setMaxNumberOfPowerupUses(int maxNumberOfPowerUpUses)
@@ -93,8 +94,11 @@ namespace ProjectDelta
 
         public void usePowerup()
         {
-            powerupUseCount += 1;
-            usingPowerup = true;
+            if (usingPowerup == false)
+            {
+                powerupUseCount += 1;
+                usingPowerup = true;
+            }
         }
 
         public bool remainingPowerUp()

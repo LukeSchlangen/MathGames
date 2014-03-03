@@ -134,19 +134,8 @@ namespace ProjectDelta
 
         public int getExpectedAnswer()
         {
-            switch (operationValue)
-            {
-                case 0:
-                    return factorOne + factorTwo;
-                case 1:
-                    return factorOne - factorTwo;
-                case 2:
-                    return factorOne * factorTwo;
-                case 3:
-                    return factorOne / factorTwo;
-                default:
-                    return 0;
-            }
+            int expectedAnswer = new QuestionFormat().getExpectedAnswer(operationValue, factorOne, factorTwo);
+            return expectedAnswer;
         }
 
         public Rectangle getCollisionBox()

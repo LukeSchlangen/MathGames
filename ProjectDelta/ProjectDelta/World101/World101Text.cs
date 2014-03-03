@@ -27,11 +27,12 @@ namespace ProjectDelta
         Vector2 questionFontPosition;
         Vector2 correctAnswerCountPosition;
         Vector2 congratsPosition;
-        
-        
+
+
         float scale;
 
-        string question = "";
+        QuestionFormat questionObject = new QuestionFormat();
+        string questionString = "";
         string correctAnswerCount = "";
         string congrats = "";
         string dead = "";
@@ -44,37 +45,25 @@ namespace ProjectDelta
         public void LoadContent(ContentManager content)
         {
             font = content.Load<SpriteFont>("large_input_font");
-            questionFontPosition = new Vector2(285*scale, 660*scale);
+            questionFontPosition = new Vector2(285 * scale, 660 * scale);
             correctAnswerCountPosition = new Vector2(1250 * scale, 50 * scale);
-            congratsPosition = new Vector2((1920/16) * scale, (1080/4) * scale);
+            congratsPosition = new Vector2((1920 / 16) * scale, (1080 / 4) * scale);
         }
 
         public void Update(int operationValue, int factorOne, int factorTwo, string myAnswer, int answerCount, int stage, int countToContinue)
         {
-            if (operationValue == 0)
-            {
-                question = factorOne + " + " + factorTwo + " = " + myAnswer;
-            }
-            else if (operationValue == 1)
-            {
-                question = factorOne + " - " + factorTwo + " = " + myAnswer;
-            }
-            else if (operationValue == 2)
-            {
-                question = factorOne + " * " + factorTwo + " = " + myAnswer;
-            }
-            else if (operationValue == 3)
-            {
-                question = factorOne + " / " + factorTwo + " = " + myAnswer;
-            }
-                correctAnswerCount = "Stage " + stage + ": " + answerCount + "/" + countToContinue;
-                congrats = "Congratulations on finishing stage " + stage + "! \nPress SPACE to continue forward.\nPress ESC to return home.";
-                dead = "Aww... you died. \nPress SPACE to try again.\nPress ESC to return home.";
+            //question string is created here, but it is done through publicly available class
+            //this is so it can be used in stats as well without the answer
+            questionString = questionObject.question(operationValue, factorOne, factorTwo) + " = " + myAnswer;
+
+            correctAnswerCount = "Stage " + stage + ": " + answerCount + "/" + countToContinue;
+            congrats = "Congratulations on finishing stage " + stage + "! \nPress SPACE to continue forward.\nPress ESC to return home.";
+            dead = "Aww... you died. \nPress SPACE to try again.\nPress ESC to return home.";
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(font, question, questionFontPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(font, questionString, questionFontPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         public void DrawAnswerCount(SpriteBatch spriteBatch)
