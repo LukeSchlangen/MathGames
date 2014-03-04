@@ -37,14 +37,16 @@ namespace ProjectDelta
         private Texture2D background;
         private Texture2D backButton;
         private Texture2D largeWhiteBoard;
-        private Texture2D[] creature = new Texture2D[157];
+        private Texture2D textBubble;
+        private Texture2D[] creature;
 
         private Vector2 backButtonPosition;
         private Vector2 largeWhiteBoardPosition;
-        private Vector2[] creaturePosition = new Vector2[157];
+        private Vector2 textBubblePosition;
+        private Vector2[] creaturePosition;
 
         private Rectangle backButtonCollisionBox;
-        private Rectangle[] creatureCollisionBox = new Rectangle[157];
+        private Rectangle[] creatureCollisionBox;
 
         public ViewCreatures(DynamoDBContext context, float scale)
         {
@@ -57,9 +59,14 @@ namespace ProjectDelta
             screenHeight = screenY;
             screenWidth = screenX;
 
+            creature = new Texture2D[worldStage];
+            creaturePosition = new Vector2[worldStage];
+            creatureCollisionBox = new Rectangle[worldStage];
+
             background = content.Load<Texture2D>("Login/login_background");
             backButton = content.Load<Texture2D>("Login/back_button");
             largeWhiteBoard = content.Load<Texture2D>("Home/large_white_board");
+            textBubble = content.Load<Texture2D>("Home/text_bubble");
             backButtonPosition = new Vector2(screenWidth / 9, screenHeight * 4 / 5);
             backButtonCollisionBox = new Rectangle((int)(backButtonPosition.X), (int)(backButtonPosition.Y), (int)(backButton.Width * scale), (int)(backButton.Height * scale));
             largeWhiteBoardPosition = new Vector2((screenWidth / 2 - largeWhiteBoard.Width * scale / 2), (screenHeight / 2 - largeWhiteBoard.Height * scale / 2));
@@ -107,7 +114,7 @@ namespace ProjectDelta
 
                 }
             }
-
+            spriteBatch.Draw(textBubble, textBubblePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
@@ -117,6 +124,14 @@ namespace ProjectDelta
             current = Mouse.GetState();
             Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
 
+            for (int i = 0; i < creature.Length; i++)
+            {
+                if (mousePosition.Intersects(creatureCollisionBox[i]))
+                {
+                    textBubblePosition = new Vector2(creatureCollisionBox[i].X + 50*scale, creatureCollisionBox[i].Y - 50*scale);
+                }
+            }
+
             if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(backButtonCollisionBox))
             {
                 return true;
@@ -125,6 +140,8 @@ namespace ProjectDelta
             {
                 for (int i = 0; i < creature.Length; i++)
                 {
+
+
                     if (mousePosition.Intersects(creatureCollisionBox[i]))
                     {
                         try

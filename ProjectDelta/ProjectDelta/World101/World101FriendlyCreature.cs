@@ -31,6 +31,7 @@ namespace ProjectDelta
         private int x;
         private int y;
         private int friendlyCreatureWidth;
+        private int friendlyCreatureHeight;
         private int screenX;
         private int powerupUseCount = 0;
         private int maxNumberOfPowerUpUses;
@@ -40,15 +41,15 @@ namespace ProjectDelta
         public World101FreindlyCreature(int x, int y, float scale, float speed, int screenX)
         {
             this.scale = scale;
-            this.x = x;
+            this.x = (int)(x - friendlyCreatureWidth * scale + 10 * scale);
             this.y = y;
             this.speed = speed;
             this.startSpeed = speed;
             this.screenX = screenX;
 
             Debug.WriteLine(position);
-            position.X = x - 200;
-            position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale;
+            position.X = x;
+            position.Y = y + 10 * (float)Math.Sin(position.X / 15) * scale + friendlyCreatureHeight * scale;
         }
 
         public void LoadContent(ContentManager content)
@@ -63,16 +64,16 @@ namespace ProjectDelta
                 {
                     friendlyCreature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.currentFriendlyCreature));
                 }
-                            }
-
+            }
         }
 
         public void Update(GameTime gameTime, int heroPosition, int creatureSelected)
         {
             Debug.WriteLine(position);
-            position.X = heroPosition - 200 * scale;
-            position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale;
+            position.X = heroPosition + friendlyCreatureWidth * scale - 200 * scale;
+            position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale + friendlyCreatureHeight * scale;
             friendlyCreatureWidth = friendlyCreature.Width;
+            friendlyCreatureHeight = friendlyCreature.Height;
         }
 
         public void Draw(SpriteBatch spriteBatch, int worldStage)
@@ -88,12 +89,12 @@ namespace ProjectDelta
 
         public void reset(int heroPosition)
         {
-            position = new Vector2(heroPosition - 200 * scale, 800 * scale);
+            position = new Vector2(heroPosition +friendlyCreatureWidth * scale - 200 * scale, (600+friendlyCreatureHeight) * scale);
             speed = .1f;
             powerupUseCount = 0;
             usingPowerup = false;
         }
-        
+
         public void setMaxNumberOfPowerupUses(int maxNumberOfPowerUpUses)
         {
             this.maxNumberOfPowerUpUses = maxNumberOfPowerUpUses;
