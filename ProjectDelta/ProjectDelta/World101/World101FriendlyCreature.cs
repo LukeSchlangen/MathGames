@@ -23,7 +23,7 @@ namespace ProjectDelta
 {
     class World101FreindlyCreature
     {
-        private Texture2D[] freindlyCreatures = new Texture2D[200];
+        private Texture2D[] friendlyCreatures = new Texture2D[200];
         private Vector2 position;
         private float speed = 0f;
         private float startSpeed = 0f;
@@ -52,10 +52,10 @@ namespace ProjectDelta
 
         public void LoadContent(ContentManager content)
         {
-            for (int i = 0; i < freindlyCreatures.Length; i++)
+            for (int i = 0; i < friendlyCreatures.Length; i++)
             {
-                Texture2D FreindlyCreatureToLoad = content.Load<Texture2D>("Creatures/Creature1/Creature1_Stage1"); //can do some clever text manipulation here to quickly load the FreindlyCreatures
-                freindlyCreatures[i] = FreindlyCreatureToLoad;
+                Texture2D FriendlyCreatureToLoad = content.Load<Texture2D>("Creatures/wild_creature_0"); //can do some clever text manipulation here to quickly load the FreindlyCreatures
+                friendlyCreatures[i] = FriendlyCreatureToLoad;
             }
 
         }
@@ -69,7 +69,7 @@ namespace ProjectDelta
 
         public void Draw(SpriteBatch spriteBatch, int worldStage)
         {
-            spriteBatch.Draw(freindlyCreatures[worldStage], position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(friendlyCreatures[worldStage], position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         public void stop()

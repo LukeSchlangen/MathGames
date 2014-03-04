@@ -381,88 +381,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Creatures\Creature1\Creature1_Stage1.png">
-      <Name>Creature1_Stage1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage10.png">
-      <Name>Creature1_Stage10</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage11.png">
-      <Name>Creature1_Stage11</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage12.png">
-      <Name>Creature1_Stage12</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage13.png">
-      <Name>Creature1_Stage13</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage14.png">
-      <Name>Creature1_Stage14</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage15.png">
-      <Name>Creature1_Stage15</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage16.png">
-      <Name>Creature1_Stage16</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage2.png">
-      <Name>Creature1_Stage2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage3.png">
-      <Name>Creature1_Stage3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage4.png">
-      <Name>Creature1_Stage4</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage5.png">
-      <Name>Creature1_Stage5</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage6.png">
-      <Name>Creature1_Stage6</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage7.png">
-      <Name>Creature1_Stage7</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage8.png">
-      <Name>Creature1_Stage8</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Creatures\Creature1\Creature1_Stage9.png">
-      <Name>Creature1_Stage9</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="General\abamath.jpg">
       <Name>abamath</Name>
       <Importer>TextureImporter</Importer>
@@ -511,8 +429,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Creatures\test_creature.png">
-      <Name>test_creature</Name>
+    <Compile Include="Creatures\wild_creature_0.png">
+      <Name>wild_creature_0</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -527,6 +445,45 @@
   <ItemGroup>
     <Compile Include="Home\stats_button.png">
       <Name>stats_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Creatures\wild_creature_2.png">
+      <Name>wild_creature_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Creatures\wild_creature_3.png">
+      <Name>wild_creature_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Creatures\wild_creature_4.png">
+      <Name>wild_creature_4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Creatures\wild_creature_5.png">
+      <Name>wild_creature_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Creatures\wild_creature_6.png">
+      <Name>wild_creature_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Creatures\wild_creature_7.png">
+      <Name>wild_creature_7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Creatures\wild_creature_1.png">
+      <Name>wild_creature_1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -49,10 +49,23 @@ namespace ProjectDelta
 
         public void LoadContent(ContentManager content)
         {
+            //ignore j
+            int j = 0;
             for (int i = 0; i < wildCreatures.Length; i++)
             {
-                Texture2D wildCreatureToLoad = content.Load<Texture2D>("creatures/test_creature"); //can do some clever text manipulation here to quickly load the WildCreatures
+                //simply put the creatures in the numerical order that you want them to appear
+                //following the naming convention wild_creature_i.png in the creatures directory
+                //for final version replace j with i
+                Texture2D wildCreatureToLoad = content.Load<Texture2D>("Creatures/wild_creature_" + j); //load the creatures in order so that the creature that appears corresponds with the world stage
                 wildCreatures[i] = wildCreatureToLoad;
+
+                //ignore this. just a hacky way to make it work while only
+                //one creature is implemented. delete all references to j when all creatures are implemented
+                j++;
+                if (j > 7)
+                {
+                    j = 0;
+                }
             }
 
             collisionBox = new Rectangle(((int)(position.X - wildCreatures[0].Width / 2)), ((int)(position.Y - wildCreatures[0].Height / 2)), (wildCreatures[0].Width), (wildCreatures[0].Height));
