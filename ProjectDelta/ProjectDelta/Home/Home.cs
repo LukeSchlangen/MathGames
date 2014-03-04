@@ -79,8 +79,15 @@ namespace ProjectDelta
             //NOTE: This will cause an exception if using an account that is higher than level 7, until all the creature images are added...
             if (Game1.globalUser.world101 - 1 >= 0)
             {
-                creature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.world101 - 1));
-                creaturePosition = new Vector2((screenWidth / 2 - creature.Width * scale / 2), (screenHeight / 2 - creature.Height * scale / 2));
+                if (Game1.globalUser.currentFriendlyCreature == -1)
+                {
+                    creature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.world101 - 1));
+                }
+                else
+                {
+                    creature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.currentFriendlyCreature));
+                }
+                    creaturePosition = new Vector2((screenWidth / 2 - creature.Width * scale / 2), (screenHeight / 2 - creature.Height * scale / 2));
                 creatureCollisionBox = new Rectangle(((int)(world101BoxPosition.X)), ((int)(world101BoxPosition.Y)), ((int)(world101ButtonPosition.X)), ((int)(world101ButtonPosition.Y)));
             }
 

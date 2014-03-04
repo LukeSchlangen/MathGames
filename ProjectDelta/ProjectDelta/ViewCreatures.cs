@@ -67,8 +67,8 @@ namespace ProjectDelta
             if (Game1.globalUser.world101 - 1 >= 0)
             {
 
-                int j = 1;
-                int k = 1;
+                int j = 0;
+                int k = 0;
                 for (int i = 0; i < creature.Length; i++)
                 {
 
@@ -78,11 +78,11 @@ namespace ProjectDelta
                     Texture2D wildCreatureToLoad = content.Load<Texture2D>("Creatures/wild_creature_" + i); //load the creatures in order so that the creature that appears corresponds with the world stage
                     creature[i] = wildCreatureToLoad;
 
-                    creaturePosition[i] = new Vector2((150 * j * scale), (150 * k * scale));
+                    creaturePosition[i] = new Vector2(((50 + 150 * j) * scale), ((50 + 150 * k) * scale));
 
-                    creatureCollisionBox[i] = new Rectangle(((int)(creaturePosition[i].X)), ((int)(creaturePosition[i].Y)), ((int)(creature[i].Width)), ((int)(creature[i].Height)));
+                    creatureCollisionBox[i] = new Rectangle(((int)(creaturePosition[i].X)), ((int)(creaturePosition[i].Y)), ((int)(creature[i].Width * scale / 4)), ((int)(creature[i].Height * scale / 4)));
                     j++;
-                    if (j > 10) { j = 1; k++; }
+                    if (j > 10) { j = 0; k++; }
                 }
 
             }
@@ -97,17 +97,18 @@ namespace ProjectDelta
         {
             spriteBatch.Draw(background, new Vector2(), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(largeWhiteBoard, largeWhiteBoardPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             if (Game1.globalUser.world101 - 1 >= 0)
             {
 
 
                 for (int i = 0; i < creature.Length; i++)
                 {
-                    spriteBatch.Draw(creature[i], creaturePosition[i], null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(creature[i], creaturePosition[i], null, Color.White, 0f, Vector2.Zero, scale / 4, SpriteEffects.None, 0f);
 
                 }
             }
+
+            spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         private bool checkBack()
@@ -120,6 +121,28 @@ namespace ProjectDelta
             {
                 return true;
             }
+            else if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released)
+            {
+                for (int i = 0; i < creature.Length; i++)
+                {
+                    if (mousePosition.Intersects(creatureCollisionBox[i]))
+                    {
+                        try
+                        {
+                            Game1.globalUser.currentFriendlyCreature = i;
+                            context.Save<User>(Game1.globalUser);
+                        }
+                        catch
+                        {
+                            //internetConnection = false;
+                        }
+                    }
+
+
+                }
+                return true;
+            }
+
 
             return false;
         }

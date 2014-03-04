@@ -23,7 +23,7 @@ namespace ProjectDelta
 {
     class World101FreindlyCreature
     {
-        private Texture2D[] friendlyCreatures = new Texture2D[200];
+        private Texture2D friendlyCreature;
         private Vector2 position;
         private float speed = 0f;
         private float startSpeed = 0f;
@@ -53,11 +53,17 @@ namespace ProjectDelta
 
         public void LoadContent(ContentManager content)
         {
-            for (int i = 0; i < friendlyCreatures.Length; i++)
+            if (Game1.globalUser.world101 - 1 >= 0)
             {
-                Texture2D FriendlyCreatureToLoad = content.Load<Texture2D>("Creatures/wild_creature_0"); //can do some clever text manipulation here to quickly load the FreindlyCreatures
-                friendlyCreatures[i] = FriendlyCreatureToLoad;
-            }
+                if (Game1.globalUser.currentFriendlyCreature == -1)
+                {
+                    friendlyCreature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.world101 - 1));
+                }
+                else
+                {
+                    friendlyCreature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.currentFriendlyCreature));
+                }
+                            }
 
         }
 
@@ -66,12 +72,12 @@ namespace ProjectDelta
             Debug.WriteLine(position);
             position.X = heroPosition - 200 * scale;
             position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale;
-            friendlyCreatureWidth = friendlyCreatures[creatureSelected].Width;
+            friendlyCreatureWidth = friendlyCreature.Width;
         }
 
         public void Draw(SpriteBatch spriteBatch, int worldStage)
         {
-            spriteBatch.Draw(friendlyCreatures[worldStage], position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(friendlyCreature, position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         public void stop()

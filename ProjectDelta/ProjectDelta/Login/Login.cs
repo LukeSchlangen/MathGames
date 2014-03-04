@@ -632,6 +632,7 @@ namespace ProjectDelta
                         {
                             username = username, //create their username
                             password = GameUtils.encrypt(password, username), //create their password, storing an encrypted value in the db
+                            currentFriendlyCreature = -1,
                             //skill = "0", //start them on level 0
                         };
 
