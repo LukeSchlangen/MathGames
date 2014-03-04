@@ -38,6 +38,7 @@ namespace ProjectDelta
         private int correctInARow = 0;
         private int worldStage;
         private int errorCounter;
+        private int friendlyCreatureSelected;
 
         private float scale;
 
@@ -438,7 +439,7 @@ namespace ProjectDelta
             hero.Update(gameTime);
             monsterOne.Update(gameTime);
             monsterTwo.Update(gameTime);
-            friendlyCreature.Update(gameTime, hero.getHeroPosition());
+            friendlyCreature.Update(gameTime, hero.getHeroPosition(), friendlyCreatureSelected);
             if (correctInARow >= countToContinue)
             {
                 wildCreature.Update(gameTime);

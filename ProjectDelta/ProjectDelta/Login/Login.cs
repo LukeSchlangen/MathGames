@@ -632,7 +632,7 @@ namespace ProjectDelta
                         {
                             username = username, //create their username
                             password = GameUtils.encrypt(password, username), //create their password, storing an encrypted value in the db
-                            skill = "0", //start them on level 0
+                            //skill = "0", //start them on level 0
                         };
 
                         context.Save<User>(Game1.globalUser); //save the user

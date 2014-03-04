@@ -32,11 +32,11 @@ namespace ProjectDelta
         [DynamoDBProperty("PASSWORD")]
         public string password { get; set; }
 
-        [DynamoDBProperty("SKILL")]
-        public string skill { get; set; }
-
         [DynamoDBProperty("WORLD_101")]
         public int world101 { get; set; }
+
+        [DynamoDBProperty("CURRENT_FRIENDLY_CREATURE")]
+        public int currentFriendlyCreature { get; set; }
 
         [DynamoDBProperty("TIME_PLAYED")]
         public int timePlayed { get; set; }

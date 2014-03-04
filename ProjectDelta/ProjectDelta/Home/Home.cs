@@ -39,18 +39,20 @@ namespace ProjectDelta
         private Texture2D logoutButton;
         private Texture2D statsButton;
         private Texture2D creature;
-        
+
+
         //Vectors
         private Vector2 world101BoxPosition;
         private Vector2 world101ButtonPosition;
         private Vector2 logoutButtonPosition;
         private Vector2 statsButtonPosition;
         private Vector2 creaturePosition;
-        
+
         //Collision Boxes
         private Rectangle world101ButtonCollisionBox;
         private Rectangle logoutButtonCollisionBox;
         private Rectangle statsButtonCollisionBox;
+        private Rectangle creatureCollisionBox;
 
         public void Initialize(float scale)
         {
@@ -67,26 +69,27 @@ namespace ProjectDelta
             logoutButton = content.Load<Texture2D>("Home/log_out_button");
             statsButton = content.Load<Texture2D>("Home/stats_button");
             world101BoxPosition = new Vector2((screenWidth / 2 - world101Box.Width * scale / 2), (screenHeight / 2 - world101Box.Height * scale / 2));
-            world101ButtonPosition = new Vector2((screenWidth / 2 - world101Button.Width * scale / 2), (screenHeight / 2 +  (125 * scale)));
+            world101ButtonPosition = new Vector2((screenWidth / 2 - world101Button.Width * scale / 2), (screenHeight / 2 + (125 * scale)));
             logoutButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
             statsButtonPosition = new Vector2(3 * screenWidth / 4, screenHeight * 3 / 4);
-            world101ButtonCollisionBox = new Rectangle(((int)(world101ButtonPosition.X)), ((int)(world101ButtonPosition.Y)), (int) (world101Button.Width * scale), (int) (world101Button.Height * scale));
+            world101ButtonCollisionBox = new Rectangle(((int)(world101ButtonPosition.X)), ((int)(world101ButtonPosition.Y)), (int)(world101Button.Width * scale), (int)(world101Button.Height * scale));
             logoutButtonCollisionBox = new Rectangle(((int)(logoutButtonPosition.X)), ((int)(logoutButtonPosition.Y)), (int)(logoutButton.Width * scale), (int)(logoutButton.Height * scale));
             statsButtonCollisionBox = new Rectangle(((int)(statsButtonPosition.X)), ((int)(statsButtonPosition.Y)), (int)(statsButton.Width * scale), (int)(statsButton.Height * scale));
-            
+
             //NOTE: This will cause an exception if using an account that is higher than level 7, until all the creature images are added...
             if (Game1.globalUser.world101 - 1 >= 0)
             {
                 creature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.world101 - 1));
                 creaturePosition = new Vector2((screenWidth / 2 - creature.Width * scale / 2), (screenHeight / 2 - creature.Height * scale / 2));
+                creatureCollisionBox = new Rectangle(((int)(world101BoxPosition.X)), ((int)(world101BoxPosition.Y)), ((int)(world101ButtonPosition.X)), ((int)(world101ButtonPosition.Y)));
             }
 
-            
+
             // Play music in repeating loop
             Song backgroundMusic;
             backgroundMusic = content.Load<Song>("Login/Background_Music");
             MediaPlayer.Play(backgroundMusic);
-            MediaPlayer.IsRepeating = true;  
+            MediaPlayer.IsRepeating = true;
         }
 
         public int Update(GameTime gameTime)
@@ -97,6 +100,7 @@ namespace ProjectDelta
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(background, new Vector2(), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
             spriteBatch.Draw(world101Box, world101BoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(world101Button, world101ButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(logoutButton, logoutButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
@@ -106,6 +110,7 @@ namespace ProjectDelta
                 spriteBatch.Draw(creature, creaturePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             text.Draw(spriteBatch);
+
         }
 
         private int checkClick()
@@ -127,6 +132,11 @@ namespace ProjectDelta
             if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(statsButtonCollisionBox))
             {
                 return -2;
+            }
+            
+            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(creatureCollisionBox))
+            {
+                return -3;
             }
 
             return 0;

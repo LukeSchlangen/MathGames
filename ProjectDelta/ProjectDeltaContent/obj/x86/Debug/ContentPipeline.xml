@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_background.xnb</Output>
-      <Time>2014-03-03T09:34:51.8582107-06:00</Time>
+      <Time>2014-03-03T19:41:58.7575169-06:00</Time>
     </Item>
     <Item>
       <Source>Login\login_box.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_box.xnb</Output>
-      <Time>2014-03-03T09:34:51.8622109-06:00</Time>
+      <Time>2014-03-03T19:41:58.759517-06:00</Time>
     </Item>
     <Item>
       <Source>Login\signup_button.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_button.xnb</Output>
-      <Time>2014-03-03T09:34:51.8792119-06:00</Time>
+      <Time>2014-03-03T19:41:58.7685176-06:00</Time>
     </Item>
     <Item>
       <Source>Login\signup_box.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_box.xnb</Output>
-      <Time>2014-03-03T09:34:51.8762117-06:00</Time>
+      <Time>2014-03-03T19:41:58.7665174-06:00</Time>
     </Item>
     <Item>
       <Source>Login\back_button.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\back_button.xnb</Output>
-      <Time>2014-03-03T09:34:51.6691999-06:00</Time>
+      <Time>2014-03-03T19:41:58.7275152-06:00</Time>
     </Item>
     <Item>
       <Source>Login\login_error.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_error.xnb</Output>
-      <Time>2014-03-03T09:34:51.8652111-06:00</Time>
+      <Time>2014-03-03T19:41:58.7615172-06:00</Time>
     </Item>
     <Item>
       <Source>Login\login_highlighter.png</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\login_highlighter.xnb</Output>
-      <Time>2014-03-03T09:34:51.8682113-06:00</Time>
+      <Time>2014-03-03T19:41:58.7635173-06:00</Time>
     </Item>
     <Item>
       <Source>General\Planets\planet_5.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_5.xnb</Output>
-      <Time>2014-03-03T09:34:50.1251116-06:00</Time>
+      <Time>2014-03-03T19:41:58.4044967-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\enemy_ship_1.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_ship_1.xnb</Output>
-      <Time>2014-03-03T09:34:50.6531418-06:00</Time>
+      <Time>2014-03-03T19:41:58.5065026-06:00</Time>
     </Item>
     <Item>
       <Source>General\Planets\planet_1.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_1.xnb</Output>
-      <Time>2014-03-03T09:34:50.1161111-06:00</Time>
+      <Time>2014-03-03T19:41:58.3944962-06:00</Time>
     </Item>
     <Item>
       <Source>General\Planets\planet_2.png</Source>
@@ -98,7 +98,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_2.xnb</Output>
-      <Time>2014-03-03T09:34:50.1181112-06:00</Time>
+      <Time>2014-03-03T19:41:58.3964963-06:00</Time>
     </Item>
     <Item>
       <Source>General\Planets\planet_3.png</Source>
@@ -107,7 +107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_3.xnb</Output>
-      <Time>2014-03-03T09:34:50.1211113-06:00</Time>
+      <Time>2014-03-03T19:41:58.3984964-06:00</Time>
     </Item>
     <Item>
       <Source>General\Planets\planet_4.png</Source>
@@ -116,7 +116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Planets\planet_4.xnb</Output>
-      <Time>2014-03-03T09:34:50.1221114-06:00</Time>
+      <Time>2014-03-03T19:41:58.4014966-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\good_ship_1.png</Source>
@@ -125,7 +125,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_ship_1.xnb</Output>
-      <Time>2014-03-03T09:34:50.6801433-06:00</Time>
+      <Time>2014-03-03T19:41:58.5115029-06:00</Time>
     </Item>
     <Item>
       <Source>Login\background_stars.png</Source>
@@ -134,7 +134,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\background_stars.xnb</Output>
-      <Time>2014-03-03T09:34:51.84621-06:00</Time>
+      <Time>2014-03-03T19:41:58.7515166-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\enemy_fleet_1.png</Source>
@@ -143,7 +143,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_fleet_1.xnb</Output>
-      <Time>2014-03-03T09:34:50.3701256-06:00</Time>
+      <Time>2014-03-03T19:41:58.4945019-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\good_fleet_1.png</Source>
@@ -152,7 +152,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_fleet_1.xnb</Output>
-      <Time>2014-03-03T09:34:50.6781432-06:00</Time>
+      <Time>2014-03-03T19:41:58.5095027-06:00</Time>
     </Item>
     <Item>
       <Source>Login\signup_error.png</Source>
@@ -161,7 +161,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\signup_error.xnb</Output>
-      <Time>2014-03-03T09:34:51.8832121-06:00</Time>
+      <Time>2014-03-03T19:41:58.7695176-06:00</Time>
     </Item>
     <Item>
       <Source>Login\password_match_error.png</Source>
@@ -170,7 +170,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\password_match_error.xnb</Output>
-      <Time>2014-03-03T09:34:51.8712114-06:00</Time>
+      <Time>2014-03-03T19:41:58.7645173-06:00</Time>
     </Item>
     <Item>
       <Source>Login\internet_connection_error.png</Source>
@@ -179,7 +179,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\internet_connection_error.xnb</Output>
-      <Time>2014-03-03T09:34:51.8522104-06:00</Time>
+      <Time>2014-03-03T19:41:58.7545168-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\resized_level1_background.png</Source>
@@ -188,7 +188,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\resized_level1_background.xnb</Output>
-      <Time>2014-03-03T09:34:51.443187-06:00</Time>
+      <Time>2014-03-03T19:41:58.7085141-06:00</Time>
     </Item>
     <Item>
       <Source>General\Hero\math_hero_character.png</Source>
@@ -197,7 +197,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\math_hero_character.xnb</Output>
-      <Time>2014-03-03T09:34:50.0841092-06:00</Time>
+      <Time>2014-03-03T19:41:58.1854842-06:00</Time>
     </Item>
     <Item>
       <Source>Login\Background_Music.mp3</Source>
@@ -207,7 +207,7 @@
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\Background_Music.xnb</Output>
       <Extra>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\Background_Music.wma</Extra>
-      <Time>2014-03-03T09:34:51.6661997-06:00</Time>
+      <Time>2014-03-03T19:41:58.7255151-06:00</Time>
     </Item>
     <Item>
       <Source>General\Hero\running_sprite_sheet_5x10.png</Source>
@@ -216,7 +216,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x10.xnb</Output>
-      <Time>2014-03-03T09:34:50.1011102-06:00</Time>
+      <Time>2014-03-03T19:41:58.3804954-06:00</Time>
     </Item>
     <Item>
       <Source>General\Hero\running_sprite_sheet_5x5.png</Source>
@@ -225,7 +225,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\running_sprite_sheet_5x5.xnb</Output>
-      <Time>2014-03-03T09:34:50.1041104-06:00</Time>
+      <Time>2014-03-03T19:41:58.3864957-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_1a.png</Source>
@@ -234,7 +234,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1a.xnb</Output>
-      <Time>2014-03-03T09:34:50.7201456-06:00</Time>
+      <Time>2014-03-03T19:41:58.5715063-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_1b.png</Source>
@@ -243,7 +243,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1b.xnb</Output>
-      <Time>2014-03-03T09:34:50.7291461-06:00</Time>
+      <Time>2014-03-03T19:41:58.5805068-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_1c.png</Source>
@@ -252,7 +252,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_1c.xnb</Output>
-      <Time>2014-03-03T09:34:51.0811663-06:00</Time>
+      <Time>2014-03-03T19:41:58.6085084-06:00</Time>
     </Item>
     <Item>
       <Source>input_font.spritefont</Source>
@@ -261,7 +261,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\input_font.xnb</Output>
-      <Time>2014-03-03T09:34:51.8952128-06:00</Time>
+      <Time>2014-03-03T19:41:58.7775181-06:00</Time>
     </Item>
     <Item>
       <Source>General\Hero\shield.png</Source>
@@ -270,7 +270,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\shield.xnb</Output>
-      <Time>2014-03-03T09:34:50.1081106-06:00</Time>
+      <Time>2014-03-03T19:41:58.3874958-06:00</Time>
     </Item>
     <Item>
       <Source>General\Monsters\enemy_1.png</Source>
@@ -279,7 +279,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_1.xnb</Output>
-      <Time>2014-03-03T09:34:50.1111108-06:00</Time>
+      <Time>2014-03-03T19:41:58.3894959-06:00</Time>
     </Item>
     <Item>
       <Source>General\Monsters\enemy_2.png</Source>
@@ -288,7 +288,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_2.xnb</Output>
-      <Time>2014-03-03T09:34:50.1131109-06:00</Time>
+      <Time>2014-03-03T19:41:58.391496-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\QShield_sheet.png</Source>
@@ -297,7 +297,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_sheet.xnb</Output>
-      <Time>2014-03-03T09:34:50.1431126-06:00</Time>
+      <Time>2014-03-03T19:41:58.4104971-06:00</Time>
     </Item>
     <Item>
       <Source>General\Hero\jumping_sprite_sheet.png</Source>
@@ -306,7 +306,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\jumping_sprite_sheet.xnb</Output>
-      <Time>2014-03-03T09:34:50.0821091-06:00</Time>
+      <Time>2014-03-03T19:41:58.1834841-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_explosion_sheet.png</Source>
@@ -315,7 +315,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_explosion_sheet.xnb</Output>
-      <Time>2014-03-03T09:34:50.1511131-06:00</Time>
+      <Time>2014-03-03T19:41:58.4494993-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\good_drone.png</Source>
@@ -324,7 +324,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\good_drone.xnb</Output>
-      <Time>2014-03-03T09:34:50.6551419-06:00</Time>
+      <Time>2014-03-03T19:41:58.5075026-06:00</Time>
     </Item>
     <Item>
       <Source>General\Ships\enemy_drones.png</Source>
@@ -333,7 +333,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Ships\enemy_drones.xnb</Output>
-      <Time>2014-03-03T09:34:50.3671254-06:00</Time>
+      <Time>2014-03-03T19:41:58.4915017-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\QShield_1.png</Source>
@@ -342,7 +342,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\QShield_1.xnb</Output>
-      <Time>2014-03-03T09:34:50.1311119-06:00</Time>
+      <Time>2014-03-03T19:41:58.4074969-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_sheet.png</Source>
@@ -351,7 +351,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet.xnb</Output>
-      <Time>2014-03-03T09:34:50.1651139-06:00</Time>
+      <Time>2014-03-03T19:41:58.4625001-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_sheet_3x5.png</Source>
@@ -360,7 +360,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_3x5.xnb</Output>
-      <Time>2014-03-03T09:34:50.1801147-06:00</Time>
+      <Time>2014-03-03T19:41:58.4815011-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_sheet_6x5.png</Source>
@@ -369,7 +369,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_6x5.xnb</Output>
-      <Time>2014-03-03T09:34:50.1861151-06:00</Time>
+      <Time>2014-03-03T19:41:58.4865014-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_sheet_3x3.png</Source>
@@ -378,7 +378,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_3x3.xnb</Output>
-      <Time>2014-03-03T09:34:50.1751144-06:00</Time>
+      <Time>2014-03-03T19:41:58.4745007-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_sheet_2x3.png</Source>
@@ -387,7 +387,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_sheet_2x3.xnb</Output>
-      <Time>2014-03-03T09:34:50.1701141-06:00</Time>
+      <Time>2014-03-03T19:41:58.4695005-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_image.png</Source>
@@ -396,7 +396,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_image.xnb</Output>
-      <Time>2014-03-03T09:34:50.1531132-06:00</Time>
+      <Time>2014-03-03T19:41:58.4514994-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\shield_image.png</Source>
@@ -405,7 +405,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\shield_image.xnb</Output>
-      <Time>2014-03-03T09:34:50.1891152-06:00</Time>
+      <Time>2014-03-03T19:41:58.4885015-06:00</Time>
     </Item>
     <Item>
       <Source>General\Shield\question_box_to_shield_3x3.png</Source>
@@ -414,7 +414,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\question_box_to_shield_3x3.xnb</Output>
-      <Time>2014-03-03T09:34:50.1581135-06:00</Time>
+      <Time>2014-03-03T19:41:58.4554997-06:00</Time>
     </Item>
     <Item>
       <Source>large_input_font.spritefont</Source>
@@ -423,7 +423,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\large_input_font.xnb</Output>
-      <Time>2014-03-03T09:34:51.9002131-06:00</Time>
+      <Time>2014-03-03T19:41:58.7785181-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\level1_background_music.mp3</Source>
@@ -433,7 +433,7 @@
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.xnb</Output>
       <Extra>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\level1_background_music.wma</Extra>
-      <Time>2014-03-03T09:34:51.4321863-06:00</Time>
+      <Time>2014-03-03T19:41:58.6995136-06:00</Time>
     </Item>
     <Item>
       <Source>Home\start_next_level_button.png</Source>
@@ -442,7 +442,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\start_next_level_button.xnb</Output>
-      <Time>2014-03-03T09:34:50.7061448-06:00</Time>
+      <Time>2014-03-03T19:41:58.5425046-06:00</Time>
     </Item>
     <Item>
       <Source>small_input_font.spritefont</Source>
@@ -451,7 +451,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\small_input_font.xnb</Output>
-      <Time>2014-03-03T09:34:51.9522161-06:00</Time>
+      <Time>2014-03-03T19:41:58.8125201-06:00</Time>
     </Item>
     <Item>
       <Source>tiny_input_font.spritefont</Source>
@@ -460,151 +460,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\tiny_input_font.xnb</Output>
-      <Time>2014-03-03T09:34:51.9562163-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage1.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage1.xnb</Output>
-      <Time>2014-03-03T09:34:50.0151053-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage10.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage10</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage10.xnb</Output>
-      <Time>2014-03-03T09:34:50.0191055-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage11.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage11</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage11.xnb</Output>
-      <Time>2014-03-03T09:34:50.0241058-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage12.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage12</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage12.xnb</Output>
-      <Time>2014-03-03T09:34:50.0291061-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage13.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage13</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage13.xnb</Output>
-      <Time>2014-03-03T09:34:50.0351064-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage14.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage14</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage14.xnb</Output>
-      <Time>2014-03-03T09:34:50.0401067-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage15.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage15</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage15.xnb</Output>
-      <Time>2014-03-03T09:34:50.0461071-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage16.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage16</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage16.xnb</Output>
-      <Time>2014-03-03T09:34:50.0521074-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage2.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage2.xnb</Output>
-      <Time>2014-03-03T09:34:50.0531075-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage3.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage3.xnb</Output>
-      <Time>2014-03-03T09:34:50.0561076-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage4.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage4</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage4.xnb</Output>
-      <Time>2014-03-03T09:34:50.0591078-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage5.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage5</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage5.xnb</Output>
-      <Time>2014-03-03T09:34:50.0611079-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage6.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage6</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage6.xnb</Output>
-      <Time>2014-03-03T09:34:50.0641081-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage7.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage7</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage7.xnb</Output>
-      <Time>2014-03-03T09:34:50.0681083-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage8.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage8</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage8.xnb</Output>
-      <Time>2014-03-03T09:34:50.0731086-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\Creature1\Creature1_Stage9.png</Source>
-      <Name>Creatures\Creature1\Creature1_Stage9</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\Creature1\Creature1_Stage9.xnb</Output>
-      <Time>2014-03-03T09:34:50.0761088-06:00</Time>
+      <Time>2014-03-03T19:41:58.8155203-06:00</Time>
     </Item>
     <Item>
       <Source>Home\menu_box.png</Source>
@@ -613,7 +469,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\menu_box.xnb</Output>
-      <Time>2014-03-03T09:34:50.7041447-06:00</Time>
+      <Time>2014-03-03T19:41:58.5405045-06:00</Time>
     </Item>
     <Item>
       <Source>General\abamath.jpg</Source>
@@ -622,7 +478,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\abamath.xnb</Output>
-      <Time>2014-03-03T09:34:50.6841435-06:00</Time>
+      <Time>2014-03-03T19:41:58.5155031-06:00</Time>
     </Item>
     <Item>
       <Source>Home\log_out_button.png</Source>
@@ -631,7 +487,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\log_out_button.xnb</Output>
-      <Time>2014-03-03T09:34:50.7021446-06:00</Time>
+      <Time>2014-03-03T19:41:58.5395045-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_3a.png</Source>
@@ -640,7 +496,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_3a.xnb</Output>
-      <Time>2014-03-03T09:34:51.391184-06:00</Time>
+      <Time>2014-03-03T19:41:58.6595113-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_3b.png</Source>
@@ -649,7 +505,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_3b.xnb</Output>
-      <Time>2014-03-03T09:34:51.408185-06:00</Time>
+      <Time>2014-03-03T19:41:58.6775124-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_3c.png</Source>
@@ -658,7 +514,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_3c.xnb</Output>
-      <Time>2014-03-03T09:34:51.4201856-06:00</Time>
+      <Time>2014-03-03T19:41:58.689513-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_2a.png</Source>
@@ -667,7 +523,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2a.xnb</Output>
-      <Time>2014-03-03T09:34:51.3341807-06:00</Time>
+      <Time>2014-03-03T19:41:58.6205091-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_2b.png</Source>
@@ -676,7 +532,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2b.xnb</Output>
-      <Time>2014-03-03T09:34:51.356182-06:00</Time>
+      <Time>2014-03-03T19:41:58.6325098-06:00</Time>
     </Item>
     <Item>
       <Source>Level1\background_level_2c.png</Source>
@@ -685,7 +541,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\background_level_2c.xnb</Output>
-      <Time>2014-03-03T09:34:51.3771832-06:00</Time>
+      <Time>2014-03-03T19:41:58.6485107-06:00</Time>
     </Item>
     <Item>
       <Source>Login\go_button.png</Source>
@@ -694,16 +550,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\go_button.xnb</Output>
-      <Time>2014-03-03T09:34:51.8492102-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Creatures\test_creature.png</Source>
-      <Name>Creatures\test_creature</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\test_creature.xnb</Output>
-      <Time>2014-03-03T09:34:50.0781089-06:00</Time>
+      <Time>2014-03-03T19:41:58.7525166-06:00</Time>
     </Item>
     <Item>
       <Source>General\internet_connection_warning.png</Source>
@@ -712,7 +559,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\internet_connection_warning.xnb</Output>
-      <Time>2014-03-03T09:34:50.7001445-06:00</Time>
+      <Time>2014-03-03T19:41:58.5375043-06:00</Time>
     </Item>
     <Item>
       <Source>Home\stats_button.png</Source>
@@ -721,7 +568,1447 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\stats_button.xnb</Output>
-      <Time>2014-03-03T09:34:50.709145-06:00</Time>
+      <Time>2014-03-03T19:41:58.5635058-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_0.png</Source>
+      <Name>Creatures\wild_creature_0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_0.xnb</Output>
+      <Time>2014-03-04T11:07:54.2991122-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_1.png</Source>
+      <Name>Creatures\wild_creature_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_1.xnb</Output>
+      <Time>2014-03-04T11:07:54.3151131-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_10.png</Source>
+      <Name>Creatures\wild_creature_10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_10.xnb</Output>
+      <Time>2014-03-04T11:07:54.5731278-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_100.png</Source>
+      <Name>Creatures\wild_creature_100</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_100.xnb</Output>
+      <Time>2014-03-04T11:07:57.6113016-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_101.png</Source>
+      <Name>Creatures\wild_creature_101</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_101.xnb</Output>
+      <Time>2014-03-04T11:07:57.6753053-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_102.png</Source>
+      <Name>Creatures\wild_creature_102</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_102.xnb</Output>
+      <Time>2014-03-04T11:07:57.6983066-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_103.png</Source>
+      <Name>Creatures\wild_creature_103</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_103.xnb</Output>
+      <Time>2014-03-04T11:07:57.7353087-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_104.png</Source>
+      <Name>Creatures\wild_creature_104</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_104.xnb</Output>
+      <Time>2014-03-04T11:07:57.7613102-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_105.png</Source>
+      <Name>Creatures\wild_creature_105</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_105.xnb</Output>
+      <Time>2014-03-04T11:07:57.7873117-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_106.png</Source>
+      <Name>Creatures\wild_creature_106</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_106.xnb</Output>
+      <Time>2014-03-04T11:07:57.8293141-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_107.png</Source>
+      <Name>Creatures\wild_creature_107</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_107.xnb</Output>
+      <Time>2014-03-04T11:07:57.8763168-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_108.png</Source>
+      <Name>Creatures\wild_creature_108</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_108.xnb</Output>
+      <Time>2014-03-04T11:07:57.9293198-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_109.png</Source>
+      <Name>Creatures\wild_creature_109</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_109.xnb</Output>
+      <Time>2014-03-04T11:07:57.9733223-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_11.png</Source>
+      <Name>Creatures\wild_creature_11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_11.xnb</Output>
+      <Time>2014-03-04T11:07:54.6191305-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_110.png</Source>
+      <Name>Creatures\wild_creature_110</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_110.xnb</Output>
+      <Time>2014-03-04T11:07:57.9923234-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_111.png</Source>
+      <Name>Creatures\wild_creature_111</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_111.xnb</Output>
+      <Time>2014-03-04T11:07:58.0143247-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_112.png</Source>
+      <Name>Creatures\wild_creature_112</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_112.xnb</Output>
+      <Time>2014-03-04T11:07:58.0363259-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_113.png</Source>
+      <Name>Creatures\wild_creature_113</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_113.xnb</Output>
+      <Time>2014-03-04T11:07:58.0573271-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_114.png</Source>
+      <Name>Creatures\wild_creature_114</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_114.xnb</Output>
+      <Time>2014-03-04T11:07:58.0783283-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_115.png</Source>
+      <Name>Creatures\wild_creature_115</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_115.xnb</Output>
+      <Time>2014-03-04T11:07:58.1183306-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_116.png</Source>
+      <Name>Creatures\wild_creature_116</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_116.xnb</Output>
+      <Time>2014-03-04T11:07:58.1373317-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_117.png</Source>
+      <Name>Creatures\wild_creature_117</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_117.xnb</Output>
+      <Time>2014-03-04T11:07:58.1583329-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_118.png</Source>
+      <Name>Creatures\wild_creature_118</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_118.xnb</Output>
+      <Time>2014-03-04T11:07:58.177334-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_119.png</Source>
+      <Name>Creatures\wild_creature_119</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_119.xnb</Output>
+      <Time>2014-03-04T11:07:58.1973351-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_12.png</Source>
+      <Name>Creatures\wild_creature_12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_12.xnb</Output>
+      <Time>2014-03-04T11:07:54.663133-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_120.png</Source>
+      <Name>Creatures\wild_creature_120</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_120.xnb</Output>
+      <Time>2014-03-04T11:07:58.2243367-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_121.png</Source>
+      <Name>Creatures\wild_creature_121</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_121.xnb</Output>
+      <Time>2014-03-04T11:07:58.2613388-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_122.png</Source>
+      <Name>Creatures\wild_creature_122</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_122.xnb</Output>
+      <Time>2014-03-04T11:07:58.2913405-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_123.png</Source>
+      <Name>Creatures\wild_creature_123</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_123.xnb</Output>
+      <Time>2014-03-04T11:07:58.3223423-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_124.png</Source>
+      <Name>Creatures\wild_creature_124</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_124.xnb</Output>
+      <Time>2014-03-04T11:07:58.3443435-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_125.png</Source>
+      <Name>Creatures\wild_creature_125</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_125.xnb</Output>
+      <Time>2014-03-04T11:07:58.3673448-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_126.png</Source>
+      <Name>Creatures\wild_creature_126</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_126.xnb</Output>
+      <Time>2014-03-04T11:07:58.3903462-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_127.png</Source>
+      <Name>Creatures\wild_creature_127</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_127.xnb</Output>
+      <Time>2014-03-04T11:07:58.4143475-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_128.png</Source>
+      <Name>Creatures\wild_creature_128</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_128.xnb</Output>
+      <Time>2014-03-04T11:07:58.439349-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_129.png</Source>
+      <Name>Creatures\wild_creature_129</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_129.xnb</Output>
+      <Time>2014-03-04T11:07:58.4713508-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_13.png</Source>
+      <Name>Creatures\wild_creature_13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_13.xnb</Output>
+      <Time>2014-03-04T11:07:54.7071355-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_130.png</Source>
+      <Name>Creatures\wild_creature_130</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_130.xnb</Output>
+      <Time>2014-03-04T11:07:58.5063528-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_131.png</Source>
+      <Name>Creatures\wild_creature_131</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_131.xnb</Output>
+      <Time>2014-03-04T11:07:58.5353545-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_132.png</Source>
+      <Name>Creatures\wild_creature_132</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_132.xnb</Output>
+      <Time>2014-03-04T11:07:58.5633561-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_133.png</Source>
+      <Name>Creatures\wild_creature_133</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_133.xnb</Output>
+      <Time>2014-03-04T11:07:58.5913577-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_134.png</Source>
+      <Name>Creatures\wild_creature_134</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_134.xnb</Output>
+      <Time>2014-03-04T11:07:58.6263597-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_135.png</Source>
+      <Name>Creatures\wild_creature_135</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_135.xnb</Output>
+      <Time>2014-03-04T11:07:58.6613617-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_136.png</Source>
+      <Name>Creatures\wild_creature_136</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_136.xnb</Output>
+      <Time>2014-03-04T11:07:58.6963637-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_137.png</Source>
+      <Name>Creatures\wild_creature_137</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_137.xnb</Output>
+      <Time>2014-03-04T11:07:58.736366-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_138.png</Source>
+      <Name>Creatures\wild_creature_138</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_138.xnb</Output>
+      <Time>2014-03-04T11:07:58.7793684-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_139.png</Source>
+      <Name>Creatures\wild_creature_139</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_139.xnb</Output>
+      <Time>2014-03-04T11:07:58.8263711-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_14.png</Source>
+      <Name>Creatures\wild_creature_14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_14.xnb</Output>
+      <Time>2014-03-04T11:07:54.7531381-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_140.png</Source>
+      <Name>Creatures\wild_creature_140</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_140.xnb</Output>
+      <Time>2014-03-04T11:07:58.841372-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_141.png</Source>
+      <Name>Creatures\wild_creature_141</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_141.xnb</Output>
+      <Time>2014-03-04T11:07:58.8733738-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_142.png</Source>
+      <Name>Creatures\wild_creature_142</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_142.xnb</Output>
+      <Time>2014-03-04T11:07:58.9033755-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_143.png</Source>
+      <Name>Creatures\wild_creature_143</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_143.xnb</Output>
+      <Time>2014-03-04T11:07:58.9353773-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_144.png</Source>
+      <Name>Creatures\wild_creature_144</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_144.xnb</Output>
+      <Time>2014-03-04T11:07:58.9763797-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_145.png</Source>
+      <Name>Creatures\wild_creature_145</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_145.xnb</Output>
+      <Time>2014-03-04T11:07:58.999381-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_146.png</Source>
+      <Name>Creatures\wild_creature_146</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_146.xnb</Output>
+      <Time>2014-03-04T11:07:59.0253825-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_147.png</Source>
+      <Name>Creatures\wild_creature_147</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_147.xnb</Output>
+      <Time>2014-03-04T11:07:59.0613845-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_148.png</Source>
+      <Name>Creatures\wild_creature_148</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_148.xnb</Output>
+      <Time>2014-03-04T11:07:59.0983867-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_149.png</Source>
+      <Name>Creatures\wild_creature_149</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_149.xnb</Output>
+      <Time>2014-03-04T11:07:59.1413891-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_15.png</Source>
+      <Name>Creatures\wild_creature_15</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_15.xnb</Output>
+      <Time>2014-03-04T11:07:54.8001408-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_150.png</Source>
+      <Name>Creatures\wild_creature_150</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_150.xnb</Output>
+      <Time>2014-03-04T11:07:59.1833915-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_151.png</Source>
+      <Name>Creatures\wild_creature_151</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_151.xnb</Output>
+      <Time>2014-03-04T11:07:59.2243939-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_152.png</Source>
+      <Name>Creatures\wild_creature_152</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_152.xnb</Output>
+      <Time>2014-03-04T11:07:59.2823972-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_153.png</Source>
+      <Name>Creatures\wild_creature_153</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_153.xnb</Output>
+      <Time>2014-03-04T11:07:59.3694022-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_154.png</Source>
+      <Name>Creatures\wild_creature_154</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_154.xnb</Output>
+      <Time>2014-03-04T11:07:59.418405-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_155.png</Source>
+      <Name>Creatures\wild_creature_155</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_155.xnb</Output>
+      <Time>2014-03-04T11:07:59.4854088-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_156.png</Source>
+      <Name>Creatures\wild_creature_156</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_156.xnb</Output>
+      <Time>2014-03-04T11:07:59.5774141-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_157.png</Source>
+      <Name>Creatures\wild_creature_157</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_157.xnb</Output>
+      <Time>2014-03-04T11:07:59.6404177-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_16.png</Source>
+      <Name>Creatures\wild_creature_16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_16.xnb</Output>
+      <Time>2014-03-04T11:07:54.8181418-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_17.png</Source>
+      <Name>Creatures\wild_creature_17</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_17.xnb</Output>
+      <Time>2014-03-04T11:07:54.838143-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_18.png</Source>
+      <Name>Creatures\wild_creature_18</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_18.xnb</Output>
+      <Time>2014-03-04T11:07:54.8641445-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_19.png</Source>
+      <Name>Creatures\wild_creature_19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_19.xnb</Output>
+      <Time>2014-03-04T11:07:54.8921461-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_2.png</Source>
+      <Name>Creatures\wild_creature_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_2.xnb</Output>
+      <Time>2014-03-04T11:07:54.332114-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_20.png</Source>
+      <Name>Creatures\wild_creature_20</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_20.xnb</Output>
+      <Time>2014-03-04T11:07:54.9231478-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_21.png</Source>
+      <Name>Creatures\wild_creature_21</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_21.xnb</Output>
+      <Time>2014-03-04T11:07:54.9561497-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_22.png</Source>
+      <Name>Creatures\wild_creature_22</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_22.xnb</Output>
+      <Time>2014-03-04T11:07:54.9901517-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_23.png</Source>
+      <Name>Creatures\wild_creature_23</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_23.xnb</Output>
+      <Time>2014-03-04T11:07:55.0241536-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_24.png</Source>
+      <Name>Creatures\wild_creature_24</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_24.xnb</Output>
+      <Time>2014-03-04T11:07:55.0591556-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_25.png</Source>
+      <Name>Creatures\wild_creature_25</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_25.xnb</Output>
+      <Time>2014-03-04T11:07:55.0701563-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_26.png</Source>
+      <Name>Creatures\wild_creature_26</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_26.xnb</Output>
+      <Time>2014-03-04T11:07:55.0861572-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_27.png</Source>
+      <Name>Creatures\wild_creature_27</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_27.xnb</Output>
+      <Time>2014-03-04T11:07:55.1061583-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_28.png</Source>
+      <Name>Creatures\wild_creature_28</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_28.xnb</Output>
+      <Time>2014-03-04T11:07:55.1501608-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_29.png</Source>
+      <Name>Creatures\wild_creature_29</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_29.xnb</Output>
+      <Time>2014-03-04T11:07:55.2191648-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_3.png</Source>
+      <Name>Creatures\wild_creature_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_3.xnb</Output>
+      <Time>2014-03-04T11:07:54.3501151-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_30.png</Source>
+      <Name>Creatures\wild_creature_30</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_30.xnb</Output>
+      <Time>2014-03-04T11:07:55.2461663-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_31.png</Source>
+      <Name>Creatures\wild_creature_31</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_31.xnb</Output>
+      <Time>2014-03-04T11:07:55.2741679-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_32.png</Source>
+      <Name>Creatures\wild_creature_32</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_32.xnb</Output>
+      <Time>2014-03-04T11:07:55.3021695-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_33.png</Source>
+      <Name>Creatures\wild_creature_33</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_33.xnb</Output>
+      <Time>2014-03-04T11:07:55.3341714-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_34.png</Source>
+      <Name>Creatures\wild_creature_34</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_34.xnb</Output>
+      <Time>2014-03-04T11:07:55.3691734-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_35.png</Source>
+      <Name>Creatures\wild_creature_35</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_35.xnb</Output>
+      <Time>2014-03-04T11:07:55.4131759-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_36.png</Source>
+      <Name>Creatures\wild_creature_36</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_36.xnb</Output>
+      <Time>2014-03-04T11:07:55.4591785-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_37.png</Source>
+      <Name>Creatures\wild_creature_37</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_37.xnb</Output>
+      <Time>2014-03-04T11:07:55.5051811-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_38.png</Source>
+      <Name>Creatures\wild_creature_38</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_38.xnb</Output>
+      <Time>2014-03-04T11:07:55.5401831-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_39.png</Source>
+      <Name>Creatures\wild_creature_39</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_39.xnb</Output>
+      <Time>2014-03-04T11:07:55.5711849-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_4.png</Source>
+      <Name>Creatures\wild_creature_4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_4.xnb</Output>
+      <Time>2014-03-04T11:07:54.3731164-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_40.png</Source>
+      <Name>Creatures\wild_creature_40</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_40.xnb</Output>
+      <Time>2014-03-04T11:07:55.6091871-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_41.png</Source>
+      <Name>Creatures\wild_creature_41</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_41.xnb</Output>
+      <Time>2014-03-04T11:07:55.6441891-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_42.png</Source>
+      <Name>Creatures\wild_creature_42</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_42.xnb</Output>
+      <Time>2014-03-04T11:07:55.6811912-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_43.png</Source>
+      <Name>Creatures\wild_creature_43</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_43.xnb</Output>
+      <Time>2014-03-04T11:07:55.7191934-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_44.png</Source>
+      <Name>Creatures\wild_creature_44</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_44.xnb</Output>
+      <Time>2014-03-04T11:07:55.7561955-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_45.png</Source>
+      <Name>Creatures\wild_creature_45</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_45.xnb</Output>
+      <Time>2014-03-04T11:07:55.7731965-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_46.png</Source>
+      <Name>Creatures\wild_creature_46</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_46.xnb</Output>
+      <Time>2014-03-04T11:07:55.7951977-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_47.png</Source>
+      <Name>Creatures\wild_creature_47</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_47.xnb</Output>
+      <Time>2014-03-04T11:07:55.8141988-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_48.png</Source>
+      <Name>Creatures\wild_creature_48</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_48.xnb</Output>
+      <Time>2014-03-04T11:07:55.8622016-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_49.png</Source>
+      <Name>Creatures\wild_creature_49</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_49.xnb</Output>
+      <Time>2014-03-04T11:07:55.9122044-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_5.png</Source>
+      <Name>Creatures\wild_creature_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_5.xnb</Output>
+      <Time>2014-03-04T11:07:54.4051182-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_50.png</Source>
+      <Name>Creatures\wild_creature_50</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_50.xnb</Output>
+      <Time>2014-03-04T11:07:55.9292054-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_51.png</Source>
+      <Name>Creatures\wild_creature_51</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_51.xnb</Output>
+      <Time>2014-03-04T11:07:55.9562069-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_52.png</Source>
+      <Name>Creatures\wild_creature_52</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_52.xnb</Output>
+      <Time>2014-03-04T11:07:55.9852086-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_53.png</Source>
+      <Name>Creatures\wild_creature_53</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_53.xnb</Output>
+      <Time>2014-03-04T11:07:56.0172104-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_54.png</Source>
+      <Name>Creatures\wild_creature_54</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_54.xnb</Output>
+      <Time>2014-03-04T11:07:56.0552126-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_55.png</Source>
+      <Name>Creatures\wild_creature_55</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_55.xnb</Output>
+      <Time>2014-03-04T11:07:56.0942148-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_56.png</Source>
+      <Name>Creatures\wild_creature_56</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_56.xnb</Output>
+      <Time>2014-03-04T11:07:56.114216-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_57.png</Source>
+      <Name>Creatures\wild_creature_57</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_57.xnb</Output>
+      <Time>2014-03-04T11:07:56.1332171-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_58.png</Source>
+      <Name>Creatures\wild_creature_58</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_58.xnb</Output>
+      <Time>2014-03-04T11:07:56.1632188-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_59.png</Source>
+      <Name>Creatures\wild_creature_59</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_59.xnb</Output>
+      <Time>2014-03-04T11:07:56.1822199-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_6.png</Source>
+      <Name>Creatures\wild_creature_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_6.xnb</Output>
+      <Time>2014-03-04T11:07:54.4381201-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_60.png</Source>
+      <Name>Creatures\wild_creature_60</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_60.xnb</Output>
+      <Time>2014-03-04T11:07:56.2062212-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_61.png</Source>
+      <Name>Creatures\wild_creature_61</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_61.xnb</Output>
+      <Time>2014-03-04T11:07:56.2322227-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_62.png</Source>
+      <Name>Creatures\wild_creature_62</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_62.xnb</Output>
+      <Time>2014-03-04T11:07:56.2602243-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_63.png</Source>
+      <Name>Creatures\wild_creature_63</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_63.xnb</Output>
+      <Time>2014-03-04T11:07:56.2872259-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_64.png</Source>
+      <Name>Creatures\wild_creature_64</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_64.xnb</Output>
+      <Time>2014-03-04T11:07:56.3162275-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_65.png</Source>
+      <Name>Creatures\wild_creature_65</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_65.xnb</Output>
+      <Time>2014-03-04T11:07:56.3522296-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_66.png</Source>
+      <Name>Creatures\wild_creature_66</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_66.xnb</Output>
+      <Time>2014-03-04T11:07:56.376231-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_67.png</Source>
+      <Name>Creatures\wild_creature_67</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_67.xnb</Output>
+      <Time>2014-03-04T11:07:56.4082328-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_68.png</Source>
+      <Name>Creatures\wild_creature_68</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_68.xnb</Output>
+      <Time>2014-03-04T11:07:56.4242337-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_69.png</Source>
+      <Name>Creatures\wild_creature_69</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_69.xnb</Output>
+      <Time>2014-03-04T11:07:56.4442348-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_7.png</Source>
+      <Name>Creatures\wild_creature_7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_7.xnb</Output>
+      <Time>2014-03-04T11:07:54.471122-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_70.png</Source>
+      <Name>Creatures\wild_creature_70</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_70.xnb</Output>
+      <Time>2014-03-04T11:07:56.465236-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_71.png</Source>
+      <Name>Creatures\wild_creature_71</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_71.xnb</Output>
+      <Time>2014-03-04T11:07:56.499238-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_72.png</Source>
+      <Name>Creatures\wild_creature_72</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_72.xnb</Output>
+      <Time>2014-03-04T11:07:56.5362401-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_73.png</Source>
+      <Name>Creatures\wild_creature_73</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_73.xnb</Output>
+      <Time>2014-03-04T11:07:56.5642417-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_74.png</Source>
+      <Name>Creatures\wild_creature_74</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_74.xnb</Output>
+      <Time>2014-03-04T11:07:56.6082442-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_75.png</Source>
+      <Name>Creatures\wild_creature_75</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_75.xnb</Output>
+      <Time>2014-03-04T11:07:56.6582471-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_76.png</Source>
+      <Name>Creatures\wild_creature_76</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_76.xnb</Output>
+      <Time>2014-03-04T11:07:56.7022496-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_77.png</Source>
+      <Name>Creatures\wild_creature_77</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_77.xnb</Output>
+      <Time>2014-03-04T11:07:56.7542526-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_78.png</Source>
+      <Name>Creatures\wild_creature_78</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_78.xnb</Output>
+      <Time>2014-03-04T11:07:56.8042554-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_79.png</Source>
+      <Name>Creatures\wild_creature_79</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_79.xnb</Output>
+      <Time>2014-03-04T11:07:56.8292569-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_8.png</Source>
+      <Name>Creatures\wild_creature_8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_8.xnb</Output>
+      <Time>2014-03-04T11:07:54.5031238-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_80.png</Source>
+      <Name>Creatures\wild_creature_80</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_80.xnb</Output>
+      <Time>2014-03-04T11:07:56.8462578-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_81.png</Source>
+      <Name>Creatures\wild_creature_81</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_81.xnb</Output>
+      <Time>2014-03-04T11:07:56.8582585-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_82.png</Source>
+      <Name>Creatures\wild_creature_82</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_82.xnb</Output>
+      <Time>2014-03-04T11:07:56.8702592-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_83.png</Source>
+      <Name>Creatures\wild_creature_83</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_83.xnb</Output>
+      <Time>2014-03-04T11:07:56.8882602-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_84.png</Source>
+      <Name>Creatures\wild_creature_84</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_84.xnb</Output>
+      <Time>2014-03-04T11:07:56.9032611-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_85.png</Source>
+      <Name>Creatures\wild_creature_85</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_85.xnb</Output>
+      <Time>2014-03-04T11:07:56.918262-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_86.png</Source>
+      <Name>Creatures\wild_creature_86</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_86.xnb</Output>
+      <Time>2014-03-04T11:07:56.937263-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_87.png</Source>
+      <Name>Creatures\wild_creature_87</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_87.xnb</Output>
+      <Time>2014-03-04T11:07:56.9652646-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_88.png</Source>
+      <Name>Creatures\wild_creature_88</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_88.xnb</Output>
+      <Time>2014-03-04T11:07:57.0042669-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_89.png</Source>
+      <Name>Creatures\wild_creature_89</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_89.xnb</Output>
+      <Time>2014-03-04T11:07:57.0432691-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_9.png</Source>
+      <Name>Creatures\wild_creature_9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_9.xnb</Output>
+      <Time>2014-03-04T11:07:54.5351257-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_90.png</Source>
+      <Name>Creatures\wild_creature_90</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_90.xnb</Output>
+      <Time>2014-03-04T11:07:57.093272-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_91.png</Source>
+      <Name>Creatures\wild_creature_91</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_91.xnb</Output>
+      <Time>2014-03-04T11:07:57.129274-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_92.png</Source>
+      <Name>Creatures\wild_creature_92</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_92.xnb</Output>
+      <Time>2014-03-04T11:07:57.181277-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_93.png</Source>
+      <Name>Creatures\wild_creature_93</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_93.xnb</Output>
+      <Time>2014-03-04T11:07:57.2622816-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_94.png</Source>
+      <Name>Creatures\wild_creature_94</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_94.xnb</Output>
+      <Time>2014-03-04T11:07:57.3272854-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_95.png</Source>
+      <Name>Creatures\wild_creature_95</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_95.xnb</Output>
+      <Time>2014-03-04T11:07:57.3852887-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_96.png</Source>
+      <Name>Creatures\wild_creature_96</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_96.xnb</Output>
+      <Time>2014-03-04T11:07:57.4372916-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_97.png</Source>
+      <Name>Creatures\wild_creature_97</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_97.xnb</Output>
+      <Time>2014-03-04T11:07:57.4902947-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_98.png</Source>
+      <Name>Creatures\wild_creature_98</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_98.xnb</Output>
+      <Time>2014-03-04T11:07:57.5292969-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Creatures\wild_creature_99.png</Source>
+      <Name>Creatures\wild_creature_99</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_99.xnb</Output>
+      <Time>2014-03-04T11:07:57.5702993-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Home\large_white_board.png</Source>
+      <Name>Home\large_white_board</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\large_white_board.xnb</Output>
+      <Time>2014-03-04T12:28:10.2955714-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Home\text_bubble.png</Source>
+      <Name>Home\text_bubble</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\text_bubble.xnb</Output>
+      <Time>2014-03-04T12:20:53.812606-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

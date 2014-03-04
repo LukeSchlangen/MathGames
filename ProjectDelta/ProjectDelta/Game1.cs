@@ -37,7 +37,8 @@ namespace ProjectDelta
             Home,
             World101,
             Stats,
-            Exit,         
+            ViewCreatures,
+            Exit,
         }
 
         private static int COUNT_TO_CONTINUE = 10;
@@ -64,6 +65,7 @@ namespace ProjectDelta
         private Home home;
         private World101 world101;
         private Stats stats;
+        private ViewCreatures viewCreatures;
 
         //ContentManagers: One manager for each set of 
         //content (worlds, login, home, etc)
@@ -72,7 +74,8 @@ namespace ProjectDelta
         ContentManager homeContentManager;
         ContentManager world101ContentManager;
         ContentManager statsContentManager;
-        
+        ContentManager viewCreaturesContentManager;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -83,6 +86,7 @@ namespace ProjectDelta
             homeContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             world101ContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             statsContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
+            viewCreaturesContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
 
             screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
@@ -97,12 +101,12 @@ namespace ProjectDelta
             graphics.PreferredBackBufferWidth = screenWidth;
 
             //set the scale factor
-            scale = (float) screenHeight / 1080;
-            
+            scale = (float)screenHeight / 1080;
+
             //Initializes the game in full screen
             //graphics.IsFullScreen = true;
 
-            this.IsFixedTimeStep = false;         
+            this.IsFixedTimeStep = false;
         }
 
         /// <summary>
@@ -129,6 +133,7 @@ namespace ProjectDelta
             home = new Home();
             world101 = new World101(context);
             stats = new Stats(context, scale);
+            viewCreatures = new ViewCreatures(context, scale);
 
             //when we initialize the login screen (and any screens
             //from here on out), we pass in the scale value to allow
@@ -149,7 +154,7 @@ namespace ProjectDelta
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            splash.LoadContent(splashContentManager);            
+            splash.LoadContent(splashContentManager);
         }
 
         /// <summary>
@@ -230,9 +235,18 @@ namespace ProjectDelta
                     success = false;
                     whereTo = 0;
                 }
+
+                if (whereTo == -3)
+                {
+                    state = State.ViewCreatures;
+                    homeContentManager.Unload();
+                    viewCreatures.LoadContent(viewCreaturesContentManager, globalUser.world101, screenWidth, screenHeight);
+                    success = false;
+                    whereTo = 0;
+                }
             }
 
-            if(state == State.Stats)
+            if (state == State.Stats)
             {
                 success = stats.Update(gameTime);
                 if (success == true)
@@ -243,6 +257,19 @@ namespace ProjectDelta
                     success = false;
                 }
             }
+
+            if (state == State.ViewCreatures)
+            {
+                success = viewCreatures.Update(gameTime);
+                if (success == true)
+                {
+                    state = State.Home;
+                    statsContentManager.Unload();
+                    home.LoadContent(homeContentManager, screenHeight, screenWidth);
+                    success = false;
+                }
+            }
+
 
             if (state == State.World101)
             {
@@ -261,7 +288,7 @@ namespace ProjectDelta
             {
                 this.Exit();
             }
-            
+
 
             base.Update(gameTime);
         }
@@ -285,10 +312,10 @@ namespace ProjectDelta
             {
                 login.Draw(spriteBatch);
             }
-            
+
             if (state == State.Home)
             {
-                home.Draw(spriteBatch);      
+                home.Draw(spriteBatch);
             }
 
             if (state == State.World101)
@@ -299,6 +326,11 @@ namespace ProjectDelta
             if (state == State.Stats)
             {
                 stats.Draw(spriteBatch);
+            }
+
+            if (state == State.ViewCreatures)
+            {
+                viewCreatures.Draw(spriteBatch);
             }
 
             if (state == State.Exit)

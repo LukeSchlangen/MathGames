@@ -30,6 +30,7 @@ namespace ProjectDelta
         private float scale;
         private int x;
         private int y;
+        private int friendlyCreatureWidth;
         private int screenX;
         private int powerupUseCount = 0;
         private int maxNumberOfPowerUpUses;
@@ -60,11 +61,12 @@ namespace ProjectDelta
 
         }
 
-        public void Update(GameTime gameTime, int heroPosition)
+        public void Update(GameTime gameTime, int heroPosition, int creatureSelected)
         {
             Debug.WriteLine(position);
             position.X = heroPosition - 200 * scale;
             position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale;
+            friendlyCreatureWidth = friendlyCreatures[creatureSelected].Width;
         }
 
         public void Draw(SpriteBatch spriteBatch, int worldStage)
