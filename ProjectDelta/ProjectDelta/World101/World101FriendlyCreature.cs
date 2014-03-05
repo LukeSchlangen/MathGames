@@ -55,6 +55,10 @@ namespace ProjectDelta
                     friendlyCreature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.currentFriendlyCreature));
                 }
             }
+            else
+            {
+                friendlyCreature = content.Load<Texture2D>("Creatures/wild_creature_0");
+            }
         }
 
         public void Update(GameTime gameTime, Vector2 heroPosition)
