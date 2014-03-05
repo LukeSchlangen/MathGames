@@ -28,11 +28,13 @@ namespace ProjectDelta
         private MouseState current;
         private MouseState previous;
 
-        //private SpriteFont font;
-
+        private SpriteFont font;
+        private bool hover;
         private float scale;
         private int screenHeight;
         private int screenWidth;
+
+        private string creatureText;
 
         private Texture2D background;
         private Texture2D backButton;
@@ -43,10 +45,13 @@ namespace ProjectDelta
         private Vector2 backButtonPosition;
         private Vector2 largeWhiteBoardPosition;
         private Vector2 textBubblePosition;
+        private Vector2 fontPosition;
         private Vector2[] creaturePosition;
 
         private Rectangle backButtonCollisionBox;
         private Rectangle[] creatureCollisionBox;
+
+        private CreatureOrganizer creatureOrganizer = new CreatureOrganizer(); 
 
         public ViewCreatures(DynamoDBContext context, float scale)
         {
@@ -56,6 +61,8 @@ namespace ProjectDelta
 
         public void LoadContent(ContentManager content, int worldStage, int screenX, int screenY)
         {
+            font = content.Load<SpriteFont>("input_font");
+
             screenHeight = screenY;
             screenWidth = screenX;
 
@@ -78,18 +85,20 @@ namespace ProjectDelta
                 int k = 0;
                 for (int i = 0; i < creature.Length; i++)
                 {
-
                     //simply put the creatures in the numerical order that you want them to appear
                     //following the naming convention wild_creature_i.png in the creatures directory
                     //for final version replace j with i
+                    if (creatureOrganizer.isCreatureAvailable(worldStage, i))
+                    {
                     Texture2D wildCreatureToLoad = content.Load<Texture2D>("Creatures/wild_creature_" + i); //load the creatures in order so that the creature that appears corresponds with the world stage
                     creature[i] = wildCreatureToLoad;
 
-                    creaturePosition[i] = new Vector2(((50 + 150 * j) * scale), ((50 + 150 * k) * scale));
+                    creaturePosition[i] = new Vector2(((100 + 265 * j) * scale), ((100 + 250 * k) * scale));
 
-                    creatureCollisionBox[i] = new Rectangle(((int)(creaturePosition[i].X)), ((int)(creaturePosition[i].Y)), ((int)(creature[i].Width * scale / 4)), ((int)(creature[i].Height * scale / 4)));
+                    creatureCollisionBox[i] = new Rectangle(((int)(creaturePosition[i].X)), ((int)(creaturePosition[i].Y)), ((int)(creature[i].Width * scale /2)), ((int)(creature[i].Height * scale / 2)));
                     j++;
-                    if (j > 10) { j = 0; k++; }
+                    if (j > 5) { j = 0; k++; }
+                    }
                 }
 
             }
@@ -108,14 +117,27 @@ namespace ProjectDelta
             {
 
 
-                for (int i = 0; i < creature.Length; i++)
-                {
-                    spriteBatch.Draw(creature[i], creaturePosition[i], null, Color.White, 0f, Vector2.Zero, scale / 4, SpriteEffects.None, 0f);
 
-                }
+                    for (int i = 0; i < creature.Length; i++)
+                    {
+                        //simply put the creatures in the numerical order that you want them to appear
+                        //following the naming convention wild_creature_i.png in the creatures directory
+                        //for final version replace j with i
+                        if (creatureOrganizer.isCreatureAvailable(creature.Length, i))
+                        {
+                            spriteBatch.Draw(creature[i], creaturePosition[i], null, Color.White, 0f, Vector2.Zero, scale/2, SpriteEffects.None, 0f);
+                        }
+                    }
+                    
+                    
+                
             }
-            spriteBatch.Draw(textBubble, textBubblePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            if (hover)
+            {
+                spriteBatch.Draw(textBubble, textBubblePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.DrawString(font, creatureText, fontPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
+                spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         private bool checkBack()
@@ -123,12 +145,15 @@ namespace ProjectDelta
             previous = current;
             current = Mouse.GetState();
             Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
-
+            hover = false;
             for (int i = 0; i < creature.Length; i++)
             {
                 if (mousePosition.Intersects(creatureCollisionBox[i]))
                 {
-                    textBubblePosition = new Vector2(creatureCollisionBox[i].X + 50*scale, creatureCollisionBox[i].Y - 50*scale);
+                    textBubblePosition = new Vector2(creatureCollisionBox[i].X + 100*scale, creatureCollisionBox[i].Y);
+                    creatureText = creatureOrganizer.getCreatureName(i) + "\n" + creatureOrganizer.getCreatureType(i);
+                    fontPosition = new Vector2(textBubblePosition.X + 55 * scale, textBubblePosition.Y + 10 * scale);
+                    hover = true;
                 }
             }
 
@@ -148,6 +173,7 @@ namespace ProjectDelta
                         {
                             Game1.globalUser.currentFriendlyCreature = i;
                             context.Save<User>(Game1.globalUser);
+                            return true;
                         }
                         catch
                         {
@@ -157,7 +183,7 @@ namespace ProjectDelta
 
 
                 }
-                return true;
+
             }
 
 
