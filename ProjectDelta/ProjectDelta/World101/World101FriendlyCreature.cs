@@ -59,13 +59,19 @@ namespace ProjectDelta
 
         public void Update(GameTime gameTime, Vector2 heroPosition)
         {
-            position.X = heroPosition.X - friendlyCreature.Width * scale + 130 * scale;
-            position.Y = heroPosition.Y - friendlyCreature.Height * scale;
+            if (Game1.globalUser.world101 - 1 >= 0)
+            {
+                position.X = heroPosition.X - friendlyCreature.Width * scale + 130 * scale;
+                position.Y = heroPosition.Y - friendlyCreature.Height * scale;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch, int worldStage)
         {
-            spriteBatch.Draw(friendlyCreature, position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            if (Game1.globalUser.world101 - 1 >= 0)
+            {
+                spriteBatch.Draw(friendlyCreature, position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
         }
 
         public void stop()
