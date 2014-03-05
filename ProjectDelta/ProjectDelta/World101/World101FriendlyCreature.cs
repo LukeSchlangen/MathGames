@@ -28,6 +28,7 @@ namespace ProjectDelta
         private float speed = 0f;
         private float startSpeed = 0f;
         private float scale;
+        private float constantlyIncreasingNumber;
         private int screenX;
         private int powerupUseCount = 0;
         private int maxNumberOfPowerUpUses;
@@ -63,11 +64,12 @@ namespace ProjectDelta
 
         public void Update(GameTime gameTime, Vector2 heroPosition)
         {
-            if (Game1.globalUser.world101 - 1 >= 0)
-            {
                 position.X = heroPosition.X - friendlyCreature.Width * scale + 130 * scale;
                 position.Y = heroPosition.Y - friendlyCreature.Height * scale;
-            }
+
+            //bouncing
+                constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                position.Y += 10* (float)Math.Sin(constantlyIncreasingNumber / 6) * scale;
         }
 
         public void Draw(SpriteBatch spriteBatch, int worldStage)

@@ -82,10 +82,6 @@ namespace ProjectDelta
 
         public void Update(GameTime gameTime)
         {
-            constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            heroPosition.Y += (float)Math.Sin(constantlyIncreasingNumber / 8) * scale;
-
-
 
             heroAnimation.animateLoop(gameTime, heroPosition);
 
@@ -111,16 +107,24 @@ namespace ProjectDelta
                 shieldAnimation.getLastState();
             }
 
-            if (state == State.StageSuccess && heroStop == false)
+            if (!heroStop)
             {
-                heroPosition.X += 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                if (state == State.StageSuccess)
+                {
+                    heroPosition.X += 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                }
+                
+                if (state == State.Death)
+                {
+                    heroPosition.X -= 25 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                    heroPosition.Y -= 25 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                }
+                else
+                {
+                    constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                    heroPosition.Y += (float)Math.Sin(constantlyIncreasingNumber / 8) * scale;
+                }
             }
-            if (state == State.Death)
-            {
-                heroPosition.X -= 25 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-                heroPosition.Y -= 25 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            }
-
             heroCollisionBox.X = (int)(heroPosition.X - 150 * scale);
             heroCollisionBox.Y = (int)heroPosition.Y;
         }
@@ -211,6 +215,7 @@ namespace ProjectDelta
         {
             heroAnimation.stopAnimation();
             speed = 0f;
+            heroStop = true;
         }
 
         public void start()
@@ -218,6 +223,7 @@ namespace ProjectDelta
             state = State.Question;
             speed = .1f;
             heroPosition = heroStartingPosition;
+            heroStop = false;
         }
 
         public Vector2 getHeroPosition()
