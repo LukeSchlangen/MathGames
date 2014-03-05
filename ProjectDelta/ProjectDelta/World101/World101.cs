@@ -172,6 +172,7 @@ namespace ProjectDelta
             //if the player hits esc, save, and return them to the main level
             if (keyboard.IsKeyDown(Keys.Escape))
             {
+                resetStage();
                 saveStats();
                 saveStage();
                 return true;
@@ -305,8 +306,8 @@ namespace ProjectDelta
             drawExtraObjects(spriteBatch);
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
-            hero.Draw(spriteBatch);
             friendlyCreature.Draw(spriteBatch, worldStage);
+            hero.Draw(spriteBatch);
             world101Text.DrawAnswerCount(spriteBatch);
 
             if (showQuestion && correctInARow < countToContinue)
