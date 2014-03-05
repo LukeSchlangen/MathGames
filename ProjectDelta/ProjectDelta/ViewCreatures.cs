@@ -28,7 +28,7 @@ namespace ProjectDelta
         private MouseState current;
         private MouseState previous;
 
-        private SpriteFont font;
+        //private SpriteFont font;
 
         private float scale;
         private int screenHeight;

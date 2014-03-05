@@ -21,35 +21,25 @@ using Amazon.DynamoDBv2.DataModel;
 
 namespace ProjectDelta
 {
-    class World101FreindlyCreature
+    class World101FriendlyCreature
     {
         private Texture2D friendlyCreature;
         private Vector2 position;
         private float speed = 0f;
         private float startSpeed = 0f;
         private float scale;
-        private int x;
-        private int y;
-        private int friendlyCreatureWidth;
-        private int friendlyCreatureHeight;
         private int screenX;
         private int powerupUseCount = 0;
         private int maxNumberOfPowerUpUses;
 
         private bool usingPowerup = false;
 
-        public World101FreindlyCreature(int x, int y, float scale, float speed, int screenX)
+        public World101FriendlyCreature(float scale, float speed, int screenX)
         {
             this.scale = scale;
-            this.x = (int)(x - friendlyCreatureWidth * scale + 10 * scale);
-            this.y = y;
             this.speed = speed;
             this.startSpeed = speed;
             this.screenX = screenX;
-
-            Debug.WriteLine(position);
-            position.X = x;
-            position.Y = y + 10 * (float)Math.Sin(position.X / 15) * scale + friendlyCreatureHeight * scale;
         }
 
         public void LoadContent(ContentManager content)
@@ -67,13 +57,10 @@ namespace ProjectDelta
             }
         }
 
-        public void Update(GameTime gameTime, int heroPosition, int creatureSelected)
+        public void Update(GameTime gameTime, Vector2 heroPosition)
         {
-            Debug.WriteLine(position);
-            position.X = heroPosition + friendlyCreatureWidth * scale - 200 * scale;
-            position.Y = y * scale + 10 * (float)Math.Sin(position.X / 15) * scale + friendlyCreatureHeight * scale;
-            friendlyCreatureWidth = friendlyCreature.Width;
-            friendlyCreatureHeight = friendlyCreature.Height;
+            position.X = heroPosition.X - friendlyCreature.Width * scale + 130 * scale;
+            position.Y = heroPosition.Y - friendlyCreature.Height * scale;
         }
 
         public void Draw(SpriteBatch spriteBatch, int worldStage)
@@ -87,9 +74,8 @@ namespace ProjectDelta
             speed = 0f;
         }
 
-        public void reset(int heroPosition)
+        public void reset()
         {
-            position = new Vector2(heroPosition +friendlyCreatureWidth * scale - 200 * scale, (600+friendlyCreatureHeight) * scale);
             speed = .1f;
             powerupUseCount = 0;
             usingPowerup = false;

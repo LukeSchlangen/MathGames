@@ -38,7 +38,6 @@ namespace ProjectDelta
         private int correctInARow = 0;
         private int worldStage;
         private int errorCounter;
-        private int friendlyCreatureSelected;
 
         private float scale;
 
@@ -56,14 +55,12 @@ namespace ProjectDelta
         private Texture2D thirdBackgroundOne;
         private Texture2D thirdBackgroundTwo;
         private Texture2D thirdBackgroundThree;
-        //private Texture2D internetConnectionError;
         private Texture2D internetConnectionWarning;
 
         //Vectors for level 1
         private Vector2 backgroundOnePosition;
         private Vector2 backgroundTwoPosition;
         private Vector2 backgroundThreePosition;
-        //private Vector2 internetConnectionErrorPosition;
         private Vector2 internetConnectionWarningPosition;
 
         private Hero hero;
@@ -71,7 +68,7 @@ namespace ProjectDelta
         private World101Monster monsterTwo;
         private World101Monster currentMonster;
         private World101WildCreature wildCreature;
-        private World101FreindlyCreature friendlyCreature;
+        private World101FriendlyCreature friendlyCreature;
         private World101Input world101Input;
         private World101Text world101Text = new World101Text();
         private Random random = new Random();
@@ -90,8 +87,7 @@ namespace ProjectDelta
         private int sessionAnswersAttempted;
         private int sessionAnswersCorrect;
 
-        //This is an array of HashSets that should allow you store data
-        //as you explained in email.
+        //This is an array of HashSets to store problems
         private Dictionary<string, int>[] stageProblems;
 
         public World101(DynamoDBContext context)
@@ -107,7 +103,7 @@ namespace ProjectDelta
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
             wildCreature = new World101WildCreature(2600, 800, scale, backgroundSpeed, screenX);
-            friendlyCreature = new World101FreindlyCreature(hero.getHeroPosition(), 800, scale, backgroundSpeed, screenX);
+            friendlyCreature = new World101FriendlyCreature(scale, backgroundSpeed, screenX);
             currentMonster = monsterOne;
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
@@ -264,27 +260,6 @@ namespace ProjectDelta
                 //the questions operator (right now it always assumes its the + operator)
             }
 
-
-            ////if there is an internet connection error when saving, show the error and return to menu
-            ////in the future, it might be good to save this information locally and allow play to continue
-            //if (state == State.InternetConnectionError)
-            //{
-            //    if (errorCounter == 1000)
-            //    {
-            //        errorCounter = -5000;
-            //    }
-            //    if (errorCounter < 0)
-            //    {
-            //        errorCounter += gameTime.ElapsedGameTime.Milliseconds;
-            //    }
-            //    if (errorCounter >= 0)
-            //    {
-            //        state = State.None;
-            //        errorCounter = 1000;
-            //        internetConnection = false;
-            //    }
-            //}
-
             //This determines if the level should restart on the student
             //it's to make sure the student doesn't just stop playing,
             //but nothing bad happens if they walk away
@@ -351,10 +326,6 @@ namespace ProjectDelta
                 wildCreature.Draw(spriteBatch, worldStage); //show the wild creature if it hasn't been collected (not used right now, but might be later)
             }
 
-            //if (state == State.InternetConnectionError)
-            //{
-            //    spriteBatch.Draw(internetConnectionError, internetConnectionErrorPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            //}
             if (internetConnection == false)
             {
                 spriteBatch.Draw(internetConnectionWarning, internetConnectionWarningPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
@@ -362,14 +333,6 @@ namespace ProjectDelta
 
 
         }
-
-        ////If we decide to use clicking at some point, this will let us do it
-        //private void checkClick()
-        //{
-        //    previous = current;
-        //    current = Mouse.GetState();
-        //    Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
-        //}
 
         private void stopAll()
         {
@@ -439,7 +402,7 @@ namespace ProjectDelta
             hero.Update(gameTime);
             monsterOne.Update(gameTime);
             monsterTwo.Update(gameTime);
-            friendlyCreature.Update(gameTime, hero.getHeroPosition(), friendlyCreatureSelected);
+            friendlyCreature.Update(gameTime, hero.getHeroPosition());
             if (correctInARow >= countToContinue)
             {
                 wildCreature.Update(gameTime);
@@ -494,7 +457,7 @@ namespace ProjectDelta
             backgroundSpeed = backupBackgroundSpeed;
             monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
             monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
-            friendlyCreature.reset(hero.getHeroPosition());
+            friendlyCreature.reset();
             wildCreature.reset();
             currentMonster = monsterOne;
             hero.live();

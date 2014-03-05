@@ -41,6 +41,9 @@ namespace ProjectDelta
         private bool heroStop = false;
         private bool dead = false;
 
+        private float constantlyIncreasingNumber;
+        private float oscilatingNumber;
+
         private Vector2 heroPosition;
         private Vector2 heroStartingPosition;
         private Vector2 shieldPosition;
@@ -65,26 +68,30 @@ namespace ProjectDelta
         {
             heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
             shield = content.Load<Texture2D>("General/Shield/question_box_to_shield_3x3");
-            heroStartingPosition = new Vector2(275*scale, 800*scale);
+            heroStartingPosition = new Vector2(275 * scale, 800 * scale);
             heroPosition = heroStartingPosition;
             heroAnimation = new Animation(heroRunning, heroStartingPosition, 5, 5, scale, 10f);
-            heroCollisionBox = new Rectangle((int)((heroStartingPosition.X) - 150*scale), (int)(heroStartingPosition.Y), (int)(heroAnimation.getWidth()*scale), heroAnimation.getHeight());
-            shieldPosition.X = heroAnimation.getAnimationPosition().X - 40*scale;
+            heroCollisionBox = new Rectangle((int)((heroStartingPosition.X) - 150 * scale), (int)(heroStartingPosition.Y), (int)(heroAnimation.getWidth() * scale), heroAnimation.getHeight());
+            shieldPosition.X = heroAnimation.getAnimationPosition().X - 40 * scale;
             shieldPosition.Y = heroAnimation.getAnimationPosition().Y - 200 * scale;
             shieldAnimation = new Animation(shield, shieldPosition, 3, 3, scale, 30f);
-            shieldCollisionBox = new Rectangle(((int)(shieldPosition.X) + (int)(275*scale)), ((int)(shieldPosition.Y)), (int)(100*scale), (int)(1000*scale));
+            shieldCollisionBox = new Rectangle(((int)(shieldPosition.X) + (int)(275 * scale)), ((int)(shieldPosition.Y)), (int)(100 * scale), (int)(1000 * scale));
             activatedShieldCollisionBoxPosition = shieldCollisionBox;
             deactivateShield();
         }
 
         public void Update(GameTime gameTime)
         {
-            heroAnimation.animateLoop(gameTime);
+            constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            heroPosition.Y += (float)Math.Sin(constantlyIncreasingNumber / 8) * scale;
+
+
+
+            heroAnimation.animateLoop(gameTime, heroPosition);
 
             if (state == State.Question)
             {
                 shieldAnimation.getFirstState();
-                heroPosition = heroStartingPosition;
                 heroStop = false;
             }
 
@@ -122,7 +129,7 @@ namespace ProjectDelta
         {
 
             heroAnimation.Draw(spriteBatch, heroPosition);
-     
+
             if (state != State.StageSuccess)
             {
                 shieldAnimation.Draw(spriteBatch, shieldPosition);
@@ -210,11 +217,13 @@ namespace ProjectDelta
         {
             state = State.Question;
             speed = .1f;
+            heroPosition = heroStartingPosition;
         }
 
-        public int getHeroPosition()
+        public Vector2 getHeroPosition()
         {
-            return (int)heroPosition.X;
+            //return the position where the hero's "back foot" is for friendly creature to follow
+            return new Vector2(heroPosition.X, heroPosition.Y + 200 * scale);
         }
     }
 }

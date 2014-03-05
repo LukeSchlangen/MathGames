@@ -82,6 +82,36 @@ namespace ProjectDelta
             spriteRectangle.X = xFrame * spriteWidth;
         }
 
+        public void animateLoop(GameTime gameTime, Vector2 position)
+        {
+            this.position = position;
+            timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+            if (kill == true)
+            {
+                timer = 0;
+            }
+
+            if (timer >= interval)
+            {
+                timer = 0;
+                xFrame++;
+                if (xFrame > imageInX - 1)
+                {
+                    yFrame++;
+                    if (yFrame > imageInY - 1)
+                    {
+                        yFrame = 0;
+                    }
+
+                    xFrame = 0;
+                }
+            }
+
+            spriteRectangle.Y = yFrame * spriteHeight;
+            spriteRectangle.X = xFrame * spriteWidth;
+        }
+
         public bool animateOnce(GameTime gameTime)
         {
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
