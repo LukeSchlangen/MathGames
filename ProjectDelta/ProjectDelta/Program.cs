@@ -2,7 +2,7 @@ using System;
 
 namespace ProjectDelta
 {
-#if WINDOWS || XBOX
+#if WINDOWS //|| XBOX
     static class Program
     {
         /// <summary>

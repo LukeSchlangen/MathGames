@@ -151,7 +151,10 @@ namespace ProjectDelta
                 if (mousePosition.Intersects(creatureCollisionBox[i]))
                 {
                     textBubblePosition = new Vector2(creatureCollisionBox[i].X + 100*scale, creatureCollisionBox[i].Y);
-                    creatureText = creatureOrganizer.getCreatureName(i) + "\n" + creatureOrganizer.getCreatureType(i);
+                    creatureText = "Name: " + creatureOrganizer.getCreatureName(i) + "\n" + 
+                        "Type: " + creatureOrganizer.getCreatureType(i) +"\n" + 
+                        "Level: " + creatureOrganizer.getCreatureLevel(creature.Length, i, Game1.globalUser.answersCorrect, Game1.globalUser.answersAttempted) + "\n" + 
+                        "Description: \nThis creature \n is really nice.";
                     fontPosition = new Vector2(textBubblePosition.X + 55 * scale, textBubblePosition.Y + 10 * scale);
                     hover = true;
                 }

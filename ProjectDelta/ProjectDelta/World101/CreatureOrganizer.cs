@@ -317,7 +317,7 @@ namespace ProjectDelta
 
         private int creatureLevel(int worldStage, int creature, int numberOfAttemptedProblems, int numberOfCorrectProblems)
         {
-            int creatureLevel = 0;
+            int creatureLevel = worldStage-creature;
 
 
 

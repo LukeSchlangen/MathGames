@@ -207,7 +207,7 @@ namespace ProjectDelta
                 cycleBackground(gameTime); //advance the background to make it look like the hero is moving
 
                 //if the creature has a powerup remaining, and the player presses "S", use the powerup
-                if (friendlyCreature.remainingPowerUp() && keyboard.IsKeyDown(Keys.S))
+                if (friendlyCreature.remainingPowerUp() && keyboard.IsKeyDown(Keys.S) && !heroDead)
                 {
                     useCreaturePowerUp(scale);
                 }
