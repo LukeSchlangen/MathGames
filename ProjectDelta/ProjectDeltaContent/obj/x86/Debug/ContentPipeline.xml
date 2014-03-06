@@ -2010,6 +2010,69 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\text_bubble.xnb</Output>
       <Time>2014-03-04T20:22:40.9980024-06:00</Time>
     </Item>
+    <Item>
+      <Source>Story\enemy_ship_engines_off.png</Source>
+      <Name>Story\enemy_ship_engines_off</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\enemy_ship_engines_off.xnb</Output>
+      <Time>2014-03-06T13:39:56.5910616-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Story\enemy_ship_engines_on.png</Source>
+      <Name>Story\enemy_ship_engines_on</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\enemy_ship_engines_on.xnb</Output>
+      <Time>2014-03-06T14:10:03.4254067-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Story\hero_ship_engines_off.png</Source>
+      <Name>Story\hero_ship_engines_off</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\hero_ship_engines_off.xnb</Output>
+      <Time>2014-03-06T13:45:26.9529573-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Story\hero_ship_engines_on.png</Source>
+      <Name>Story\hero_ship_engines_on</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\hero_ship_engines_on.xnb</Output>
+      <Time>2014-03-06T13:45:26.8649522-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Story\story_background.png</Source>
+      <Name>Story\story_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\story_background.xnb</Output>
+      <Time>2014-03-06T12:21:20.4253124-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Story\vertical_enemy_ship_engines_off.png</Source>
+      <Name>Story\vertical_enemy_ship_engines_off</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\vertical_enemy_ship_engines_off.xnb</Output>
+      <Time>2014-03-06T13:45:11.8520935-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Story\vertical_enemy_ship_engines_on.png</Source>
+      <Name>Story\vertical_enemy_ship_engines_on</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\vertical_enemy_ship_engines_on.xnb</Output>
+      <Time>2014-03-06T13:45:11.9580996-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

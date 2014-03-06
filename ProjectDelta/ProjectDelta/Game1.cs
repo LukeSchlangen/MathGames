@@ -35,6 +35,7 @@ namespace ProjectDelta
             Splash,
             Login,
             Home,
+            Story,
             World101,
             Stats,
             ViewCreatures,
@@ -62,6 +63,7 @@ namespace ProjectDelta
 
         private Splash splash;
         private Login login;
+        private Story story;
         private Home home;
         private World101 world101;
         private Stats stats;
@@ -71,6 +73,7 @@ namespace ProjectDelta
         //content (worlds, login, home, etc)
         ContentManager splashContentManager;
         ContentManager loginContentManager;
+        ContentManager storyContentManager;
         ContentManager homeContentManager;
         ContentManager world101ContentManager;
         ContentManager statsContentManager;
@@ -83,6 +86,7 @@ namespace ProjectDelta
 
             splashContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             loginContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
+            storyContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             homeContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             world101ContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             statsContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
@@ -130,6 +134,7 @@ namespace ProjectDelta
 
             splash = new Splash(screenWidth, screenHeight, scale);
             login = new Login(context);
+            story = new Story(screenWidth, screenHeight, scale);
             home = new Home();
             world101 = new World101(context);
             stats = new Stats(context, scale);
@@ -141,6 +146,7 @@ namespace ProjectDelta
             login.Initialize(scale);
             home.Initialize(scale);
             world101.Initialize(scale, screenWidth);
+            story.Initialize(scale, screenWidth);
 
             base.Initialize();
         }
@@ -194,9 +200,31 @@ namespace ProjectDelta
                 success = login.Update(gameTime);
                 if (success == true)
                 {
+                    if (Game1.globalUser.world101 != 0)
+                    {
+                        state = State.Home;
+                        loginContentManager.Unload();
+                        home.LoadContent(homeContentManager, screenHeight, screenWidth);
+                        success = false;
+                    }
+                    else
+                    {
+                        state = State.Story;
+                        loginContentManager.Unload();
+                        story.LoadContent(storyContentManager, screenHeight, screenWidth);
+                        success = false;
+                    }
+                }
+            }
+
+            if (state == State.Story)
+            {
+                success = story.Update(gameTime);
+                if (success == true)
+                {
                     state = State.Home;
-                    loginContentManager.Unload();
-                    home.LoadContent(homeContentManager, screenHeight, screenWidth);
+                    storyContentManager.Unload();
+                    home.LoadContent(loginContentManager, screenHeight, screenWidth);
                     success = false;
                 }
             }
@@ -311,6 +339,11 @@ namespace ProjectDelta
             if (state == State.Login)
             {
                 login.Draw(spriteBatch);
+            }
+
+            if (state == State.Story)
+            {
+                story.Draw(spriteBatch);
             }
 
             if (state == State.Home)

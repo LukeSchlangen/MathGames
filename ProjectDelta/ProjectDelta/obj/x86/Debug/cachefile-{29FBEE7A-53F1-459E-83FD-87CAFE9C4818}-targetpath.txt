@@ -223,3 +223,10 @@ Content\Creatures\wild_creature_98.xnb
 Content\Creatures\wild_creature_99.xnb
 Content\Home\large_white_board.xnb
 Content\Home\text_bubble.xnb
+Content\Story\enemy_ship_engines_off.xnb
+Content\Story\enemy_ship_engines_on.xnb
+Content\Story\hero_ship_engines_off.xnb
+Content\Story\hero_ship_engines_on.xnb
+Content\Story\story_background.xnb
+Content\Story\vertical_enemy_ship_engines_off.xnb
+Content\Story\vertical_enemy_ship_engines_on.xnb
