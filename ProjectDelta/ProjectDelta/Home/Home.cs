@@ -92,11 +92,6 @@ namespace ProjectDelta
             }
 
 
-            // Play music in repeating loop
-            Song backgroundMusic;
-            backgroundMusic = content.Load<Song>("Login/Background_Music");
-            MediaPlayer.Play(backgroundMusic);
-            MediaPlayer.IsRepeating = true;
         }
 
         public int Update(GameTime gameTime)

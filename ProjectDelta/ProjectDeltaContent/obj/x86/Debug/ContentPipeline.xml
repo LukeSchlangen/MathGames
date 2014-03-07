@@ -2073,6 +2073,51 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\vertical_enemy_ship_engines_on.xnb</Output>
       <Time>2014-03-06T13:45:11.9580996-06:00</Time>
     </Item>
+    <Item>
+      <Source>Story\story_1.png</Source>
+      <Name>Story\story_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\story_1.xnb</Output>
+      <Time>2014-03-06T20:14:42.303134-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Story\story_2.png</Source>
+      <Name>Story\story_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\story_2.xnb</Output>
+      <Time>2014-03-06T20:14:42.3061341-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Story\story_3.png</Source>
+      <Name>Story\story_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\story_3.xnb</Output>
+      <Time>2014-03-06T20:14:42.3271353-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Story\story_4.png</Source>
+      <Name>Story\story_4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\story_4.xnb</Output>
+      <Time>2014-03-06T20:14:42.3301355-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Story\story_5.png</Source>
+      <Name>Story\story_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\story_5.xnb</Output>
+      <Time>2014-03-06T20:14:42.3371359-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -47,6 +47,8 @@ namespace ProjectDelta
         private Texture2D smallEnemyShipEnginesOff;
         private Texture2D smallEnemyShipEnginesOn;
 
+        private Texture2D[] storyScript = new Texture2D[5];
+
 
         private Texture2D heroShipEnginesOn;
         private Texture2D heroShipEnginesOff;
@@ -68,6 +70,7 @@ namespace ProjectDelta
         private Vector2 heroPosition;
 
         private Vector2 backgroundPosition;
+        private Vector2 storyScriptPosition;
         private Animation heroAnimation;
 
         public Story(int screenX, int screenY, float scale)
@@ -98,6 +101,11 @@ namespace ProjectDelta
             babyCreature[7] = content.Load<Texture2D>("Creatures/wild_creature_116");
             babyCreature[8] = content.Load<Texture2D>("Creatures/wild_creature_140");
             babyCreature[9] = content.Load<Texture2D>("Creatures/wild_creature_145");
+
+            for (int i = 0; i< storyScript.Length; i++)
+            {
+                storyScript[i] = content.Load<Texture2D>("Story/story_" + (i + 1));
+            }
 
             largeEnemyShipEnginesOff = content.Load<Texture2D>("Story/enemy_ship_engines_off");
             largeEnemyShipEnginesOn = content.Load<Texture2D>("Story/enemy_ship_engines_on");
@@ -132,6 +140,8 @@ namespace ProjectDelta
             {
                 monsterPosition[i] = new Vector2(((1600 + 50 * i) * scale), ((600 + 50 * i) * scale));
             }
+
+            storyScriptPosition = new Vector2((300 * scale), (200 * scale));
 
             heroPosition = new Vector2((-300 * scale), (800 * scale));
             hero = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
@@ -287,12 +297,15 @@ namespace ProjectDelta
             if (state == State.heroChases)
             {
                 heroAnimation.Draw(spriteBatch, heroPosition);
+                spriteBatch.Draw(storyScript[3], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
 
             if (state == State.badGuysLanding || state == State.badGuysCapturingCreatures)
             {
                 spriteBatch.Draw(smallEnemyShipEnginesOff, smallEnemyShipOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(smallEnemyShipEnginesOff, smallEnemyShipTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(storyScript[2], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
             }
 
             if (state == State.badGuysLeaving)
@@ -300,11 +313,15 @@ namespace ProjectDelta
                 spriteBatch.Draw(largeEnemyShipEnginesOn, largeEnemyShipPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(smallEnemyShipEnginesOn, smallEnemyShipOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(smallEnemyShipEnginesOn, smallEnemyShipTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(storyScript[3], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
             }
 
             if (state == State.heroLeaving)
             {
                 spriteBatch.Draw(heroShipEnginesOn, heroShipPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(storyScript[4], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
             }
             else
             {
@@ -320,7 +337,14 @@ namespace ProjectDelta
 
                     spriteBatch.Draw(babyCreature[i], babyCreaturePosition[i], null, Color.White, 0f, Vector2.Zero, scale / 2, SpriteEffects.None, 0f);
 
-
+                    if (storyCounter < -15500)
+                    {
+                        spriteBatch.Draw(storyScript[0], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                    }
+                    else
+                    {
+                        spriteBatch.Draw(storyScript[1], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                    }
                 }
             }
 
@@ -334,10 +358,14 @@ namespace ProjectDelta
                     j++;
                     if (j > 1) { j = 0; }
                 }
+                spriteBatch.Draw(storyScript[2], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
             }
             if (state == State.badGuysLanding || state == State.badGuysCapturingCreatures)
             {
                 spriteBatch.Draw(largeEnemyShipEnginesOff, largeEnemyShipPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(storyScript[2], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
             }
             if (state == State.badGuysLeaving)
             {
