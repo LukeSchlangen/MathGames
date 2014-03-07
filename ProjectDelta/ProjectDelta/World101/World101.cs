@@ -73,6 +73,11 @@ namespace ProjectDelta
         private World101Text world101Text = new World101Text();
         private Random random = new Random();
 
+        //sound effects for World 101
+        private SoundEffect soundEffectShieldUp;
+        private SoundEffect soundEffectThud;
+        private SoundEffect soundEffectZap;
+
         private bool answerDone = false;
         private bool showQuestion = true;
         private bool heroDead = false;
@@ -124,6 +129,10 @@ namespace ProjectDelta
             monsterTwo.LoadContent(content);
             wildCreature.LoadContent(content);
             friendlyCreature.LoadContent(content);
+
+            soundEffectShieldUp = content.Load<SoundEffect>("Level1/shield_up");
+            soundEffectThud = content.Load<SoundEffect>("Level1/thud");
+            soundEffectZap = content.Load<SoundEffect>("Level1/zap");
 
             //internetConnectionError = content.Load<Texture2D>("Login/internet_connection_error");
             //internetConnectionErrorPosition = new Vector2((1920 / 2 * scale - internetConnectionError.Width * scale / 2), (1080 / 2 * scale - internetConnectionError.Height * scale / 2));
@@ -254,6 +263,7 @@ namespace ProjectDelta
 
                 if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
                 {
+                    soundEffectThud.Play();
                     stopAll(); //if the monster collides with the hero, stop everything
                 }
 
@@ -473,6 +483,7 @@ namespace ProjectDelta
 
         private void correctAnswer()
         {
+            soundEffectShieldUp.Play();
             hero.shieldAnimate();
             hero.activateShield();
             showQuestion = false;
@@ -564,6 +575,7 @@ namespace ProjectDelta
 
         private void beatMonster()
         {
+            soundEffectZap.Play();
 
             hero.questionUp();
 

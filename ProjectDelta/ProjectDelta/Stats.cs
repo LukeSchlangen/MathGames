@@ -35,9 +35,11 @@ namespace ProjectDelta
         private int screenWidth;
 
         private Texture2D background;
+        private Texture2D statsBackground;
         private Texture2D backButton;
 
         private Vector2 backButtonPosition;
+        private Vector2 statsBackgroundPosition;
         private Vector2 statsPosition;
 
         private Rectangle backButtonCollisionBox;
@@ -60,7 +62,8 @@ namespace ProjectDelta
 
             background = content.Load<Texture2D>("Login/login_background");
             backButton = content.Load<Texture2D>("Login/back_button");
-            backButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
+            statsBackground = content.Load<Texture2D>("Home/stats_background");
+            backButtonPosition = new Vector2(screenWidth / 7, screenHeight * 5 / 6);
             backButtonCollisionBox = new Rectangle(((int)(backButtonPosition.X)), (int)(backButtonPosition.Y), (int)(backButton.Width), (backButton.Height));
 
             font = content.Load<SpriteFont>("input_font");
@@ -85,6 +88,7 @@ namespace ProjectDelta
                 displayedStats += question.question(stageProblems[i]["operation"], stageProblems[i]["factorOne"], stageProblems[i]["factorTwo"]) + "\n";
             }
 
+            statsBackgroundPosition = new Vector2((screenWidth / 2 - statsBackground.Width * scale / 2), (screenHeight / 2 - statsBackground.Height * scale / 2));
             statsPosition = new Vector2((screenWidth / 2 - (font.MeasureString(displayedStats).X) / 2 * scale), 100 * scale);
         }
 
@@ -96,6 +100,8 @@ namespace ProjectDelta
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(background, new Vector2(), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(statsBackground, statsBackgroundPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
             spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.DrawString(font, displayedStats, statsPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }

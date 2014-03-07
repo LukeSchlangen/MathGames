@@ -2136,6 +2136,42 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\smoke_cloud.xnb</Output>
       <Time>2014-03-07T12:49:46.3973044-06:00</Time>
     </Item>
+    <Item>
+      <Source>Level1\shield_up.wav</Source>
+      <Name>Level1\shield_up</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\shield_up.xnb</Output>
+      <Time>2014-03-07T13:31:50.0506491-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\thud.wav</Source>
+      <Name>Level1\thud</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\thud.xnb</Output>
+      <Time>2014-03-07T13:31:50.0546494-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\zap.wav</Source>
+      <Name>Level1\zap</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\zap.xnb</Output>
+      <Time>2014-03-07T13:31:50.0576495-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Home\stats_background.png</Source>
+      <Name>Home\stats_background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\stats_background.xnb</Output>
+      <Time>2014-03-07T14:30:16.5262081-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

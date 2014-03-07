@@ -77,7 +77,7 @@ namespace ProjectDelta
         private Vector2 storyScriptPosition;
         private Animation heroAnimation;
 
-        SoundEffect soundEffect;
+        private SoundEffect soundEffect;
 
         public Story(int screenX, int screenY, float scale)
         {
