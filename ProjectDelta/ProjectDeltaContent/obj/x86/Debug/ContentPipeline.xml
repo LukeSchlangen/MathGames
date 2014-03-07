@@ -2107,7 +2107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\story_4.xnb</Output>
-      <Time>2014-03-06T20:14:42.3301355-06:00</Time>
+      <Time>2014-03-07T12:04:26.2947234-06:00</Time>
     </Item>
     <Item>
       <Source>Story\story_5.png</Source>
@@ -2116,7 +2116,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\story_5.xnb</Output>
-      <Time>2014-03-06T20:14:42.3371359-06:00</Time>
+      <Time>2014-03-07T11:56:29.1884345-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Story\story_audio.wav</Source>
+      <Name>Story\story_audio</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\story_audio.xnb</Output>
+      <Time>2014-03-07T12:36:32.6569051-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

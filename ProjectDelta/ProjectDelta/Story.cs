@@ -73,6 +73,8 @@ namespace ProjectDelta
         private Vector2 storyScriptPosition;
         private Animation heroAnimation;
 
+        SoundEffect soundEffect;
+
         public Story(int screenX, int screenY, float scale)
         {
             this.screenX = screenX;
@@ -88,6 +90,9 @@ namespace ProjectDelta
 
         public void LoadContent(ContentManager content, int screenHeight, int screenWidth)
         {
+
+            soundEffect = content.Load<SoundEffect>("Story/story_audio");
+            soundEffect.Play();
 
             background = content.Load<Texture2D>("Story/story_background");
             //load baby creatures
@@ -143,7 +148,7 @@ namespace ProjectDelta
 
             storyScriptPosition = new Vector2((300 * scale), (200 * scale));
 
-            heroPosition = new Vector2((-300 * scale), (800 * scale));
+            heroPosition = new Vector2((-1250 * scale), (800 * scale));
             hero = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
             heroAnimation = new Animation(hero, heroPosition, 5, 5, scale, 10f);
         }
@@ -152,7 +157,7 @@ namespace ProjectDelta
         {
             if (storyCounter == 1000)
             {
-                storyCounter = -18000;
+                storyCounter = -28000;
             }
 
             constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
@@ -178,7 +183,7 @@ namespace ProjectDelta
                 smallEnemyShipOnePosition.Y -= 5;
                 smallEnemyShipTwoPosition.Y -= 8;
                 largeEnemyShipPosition.Y -= 3;
-                if (storyCounter > -8000)
+                if (storyCounter > -12500)
                 {
 
                     largeEnemyShipPosition.X -= 15;
@@ -201,7 +206,7 @@ namespace ProjectDelta
             {
                 storyCounter += gameTime.ElapsedGameTime.Milliseconds;
             }
-            if (storyCounter >= 0 || (storyCounter >= -12000 && isKeyDown()))
+            if (storyCounter >= 0 || (storyCounter >= -27000 && isKeyDown()))
             {
                 return true;
             }
@@ -211,27 +216,27 @@ namespace ProjectDelta
 
         private void updateState()
         {
-            if (storyCounter < -14000)
+            if (storyCounter < -20000)
             {
                 state = State.happyCreatures;
             }
-            else if (storyCounter < -13500)
+            else if (storyCounter < -19500)
             {
                 state = State.badGuysLanding;
             }
-            else if (storyCounter < -10000)
+            else if (storyCounter < -14500)
             {
                 state = State.badGuysCapturingCreatures;
             }
-            else if (storyCounter < -6000)
+            else if (storyCounter < -10000)
             {
                 state = State.badGuysLeaving;
             }
-            else if (storyCounter < -3200)
+            else if (storyCounter < -5000)
             {
                 state = State.heroChases;
             }
-            else if (storyCounter < -1000)
+            else if (storyCounter < -2000)
             {
                 state = State.heroLeaving;
             }
@@ -313,7 +318,7 @@ namespace ProjectDelta
                 spriteBatch.Draw(largeEnemyShipEnginesOn, largeEnemyShipPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(smallEnemyShipEnginesOn, smallEnemyShipOnePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(smallEnemyShipEnginesOn, smallEnemyShipTwoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.Draw(storyScript[3], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(storyScript[2], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
             }
 
@@ -337,7 +342,7 @@ namespace ProjectDelta
 
                     spriteBatch.Draw(babyCreature[i], babyCreaturePosition[i], null, Color.White, 0f, Vector2.Zero, scale / 2, SpriteEffects.None, 0f);
 
-                    if (storyCounter < -15500)
+                    if (storyCounter < -23000)
                     {
                         spriteBatch.Draw(storyScript[0], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                     }
