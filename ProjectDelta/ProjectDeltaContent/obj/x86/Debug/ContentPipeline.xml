@@ -2127,6 +2127,15 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\story_audio.xnb</Output>
       <Time>2014-03-07T12:36:32.6569051-06:00</Time>
     </Item>
+    <Item>
+      <Source>Story\smoke_cloud.png</Source>
+      <Name>Story\smoke_cloud</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Story\smoke_cloud.xnb</Output>
+      <Time>2014-03-07T12:49:46.3973044-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

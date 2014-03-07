@@ -236,3 +236,4 @@ Content\Story\story_3.xnb
 Content\Story\story_4.xnb
 Content\Story\story_5.xnb
 Content\Story\story_audio.xnb
+Content\Story\smoke_cloud.xnb

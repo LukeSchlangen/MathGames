@@ -55,11 +55,15 @@ namespace ProjectDelta
 
         private Texture2D hero;
 
+        private Texture2D smokeCloud;
+
 
         //set baby creatures position
         private Vector2[] babyCreaturePosition = new Vector2[10];
 
         private Vector2[] monsterPosition = new Vector2[10];
+
+        private Vector2[] smokeCloudPosition = new Vector2[10];
 
         private Vector2 largeEnemyShipPosition;
         private Vector2 smallEnemyShipOnePosition;
@@ -107,7 +111,7 @@ namespace ProjectDelta
             babyCreature[8] = content.Load<Texture2D>("Creatures/wild_creature_140");
             babyCreature[9] = content.Load<Texture2D>("Creatures/wild_creature_145");
 
-            for (int i = 0; i< storyScript.Length; i++)
+            for (int i = 0; i < storyScript.Length; i++)
             {
                 storyScript[i] = content.Load<Texture2D>("Story/story_" + (i + 1));
             }
@@ -122,6 +126,8 @@ namespace ProjectDelta
 
             monster[0] = content.Load<Texture2D>("General/Monsters/enemy_1");
             monster[1] = content.Load<Texture2D>("General/Monsters/enemy_2");
+
+            smokeCloud = content.Load<Texture2D>("Story/smoke_cloud");
 
 
 
@@ -146,6 +152,14 @@ namespace ProjectDelta
                 monsterPosition[i] = new Vector2(((1600 + 50 * i) * scale), ((600 + 50 * i) * scale));
             }
 
+            int j = 0;
+            for (int i = 0; i < smokeCloudPosition.Length; i++)
+            {
+                smokeCloudPosition[i] = new Vector2(((-200 + 100 * i) * scale), ((800 + 80 * j) * scale));
+                j++;
+                if (j > 1) { j = 0; }
+            }
+
             storyScriptPosition = new Vector2((300 * scale), (200 * scale));
 
             heroPosition = new Vector2((-1250 * scale), (800 * scale));
@@ -162,6 +176,23 @@ namespace ProjectDelta
 
             constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
+            if (state == State.badGuysLanding)
+            {
+                for (int i = 0; i < smokeCloudPosition.Length; i++)
+                {
+
+                    smokeCloudPosition[i].Y += 12;
+                    if (i < 5)
+                    {
+                        smokeCloudPosition[i].X -= 50;
+
+                    }
+                    else
+                    {
+                        smokeCloudPosition[i].X += 50;
+                    }
+                }
+            }
             updateState();
             heroAnimation.animateLoop(gameTime, heroPosition);
             if (state != State.badGuysLanding)
@@ -370,7 +401,11 @@ namespace ProjectDelta
             {
                 spriteBatch.Draw(largeEnemyShipEnginesOff, largeEnemyShipPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(storyScript[2], storyScriptPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                for (int i = 0; i < smokeCloudPosition.Length; i++)
+                {
+                    spriteBatch.Draw(smokeCloud, smokeCloudPosition[i], null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
+                }
             }
             if (state == State.badGuysLeaving)
             {
