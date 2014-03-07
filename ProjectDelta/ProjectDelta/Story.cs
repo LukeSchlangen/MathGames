@@ -68,6 +68,7 @@ namespace ProjectDelta
         private Vector2 heroPosition;
 
         private Vector2 backgroundPosition;
+        private Animation heroAnimation;
 
         public Story(int screenX, int screenY, float scale)
         {
@@ -109,7 +110,8 @@ namespace ProjectDelta
             monster[0] = content.Load<Texture2D>("General/Monsters/enemy_1");
             monster[1] = content.Load<Texture2D>("General/Monsters/enemy_2");
 
-            hero = content.Load<Texture2D>("General/Hero/math_hero_character");
+
+
 
             backgroundPosition = new Vector2((screenX / 2 - background.Width * scale / 2), (screenY / 2 - background.Height * scale / 2));
 
@@ -131,7 +133,9 @@ namespace ProjectDelta
                 monsterPosition[i] = new Vector2(((1600 + 50 * i) * scale), ((600 + 50 * i) * scale));
             }
 
-            heroPosition = new Vector2((-100 * scale), (800 * scale));
+            heroPosition = new Vector2((-300 * scale), (800 * scale));
+            hero = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
+            heroAnimation = new Animation(hero, heroPosition, 5, 5, scale, 10f);
         }
 
         public bool Update(GameTime gameTime)
@@ -144,6 +148,7 @@ namespace ProjectDelta
             constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
             updateState();
+            heroAnimation.animateLoop(gameTime, heroPosition);
             if (state != State.badGuysLanding)
             {
                 for (int i = 0; i < babyCreaturePosition.Length; i++)
@@ -172,6 +177,16 @@ namespace ProjectDelta
                 }
             }
 
+            if (state == State.heroChases)
+            {
+                heroPosition.X += 8;
+            }
+
+            if (state == State.heroLeaving)
+            {
+                heroShipPosition.Y -= 10;
+            }
+
             if (storyCounter < 0)
             {
                 storyCounter += gameTime.ElapsedGameTime.Milliseconds;
@@ -198,11 +213,11 @@ namespace ProjectDelta
             {
                 state = State.badGuysCapturingCreatures;
             }
-            else if (storyCounter < -5000)
+            else if (storyCounter < -6000)
             {
                 state = State.badGuysLeaving;
             }
-            else if (storyCounter < -3000)
+            else if (storyCounter < -3200)
             {
                 state = State.heroChases;
             }
@@ -271,8 +286,7 @@ namespace ProjectDelta
 
             if (state == State.heroChases)
             {
-                spriteBatch.Draw(hero, heroPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-
+                heroAnimation.Draw(spriteBatch, heroPosition);
             }
 
             if (state == State.badGuysLanding || state == State.badGuysCapturingCreatures)
