@@ -28,7 +28,8 @@ namespace ProjectDelta
         private MouseState current;
         private MouseState previous;
 
-        private SpriteFont font;
+        private SpriteFont textFont;
+        private SpriteFont stageFont;
 
         private float scale;
         private int screenHeight;
@@ -40,11 +41,20 @@ namespace ProjectDelta
 
         private Vector2 backButtonPosition;
         private Vector2 statsBackgroundPosition;
-        private Vector2 statsPosition;
+        private Vector2 todayStatsPosition;
+        private Vector2 lifetimeStatsPosition;
+        private Vector2 firstHalfPosition;
+        private Vector2 secondHalfPosition;
+        private Vector2 worldStagePosition;
 
         private Rectangle backButtonCollisionBox;
 
-        private string displayedStats = "";
+        private string todayStats = "";
+        private string lifetimeStats = "";
+        private string stage = "";
+        private string currentlyPracticingFirstHalf = "";
+        private string currentlyPracticingSecondHalf = "";
+
 
         private Dictionary<string, int>[] stageProblems;
 
@@ -66,30 +76,42 @@ namespace ProjectDelta
             backButtonPosition = new Vector2(screenWidth / 7, screenHeight * 5 / 6);
             backButtonCollisionBox = new Rectangle(((int)(backButtonPosition.X)), (int)(backButtonPosition.Y), (int)(backButton.Width), (backButton.Height));
 
-            font = content.Load<SpriteFont>("input_font");
+            textFont = content.Load<SpriteFont>("input_font");
+            stageFont = content.Load<SpriteFont>("huge_input_font");
 
             stageProblems = Problems.determineProblems(worldStage, COUNT_TO_CONTINUE);
 
-            displayedStats =
-                "Stats for " + Game1.globalUser.username + "\n\n" +
-                "Time Played Today: " + Game1.globalUser.timePlayedToday / 60000 + " minutes\n" +
-                "Answers Attempted Today: " + Game1.globalUser.answersAttemptedToday + "\n" +
-                "Answers Correct Today: " + Game1.globalUser.answersCorrectToday + "\n" +
-                //"Percent Correct Today: " + (float)((int)(1000 * (float)Game1.globalUser.answersCorrectToday / (float)Game1.globalUser.answersAttemptedToday)) / 10 + "%" + "\n" +
-                "\n" +
+            todayStats =
+                "Time Played: " + Game1.globalUser.timePlayedToday / 60000 + " minutes\n" +
+                "Answers Attempted: " + Game1.globalUser.answersAttemptedToday + "\n" +
+                "Answers Correct: " + Game1.globalUser.answersCorrectToday;
+
+            lifetimeStats =
                 "Time Played: " + Game1.globalUser.timePlayed / 60000 + " minutes\n" +
                 "Answers Attempted: " + Game1.globalUser.answersAttempted + "\n" +
-                "Answers Correct: " + Game1.globalUser.answersCorrect + "\n" +
-                //"Percent Correct: " + (float)((int)(1000 * (float)Game1.globalUser.answersCorrect / (float)Game1.globalUser.answersAttempted)) / 10 + "%" + "\n" +
-                "\nCurrently Working On:\n";
+                "Answers Correct: " + Game1.globalUser.answersCorrect;
+
+            stage = Game1.globalUser.world101.ToString();
+
 
             for (int i = 0; i < COUNT_TO_CONTINUE + 2; i++)
             {
-                displayedStats += question.question(stageProblems[i]["operation"], stageProblems[i]["factorOne"], stageProblems[i]["factorTwo"]) + "\n";
+                if (i < (COUNT_TO_CONTINUE + 2) / 2)
+                {
+                    currentlyPracticingFirstHalf += question.question(stageProblems[i]["operation"], stageProblems[i]["factorOne"], stageProblems[i]["factorTwo"]) + "        ";
+                }
+                else
+                {
+                    currentlyPracticingSecondHalf += question.question(stageProblems[i]["operation"], stageProblems[i]["factorOne"], stageProblems[i]["factorTwo"]) + "        ";
+                }
             }
 
             statsBackgroundPosition = new Vector2((screenWidth / 2 - statsBackground.Width * scale / 2), (screenHeight / 2 - statsBackground.Height * scale / 2));
-            statsPosition = new Vector2((screenWidth / 2 - (font.MeasureString(displayedStats).X) / 2 * scale), 100 * scale);
+            todayStatsPosition = new Vector2(850*scale, 300*scale);
+            lifetimeStatsPosition = new Vector2(1350*scale, 300*scale);
+            firstHalfPosition = new Vector2(900*scale, 800*scale);
+            secondHalfPosition = new Vector2(900*scale, 900*scale);
+            worldStagePosition = new Vector2(300*scale, 300*scale);
         }
 
         public bool Update(GameTime gameTime)
@@ -103,7 +125,11 @@ namespace ProjectDelta
             spriteBatch.Draw(statsBackground, statsBackgroundPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
             spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.DrawString(font, displayedStats, statsPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(textFont, todayStats, todayStatsPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(textFont, lifetimeStats, lifetimeStatsPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(textFont, currentlyPracticingFirstHalf, firstHalfPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(textFont, currentlyPracticingSecondHalf, secondHalfPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(stageFont, stage, worldStagePosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         private bool checkBack()
@@ -114,6 +140,8 @@ namespace ProjectDelta
 
             if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(backButtonCollisionBox))
             {
+                currentlyPracticingFirstHalf = "";
+                currentlyPracticingSecondHalf = "";
                 return true;
             }
 
