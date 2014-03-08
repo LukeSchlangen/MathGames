@@ -139,6 +139,8 @@ namespace ProjectDelta
                 creatures[i].LoadContent(content);
             }
 
+            currentFriendlyCreature = Game1.globalUser.currentFriendlyCreature;
+
             soundEffectShieldUp = content.Load<SoundEffect>("Level1/shield_up");
             soundEffectThud = content.Load<SoundEffect>("Level1/thud");
             soundEffectZap = content.Load<SoundEffect>("Level1/zap");
@@ -180,7 +182,12 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
-            showLatestCreature(gameTime);
+            showLatestCreature();
+
+            if (sessionAnswersAttempted > 0)
+            {
+                sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
+            }
 
             updateCharacters(gameTime); //update the positions of all of the characters
 
@@ -318,13 +325,13 @@ namespace ProjectDelta
 
         }
 
-        private void showLatestCreature(GameTime gameTime)
+        private void showLatestCreature()
         {
             if (worldStage == 0)
             { currentFriendlyCreature = 0; }
             else if (currentFriendlyCreature == -1)
             { currentFriendlyCreature = worldStage - 1; }
-            else if (creatureOrganizer.isCreatureAvailable(worldStage, currentFriendlyCreature))
+            else if (creatureOrganizer.isCreatureAvailable(worldStage, currentFriendlyCreature) || currentFriendlyCreature == worldStage -1)
             {
             }
             else
@@ -332,10 +339,7 @@ namespace ProjectDelta
                 currentFriendlyCreature += 1;
             }
 
-            if (sessionAnswersAttempted > 0)
-            {
-                sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
-            }
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
