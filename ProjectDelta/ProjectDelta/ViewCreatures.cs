@@ -51,6 +51,8 @@ namespace ProjectDelta
         private Rectangle backButtonCollisionBox;
         private Rectangle[] creatureCollisionBox;
 
+
+
         private CreatureOrganizer creatureOrganizer = new CreatureOrganizer(); 
 
         public ViewCreatures(DynamoDBContext context, float scale)

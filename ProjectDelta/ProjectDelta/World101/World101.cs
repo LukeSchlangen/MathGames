@@ -66,9 +66,11 @@ namespace ProjectDelta
         private Hero hero;
         private World101Monster monsterOne;
         private World101Monster monsterTwo;
+        private World101Creature[] creatures = new World101Creature[157];
         private World101Monster currentMonster;
         private World101WildCreature wildCreature;
-        private World101FriendlyCreature friendlyCreature;
+        private CreatureOrganizer creatureOrganizer = new CreatureOrganizer();
+        //private World101FriendlyCreature friendlyCreature;
         private World101Input world101Input;
         private World101Text world101Text = new World101Text();
         private Random random = new Random();
@@ -91,6 +93,7 @@ namespace ProjectDelta
         private int sessionTimePlayed;
         private int sessionAnswersAttempted;
         private int sessionAnswersCorrect;
+        private int currentFriendlyCreature;
 
         //This is an array of HashSets to store problems
         private Dictionary<string, int>[] stageProblems;
@@ -108,7 +111,10 @@ namespace ProjectDelta
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
             wildCreature = new World101WildCreature(2600, 800, scale, backgroundSpeed, screenX);
-            friendlyCreature = new World101FriendlyCreature(scale, backgroundSpeed, screenX);
+            for (int i = 0; i < creatures.Length; i++)
+            {
+                creatures[i] = new World101Creature(i, scale, backgroundSpeed, screenX);
+            }
             currentMonster = monsterOne;
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
@@ -128,7 +134,10 @@ namespace ProjectDelta
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
             wildCreature.LoadContent(content);
-            friendlyCreature.LoadContent(content);
+            for (int i = 0; i < creatures.Length; i++)
+            {
+                creatures[i].LoadContent(content);
+            }
 
             soundEffectShieldUp = content.Load<SoundEffect>("Level1/shield_up");
             soundEffectThud = content.Load<SoundEffect>("Level1/thud");
@@ -152,8 +161,10 @@ namespace ProjectDelta
             monsterOne.setFactors(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
             monsterTwo.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
 
-            friendlyCreature.setMaxNumberOfPowerupUses(1);
-
+            for (int i = 0; i < creatures.Length; i++)
+            {
+                creatures[i].setMaxNumberOfPowerupUses(1);
+            }
             world101Text.LoadContent(content);
 
             //Play music in repeating loop
@@ -169,10 +180,7 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
-            if (sessionAnswersAttempted > 0)
-            {
-                sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
-            }
+            showLatestCreature(gameTime);
 
             updateCharacters(gameTime); //update the positions of all of the characters
 
@@ -216,7 +224,7 @@ namespace ProjectDelta
                 cycleBackground(gameTime); //advance the background to make it look like the hero is moving
 
                 //if the creature has a powerup remaining, and the player presses "S", use the powerup
-                if (friendlyCreature.remainingPowerUp() && keyboard.IsKeyDown(Keys.S) && !heroDead)
+                if (creatures[currentFriendlyCreature].remainingPowerUp() && keyboard.IsKeyDown(Keys.S) && !heroDead)
                 {
                     useCreaturePowerUp(scale);
                 }
@@ -310,13 +318,33 @@ namespace ProjectDelta
 
         }
 
+        private void showLatestCreature(GameTime gameTime)
+        {
+            if (worldStage == 0)
+            { currentFriendlyCreature = 0; }
+            else if (currentFriendlyCreature == -1)
+            { currentFriendlyCreature = worldStage - 1; }
+            else if (creatureOrganizer.isCreatureAvailable(worldStage, currentFriendlyCreature))
+            {
+            }
+            else
+            {
+                currentFriendlyCreature += 1;
+            }
+
+            if (sessionAnswersAttempted > 0)
+            {
+                sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
+            }
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             //draw the backgrounds and characters
             drawExtraObjects(spriteBatch);
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
-            friendlyCreature.Draw(spriteBatch, worldStage);
+            creatures[currentFriendlyCreature].Draw(spriteBatch, worldStage);
             hero.Draw(spriteBatch);
             world101Text.DrawAnswerCount(spriteBatch);
 
@@ -413,7 +441,7 @@ namespace ProjectDelta
             hero.Update(gameTime);
             monsterOne.Update(gameTime);
             monsterTwo.Update(gameTime);
-            friendlyCreature.Update(gameTime, hero.getHeroPosition());
+            creatures[currentFriendlyCreature].Update(gameTime, hero.getHeroPosition());
             if (correctInARow >= countToContinue)
             {
                 wildCreature.Update(gameTime);
@@ -468,7 +496,7 @@ namespace ProjectDelta
             backgroundSpeed = backupBackgroundSpeed;
             monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
             monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
-            friendlyCreature.reset();
+            creatures[currentFriendlyCreature].reset();
             wildCreature.reset();
             currentMonster = monsterOne;
             hero.live();
@@ -554,7 +582,7 @@ namespace ProjectDelta
 
         private void useCreaturePowerUp(float scale)
         {
-            friendlyCreature.usePowerup();
+            creatures[currentFriendlyCreature].usePowerup();
             if (worldStage < 20)
             {
                 shockWave(scale);
