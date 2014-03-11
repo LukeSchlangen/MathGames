@@ -90,7 +90,6 @@
     <Compile Include="Stats.cs" />
     <Compile Include="Story.cs" />
     <Compile Include="ViewCreatures.cs" />
-    <Compile Include="World101\CreatureOrganizer.cs" />
     <Compile Include="World101\World101CreaturePowers.cs" />
     <Compile Include="World101\World101FriendlyCreature.cs" />
     <Compile Include="World101\World101WildCreature.cs" />

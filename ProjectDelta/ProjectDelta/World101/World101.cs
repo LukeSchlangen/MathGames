@@ -37,6 +37,7 @@ namespace ProjectDelta
         private int countToContinue = 10;
         private int correctInARow = 0;
         private int worldStage;
+        private int lifetimeAnswersCorrect;
         private int errorCounter;
 
         private float scale;
@@ -69,7 +70,7 @@ namespace ProjectDelta
         private World101Creature[] creatures = new World101Creature[157];
         private World101Monster currentMonster;
         private World101WildCreature wildCreature;
-        private CreatureOrganizer creatureOrganizer = new CreatureOrganizer();
+        //private CreatureOrganizer creatureOrganizer = new CreatureOrganizer();
         //private World101FriendlyCreature friendlyCreature;
         private World101Input world101Input;
         private World101Text world101Text = new World101Text();
@@ -111,10 +112,6 @@ namespace ProjectDelta
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
             wildCreature = new World101WildCreature(2600, 800, scale, backgroundSpeed, screenX);
-            for (int i = 0; i < creatures.Length; i++)
-            {
-                creatures[i] = new World101Creature(i, scale, backgroundSpeed, screenX);
-            }
             currentMonster = monsterOne;
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
@@ -127,6 +124,10 @@ namespace ProjectDelta
         public void LoadContent(ContentManager content, int worldStage, int COUNT_TO_CONTINUE)
         {
             this.worldStage = worldStage;
+            for (int i = 0; i < creatures.Length; i++)
+            {
+                creatures[i] = new World101Creature(i, worldStage, 0, scale, backgroundSpeed);
+            }
             this.countToContinue = COUNT_TO_CONTINUE;
             loadExtraObjects(content);
             world101Input.LoadContent(content);
@@ -140,6 +141,7 @@ namespace ProjectDelta
             }
 
             currentFriendlyCreature = Game1.globalUser.currentFriendlyCreature;
+            lifetimeAnswersCorrect = Game1.globalUser.answersCorrect;
 
             soundEffectShieldUp = content.Load<SoundEffect>("Level1/shield_up");
             soundEffectThud = content.Load<SoundEffect>("Level1/thud");
@@ -182,7 +184,7 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
-            showLatestCreature();
+            showMostEvolvedCreature();
 
             if (sessionAnswersAttempted > 0)
             {
@@ -196,9 +198,7 @@ namespace ProjectDelta
             //if the player hits esc, save, and return them to the main level
             if (keyboard.IsKeyDown(Keys.Escape))
             {
-                resetStage();
                 saveStats();
-                saveStage();
                 return true;
             }
 
@@ -206,7 +206,6 @@ namespace ProjectDelta
             if (keyboard.IsKeyDown(Keys.Space))
             {
                 saveStats();
-                saveStage();
                 resetStage();
             }
 
@@ -303,7 +302,7 @@ namespace ProjectDelta
                 {
                     state = State.None;
                     errorCounter = 1000;
-                    saveStage(); //save their game (in case they just made it to the end of a level
+                    saveStats(); //save their game (in case they just made it to the end of a level
                     resetStage();
                 }
             }
@@ -325,21 +324,20 @@ namespace ProjectDelta
 
         }
 
-        private void showLatestCreature()
+        private void showMostEvolvedCreature()
         {
             if (worldStage == 0)
             { currentFriendlyCreature = 0; }
             else if (currentFriendlyCreature == -1)
             { currentFriendlyCreature = worldStage - 1; }
-            else if (creatureOrganizer.isCreatureAvailable(worldStage, currentFriendlyCreature) || currentFriendlyCreature == worldStage -1)
+            else if (creatures[currentFriendlyCreature].getAvailability() || currentFriendlyCreature == worldStage -1)
             {
+                //do nothing, don't need to change creature if the creature is available
             }
             else
             {
                 currentFriendlyCreature += 1;
             }
-
-
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -348,7 +346,10 @@ namespace ProjectDelta
             drawExtraObjects(spriteBatch);
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
-            creatures[currentFriendlyCreature].Draw(spriteBatch, worldStage);
+            if (worldStage != 0)
+            {
+                creatures[currentFriendlyCreature].Draw(spriteBatch);
+            }
             hero.Draw(spriteBatch);
             world101Text.DrawAnswerCount(spriteBatch);
 
@@ -476,31 +477,27 @@ namespace ProjectDelta
 
         public void resetStage()
         {
-            if (correctInARow >= countToContinue)
+            if (worldStage < 10)
             {
-                //This block of code is only executed once between successful level
-                //completion instead of the usual 60 times per second.              
-                worldStage++;
-                if (worldStage < 10)
-                {
-                    bgToDraw = 1;
-                }
-                if (worldStage >= 10 && worldStage < 20)
-                {
-                    bgToDraw = 2;
-                }
-                if (worldStage >= 20)
-                {
-                    bgToDraw = 3;
-                }
-
+                bgToDraw = 1;
+            }
+            if (worldStage >= 10 && worldStage < 20)
+            {
+                bgToDraw = 2;
+            }
+            if (worldStage >= 20)
+            {
+                bgToDraw = 3;
             }
             correctInARow = 0;
             stageProblems = Problems.determineProblems(worldStage, countToContinue);
             backgroundSpeed = backupBackgroundSpeed;
             monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
             monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
-            creatures[currentFriendlyCreature].reset();
+            for (int i = 0; i < creatures.Length; i++)
+            {
+                creatures[i].reset(worldStage);
+            }
             wildCreature.reset();
             currentMonster = monsterOne;
             hero.live();
@@ -530,18 +527,34 @@ namespace ProjectDelta
 
         private void saveStats()
         {
+            stopAll();
             if (sessionAnswersAttempted > 0)
             {
+                if (correctInARow >= countToContinue)
+                {
+                    //This block of code is only executed once between successful level
+                    //completion instead of the usual 60 times per second.              
+                    worldStage++;
+                }
+
+                if (worldStage >= MAX_STAGE)
+                {
+                    worldStage = MAX_STAGE;
+                }
+
                 try
                 {
                     new DailyStats(context).resetDailyStats();
                     Game1.globalUser.answersAttempted += sessionAnswersAttempted;
                     Game1.globalUser.answersAttemptedToday += sessionAnswersAttempted;
                     Game1.globalUser.answersCorrect += sessionAnswersCorrect;
+                    lifetimeAnswersCorrect += sessionAnswersCorrect;
                     Game1.globalUser.answersCorrectToday += sessionAnswersCorrect;
                     Game1.globalUser.timePlayed += sessionTimePlayed;
                     Game1.globalUser.timePlayedToday += sessionTimePlayed;
                     Game1.globalUser.lastDatePlayed = DateTime.Today;
+                    Game1.globalUser.currentFriendlyCreature = currentFriendlyCreature;
+                    Game1.globalUser.world101 = worldStage;
                     context.Save<User>(Game1.globalUser);
                     sessionAnswersAttempted = 0;
                     sessionAnswersCorrect = 0;
@@ -555,29 +568,26 @@ namespace ProjectDelta
             }
         }
 
-        private void saveStage()
-        {
-            stopAll();
-            if (worldStage >= MAX_STAGE)
-            {
-                worldStage = MAX_STAGE;
-            }
+        //private void saveStage()
+        //{
 
-            if (worldStage > Game1.globalUser.world101)
-            {
-                try
-                {
-                    Game1.globalUser.world101 = worldStage;
-                    context.Save<User>(Game1.globalUser);
-                    internetConnection = true;
-                }
-                catch
-                {
-                    //state = State.InternetConnectionError;
-                    internetConnection = false;
-                }
-            }
-        }
+
+
+        //    if (worldStage > Game1.globalUser.world101)
+        //    {
+        //        try
+        //        {
+
+        //            context.Save<User>(Game1.globalUser);
+        //            internetConnection = true;
+        //        }
+        //        catch
+        //        {
+        //            //state = State.InternetConnectionError;
+        //            internetConnection = false;
+        //        }
+        //    }
+        //}
 
         private void resetTimer()
         {

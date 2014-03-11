@@ -87,7 +87,7 @@ namespace ProjectDelta
                 {
                     creature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.currentFriendlyCreature));
                 }
-                    creaturePosition = new Vector2((screenWidth / 2 - creature.Width * scale / 2), (screenHeight / 2 - creature.Height * scale / 2));
+                creaturePosition = new Vector2((screenWidth / 2 - creature.Width * scale / 2), (screenHeight / 2 - creature.Height * scale / 2));
                 creatureCollisionBox = new Rectangle(((int)(world101BoxPosition.X)), ((int)(world101BoxPosition.Y)), ((int)(world101ButtonPosition.X)), ((int)(world101ButtonPosition.Y)));
             }
 
@@ -135,7 +135,7 @@ namespace ProjectDelta
             {
                 return -2;
             }
-            
+
             if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(creatureCollisionBox))
             {
                 return -3;

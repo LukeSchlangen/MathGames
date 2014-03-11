@@ -52,9 +52,6 @@ namespace ProjectDelta
 
             for (int i = 0; i < wildCreatures.Length; i++)
             {
-                //simply put the creatures in the numerical order that you want them to appear
-                //following the naming convention wild_creature_i.png in the creatures directory
-                //for final version replace j with i
                 Texture2D wildCreatureToLoad = content.Load<Texture2D>("Creatures/wild_creature_" + i); //load the creatures in order so that the creature that appears corresponds with the world stage
                 wildCreatures[i] = wildCreatureToLoad;
             }
@@ -80,6 +77,13 @@ namespace ProjectDelta
         {
             return collisionBox;
         }
+
+        public void setCollisionBox(Rectangle collisionBox)
+        {
+            this.collisionBox = collisionBox;
+        }
+
+
 
         public void stop()
         {
