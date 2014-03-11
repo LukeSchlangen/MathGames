@@ -142,15 +142,19 @@ namespace ProjectDelta
             hover = false;
             for (int i = 0; i < creatures.Length; i++)
             {
-                if (mousePosition.Intersects(creatures[i].getCollisionBox()))
+                if (creatures[i].getAvailability())
                 {
-                    textBubblePosition = new Vector2(creatures[i].getCollisionBox().X + 100*scale, creatures[i].getCollisionBox().Y);
-                    creatureText = "Name: " + creatures[i].getCreatureName() + "\n" + 
-                        "Type: " + creatures[i].getCreatureType() +"\n" + 
-                        "Level: " + creatures[i].getCreatureLevel(Game1.globalUser.world101, lifetimeAnswersCorrect, Game1.globalUser.answersAttempted) + "\n" + 
-                        "Description: \nThis creature \n is really nice.";
-                    fontPosition = new Vector2(textBubblePosition.X + 55 * scale, textBubblePosition.Y + 10 * scale);
-                    hover = true;
+
+                    if (mousePosition.Intersects(creatures[i].getCollisionBox()))
+                    {
+                        textBubblePosition = new Vector2(creatures[i].getCollisionBox().X + 100 * scale, creatures[i].getCollisionBox().Y);
+                        creatureText = "Name: " + creatures[i].getCreatureName() + "\n" +
+                            "Type: " + creatures[i].getCreatureType() + "\n" +
+                            "Level: " + creatures[i].getCreatureLevel(Game1.globalUser.world101, lifetimeAnswersCorrect, Game1.globalUser.answersAttempted) + "\n" +
+                            "Description: \nThis creature \n is really nice.";
+                        fontPosition = new Vector2(textBubblePosition.X + 55 * scale, textBubblePosition.Y + 10 * scale);
+                        hover = true;
+                    }
                 }
             }
 

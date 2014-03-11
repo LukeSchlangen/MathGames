@@ -56,18 +56,23 @@ namespace ProjectDelta
         private Texture2D thirdBackgroundOne;
         private Texture2D thirdBackgroundTwo;
         private Texture2D thirdBackgroundThree;
+        private Texture2D keyboardImage;
+        private Texture2D nextLevelKeyboardImage;
+        private Texture2D statusBar;
         private Texture2D internetConnectionWarning;
 
         //Vectors for level 1
         private Vector2 backgroundOnePosition;
         private Vector2 backgroundTwoPosition;
         private Vector2 backgroundThreePosition;
+        private Vector2 keyboardImagePosition;
+        private Vector2 statusBarPosition;
         private Vector2 internetConnectionWarningPosition;
 
         private Hero hero;
         private World101Monster monsterOne;
         private World101Monster monsterTwo;
-        private World101Creature[] creatures = new World101Creature[157];
+        private World101Creature[] creatures = new World101Creature[163];
         private World101Monster currentMonster;
         private World101WildCreature wildCreature;
         //private CreatureOrganizer creatureOrganizer = new CreatureOrganizer();
@@ -147,9 +152,13 @@ namespace ProjectDelta
             soundEffectThud = content.Load<SoundEffect>("Level1/thud");
             soundEffectZap = content.Load<SoundEffect>("Level1/zap");
 
-            //internetConnectionError = content.Load<Texture2D>("Login/internet_connection_error");
-            //internetConnectionErrorPosition = new Vector2((1920 / 2 * scale - internetConnectionError.Width * scale / 2), (1080 / 2 * scale - internetConnectionError.Height * scale / 2));
+            statusBar = content.Load<Texture2D>("Level1/status_bar");
+            statusBarPosition = new Vector2(700 * scale, 50 * scale);
 
+            keyboardImage = content.Load<Texture2D>("Level1/keyboard_image");
+            nextLevelKeyboardImage = content.Load<Texture2D>("Level1/next_level_keyboard");
+            keyboardImagePosition = new Vector2((1920/2*scale - keyboardImage.Width * scale / 2), (1080*2/5*scale - keyboardImage.Height*scale/2));
+            
             internetConnectionWarning = content.Load<Texture2D>("General/internet_connection_warning");
             internetConnectionWarningPosition = new Vector2(50 * scale, 50 * scale);
 
@@ -330,7 +339,7 @@ namespace ProjectDelta
             { currentFriendlyCreature = 0; }
             else if (currentFriendlyCreature == -1)
             { currentFriendlyCreature = worldStage - 1; }
-            else if (creatures[currentFriendlyCreature].getAvailability() || currentFriendlyCreature == worldStage -1)
+            else if (creatures[currentFriendlyCreature].getAvailability() || currentFriendlyCreature == worldStage - 1)
             {
                 //do nothing, don't need to change creature if the creature is available
             }
@@ -351,6 +360,7 @@ namespace ProjectDelta
                 creatures[currentFriendlyCreature].Draw(spriteBatch);
             }
             hero.Draw(spriteBatch);
+            spriteBatch.Draw(statusBar, statusBarPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             world101Text.DrawAnswerCount(spriteBatch);
 
             if (showQuestion && correctInARow < countToContinue)
@@ -359,11 +369,12 @@ namespace ProjectDelta
             }
             if (correctInARow >= countToContinue)
             {
-                world101Text.DrawCongratsMsg(spriteBatch); //draw the congratulations message to the student upon completion
+                spriteBatch.Draw(nextLevelKeyboardImage, keyboardImagePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                //world101Text.DrawCongratsMsg(spriteBatch); //draw the congratulations message to the student upon completion
             }
             if (heroDead)
             {
-                world101Text.DrawDeadMsg(spriteBatch); //if the hero is dead, show them the message telling them how to restart
+                spriteBatch.Draw(keyboardImage, keyboardImagePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             if (!collected)
             {
@@ -553,6 +564,11 @@ namespace ProjectDelta
                     Game1.globalUser.timePlayed += sessionTimePlayed;
                     Game1.globalUser.timePlayedToday += sessionTimePlayed;
                     Game1.globalUser.lastDatePlayed = DateTime.Today;
+                    for (int i = 0; i < creatures.Length; i++)
+                    {
+                        creatures[i].reset(worldStage);
+                    }
+                    showMostEvolvedCreature();
                     Game1.globalUser.currentFriendlyCreature = currentFriendlyCreature;
                     Game1.globalUser.world101 = worldStage;
                     context.Save<User>(Game1.globalUser);
@@ -567,27 +583,6 @@ namespace ProjectDelta
                 }
             }
         }
-
-        //private void saveStage()
-        //{
-
-
-
-        //    if (worldStage > Game1.globalUser.world101)
-        //    {
-        //        try
-        //        {
-
-        //            context.Save<User>(Game1.globalUser);
-        //            internetConnection = true;
-        //        }
-        //        catch
-        //        {
-        //            //state = State.InternetConnectionError;
-        //            internetConnection = false;
-        //        }
-        //    }
-        //}
 
         private void resetTimer()
         {

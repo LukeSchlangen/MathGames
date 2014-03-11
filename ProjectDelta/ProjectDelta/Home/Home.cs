@@ -96,6 +96,7 @@ namespace ProjectDelta
 
         public int Update(GameTime gameTime)
         {
+            
             return checkClick();
         }
 

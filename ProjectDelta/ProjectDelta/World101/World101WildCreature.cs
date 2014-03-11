@@ -23,7 +23,7 @@ namespace ProjectDelta
 {
     class World101WildCreature
     {
-        private Texture2D[] wildCreatures = new Texture2D[157];
+        private Texture2D[] wildCreatures = new Texture2D[163];
         private Vector2 position;
         private Vector2 startingPosition;
         private Rectangle collisionBox;

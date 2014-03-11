@@ -25,6 +25,7 @@ namespace ProjectDelta
     {
         SpriteFont font;
         Vector2 questionFontPosition;
+        Vector2 stageStringPosition;
         Vector2 correctAnswerCountPosition;
         Vector2 congratsPosition;
 
@@ -33,6 +34,7 @@ namespace ProjectDelta
 
         QuestionFormat questionObject = new QuestionFormat();
         string questionString = "";
+        string stageString = "";
         string correctAnswerCount = "";
         string congrats = "";
         string dead = "";
@@ -46,7 +48,8 @@ namespace ProjectDelta
         {
             font = content.Load<SpriteFont>("large_input_font");
             questionFontPosition = new Vector2(285 * scale, 660 * scale);
-            correctAnswerCountPosition = new Vector2(1250 * scale, 50 * scale);
+            stageStringPosition = new Vector2(1000 * scale, 70 * scale);
+            correctAnswerCountPosition = new Vector2(1525 * scale, 70 * scale);
             congratsPosition = new Vector2((1920 / 16) * scale, (1080 / 4) * scale);
         }
 
@@ -56,7 +59,8 @@ namespace ProjectDelta
             //this is so it can be used in stats as well without the answer
             questionString = questionObject.question(operationValue, factorOne, factorTwo) + " = " + myAnswer;
 
-            correctAnswerCount = "Stage " + stage + ": " + answerCount + "/" + countToContinue;
+            stageString = stage.ToString();
+            correctAnswerCount = answerCount + "/" + countToContinue;
             congrats = "Congratulations on finishing stage " + stage + "! \nPress SPACE to continue forward.\nPress ESC to return home.";
             dead = "Aww... you died. \nPress SPACE to try again.\nPress ESC to return home.";
         }
@@ -68,6 +72,7 @@ namespace ProjectDelta
 
         public void DrawAnswerCount(SpriteBatch spriteBatch)
         {
+            spriteBatch.DrawString(font, stageString, stageStringPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.DrawString(font, correctAnswerCount, correctAnswerCountPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 

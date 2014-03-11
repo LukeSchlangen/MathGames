@@ -221,6 +221,9 @@ namespace ProjectDelta
                 case 157:
                     mostEvolved = true;
                     break;
+                case 163:
+                    mostEvolved = true;
+                    break;
                 default:
                     mostEvolved = false;
                     break;
@@ -360,6 +363,11 @@ namespace ProjectDelta
             {
                 creatureName = "Wisdo";
                 creatureType = "Freezer";
+            }
+            else if (creatureNumber < 164)
+            {
+                creatureName = "Zwiggle";
+                creatureType = "Zapper";
             }
             else
             {
