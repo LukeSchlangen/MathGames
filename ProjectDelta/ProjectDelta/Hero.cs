@@ -42,11 +42,11 @@ namespace ProjectDelta
         private bool dead = false;
 
         private float constantlyIncreasingNumber;
-        private float oscilatingNumber;
 
         private Vector2 heroPosition;
         private Vector2 heroStartingPosition;
         private Vector2 shieldPosition;
+        private Vector2 shieldStartingPosition;
 
         private Texture2D heroRunning;
         private Texture2D shield;
@@ -74,6 +74,7 @@ namespace ProjectDelta
             heroCollisionBox = new Rectangle((int)((heroStartingPosition.X) - 150 * scale), (int)(heroStartingPosition.Y), (int)(heroAnimation.getWidth() * scale), heroAnimation.getHeight());
             shieldPosition.X = heroAnimation.getAnimationPosition().X - 40 * scale;
             shieldPosition.Y = heroAnimation.getAnimationPosition().Y - 200 * scale;
+            shieldStartingPosition = new Vector2(shieldPosition.X, shieldPosition.Y);
             shieldAnimation = new Animation(shield, shieldPosition, 3, 3, scale, 30f);
             shieldCollisionBox = new Rectangle(((int)(shieldPosition.X) + (int)(275 * scale)), ((int)(shieldPosition.Y)), (int)(100 * scale), (int)(1000 * scale));
             activatedShieldCollisionBoxPosition = shieldCollisionBox;
@@ -111,8 +112,10 @@ namespace ProjectDelta
             {
                 if (state == State.StageSuccess)
                 {
+                        shieldAnimation.getLastState();
+                    shieldPosition.X += 20 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
                     heroPosition.X += 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-                }
+                                    }
                 
                 if (state == State.Death)
                 {
@@ -134,10 +137,8 @@ namespace ProjectDelta
 
             heroAnimation.Draw(spriteBatch, heroPosition);
 
-            if (state != State.StageSuccess)
-            {
                 shieldAnimation.Draw(spriteBatch, shieldPosition);
-            }
+
         }
 
         public void shieldAnimate()
@@ -220,9 +221,10 @@ namespace ProjectDelta
 
         public void start()
         {
+            heroPosition = heroStartingPosition;
+            shieldPosition = shieldStartingPosition;
             state = State.Question;
             speed = .1f;
-            heroPosition = heroStartingPosition;
             heroStop = false;
         }
 

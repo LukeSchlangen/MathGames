@@ -157,8 +157,8 @@ namespace ProjectDelta
 
             keyboardImage = content.Load<Texture2D>("Level1/keyboard_image");
             nextLevelKeyboardImage = content.Load<Texture2D>("Level1/next_level_keyboard");
-            keyboardImagePosition = new Vector2((1920/2*scale - keyboardImage.Width * scale / 2), (1080*2/5*scale - keyboardImage.Height*scale/2));
-            
+            keyboardImagePosition = new Vector2((1920 / 2 * scale - keyboardImage.Width * scale / 2), (1080 * 2 / 5 * scale - keyboardImage.Height * scale / 2));
+
             internetConnectionWarning = content.Load<Texture2D>("General/internet_connection_warning");
             internetConnectionWarningPosition = new Vector2(50 * scale, 50 * scale);
 
@@ -245,6 +245,8 @@ namespace ProjectDelta
                 }
 
                 //if both monsters are off screen, make sure they are in order (special powers can make this out of sync)
+                
+                
                 if (monsterOne != currentMonster)
                 {
                     if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterOne.dead)
@@ -286,12 +288,18 @@ namespace ProjectDelta
 
                 if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
                 {
-                    soundEffectThud.Play();
-                    stopAll(); //if the monster collides with the hero, stop everything
+                    if (world101Input.getInput().Equals("") == false && currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getInput()))
+                    {
+                        correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
+                        currentMonster.setSpeed(backgroundSpeed * 2); //monster speeds up so player doesn't have to wait
+                    }
+                    else
+                    {
+                        sessionAnswersAttempted++;
+                        soundEffectThud.Play();
+                        stopAll(); //if the player has the wrong answer, stop everything
+                    }
                 }
-
-                //You'll also need to make some changes here to the text class to properly display
-                //the questions operator (right now it always assumes its the + operator)
             }
 
             //This determines if the level should restart on the student
@@ -586,6 +594,7 @@ namespace ProjectDelta
 
         private void resetTimer()
         {
+            errorCounter = 1000;
             state = State.ResetTimer;
         }
 

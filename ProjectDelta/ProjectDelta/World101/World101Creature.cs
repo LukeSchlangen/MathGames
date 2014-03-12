@@ -45,6 +45,7 @@ namespace ProjectDelta
             this.scale = scale;
             this.speed = speed;
             this.creatureNumber = creatureNumber;
+            this.creatureLevel = worldStage - creatureNumber;
             setAttributes(worldStage);
             maxNumberOfPowerUpUses = creatureLevel / 20;
             if (maxNumberOfPowerUpUses > 3) { maxNumberOfPowerUpUses = 3; }

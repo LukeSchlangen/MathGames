@@ -159,6 +159,11 @@ namespace ProjectDelta
             return lastInput;
         }
 
+        public string getInput()
+        {
+            return input;
+        }
+
         public void resetInput()
         {
             input = "";
