@@ -462,13 +462,18 @@ namespace ProjectDelta
                 else
                 {
                     creatures[currentFriendlyCreature].Draw(spriteBatch);
-                    creatures[tabletCreatureNumber].Draw(spriteBatch);
+                    if (creatures[worldStage -1].getCreatureName() != creatures[worldStage].getCreatureName())
+                    {
+                        creatures[tabletCreatureNumber].Draw(spriteBatch);
+                    }
                 }
+
+ 
 
                 spriteBatch.Draw(nextLevelKeyboardImage, keyboardImagePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(creatureTablet, creatureTabletPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                spriteBatch.Draw(startButton, startButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(creatures[tabletCreatureNumber].getCreatureImage(), tabletCreaturePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(startButton, startButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 //spriteBatch.Draw(creatures[worldStage].getCreatureImage(), creatures[worldStage].getPosition(), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             if (heroDead)
