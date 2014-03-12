@@ -45,16 +45,9 @@ namespace ProjectDelta
 
         public void LoadContent(ContentManager content)
         {
-            if (Game1.globalUser.world101 - 1 >= 0)
+            if (Game1.globalUser.world101 > 0)
             {
-                if (Game1.globalUser.currentFriendlyCreature == -1)
-                {
-                    friendlyCreature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.world101 - 1));
-                }
-                else
-                {
-                    friendlyCreature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.currentFriendlyCreature));
-                }
+                friendlyCreature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.currentFriendlyCreature));
             }
             else
             {
@@ -64,12 +57,12 @@ namespace ProjectDelta
 
         public void Update(GameTime gameTime, Vector2 heroPosition)
         {
-                position.X = heroPosition.X - friendlyCreature.Width * scale + 130 * scale;
-                position.Y = heroPosition.Y - friendlyCreature.Height * scale;
+            position.X = heroPosition.X - friendlyCreature.Width * scale + 130 * scale;
+            position.Y = heroPosition.Y - friendlyCreature.Height * scale;
 
             //bouncing
-                constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-                position.Y += 10* (float)Math.Sin(constantlyIncreasingNumber / 6) * scale;
+            constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            position.Y += 10 * (float)Math.Sin(constantlyIncreasingNumber / 6) * scale;
         }
 
         public void Draw(SpriteBatch spriteBatch, int worldStage)

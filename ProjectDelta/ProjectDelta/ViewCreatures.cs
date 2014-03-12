@@ -168,7 +168,7 @@ namespace ProjectDelta
                 {
 
 
-                    if (mousePosition.Intersects(creatures[i].getCollisionBox()))
+                    if (mousePosition.Intersects(creatures[i].getCollisionBox()) && creatures[i].getAvailability())
                     {
                         try
                         {

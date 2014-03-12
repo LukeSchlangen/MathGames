@@ -2262,6 +2262,24 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\next_level_keyboard.xnb</Output>
       <Time>2014-03-11T15:17:23.2918524-05:00</Time>
     </Item>
+    <Item>
+      <Source>Level1\creature_tablet.png</Source>
+      <Name>Level1\creature_tablet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\creature_tablet.xnb</Output>
+      <Time>2014-03-12T10:23:51.20378-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\creature_tablet_start_button.png</Source>
+      <Name>Level1\creature_tablet_start_button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\creature_tablet_start_button.xnb</Output>
+      <Time>2014-03-12T09:58:32.1908975-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

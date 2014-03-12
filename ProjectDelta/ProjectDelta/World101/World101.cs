@@ -34,11 +34,12 @@ namespace ProjectDelta
 
         private static int MAX_STAGE = 1000;
         DynamoDBContext context;
-        private int countToContinue = 10;
+        private int countToContinue;
         private int correctInARow = 0;
         private int worldStage;
         private int lifetimeAnswersCorrect;
-        private int errorCounter;
+        private int resetCounter;
+        private int tabletCreatureNumber;
 
         private float scale;
 
@@ -59,6 +60,8 @@ namespace ProjectDelta
         private Texture2D keyboardImage;
         private Texture2D nextLevelKeyboardImage;
         private Texture2D statusBar;
+        private Texture2D creatureTablet;
+        private Texture2D startButton;
         private Texture2D internetConnectionWarning;
 
         //Vectors for level 1
@@ -67,14 +70,24 @@ namespace ProjectDelta
         private Vector2 backgroundThreePosition;
         private Vector2 keyboardImagePosition;
         private Vector2 statusBarPosition;
+        private Vector2 creatureTabletPosition;
+        private Vector2 startButtonPosition;
+        private Vector2 tabletCreaturePosition;
         private Vector2 internetConnectionWarningPosition;
+
+        //Collision Boxes
+        private Rectangle startButtonCollisionBox;
+
+        //Mouse states
+        private MouseState currentMouseState;
+        private MouseState previousMouseState;
 
         private Hero hero;
         private World101Monster monsterOne;
         private World101Monster monsterTwo;
         private World101Creature[] creatures = new World101Creature[163];
         private World101Monster currentMonster;
-        private World101WildCreature wildCreature;
+        //private World101Creature wildCreature;
         //private CreatureOrganizer creatureOrganizer = new CreatureOrganizer();
         //private World101FriendlyCreature friendlyCreature;
         private World101Input world101Input;
@@ -89,8 +102,8 @@ namespace ProjectDelta
         private bool answerDone = false;
         private bool showQuestion = true;
         private bool heroDead = false;
-        private bool collected = false;
         private bool internetConnection = true;
+        private bool spaceDown = false;
 
         private int bgToDraw = 1;
 
@@ -116,12 +129,12 @@ namespace ProjectDelta
             hero = new Hero();
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
-            wildCreature = new World101WildCreature(2600, 800, scale, backgroundSpeed, screenX);
+            //wildCreature = new World101WildCreature(2600, 800, scale, backgroundSpeed, screenX);
             currentMonster = monsterOne;
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
             world101Text.Initialize(scale);
-            errorCounter = 1000;
+            resetCounter = 1000;
         }
 
         //Specifies which content is loaded for level 1
@@ -139,11 +152,15 @@ namespace ProjectDelta
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
-            wildCreature.LoadContent(content);
+
             for (int i = 0; i < creatures.Length; i++)
             {
                 creatures[i].LoadContent(content);
             }
+
+            //wildCreature = creatures[worldStage];
+            //wildCreature.setPosition(new Vector2(2600 * scale, 800 * scale));
+            //wildCreature.LoadContent(content);
 
             currentFriendlyCreature = Game1.globalUser.currentFriendlyCreature;
             lifetimeAnswersCorrect = Game1.globalUser.answersCorrect;
@@ -157,7 +174,25 @@ namespace ProjectDelta
 
             keyboardImage = content.Load<Texture2D>("Level1/keyboard_image");
             nextLevelKeyboardImage = content.Load<Texture2D>("Level1/next_level_keyboard");
-            keyboardImagePosition = new Vector2((1920 / 2 * scale - keyboardImage.Width * scale / 2), (1080 * 2 / 5 * scale - keyboardImage.Height * scale / 2));
+            keyboardImagePosition = new Vector2((1920 * 2 / 3 * scale - keyboardImage.Width * scale / 2), (1080 * 2 / 5 * scale - keyboardImage.Height * scale / 2));
+
+            creatureTablet = content.Load<Texture2D>("Level1/creature_tablet");
+            creatureTabletPosition = new Vector2(10 * scale, 10 * scale);
+
+            if (worldStage > 0)
+            {
+                tabletCreatureNumber = worldStage - 1;
+            }
+            else
+            {
+                tabletCreatureNumber = 0;
+            }
+
+            tabletCreaturePosition = new Vector2(20 * scale, 20 * scale);
+
+            startButton = content.Load<Texture2D>("Level1/creature_tablet_start_button");
+            startButtonPosition = new Vector2((creatureTabletPosition.X + creatureTablet.Width / 2 - startButton.Width / 2) * scale, (creatureTabletPosition.Y + creatureTablet.Height * 6 / 7 - startButton.Height / 2) * scale);
+            startButtonCollisionBox = new Rectangle((int)startButtonPosition.X, (int)startButtonPosition.Y, startButton.Width, startButton.Height);
 
             internetConnectionWarning = content.Load<Texture2D>("General/internet_connection_warning");
             internetConnectionWarningPosition = new Vector2(50 * scale, 50 * scale);
@@ -178,6 +213,9 @@ namespace ProjectDelta
             {
                 creatures[i].setMaxNumberOfPowerupUses(1);
             }
+
+            creatures[worldStage].setPosition(new Vector2((2200) * scale, hero.getHeroPosition().Y));
+
             world101Text.LoadContent(content);
 
             //Play music in repeating loop
@@ -193,8 +231,6 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
-            showMostEvolvedCreature();
-
             if (sessionAnswersAttempted > 0)
             {
                 sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
@@ -212,30 +248,27 @@ namespace ProjectDelta
             }
 
             //if the player hits space, save and restart the level
-            if (keyboard.IsKeyDown(Keys.Space))
+            spaceDown = keyboard.IsKeyDown(Keys.Space);
+            if (spaceDown || checkClick())
             {
                 saveStats();
                 resetStage();
+                spaceDown = false;
             }
 
             //if they have answered all of the questions and the level is over...
-            else if (correctInARow >= countToContinue)
+            if (correctInARow >= countToContinue)
             {
                 //if the level is over, get rid of the monsters
                 monsterOne.monsterDeath();
                 monsterTwo.monsterDeath();
                 hero.stageSuccess(); //hero goes accross screen to collect creature
                 resetTimer(); //reset the error timer
-
-                //when the hero gets to the creature, have him stop
-                if (hero.getHeroCollisionBox().Intersects(wildCreature.getCollisionBox()))
-                {
-                    hero.stop();
-                    wildCreature.stop();
-                }
+                creatureEvolution(gameTime);
             }
             else
             {
+                showMostEvolvedCreature();
                 cycleBackground(gameTime); //advance the background to make it look like the hero is moving
 
                 //if the creature has a powerup remaining, and the player presses "S", use the powerup
@@ -245,8 +278,8 @@ namespace ProjectDelta
                 }
 
                 //if both monsters are off screen, make sure they are in order (special powers can make this out of sync)
-                
-                
+
+
                 if (monsterOne != currentMonster)
                 {
                     if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterOne.dead)
@@ -302,23 +335,25 @@ namespace ProjectDelta
                 }
             }
 
+
+
             //This determines if the level should restart on the student
             //it's to make sure the student doesn't just stop playing,
             //but nothing bad happens if they walk away
             if (state == State.ResetTimer)
             {
-                if (errorCounter == 1000)
+                if (resetCounter == 1000)
                 {
-                    errorCounter = -15000;
+                    resetCounter = -15000;
                 }
-                if (errorCounter < 0)
+                if (resetCounter < 0)
                 {
-                    errorCounter += gameTime.ElapsedGameTime.Milliseconds;
+                    resetCounter += gameTime.ElapsedGameTime.Milliseconds;
                 }
-                if (errorCounter >= 0)
+                if (resetCounter >= 0)
                 {
                     state = State.None;
-                    errorCounter = 1000;
+                    resetCounter = 1000;
                     saveStats(); //save their game (in case they just made it to the end of a level
                     resetStage();
                 }
@@ -343,10 +378,13 @@ namespace ProjectDelta
 
         private void showMostEvolvedCreature()
         {
-            if (worldStage == 0)
+            if (currentFriendlyCreature < 0 || currentFriendlyCreature > worldStage)
+            {
+                currentFriendlyCreature = worldStage - 1;
+            }
+
+            if (worldStage < 0 || currentFriendlyCreature < 0)
             { currentFriendlyCreature = 0; }
-            else if (currentFriendlyCreature == -1)
-            { currentFriendlyCreature = worldStage - 1; }
             else if (creatures[currentFriendlyCreature].getAvailability() || currentFriendlyCreature == worldStage - 1)
             {
                 //do nothing, don't need to change creature if the creature is available
@@ -357,13 +395,53 @@ namespace ProjectDelta
             }
         }
 
+        private void creatureEvolution(GameTime gameTime)
+        {
+            
+            if (worldStage > 0 && creatures[worldStage - 1].getCreatureName() == creatures[worldStage].getCreatureName())
+            {
+                //show evolution in creature tablet
+                if (((int)(resetCounter / -200))%2 == 0 && resetCounter<-13000)
+                {
+                    tabletCreatureNumber = worldStage - 1;
+                }
+                else
+                {
+                    tabletCreatureNumber = worldStage;
+                }
+
+
+                if (creatures[currentFriendlyCreature].getCreatureName() == creatures[tabletCreatureNumber].getCreatureName())
+                {
+                    
+                    //currentFriendlyCreature = tabletCreatureNumber;
+                }
+
+            }
+            else
+            {
+
+                //TODO
+                tabletCreatureNumber = worldStage;//show new baby creature in creature tablet
+                if (hero.getHeroPosition().X < 2600 * scale - hero.getHeroPosition().X)
+                {
+                    creatures[tabletCreatureNumber].Update(gameTime, new Vector2(2600 * scale - hero.getHeroPosition().X, hero.getHeroPosition().Y));
+                }
+                else
+                {
+                    creatures[tabletCreatureNumber].Update(gameTime, hero.getHeroPosition());
+                }
+                //collect creature
+            }
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             //draw the backgrounds and characters
             drawExtraObjects(spriteBatch);
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
-            if (worldStage != 0)
+            if (worldStage > 0 && correctInARow < countToContinue)
             {
                 creatures[currentFriendlyCreature].Draw(spriteBatch);
             }
@@ -377,17 +455,29 @@ namespace ProjectDelta
             }
             if (correctInARow >= countToContinue)
             {
+                if (creatures[currentFriendlyCreature].getCreatureName() == creatures[worldStage].getCreatureName())
+                {
+                    creatures[tabletCreatureNumber].Draw(spriteBatch);
+                }
+                else
+                {
+                    creatures[currentFriendlyCreature].Draw(spriteBatch);
+                    creatures[tabletCreatureNumber].Draw(spriteBatch);
+                }
+
                 spriteBatch.Draw(nextLevelKeyboardImage, keyboardImagePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                //world101Text.DrawCongratsMsg(spriteBatch); //draw the congratulations message to the student upon completion
+                spriteBatch.Draw(creatureTablet, creatureTabletPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(startButton, startButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(creatures[tabletCreatureNumber].getCreatureImage(), tabletCreaturePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                //spriteBatch.Draw(creatures[worldStage].getCreatureImage(), creatures[worldStage].getPosition(), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             if (heroDead)
             {
                 spriteBatch.Draw(keyboardImage, keyboardImagePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
-            if (!collected)
-            {
-                wildCreature.Draw(spriteBatch, worldStage); //show the wild creature if it hasn't been collected (not used right now, but might be later)
-            }
+
+            //wildCreature.Draw(spriteBatch); //show the wild creature if it hasn't been collected (not used right now, but might be later)
+            
 
             if (internetConnection == false)
             {
@@ -395,6 +485,31 @@ namespace ProjectDelta
             }
 
 
+        }
+
+        private bool checkClick()
+        {
+            previousMouseState = currentMouseState;
+            currentMouseState = Mouse.GetState();
+
+            if (state == State.ResetTimer)
+            {
+                if (rectangleClick(startButtonCollisionBox))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private bool rectangleClick(Rectangle rectangle) //see if that button (collisionBox rectangle) is being clicked
+        {
+            Rectangle mousePosition = new Rectangle(currentMouseState.X, currentMouseState.Y, 1, 1);
+            if (currentMouseState.LeftButton == ButtonState.Pressed && previousMouseState.LeftButton == ButtonState.Released && mousePosition.Intersects(rectangle))
+            {
+                return true;
+            }
+            return false;
         }
 
         private void stopAll()
@@ -465,10 +580,14 @@ namespace ProjectDelta
             hero.Update(gameTime);
             monsterOne.Update(gameTime);
             monsterTwo.Update(gameTime);
-            creatures[currentFriendlyCreature].Update(gameTime, hero.getHeroPosition());
-            if (correctInARow >= countToContinue)
+            showMostEvolvedCreature();
+            if (creatures[currentFriendlyCreature].getCreatureName() == creatures[worldStage].getCreatureName() && correctInARow >= countToContinue)
             {
-                wildCreature.Update(gameTime);
+                creatures[tabletCreatureNumber].Update(gameTime, hero.getHeroPosition());
+            }
+            else
+            {
+                creatures[currentFriendlyCreature].Update(gameTime, hero.getHeroPosition());
             }
         }
 
@@ -517,16 +636,16 @@ namespace ProjectDelta
             {
                 creatures[i].reset(worldStage);
             }
-            wildCreature.reset();
+            creatures[worldStage].setPosition(new Vector2((2200) * scale, hero.getHeroPosition().Y));
             currentMonster = monsterOne;
             hero.live();
             hero.questionUp();
             hero.start();
             showQuestion = true;
             heroDead = false;
-            collected = false;
             world101Input.resetInput();
             state = State.None;
+            resetCounter = 1000;
         }
 
         private void correctAnswer()
@@ -577,6 +696,7 @@ namespace ProjectDelta
                         creatures[i].reset(worldStage);
                     }
                     showMostEvolvedCreature();
+                    if (currentFriendlyCreature > worldStage - 1) { currentFriendlyCreature = worldStage - 1; }
                     Game1.globalUser.currentFriendlyCreature = currentFriendlyCreature;
                     Game1.globalUser.world101 = worldStage;
                     context.Save<User>(Game1.globalUser);
@@ -594,7 +714,7 @@ namespace ProjectDelta
 
         private void resetTimer()
         {
-            errorCounter = 1000;
+
             state = State.ResetTimer;
         }
 

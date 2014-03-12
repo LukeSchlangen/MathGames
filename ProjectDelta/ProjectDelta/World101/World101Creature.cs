@@ -35,7 +35,7 @@ namespace ProjectDelta
         private string creatureName;
         private string creatureType;
 
-        private bool isAvailable;
+        private bool isAvailable = false;
         private bool usingPowerup = false;
 
         private Rectangle collisionBox;
@@ -87,6 +87,10 @@ namespace ProjectDelta
             speed = .1f;
             powerupUseCount = 0;
             usingPowerup = false;
+        }
+
+        public void reset(int worldStage, string wild)
+        {
 
         }
 
@@ -210,7 +214,7 @@ namespace ProjectDelta
                 case 130:
                     mostEvolved = true;
                     break;
-                case 138:
+                case 139:
                     mostEvolved = true;
                     break;
                 case 144:
@@ -345,7 +349,7 @@ namespace ProjectDelta
                 creatureName = "Arrow";
                 creatureType = "Tackler";
             }
-            else if (creatureNumber < 139)
+            else if (creatureNumber < 140)
             {
                 creatureName = "Flamingren";
                 creatureType = "Zapper";
@@ -404,6 +408,11 @@ namespace ProjectDelta
         public int getCreatureLevel(int worldStage, int numberOfAttemptedProblems, int numberOfCorrectProblems)
         {
             return creatureLevel;
+        }
+
+        public Texture2D getCreatureImage()
+        {
+            return creatureImage;
         }
     }
 }

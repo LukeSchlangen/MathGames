@@ -251,3 +251,5 @@ Content\Creatures\wild_creature_163.xnb
 Content\Level1\keyboard_image.xnb
 Content\Level1\status_bar.xnb
 Content\Level1\next_level_keyboard.xnb
+Content\Level1\creature_tablet.xnb
+Content\Level1\creature_tablet_start_button.xnb
