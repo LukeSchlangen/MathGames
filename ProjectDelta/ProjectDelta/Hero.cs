@@ -41,6 +41,8 @@ namespace ProjectDelta
         private bool heroStop = false;
         private bool dead = false;
 
+        private int shieldShake = 1;
+
         private float constantlyIncreasingNumber;
 
         private Vector2 heroPosition;
@@ -50,6 +52,7 @@ namespace ProjectDelta
 
         private Texture2D heroRunning;
         private Texture2D shield;
+        private Texture2D malfunctionShield;
 
         private Rectangle heroCollisionBox;
         private Rectangle shieldCollisionBox;
@@ -68,6 +71,7 @@ namespace ProjectDelta
         {
             heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
             shield = content.Load<Texture2D>("General/Shield/question_box_to_shield_3x3");
+            malfunctionShield = content.Load<Texture2D>("General/Shield/malfunction_shield");
             heroStartingPosition = new Vector2(275 * scale, 800 * scale);
             heroPosition = heroStartingPosition;
             heroAnimation = new Animation(heroRunning, heroStartingPosition, 5, 5, scale, 10f);
@@ -121,6 +125,23 @@ namespace ProjectDelta
                 {
                     heroPosition.X -= 25 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
                     heroPosition.Y -= 25 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                    if (shieldShake <= 9){
+                        if (shieldShake % 3 == 1)
+                        {
+                            shieldPosition.X -= 10 * scale;
+                        }
+                        if (shieldShake % 3 == 2)
+                        {
+                            shieldPosition.X += 5 * scale;
+                            shieldPosition.Y += 10 * scale;
+                        }
+                        if (shieldShake % 3 == 0)
+                        {
+                            shieldPosition.X += 5 * scale;
+                            shieldPosition.Y -= 10 * scale;
+                        }
+                    }
+                    shieldShake += 1;
                 }
                 else
                 {
@@ -136,8 +157,11 @@ namespace ProjectDelta
         {
 
             heroAnimation.Draw(spriteBatch, heroPosition);
-
-                shieldAnimation.Draw(spriteBatch, shieldPosition);
+            shieldAnimation.Draw(spriteBatch, shieldPosition);
+            if (state == State.Death)
+            {
+                spriteBatch.Draw(malfunctionShield, new Vector2(shieldPosition.X - 100*scale, shieldPosition.Y - 75 *scale), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
 
         }
 
@@ -174,6 +198,7 @@ namespace ProjectDelta
             heroAnimation.stopAnimation();
             state = State.Death;
             dead = true;
+            shieldShake = 1;
         }
 
         public void live()

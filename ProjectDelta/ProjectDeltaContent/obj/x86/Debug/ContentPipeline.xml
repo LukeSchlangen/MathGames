@@ -2280,6 +2280,15 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\creature_tablet_start_button.xnb</Output>
       <Time>2014-03-12T09:58:32.1908975-05:00</Time>
     </Item>
+    <Item>
+      <Source>General\Shield\malfunction_shield.png</Source>
+      <Name>General\Shield\malfunction_shield</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Shield\malfunction_shield.xnb</Output>
+      <Time>2014-03-13T12:24:47.8565585-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
