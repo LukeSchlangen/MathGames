@@ -61,7 +61,7 @@ namespace ProjectDelta
         {
             this.worldStage = worldStage;
             creatures = new World101Creature[worldStage];
-            
+
             font = content.Load<SpriteFont>("input_font");
 
             screenHeight = screenY;
@@ -92,10 +92,10 @@ namespace ProjectDelta
                 {
                     if (creatures[i].getAvailability())
                     {
-                    creatures[i].setPosition(new Vector2(((100 + 265 * j) * scale), ((100 + 250 * k) * scale))); 
-                    creatures[i].setCollisionBox(new Rectangle(((int)(creatures[i].getPosition().X)), ((int)(creatures[i].getPosition().Y)), ((int)(creatures[i].getWidth() * scale /2)), ((int)(creatures[i].getHeight() * scale / 2))));
-                    j++;
-                    if (j > 5) { j = 0; k++; }
+                        creatures[i].setPosition(new Vector2(((100 + 300 * j) * scale), ((100 + 300 * k) * scale)));
+                        creatures[i].setCollisionBox(new Rectangle(((int)(creatures[i].getPosition().X)), ((int)(creatures[i].getPosition().Y)), ((int)(creatures[i].getWidth() * scale)), ((int)(creatures[i].getHeight() * scale))));
+                        j++;
+                        if (j > 5) { j = 0; k++; }
                     }
                 }
             }
@@ -115,23 +115,20 @@ namespace ProjectDelta
 
 
 
-                    for (int i = 0; i < worldStage; i++)
+                for (int i = 0; i < worldStage; i++)
+                {
+                    if (creatures[i].getAvailability())
                     {
-                        if (creatures[i].getAvailability())
-                        {
-                            creatures[i].Draw(spriteBatch);
-                        }
+                        creatures[i].Draw(spriteBatch);
                     }
-                    
-                    
-                
+                }
             }
             if (hover)
             {
-                spriteBatch.Draw(textBubble, textBubblePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(textBubble, textBubblePosition, null, Color.White, 0f, Vector2.Zero, scale * 2, SpriteEffects.None, 0f);
                 spriteBatch.DrawString(font, creatureText, fontPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
-                spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         private bool checkBack()
@@ -147,7 +144,7 @@ namespace ProjectDelta
 
                     if (mousePosition.Intersects(creatures[i].getCollisionBox()))
                     {
-                        textBubblePosition = new Vector2(creatures[i].getCollisionBox().X + 100 * scale, creatures[i].getCollisionBox().Y);
+                        textBubblePosition = new Vector2(creatures[i].getCollisionBox().X + 150 * scale, creatures[i].getCollisionBox().Y);
                         creatureText = "Name: " + creatures[i].getCreatureName() + "\n" +
                             "Type: " + creatures[i].getCreatureType() + "\n" +
                             "Level: " + creatures[i].getCreatureLevel(Game1.globalUser.world101, lifetimeAnswersCorrect, Game1.globalUser.answersAttempted) + "\n" +
@@ -166,8 +163,6 @@ namespace ProjectDelta
             {
                 for (int i = 0; i < creatures.Length; i++)
                 {
-
-
                     if (mousePosition.Intersects(creatures[i].getCollisionBox()) && creatures[i].getAvailability())
                     {
                         try
@@ -181,13 +176,8 @@ namespace ProjectDelta
                             //internetConnection = false;
                         }
                     }
-
-
                 }
-
             }
-
-
             return false;
         }
     }
