@@ -103,7 +103,6 @@ namespace ProjectDelta
         private bool showQuestion = true;
         private bool heroDead = false;
         private bool internetConnection = true;
-        private bool spaceDown = false;
 
         private int bgToDraw = 1;
 
@@ -199,7 +198,6 @@ namespace ProjectDelta
 
 
             //load your first set of values into the array
-
             stageProblems = Problems.determineProblems(worldStage, COUNT_TO_CONTINUE);
 
             //Load up the first set of factors into the monster objects
@@ -248,12 +246,10 @@ namespace ProjectDelta
             }
 
             //if the player hits space, save and restart the level
-            spaceDown = keyboard.IsKeyDown(Keys.Space);
-            if (spaceDown || checkClick())
+            if (keyboard.IsKeyDown(Keys.Space) || checkClick())
             {
                 saveStats();
                 resetStage();
-                spaceDown = false;
             }
 
             //if they have answered all of the questions and the level is over...

@@ -123,7 +123,7 @@ namespace ProjectDelta
             if (current.IsKeyDown(Keys.U) && previous.IsKeyDown(Keys.U) == false)
             {
                 input = "u";
-                            }
+            }
             if (current.IsKeyDown(Keys.V) && previous.IsKeyDown(Keys.V) == false)
             {
                 input = "v";
@@ -144,6 +144,51 @@ namespace ProjectDelta
             {
                 input = "z";
             }
+            if ((current.IsKeyDown(Keys.NumPad0) && previous.IsKeyDown(Keys.NumPad0) == false) || (current.IsKeyDown(Keys.D0) && previous.IsKeyDown(Keys.D0) == false))
+            {
+                input = "0";
+            }
+            if ((current.IsKeyDown(Keys.NumPad1) && previous.IsKeyDown(Keys.NumPad1) == false) || (current.IsKeyDown(Keys.D1) && previous.IsKeyDown(Keys.D1) == false))
+            {
+                input = "1";
+            }
+            if ((current.IsKeyDown(Keys.NumPad2) && previous.IsKeyDown(Keys.NumPad2) == false) || (current.IsKeyDown(Keys.D2) && previous.IsKeyDown(Keys.D2) == false))
+            {
+                input = "2";
+            }
+            if ((current.IsKeyDown(Keys.NumPad3) && previous.IsKeyDown(Keys.NumPad3) == false) || (current.IsKeyDown(Keys.D3) && previous.IsKeyDown(Keys.D3) == false))
+            {
+                input = "3";
+            }
+            if ((current.IsKeyDown(Keys.NumPad4) && previous.IsKeyDown(Keys.NumPad4) == false) || (current.IsKeyDown(Keys.D4) && previous.IsKeyDown(Keys.D4) == false))
+            {
+                input = "4";
+            }
+            if ((current.IsKeyDown(Keys.NumPad5) && previous.IsKeyDown(Keys.NumPad5) == false) || (current.IsKeyDown(Keys.D5) && previous.IsKeyDown(Keys.D5) == false))
+            {
+                input = "5";
+            }
+            if ((current.IsKeyDown(Keys.NumPad6) && previous.IsKeyDown(Keys.NumPad6) == false) || (current.IsKeyDown(Keys.D6) && previous.IsKeyDown(Keys.D6) == false))
+            {
+                input = "6";
+            }
+            if ((current.IsKeyDown(Keys.NumPad7) && previous.IsKeyDown(Keys.NumPad7) == false) || (current.IsKeyDown(Keys.D7) && previous.IsKeyDown(Keys.D7) == false))
+            {
+                input = "7";
+            }
+            if ((current.IsKeyDown(Keys.NumPad8) && previous.IsKeyDown(Keys.NumPad8) == false) || (current.IsKeyDown(Keys.D8) && previous.IsKeyDown(Keys.D8) == false))
+            {
+                input = "8";
+            }
+            if ((current.IsKeyDown(Keys.NumPad9) && previous.IsKeyDown(Keys.NumPad9) == false) || (current.IsKeyDown(Keys.D9) && previous.IsKeyDown(Keys.D9) == false))
+            {
+                input = "9";
+            }
+            if (current.IsKeyDown(Keys.Back) && previous.IsKeyDown(Keys.Back) == false)
+            {
+                input = "";
+            }
+
 
             previous = current;
             current = Keyboard.GetState();
