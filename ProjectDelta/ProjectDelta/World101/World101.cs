@@ -234,8 +234,6 @@ namespace ProjectDelta
                 sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
             }
 
-            updateCharacters(gameTime); //update the positions of all of the characters
-
             KeyboardState keyboard = Keyboard.GetState(); //determine what button is being pressed
 
             //if the player hits esc, save, and return them to the main level
@@ -256,6 +254,7 @@ namespace ProjectDelta
             else if (correctInARow >= countToContinue)
             {
                 //if the level is over, get rid of the monsters
+                updateCharacters(gameTime); //update the positions of all of the characters
                 monsterOne.monsterDeath();
                 monsterTwo.monsterDeath();
                 hero.stageSuccess(); //hero goes accross screen to collect creature
@@ -264,6 +263,7 @@ namespace ProjectDelta
             }
             else
             {
+                updateCharacters(gameTime); //update the positions of all of the characters
                 showMostEvolvedCreature();
                 cycleBackground(gameTime); //advance the background to make it look like the hero is moving
 
@@ -435,10 +435,14 @@ namespace ProjectDelta
             spriteBatch.Draw(statusBar, statusBarPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             world101Text.DrawAnswerCount(spriteBatch);
 
-            if (showQuestion && correctInARow < countToContinue)
+            if (!Keyboard.GetState().IsKeyDown(Keys.Space))
             {
-                world101Text.Draw(spriteBatch); //show the question to the student
+                if (showQuestion && correctInARow < countToContinue)
+                {
+                    world101Text.Draw(spriteBatch); //show the question to the student
+                }
             }
+
             if (correctInARow >= countToContinue)
             {
                 if (creatures[currentFriendlyCreature].getCreatureName() == creatures[worldStage].getCreatureName())
