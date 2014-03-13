@@ -246,14 +246,14 @@ namespace ProjectDelta
             }
 
             //if the player hits space, save and restart the level
-            if (keyboard.IsKeyDown(Keys.Space) || checkClick())
+            else if (keyboard.IsKeyDown(Keys.Space) || checkClick())
             {
                 saveStats();
                 resetStage();
             }
 
             //if they have answered all of the questions and the level is over...
-            if (correctInARow >= countToContinue)
+            else if (correctInARow >= countToContinue)
             {
                 //if the level is over, get rid of the monsters
                 monsterOne.monsterDeath();
@@ -405,19 +405,10 @@ namespace ProjectDelta
                 {
                     tabletCreatureNumber = worldStage;
                 }
-
-
-                if (creatures[currentFriendlyCreature].getCreatureName() == creatures[tabletCreatureNumber].getCreatureName())
-                {
-                    
-                    //currentFriendlyCreature = tabletCreatureNumber;
-                }
-
             }
             else
             {
 
-                //TODO
                 tabletCreatureNumber = worldStage;//show new baby creature in creature tablet
                 if (hero.getHeroPosition().X < 2600 * scale - hero.getHeroPosition().X)
                 {
@@ -427,7 +418,6 @@ namespace ProjectDelta
                 {
                     creatures[tabletCreatureNumber].Update(gameTime, hero.getHeroPosition());
                 }
-                //collect creature
             }
         }
 
@@ -500,6 +490,14 @@ namespace ProjectDelta
                     return true;
                 }
             }
+            ////None of these keyboard lines should be necessary, but for some reason,
+            ////the check keyboard isn't working up above... so this is a hacky fix
+            //KeyboardState keyboard = Keyboard.GetState();
+            //if (keyboard.IsKeyDown(Keys.Space))
+            //{
+            //    return true;
+            //}
+
             return false;
         }
 
@@ -694,10 +692,10 @@ namespace ProjectDelta
                     Game1.globalUser.lastDatePlayed = DateTime.Today;
                     for (int i = 0; i < creatures.Length; i++)
                     {
-                        creatures[i].reset(worldStage);
+                        creatures[i].reset(worldStage); //makes the new creature available and the old creature not if it just evolved
                     }
-                    showMostEvolvedCreature();
-                    if (currentFriendlyCreature > worldStage - 1) { currentFriendlyCreature = worldStage - 1; }
+                    showMostEvolvedCreature(); //updates to most evolved creature
+                    if (currentFriendlyCreature > worldStage - 1) { currentFriendlyCreature = worldStage - 1; } //makes sure weird things don't happen
                     Game1.globalUser.currentFriendlyCreature = currentFriendlyCreature;
                     Game1.globalUser.world101 = worldStage;
                     context.Save<User>(Game1.globalUser);
