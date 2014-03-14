@@ -239,7 +239,7 @@ namespace ProjectDelta
             signupPasswordCollisionBox = new Rectangle((int)(signupPasswordHighlighterPosition.X), (int)(signupPasswordHighlighterPosition.Y), loginHighlighter.Width, loginHighlighter.Height);
             passwordConfirmCollisionBox = new Rectangle((int)(signupConfirmHighlighterPosition.X), (int)(signupConfirmHighlighterPosition.Y), loginHighlighter.Width, loginHighlighter.Height);
 
-            quitButton = content.Load<Texture2D>("Login/back_button");
+            quitButton = content.Load<Texture2D>("Login/quit_button");
             quitButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
             quitButtonCollisionBox = new Rectangle(((int)(quitButtonPosition.X)), (int)(quitButtonPosition.Y), (int)(quitButton.Width), (quitButton.Height));
         }
@@ -417,7 +417,7 @@ namespace ProjectDelta
                 {
                     state = State.SignupButtonPressed;
                 }
-                if (rectangleClick(usernameCollisionBox))
+                else if (rectangleClick(usernameCollisionBox))
                 {
                     state = State.None;
                 }
@@ -429,6 +429,10 @@ namespace ProjectDelta
                 {
                     state = State.PasswordEntered;
                 }
+                else if (rectangleClick(quitButtonCollisionBox))
+                {
+                    Game1.abort = true;
+                }   
             }
             if (state == State.SignupButtonPressed || state == State.UsernameCreated || state == State.PasswordCreated)
             {
@@ -438,7 +442,7 @@ namespace ProjectDelta
                     password = "";
                     checkPassword = "";
                 }
-                if (rectangleClick(signupUsernameCollisionBox))
+                else if (rectangleClick(signupUsernameCollisionBox))
                 {
                     state = State.SignupButtonPressed;
                 }
@@ -455,10 +459,7 @@ namespace ProjectDelta
                     state = State.CreateUser;
                 }
             }
-            if (rectangleClick(quitButtonCollisionBox))
-            {
-                Game1.abort = true;
-            }            
+        
         }
 
         private bool rectangleClick(Rectangle rectangle) //see if that button (collisionBox rectangle) is being clicked

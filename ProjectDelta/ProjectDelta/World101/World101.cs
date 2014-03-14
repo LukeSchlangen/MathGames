@@ -270,7 +270,7 @@ namespace ProjectDelta
                 //if the creature has a powerup remaining, and the player presses "S", use the powerup
                 if (creatures[currentFriendlyCreature].remainingPowerUp() && keyboard.IsKeyDown(Keys.S) && !heroDead)
                 {
-                    useCreaturePowerUp(scale);
+
                 }
 
                 //if both monsters are off screen, make sure they are in order (special powers can make this out of sync)

@@ -41,6 +41,7 @@ namespace ProjectDelta
         private Texture2D statsButton;
         private Texture2D creature;
         private Texture2D spaceshipPointer;
+        private Texture2D highlighter;
 
 
         //Vectors
@@ -73,6 +74,7 @@ namespace ProjectDelta
             logoutButton = content.Load<Texture2D>("Home/log_out_button");
             statsButton = content.Load<Texture2D>("Home/stats_button");
             spaceshipPointer = content.Load<Texture2D>("General/Ships/good_ship_1");
+            highlighter = content.Load<Texture2D>("Login/login_highlighter");
             world101BoxPosition = new Vector2((screenWidth / 2 - world101Box.Width * scale / 2), (screenHeight / 2 - world101Box.Height * scale / 2));
             world101ButtonPosition = new Vector2((screenWidth / 2 - world101Button.Width * scale / 2), (screenHeight / 2 + (125 * scale)));
             logoutButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
@@ -115,6 +117,10 @@ namespace ProjectDelta
             {
                 spriteBatch.Draw(statsButton, statsButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(creature, creaturePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
+            if (spaceShipPosition.X > world101ButtonPosition.X - 250 * scale)
+            {
+                spriteBatch.Draw(highlighter, new Vector2(world101ButtonPosition.X - 17 * scale, world101ButtonPosition.Y - 18 * scale), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             spriteBatch.Draw(spaceshipPointer, spaceShipPosition, null, Color.White, 0f, Vector2.Zero, scale / 2, SpriteEffects.None, 0f);
             text.Draw(spriteBatch);
