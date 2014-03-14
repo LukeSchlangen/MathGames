@@ -83,7 +83,7 @@ namespace ProjectDelta
             statsButtonCollisionBox = new Rectangle(((int)(statsButtonPosition.X)), ((int)(statsButtonPosition.Y)), (int)(statsButton.Width * scale), (int)(statsButton.Height * scale));
 
             //NOTE: This will cause an exception if using an account that is higher than level 7, until all the creature images are added...
-            if (Game1.globalUser.world101 - 1 >= 0)
+            if (Game1.globalUser.world101 > 0)
             {
                 creature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.currentFriendlyCreature));
                 creaturePosition = new Vector2((screenWidth / 2 - creature.Width * scale / 2), (screenHeight / 2 - creature.Height * scale / 2));
@@ -96,8 +96,8 @@ namespace ProjectDelta
         public int Update(GameTime gameTime)
         {
             timer += gameTime.ElapsedGameTime.Milliseconds;
-            
-            if (spaceShipPosition.X < world101ButtonPosition.X - 200*scale)
+
+            if (spaceShipPosition.X < world101ButtonPosition.X - 200 * scale)
             {
                 spaceShipPosition.X += gameTime.ElapsedGameTime.Milliseconds * scale / 2;
             }
@@ -111,12 +111,12 @@ namespace ProjectDelta
             spriteBatch.Draw(world101Box, world101BoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(world101Button, world101ButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(logoutButton, logoutButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            spriteBatch.Draw(statsButton, statsButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            if (Game1.globalUser.world101 - 1 >= 0)
+            if (Game1.globalUser.world101 > 0)
             {
+                spriteBatch.Draw(statsButton, statsButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(creature, creaturePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
-            spriteBatch.Draw(spaceshipPointer, spaceShipPosition, null, Color.White, 0f, Vector2.Zero, scale/2, SpriteEffects.None, 0f);
+            spriteBatch.Draw(spaceshipPointer, spaceShipPosition, null, Color.White, 0f, Vector2.Zero, scale / 2, SpriteEffects.None, 0f);
             text.Draw(spriteBatch);
 
         }
@@ -127,8 +127,8 @@ namespace ProjectDelta
             current = Mouse.GetState();
             Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
 
-            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(world101ButtonCollisionBox) || (timer>1000 && ((Keyboard.GetState().IsKeyDown(Keys.Space))||Keyboard.GetState().IsKeyDown(Keys.Enter))))
-            {       
+            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(world101ButtonCollisionBox) || (timer > 1000 && ((Keyboard.GetState().IsKeyDown(Keys.Space)) || Keyboard.GetState().IsKeyDown(Keys.Enter))))
+            {
                 return 101;
             }
 

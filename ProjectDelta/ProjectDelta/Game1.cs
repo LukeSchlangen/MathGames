@@ -42,7 +42,7 @@ namespace ProjectDelta
             Exit,
         }
 
-        private static int COUNT_TO_CONTINUE = 3;
+        private static int COUNT_TO_CONTINUE = 1;
 
         private int screenWidth;
         private int screenHeight;
