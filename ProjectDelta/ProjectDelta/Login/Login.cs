@@ -76,6 +76,7 @@ namespace ProjectDelta
         private Texture2D shipTwo;
         private Texture2D shipThree;
         private Texture2D shipFour;
+        private Texture2D quitButton;
 
         //Font for the login
         private SpriteFont font;
@@ -112,6 +113,7 @@ namespace ProjectDelta
         private Vector2 shipTwoPosition;
         private Vector2 shipThreePosition;
         private Vector2 shipFourPosition;
+        private Vector2 quitButtonPosition;
 
         //Rectangles for the collision boxes for the login
         private Rectangle signupButtonCollisionBox;
@@ -123,6 +125,7 @@ namespace ProjectDelta
         private Rectangle signupUsernameCollisionBox;
         private Rectangle signupPasswordCollisionBox;
         private Rectangle passwordConfirmCollisionBox;
+        private Rectangle quitButtonCollisionBox;
 
         //Mouse states
         private MouseState currentMouseState;
@@ -235,6 +238,10 @@ namespace ProjectDelta
             signupUsernameCollisionBox = new Rectangle((int)(signupUsernameHighlighterPosition.X), (int)(signupUsernameHighlighterPosition.Y), loginHighlighter.Width, loginHighlighter.Height);
             signupPasswordCollisionBox = new Rectangle((int)(signupPasswordHighlighterPosition.X), (int)(signupPasswordHighlighterPosition.Y), loginHighlighter.Width, loginHighlighter.Height);
             passwordConfirmCollisionBox = new Rectangle((int)(signupConfirmHighlighterPosition.X), (int)(signupConfirmHighlighterPosition.Y), loginHighlighter.Width, loginHighlighter.Height);
+
+            quitButton = content.Load<Texture2D>("Login/back_button");
+            quitButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
+            quitButtonCollisionBox = new Rectangle(((int)(quitButtonPosition.X)), (int)(quitButtonPosition.Y), (int)(quitButton.Width), (quitButton.Height));
         }
 
         public bool Update(GameTime gameTime)
@@ -448,6 +455,10 @@ namespace ProjectDelta
                     state = State.CreateUser;
                 }
             }
+            if (rectangleClick(quitButtonCollisionBox))
+            {
+                Game1.abort = true;
+            }            
         }
 
         private bool rectangleClick(Rectangle rectangle) //see if that button (collisionBox rectangle) is being clicked
@@ -549,6 +560,7 @@ namespace ProjectDelta
             //draw the login screen
             spriteBatch.Draw(signupButton, signupButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(loginBox, loginBoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(quitButton, quitButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             
             //this is for the highlighter
             if (currentMouseState.LeftButton != ButtonState.Pressed) //if mouse is clicked don't show the highlighter (gives the illision that you have clicked on it if it is already selected)

@@ -28,6 +28,7 @@ namespace ProjectDelta
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         public static User globalUser = null;
+        public static bool abort = false;
 
         public enum State
         {
@@ -312,7 +313,7 @@ namespace ProjectDelta
                 }
             }
 
-            if (state == State.Exit)
+            if (abort)
             {
                 this.Exit();
             }

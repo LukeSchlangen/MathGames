@@ -149,7 +149,7 @@ namespace ProjectDelta
                             "Type: " + creatures[i].getCreatureType() + "\n" +
                             "Level: " + creatures[i].getCreatureLevel(Game1.globalUser.world101, lifetimeAnswersCorrect, Game1.globalUser.answersAttempted) + "\n" +
                             "Description: \nThis creature \n is really nice.";
-                        fontPosition = new Vector2(textBubblePosition.X + 55 * scale, textBubblePosition.Y + 10 * scale);
+                        fontPosition = new Vector2(textBubblePosition.X + 130 * scale, textBubblePosition.Y + 100 * scale);
                         hover = true;
                     }
                 }
