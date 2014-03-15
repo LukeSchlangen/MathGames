@@ -255,3 +255,6 @@ Content\Level1\creature_tablet.xnb
 Content\Level1\creature_tablet_start_button.xnb
 Content\General\Shield\malfunction_shield.xnb
 Content\Login\quit_button.xnb
+Content\Level1\spike.xnb
+Content\Level1\lightning.xnb
+Content\Level1\hole.xnb

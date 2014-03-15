@@ -2298,6 +2298,33 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Login\quit_button.xnb</Output>
       <Time>2014-03-14T10:42:00.7452333-05:00</Time>
     </Item>
+    <Item>
+      <Source>Level1\spike.png</Source>
+      <Name>Level1\spike</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\spike.xnb</Output>
+      <Time>2014-03-14T15:13:48.6839941-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\lightning.png</Source>
+      <Name>Level1\lightning</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\lightning.xnb</Output>
+      <Time>2014-03-14T15:44:02.3327288-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\hole.png</Source>
+      <Name>Level1\hole</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\hole.xnb</Output>
+      <Time>2014-03-14T17:14:10.0980353-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

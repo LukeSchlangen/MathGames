@@ -38,6 +38,9 @@ namespace ProjectDelta
         private int correctInARow = 0;
         private int worldStage;
         private int lifetimeAnswersCorrect;
+        private int lifetimeMinutesPlayed;
+        private int spikePositionCounter;
+        private int dropCounter;
         private int resetCounter;
         private int tabletCreatureNumber;
 
@@ -61,6 +64,8 @@ namespace ProjectDelta
         private Texture2D nextLevelKeyboardImage;
         private Texture2D statusBar;
         private Texture2D creatureTablet;
+        private Texture2D spike;
+        private Texture2D hole;
         private Texture2D startButton;
         private Texture2D internetConnectionWarning;
 
@@ -73,6 +78,8 @@ namespace ProjectDelta
         private Vector2 creatureTabletPosition;
         private Vector2 startButtonPosition;
         private Vector2 tabletCreaturePosition;
+        private Vector2 spikePosition;
+        private Vector2 holePosition;
         private Vector2 internetConnectionWarningPosition;
 
         //Collision Boxes
@@ -87,6 +94,7 @@ namespace ProjectDelta
         private World101Monster monsterTwo;
         private World101Creature[] creatures = new World101Creature[163];
         private World101Monster currentMonster;
+        private World101Monster nonCurrentMonster;
         //private World101Creature wildCreature;
         //private CreatureOrganizer creatureOrganizer = new CreatureOrganizer();
         //private World101FriendlyCreature friendlyCreature;
@@ -130,6 +138,7 @@ namespace ProjectDelta
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
             //wildCreature = new World101WildCreature(2600, 800, scale, backgroundSpeed, screenX);
             currentMonster = monsterOne;
+            nonCurrentMonster = monsterTwo;
             hero.Initialize(scale);
             world101Input = new World101Input(scale);
             world101Text.Initialize(scale);
@@ -143,7 +152,7 @@ namespace ProjectDelta
             this.worldStage = worldStage;
             for (int i = 0; i < creatures.Length; i++)
             {
-                creatures[i] = new World101Creature(i, worldStage, 0, scale, backgroundSpeed);
+                creatures[i] = new World101Creature(i, worldStage, lifetimeAnswersCorrect, lifetimeMinutesPlayed, scale, backgroundSpeed);
             }
             this.countToContinue = COUNT_TO_CONTINUE;
             loadExtraObjects(content);
@@ -163,6 +172,7 @@ namespace ProjectDelta
 
             currentFriendlyCreature = Game1.globalUser.currentFriendlyCreature;
             lifetimeAnswersCorrect = Game1.globalUser.answersCorrect;
+            lifetimeMinutesPlayed = Game1.globalUser.timePlayed / 60000;
 
             soundEffectShieldUp = content.Load<SoundEffect>("Level1/shield_up");
             soundEffectThud = content.Load<SoundEffect>("Level1/thud");
@@ -178,6 +188,17 @@ namespace ProjectDelta
             creatureTablet = content.Load<Texture2D>("Level1/creature_tablet");
             creatureTabletPosition = new Vector2(10 * scale, 10 * scale);
 
+            if (creatures[currentFriendlyCreature].getCreatureType() == "Spiker")
+            {
+                spike = content.Load<Texture2D>("Level1/spike");
+            }
+            else if (creatures[currentFriendlyCreature].getCreatureType() == "Zapper")
+            {
+                spike = content.Load<Texture2D>("Level1/lightning");
+            }
+            else { hole = content.Load <Texture2D>("Level1/hole"); }
+            spikePosition = new Vector2(2000 * scale, 0);
+            holePosition = new Vector2(hero.getHeroPosition().X + 275* scale, hero.getHeroPosition().Y - 150 *scale);
             if (worldStage > 0)
             {
                 tabletCreatureNumber = worldStage - 1;
@@ -187,7 +208,7 @@ namespace ProjectDelta
                 tabletCreatureNumber = 0;
             }
 
-            tabletCreaturePosition = new Vector2(20 * scale, 20 * scale);
+            tabletCreaturePosition = new Vector2(40 * scale, 40 * scale);
 
             startButton = content.Load<Texture2D>("Level1/creature_tablet_start_button");
             startButtonPosition = new Vector2((creatureTabletPosition.X + creatureTablet.Width / 2 - startButton.Width / 2) * scale, (creatureTabletPosition.Y + creatureTablet.Height * 6 / 7 - startButton.Height / 2) * scale);
@@ -206,11 +227,6 @@ namespace ProjectDelta
 
             monsterOne.setFactors(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"]);
             monsterTwo.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-
-            for (int i = 0; i < creatures.Length; i++)
-            {
-                creatures[i].setMaxNumberOfPowerupUses(1);
-            }
 
             creatures[worldStage].setPosition(new Vector2((2200) * scale, hero.getHeroPosition().Y));
 
@@ -267,20 +283,59 @@ namespace ProjectDelta
                 showMostEvolvedCreature();
                 cycleBackground(gameTime); //advance the background to make it look like the hero is moving
 
-                //if the creature has a powerup remaining, and the player presses "S", use the powerup
-                if (creatures[currentFriendlyCreature].remainingPowerUp() && keyboard.IsKeyDown(Keys.S) && !heroDead)
+                if (spikePositionCounter > 0)
                 {
 
+                    spikePosition = new Vector2(nonCurrentMonster.getCollisionBox().X - spike.Width * scale / 2, nonCurrentMonster.getCollisionBox().Y + nonCurrentMonster.getHeight()/2 - spike.Height * scale / 2);
+
+                    spikePositionCounter++;
+                    if (spikePositionCounter > 5)
+                    {
+                        spikePositionCounter = 0;
+                        spikePosition = new Vector2(2000 * scale, 0);
+                    }
+                }
+                else if (dropCounter > 0)
+                {
+                    dropCounter++;
+                    if (dropCounter > 50)
+                    {
+                        dropCounter = 0;
+                        beatMonster();
+                    }
+                    else
+                    {
+                        if (monsterOne == currentMonster)
+                        {
+                            monsterOne.setX((int)(monsterOne.getCollisionBox().X + 10 * scale));
+                            currentMonster.setX((int)(currentMonster.getCollisionBox().X + 10 * scale));
+                        }
+                        else
+                        {
+                            monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 10 * scale));
+                            currentMonster.setX((int)(currentMonster.getCollisionBox().X + 10 * scale));
+                        }
+                        if (monsterOne == currentMonster)
+                        {
+                            monsterOne.setY((int)(monsterOne.getCollisionBox().Y + 25 * dropCounter * scale));
+                            currentMonster.setY((int)(currentMonster.getCollisionBox().Y + 25 * dropCounter * scale));
+                        }
+                        else
+                        {
+                            monsterTwo.setY((int)(monsterTwo.getCollisionBox().Y + 25 * dropCounter * scale));
+                            currentMonster.setY((int)(currentMonster.getCollisionBox().Y + 25 * dropCounter * scale));
+                        }
+                        creatures[currentFriendlyCreature].setPosition(new Vector2(currentMonster.getCollisionBox().X, currentMonster.getCollisionBox().Y));
+                    }
                 }
 
                 //if both monsters are off screen, make sure they are in order (special powers can make this out of sync)
-
-
                 if (monsterOne != currentMonster)
                 {
                     if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterOne.dead)
                     {
                         monsterOne.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+                        nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
                     }
                 }
                 else if (monsterTwo != currentMonster)
@@ -288,6 +343,7 @@ namespace ProjectDelta
                     if (monsterTwo.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterTwo.dead)
                     {
                         monsterTwo.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+                        nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
                     }
                 }
 
@@ -324,9 +380,17 @@ namespace ProjectDelta
                     }
                     else
                     {
-                        sessionAnswersAttempted++;
-                        soundEffectThud.Play();
-                        stopAll(); //if the player has the wrong answer, stop everything
+                        //if the creature has a powerup remaining, use it now
+                        if (creatures[currentFriendlyCreature].remainingPowerUp())
+                        {
+                            useCreaturePowerUp(scale);
+                        }
+                        else
+                        {
+                            sessionAnswersAttempted++;
+                            soundEffectThud.Play();
+                            stopAll(); //if the player has the wrong answer, stop everything
+                        }
                     }
                 }
             }
@@ -393,11 +457,11 @@ namespace ProjectDelta
 
         private void creatureEvolution(GameTime gameTime)
         {
-            
+
             if (worldStage > 0 && creatures[worldStage - 1].getCreatureName() == creatures[worldStage].getCreatureName())
             {
                 //show evolution in creature tablet
-                if (((int)(resetCounter / -200))%2 == 0 && resetCounter<-13000)
+                if (((int)(resetCounter / -200)) % 2 == 0 && resetCounter < -13000)
                 {
                     tabletCreatureNumber = worldStage - 1;
                 }
@@ -419,6 +483,8 @@ namespace ProjectDelta
                     creatures[tabletCreatureNumber].Update(gameTime, hero.getHeroPosition());
                 }
             }
+
+            tabletCreaturePosition = new Vector2(creatureTabletPosition.X + creatureTablet.Width * scale * 30 / 100-creatures[tabletCreatureNumber].getWidth()/2, creatureTabletPosition.Y + creatureTablet.Height * scale * 41 / 100 - creatures[tabletCreatureNumber].getHeight()/2);
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -431,7 +497,17 @@ namespace ProjectDelta
             {
                 creatures[currentFriendlyCreature].Draw(spriteBatch);
             }
+            if (dropCounter > 0)
+            {
+                spriteBatch.Draw(hole, holePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
             hero.Draw(spriteBatch);
+            if (spikePositionCounter > 0)
+            {
+                spriteBatch.Draw(spike, spikePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
+
+            
             spriteBatch.Draw(statusBar, statusBarPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             world101Text.DrawAnswerCount(spriteBatch);
 
@@ -452,13 +528,13 @@ namespace ProjectDelta
                 else
                 {
                     creatures[currentFriendlyCreature].Draw(spriteBatch);
-                    if (creatures[worldStage -1].getCreatureName() != creatures[worldStage].getCreatureName())
+                    if (creatures[worldStage - 1].getCreatureName() != creatures[worldStage].getCreatureName())
                     {
                         creatures[tabletCreatureNumber].Draw(spriteBatch);
                     }
                 }
 
- 
+
 
                 spriteBatch.Draw(nextLevelKeyboardImage, keyboardImagePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(creatureTablet, creatureTabletPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
@@ -472,7 +548,7 @@ namespace ProjectDelta
             }
 
             //wildCreature.Draw(spriteBatch); //show the wild creature if it hasn't been collected (not used right now, but might be later)
-            
+
 
             if (internetConnection == false)
             {
@@ -637,10 +713,11 @@ namespace ProjectDelta
             monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
             for (int i = 0; i < creatures.Length; i++)
             {
-                creatures[i].reset(worldStage);
+                creatures[i].reset(worldStage, lifetimeAnswersCorrect, lifetimeMinutesPlayed);
             }
             creatures[worldStage].setPosition(new Vector2((2200) * scale, hero.getHeroPosition().Y));
             currentMonster = monsterOne;
+            nonCurrentMonster = monsterTwo;
             hero.live();
             hero.questionUp();
             hero.start();
@@ -663,7 +740,6 @@ namespace ProjectDelta
             sessionAnswersCorrect++;
             //Update factors after an answer is correct (it's here instead of beatmonster because a powerup could be used for that)
             currentMonster.setFactors(stageProblems[correctInARow + 1]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"]);
-
         }
 
         private void saveStats()
@@ -692,11 +768,12 @@ namespace ProjectDelta
                     lifetimeAnswersCorrect += sessionAnswersCorrect;
                     Game1.globalUser.answersCorrectToday += sessionAnswersCorrect;
                     Game1.globalUser.timePlayed += sessionTimePlayed;
+                    lifetimeMinutesPlayed += Game1.globalUser.timePlayed / 60000;
                     Game1.globalUser.timePlayedToday += sessionTimePlayed;
                     Game1.globalUser.lastDatePlayed = DateTime.Today;
                     for (int i = 0; i < creatures.Length; i++)
                     {
-                        creatures[i].reset(worldStage); //makes the new creature available and the old creature not if it just evolved
+                        creatures[i].reset(worldStage, lifetimeAnswersCorrect, lifetimeMinutesPlayed); //makes the new creature available and the old creature not if it just evolved
                     }
                     showMostEvolvedCreature(); //updates to most evolved creature
                     if (currentFriendlyCreature > worldStage - 1) { currentFriendlyCreature = worldStage - 1; } //makes sure weird things don't happen
@@ -724,22 +801,65 @@ namespace ProjectDelta
         private void useCreaturePowerUp(float scale)
         {
             creatures[currentFriendlyCreature].usePowerup();
-            if (worldStage < 20)
+            string creatureType = creatures[currentFriendlyCreature].getCreatureType();
+            if (creatureType == "Tackler" || creatureType == "Spinner")
             {
-                shockWave(scale);
+                tackle(scale);
+            }
+            else if (creatureType == "Spiker" || creatureType == "Zapper")
+            {
+                shootSpike();
+                beatMonster();
+            }
+            else if (creatureType == "Digger")
+            {
+                monsterBack();
+                monsterDrop();
+            }
+            else if(creatureType == "Stomper")
+            {
+                monsterBack();
+                beatMonster();
             }
             else
             {
                 beatMonster();
             }
-
         }
 
-        private void shockWave(float scale)
+        private void tackle(float scale)
         {
-            monsterOne.setX((int)(monsterOne.getCollisionBox().X + 600 * scale));
-            monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 600 * scale));
-            currentMonster.setX((int)(currentMonster.getCollisionBox().X + 600 * scale));
+            monsterOne.setX((int)(monsterOne.getCollisionBox().X + (400 + creatures[currentFriendlyCreature].getCreatureLevel() * 10) * scale));
+            monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + (400 + creatures[currentFriendlyCreature].getCreatureLevel() * 10) * scale));
+            currentMonster.setX((int)(currentMonster.getCollisionBox().X + (400 + creatures[currentFriendlyCreature].getCreatureLevel() * 10) * scale));
+            nonCurrentMonster.setX((int)(currentMonster.getCollisionBox().X + (400 + creatures[currentFriendlyCreature].getCreatureLevel() * 10) * scale));
+        }
+
+        private void shootSpike()
+        {
+            spikePositionCounter += 1;
+        }
+
+        private void monsterBack()
+        {
+            //send them back
+            if (monsterOne == currentMonster)
+            {
+                monsterOne.setX((int)(monsterOne.getCollisionBox().X + 200 * scale));
+                currentMonster.setX((int)(currentMonster.getCollisionBox().X + 200 * scale));
+                monsterOne.setY((int)(monsterOne.getCollisionBox().Y - 100 * scale));
+                currentMonster.setY((int)(currentMonster.getCollisionBox().Y - 100 * scale));
+            }
+            else
+            {
+                monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 200 * scale));
+                currentMonster.setX((int)(currentMonster.getCollisionBox().X + 200 * scale));
+                monsterTwo.setY((int)(monsterTwo.getCollisionBox().Y - 100 * scale));
+                currentMonster.setY((int)(currentMonster.getCollisionBox().Y - 100 * scale));
+            }
+        }
+            private void monsterDrop(){
+            dropCounter += 1;
         }
 
         private void beatMonster()
@@ -756,10 +876,12 @@ namespace ProjectDelta
             if (currentMonster == monsterOne)
             {
                 currentMonster = monsterTwo;
+                nonCurrentMonster = monsterOne;
             }
             else
             {
                 currentMonster = monsterOne;
+                nonCurrentMonster = monsterTwo;
             }
 
             currentMonster.setSpeed((currentMonster.getCollisionBox().X - hero.getHeroCollisionBox().X) / timePerProblem);

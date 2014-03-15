@@ -143,6 +143,11 @@ namespace ProjectDelta
             return collisionBox;
         }
 
+        public float getHeight()
+        {
+            return monster.Height * scale;
+        }
+
         public void setSpeed(float speed)
         {
             this.speed = speed;

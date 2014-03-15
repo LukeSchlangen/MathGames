@@ -34,6 +34,7 @@ namespace ProjectDelta
         private int screenHeight;
         private int screenWidth;
         private int lifetimeAnswersCorrect;
+        private int lifetimeMinutesPlayed;
         public int worldStage;
 
         private string creatureText;
@@ -68,6 +69,7 @@ namespace ProjectDelta
             screenWidth = screenX;
 
             lifetimeAnswersCorrect = Game1.globalUser.answersCorrect;
+            lifetimeMinutesPlayed = Game1.globalUser.timePlayed / 60000;
 
             background = content.Load<Texture2D>("Login/login_background");
             backButton = content.Load<Texture2D>("Login/back_button");
@@ -82,7 +84,7 @@ namespace ProjectDelta
 
                 for (int i = 0; i < creatures.Length; i++)
                 {
-                    creatures[i] = new World101Creature(i, worldStage, lifetimeAnswersCorrect, scale, 0);
+                    creatures[i] = new World101Creature(i, worldStage, lifetimeAnswersCorrect, lifetimeMinutesPlayed, scale, 0);
                     creatures[i].LoadContent(content);
                 }
 
@@ -93,7 +95,7 @@ namespace ProjectDelta
                     if (creatures[i].getAvailability())
                     {
                         creatures[i].setPosition(new Vector2(((100 + 300 * j) * scale), ((100 + 300 * k) * scale)));
-                        creatures[i].setCollisionBox(new Rectangle(((int)(creatures[i].getPosition().X)), ((int)(creatures[i].getPosition().Y)), ((int)(creatures[i].getWidth() * scale)), ((int)(creatures[i].getHeight() * scale))));
+                        creatures[i].setCollisionBox(new Rectangle(((int)(creatures[i].getPosition().X)), ((int)(creatures[i].getPosition().Y)), ((int)(creatures[i].getWidth())), ((int)(creatures[i].getHeight()))));
                         j++;
                         if (j > 5) { j = 0; k++; }
                     }
@@ -147,8 +149,8 @@ namespace ProjectDelta
                         textBubblePosition = new Vector2(creatures[i].getCollisionBox().X + 150 * scale, creatures[i].getCollisionBox().Y);
                         creatureText = "Name: " + creatures[i].getCreatureName() + "\n" +
                             "Type: " + creatures[i].getCreatureType() + "\n" +
-                            "Level: " + creatures[i].getCreatureLevel(Game1.globalUser.world101, lifetimeAnswersCorrect, Game1.globalUser.answersAttempted) + "\n" +
-                            "Description: \nThis creature \n is really nice.";
+                            "Level: " + creatures[i].getCreatureLevel() + "\n" +
+                            "Description: " + creatures[i].getCreatureDescription();
                         fontPosition = new Vector2(textBubblePosition.X + 130 * scale, textBubblePosition.Y + 100 * scale);
                         hover = true;
                     }

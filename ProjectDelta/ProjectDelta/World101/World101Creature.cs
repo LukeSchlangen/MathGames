@@ -28,27 +28,29 @@ namespace ProjectDelta
         private float speed;
         private float scale;
         private float constantlyIncreasingNumber;
+        private float spinRotation = 0;
         private int powerupUseCount = 0;
         private int maxNumberOfPowerUpUses;
         private int creatureNumber;
         private int creatureLevel;
+        private int holdCounter;
         private string creatureName;
         private string creatureType;
+        private string creatureDescription;
 
         private bool isAvailable = false;
         private bool usingPowerup = false;
+        private bool hold = false;
 
         private Rectangle collisionBox;
 
-        public World101Creature(int creatureNumber, int worldStage, int numberOfCorrectAnswers, float scale, float speed)
+        public World101Creature(int creatureNumber, int worldStage, int numberOfCorrectAnswers, int totalTimePlayed, float scale, float speed)
         {
             this.scale = scale;
             this.speed = speed;
             this.creatureNumber = creatureNumber;
             this.creatureLevel = worldStage - creatureNumber;
-            setAttributes(worldStage);
-            maxNumberOfPowerUpUses = creatureLevel / 20;
-            if (maxNumberOfPowerUpUses > 3) { maxNumberOfPowerUpUses = 3; }
+            setAttributes(worldStage, numberOfCorrectAnswers, totalTimePlayed);
         }
 
         public void LoadContent(ContentManager content)
@@ -59,21 +61,76 @@ namespace ProjectDelta
 
         public void Update(GameTime gameTime, Vector2 lowerRightCorner)
         {
-            position.X = lowerRightCorner.X - creatureImage.Width * scale + 130 * scale;
-            position.Y = lowerRightCorner.Y - creatureImage.Height * scale;
-            //bouncing
-            constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            position.Y += 10 * (float)Math.Sin(constantlyIncreasingNumber / 6) * scale;
+            if (usingPowerup && (creatureType == "Tackler" || creatureType == "Spinner"))
+            {
+                position.X += 250;
+                if (position.X > 2500 * scale)
+                {
+                    usingPowerup = false;
+                }
+                if (creatureType == "Spinner")
+                {
+                    position.X -= 100;
+                    spinRotation += 700f;
+                }
+            }
+            else if (usingPowerup && (creatureType == "Spiker" || creatureType == "Zapper"))
+            {
+                position.X += 30;
+                if (position.X > lowerRightCorner.X)
+                {
+                    usingPowerup = false;
+                }
+            }
+            else if (usingPowerup && (creatureType == "Stomper"))
+            {
+                position.X += 600 * scale;
+                position.Y -= 500 * scale;
+                if (position.X > lowerRightCorner.X + 800 * scale)
+                {
+                    position.X = lowerRightCorner.X + 200 * scale;
+                    position.Y += 1500 * scale;
+                    if (position.Y > lowerRightCorner.Y - getHeight() + 200*scale)
+                    {
+                        position.Y = lowerRightCorner.Y - getHeight() + 200 * scale;
+                        holdCounter = 0;
+                        hold = true;
+                        usingPowerup = false;
+                    }
+                }
+            }
+            else if (hold)
+            {
+                holdCounter += 1;
+                if (holdCounter > 10)
+                {
+                    hold = false;
+                }
+            }
+            else
+            {
+                position.X = lowerRightCorner.X - creatureImage.Width * scale + 130 * scale;
+                position.Y = lowerRightCorner.Y - creatureImage.Height * scale;
+                //bouncing
+                constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+                position.Y += 10 * (float)Math.Sin(constantlyIncreasingNumber / 6) * scale;
+            }
 
-            ////code from wild creature
-            //position.X -= 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             collisionBox.Y = (int)position.Y;
             collisionBox.X = (int)position.X;
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(creatureImage, position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            if (usingPowerup && getCreatureType() == "Spinner")
+            {
+                spriteBatch.Draw(creatureImage, position, null, Color.White, spinRotation, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
+            else
+            {
+                spriteBatch.Draw(creatureImage, position, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
         }
 
         public void stop()
@@ -81,22 +138,12 @@ namespace ProjectDelta
             speed = 0f;
         }
 
-        public void reset(int worldStage)
+        public void reset(int worldStage, int numberOfCorrectAnswers, int lifetimeMinutesPlayed)
         {
-            setAttributes(worldStage);
+            setAttributes(worldStage, numberOfCorrectAnswers, lifetimeMinutesPlayed);
             speed = .1f;
             powerupUseCount = 0;
             usingPowerup = false;
-        }
-
-        public void reset(int worldStage, string wild)
-        {
-
-        }
-
-        public void setMaxNumberOfPowerupUses(int maxNumberOfPowerUpUses)
-        {
-            this.maxNumberOfPowerUpUses = maxNumberOfPowerUpUses;
         }
 
         public void usePowerup()
@@ -142,12 +189,12 @@ namespace ProjectDelta
 
         public float getWidth()
         {
-            return creatureImage.Width;
+            return creatureImage.Width * scale;
         }
 
         public float getHeight()
         {
-            return creatureImage.Height;
+            return creatureImage.Height * scale;
         }
         public bool getAvailability()
         {
@@ -257,142 +304,218 @@ namespace ProjectDelta
             return available;
         }
 
-        private void setAttributes(int worldStage)
+        private void setAttributes(int worldStage, int correctAnswers, int totalTimePlayed)
         {
             if (creatureNumber < 16)
             {
                 creatureName = "Begino";
                 creatureType = "Tackler";
+                creatureDescription = "Impressed by hard work, Begino becomes a stronger tackler every minute you play!";
+                if (totalTimePlayed <= 10)
+                {
+                    creatureLevel = totalTimePlayed;
+                }
+                else if (totalTimePlayed <= 30)
+                {
+                    creatureLevel = 5 + (totalTimePlayed - 10) / 2;
+                }
+                else
+                {
+                    creatureLevel = 10 + (totalTimePlayed - 30) / 4;
+                }
             }
             else if (creatureNumber < 25)
             {
                 creatureName = "Addingo";
                 creatureType = "Spiker";
+                creatureDescription = "Inspired by new locations, Addingo becomes stronger as you move from stage to stage.";
+                if (worldStage < 20)
+                {
+                    creatureLevel = worldStage;
+                }
+                else
+                {
+                    creatureLevel = 14 + worldStage / 3;
+                }
             }
             else if (creatureNumber < 30)
             {
                 creatureName = "Lotolegs";
-                creatureType = "Strecher";
+                creatureType = "Spinner";
+                creatureDescription = "Nothing makes Lotolegs happier than new friends and he gets stronger with every new creature you collect!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 39)
             {
                 creatureName = "Toradd";
                 creatureType = "Tackler";
+                creatureDescription = "Toradd loves watching you get the right answers and grows with every correct answer!";
+                if (correctAnswers < 1000)
+                {
+                    creatureLevel = correctAnswers / 40;
+                }
+                else
+                {
+                    creatureLevel = 50 + (correctAnswers - 1000) / 60;
+                }
             }
             else if (creatureNumber < 45)
             {
                 creatureName = "Diamon";
-                creatureType = "Freezer";
+                creatureType = "Zapper";
+                creatureDescription = "Mixing diamond and ice, Diamon is tough and can stop the enemy in their tracks!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 50)
             {
                 creatureName = "Torton";
                 creatureType = "Tackler";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 56)
             {
                 creatureName = "Harehat";
                 creatureType = "Digger";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 63)
             {
                 creatureName = "Umbrello";
                 creatureType = "Stomper";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 68)
             {
                 creatureName = "Springo";
                 creatureType = "Spinner";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 73)
             {
                 creatureName = "Vamp";
-                creatureType = "Scarer";
+                creatureType = "Stomper";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 79)
             {
                 creatureName = "Chargo";
                 creatureType = "Zapper";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 87)
             {
                 creatureName = "Lanwal";
                 creatureType = "Stomper";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 94)
             {
                 creatureName = "Slinko";
-                creatureType = "Stretcher";
+                creatureType = "Stomper";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 102)
             {
                 creatureName = "Hingo";
-                creatureType = "Shooter";
+                creatureType = "Spiker";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 110)
             {
                 creatureName = "Downgo";
                 creatureType = "Digger";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 116)
             {
                 creatureName = "Slicko";
                 creatureType = "Zapper";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 124)
             {
                 creatureName = "Fuzzbump";
                 creatureType = "Stomper";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 131)
             {
-                creatureName = "Arrow";
+                creatureName = "Arrawo";
                 creatureType = "Tackler";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 140)
             {
                 creatureName = "Flamingren";
                 creatureType = "Zapper";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 145)
             {
                 creatureName = "Twisto";
                 creatureType = "Spinner";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 150)
             {
                 creatureName = "Hoverbo";
-                creatureType = "Shooter";
+                creatureType = "Spiker";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 158)
             {
                 creatureName = "Wisdo";
-                creatureType = "Freezer";
+                creatureType = "Zapper";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 164)
             {
                 creatureName = "Zwiggle";
                 creatureType = "Zapper";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = worldStage - creatureNumber;
             }
             else
             {
                 creatureName = "Unnamed";
                 creatureType = "Tackler";
+                creatureDescription = "This creature is very nice!";
+                creatureLevel = (worldStage - creatureNumber) / 4;
             }
 
             isAvailable = isCreatureAvailable(worldStage);
-            //isAvailable = true;
-        }
 
-        private int determineCreatureLevel(int worldStage, int creature, int numberOfAttemptedProblems, int numberOfCorrectProblems)
-        {
-            int creatureLevel = worldStage - creature;
+
 
             if (creatureLevel > 99)
             {
                 creatureLevel = 99;
             }
-            return creatureLevel;
+
+            maxNumberOfPowerUpUses = creatureLevel / 25 + 1;
+
+            if (maxNumberOfPowerUpUses > 5)
+            {
+                maxNumberOfPowerUpUses = 5;
+            }
+
         }
 
         public string getCreatureType()
@@ -405,9 +528,14 @@ namespace ProjectDelta
             return creatureName;
         }
 
-        public int getCreatureLevel(int worldStage, int numberOfAttemptedProblems, int numberOfCorrectProblems)
+        public int getCreatureLevel()
         {
             return creatureLevel;
+        }
+
+        public string getCreatureDescription()
+        {
+            return creatureDescription;
         }
 
         public Texture2D getCreatureImage()
