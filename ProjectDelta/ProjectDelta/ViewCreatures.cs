@@ -163,7 +163,7 @@ namespace ProjectDelta
                     xSpacing = 225 * scale + (575 - creatures[currentHoverCreature - 1].getWidth() * 2 / 3) * widthSum / totalPreviousEvolutionsWidth * scale;
                     previousEvolutionCreature = currentHoverCreature - previousEvolutions;
                     spriteBatch.Draw(creatures[previousEvolutionCreature].getCreatureImage(), new Vector2(fontPosition.X + xSpacing, fontPosition.Y + textBubble.Height * scale /3 - creatures[previousEvolutionCreature].getHeight() / 3), null, Color.White, 0f, Vector2.Zero, scale * 2 / 3, SpriteEffects.None, 0f);
-                    widthSum += creatures[previousEvolutionCreature + 1].getWidth();
+                    widthSum += creatures[previousEvolutionCreature +1].getWidth();
                     previousEvolutions -= 1;
                 }
                 previousEvolutions = previousEvolutionsHolder;

@@ -137,8 +137,7 @@ namespace ProjectDelta
             //set baby creatures position
             for (int i = 0; i < babyCreaturePosition.Length; i++)
             {
-
-                babyCreaturePosition[i] = new Vector2(((220 + 200 * i) * scale), (800 * scale));
+                babyCreaturePosition[i] = new Vector2(((220 + 200 * i) * scale), (850 * scale));
             }
 
             largeEnemyShipPosition = new Vector2((-600 * scale), (600 * scale));
@@ -371,7 +370,7 @@ namespace ProjectDelta
                 for (int i = 0; i < babyCreaturePosition.Length; i++)
                 {
 
-                    spriteBatch.Draw(babyCreature[i], babyCreaturePosition[i], null, Color.White, 0f, Vector2.Zero, scale / 2, SpriteEffects.None, 0f);
+                    spriteBatch.Draw(babyCreature[i], babyCreaturePosition[i], null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
 
                     if (storyCounter < -23000)
                     {

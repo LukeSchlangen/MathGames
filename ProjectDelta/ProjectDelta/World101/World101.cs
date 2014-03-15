@@ -44,8 +44,9 @@ namespace ProjectDelta
         private int resetCounter;
         private int tabletCreatureNumber;
 
-        private float scale;
+        private SpriteFont font;
 
+        private float scale;
         private float backgroundSpeed = .1f;
         private float backupBackgroundSpeed = .1f; //speed of background for game, also used to set monster speed
         private float timePerProblem = 10000f; //10000f is about 3.5 seconds per problem
@@ -78,6 +79,7 @@ namespace ProjectDelta
         private Vector2 creatureTabletPosition;
         private Vector2 startButtonPosition;
         private Vector2 tabletCreaturePosition;
+        private Vector2 creatureTextPosition;
         private Vector2 spikePosition;
         private Vector2 holePosition;
         private Vector2 internetConnectionWarningPosition;
@@ -115,6 +117,7 @@ namespace ProjectDelta
         private int bgToDraw = 1;
 
         private string myAnswer;
+        private string creatureText;
 
         private int sessionTimePlayed;
         private int sessionAnswersAttempted;
@@ -187,6 +190,10 @@ namespace ProjectDelta
 
             creatureTablet = content.Load<Texture2D>("Level1/creature_tablet");
             creatureTabletPosition = new Vector2(10 * scale, 10 * scale);
+
+            font = content.Load<SpriteFont>("input_font");
+            creatureText = "";
+            creatureTextPosition = new Vector2(creatureTabletPosition.X + 405 * scale, creatureTabletPosition.Y + 90 * scale);
 
             if (creatures[currentFriendlyCreature].getCreatureType() == "Spiker")
             {
@@ -485,6 +492,12 @@ namespace ProjectDelta
             }
 
             tabletCreaturePosition = new Vector2(creatureTabletPosition.X + creatureTablet.Width * scale * 30 / 100-creatures[tabletCreatureNumber].getWidth()/2, creatureTabletPosition.Y + creatureTablet.Height * scale * 41 / 100 - creatures[tabletCreatureNumber].getHeight()/2);
+
+            creatureText = "Name: " + creatures[tabletCreatureNumber].getCreatureName() + "\n" +
+        "Type: " + creatures[tabletCreatureNumber].getCreatureType() + "\n" +
+        "Level: " + creatures[tabletCreatureNumber].getCreatureLevel() + "\n" +
+        "Power Ups: " + creatures[tabletCreatureNumber].getPowerUpsRemaining();
+        
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -540,7 +553,7 @@ namespace ProjectDelta
                 spriteBatch.Draw(creatureTablet, creatureTabletPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(creatures[tabletCreatureNumber].getCreatureImage(), tabletCreaturePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(startButton, startButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-                //spriteBatch.Draw(creatures[worldStage].getCreatureImage(), creatures[worldStage].getPosition(), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.DrawString(font, creatureText, creatureTextPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             if (heroDead)
             {
@@ -832,7 +845,7 @@ namespace ProjectDelta
             monsterOne.setX((int)(monsterOne.getCollisionBox().X + (400 + creatures[currentFriendlyCreature].getCreatureLevel() * 10) * scale));
             monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + (400 + creatures[currentFriendlyCreature].getCreatureLevel() * 10) * scale));
             currentMonster.setX((int)(currentMonster.getCollisionBox().X + (400 + creatures[currentFriendlyCreature].getCreatureLevel() * 10) * scale));
-            nonCurrentMonster.setX((int)(currentMonster.getCollisionBox().X + (400 + creatures[currentFriendlyCreature].getCreatureLevel() * 10) * scale));
+            nonCurrentMonster.setX((int)(nonCurrentMonster.getCollisionBox().X + (400 + creatures[currentFriendlyCreature].getCreatureLevel() * 10) * scale));
         }
 
         private void shootSpike()

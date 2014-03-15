@@ -90,7 +90,7 @@ namespace ProjectDelta
                 {
                     position.X = lowerRightCorner.X + 200 * scale;
                     position.Y += 1500 * scale;
-                    if (position.Y > lowerRightCorner.Y - getHeight() + 200*scale)
+                    if (position.Y > lowerRightCorner.Y - getHeight() + 200 * scale)
                     {
                         position.Y = lowerRightCorner.Y - getHeight() + 200 * scale;
                         holdCounter = 0;
@@ -148,8 +148,8 @@ namespace ProjectDelta
 
         public void usePowerup()
         {
-                powerupUseCount += 1;
-                usingPowerup = true;
+            powerupUseCount += 1;
+            usingPowerup = true;
         }
 
         public int getPowerUpsRemaining()
@@ -300,7 +300,7 @@ namespace ProjectDelta
             {
                 creatureName = "Begino";
                 creatureType = "Tackler";
-                creatureDescription = "Impressed by hard work, Begino \nbecomes a stronger tackler every minute you play!";
+                creatureDescription = "Impressed by hard work, Begino becomes a stronger\ntackler every minute you play!";
                 if (totalTimePlayed <= 10)
                 {
                     creatureLevel = totalTimePlayed;
@@ -318,7 +318,7 @@ namespace ProjectDelta
             {
                 creatureName = "Addingo";
                 creatureType = "Spiker";
-                creatureDescription = "Inspired by new locations, Addingo becomes stronger as you move from stage to stage.";
+                creatureDescription = "Inspired by new locations, Addingo becomes stronger as\nyou move from stage to stage.";
                 if (worldStage < 20)
                 {
                     creatureLevel = worldStage;
@@ -332,14 +332,14 @@ namespace ProjectDelta
             {
                 creatureName = "Lotolegs";
                 creatureType = "Spinner";
-                creatureDescription = "Nothing makes Lotolegs happier than new friends and he gets stronger with every new creature you collect!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureDescription = "Nothing makes Lotolegs happier than new friends and he\ngets stronger with every new creature you collect!";
+                creatureLevel = worldStage - 20;
             }
             else if (creatureNumber < 39)
             {
                 creatureName = "Toradd";
                 creatureType = "Tackler";
-                creatureDescription = "Toradd loves watching you get the right answers and grows with every correct answer!";
+                creatureDescription = "Toradd loves watching you get the right answers and\ngrows with every correct answer!";
                 if (correctAnswers < 1000)
                 {
                     creatureLevel = correctAnswers / 40;
@@ -353,7 +353,7 @@ namespace ProjectDelta
             {
                 creatureName = "Diamon";
                 creatureType = "Zapper";
-                creatureDescription = "Mixing diamond and ice, Diamon is tough and can stop the enemy in their tracks!";
+                creatureDescription = "Mixing diamond and diamond, Diamon is tough and can stop the\nenemy in their tracks!";
                 creatureLevel = worldStage - creatureNumber;
             }
             else if (creatureNumber < 50)
@@ -361,7 +361,7 @@ namespace ProjectDelta
                 creatureName = "Torton";
                 creatureType = "Tackler";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = worldStage - 40;
             }
             else if (creatureNumber < 56)
             {
@@ -497,6 +497,10 @@ namespace ProjectDelta
             if (creatureLevel > 99)
             {
                 creatureLevel = 99;
+            }
+            else if (creatureLevel < 0)
+            {
+                creatureLevel = 0;
             }
 
             maxNumberOfPowerUpUses = creatureLevel / 25 + 1;
