@@ -77,7 +77,7 @@ namespace ProjectDelta
             textBubble = content.Load<Texture2D>("Home/text_bubble");
             backButtonPosition = new Vector2(screenWidth / 9, screenHeight * 4 / 5);
             backButtonCollisionBox = new Rectangle((int)(backButtonPosition.X), (int)(backButtonPosition.Y), (int)(backButton.Width * scale), (int)(backButton.Height * scale));
-            largeWhiteBoardPosition = new Vector2((screenWidth / 2 - largeWhiteBoard.Width * scale / 2), (screenHeight / 2 - largeWhiteBoard.Height * scale / 2));
+            largeWhiteBoardPosition = new Vector2(screenWidth / 2 - largeWhiteBoard.Width * scale / 2, screenHeight / 2 - largeWhiteBoard.Height * scale / 2);
 
             if (worldStage - 1 >= 0)
             {
@@ -94,10 +94,10 @@ namespace ProjectDelta
                 {
                     if (creatures[i].getAvailability())
                     {
-                        creatures[i].setPosition(new Vector2(((100 + 300 * j) * scale), ((100 + 300 * k) * scale)));
-                        creatures[i].setCollisionBox(new Rectangle(((int)(creatures[i].getPosition().X)), ((int)(creatures[i].getPosition().Y)), ((int)(creatures[i].getWidth())), ((int)(creatures[i].getHeight()))));
+                        creatures[i].setPosition(new Vector2(((150 + 200 * j) * scale - creatures[i].getWidth()/3), ((125 + 200 * k) * scale - creatures[i].getHeight()/3)));
+                        creatures[i].setCollisionBox(new Rectangle(((int)(creatures[i].getPosition().X)), ((int)(creatures[i].getPosition().Y)), (int)(creatures[i].getWidth() * 2 / 3), (int)(creatures[i].getHeight() * 2 / 3)));
                         j++;
-                        if (j > 5) { j = 0; k++; }
+                        if (j > 8) { j = 0; k++; }
                     }
                 }
             }
@@ -121,7 +121,8 @@ namespace ProjectDelta
                 {
                     if (creatures[i].getAvailability())
                     {
-                        creatures[i].Draw(spriteBatch);
+                        spriteBatch.Draw(creatures[i].getCreatureImage(), creatures[i].getPosition(), null, Color.White, 0f, Vector2.Zero, scale * 2 / 3, SpriteEffects.None, 0f);
+
                     }
                 }
             }
