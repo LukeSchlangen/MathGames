@@ -199,7 +199,7 @@ namespace ProjectDelta
                         if (textBubblePosition.X > screenWidth * 53 / 100)
                         {
                             flipped = true;
-                            textBubblePosition.X = creatures[i].getCollisionBox().X - textBubble.Width * scale;
+                            textBubblePosition.X = creatures[i].getCollisionBox().X - textBubble.Width * scale + creatures[i].getWidth() / 4;
                             fontPosition = new Vector2(textBubblePosition.X + 15 * scale, textBubblePosition.Y + 10 * scale);
                         }
                         else
