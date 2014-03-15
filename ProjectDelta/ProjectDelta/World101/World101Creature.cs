@@ -148,23 +148,13 @@ namespace ProjectDelta
 
         public void usePowerup()
         {
-            if (usingPowerup == false)
-            {
                 powerupUseCount += 1;
                 usingPowerup = true;
-            }
         }
 
-        public bool remainingPowerUp()
+        public int getPowerUpsRemaining()
         {
-            if (powerupUseCount < maxNumberOfPowerUpUses)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return maxNumberOfPowerUpUses - powerupUseCount;
         }
 
         public void setPosition(Vector2 position)
@@ -310,7 +300,7 @@ namespace ProjectDelta
             {
                 creatureName = "Begino";
                 creatureType = "Tackler";
-                creatureDescription = "Impressed by hard work, Begino becomes a stronger tackler every minute you play!";
+                creatureDescription = "Impressed by hard work, Begino \nbecomes a stronger tackler every minute you play!";
                 if (totalTimePlayed <= 10)
                 {
                     creatureLevel = totalTimePlayed;

@@ -1747,7 +1747,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Creatures\wild_creature_74.xnb</Output>
-      <Time>2014-03-14T10:34:38.807956-05:00</Time>
+      <Time>2014-03-15T13:05:14.2525512-05:00</Time>
     </Item>
     <Item>
       <Source>Creatures\wild_creature_75.png</Source>
@@ -2008,7 +2008,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\text_bubble.xnb</Output>
-      <Time>2014-03-14T10:34:39.7430094-05:00</Time>
+      <Time>2014-03-15T10:55:36.5056895-05:00</Time>
     </Item>
     <Item>
       <Source>Story\enemy_ship_engines_off.png</Source>

@@ -448,11 +448,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Home\text_bubble.png">
-      <Name>text_bubble</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Story\hero_ship_engines_off.png">
@@ -1457,6 +1452,13 @@
   <ItemGroup>
     <Compile Include="Level1\hole.png">
       <Name>hole</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Home\text_bubble.png">
+      <Name>text_bubble</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

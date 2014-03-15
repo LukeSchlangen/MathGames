@@ -30,11 +30,19 @@ namespace ProjectDelta
 
         private SpriteFont font;
         private bool hover;
+        private bool flipped;
         private float scale;
+        private float xSpacing;
+        private float totalPreviousEvolutionsWidth;
+        private float widthSum;
         private int screenHeight;
         private int screenWidth;
         private int lifetimeAnswersCorrect;
         private int lifetimeMinutesPlayed;
+        private int previousEvolutions;
+        private int previousEvolutionsHolder;
+        private int currentHoverCreature;
+        private int previousEvolutionCreature;
         public int worldStage;
 
         private string creatureText;
@@ -61,7 +69,7 @@ namespace ProjectDelta
         public void LoadContent(ContentManager content, int worldStage, int screenX, int screenY)
         {
             this.worldStage = worldStage;
-            creatures = new World101Creature[worldStage];
+            creatures = new World101Creature[163];
 
             font = content.Load<SpriteFont>("input_font");
 
@@ -94,7 +102,7 @@ namespace ProjectDelta
                 {
                     if (creatures[i].getAvailability())
                     {
-                        creatures[i].setPosition(new Vector2(((150 + 200 * j) * scale - creatures[i].getWidth()/3), ((125 + 200 * k) * scale - creatures[i].getHeight()/3)));
+                        creatures[i].setPosition(new Vector2(((150 + 200 * j) * scale - creatures[i].getWidth() / 3), ((125 + 200 * k) * scale - creatures[i].getHeight() / 3)));
                         creatures[i].setCollisionBox(new Rectangle(((int)(creatures[i].getPosition().X)), ((int)(creatures[i].getPosition().Y)), (int)(creatures[i].getWidth() * 2 / 3), (int)(creatures[i].getHeight() * 2 / 3)));
                         j++;
                         if (j > 8) { j = 0; k++; }
@@ -112,11 +120,8 @@ namespace ProjectDelta
         {
             spriteBatch.Draw(background, new Vector2(), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(largeWhiteBoard, largeWhiteBoardPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            if (Game1.globalUser.world101 - 1 >= 0)
+            if (worldStage - 1 >= 0)
             {
-
-
-
                 for (int i = 0; i < worldStage; i++)
                 {
                     if (creatures[i].getAvailability())
@@ -126,12 +131,43 @@ namespace ProjectDelta
                     }
                 }
             }
+            spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             if (hover)
             {
-                spriteBatch.Draw(textBubble, textBubblePosition, null, Color.White, 0f, Vector2.Zero, scale * 2, SpriteEffects.None, 0f);
+                if (flipped)
+                {
+                    spriteBatch.Draw(textBubble, textBubblePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.FlipHorizontally, 0f);
+                }
+                else
+                {
+                    spriteBatch.Draw(textBubble, textBubblePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                }
                 spriteBatch.DrawString(font, creatureText, fontPosition, Color.SteelBlue, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
+                //draw previous evolutions of hover creature
+                previousEvolutionsHolder = previousEvolutions;
+                totalPreviousEvolutionsWidth = 0;
+
+                while (previousEvolutions > 0)
+                {
+                    previousEvolutionCreature = currentHoverCreature - previousEvolutions;
+                    totalPreviousEvolutionsWidth += creatures[previousEvolutionCreature].getWidth();
+                    previousEvolutions -= 1;
+                }
+
+                previousEvolutions = previousEvolutionsHolder;
+                previousEvolutionCreature = currentHoverCreature - previousEvolutions;
+                widthSum = creatures[previousEvolutionCreature].getWidth();
+                while (previousEvolutions > 0)
+                {
+                    xSpacing = 225 * scale + (575 - creatures[currentHoverCreature - 1].getWidth() * 2 / 3) * widthSum / totalPreviousEvolutionsWidth * scale;
+                    previousEvolutionCreature = currentHoverCreature - previousEvolutions;
+                    spriteBatch.Draw(creatures[previousEvolutionCreature].getCreatureImage(), new Vector2(fontPosition.X + xSpacing, fontPosition.Y + textBubble.Height * scale /3 - creatures[previousEvolutionCreature].getHeight() / 3), null, Color.White, 0f, Vector2.Zero, scale * 2 / 3, SpriteEffects.None, 0f);
+                    widthSum += creatures[previousEvolutionCreature + 1].getWidth();
+                    previousEvolutions -= 1;
+                }
+                previousEvolutions = previousEvolutionsHolder;
             }
-            spriteBatch.Draw(backButton, backButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         private bool checkBack()
@@ -147,13 +183,37 @@ namespace ProjectDelta
 
                     if (mousePosition.Intersects(creatures[i].getCollisionBox()))
                     {
-                        textBubblePosition = new Vector2(creatures[i].getCollisionBox().X + 150 * scale, creatures[i].getCollisionBox().Y);
+                        previousEvolutions = 1;
+                        while (i - previousEvolutions >= 0 && creatures[i].getCreatureName() == creatures[i - previousEvolutions].getCreatureName())
+                        {
+                            previousEvolutions += 1;
+                        }
+                        previousEvolutions -= 1;
+                        textBubblePosition = new Vector2(creatures[i].getCollisionBox().X + creatures[i].getWidth() / 2, creatures[i].getCollisionBox().Y - textBubble.Height * scale / 3);
+                        if (textBubblePosition.Y < 0)
+                        {
+                            textBubblePosition.Y = 0;
+                        }
+                        fontPosition = new Vector2(textBubblePosition.X + 50 * scale, textBubblePosition.Y + 10 * scale);
+
+                        if (textBubblePosition.X > screenWidth * 53 / 100)
+                        {
+                            flipped = true;
+                            textBubblePosition.X = creatures[i].getCollisionBox().X - textBubble.Width * scale;
+                            fontPosition = new Vector2(textBubblePosition.X + 15 * scale, textBubblePosition.Y + 10 * scale);
+                        }
+                        else
+                        {
+                            flipped = false;
+                        }
+
                         creatureText = "Name: " + creatures[i].getCreatureName() + "\n" +
                             "Type: " + creatures[i].getCreatureType() + "\n" +
                             "Level: " + creatures[i].getCreatureLevel() + "\n" +
-                            "Description: " + creatures[i].getCreatureDescription();
-                        fontPosition = new Vector2(textBubblePosition.X + 130 * scale, textBubblePosition.Y + 100 * scale);
+                            "Power Ups: " + creatures[i].getPowerUpsRemaining() + "\n" +
+                            "Description:\n" + creatures[i].getCreatureDescription();
                         hover = true;
+                        currentHoverCreature = i;
                     }
                 }
             }

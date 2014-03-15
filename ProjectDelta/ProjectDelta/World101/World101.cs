@@ -381,7 +381,7 @@ namespace ProjectDelta
                     else
                     {
                         //if the creature has a powerup remaining, use it now
-                        if (creatures[currentFriendlyCreature].remainingPowerUp())
+                        if (creatures[currentFriendlyCreature].getPowerUpsRemaining() > 0)
                         {
                             useCreaturePowerUp(scale);
                         }
