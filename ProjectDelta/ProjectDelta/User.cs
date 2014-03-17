@@ -38,6 +38,9 @@ namespace ProjectDelta
         [DynamoDBProperty("CURRENT_FRIENDLY_CREATURE")]
         public int currentFriendlyCreature { get; set; }
 
+        [DynamoDBProperty("CURRENT_FRIENDLY_CREATURE")]
+        public int energyBubbles { get; set; }
+
         [DynamoDBProperty("TIME_PLAYED")]
         public int timePlayed { get; set; }
 

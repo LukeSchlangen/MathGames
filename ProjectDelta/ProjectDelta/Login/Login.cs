@@ -646,6 +646,7 @@ namespace ProjectDelta
                             username = username, //create their username
                             password = GameUtils.encrypt(password, username), //create their password, storing an encrypted value in the db
                             currentFriendlyCreature = 0,
+                            energyBubbles = 0,
                         };
 
                         context.Save<User>(Game1.globalUser); //save the user

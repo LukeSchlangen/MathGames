@@ -92,6 +92,7 @@
     <Compile Include="ViewCreatures.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="World101\World101.cs" />
+    <Compile Include="World101\World101EnergyBubbles.cs" />
     <Compile Include="World101\World101Input.cs" />
     <Compile Include="World101\World101Monster.cs" />
     <Compile Include="World101\World101Text.cs" />

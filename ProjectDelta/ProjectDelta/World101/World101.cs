@@ -65,6 +65,8 @@ namespace ProjectDelta
         private Texture2D nextLevelKeyboardImage;
         private Texture2D statusBar;
         private Texture2D creatureTablet;
+        private Texture2D spikeOne;
+        private Texture2D spikeTwo;
         private Texture2D spike;
         private Texture2D hole;
         private Texture2D startButton;
@@ -97,9 +99,7 @@ namespace ProjectDelta
         private World101Creature[] creatures = new World101Creature[163];
         private World101Monster currentMonster;
         private World101Monster nonCurrentMonster;
-        //private World101Creature wildCreature;
-        //private CreatureOrganizer creatureOrganizer = new CreatureOrganizer();
-        //private World101FriendlyCreature friendlyCreature;
+        private World101EnergyBubbles energyBubbles;
         private World101Input world101Input;
         private World101Text world101Text = new World101Text();
         private Random random = new Random();
@@ -143,6 +143,7 @@ namespace ProjectDelta
             currentMonster = monsterOne;
             nonCurrentMonster = monsterTwo;
             hero.Initialize(scale);
+            energyBubbles = new World101EnergyBubbles(hero.getHeroPosition(), new Vector2(1500 * scale, 75 * scale), scale);
             world101Input = new World101Input(scale);
             world101Text.Initialize(scale);
             resetCounter = 1000;
@@ -163,15 +164,12 @@ namespace ProjectDelta
             hero.LoadContent(content);
             monsterOne.LoadContent(content);
             monsterTwo.LoadContent(content);
+            energyBubbles.LoadContent(content);
 
             for (int i = 0; i < creatures.Length; i++)
             {
                 creatures[i].LoadContent(content);
             }
-
-            //wildCreature = creatures[worldStage];
-            //wildCreature.setPosition(new Vector2(2600 * scale, 800 * scale));
-            //wildCreature.LoadContent(content);
 
             currentFriendlyCreature = Game1.globalUser.currentFriendlyCreature;
             lifetimeAnswersCorrect = Game1.globalUser.answersCorrect;
@@ -194,16 +192,13 @@ namespace ProjectDelta
             font = content.Load<SpriteFont>("input_font");
             creatureText = "";
             creatureTextPosition = new Vector2(creatureTabletPosition.X + 405 * scale, creatureTabletPosition.Y + 90 * scale);
+            
+            spikeOne = content.Load<Texture2D>("Level1/spike");
+            spikeTwo = content.Load<Texture2D>("Level1/lightning");
 
-            if (creatures[currentFriendlyCreature].getCreatureType() == "Spiker")
-            {
-                spike = content.Load<Texture2D>("Level1/spike");
-            }
-            else if (creatures[currentFriendlyCreature].getCreatureType() == "Zapper")
-            {
-                spike = content.Load<Texture2D>("Level1/lightning");
-            }
-            else { hole = content.Load <Texture2D>("Level1/hole"); }
+            updateSpikeImage();
+
+            hole = content.Load <Texture2D>("Level1/hole");
             spikePosition = new Vector2(2000 * scale, 0);
             holePosition = new Vector2(hero.getHeroPosition().X + 275* scale, hero.getHeroPosition().Y - 150 *scale);
             if (worldStage > 0)
@@ -500,10 +495,24 @@ namespace ProjectDelta
         
         }
 
+        private void updateSpikeImage()
+        {
+            if (creatures[currentFriendlyCreature].getCreatureType() == "Spiker")
+            {
+                spike = spikeOne;
+            }
+            else if (creatures[currentFriendlyCreature].getCreatureType() == "Zapper")
+            {
+                spike = spikeTwo;
+            }
+        }
+
+
         public void Draw(SpriteBatch spriteBatch)
         {
             //draw the backgrounds and characters
             drawExtraObjects(spriteBatch);
+            energyBubbles.Draw(spriteBatch);
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
             if (worldStage > 0 && correctInARow < countToContinue)
@@ -567,7 +576,6 @@ namespace ProjectDelta
             {
                 spriteBatch.Draw(internetConnectionWarning, internetConnectionWarningPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
-
 
         }
 
@@ -670,6 +678,7 @@ namespace ProjectDelta
         private void updateCharacters(GameTime gameTime)
         {
             hero.Update(gameTime);
+            energyBubbles.Update(gameTime, hero.getHeroPosition());
             monsterOne.Update(gameTime);
             monsterTwo.Update(gameTime);
             showMostEvolvedCreature();
@@ -734,6 +743,7 @@ namespace ProjectDelta
             hero.live();
             hero.questionUp();
             hero.start();
+            energyBubbles.reset();
             showQuestion = true;
             heroDead = false;
             world101Input.resetInput();
@@ -749,6 +759,11 @@ namespace ProjectDelta
             showQuestion = false;
             answerDone = false;
             correctInARow++;
+            if (correctInARow >= countToContinue)
+            {
+                energyBubbles.newBubbles(150);
+            }
+            energyBubbles.newBubbles(10);
             sessionAnswersAttempted++;
             sessionAnswersCorrect++;
             //Update factors after an answer is correct (it's here instead of beatmonster because a powerup could be used for that)
@@ -789,7 +804,8 @@ namespace ProjectDelta
                         creatures[i].reset(worldStage, lifetimeAnswersCorrect, lifetimeMinutesPlayed); //makes the new creature available and the old creature not if it just evolved
                     }
                     showMostEvolvedCreature(); //updates to most evolved creature
-                    if (currentFriendlyCreature > worldStage - 1) { currentFriendlyCreature = worldStage - 1; } //makes sure weird things don't happen
+                    if ((currentFriendlyCreature > worldStage - 1) || (currentFriendlyCreature == worldStage - 2)) { currentFriendlyCreature = worldStage - 1; } //makes sure weird things don't happen and that player gets most recent creature
+                    updateSpikeImage();
                     Game1.globalUser.currentFriendlyCreature = currentFriendlyCreature;
                     Game1.globalUser.world101 = worldStage;
                     context.Save<User>(Game1.globalUser);

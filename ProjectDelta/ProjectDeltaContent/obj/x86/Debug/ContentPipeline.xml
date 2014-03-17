@@ -2325,6 +2325,15 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\hole.xnb</Output>
       <Time>2014-03-14T17:14:10.0980353-05:00</Time>
     </Item>
+    <Item>
+      <Source>General\energy_bubble.png</Source>
+      <Name>General\energy_bubble</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\energy_bubble.xnb</Output>
+      <Time>2014-03-17T12:31:39.6650748-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
