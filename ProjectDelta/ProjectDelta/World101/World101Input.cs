@@ -54,75 +54,78 @@ namespace ProjectDelta
             prevKeyboard = keyboard;
             keyboard = Keyboard.GetState();
 
-            if ((keyboard.IsKeyDown(Keys.NumPad0) && prevKeyboard.IsKeyDown(Keys.NumPad0) == false) || (keyboard.IsKeyDown(Keys.D0) && prevKeyboard.IsKeyDown(Keys.D0) == false))
+            if (input.Length < 3)
             {
-                input = input + "0";
+                if ((keyboard.IsKeyDown(Keys.NumPad0) && prevKeyboard.IsKeyDown(Keys.NumPad0) == false) || (keyboard.IsKeyDown(Keys.D0) && prevKeyboard.IsKeyDown(Keys.D0) == false))
+                {
+                    input = input + "0";
 
-                prevKeyboard = keyboard;
-                keyboard = Keyboard.GetState();
-            }
-            if ((keyboard.IsKeyDown(Keys.NumPad1) && prevKeyboard.IsKeyDown(Keys.NumPad1) == false) || (keyboard.IsKeyDown(Keys.D1) && prevKeyboard.IsKeyDown(Keys.D1) == false))
-            {
-                input = input + "1";
+                    prevKeyboard = keyboard;
+                    keyboard = Keyboard.GetState();
+                }
+                if ((keyboard.IsKeyDown(Keys.NumPad1) && prevKeyboard.IsKeyDown(Keys.NumPad1) == false) || (keyboard.IsKeyDown(Keys.D1) && prevKeyboard.IsKeyDown(Keys.D1) == false))
+                {
+                    input = input + "1";
 
-                prevKeyboard = keyboard;
-                keyboard = Keyboard.GetState();
-            }
-            if ((keyboard.IsKeyDown(Keys.NumPad2) && prevKeyboard.IsKeyDown(Keys.NumPad2) == false) || (keyboard.IsKeyDown(Keys.D2) && prevKeyboard.IsKeyDown(Keys.D2) == false))
-            {
-                input = input + "2";
+                    prevKeyboard = keyboard;
+                    keyboard = Keyboard.GetState();
+                }
+                if ((keyboard.IsKeyDown(Keys.NumPad2) && prevKeyboard.IsKeyDown(Keys.NumPad2) == false) || (keyboard.IsKeyDown(Keys.D2) && prevKeyboard.IsKeyDown(Keys.D2) == false))
+                {
+                    input = input + "2";
 
-                prevKeyboard = keyboard;
-                keyboard = Keyboard.GetState();
-            }
-            if ((keyboard.IsKeyDown(Keys.NumPad3) && prevKeyboard.IsKeyDown(Keys.NumPad3) == false) || (keyboard.IsKeyDown(Keys.D3) && prevKeyboard.IsKeyDown(Keys.D3) == false))
-            {
-                input = input + "3";
+                    prevKeyboard = keyboard;
+                    keyboard = Keyboard.GetState();
+                }
+                if ((keyboard.IsKeyDown(Keys.NumPad3) && prevKeyboard.IsKeyDown(Keys.NumPad3) == false) || (keyboard.IsKeyDown(Keys.D3) && prevKeyboard.IsKeyDown(Keys.D3) == false))
+                {
+                    input = input + "3";
 
-                prevKeyboard = keyboard;
-                keyboard = Keyboard.GetState();
-            }
-            if ((keyboard.IsKeyDown(Keys.NumPad4) && prevKeyboard.IsKeyDown(Keys.NumPad4) == false) || (keyboard.IsKeyDown(Keys.D4) && prevKeyboard.IsKeyDown(Keys.D4) == false))
-            {
-                input = input + "4";
+                    prevKeyboard = keyboard;
+                    keyboard = Keyboard.GetState();
+                }
+                if ((keyboard.IsKeyDown(Keys.NumPad4) && prevKeyboard.IsKeyDown(Keys.NumPad4) == false) || (keyboard.IsKeyDown(Keys.D4) && prevKeyboard.IsKeyDown(Keys.D4) == false))
+                {
+                    input = input + "4";
 
-                prevKeyboard = keyboard;
-                keyboard = Keyboard.GetState();
-            }
-            if ((keyboard.IsKeyDown(Keys.NumPad5) && prevKeyboard.IsKeyDown(Keys.NumPad5) == false) || (keyboard.IsKeyDown(Keys.D5) && prevKeyboard.IsKeyDown(Keys.D5) == false))
-            {
-                input = input + "5";
+                    prevKeyboard = keyboard;
+                    keyboard = Keyboard.GetState();
+                }
+                if ((keyboard.IsKeyDown(Keys.NumPad5) && prevKeyboard.IsKeyDown(Keys.NumPad5) == false) || (keyboard.IsKeyDown(Keys.D5) && prevKeyboard.IsKeyDown(Keys.D5) == false))
+                {
+                    input = input + "5";
 
-                prevKeyboard = keyboard;
-                keyboard = Keyboard.GetState();
-            }
-            if ((keyboard.IsKeyDown(Keys.NumPad6) && prevKeyboard.IsKeyDown(Keys.NumPad6) == false) || (keyboard.IsKeyDown(Keys.D6) && prevKeyboard.IsKeyDown(Keys.D6) == false))
-            {
-                input = input + "6";
+                    prevKeyboard = keyboard;
+                    keyboard = Keyboard.GetState();
+                }
+                if ((keyboard.IsKeyDown(Keys.NumPad6) && prevKeyboard.IsKeyDown(Keys.NumPad6) == false) || (keyboard.IsKeyDown(Keys.D6) && prevKeyboard.IsKeyDown(Keys.D6) == false))
+                {
+                    input = input + "6";
 
-                prevKeyboard = keyboard;
-                keyboard = Keyboard.GetState();
-            }
-            if ((keyboard.IsKeyDown(Keys.NumPad7) && prevKeyboard.IsKeyDown(Keys.NumPad7) == false) || (keyboard.IsKeyDown(Keys.D7) && prevKeyboard.IsKeyDown(Keys.D7) == false))
-            {
-                input = input + "7";
+                    prevKeyboard = keyboard;
+                    keyboard = Keyboard.GetState();
+                }
+                if ((keyboard.IsKeyDown(Keys.NumPad7) && prevKeyboard.IsKeyDown(Keys.NumPad7) == false) || (keyboard.IsKeyDown(Keys.D7) && prevKeyboard.IsKeyDown(Keys.D7) == false))
+                {
+                    input = input + "7";
 
-                prevKeyboard = keyboard;
-                keyboard = Keyboard.GetState();
-            }
-            if ((keyboard.IsKeyDown(Keys.NumPad8) && prevKeyboard.IsKeyDown(Keys.NumPad8) == false) || (keyboard.IsKeyDown(Keys.D8) && prevKeyboard.IsKeyDown(Keys.D8) == false))
-            {
-                input = input + "8";
+                    prevKeyboard = keyboard;
+                    keyboard = Keyboard.GetState();
+                }
+                if ((keyboard.IsKeyDown(Keys.NumPad8) && prevKeyboard.IsKeyDown(Keys.NumPad8) == false) || (keyboard.IsKeyDown(Keys.D8) && prevKeyboard.IsKeyDown(Keys.D8) == false))
+                {
+                    input = input + "8";
 
-                prevKeyboard = keyboard;
-                keyboard = Keyboard.GetState();
-            }
-            if ((keyboard.IsKeyDown(Keys.NumPad9) && prevKeyboard.IsKeyDown(Keys.NumPad9) == false) || (keyboard.IsKeyDown(Keys.D9) && prevKeyboard.IsKeyDown(Keys.D9) == false))
-            {
-                input = input + "9";
+                    prevKeyboard = keyboard;
+                    keyboard = Keyboard.GetState();
+                }
+                if ((keyboard.IsKeyDown(Keys.NumPad9) && prevKeyboard.IsKeyDown(Keys.NumPad9) == false) || (keyboard.IsKeyDown(Keys.D9) && prevKeyboard.IsKeyDown(Keys.D9) == false))
+                {
+                    input = input + "9";
 
-                prevKeyboard = keyboard;
-                keyboard = Keyboard.GetState();
+                    prevKeyboard = keyboard;
+                    keyboard = Keyboard.GetState();
+                }
             }
             if (keyboard.IsKeyDown(Keys.Back) && prevKeyboard.IsKeyDown(Keys.Back) == false)
             {
@@ -131,6 +134,7 @@ namespace ProjectDelta
                 prevKeyboard = keyboard;
                 keyboard = Keyboard.GetState();
             }
+
             if (keyboard.IsKeyDown(Keys.Enter) && prevKeyboard.IsKeyDown(Keys.Enter) == false && !input.Equals("") && !heroDead)
             {
                 lastInput = input;
@@ -139,14 +143,6 @@ namespace ProjectDelta
             }
 
             return false;
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            string answer = "My answer: " + input;
-            Vector2 FontOrigin = font.MeasureString(input) / 2;
-
-            spriteBatch.DrawString(font, answer, fontPosition, Color.Blue);
         }
 
         public string getCurrentInput()

@@ -335,22 +335,7 @@ namespace ProjectDelta
                 }
 
                 //make sure they are in order (special powers can make this out of sync)
-                if (monsterOne != currentMonster)
-                {
-                    if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterOne.dead)
-                    {
-                        monsterOne.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-                        nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-                    }
-                }
-                else if (monsterTwo != currentMonster)
-                {
-                    if (monsterTwo.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterTwo.dead)
-                    {
-                        monsterTwo.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-                        nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-                    }
-                }
+                keepMonstersInOrder();
 
                 answerDone = world101Input.Update(gameTime, heroDead); //if the player has entered an answer
 
@@ -370,31 +355,33 @@ namespace ProjectDelta
                         }
                     }
                 }
-
-                if (hero.getShieldCollisionBox().Intersects(currentMonster.getCollisionBox()))
+                else //this is an else, because if they get the correct answer at the exact time the monster collides with them, it would act up
                 {
-                    beatMonster(); //if the monster hits the shield, send the monster flying
-                }
-
-                if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
-                {
-                    if (world101Input.getInput().Equals("") == false && currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getInput()))
+                    if (hero.getShieldCollisionBox().Intersects(currentMonster.getCollisionBox()))
                     {
-                        correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
-                        currentMonster.setSpeed(backgroundSpeed * 2); //monster speeds up so player doesn't have to wait
+                        beatMonster(); //if the monster hits the shield, send the monster flying
                     }
-                    else
+
+                    if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
                     {
-                        //if the creature has a powerup remaining, use it now
-                        if (creatures[currentFriendlyCreature].getPowerUpsRemaining() > 0)
+                        if (world101Input.getInput().Equals("") == false && currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getInput()))
                         {
-                            useCreaturePowerUp(scale);
+                            correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
+                            currentMonster.setSpeed(backgroundSpeed * 2); //monster speeds up so player doesn't have to wait
                         }
                         else
                         {
-                            sessionAnswersAttempted++;
-                            soundEffectThud.Play();
-                            stopAll(); //if the player has the wrong answer, stop everything
+                            //if the creature has a powerup remaining, use it now
+                            if (creatures[currentFriendlyCreature].getPowerUpsRemaining() > 0)
+                            {
+                                useCreaturePowerUp(scale);
+                            }
+                            else
+                            {
+                                sessionAnswersAttempted++;
+                                soundEffectThud.Play();
+                                stopAll(); //if the player has the wrong answer, stop everything
+                            }
                         }
                     }
                 }
@@ -439,6 +426,26 @@ namespace ProjectDelta
 
             return false; //don't go back to home screen, keep playing the game
 
+        }
+
+        private void keepMonstersInOrder()
+        {
+            if (monsterOne != currentMonster)
+            {
+                if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterOne.dead)
+                {
+                    monsterOne.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+                    nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+                }
+            }
+            else if (monsterTwo != currentMonster)
+            {
+                if (monsterTwo.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterTwo.dead)
+                {
+                    monsterTwo.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+                    nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+                }
+            }
         }
 
         private void showMostEvolvedCreature()
