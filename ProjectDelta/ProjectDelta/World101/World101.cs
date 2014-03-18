@@ -347,6 +347,7 @@ namespace ProjectDelta
                         {
                             correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
                             currentMonster.setSpeed(backgroundSpeed * 2); //monster speeds up so player doesn't have to wait
+                            currentMonster.setX(currentMonster.getCollisionBox().X - 10);
                         }
                         else
                         {
