@@ -24,7 +24,6 @@ namespace ProjectDelta
         private int energyBubblesWaiting = 0;
         private int energyBubblesInMotion = 0;
         private float scale;
-        private float speed;
 
         public World101EnergyBubbles(Vector2 bubbleStartingPosition, Vector2 bubbleCollectorPosition, float scale)
         {
@@ -100,6 +99,11 @@ namespace ProjectDelta
             {
                 bubblePosition[i] = bubbleEndingPosition;
             }
+        }
+
+        public int energyBubblesInTransit()
+        {
+            return energyBubblesInMotion + energyBubblesWaiting;
         }
     }
 }

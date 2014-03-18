@@ -26,7 +26,6 @@ namespace ProjectDelta
         private enum State
         {
             None,
-            //InternetConnectionError,
             ResetTimer,
         }
 
@@ -43,6 +42,7 @@ namespace ProjectDelta
         private int dropCounter;
         private int resetCounter;
         private int tabletCreatureNumber;
+        private int totalEnergyBubbles;
 
         private SpriteFont font;
 
@@ -63,6 +63,7 @@ namespace ProjectDelta
         private Texture2D thirdBackgroundThree;
         private Texture2D keyboardImage;
         private Texture2D nextLevelKeyboardImage;
+        private Texture2D bubbleCounter;
         private Texture2D statusBar;
         private Texture2D creatureTablet;
         private Texture2D spikeOne;
@@ -174,11 +175,13 @@ namespace ProjectDelta
             currentFriendlyCreature = Game1.globalUser.currentFriendlyCreature;
             lifetimeAnswersCorrect = Game1.globalUser.answersCorrect;
             lifetimeMinutesPlayed = Game1.globalUser.timePlayed / 60000;
+            totalEnergyBubbles = Game1.globalUser.energyBubbles;
 
             soundEffectShieldUp = content.Load<SoundEffect>("Level1/shield_up");
             soundEffectThud = content.Load<SoundEffect>("Level1/thud");
             soundEffectZap = content.Load<SoundEffect>("Level1/zap");
 
+            bubbleCounter = content.Load<Texture2D>("Level1/bubble_counter");
             statusBar = content.Load<Texture2D>("Level1/status_bar");
             statusBarPosition = new Vector2(700 * scale, 50 * scale);
 
@@ -192,15 +195,15 @@ namespace ProjectDelta
             font = content.Load<SpriteFont>("input_font");
             creatureText = "";
             creatureTextPosition = new Vector2(creatureTabletPosition.X + 405 * scale, creatureTabletPosition.Y + 90 * scale);
-            
+
             spikeOne = content.Load<Texture2D>("Level1/spike");
             spikeTwo = content.Load<Texture2D>("Level1/lightning");
 
             updateSpikeImage();
 
-            hole = content.Load <Texture2D>("Level1/hole");
+            hole = content.Load<Texture2D>("Level1/hole");
             spikePosition = new Vector2(2000 * scale, 0);
-            holePosition = new Vector2(hero.getHeroPosition().X + 275* scale, hero.getHeroPosition().Y - 150 *scale);
+            holePosition = new Vector2(hero.getHeroPosition().X + 275 * scale, hero.getHeroPosition().Y - 150 * scale);
             if (worldStage > 0)
             {
                 tabletCreatureNumber = worldStage - 1;
@@ -288,7 +291,7 @@ namespace ProjectDelta
                 if (spikePositionCounter > 0)
                 {
 
-                    spikePosition = new Vector2(nonCurrentMonster.getCollisionBox().X - spike.Width * scale / 2, nonCurrentMonster.getCollisionBox().Y + nonCurrentMonster.getHeight()/2 - spike.Height * scale / 2);
+                    spikePosition = new Vector2(nonCurrentMonster.getCollisionBox().X - spike.Width * scale / 2, nonCurrentMonster.getCollisionBox().Y + nonCurrentMonster.getHeight() / 2 - spike.Height * scale / 2);
 
                     spikePositionCounter++;
                     if (spikePositionCounter > 5)
@@ -331,7 +334,7 @@ namespace ProjectDelta
                     }
                 }
 
-                //if both monsters are off screen, make sure they are in order (special powers can make this out of sync)
+                //make sure they are in order (special powers can make this out of sync)
                 if (monsterOne != currentMonster)
                 {
                     if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterOne.dead)
@@ -432,7 +435,7 @@ namespace ProjectDelta
             }
 
             //show the problem
-            world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), myAnswer, correctInARow, worldStage, countToContinue);
+            world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), myAnswer, correctInARow, worldStage, countToContinue, totalEnergyBubbles - energyBubbles.energyBubblesInTransit());
 
             return false; //don't go back to home screen, keep playing the game
 
@@ -486,13 +489,13 @@ namespace ProjectDelta
                 }
             }
 
-            tabletCreaturePosition = new Vector2(creatureTabletPosition.X + creatureTablet.Width * scale * 30 / 100-creatures[tabletCreatureNumber].getWidth()/2, creatureTabletPosition.Y + creatureTablet.Height * scale * 41 / 100 - creatures[tabletCreatureNumber].getHeight()/2);
+            tabletCreaturePosition = new Vector2(creatureTabletPosition.X + creatureTablet.Width * scale * 30 / 100 - creatures[tabletCreatureNumber].getWidth() / 2, creatureTabletPosition.Y + creatureTablet.Height * scale * 41 / 100 - creatures[tabletCreatureNumber].getHeight() / 2);
 
             creatureText = "Name: " + creatures[tabletCreatureNumber].getCreatureName() + "\n" +
         "Type: " + creatures[tabletCreatureNumber].getCreatureType() + "\n" +
         "Level: " + creatures[tabletCreatureNumber].getCreatureLevel() + "\n" +
         "Power Ups: " + creatures[tabletCreatureNumber].getPowerUpsRemaining();
-        
+
         }
 
         private void updateSpikeImage()
@@ -528,8 +531,7 @@ namespace ProjectDelta
             {
                 spriteBatch.Draw(spike, spikePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
-
-            
+            spriteBatch.Draw(bubbleCounter, new Vector2(statusBarPosition.X + 745 * scale, statusBarPosition.Y + 85 * scale), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(statusBar, statusBarPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             world101Text.DrawAnswerCount(spriteBatch);
 
@@ -762,8 +764,10 @@ namespace ProjectDelta
             if (correctInARow >= countToContinue)
             {
                 energyBubbles.newBubbles(150);
+                totalEnergyBubbles += 150;
             }
             energyBubbles.newBubbles(10);
+            totalEnergyBubbles += 10;
             sessionAnswersAttempted++;
             sessionAnswersCorrect++;
             //Update factors after an answer is correct (it's here instead of beatmonster because a powerup could be used for that)
@@ -805,10 +809,11 @@ namespace ProjectDelta
                     }
                     showMostEvolvedCreature(); //updates to most evolved creature
                     if ((currentFriendlyCreature > worldStage - 1) || (currentFriendlyCreature == worldStage - 2)) { currentFriendlyCreature = worldStage - 1; } //makes sure weird things don't happen and that player gets most recent creature
-                    updateSpikeImage();
                     Game1.globalUser.currentFriendlyCreature = currentFriendlyCreature;
                     Game1.globalUser.world101 = worldStage;
+                    Game1.globalUser.energyBubbles = totalEnergyBubbles;
                     context.Save<User>(Game1.globalUser);
+                    updateSpikeImage();
                     sessionAnswersAttempted = 0;
                     sessionAnswersCorrect = 0;
                     sessionTimePlayed = 0;
@@ -845,7 +850,7 @@ namespace ProjectDelta
                 monsterBack();
                 monsterDrop();
             }
-            else if(creatureType == "Stomper")
+            else if (creatureType == "Stomper")
             {
                 monsterBack();
                 beatMonster();
@@ -887,7 +892,8 @@ namespace ProjectDelta
                 currentMonster.setY((int)(currentMonster.getCollisionBox().Y - 100 * scale));
             }
         }
-            private void monsterDrop(){
+        private void monsterDrop()
+        {
             dropCounter += 1;
         }
 

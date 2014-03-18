@@ -91,8 +91,6 @@ namespace ProjectDelta
                 creaturePosition = new Vector2((screenWidth / 2 - creature.Width * scale / 2), (screenHeight / 2 - creature.Height * scale / 2 - 30*scale));
                 creatureCollisionBox = new Rectangle(((int)(world101BoxPosition.X)), ((int)(world101BoxPosition.Y)), ((int)(world101ButtonPosition.X)), ((int)(world101ButtonPosition.Y)));
             }
-
-
         }
 
         public int Update(GameTime gameTime)
@@ -140,6 +138,7 @@ namespace ProjectDelta
 
             if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(logoutButtonCollisionBox))
             {
+
                 return -1;
             }
 
