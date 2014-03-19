@@ -203,7 +203,7 @@ namespace ProjectDelta
 
             hole = content.Load<Texture2D>("Level1/hole");
             spikePosition = new Vector2(2000 * scale, 0);
-            holePosition = new Vector2(hero.getHeroPosition().X + 275 * scale, hero.getHeroPosition().Y - 150 * scale);
+            holePosition = new Vector2(hero.getHeroPosition().X + 320 * scale, hero.getHeroPosition().Y - 150 * scale);
             if (worldStage > 0)
             {
                 tabletCreatureNumber = worldStage - 1;
@@ -303,7 +303,7 @@ namespace ProjectDelta
                 else if (dropCounter > 0)
                 {
                     dropCounter++;
-                    if (dropCounter > 50)
+                    if (dropCounter > 50 || heroDead)
                     {
                         dropCounter = 0;
                         beatMonster();
@@ -758,6 +758,7 @@ namespace ProjectDelta
             heroDead = false;
             world101Input.resetInput();
             state = State.None;
+            dropCounter = 0;
             resetCounter = 1000;
         }
 
