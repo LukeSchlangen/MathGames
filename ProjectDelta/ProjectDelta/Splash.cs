@@ -34,7 +34,7 @@ namespace ProjectDelta
         public void LoadContent(ContentManager content)
         {
             logo = content.Load<Texture2D>("General/abamath");
-            logoPosition = new Vector2((screenX / 2 - logo.Width * scale / 2), (screenY / 2 - logo.Height * scale / 2));
+            logoPosition = new Vector2((screenX / 2 - logo.Width * scale / 4), (screenY / 2 - logo.Height * scale / 4));
         }
 
         public bool Update(GameTime gameTime)
@@ -57,7 +57,7 @@ namespace ProjectDelta
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(logo, logoPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.Draw(logo, logoPosition, null, Color.White, 0f, Vector2.Zero, scale/2, SpriteEffects.None, 0f);
         }
     }
 }

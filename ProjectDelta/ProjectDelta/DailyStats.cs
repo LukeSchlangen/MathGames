@@ -33,7 +33,7 @@ namespace ProjectDelta
 
         public void resetDailyStats()
         {
-            if (Game1.globalUser.lastDatePlayed != DateTime.Today)
+            if (Game1.globalUser.lastDatePlayed != DateTime.Today.Date)
             {
                 Game1.globalUser.answersAttemptedToday = 0;
                 Game1.globalUser.answersCorrectToday = 0;

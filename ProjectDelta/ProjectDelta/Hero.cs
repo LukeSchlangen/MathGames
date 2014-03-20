@@ -40,6 +40,7 @@ namespace ProjectDelta
         private bool shieldAnimationDone = false;
         private bool heroStop = false;
         private bool dead = false;
+        private bool isShooting = false;
 
         private int shieldShake = 1;
 
@@ -149,6 +150,7 @@ namespace ProjectDelta
                     heroPosition.Y += (float)Math.Sin(constantlyIncreasingNumber / 8) * scale;
                 }
             }
+
             heroCollisionBox.X = (int)(heroPosition.X - 150 * scale);
             heroCollisionBox.Y = (int)heroPosition.Y;
         }

@@ -74,14 +74,11 @@ namespace ProjectDelta
             {
                 for (int i = 0; i < bubblePosition.Length; i++)
                 {
-                    if (bubblePosition[i].Y <= bubbleEndingPosition.Y)
+                    if (bubblePosition[i].Y <= bubbleEndingPosition.Y && energyBubblesWaiting > 0)
                     {
-                        if (energyBubblesWaiting > 0)
-                        {
                             bubblePosition[i] = bubbleStartingPosition;
                             energyBubblesWaiting -= 1;
                             i = bubblePosition.Length;
-                        }
                     }
                 }
             }
