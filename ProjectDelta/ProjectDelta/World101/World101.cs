@@ -114,6 +114,7 @@ namespace ProjectDelta
         private bool showQuestion = true;
         private bool heroDead = false;
         private bool internetConnection = true;
+        private bool bubbleShooting = false;
 
         private int bgToDraw = 1;
 
@@ -284,10 +285,23 @@ namespace ProjectDelta
             }
             else
             {
+                if (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.Left))
+                {
+                    bubbleShooting = true;
+                    monsterOne.setX((int)(monsterOne.getCollisionBox().X + 40 * scale));
+                    monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 40 * scale));
+                    totalEnergyBubbles -= 1;
+                }
+                else
+                {
+                    bubbleShooting = false;
+                    cycleBackground(gameTime); //advance the background to make it look like the hero is moving
+
+                }
+
                 updateCharacters(gameTime); //update the positions of all of the characters
                 showMostEvolvedCreature();
-                cycleBackground(gameTime); //advance the background to make it look like the hero is moving
-
+                
                 if (spikePositionCounter > 0)
                 {
 
@@ -526,6 +540,11 @@ namespace ProjectDelta
             energyBubbles.Draw(spriteBatch);
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
+            if (correctInARow < countToContinue && bubbleShooting)
+            {
+                energyBubbles.DrawBubbleGun(spriteBatch);
+            }
+
             if (worldStage > 0 && correctInARow < countToContinue)
             {
                 creatures[currentFriendlyCreature].Draw(spriteBatch);
@@ -543,13 +562,15 @@ namespace ProjectDelta
             spriteBatch.Draw(statusBar, statusBarPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             world101Text.DrawAnswerCount(spriteBatch);
 
-            if (!Keyboard.GetState().IsKeyDown(Keys.Space))
+            if (!Keyboard.GetState().IsKeyDown(Keys.Space)&& showQuestion && correctInARow < countToContinue)
             {
-                if (showQuestion && correctInARow < countToContinue)
-                {
+
                     world101Text.Draw(spriteBatch); //show the question to the student
-                }
+                
             }
+
+
+           
 
             if (correctInARow >= countToContinue)
             {
@@ -574,6 +595,7 @@ namespace ProjectDelta
                 spriteBatch.Draw(startButton, startButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.DrawString(font, creatureText, creatureTextPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
+
             if (heroDead)
             {
                 spriteBatch.Draw(keyboardImage, keyboardImagePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);

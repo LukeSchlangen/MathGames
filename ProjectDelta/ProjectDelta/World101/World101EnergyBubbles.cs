@@ -18,7 +18,8 @@ namespace ProjectDelta
     class World101EnergyBubbles
     {
         private Texture2D energyBubble;
-        Vector2[] bubblePosition;
+        private Vector2[] bubblePosition;
+        private Vector2[] gunBubblesPosition;
         private Vector2 bubbleStartingPosition;
         private Vector2 bubbleEndingPosition;
         private int energyBubblesWaiting = 0;
@@ -28,12 +29,17 @@ namespace ProjectDelta
         public World101EnergyBubbles(Vector2 bubbleStartingPosition, Vector2 bubbleCollectorPosition, float scale)
         {
             this.scale = scale;
-            this.bubblePosition = new Vector2[1000];
+            this.bubblePosition = new Vector2[250];
+            this.gunBubblesPosition = new Vector2[80];
             this.bubbleStartingPosition = bubbleStartingPosition;
             this.bubbleEndingPosition = bubbleCollectorPosition;
             for (int i = 0; i < bubblePosition.Length; i++)
             {
                 bubblePosition[i] = bubbleEndingPosition;
+            }
+            for (int i = 0; i < gunBubblesPosition.Length; i++)
+            {
+                gunBubblesPosition[i] = new Vector2(400 * scale + (float)i / (float)gunBubblesPosition.Length * (600 + 2000) / 2, bubbleStartingPosition.Y);
             }
         }
 
@@ -49,6 +55,17 @@ namespace ProjectDelta
                 if (bubblePosition[i].Y > bubbleEndingPosition.Y )
                 {
                     spriteBatch.Draw(energyBubble, bubblePosition[i], null, Color.White, 0f, Vector2.Zero, scale / (i%3 +3), SpriteEffects.None, 0f);
+                }
+            }
+        }
+
+        public void DrawBubbleGun(SpriteBatch spriteBatch)
+        {
+            for (int i = 0; i < gunBubblesPosition.Length; i++)
+            {
+                if (gunBubblesPosition[i].X < 2000*scale)
+                {
+                    spriteBatch.Draw(energyBubble, gunBubblesPosition[i], null, Color.White, 0f, Vector2.Zero, scale / (i % 3 + 3), SpriteEffects.None, 0f);
                 }
             }
         }
@@ -69,7 +86,33 @@ namespace ProjectDelta
                 }
             }
 
+            for (int i = 0; i < gunBubblesPosition.Length; i++)
+            {
+                if (gunBubblesPosition[i].X < 2000 * scale)
+                {
+                    gunBubblesPosition[i].X += (float)(i+gunBubblesPosition.Length)/(float)gunBubblesPosition.Length*(2000 * scale - bubbleStartingPosition.X) / 100;
+                    if (i % 3 == 0)
+                    {
+                        gunBubblesPosition[i].Y = 900 * scale + 10 * (float)Math.Sin(gunBubblesPosition[i].X / 90+10) * scale;
+                    }
+                    else if (i % 3 == 1)
+                    {
+                        gunBubblesPosition[i].Y = 900 * scale - 20 * (float)Math.Sin(gunBubblesPosition[i].X / 70 + 20) * scale;
+                    }
+                    else
+                    {
+                        gunBubblesPosition[i].Y = 900 * scale - 30 * (float)Math.Sin(gunBubblesPosition[i].X / 50) * scale;
+                    }
+                }
+                else
+                {
+                    gunBubblesPosition[i] = bubbleStartingPosition;
+                }
+            }
+
             
+           
+
             if (energyBubblesInMotion < bubblePosition.Length)
             {
                 for (int i = 0; i < bubblePosition.Length; i++)
@@ -96,11 +139,16 @@ namespace ProjectDelta
             {
                 bubblePosition[i] = bubbleEndingPosition;
             }
+            for (int i = 0; i < gunBubblesPosition.Length; i++)
+            {
+                gunBubblesPosition[i] = new Vector2(400 * scale + (float)i / (float)gunBubblesPosition.Length * (600 + 2000) / 2, bubbleStartingPosition.Y);
+            }
         }
 
         public int energyBubblesInTransit()
         {
             return energyBubblesInMotion + energyBubblesWaiting;
         }
+
     }
 }

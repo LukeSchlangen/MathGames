@@ -66,6 +66,7 @@ namespace ProjectDelta
         {
             this.scale = scale;
             state = State.Question;
+            heroStartingPosition = new Vector2(275 * scale, 800 * scale);
         }
 
         public void LoadContent(ContentManager content)
@@ -73,7 +74,6 @@ namespace ProjectDelta
             heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
             shield = content.Load<Texture2D>("General/Shield/question_box_to_shield_3x3");
             malfunctionShield = content.Load<Texture2D>("General/Shield/malfunction_shield");
-            heroStartingPosition = new Vector2(275 * scale, 800 * scale);
             heroPosition = heroStartingPosition;
             heroAnimation = new Animation(heroRunning, heroStartingPosition, 5, 5, scale, 10f);
             heroCollisionBox = new Rectangle((int)((heroStartingPosition.X) - 150 * scale), (int)(heroStartingPosition.Y), (int)(heroAnimation.getWidth() * scale), heroAnimation.getHeight());
