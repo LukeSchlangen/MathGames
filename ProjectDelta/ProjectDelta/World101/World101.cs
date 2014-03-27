@@ -296,8 +296,9 @@ namespace ProjectDelta
                 {
                     bubbleShooting = false;
                     cycleBackground(gameTime); //advance the background to make it look like the hero is moving
-
                 }
+
+                hero.setHeroShooting(bubbleShooting);
 
                 updateCharacters(gameTime); //update the positions of all of the characters
                 showMostEvolvedCreature();

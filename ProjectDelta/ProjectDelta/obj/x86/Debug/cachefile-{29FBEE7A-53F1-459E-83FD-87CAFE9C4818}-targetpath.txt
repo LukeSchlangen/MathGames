@@ -260,3 +260,4 @@ Content\Level1\lightning.xnb
 Content\Level1\hole.xnb
 Content\General\energy_bubble.xnb
 Content\Level1\bubble_counter.xnb
+Content\General\Hero\bubble_gun.xnb

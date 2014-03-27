@@ -2343,6 +2343,15 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\bubble_counter.xnb</Output>
       <Time>2014-03-17T17:19:32.03983-05:00</Time>
     </Item>
+    <Item>
+      <Source>General\Hero\bubble_gun.png</Source>
+      <Name>General\Hero\bubble_gun</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\bubble_gun.xnb</Output>
+      <Time>2014-03-27T12:53:22.9971039-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -29,6 +29,7 @@ namespace ProjectDelta
             Question,
             ShieldAnimation,
             Shield,
+            Shooting,
             StageSuccess,
             Death,
             Stop
@@ -52,6 +53,7 @@ namespace ProjectDelta
         private Vector2 shieldStartingPosition;
 
         private Texture2D heroRunning;
+        private Texture2D heroShooting;
         private Texture2D shield;
         private Texture2D malfunctionShield;
 
@@ -72,6 +74,7 @@ namespace ProjectDelta
         public void LoadContent(ContentManager content)
         {
             heroRunning = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
+            heroShooting = content.Load<Texture2D>("General/Hero/bubble_gun");
             shield = content.Load<Texture2D>("General/Shield/question_box_to_shield_3x3");
             malfunctionShield = content.Load<Texture2D>("General/Shield/malfunction_shield");
             heroPosition = heroStartingPosition;
@@ -117,16 +120,17 @@ namespace ProjectDelta
             {
                 if (state == State.StageSuccess)
                 {
-                        shieldAnimation.getLastState();
+                    shieldAnimation.getLastState();
                     shieldPosition.X += 20 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
                     heroPosition.X += 5 / 2 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-                                    }
-                
+                }
+
                 if (state == State.Death)
                 {
                     heroPosition.X -= 25 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
                     heroPosition.Y -= 25 * speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-                    if (shieldShake <= 9){
+                    if (shieldShake <= 9)
+                    {
                         if (shieldShake % 3 == 1)
                         {
                             shieldPosition.X -= 10 * scale;
@@ -157,12 +161,18 @@ namespace ProjectDelta
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
-            heroAnimation.Draw(spriteBatch, heroPosition);
+            if (isShooting)
+            {
+                spriteBatch.Draw(heroShooting, new Vector2(heroPosition.X - 60*scale, heroPosition.Y - 25*scale), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
+            else
+            {
+                heroAnimation.Draw(spriteBatch, heroPosition);
+            }
             shieldAnimation.Draw(spriteBatch, shieldPosition);
             if (state == State.Death)
             {
-                spriteBatch.Draw(malfunctionShield, new Vector2(shieldPosition.X - 100*scale, shieldPosition.Y - 75 *scale), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(malfunctionShield, new Vector2(shieldPosition.X - 100 * scale, shieldPosition.Y - 75 * scale), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
 
         }
@@ -253,6 +263,11 @@ namespace ProjectDelta
             state = State.Question;
             speed = .1f;
             heroStop = false;
+        }
+
+        public void setHeroShooting(bool isShooting)
+        {
+            this.isShooting = isShooting;
         }
 
         public Vector2 getHeroPosition()
