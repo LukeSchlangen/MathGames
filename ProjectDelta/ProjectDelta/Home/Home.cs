@@ -26,6 +26,7 @@ namespace ProjectDelta
     {
         private float scale;
         private int timer;
+        private int worldStage;
 
         private HomeText text;
 
@@ -42,6 +43,7 @@ namespace ProjectDelta
         private Texture2D creature;
         private Texture2D spaceshipPointer;
         private Texture2D highlighter;
+        private Texture2D viewCreaturesButton;
 
 
         //Vectors
@@ -50,6 +52,7 @@ namespace ProjectDelta
         private Vector2 logoutButtonPosition;
         private Vector2 statsButtonPosition;
         private Vector2 creaturePosition;
+        private Vector2 viewCreaturesButtonPosition;
         private Vector2 spaceShipPosition;
 
         //Collision Boxes
@@ -75,6 +78,7 @@ namespace ProjectDelta
             statsButton = content.Load<Texture2D>("Home/stats_button");
             spaceshipPointer = content.Load<Texture2D>("General/Ships/good_ship_1");
             highlighter = content.Load<Texture2D>("Login/login_highlighter");
+            viewCreaturesButton = content.Load<Texture2D>("Home/view_creatures_text");
             world101BoxPosition = new Vector2((screenWidth / 2 - world101Box.Width * scale / 2), (screenHeight / 2 - world101Box.Height * scale / 2));
             world101ButtonPosition = new Vector2((screenWidth / 2 - world101Button.Width * scale / 2), (screenHeight / 2 + (125 * scale)));
             logoutButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
@@ -85,10 +89,12 @@ namespace ProjectDelta
             statsButtonCollisionBox = new Rectangle(((int)(statsButtonPosition.X)), ((int)(statsButtonPosition.Y)), (int)(statsButton.Width * scale), (int)(statsButton.Height * scale));
 
             //NOTE: This will cause an exception if using an account that is higher than level 7, until all the creature images are added...
-            if (Game1.globalUser.world101 > 0)
+            this.worldStage = Game1.globalUser.world101;
+            if (worldStage > 0)
             {
-                creature = content.Load<Texture2D>("Creatures/wild_creature_" + (Game1.globalUser.currentFriendlyCreature));
+                creature = content.Load<Texture2D>("Creatures/wild_creature_" + worldStage);
                 creaturePosition = new Vector2((screenWidth / 2 - creature.Width * scale / 2), (screenHeight / 2 - creature.Height * scale / 2 - 30*scale));
+                viewCreaturesButtonPosition = new Vector2(creaturePosition.X, creaturePosition.Y + creature.Height * scale / 3 * 2);
                 creatureCollisionBox = new Rectangle(((int)(world101BoxPosition.X)), ((int)(world101BoxPosition.Y)), ((int)(world101ButtonPosition.X)), ((int)(world101ButtonPosition.Y)));
             }
         }
@@ -111,10 +117,15 @@ namespace ProjectDelta
             spriteBatch.Draw(world101Box, world101BoxPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(world101Button, world101ButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             spriteBatch.Draw(logoutButton, logoutButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
-            if (Game1.globalUser.world101 > 0)
+            if (worldStage > 0)
             {
                 spriteBatch.Draw(statsButton, statsButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(creature, creaturePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+
+                if (worldStage < 20 && spaceShipPosition.X > world101ButtonPosition.X - 300 * scale)
+                {
+                    spriteBatch.Draw(viewCreaturesButton, viewCreaturesButtonPosition , null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                }
             }
             if (spaceShipPosition.X > world101ButtonPosition.X - 250 * scale)
             {

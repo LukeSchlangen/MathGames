@@ -63,6 +63,9 @@ namespace ProjectDelta
         private Texture2D thirdBackgroundThree;
         private Texture2D keyboardImage;
         private Texture2D nextLevelKeyboardImage;
+        private Texture2D shootBubblesKeyboardImage;
+        private Texture2D creatureDefendImage;
+        private Texture2D creatureStrongerImage;
         private Texture2D bubbleCounter;
         private Texture2D statusBar;
         private Texture2D creatureTablet;
@@ -188,6 +191,7 @@ namespace ProjectDelta
 
             keyboardImage = content.Load<Texture2D>("Level1/keyboard_image");
             nextLevelKeyboardImage = content.Load<Texture2D>("Level1/next_level_keyboard");
+            shootBubblesKeyboardImage = content.Load<Texture2D>("Level1/shoot_bubbles_keyboard");
             keyboardImagePosition = new Vector2((1920 * 2 / 3 * scale - keyboardImage.Width * scale / 2), (1080 * 2 / 5 * scale - keyboardImage.Height * scale / 2));
 
             creatureTablet = content.Load<Texture2D>("Level1/creature_tablet");
@@ -221,7 +225,9 @@ namespace ProjectDelta
             startButtonCollisionBox = new Rectangle((int)startButtonPosition.X, (int)startButtonPosition.Y, startButton.Width, startButton.Height);
 
             internetConnectionWarning = content.Load<Texture2D>("General/internet_connection_warning");
-            internetConnectionWarningPosition = new Vector2(50 * scale, 50 * scale);
+            creatureDefendImage = content.Load<Texture2D>("Level1/creatures_defend_text");
+            creatureStrongerImage = content.Load<Texture2D>("Level1/creatures_stronger_text");
+            internetConnectionWarningPosition = new Vector2(275 * scale, 250 * scale);
 
 
             //load your first set of values into the array
@@ -285,7 +291,7 @@ namespace ProjectDelta
             }
             else
             {
-                if (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.Left))
+                if (totalEnergyBubbles > 0 && (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.Left)))
                 {
                     bubbleShooting = true;
                     monsterOne.setX((int)(monsterOne.getCollisionBox().X + 40 * scale));
@@ -595,6 +601,18 @@ namespace ProjectDelta
                 spriteBatch.Draw(creatures[tabletCreatureNumber].getCreatureImage(), tabletCreaturePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.Draw(startButton, startButtonPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 spriteBatch.DrawString(font, creatureText, creatureTextPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
+            else if (worldStage == 1)
+            {
+                spriteBatch.Draw(creatureDefendImage, internetConnectionWarningPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);              
+            }
+            else if (worldStage == 2)
+            {
+                spriteBatch.Draw(creatureStrongerImage, internetConnectionWarningPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            }
+            else if (worldStage == 3)
+            {
+                spriteBatch.Draw(shootBubblesKeyboardImage, keyboardImagePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
 
             if (heroDead)

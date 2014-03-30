@@ -2352,6 +2352,42 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Hero\bubble_gun.xnb</Output>
       <Time>2014-03-27T12:53:22.9971039-05:00</Time>
     </Item>
+    <Item>
+      <Source>Home\view_creatures_text.png</Source>
+      <Name>Home\view_creatures_text</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\view_creatures_text.xnb</Output>
+      <Time>2014-03-30T13:20:17.0508484-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\shoot_bubbles_keyboard.png</Source>
+      <Name>Level1\shoot_bubbles_keyboard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\shoot_bubbles_keyboard.xnb</Output>
+      <Time>2014-03-30T13:30:57.0784559-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\creatures_defend_text.png</Source>
+      <Name>Level1\creatures_defend_text</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\creatures_defend_text.xnb</Output>
+      <Time>2014-03-30T13:45:11.9613524-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Level1\creatures_stronger_text.png</Source>
+      <Name>Level1\creatures_stronger_text</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\creatures_stronger_text.xnb</Output>
+      <Time>2014-03-30T13:50:16.8907934-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

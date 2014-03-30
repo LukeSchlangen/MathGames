@@ -492,8 +492,6 @@ namespace ProjectDelta
 
             isAvailable = isCreatureAvailable(worldStage);
 
-
-
             if (creatureLevel > 99)
             {
                 creatureLevel = 99;
