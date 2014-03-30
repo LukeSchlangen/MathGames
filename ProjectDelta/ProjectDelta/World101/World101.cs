@@ -291,11 +291,11 @@ namespace ProjectDelta
             }
             else
             {
-                if (totalEnergyBubbles > 0 && (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.Left)))
+                if (!hero.getDead() && totalEnergyBubbles > 0 && (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.Left)))
                 {
                     bubbleShooting = true;
-                    monsterOne.setX((int)(monsterOne.getCollisionBox().X + 40 * scale));
-                    monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 40 * scale));
+                    monsterOne.setX((int)(monsterOne.getCollisionBox().X + 30 * scale));
+                    monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 30 * scale));
                     totalEnergyBubbles -= 1;
                 }
                 else
