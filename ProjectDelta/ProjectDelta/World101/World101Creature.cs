@@ -301,6 +301,7 @@ namespace ProjectDelta
                 creatureName = "Begino";
                 creatureType = "Tackler";
                 creatureDescription = "Impressed by hard work, Begino becomes a stronger\ntackler every minute you play!";
+
                 if (totalTimePlayed <= 10)
                 {
                     creatureLevel = totalTimePlayed;
@@ -353,141 +354,149 @@ namespace ProjectDelta
             {
                 creatureName = "Diamon";
                 creatureType = "Zapper";
-                creatureDescription = "Mixing diamond and diamond, Diamon is tough and can stop the\nenemy in their tracks!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureDescription = "Mixing diamond and ice, Diamon is tough and can stop the\nenemy in their tracks!";
+                creatureLevel = worldStage - 35 + (correctAnswers - 1000) / 60;
             }
             else if (creatureNumber < 50)
             {
                 creatureName = "Torton";
                 creatureType = "Tackler";
-                creatureDescription = "This creature is very nice!";
+                creatureDescription = "Torton's shell is made for blocking. Torton gets\nstronger every time you use your shield to block!";
                 creatureLevel = worldStage - 40;
+                if (correctAnswers < 1000)
+                {
+                    creatureLevel = correctAnswers / 40;
+                }
+                else
+                {
+                    creatureLevel = 40 + (correctAnswers - 1000) / 70;
+                }
             }
             else if (creatureNumber < 56)
             {
                 creatureName = "Harehat";
                 creatureType = "Digger";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(99, 0, 0, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 63)
             {
                 creatureName = "Umbrello";
                 creatureType = "Stomper";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(0, 99, 0, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 68)
             {
                 creatureName = "Springo";
                 creatureType = "Spinner";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(0, 0, 99, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 73)
             {
                 creatureName = "Vamp";
                 creatureType = "Stomper";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(45, 45, 0, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 79)
             {
                 creatureName = "Chargo";
                 creatureType = "Zapper";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(33, 33, 33, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 87)
             {
                 creatureName = "Lanwal";
                 creatureType = "Stomper";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(45, 0, 45, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 94)
             {
                 creatureName = "Slinko";
                 creatureType = "Stomper";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(20, 20, 60, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 102)
             {
                 creatureName = "Hingo";
                 creatureType = "Spiker";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(60, 20, 20, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 110)
             {
                 creatureName = "Downgo";
                 creatureType = "Digger";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(20, 70, 10, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 116)
             {
                 creatureName = "Slicko";
                 creatureType = "Zapper";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(5, 90, 5, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 124)
             {
                 creatureName = "Fuzzbump";
                 creatureType = "Stomper";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(85, 10, 5, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 131)
             {
                 creatureName = "Arrawo";
                 creatureType = "Tackler";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(0, 99, 0, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 140)
             {
                 creatureName = "Flamingren";
                 creatureType = "Zapper";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(0, 99, 0, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 145)
             {
                 creatureName = "Twisto";
                 creatureType = "Spinner";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(0, 99, 0, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 150)
             {
                 creatureName = "Hoverbo";
                 creatureType = "Spiker";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(0, 99, 0, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 158)
             {
                 creatureName = "Wisdo";
                 creatureType = "Zapper";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(0, 99, 0, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 164)
             {
                 creatureName = "Zwiggle";
                 creatureType = "Zapper";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = worldStage - creatureNumber;
+                creatureLevel = CreatureCalculator.levelCalculator(0, 99, 0, worldStage, correctAnswers, totalTimePlayed); 
             }
             else
             {
                 creatureName = "Unnamed";
                 creatureType = "Tackler";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = (worldStage - creatureNumber) / 4;
+                creatureLevel = CreatureCalculator.levelCalculator(33, 33, 33, worldStage, correctAnswers, totalTimePlayed); 
             }
 
             isAvailable = isCreatureAvailable(worldStage);
@@ -508,6 +517,18 @@ namespace ProjectDelta
                 maxNumberOfPowerUpUses = 5;
             }
 
+        }
+
+        private int levelCalculator(int worldStage, int correctAnswers, int totalTimePlayed)
+        {
+            int level = 0;
+
+
+
+
+
+
+            return level;
         }
 
         public string getCreatureType()
