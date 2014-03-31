@@ -44,6 +44,7 @@ namespace ProjectDelta
         }
 
         private static int COUNT_TO_CONTINUE = 10;
+        private static int MAX_STAGE = 163;
 
         private int screenWidth;
         private int screenHeight;
@@ -145,7 +146,7 @@ namespace ProjectDelta
             //from here on out), we pass in the scale value to allow
             //us to scale the textures
             login.Initialize(scale);
-            home.Initialize(scale);
+            home.Initialize(scale, MAX_STAGE);
             world101.Initialize(scale, screenWidth);
             story.Initialize(scale, screenWidth);
 
@@ -240,7 +241,7 @@ namespace ProjectDelta
                     homeContentManager.Unload();
                     int difficulty = globalUser.world101;
 
-                    world101.LoadContent(world101ContentManager, globalUser.world101, COUNT_TO_CONTINUE);
+                    world101.LoadContent(world101ContentManager, globalUser.world101, COUNT_TO_CONTINUE, MAX_STAGE);
 
                     success = false;
                     whereTo = 0;

@@ -27,6 +27,7 @@ namespace ProjectDelta
         private float scale;
         private int timer;
         private int worldStage;
+        private int MAX_STAGE;
 
         private HomeText text;
 
@@ -44,6 +45,7 @@ namespace ProjectDelta
         private Texture2D spaceshipPointer;
         private Texture2D highlighter;
         private Texture2D viewCreaturesButton;
+        private Texture2D maxStageMessage;
 
 
         //Vectors
@@ -53,6 +55,7 @@ namespace ProjectDelta
         private Vector2 statsButtonPosition;
         private Vector2 creaturePosition;
         private Vector2 viewCreaturesButtonPosition;
+        private Vector2 maxStageMessagePosition;
         private Vector2 spaceShipPosition;
 
         //Collision Boxes
@@ -61,9 +64,10 @@ namespace ProjectDelta
         private Rectangle statsButtonCollisionBox;
         private Rectangle creatureCollisionBox;
 
-        public void Initialize(float scale)
+        public void Initialize(float scale, int MAX_STAGE)
         {
             this.scale = scale;
+            this.MAX_STAGE = MAX_STAGE;
             text = new HomeText(scale);
         }
 
@@ -79,11 +83,13 @@ namespace ProjectDelta
             spaceshipPointer = content.Load<Texture2D>("General/Ships/good_ship_1");
             highlighter = content.Load<Texture2D>("Login/login_highlighter");
             viewCreaturesButton = content.Load<Texture2D>("Home/view_creatures_text");
+            maxStageMessage = content.Load<Texture2D>("Home/beaten_game_text");
             world101BoxPosition = new Vector2((screenWidth / 2 - world101Box.Width * scale / 2), (screenHeight / 2 - world101Box.Height * scale / 2));
             world101ButtonPosition = new Vector2((screenWidth / 2 - world101Button.Width * scale / 2), (screenHeight / 2 + (125 * scale)));
             logoutButtonPosition = new Vector2(screenWidth / 8, screenHeight * 3 / 4);
             statsButtonPosition = new Vector2(3 * screenWidth / 4, screenHeight * 3 / 4);
             spaceShipPosition = new Vector2(-screenWidth / 4, world101ButtonPosition.Y);
+            maxStageMessagePosition = new Vector2(screenWidth / 4, screenHeight / 4);
             world101ButtonCollisionBox = new Rectangle(((int)(world101ButtonPosition.X)), ((int)(world101ButtonPosition.Y)), (int)(world101Button.Width * scale), (int)(world101Button.Height * scale));
             logoutButtonCollisionBox = new Rectangle(((int)(logoutButtonPosition.X)), ((int)(logoutButtonPosition.Y)), (int)(logoutButton.Width * scale), (int)(logoutButton.Height * scale));
             statsButtonCollisionBox = new Rectangle(((int)(statsButtonPosition.X)), ((int)(statsButtonPosition.Y)), (int)(statsButton.Width * scale), (int)(statsButton.Height * scale));
@@ -92,7 +98,7 @@ namespace ProjectDelta
             this.worldStage = Game1.globalUser.world101;
             if (worldStage > 0)
             {
-                creature = content.Load<Texture2D>("Creatures/wild_creature_" + worldStage);
+                creature = content.Load<Texture2D>("Creatures/wild_creature_" + Game1.globalUser.currentFriendlyCreature);
                 creaturePosition = new Vector2((screenWidth / 2 - creature.Width * scale / 2), (screenHeight / 2 - creature.Height * scale / 2 - 30*scale));
                 viewCreaturesButtonPosition = new Vector2(creaturePosition.X, creaturePosition.Y + creature.Height * scale / 3 * 2);
                 creatureCollisionBox = new Rectangle(((int)(world101BoxPosition.X)), ((int)(world101BoxPosition.Y)), ((int)(world101ButtonPosition.X)), ((int)(world101ButtonPosition.Y)));
@@ -126,6 +132,10 @@ namespace ProjectDelta
                 {
                     spriteBatch.Draw(viewCreaturesButton, viewCreaturesButtonPosition , null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
                 }
+                else if (worldStage == MAX_STAGE)
+                {
+                    spriteBatch.Draw(maxStageMessage, maxStageMessagePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                }
             }
             if (spaceShipPosition.X > world101ButtonPosition.X - 250 * scale)
             {
@@ -142,9 +152,9 @@ namespace ProjectDelta
             current = Mouse.GetState();
             Rectangle mousePosition = new Rectangle(current.X, current.Y, 1, 1);
 
-            if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(world101ButtonCollisionBox) || (timer > 1000 && ((Keyboard.GetState().IsKeyDown(Keys.Space)) || Keyboard.GetState().IsKeyDown(Keys.Enter))))
+            if (worldStage<MAX_STAGE && current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(world101ButtonCollisionBox) || (timer > 1000 && ((Keyboard.GetState().IsKeyDown(Keys.Space)) || Keyboard.GetState().IsKeyDown(Keys.Enter))))
             {
-                return 101;
+                    return 101;
             }
 
             if (current.LeftButton == ButtonState.Pressed && previous.LeftButton == ButtonState.Released && mousePosition.Intersects(logoutButtonCollisionBox))

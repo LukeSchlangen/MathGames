@@ -31,7 +31,7 @@ namespace ProjectDelta
 
         private State state;
 
-        private static int MAX_STAGE = 1000;
+        private int MAX_STAGE;
         DynamoDBContext context;
         private int countToContinue;
         private int correctInARow = 0;
@@ -43,6 +43,7 @@ namespace ProjectDelta
         private int resetCounter;
         private int tabletCreatureNumber;
         private int totalEnergyBubbles;
+        private int energyBubblesForDisplay;
 
         private SpriteFont font;
 
@@ -156,8 +157,9 @@ namespace ProjectDelta
 
         //Specifies which content is loaded for level 1
 
-        public void LoadContent(ContentManager content, int worldStage, int COUNT_TO_CONTINUE)
+        public void LoadContent(ContentManager content, int worldStage, int COUNT_TO_CONTINUE, int MAX_STAGE)
         {
+            this.MAX_STAGE = MAX_STAGE;
             this.worldStage = worldStage;
             for (int i = 0; i < creatures.Length; i++)
             {
@@ -265,7 +267,7 @@ namespace ProjectDelta
             KeyboardState keyboard = Keyboard.GetState(); //determine what button is being pressed
 
             //if the player hits esc, save, and return them to the main level
-            if (keyboard.IsKeyDown(Keys.Escape))
+            if (keyboard.IsKeyDown(Keys.Escape) || worldStage == MAX_STAGE)
             {
                 saveStats();
                 return true;
@@ -308,7 +310,7 @@ namespace ProjectDelta
 
                 updateCharacters(gameTime); //update the positions of all of the characters
                 showMostEvolvedCreature();
-                
+
                 if (spikePositionCounter > 0)
                 {
 
@@ -444,7 +446,16 @@ namespace ProjectDelta
             }
 
             //show the problem
-            world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), myAnswer, correctInARow, worldStage, countToContinue, totalEnergyBubbles - energyBubbles.energyBubblesInTransit());
+            if (totalEnergyBubbles == 1000)
+            {
+                energyBubblesForDisplay = 1000;
+            }
+            else
+            {
+                energyBubblesForDisplay = Math.Max(totalEnergyBubbles - energyBubbles.energyBubblesInTransit(), 0);
+            }
+
+            world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), myAnswer, correctInARow, worldStage, countToContinue, energyBubblesForDisplay);
 
             return false; //don't go back to home screen, keep playing the game
 
@@ -452,22 +463,36 @@ namespace ProjectDelta
 
         private void keepMonstersInOrder()
         {
-            if (monsterOne != currentMonster)
+            //if (monsterOne != currentMonster)
+            //{
+            //    if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterOne.dead)
+            //    {
+            //        monsterOne.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+            //        nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+            //    }
+            //}
+            //else if (monsterTwo != currentMonster)
+            //{
+            //    if (monsterTwo.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterTwo.dead)
+            //    {
+            //        monsterTwo.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+            //        nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+            //    }
+            //}
+            if (currentMonster.getCollisionBox().X > 2000 * scale)
             {
-                if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterOne.dead)
-                {
-                    monsterOne.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-                    nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-                }
+                currentMonster.setX((int)(2000 * scale));
             }
-            else if (monsterTwo != currentMonster)
+            if (nonCurrentMonster.getCollisionBox().X > 2500 * scale)
             {
-                if (monsterTwo.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterTwo.dead)
-                {
-                    monsterTwo.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-                    nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-                }
+                nonCurrentMonster.setX((int)(2500 * scale));
             }
+            if (nonCurrentMonster.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !nonCurrentMonster.dead)
+            {
+                nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
+            }
+
+
         }
 
         private void showMostEvolvedCreature()
@@ -569,17 +594,17 @@ namespace ProjectDelta
             spriteBatch.Draw(statusBar, statusBarPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             world101Text.DrawAnswerCount(spriteBatch);
 
-            if (!Keyboard.GetState().IsKeyDown(Keys.Space)&& showQuestion && correctInARow < countToContinue)
+            if (!Keyboard.GetState().IsKeyDown(Keys.Space) && showQuestion && correctInARow < countToContinue)
             {
 
-                    world101Text.Draw(spriteBatch); //show the question to the student
-                
+                world101Text.Draw(spriteBatch); //show the question to the student
+
             }
 
 
-           
 
-            if (correctInARow >= countToContinue)
+
+            if (correctInARow >= countToContinue && worldStage < MAX_STAGE)
             {
                 if (creatures[currentFriendlyCreature].getCreatureName() == creatures[worldStage].getCreatureName())
                 {
@@ -604,7 +629,7 @@ namespace ProjectDelta
             }
             else if (worldStage == 1)
             {
-                spriteBatch.Draw(creatureDefendImage, internetConnectionWarningPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);              
+                spriteBatch.Draw(creatureDefendImage, internetConnectionWarningPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             else if (worldStage == 2)
             {
@@ -779,28 +804,33 @@ namespace ProjectDelta
             {
                 bgToDraw = 3;
             }
-            correctInARow = 0;
-            stageProblems = Problems.determineProblems(worldStage, countToContinue);
-            backgroundSpeed = backupBackgroundSpeed;
-            monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
-            monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
-            for (int i = 0; i < creatures.Length; i++)
+
+            if (worldStage < MAX_STAGE)
             {
-                creatures[i].reset(worldStage, lifetimeAnswersCorrect, lifetimeMinutesPlayed);
+                correctInARow = 0;
+                stageProblems = Problems.determineProblems(worldStage, countToContinue);
+                backgroundSpeed = backupBackgroundSpeed;
+                monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
+                monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
+                for (int i = 0; i < creatures.Length; i++)
+                {
+                    creatures[i].reset(worldStage, lifetimeAnswersCorrect, lifetimeMinutesPlayed);
+                }
+
+                creatures[worldStage].setPosition(new Vector2((2200) * scale, hero.getHeroPosition().Y));
+                currentMonster = monsterOne;
+                nonCurrentMonster = monsterTwo;
+                hero.live();
+                hero.questionUp();
+                hero.start();
+                energyBubbles.reset();
+                showQuestion = true;
+                heroDead = false;
+                world101Input.resetInput();
+                state = State.None;
+                dropCounter = 0;
+                resetCounter = 1000;
             }
-            creatures[worldStage].setPosition(new Vector2((2200) * scale, hero.getHeroPosition().Y));
-            currentMonster = monsterOne;
-            nonCurrentMonster = monsterTwo;
-            hero.live();
-            hero.questionUp();
-            hero.start();
-            energyBubbles.reset();
-            showQuestion = true;
-            heroDead = false;
-            world101Input.resetInput();
-            state = State.None;
-            dropCounter = 0;
-            resetCounter = 1000;
         }
 
         private void correctAnswer()
@@ -818,6 +848,10 @@ namespace ProjectDelta
             }
             energyBubbles.newBubbles(10);
             totalEnergyBubbles += 10;
+            if (totalEnergyBubbles > 1000)
+            {
+                totalEnergyBubbles = 1000;
+            }
             sessionAnswersAttempted++;
             sessionAnswersCorrect++;
             //Update factors after an answer is correct (it's here instead of beatmonster because a powerup could be used for that)

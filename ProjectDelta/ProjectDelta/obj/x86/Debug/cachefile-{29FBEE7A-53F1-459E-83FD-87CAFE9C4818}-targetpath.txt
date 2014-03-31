@@ -265,3 +265,4 @@ Content\Home\view_creatures_text.xnb
 Content\Level1\shoot_bubbles_keyboard.xnb
 Content\Level1\creatures_defend_text.xnb
 Content\Level1\creatures_stronger_text.xnb
+Content\Home\beaten_game_text.xnb

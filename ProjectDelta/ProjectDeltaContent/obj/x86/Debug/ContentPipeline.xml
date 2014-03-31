@@ -2388,6 +2388,15 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Level1\creatures_stronger_text.xnb</Output>
       <Time>2014-03-30T13:50:16.8907934-05:00</Time>
     </Item>
+    <Item>
+      <Source>Home\beaten_game_text.png</Source>
+      <Name>Home\beaten_game_text</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\beaten_game_text.xnb</Output>
+      <Time>2014-03-31T12:07:40.3676687-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
