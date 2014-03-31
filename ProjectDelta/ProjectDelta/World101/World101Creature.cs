@@ -391,7 +391,7 @@ namespace ProjectDelta
                 creatureName = "Springo";
                 creatureType = "Spinner";
                 creatureDescription = "This creature is very nice!";
-                creatureLevel = CreatureCalculator.levelCalculator(0, 0, 99, worldStage, correctAnswers, totalTimePlayed); 
+                creatureLevel = CreatureCalculator.levelCalculator(3, 3, 99, worldStage, correctAnswers, totalTimePlayed); 
             }
             else if (creatureNumber < 73)
             {
