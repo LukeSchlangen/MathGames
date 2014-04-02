@@ -49,7 +49,7 @@ namespace ProjectDelta
 
         private float scale;
         private float backgroundSpeed = .1f;
-        private float backupBackgroundSpeed = .1f; //speed of background for game, also used to set monster speed
+        private float standardSpeed = .1f; //speed of background for game, also used to set monster speed
         private float timePerProblem = 10000f; //10000f is about 3.5 seconds per problem
 
         //Textures for level 1
@@ -369,7 +369,8 @@ namespace ProjectDelta
                         if (currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
                         {
                             correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
-                            currentMonster.setSpeed(backgroundSpeed * 2); //monster speeds up so player doesn't have to wait
+                            currentMonster.setSpeed(backgroundSpeed * 3); //monster speeds up so player doesn't have to wait
+                            backgroundSpeed *= 4;
                             currentMonster.setX(currentMonster.getCollisionBox().X - 10);
                         }
                         else
@@ -809,7 +810,7 @@ namespace ProjectDelta
             {
                 correctInARow = 0;
                 stageProblems = Problems.determineProblems(worldStage, countToContinue);
-                backgroundSpeed = backupBackgroundSpeed;
+                backgroundSpeed = standardSpeed;
                 monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
                 monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
                 for (int i = 0; i < creatures.Length; i++)
@@ -986,7 +987,7 @@ namespace ProjectDelta
             soundEffectZap.Play();
 
             hero.questionUp();
-
+            backgroundSpeed = standardSpeed;
             currentMonster.monsterDeath();
             world101Input.resetInput();
 
