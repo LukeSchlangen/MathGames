@@ -48,7 +48,8 @@ namespace ProjectDelta
         private SpriteFont font;
 
         private float scale;
-        private float backgroundSpeed = .1f;
+        private float backgroundSpeed = .15f;
+        private float startingBackgroundSpeed = .15f;
         private float standardSpeed = .1f; //speed of background for game, also used to set monster speed
         private float timePerProblem = 10000f; //10000f is about 3.5 seconds per problem
 
@@ -90,6 +91,7 @@ namespace ProjectDelta
         private Vector2 spikePosition;
         private Vector2 holePosition;
         private Vector2 internetConnectionWarningPosition;
+        private Vector2 panValue;
 
         //Collision Boxes
         private Rectangle startButtonCollisionBox;
@@ -143,8 +145,8 @@ namespace ProjectDelta
             state = State.None;
             this.scale = scale;
             hero = new Hero();
-            monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
-            monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
+            monsterOne = new World101Monster(1600, 800, scale, standardSpeed, screenX);
+            monsterTwo = new World101Monster(2600, 800, scale, standardSpeed, screenX);
             currentMonster = monsterOne;
             nonCurrentMonster = monsterTwo;
             hero.Initialize(scale);
@@ -162,7 +164,7 @@ namespace ProjectDelta
             this.worldStage = worldStage;
             for (int i = 0; i < creatures.Length; i++)
             {
-                creatures[i] = new World101Creature(i, worldStage, lifetimeAnswersCorrect, lifetimeMinutesPlayed, scale, backgroundSpeed);
+                creatures[i] = new World101Creature(i, worldStage, lifetimeAnswersCorrect, lifetimeMinutesPlayed, scale, standardSpeed);
             }
             this.countToContinue = COUNT_TO_CONTINUE;
             loadExtraObjects(content);
@@ -230,6 +232,7 @@ namespace ProjectDelta
             creatureStrongerImage = content.Load<Texture2D>("Level1/creatures_stronger_text");
             internetConnectionWarningPosition = new Vector2(275 * scale, 250 * scale);
 
+            panValue = new Vector2(-75 * scale, 0 * scale);
 
             //load your first set of values into the array
             stageProblems = Problems.determineProblems(worldStage, COUNT_TO_CONTINUE);
@@ -258,10 +261,6 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
-            if (sessionAnswersAttempted > 0)
-            {
-                sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
-            }
 
             KeyboardState keyboard = Keyboard.GetState(); //determine what button is being pressed
 
@@ -292,6 +291,11 @@ namespace ProjectDelta
             }
             else
             {
+                if (sessionAnswersAttempted > 0)
+                {
+                    sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
+                }
+
                 if (!hero.getDead() && totalEnergyBubbles > 0 && (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.Left)))
                 {
                     bubbleShooting = true;
@@ -368,7 +372,7 @@ namespace ProjectDelta
                         if (currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
                         {
                             correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
-                            currentMonster.setSpeed(backgroundSpeed * 3); //monster speeds up so player doesn't have to wait
+                            currentMonster.setSpeed(standardSpeed * 3); //monster speeds up so player doesn't have to wait
                             backgroundSpeed *= 4;
                             currentMonster.setX(currentMonster.getCollisionBox().X - 10);
                         }
@@ -391,7 +395,7 @@ namespace ProjectDelta
                         if (world101Input.getInput().Equals("") == false && currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getInput()))
                         {
                             correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
-                            currentMonster.setSpeed(backgroundSpeed * 2); //monster speeds up so player doesn't have to wait
+                            //currentMonster.setSpeed(backgroundSpeed * 2); //monster speeds up so player doesn't have to wait
                         }
                         else
                         {
@@ -553,7 +557,7 @@ namespace ProjectDelta
         {
             //draw the backgrounds and characters
             drawExtraObjects(spriteBatch);
-            energyBubbles.Draw(spriteBatch);
+            energyBubbles.Draw(spriteBatch, energyBubblesForDisplay);
             monsterOne.Draw(spriteBatch);
             monsterTwo.Draw(spriteBatch);
             if (correctInARow < countToContinue && bubbleShooting)
@@ -629,9 +633,6 @@ namespace ProjectDelta
                 spriteBatch.Draw(keyboardImage, keyboardImagePosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
 
-            //wildCreature.Draw(spriteBatch); //show the wild creature if it hasn't been collected (not used right now, but might be later)
-
-
             if (internetConnection == false)
             {
                 spriteBatch.Draw(internetConnectionWarning, internetConnectionWarningPosition, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
@@ -651,13 +652,6 @@ namespace ProjectDelta
                     return true;
                 }
             }
-            ////None of these keyboard lines should be necessary, but for some reason,
-            ////the check keyboard isn't working up above... so this is a hacky fix
-            //KeyboardState keyboard = Keyboard.GetState();
-            //if (keyboard.IsKeyDown(Keys.Space))
-            //{
-            //    return true;
-            //}
 
             return false;
         }
@@ -793,9 +787,9 @@ namespace ProjectDelta
             {
                 correctInARow = 0;
                 stageProblems = Problems.determineProblems(worldStage, countToContinue);
-                backgroundSpeed = standardSpeed;
-                monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], backgroundSpeed);
-                monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], backgroundSpeed);
+                backgroundSpeed = startingBackgroundSpeed;
+                monsterOne.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow]["factorOne"], stageProblems[correctInARow]["factorTwo"], standardSpeed);
+                monsterTwo.reset(stageProblems[correctInARow]["operation"], stageProblems[correctInARow + 1]["factorOne"], stageProblems[correctInARow + 1]["factorTwo"], standardSpeed);
                 for (int i = 0; i < creatures.Length; i++)
                 {
                     creatures[i].reset(worldStage, lifetimeAnswersCorrect, lifetimeMinutesPlayed);
@@ -970,7 +964,7 @@ namespace ProjectDelta
             soundEffectZap.Play();
 
             hero.questionUp();
-            backgroundSpeed = standardSpeed;
+            backgroundSpeed = startingBackgroundSpeed;
             currentMonster.monsterDeath();
             world101Input.resetInput();
 
