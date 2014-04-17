@@ -145,7 +145,6 @@ namespace ProjectDelta
             hero = new Hero();
             monsterOne = new World101Monster(1600, 800, scale, backgroundSpeed, screenX);
             monsterTwo = new World101Monster(2600, 800, scale, backgroundSpeed, screenX);
-            //wildCreature = new World101WildCreature(2600, 800, scale, backgroundSpeed, screenX);
             currentMonster = monsterOne;
             nonCurrentMonster = monsterTwo;
             hero.Initialize(scale);
@@ -464,22 +463,6 @@ namespace ProjectDelta
 
         private void keepMonstersInOrder()
         {
-            //if (monsterOne != currentMonster)
-            //{
-            //    if (monsterOne.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterOne.dead)
-            //    {
-            //        monsterOne.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-            //        nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-            //    }
-            //}
-            //else if (monsterTwo != currentMonster)
-            //{
-            //    if (monsterTwo.getCollisionBox().X < currentMonster.getCollisionBox().X + 300 * scale && !monsterTwo.dead)
-            //    {
-            //        monsterTwo.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-            //        nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
-            //    }
-            //}
             if (currentMonster.getCollisionBox().X > 2000 * scale)
             {
                 currentMonster.setX((int)(2000 * scale));

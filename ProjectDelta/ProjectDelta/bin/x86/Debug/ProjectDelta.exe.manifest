@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ProjectDelta.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="ProjectDelta.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <description asmv2:iconFile="Game.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -73,14 +73,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProjectDelta.exe" size="87552">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProjectDelta.exe" size="94720">
       <assemblyIdentity name="ProjectDelta" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>b4I7Cz8s5W7qCeyo8Ttd3LhxLFc=</dsig:DigestValue>
+        <dsig:DigestValue>w0js1fn+cYKLQ1I8GgsC6V5/QL8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -111,85 +111,85 @@
       <dsig:DigestValue>w0k00nX1jO+1YxiE+PTVYGTipZ8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_100.xnb" size="321787">
+  <file name="Content\Creatures\wild_creature_100.xnb" size="115387">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>+uqWCNfteoWPxmq8/MY7qAuiT3U=</dsig:DigestValue>
+      <dsig:DigestValue>6Jz/KjG1fD/p68LFrtPJhp9tyhg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_101.xnb" size="314587">
+  <file name="Content\Creatures\wild_creature_101.xnb" size="140187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>s85PL0/xyeNddfUqeEoaZZUxIbA=</dsig:DigestValue>
+      <dsig:DigestValue>+8o4P6utQbcb7PfeFYXSXmFqiIw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_102.xnb" size="279787">
+  <file name="Content\Creatures\wild_creature_102.xnb" size="56347">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>jyqS2e8A82svZj+z0ml8R8jeRNY=</dsig:DigestValue>
+      <dsig:DigestValue>cxEErAUMNCMZP3dcgnOAyqnIz2E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_103.xnb" size="314587">
+  <file name="Content\Creatures\wild_creature_103.xnb" size="63367">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>qWdZtcomXHiNj9e6thmz+vhuiw8=</dsig:DigestValue>
+      <dsig:DigestValue>+Sp4P9XQXsenEQU5R84HKZccrX8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_104.xnb" size="314587">
+  <file name="Content\Creatures\wild_creature_104.xnb" size="63367">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>oi5OxWRTFcX56jymhql0wcgwpew=</dsig:DigestValue>
+      <dsig:DigestValue>GAWd+xSHpnzWMCezhV74SqrX7a0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_105.xnb" size="314587">
+  <file name="Content\Creatures\wild_creature_105.xnb" size="63367">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>1uN3vGthYEmvXW9Yhivw8v4UEu4=</dsig:DigestValue>
+      <dsig:DigestValue>SZzFLMSZUJ2bdcQSiTygKfabwDU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_106.xnb" size="328987">
+  <file name="Content\Creatures\wild_creature_106.xnb" size="79567">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ncnQxWJ0omOr8lhfgzRBcFty7xA=</dsig:DigestValue>
+      <dsig:DigestValue>+gvifROw/xqHZJZJXnt1u3PHJiQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_107.xnb" size="290587">
+  <file name="Content\Creatures\wild_creature_107.xnb" size="90367">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>X+KSQHA5Wpcq0jnzR7+P07iWm/A=</dsig:DigestValue>
+      <dsig:DigestValue>0QRW417sLOV3z5URf2T9dWnwkBY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_108.xnb" size="205387">
+  <file name="Content\Creatures\wild_creature_108.xnb" size="127627">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>f3qrWWeXuqA5YMqp7QJ7rRjLQzM=</dsig:DigestValue>
+      <dsig:DigestValue>an/szOE6og4zw2FtMpg1+ZY3AHU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_109.xnb" size="162187">
@@ -198,7 +198,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ihFuKa1h89OL8Ii3dVtjnh5o+Z8=</dsig:DigestValue>
+      <dsig:DigestValue>+eMu+tri6tpVKsi13+DSS2SgEm4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_11.xnb" size="268987">
@@ -210,49 +210,49 @@
       <dsig:DigestValue>SIzvopgJzuBn2tRQvEWA1qh9CL4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_110.xnb" size="315787">
+  <file name="Content\Creatures\wild_creature_110.xnb" size="29307">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ZnQMnB/NcykjMtyLiADPYHnWdoo=</dsig:DigestValue>
+      <dsig:DigestValue>IfVl604VUb1Bvn0m3X2Ngr9qHL4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_111.xnb" size="290587">
+  <file name="Content\Creatures\wild_creature_111.xnb" size="40147">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>owyOSW97qQS0mfdt9jmlD3WcfeE=</dsig:DigestValue>
+      <dsig:DigestValue>LvC9NOblne7FluokVcR/eA8MP/Q=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_112.xnb" size="172987">
+  <file name="Content\Creatures\wild_creature_112.xnb" size="83387">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>zsCYvo/2pL5MJ0XWQSaxMIDF3UQ=</dsig:DigestValue>
+      <dsig:DigestValue>WcLer5/khVrrzLXU0Yz0ROFnrC4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_113.xnb" size="172987">
+  <file name="Content\Creatures\wild_creature_113.xnb" size="100947">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>fuSDtY65KodZplfjQkG1U1ovqmo=</dsig:DigestValue>
+      <dsig:DigestValue>NRNbl9/j+NoX5jfNL49XnQSXxnI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_114.xnb" size="140587">
+  <file name="Content\Creatures\wild_creature_114.xnb" size="122267">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>lQicJVHNIE1m/IH7x4/wN1T9ITA=</dsig:DigestValue>
+      <dsig:DigestValue>mrbqmINJvM7ZdJEd4ftBA6n8PL8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_115.xnb" size="220987">
@@ -264,40 +264,40 @@
       <dsig:DigestValue>+hPeTI7VSy4X4Q4cuNCNE1OB4hM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_116.xnb" size="343387">
+  <file name="Content\Creatures\wild_creature_116.xnb" size="26747">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>VrPz3dmKtAAFCsmgGwhIhrezWTU=</dsig:DigestValue>
+      <dsig:DigestValue>Vk5mnaHYK8GqSinOzb++Z6RDSVA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_117.xnb" size="331387">
+  <file name="Content\Creatures\wild_creature_117.xnb" size="43387">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>We1p9m7Q43VgMjgHE4DxEpA/4cw=</dsig:DigestValue>
+      <dsig:DigestValue>dP+UxMyJRFeKGUIIOOtVxx1cRvI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_118.xnb" size="338587">
+  <file name="Content\Creatures\wild_creature_118.xnb" size="53947">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>DAZfe6BNrQQpBHNKAUnS5RUfkrk=</dsig:DigestValue>
+      <dsig:DigestValue>M1y9dn9scKuEOp7XR/19l3T2Dmg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_119.xnb" size="345787">
+  <file name="Content\Creatures\wild_creature_119.xnb" size="75227">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>nF9NxQdCLPcWRMk25t9mYT9qQ9k=</dsig:DigestValue>
+      <dsig:DigestValue>tBSXUJ5iuIGjCb2LTAjJ9mR+jlY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_12.xnb" size="333787">
@@ -309,31 +309,31 @@
       <dsig:DigestValue>CnbE8eLB0MQat6YgWJsAgCA16VY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_120.xnb" size="355387">
+  <file name="Content\Creatures\wild_creature_120.xnb" size="100667">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ikpqy6EiRUkK+Aa734ufd7c7xFY=</dsig:DigestValue>
+      <dsig:DigestValue>APFpnSF12NFueDBVS2KMpi616nE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_121.xnb" size="248587">
+  <file name="Content\Creatures\wild_creature_121.xnb" size="186347">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>mLa4B5WMDOXdoLTP/djUUUBUrus=</dsig:DigestValue>
+      <dsig:DigestValue>grpbcRqhTkGRr7qh2oxBPy72paw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_122.xnb" size="283387">
+  <file name="Content\Creatures\wild_creature_122.xnb" size="202587">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>qAE9O8moY+5uHQqyj0+fnOCkJr0=</dsig:DigestValue>
+      <dsig:DigestValue>0AVMSi/tFdA5rj817um60Vyvclo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_123.xnb" size="261787">
@@ -345,58 +345,58 @@
       <dsig:DigestValue>+3j71LmuD7cPmgLAyP9qcdboAVQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_124.xnb" size="240187">
+  <file name="Content\Creatures\wild_creature_124.xnb" size="68027">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>awMC55lXp8K07i5uvDtz4VzhZDM=</dsig:DigestValue>
+      <dsig:DigestValue>blBsJdFYtBpLFbnrJVPi6WUsaCU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_125.xnb" size="156187">
+  <file name="Content\Creatures\wild_creature_125.xnb" size="68987">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>lt9g3uK84j3cBRcabgzT5ZRppls=</dsig:DigestValue>
+      <dsig:DigestValue>yD7arth28n9kPwIrJBy9iqrcGME=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_126.xnb" size="156187">
+  <file name="Content\Creatures\wild_creature_126.xnb" size="83787">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>I3aaurRXOp0Fm4unWiy53mvFWEU=</dsig:DigestValue>
+      <dsig:DigestValue>MU9XuNqTz9h4MA7FUV5XiLW03e0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_127.xnb" size="163387">
+  <file name="Content\Creatures\wild_creature_127.xnb" size="103867">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ZrkFvE0nrfq68jePA98XVJj4Gbo=</dsig:DigestValue>
+      <dsig:DigestValue>iInm9C7UE64NLNyk9WFkhSYTdV0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_128.xnb" size="163387">
+  <file name="Content\Creatures\wild_creature_128.xnb" size="121867">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>FJGh7R+oJmTeB65fOGsAOgkMPJA=</dsig:DigestValue>
+      <dsig:DigestValue>tyXBVynBv8J6mITWBll0tys+OHA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_129.xnb" size="241387">
+  <file name="Content\Creatures\wild_creature_129.xnb" size="209627">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>vQ6N8igmpfja+mHeJKV+LCGnFyA=</dsig:DigestValue>
+      <dsig:DigestValue>KCLYlw4Ujr0yCVgTtKY35zjW0vA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_13.xnb" size="333787">
@@ -417,76 +417,76 @@
       <dsig:DigestValue>8eWKbXcvRafzZjZbThbUB/D2uLQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_131.xnb" size="292987">
+  <file name="Content\Creatures\wild_creature_131.xnb" size="63467">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>2hSBYaaNlcFsjtQXMb8+GNEc4H8=</dsig:DigestValue>
+      <dsig:DigestValue>T4f18GuCBaIp5PuJr5fAk3TiYUI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_132.xnb" size="292987">
+  <file name="Content\Creatures\wild_creature_132.xnb" size="83387">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>jbPgEKHuWcAyRY1/+Yh+Ab14TkE=</dsig:DigestValue>
+      <dsig:DigestValue>9X9yCbxUvFrEpdODh+Sb4qMNcgI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_133.xnb" size="292987">
+  <file name="Content\Creatures\wild_creature_133.xnb" size="105307">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>slElNi/PvjhAqMlbzykCmjHHNXg=</dsig:DigestValue>
+      <dsig:DigestValue>LEeu1lanGnelM4LrrLmg1lwm3Mg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_134.xnb" size="246187">
+  <file name="Content\Creatures\wild_creature_134.xnb" size="108987">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>L2FoV5QcLi0Gf6sbvhJ09KuVgf4=</dsig:DigestValue>
+      <dsig:DigestValue>9u3tsAd6Wo2mz3WNGZSDsrQv6ks=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_135.xnb" size="246187">
+  <file name="Content\Creatures\wild_creature_135.xnb" size="132187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>T0YKc8upECDs6AmX8n74brYbrk0=</dsig:DigestValue>
+      <dsig:DigestValue>0vKr8rCBNHToWFcCHbOEh1/0OKc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_136.xnb" size="246187">
+  <file name="Content\Creatures\wild_creature_136.xnb" size="157627">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>bMzxUKu5NCGIz/YIEqrwYXjWFvg=</dsig:DigestValue>
+      <dsig:DigestValue>YYshw+uOEwuH9PkER9252mHDsc8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_137.xnb" size="217387">
+  <file name="Content\Creatures\wild_creature_137.xnb" size="162427">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>gh9XqTYSy/WdUquRexST0D+aac0=</dsig:DigestValue>
+      <dsig:DigestValue>EvUCGoWVAkB8h/L0odbdm0mgH58=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_138.xnb" size="252187">
+  <file name="Content\Creatures\wild_creature_138.xnb" size="219707">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>FojMOHpey0oQWq/FTIgmYfJ4fH4=</dsig:DigestValue>
+      <dsig:DigestValue>MENAxbbAQp89pWlfOPFtWs0Qc8Q=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_139.xnb" size="296587">
@@ -507,40 +507,40 @@
       <dsig:DigestValue>SAiR7G/gBvORCnskvPZK7VwQ6Wc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_140.xnb" size="344587">
+  <file name="Content\Creatures\wild_creature_140.xnb" size="30427">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>4G1TSROPRj5D0RXhwJ5bnft1sGo=</dsig:DigestValue>
+      <dsig:DigestValue>Acvur90SSK0OgmYUUV35epdnO7Q=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_141.xnb" size="277387">
+  <file name="Content\Creatures\wild_creature_141.xnb" size="110387">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ILihZkmWmzBsE/T04vH1PdUvos8=</dsig:DigestValue>
+      <dsig:DigestValue>xfEX3mBmFUQJ2uL82ZXqSkp8r/w=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_142.xnb" size="333787">
+  <file name="Content\Creatures\wild_creature_142.xnb" size="178827">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Lx9DD3VXnMKirPq9usW2YbBfjAY=</dsig:DigestValue>
+      <dsig:DigestValue>NQGbd6KcuSNClO2Hz2m5Xw+A678=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_143.xnb" size="360187">
+  <file name="Content\Creatures\wild_creature_143.xnb" size="250187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>N7OOXzLsMUUYEpFC3ODSePrW4i4=</dsig:DigestValue>
+      <dsig:DigestValue>VgzpkNnLZvsf8DYx4DSzzrKzyOc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_144.xnb" size="339787">
@@ -552,40 +552,40 @@
       <dsig:DigestValue>eUSDPzr62YWu1OzfsbH0NEyV+4A=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_145.xnb" size="274987">
+  <file name="Content\Creatures\wild_creature_145.xnb" size="43867">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>hFSPnQ9XIIu1FV5HHbA8WIAbmYA=</dsig:DigestValue>
+      <dsig:DigestValue>Sl/dLTXmYhNSThzgmKArs5QQAUM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_146.xnb" size="216187">
+  <file name="Content\Creatures\wild_creature_146.xnb" size="96187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>SSNtQcDtH5GHWFvsmTMKArGWqGs=</dsig:DigestValue>
+      <dsig:DigestValue>Z/bDo2OtTGIGaMT/iLpG0O0prI0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_147.xnb" size="280987">
+  <file name="Content\Creatures\wild_creature_147.xnb" size="164867">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>PoseeQwXjmyFI1bjw6Dnz+CfkCI=</dsig:DigestValue>
+      <dsig:DigestValue>KKheEgtiF58i/6xlFHmMTur9S9U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_148.xnb" size="328987">
+  <file name="Content\Creatures\wild_creature_148.xnb" size="285787">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>iC3U/PnzgPx9f2hwgwhMvsE1uds=</dsig:DigestValue>
+      <dsig:DigestValue>gJ0DyqiFh2Wuoe/qyrMMJv26Uuc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_149.xnb" size="330187">
@@ -606,67 +606,67 @@
       <dsig:DigestValue>VDF8yCYz9kpSkfDik+vP6hfcTuU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_150.xnb" size="250987">
+  <file name="Content\Creatures\wild_creature_150.xnb" size="14387">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>wT0eGUpM8hSw0RbLTnLcxI2SWts=</dsig:DigestValue>
+      <dsig:DigestValue>VjnlGi92HciDip4rU1ZjkMgK80w=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_151.xnb" size="350587">
+  <file name="Content\Creatures\wild_creature_151.xnb" size="42607">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>QT4cNT0XIrfSblCcBZR9sQeuaCU=</dsig:DigestValue>
+      <dsig:DigestValue>UL8x3MtLOVy+rRppnXbQc9HX3Jg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_152.xnb" size="328987">
+  <file name="Content\Creatures\wild_creature_152.xnb" size="52547">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>8tsMQ5SaeTF6neuy38hAYbYioqI=</dsig:DigestValue>
+      <dsig:DigestValue>ZznBBvaPMFMXOyshVy5PQpm2mcs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_153.xnb" size="216187">
+  <file name="Content\Creatures\wild_creature_153.xnb" size="87587">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>v5kmMglPlwILr4N7bPTWR4buTMk=</dsig:DigestValue>
+      <dsig:DigestValue>4K01kd7FAnwBJsGpXqOVgtegBqQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_154.xnb" size="184987">
+  <file name="Content\Creatures\wild_creature_154.xnb" size="112027">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>mAmuwpKgmoq+SwS1PT8RFg7+ZJ8=</dsig:DigestValue>
+      <dsig:DigestValue>lSSXhOEyoGNe/03BYPeyXRm4Zgs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_155.xnb" size="218587">
+  <file name="Content\Creatures\wild_creature_155.xnb" size="140347">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ftAWoY1B83oM5M/rXD1e0dhtUwE=</dsig:DigestValue>
+      <dsig:DigestValue>3x0muZb/1HeS6ZYRa0IBC5/qSGQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_156.xnb" size="218587">
+  <file name="Content\Creatures\wild_creature_156.xnb" size="164507">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ISWVcEMwyBr93QNR3qQ9g9RhCfU=</dsig:DigestValue>
+      <dsig:DigestValue>FidsnSXEH8rG97ZN6sAWphYo6mw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_157.xnb" size="213787">
@@ -678,22 +678,22 @@
       <dsig:DigestValue>IBzpYBjBZ9HpR3RMMWGyD4ulpe0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_158.xnb" size="158587">
+  <file name="Content\Creatures\wild_creature_158.xnb" size="70587">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>SJqJzqZs302zTcOvcq0t9KdFtBE=</dsig:DigestValue>
+      <dsig:DigestValue>WqVjkhximPj82/twqWgY1ezpoKY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_159.xnb" size="157387">
+  <file name="Content\Creatures\wild_creature_159.xnb" size="84667">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>+6oJZkBsBe2OJoIxiJP0PfYyDSw=</dsig:DigestValue>
+      <dsig:DigestValue>4UWOK+pY9h65t/dBs15E7mLuw2k=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_16.xnb" size="81187">
@@ -705,31 +705,31 @@
       <dsig:DigestValue>GAd2S6j8vUjp2lRSF5YPkavCtFo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_160.xnb" size="242587">
+  <file name="Content\Creatures\wild_creature_160.xnb" size="154747">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Jdv9yE24GO3LiUj3weCkp1x2SNY=</dsig:DigestValue>
+      <dsig:DigestValue>0nLLmJLO5bvn5lQSPXb7DscKP/U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_161.xnb" size="242587">
+  <file name="Content\Creatures\wild_creature_161.xnb" size="182187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>kL0ZHY7qCRFtUHFgVcZxa/bCIKk=</dsig:DigestValue>
+      <dsig:DigestValue>O09STE0kYvGoQSSVgGqzG2WrE6g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_162.xnb" size="243787">
+  <file name="Content\Creatures\wild_creature_162.xnb" size="211867">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>SwqURnuS9mVHSctIwiFddmceh7I=</dsig:DigestValue>
+      <dsig:DigestValue>1bS9IAh3NdCtwGqDcSAvsDanPEc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_163.xnb" size="206587">
@@ -876,76 +876,76 @@
       <dsig:DigestValue>cWB7uXiqdFFSE3pQqXWlQZ4Nu80=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_30.xnb" size="212587">
+  <file name="Content\Creatures\wild_creature_30.xnb" size="23787">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>hs5q8IAnnWZiUB122W2tE5PcKVU=</dsig:DigestValue>
+      <dsig:DigestValue>ObfptQThLs0Rxdt06Qwj/b9SVUU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_31.xnb" size="295387">
+  <file name="Content\Creatures\wild_creature_31.xnb" size="106027">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>3WrHN7q3auZGcDiVtM/RUoFPcrw=</dsig:DigestValue>
+      <dsig:DigestValue>4YyIUTtwsMDOqimF2TopL7FmAHM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_32.xnb" size="351787">
+  <file name="Content\Creatures\wild_creature_32.xnb" size="147627">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>DWbB2rO2qf+gNfA4RzSZwCCC23k=</dsig:DigestValue>
+      <dsig:DigestValue>pkRbzkth+AMWcghky0Q5Bx+N6mE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_33.xnb" size="352987">
+  <file name="Content\Creatures\wild_creature_33.xnb" size="165007">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>L3X2x9gn0VmQT2pUmDn27HygMzw=</dsig:DigestValue>
+      <dsig:DigestValue>wn/D3NHBzB8Xgi8WTIiWH//Aqac=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_34.xnb" size="302587">
+  <file name="Content\Creatures\wild_creature_34.xnb" size="193147">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>+AkjJcGdt2XYNnPH8MvRyLKVvH8=</dsig:DigestValue>
+      <dsig:DigestValue>liAWIE0T60ni/HvlC85nZ2t5sSk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_35.xnb" size="334987">
+  <file name="Content\Creatures\wild_creature_35.xnb" size="268187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Ud9omu/hOLnxmdxwA4CbGTcKDLI=</dsig:DigestValue>
+      <dsig:DigestValue>08204ryhuVJ35soLO+Aq73bPamk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_36.xnb" size="330187">
+  <file name="Content\Creatures\wild_creature_36.xnb" size="294507">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ae7HtxyGBqY6BQFpGqUH6eZSlv4=</dsig:DigestValue>
+      <dsig:DigestValue>H8EoUS9reYH8y9r9y0Vbzgxyy+0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_37.xnb" size="278587">
+  <file name="Content\Creatures\wild_creature_37.xnb" size="242107">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>GSWgS+9DqpPrN8dSCrFwZWLTk8g=</dsig:DigestValue>
+      <dsig:DigestValue>uJqj8PxAZQK22oo00bicCHQ7ngo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_38.xnb" size="216187">
@@ -957,13 +957,13 @@
       <dsig:DigestValue>VecxXgO0NNIy+dUBHkvPf3t4xrs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_39.xnb" size="333787">
+  <file name="Content\Creatures\wild_creature_39.xnb" size="36987">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>xxFdazMX/3VQrcU/dIenuDBx+Fs=</dsig:DigestValue>
+      <dsig:DigestValue>dKmT7ed37Uc0JRNEbBhZI9t81Hg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_4.xnb" size="95387">
@@ -975,85 +975,85 @@
       <dsig:DigestValue>cWYIz5AE/wylTmPLKaZLAKFUkuQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_40.xnb" size="336187">
+  <file name="Content\Creatures\wild_creature_40.xnb" size="45067">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>HPAO/d8hd4sDOYGwgNf7yGAMp1c=</dsig:DigestValue>
+      <dsig:DigestValue>QuYg4FNRY7qQjKnEVoYUuJUSETU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_41.xnb" size="320587">
+  <file name="Content\Creatures\wild_creature_41.xnb" size="51067">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>+GwVzofOZZv5SV5Ffh8MDsMwn2k=</dsig:DigestValue>
+      <dsig:DigestValue>OyjVxElDnbjrjjhcTinRzZA2dfE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_42.xnb" size="319387">
+  <file name="Content\Creatures\wild_creature_42.xnb" size="59987">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>fr2k2jjR5jOxF3dUkUdXCf0gnUk=</dsig:DigestValue>
+      <dsig:DigestValue>nr6rPEa6TLHHugZFIz9hpDHLUAM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_43.xnb" size="320587">
+  <file name="Content\Creatures\wild_creature_43.xnb" size="69627">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>bIq/BAVtF1UZVusNEg4ooEt5go8=</dsig:DigestValue>
+      <dsig:DigestValue>oxBRv4CkeP19XtS7fttLd/G99ok=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_44.xnb" size="324187">
+  <file name="Content\Creatures\wild_creature_44.xnb" size="81187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>vf9iHF2HkUHz5TaiQdwUb7szSEE=</dsig:DigestValue>
+      <dsig:DigestValue>luuoTYpV9wjSoJKNhLtmH3AwoEY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_45.xnb" size="208987">
+  <file name="Content\Creatures\wild_creature_45.xnb" size="92187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>cMyJ83C/VtmgvC1NzG8J6wsnqZM=</dsig:DigestValue>
+      <dsig:DigestValue>ZuVkaLANK9VlrPI6O+Fl4u/rPro=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_46.xnb" size="202987">
+  <file name="Content\Creatures\wild_creature_46.xnb" size="108427">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>KHu9D24YN1hg1oD+Jxw6bzSFSk8=</dsig:DigestValue>
+      <dsig:DigestValue>i03/ylZUI/UAJUaaXJp2xgVCcho=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_47.xnb" size="160987">
+  <file name="Content\Creatures\wild_creature_47.xnb" size="149827">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>A+oj9yrA9sd7cWCFJdu7tLq6zXU=</dsig:DigestValue>
+      <dsig:DigestValue>IlCnaVU9oGkONqo8dHtNXN6dtkQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_48.xnb" size="319387">
+  <file name="Content\Creatures\wild_creature_48.xnb" size="298307">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>L+Mly6v5mT1ag9YsethIuyyV8cI=</dsig:DigestValue>
+      <dsig:DigestValue>UZBZHhRyjNZaxyJJW/Oa4wiyCpo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_49.xnb" size="321787">
@@ -1074,49 +1074,49 @@
       <dsig:DigestValue>QsIfl5j0Yce6QfUKR5kcR3tZXcY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_50.xnb" size="302587">
+  <file name="Content\Creatures\wild_creature_50.xnb" size="33787">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>5LaOfG09ScVEiZR6h49E1RbYfhE=</dsig:DigestValue>
+      <dsig:DigestValue>0S7+UDTJGilxfJ7ngAg9fPFecs8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_51.xnb" size="202987">
+  <file name="Content\Creatures\wild_creature_51.xnb" size="81507">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>wtFD0MQHk3WBsFsdiSi8uYsMZbY=</dsig:DigestValue>
+      <dsig:DigestValue>LVvb4Ee+ldUxtiv3kKU9JbmQc7k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_52.xnb" size="213787">
+  <file name="Content\Creatures\wild_creature_52.xnb" size="136507">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>AV4RJhGmYAQa4KGKr1W+nT6N1Zg=</dsig:DigestValue>
+      <dsig:DigestValue>1z8ZZTjWZJWDwWKCnOzW05WOW24=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_53.xnb" size="204187">
+  <file name="Content\Creatures\wild_creature_53.xnb" size="153067">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>J0Ael9eyT1PFONQX4qbsvR0LHF0=</dsig:DigestValue>
+      <dsig:DigestValue>L0LDd8RbOCFKTawze/4EOupzLAM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_54.xnb" size="244987">
+  <file name="Content\Creatures\wild_creature_54.xnb" size="212987">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>nd22dPnB3K7SNq4JJ3i1mbngbYM=</dsig:DigestValue>
+      <dsig:DigestValue>rNBqkXtWYneNL16zq7rqRcaFpNo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_55.xnb" size="196987">
@@ -1128,40 +1128,40 @@
       <dsig:DigestValue>RivnmLxNcSauKOC9Bmlk7uNXJN8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_56.xnb" size="224587">
+  <file name="Content\Creatures\wild_creature_56.xnb" size="15867">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>IV3EKxCcKSebAi11anTvPT7YrI4=</dsig:DigestValue>
+      <dsig:DigestValue>eEhob67rgniwMa5olkCji8lHXRM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_57.xnb" size="334987">
+  <file name="Content\Creatures\wild_creature_57.xnb" size="37387">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>g81NjE9dtplLFxWZUGkScMfiM8o=</dsig:DigestValue>
+      <dsig:DigestValue>QM7R1wYJFLKiJwhTMBvD8o6UlpM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_58.xnb" size="310987">
+  <file name="Content\Creatures\wild_creature_58.xnb" size="49627">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>vU51FPfNZ1SjrpjjCTDxHwckvRY=</dsig:DigestValue>
+      <dsig:DigestValue>GKK2NF8fuPF3lCtIkyv0el3p35E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_59.xnb" size="181387">
+  <file name="Content\Creatures\wild_creature_59.xnb" size="115387">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>+lZ+E3Y+raTfTWXJqftKB8bNmvo=</dsig:DigestValue>
+      <dsig:DigestValue>1o4Mp2z0D2jJF8+sNytqMiKiGWo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_6.xnb" size="145507">
@@ -1173,67 +1173,67 @@
       <dsig:DigestValue>GjtmgnZx9orK6V7GoVOzS0NRV8Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_60.xnb" size="201787">
+  <file name="Content\Creatures\wild_creature_60.xnb" size="150987">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>rPhFvyx+OJ0OtIcb+OCpOciDwEU=</dsig:DigestValue>
+      <dsig:DigestValue>c54iR3pzuf2GNdft7tkQfQQgiDw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_61.xnb" size="309787">
+  <file name="Content\Creatures\wild_creature_61.xnb" size="111067">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Pf4vxqeYai3+2k+ponyJC2tcpz0=</dsig:DigestValue>
+      <dsig:DigestValue>BmVDQzNxGP1yjDg77IAx8xq9DTU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_62.xnb" size="272587">
+  <file name="Content\Creatures\wild_creature_62.xnb" size="146267">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>jd7/B0LB/Mk/lsn0naqbEQXnUcE=</dsig:DigestValue>
+      <dsig:DigestValue>fnyDu+mx7Te1u9Esam/bJfBKapc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_63.xnb" size="226987">
+  <file name="Content\Creatures\wild_creature_63.xnb" size="13987">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>1AQj0xqTRfIsOADlZ7ESIZ2SAaY=</dsig:DigestValue>
+      <dsig:DigestValue>wJ4gRyyiJUIHqo8UvqXiU46FsKM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_64.xnb" size="211387">
+  <file name="Content\Creatures\wild_creature_64.xnb" size="28347">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>gTtJkkLZ0Ay4pR0A1nHWndtAt/Q=</dsig:DigestValue>
+      <dsig:DigestValue>dCv1ZG7u8YG4bwVMZrC6HiV1zNw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_65.xnb" size="219787">
+  <file name="Content\Creatures\wild_creature_65.xnb" size="69547">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>aI2xNqauVFjgBcU5MkSmPHcSL3c=</dsig:DigestValue>
+      <dsig:DigestValue>UmGW/5C9wUlR7lI1DzRaJNsqDRI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_66.xnb" size="340987">
+  <file name="Content\Creatures\wild_creature_66.xnb" size="122587">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>NvTqnyv5rQFGtwOTToKRyFO9MOo=</dsig:DigestValue>
+      <dsig:DigestValue>rKfMzr6AyX67Dt6cQ4lAcnASRjo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_67.xnb" size="201787">
@@ -1245,22 +1245,22 @@
       <dsig:DigestValue>5tzxM/xVjUqgOeXDXe2XYQKcLEE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_68.xnb" size="240187">
+  <file name="Content\Creatures\wild_creature_68.xnb" size="85867">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>nMVQMEKILnmqB8C0trOBjmwmXzI=</dsig:DigestValue>
+      <dsig:DigestValue>4Uvil7JimUmTS/MM7QE1vWj8ub0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_69.xnb" size="196987">
+  <file name="Content\Creatures\wild_creature_69.xnb" size="87387">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>sBvKwsXm35XXfN9LyWJjmbgkD1Q=</dsig:DigestValue>
+      <dsig:DigestValue>TzPv2RoGXpF34B5pzeynIhQPu5w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_7.xnb" size="140367">
@@ -1272,22 +1272,22 @@
       <dsig:DigestValue>N9SNsyAlLKC7gNFkFKx8Z2H6gac=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_70.xnb" size="268987">
+  <file name="Content\Creatures\wild_creature_70.xnb" size="144507">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>mck1ICVlNPIG4viuQ8XvW+bjPr8=</dsig:DigestValue>
+      <dsig:DigestValue>a/1cQN8GNX4fDLtusi3PYG2prKQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_71.xnb" size="326587">
+  <file name="Content\Creatures\wild_creature_71.xnb" size="304107">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>h+oGigE7FyMSj5T0drIQlQn/Mbc=</dsig:DigestValue>
+      <dsig:DigestValue>k9vg2gX6U9U22Tfl/3WRwTb2dIU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_72.xnb" size="328987">
@@ -1299,49 +1299,49 @@
       <dsig:DigestValue>yJuadHr26bObFUq5t2NlBZWLD5Q=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_73.xnb" size="276187">
+  <file name="Content\Creatures\wild_creature_73.xnb" size="18907">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>1qyj3el4QdM2p11Y6sPNUEwQ2y4=</dsig:DigestValue>
+      <dsig:DigestValue>kZUH6pZT6/wA6VqP0KTrijY3cT0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_74.xnb" size="310987">
+  <file name="Content\Creatures\wild_creature_74.xnb" size="88507">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>1EBVJtzCxCfTdjB59/sy9WlbKzY=</dsig:DigestValue>
+      <dsig:DigestValue>YS3cV0i7CAc4CTlqtdsgucMi+tQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_75.xnb" size="198187">
+  <file name="Content\Creatures\wild_creature_75.xnb" size="56507">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>QPrzcSnNvOfjX5WBEBJQgk0urtc=</dsig:DigestValue>
+      <dsig:DigestValue>Xn+0FiupIRi3SO3/0xFSMo/ZpvQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_76.xnb" size="294187">
+  <file name="Content\Creatures\wild_creature_76.xnb" size="158587">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>2bLsY9Pk+puLZzXYR+YhAWTVymY=</dsig:DigestValue>
+      <dsig:DigestValue>ThdAvZP9t2yYJ1oTnuaSKCzWbqg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_77.xnb" size="300187">
+  <file name="Content\Creatures\wild_creature_77.xnb" size="192187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>206o0a703ZXilOOcWmQkM/i7WA0=</dsig:DigestValue>
+      <dsig:DigestValue>pOQnfq0s3usXAX/kxERPpekskt4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_78.xnb" size="271387">
@@ -1353,13 +1353,13 @@
       <dsig:DigestValue>rWX3tbf3zwnVIVhsTisoWe8IGtU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_79.xnb" size="218587">
+  <file name="Content\Creatures\wild_creature_79.xnb" size="47227">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>71A2U87M8LGv7cBkMZTQc+SM9uw=</dsig:DigestValue>
+      <dsig:DigestValue>InnYEzW1QQ6+MaP5pCpQ3PAUMBU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_8.xnb" size="146267">
@@ -1371,58 +1371,58 @@
       <dsig:DigestValue>/WUerpf0yBE0MWRkYnGbB9CIaQM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_80.xnb" size="163387">
+  <file name="Content\Creatures\wild_creature_80.xnb" size="95867">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>6kcoqIk5Cfk1rBvMiTyFNf/KeZk=</dsig:DigestValue>
+      <dsig:DigestValue>Sbv6hpbUHpyqHIYZ3WLenVhsULE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_81.xnb" size="128587">
+  <file name="Content\Creatures\wild_creature_81.xnb" size="89187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>4eGsWZp2bIAOh5lg2C8xG8CDnEw=</dsig:DigestValue>
+      <dsig:DigestValue>Z6wwyEJ/MASiHsix4uC4FQzME50=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_82.xnb" size="128587">
+  <file name="Content\Creatures\wild_creature_82.xnb" size="95867">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>r5fldDlg96jb7sqsy/BzTgqoH8s=</dsig:DigestValue>
+      <dsig:DigestValue>wrLaTBn6bzwIoj3CFaJPZVW4fB8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_83.xnb" size="126187">
+  <file name="Content\Creatures\wild_creature_83.xnb" size="101707">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>84TlZRIJ5Qc4v2u6uOujc+ajQo8=</dsig:DigestValue>
+      <dsig:DigestValue>Y1mk7/T7Q1suhOKhkZJBH9izrqM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_84.xnb" size="124987">
+  <file name="Content\Creatures\wild_creature_84.xnb" size="108827">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>DQ+0s9Ge1+NYj0jJYiZh5EgSs/U=</dsig:DigestValue>
+      <dsig:DigestValue>4bqxt6kE/cDj8eoodveJnrk/7ck=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_85.xnb" size="124987">
+  <file name="Content\Creatures\wild_creature_85.xnb" size="116187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>1SYKiWc79aLAljYnmcZVk9WUip8=</dsig:DigestValue>
+      <dsig:DigestValue>RO+zjIuilWqL2yVpa720LNkcY/w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_86.xnb" size="129787">
@@ -1434,31 +1434,31 @@
       <dsig:DigestValue>fp5ieQjbRLueYu15ljGoGmWK1Rc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_87.xnb" size="356587">
+  <file name="Content\Creatures\wild_creature_87.xnb" size="14347">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>72C3lcGDn1huvMt8m4hFpwD2AV4=</dsig:DigestValue>
+      <dsig:DigestValue>8zrPgTTpzb2Ch0dMRomTHSwEZuY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_88.xnb" size="212587">
+  <file name="Content\Creatures\wild_creature_88.xnb" size="76507">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>PgcMFlwGhRTPndMi2LJyKGN9b4g=</dsig:DigestValue>
+      <dsig:DigestValue>8r6A1QW3YFosfgfw+8U0ciIuKJA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_89.xnb" size="240187">
+  <file name="Content\Creatures\wild_creature_89.xnb" size="95947">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>BRXdkg+o5McYUemIj4USjI2f8bc=</dsig:DigestValue>
+      <dsig:DigestValue>rPgqHVu87WViYEpMf+g7t18XK7M=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_9.xnb" size="145339">
@@ -1470,31 +1470,31 @@
       <dsig:DigestValue>VoAL1goFRxDhtQkVTR511LbxDg8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_90.xnb" size="258187">
+  <file name="Content\Creatures\wild_creature_90.xnb" size="114587">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>PQ+hUjm5iTkTGwUFbygaSXPNQIs=</dsig:DigestValue>
+      <dsig:DigestValue>e5UVFww5Oc1ILm37qVdgrFOE8OA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_91.xnb" size="255787">
+  <file name="Content\Creatures\wild_creature_91.xnb" size="125347">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>zxJUK5vZJvKffmhM16TICtKXd5Q=</dsig:DigestValue>
+      <dsig:DigestValue>b2VA1vXg6zlG/KB19smr6vjrQ3A=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_92.xnb" size="254587">
+  <file name="Content\Creatures\wild_creature_92.xnb" size="143287">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>JIxrweEhkDyud6gPFyGMLY6gatg=</dsig:DigestValue>
+      <dsig:DigestValue>oMD/y0bg2kknEZIH/VMDEqRjXNo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Creatures\wild_creature_93.xnb" size="270187">
@@ -1506,67 +1506,85 @@
       <dsig:DigestValue>8zJ2ixlLh5/b9DLMlykJwDkVQkE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_94.xnb" size="238987">
+  <file name="Content\Creatures\wild_creature_94.xnb" size="13067">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>r5nwDdATF22O0Lg+tWovTfykM3Y=</dsig:DigestValue>
+      <dsig:DigestValue>B/K3fzCtdu2suXrDn3rYLEeugGY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_95.xnb" size="240187">
+  <file name="Content\Creatures\wild_creature_95.xnb" size="15187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>D8WWHtlduBFkcEZhxuDYkt00goA=</dsig:DigestValue>
+      <dsig:DigestValue>8tCp5GD+lbvag7Sokj67ONiuKOU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_96.xnb" size="238987">
+  <file name="Content\Creatures\wild_creature_96.xnb" size="17147">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>T96TlxVyWKoqYTbZ2RZemrzmuls=</dsig:DigestValue>
+      <dsig:DigestValue>/wO8xV5UamlClsWZjIZ70Tsexyg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_97.xnb" size="222187">
+  <file name="Content\Creatures\wild_creature_97.xnb" size="35707">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>9QqvsmEXachoOlI3TL2ZQR0fmY4=</dsig:DigestValue>
+      <dsig:DigestValue>AIlGu37HnWEaohUb4PAiUvF+Gkw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_98.xnb" size="295387">
+  <file name="Content\Creatures\wild_creature_98.xnb" size="64027">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Jkb4njKC1qEwjfnDGApNhYeOYJA=</dsig:DigestValue>
+      <dsig:DigestValue>tyj+6xEahozOcKxsY3fTxgkr6JA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Creatures\wild_creature_99.xnb" size="321787">
+  <file name="Content\Creatures\wild_creature_99.xnb" size="91067">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Bi9jOnFLAidwj1IZQninTyWOuHk=</dsig:DigestValue>
+      <dsig:DigestValue>7EFUvaO3NlXF6MEWFR2gEYzB33Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\General\abamath.xnb" size="813835">
+  <file name="Content\General\abamath.xnb" size="9659043">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>PCyOfmojJRjZ+MokMgn3wscsx6o=</dsig:DigestValue>
+      <dsig:DigestValue>sJgi4wQ32Lq9XATstZJ9E9TW6Qg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\General\energy_bubble.xnb" size="39387">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>BgNhKEkUoc+2hqHY0/3PVGw1BTQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\General\Hero\bubble_gun.xnb" size="505187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>96m0GTlT8XCp+ivXZSooeN+tgDk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\General\Hero\jumping_sprite_sheet.xnb" size="3200187">
@@ -1848,6 +1866,15 @@
       <dsig:DigestValue>ER1c+ecHAcqVnTzEE/VktuIZay8=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Home\beaten_game_text.xnb" size="465055">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>EPizn4cv04w3zbyJTuZ6V1TbOf8=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Home\large_white_board.xnb" size="8147387">
     <hash>
       <dsig:Transforms>
@@ -1902,13 +1929,22 @@
       <dsig:DigestValue>XIg6YP2apsyEgs9jIkYBBkgmEDo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Home\text_bubble.xnb" size="414907">
+  <file name="Content\Home\text_bubble.xnb" size="1368187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Fs9qYvgoGTgxzcLlePv6twPAe/U=</dsig:DigestValue>
+      <dsig:DigestValue>KzMKlMGC7IsiwIfHnqr5u3wdJnk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Home\view_creatures_text.xnb" size="68987">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>d0Us1ntF9bBbgMv+LJOnkcd4kbk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\huge_input_font.xnb" size="2102446">
@@ -2019,6 +2055,15 @@
       <dsig:DigestValue>Xg71TWs/bUXHYG/MP9wKlDkkflk=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Level1\bubble_counter.xnb" size="240827">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>UwCRvIvmTX8hSJNJx7nnXyh24Lk=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Level1\creature_tablet.xnb" size="1556987">
     <hash>
       <dsig:Transforms>
@@ -2037,6 +2082,33 @@
       <dsig:DigestValue>jqfLujeI6NuTph6spYYVQ4Cky3s=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Level1\creatures_defend_text.xnb" size="465055">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Tci7GrwTOodS6NrS6lLxhbR7Lzk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Level1\creatures_stronger_text.xnb" size="465055">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>rIJPU7WTNhRZXFgcfZ4oFNl1nhI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Level1\hole.xnb" size="910267">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>oA3ObqUVgsyyLra58+r3DPZpnGc=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Level1\keyboard_image.xnb" size="658939">
     <hash>
       <dsig:Transforms>
@@ -2052,7 +2124,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>QcPE5OAOrfDDR65HDV4kWmOm88Y=</dsig:DigestValue>
+      <dsig:DigestValue>E6DWSoWWliDhe0ePlcO7qn32qCI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Level1\level1_background_music.xnb" size="141">
@@ -2062,6 +2134,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>r6+vqJgBPYaiJ432ZWBU1v9sCDM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Level1\lightning.xnb" size="190587">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>+aX+uXocpfeSgfAXAhzZXxVIhrY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Level1\next_level_keyboard.xnb" size="658939">
@@ -2089,6 +2170,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>GjduOmfdPUXnbqPUmIoG2tBlcSQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Level1\shoot_bubbles_keyboard.xnb" size="658939">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>TqmsQP7X8NZVITXVeThYBRAZ+lA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Level1\spike.xnb" size="41787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>pnk0N4RlyJno77ng28Y1RTcdl/M=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Level1\status_bar.xnb" size="814187">
@@ -2133,7 +2232,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>gpFAaeCD2TiaorFy+nHCBpwQHPk=</dsig:DigestValue>
+      <dsig:DigestValue>N6+PtGHZqzC3U4eH1LpiarzpZLs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Login\Background_Music.xnb" size="134">
@@ -2215,6 +2314,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>Jg//AeJMzbZcU3sPGGRsrnI3CpU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Login\quit_button.xnb" size="176155">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>k05wxGlMJlEurVod+TFU+m0Ry7w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Login\signup_box.xnb" size="942779">

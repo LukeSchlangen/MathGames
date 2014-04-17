@@ -42,10 +42,12 @@ namespace ProjectDelta
         private bool heroStop = false;
         private bool dead = false;
         private bool isShooting = false;
+        private bool jump = true;
 
         private int shieldShake = 1;
 
         private float constantlyIncreasingNumber;
+        private float jumpTimer = 0;
 
         private Vector2 heroPosition;
         private Vector2 heroStartingPosition;
@@ -148,10 +150,31 @@ namespace ProjectDelta
                     }
                     shieldShake += 1;
                 }
-                else
+                else //actual game play (not dead, not end of level)
                 {
                     constantlyIncreasingNumber += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-                    heroPosition.Y += (float)Math.Sin(constantlyIncreasingNumber / 8) * scale;
+                    if (jump)
+                    {
+                        jumpTimer += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                        if (jumpTimer < 50)
+                        {
+                            heroPosition.Y -= (50 - jumpTimer) / 2;
+                        }
+                        else if (jumpTimer < 100 && heroPosition.Y<heroStartingPosition.Y)
+                        {
+                            heroPosition.Y += (jumpTimer - 50) / 2;
+                        }
+                        else
+                        {
+                            jump = false;
+                            jumpTimer = 0;
+                        }
+                    }
+                    else
+                    {
+                        heroPosition.Y += (float)Math.Sin(constantlyIncreasingNumber / 8) * scale;
+                    }
                 }
             }
 
@@ -163,7 +186,7 @@ namespace ProjectDelta
         {
             if (isShooting)
             {
-                spriteBatch.Draw(heroShooting, new Vector2(heroPosition.X - 60*scale, heroPosition.Y - 25*scale), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+                spriteBatch.Draw(heroShooting, new Vector2(heroPosition.X - 60 * scale, heroPosition.Y - 25 * scale), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
             else
             {
@@ -263,6 +286,7 @@ namespace ProjectDelta
             state = State.Question;
             speed = .1f;
             heroStop = false;
+            jump = true;
         }
 
         public void setHeroShooting(bool isShooting)
