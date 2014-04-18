@@ -289,14 +289,24 @@ namespace ProjectDelta
                 resetTimer(); //reset the error timer
                 creatureEvolution(gameTime);
             }
-            else
+            else if (hero.getDead())//if hero is dead
             {
+                updateCharacters(gameTime); //update the positions of all of the characters
+                showMostEvolvedCreature();
+                bubbleShooting = false;
+                hero.setHeroShooting(bubbleShooting);
+            }
+            else//hero is alive and well and in the middle of a level
+            {
+                //tracking time
                 if (sessionAnswersAttempted > 0)
                 {
                     sessionTimePlayed += gameTime.ElapsedGameTime.Milliseconds;
                 }
-
-                if (!hero.getDead() && totalEnergyBubbles > 0 && (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.Left)))
+                updateCharacters(gameTime); //update the positions of all of the characters
+                showMostEvolvedCreature();
+                //bubbles
+                if (totalEnergyBubbles > 0 && (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.Left)))
                 {
                     bubbleShooting = true;
                     monsterOne.setX((int)(monsterOne.getCollisionBox().X + 30 * scale));
@@ -309,10 +319,9 @@ namespace ProjectDelta
                     cycleBackground(gameTime); //advance the background to make it look like the hero is moving
                 }
 
-                hero.setHeroShooting(bubbleShooting);
+                hero.setHeroShooting(bubbleShooting); //last line of bubble control, makes hero look like its shooting bubbles
 
-                updateCharacters(gameTime); //update the positions of all of the characters
-                showMostEvolvedCreature();
+
 
                 if (spikePositionCounter > 0)
                 {
@@ -365,54 +374,47 @@ namespace ProjectDelta
 
                 answerDone = world101Input.Update(gameTime, heroDead); //if the player has entered an answer
 
-                if (answerDone == true) //if the player has entered an answer, do some stuff
+                if (answerDone == true && world101Input.getLastInput().Equals("") == false) //if the player has entered an answer, do some stuff
                 {
-                    if (world101Input.getLastInput().Equals("") == false)
+                    if (currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
                     {
-                        if (currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getLastInput()))
-                        {
-                            correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
-                            currentMonster.setSpeed(standardSpeed * 3); //monster speeds up so player doesn't have to wait
-                            backgroundSpeed *= 4;
-                            currentMonster.setX(currentMonster.getCollisionBox().X - 10);
-                        }
-                        else
-                        {
-                            sessionAnswersAttempted++;
-                            stopAll(); //if the player has the wrong answer, stop everything
-                        }
+                        correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
+                        currentMonster.setSpeed(standardSpeed * 3); //monster speeds up so player doesn't have to wait
+                        backgroundSpeed *= 4;
+                        currentMonster.setX(currentMonster.getCollisionBox().X - 10);
+                    }
+                    else
+                    {
+                        sessionAnswersAttempted++;
+                        stopAll(); //if the player has the wrong answer, stop everything
                     }
                 }
-                else //this is an else, because if they get the correct answer at the exact time the monster collides with them, it would act up
+                else if (hero.getShieldCollisionBox().Intersects(currentMonster.getCollisionBox()))//this is an else, because if they get the correct answer at the exact time the monster collides with them, it would act up
                 {
-                    if (hero.getShieldCollisionBox().Intersects(currentMonster.getCollisionBox()))
+                    beatMonster(); //if the monster hits the shield, send the monster flying
+                }
+                else if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
+                {
+                    if (world101Input.getInput().Equals("") == false && currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getInput()))
                     {
-                        beatMonster(); //if the monster hits the shield, send the monster flying
+                        correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
+                        //currentMonster.setSpeed(backgroundSpeed * 2); //monster speeds up so player doesn't have to wait
                     }
+                    else if
 
-                    if (hero.getHeroCollisionBox().Intersects(currentMonster.getCollisionBox()))
+                        //if the creature has a powerup remaining, use it now
+                        (creatures[currentFriendlyCreature].getPowerUpsRemaining() > 0)
                     {
-                        if (world101Input.getInput().Equals("") == false && currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getInput()))
-                        {
-                            correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
-                            //currentMonster.setSpeed(backgroundSpeed * 2); //monster speeds up so player doesn't have to wait
-                        }
-                        else
-                        {
-                            //if the creature has a powerup remaining, use it now
-                            if (creatures[currentFriendlyCreature].getPowerUpsRemaining() > 0)
-                            {
-                                useCreaturePowerUp(scale);
-                            }
-                            else
-                            {
-                                sessionAnswersAttempted++;
-                                soundEffectThud.Play();
-                                stopAll(); //if the player has the wrong answer, stop everything
-                            }
-                        }
+                        useCreaturePowerUp(scale);
+                    }
+                    else
+                    {
+                        sessionAnswersAttempted++;
+                        soundEffectThud.Play();
+                        stopAll(); //if the player has the wrong answer, stop everything
                     }
                 }
+
             }
 
 
