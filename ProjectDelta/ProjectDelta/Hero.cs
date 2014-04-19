@@ -66,11 +66,14 @@ namespace ProjectDelta
         private Animation heroAnimation;
         private Animation shieldAnimation;
 
+        private ArtworkAttackingHero artworkAttackingHero;
+
         public void Initialize(float scale)
         {
             this.scale = scale;
             state = State.Question;
             heroStartingPosition = new Vector2(275 * scale, 800 * scale);
+            artworkAttackingHero = new ArtworkAttackingHero(2400, 400, scale, 7/2 * speed);
         }
 
         public void LoadContent(ContentManager content)
@@ -89,12 +92,14 @@ namespace ProjectDelta
             shieldCollisionBox = new Rectangle(((int)(shieldPosition.X) + (int)(275 * scale)), ((int)(shieldPosition.Y)), (int)(100 * scale), (int)(1000 * scale));
             activatedShieldCollisionBoxPosition = shieldCollisionBox;
             deactivateShield();
+            artworkAttackingHero.LoadContent(content);
         }
 
         public void Update(GameTime gameTime)
         {
 
             heroAnimation.animateLoop(gameTime, heroPosition);
+            artworkAttackingHero.Update(gameTime, heroPosition);
 
             if (state == State.Question)
             {
@@ -157,13 +162,13 @@ namespace ProjectDelta
                     {
                         jumpTimer += speed * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-                        if (jumpTimer < 50)
+                        if (jumpTimer < 25)
                         {
-                            heroPosition.Y -= (50 - jumpTimer) / 2;
+                            heroPosition.Y -= (25 - jumpTimer) / 2;
                         }
-                        else if (jumpTimer < 100 && heroPosition.Y<heroStartingPosition.Y)
+                        else if (jumpTimer < 50 && heroPosition.Y < heroStartingPosition.Y)
                         {
-                            heroPosition.Y += (jumpTimer - 50) / 2;
+                            heroPosition.Y += (jumpTimer - 25) / 2;
                         }
                         else
                         {
@@ -197,6 +202,8 @@ namespace ProjectDelta
             {
                 spriteBatch.Draw(malfunctionShield, new Vector2(shieldPosition.X - 100 * scale, shieldPosition.Y - 75 * scale), null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
             }
+
+            artworkAttackingHero.Draw(spriteBatch);
 
         }
 
@@ -287,6 +294,7 @@ namespace ProjectDelta
             speed = .1f;
             heroStop = false;
             jump = true;
+            artworkAttackingHero.reset();
         }
 
         public void setHeroShooting(bool isShooting)
@@ -298,6 +306,16 @@ namespace ProjectDelta
         {
             //return the position where the hero's "back foot" is for friendly creature to follow
             return new Vector2(heroPosition.X, heroPosition.Y + 200 * scale);
+        }
+
+        public void heroJump()
+        {
+            jump = true;
+        }
+
+        public bool getJump()
+        {
+            return jump;
         }
     }
 }

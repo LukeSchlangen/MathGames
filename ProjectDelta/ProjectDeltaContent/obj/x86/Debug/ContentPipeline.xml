@@ -2397,6 +2397,33 @@
       <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\Home\beaten_game_text.xnb</Output>
       <Time>2014-03-31T12:07:40.3676687-05:00</Time>
     </Item>
+    <Item>
+      <Source>General\Monsters\enemy_3.png</Source>
+      <Name>General\Monsters\enemy_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_3.xnb</Output>
+      <Time>2014-04-18T19:07:25.2323872-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Monsters\enemy_bomb_one.png</Source>
+      <Name>General\Monsters\enemy_bomb_one</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_bomb_one.xnb</Output>
+      <Time>2014-04-18T17:24:35.9635252-05:00</Time>
+    </Item>
+    <Item>
+      <Source>General\Monsters\enemy_bomb_two.png</Source>
+      <Name>General\Monsters\enemy_bomb_two</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Abamath Front Desk\Documents\GitHub\MathGames\ProjectDelta\ProjectDelta\bin\x86\Debug\Content\General\Monsters\enemy_bomb_two.xnb</Output>
+      <Time>2014-04-18T17:24:35.9675254-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

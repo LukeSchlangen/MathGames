@@ -91,6 +91,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtworkAttackingHero.cs" />
     <Compile Include="World101\CreatureCalculator.cs" />
     <Compile Include="World101\World101Creature.cs" />
     <Compile Include="DailyStats.cs" />

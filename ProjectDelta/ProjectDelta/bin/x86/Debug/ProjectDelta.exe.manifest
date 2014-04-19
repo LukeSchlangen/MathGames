@@ -73,14 +73,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProjectDelta.exe" size="95232">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProjectDelta.exe" size="97280">
       <assemblyIdentity name="ProjectDelta" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>qnJ6gn2l7K4PvB02BFP+wueLbB4=</dsig:DigestValue>
+        <dsig:DigestValue>cU+RdpEBvs7U2HcW2usJ5TcT5/4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1657,6 +1657,33 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>v3QlFbkStstpwb/jBYt2Fov4Dh0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\General\Monsters\enemy_3.xnb" size="129787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>WrUsguFAEDe84eRoXwqnmFzZc8w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\General\Monsters\enemy_bomb_one.xnb" size="58651">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>BW9rJJgqRi2Cqo4Xq0DoSlEqpqk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\General\Monsters\enemy_bomb_two.xnb" size="69783">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>7MTC/taw0E8/g0rQufgWVqRKR8w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\General\Planets\planet_1.xnb" size="1468731">

@@ -261,7 +261,6 @@ namespace ProjectDelta
 
         public bool Update(GameTime gameTime)
         {
-
             KeyboardState keyboard = Keyboard.GetState(); //determine what button is being pressed
 
             //if the player hits esc, save, and return them to the main level
@@ -296,7 +295,7 @@ namespace ProjectDelta
                 bubbleShooting = false;
                 hero.setHeroShooting(bubbleShooting);
             }
-            else//hero is alive and well and in the middle of a level
+            else//hero is alive and well and in the middle of a level... all the other code was just to get here
             {
                 //tracking time
                 if (sessionAnswersAttempted > 0)
@@ -305,69 +304,8 @@ namespace ProjectDelta
                 }
                 updateCharacters(gameTime); //update the positions of all of the characters
                 showMostEvolvedCreature();
-                //bubbles
-                if (totalEnergyBubbles > 0 && (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.Left)))
-                {
-                    bubbleShooting = true;
-                    monsterOne.setX((int)(monsterOne.getCollisionBox().X + 30 * scale));
-                    monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 30 * scale));
-                    totalEnergyBubbles -= 1;
-                }
-                else
-                {
-                    bubbleShooting = false;
-                    cycleBackground(gameTime); //advance the background to make it look like the hero is moving
-                }
-
-                hero.setHeroShooting(bubbleShooting); //last line of bubble control, makes hero look like its shooting bubbles
-
-
-
-                if (spikePositionCounter > 0)
-                {
-
-                    spikePosition = new Vector2(nonCurrentMonster.getCollisionBox().X - spike.Width * scale / 2, nonCurrentMonster.getCollisionBox().Y + nonCurrentMonster.getHeight() / 2 - spike.Height * scale / 2);
-
-                    spikePositionCounter++;
-                    if (spikePositionCounter > 5)
-                    {
-                        spikePositionCounter = 0;
-                        spikePosition = new Vector2(2000 * scale, 0);
-                    }
-                }
-                else if (dropCounter > 0)
-                {
-                    dropCounter++;
-                    if (dropCounter > 50 || heroDead)
-                    {
-                        dropCounter = 0;
-                        beatMonster();
-                    }
-                    else
-                    {
-                        if (monsterOne == currentMonster)
-                        {
-                            monsterOne.setX((int)(monsterOne.getCollisionBox().X + 10 * scale));
-                            currentMonster.setX((int)(currentMonster.getCollisionBox().X + 10 * scale));
-                        }
-                        else
-                        {
-                            monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 10 * scale));
-                            currentMonster.setX((int)(currentMonster.getCollisionBox().X + 10 * scale));
-                        }
-                        if (monsterOne == currentMonster)
-                        {
-                            monsterOne.setY((int)(monsterOne.getCollisionBox().Y + 25 * dropCounter * scale));
-                            currentMonster.setY((int)(currentMonster.getCollisionBox().Y + 25 * dropCounter * scale));
-                        }
-                        else
-                        {
-                            monsterTwo.setY((int)(monsterTwo.getCollisionBox().Y + 25 * dropCounter * scale));
-                            currentMonster.setY((int)(currentMonster.getCollisionBox().Y + 25 * dropCounter * scale));
-                        }
-                        creatures[currentFriendlyCreature].setPosition(new Vector2(currentMonster.getCollisionBox().X, currentMonster.getCollisionBox().Y));
-                    }
-                }
+                updateBubbleShooting(gameTime);
+                runningCreaturePowerUps();
 
                 //make sure they are in order (special powers can make this out of sync)
                 keepMonstersInOrder();
@@ -397,17 +335,14 @@ namespace ProjectDelta
                 {
                     if (world101Input.getInput().Equals("") == false && currentMonster.getExpectedAnswer() == Int32.Parse(world101Input.getInput()))
                     {
-                        correctAnswer(); //if the answer is the same as the expected answer, it was the correct answer
-                        //currentMonster.setSpeed(backgroundSpeed * 2); //monster speeds up so player doesn't have to wait
+                        correctAnswer(); //if the answer is correct, but they haven't hit enter yet, count it as correct
                     }
-                    else if
-
-                        //if the creature has a powerup remaining, use it now
-                        (creatures[currentFriendlyCreature].getPowerUpsRemaining() > 0)
+                    else if (creatures[currentFriendlyCreature].getPowerUpsRemaining() > 0)
                     {
+                        //if the creature has a powerup remaining, use it now
                         useCreaturePowerUp(scale);
                     }
-                    else
+                    else//it's over... they blew it and used all of their powerups... deady dead dead
                     {
                         sessionAnswersAttempted++;
                         soundEffectThud.Play();
@@ -451,8 +386,8 @@ namespace ProjectDelta
                 myAnswer = world101Input.getCurrentInput(); //if the hero is alive, show the current input
             }
 
-            //show the problem
-            if (totalEnergyBubbles == 1000)
+            //if they have maxed out their bubbles show 1000 (otherwise it will go down and back to 1000... which could make kids think they are losing points)
+            if (totalEnergyBubbles >= 1000)
             {
                 energyBubblesForDisplay = 1000;
             }
@@ -460,7 +395,7 @@ namespace ProjectDelta
             {
                 energyBubblesForDisplay = Math.Max(totalEnergyBubbles - energyBubbles.energyBubblesInTransit(), 0);
             }
-
+            //show the problem
             world101Text.Update(currentMonster.getOperationValue(), currentMonster.getFactorOne(), currentMonster.getFactorTwo(), myAnswer, correctInARow, worldStage, countToContinue, energyBubblesForDisplay);
 
             return false; //don't go back to home screen, keep playing the game
@@ -481,8 +416,6 @@ namespace ProjectDelta
             {
                 nonCurrentMonster.setX(currentMonster.getCollisionBox().X + (int)(300 * scale));
             }
-
-
         }
 
         private void showMostEvolvedCreature()
@@ -540,6 +473,74 @@ namespace ProjectDelta
         "Level: " + creatures[tabletCreatureNumber].getCreatureLevel() + "\n" +
         "Power Ups: " + creatures[tabletCreatureNumber].getPowerUpsRemaining();
 
+        }
+
+        private void updateBubbleShooting(GameTime gameTime)
+        {
+            //bubbles
+            if (totalEnergyBubbles > 0 && !hero.getJump() && (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Right) || Keyboard.GetState().IsKeyDown(Keys.Down) || Keyboard.GetState().IsKeyDown(Keys.Up) || Keyboard.GetState().IsKeyDown(Keys.Left)))
+            {
+                bubbleShooting = true;
+                monsterOne.setX((int)(monsterOne.getCollisionBox().X + 20 * scale));
+                monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 20 * scale));
+                totalEnergyBubbles -= 1;
+            }
+            else
+            {
+                bubbleShooting = false;
+                cycleBackground(gameTime); //advance the background to make it look like the hero is moving
+            }
+            hero.setHeroShooting(bubbleShooting); //last line of bubble control, makes hero look like its shooting bubbles
+        }
+        //the worst code in the entire game...
+        private void runningCreaturePowerUps()
+        {
+
+            if (spikePositionCounter > 0)
+            {
+
+                spikePosition = new Vector2(nonCurrentMonster.getCollisionBox().X - spike.Width * scale / 2, nonCurrentMonster.getCollisionBox().Y + nonCurrentMonster.getHeight() / 2 - spike.Height * scale / 2);
+
+                spikePositionCounter++;
+                if (spikePositionCounter > 5)
+                {
+                    spikePositionCounter = 0;
+                    spikePosition = new Vector2(2000 * scale, 0);
+                }
+            }
+            else if (dropCounter > 0)
+            {
+                dropCounter++;
+                if (dropCounter > 50 || heroDead)
+                {
+                    dropCounter = 0;
+                    beatMonster();
+                }
+                else
+                {
+                    if (monsterOne == currentMonster)
+                    {
+                        monsterOne.setX((int)(monsterOne.getCollisionBox().X + 10 * scale));
+                        currentMonster.setX((int)(currentMonster.getCollisionBox().X + 10 * scale));
+                    }
+                    else
+                    {
+                        monsterTwo.setX((int)(monsterTwo.getCollisionBox().X + 10 * scale));
+                        currentMonster.setX((int)(currentMonster.getCollisionBox().X + 10 * scale));
+                    }
+                    if (monsterOne == currentMonster)
+                    {
+                        monsterOne.setY((int)(monsterOne.getCollisionBox().Y + 25 * dropCounter * scale));
+                        currentMonster.setY((int)(currentMonster.getCollisionBox().Y + 25 * dropCounter * scale));
+                    }
+                    else
+                    {
+                        monsterTwo.setY((int)(monsterTwo.getCollisionBox().Y + 25 * dropCounter * scale));
+                        currentMonster.setY((int)(currentMonster.getCollisionBox().Y + 25 * dropCounter * scale));
+                    }
+                    creatures[currentFriendlyCreature].setPosition(new Vector2(currentMonster.getCollisionBox().X, currentMonster.getCollisionBox().Y));
+                }
+            }
         }
 
         private void updateSpikeImage()
@@ -701,6 +702,11 @@ namespace ProjectDelta
 
         private void loadExtraObjects(ContentManager content)
         {
+            loadBackgroundObjects(content);
+        }
+
+        private void loadBackgroundObjects(ContentManager content)
+        {
             if (worldStage < 10)
             {
                 bgToDraw = 1;
@@ -815,6 +821,7 @@ namespace ProjectDelta
 
         private void correctAnswer()
         {
+            hero.heroJump();
             soundEffectShieldUp.Play();
             hero.shieldAnimate();
             hero.activateShield();
