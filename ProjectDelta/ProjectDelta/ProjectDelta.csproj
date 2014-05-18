@@ -91,22 +91,24 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtworkAttackingHero.cs" />
+    <Compile Include="Home\ArtworkAttackingHero.cs" />
     <Compile Include="World101\CreatureCalculator.cs" />
+    <Compile Include="World101\Instructions.cs" />
+    <Compile Include="World101\PreWorld101.cs" />
     <Compile Include="World101\World101Creature.cs" />
-    <Compile Include="DailyStats.cs" />
-    <Compile Include="GameUtils.cs" />
+    <Compile Include="Home\DailyStats.cs" />
+    <Compile Include="Global\GameUtils.cs" />
     <Compile Include="Home\Home.cs" />
     <Compile Include="Home\HomeInput.cs" />
     <Compile Include="Home\HomeText.cs" />
-    <Compile Include="Animation.cs" />
-    <Compile Include="Problems.cs" />
-    <Compile Include="QuestionFormat.cs" />
-    <Compile Include="Splash.cs" />
-    <Compile Include="Stats.cs" />
-    <Compile Include="Story.cs" />
-    <Compile Include="ViewCreatures.cs" />
-    <Compile Include="Hero.cs" />
+    <Compile Include="Global\Animation.cs" />
+    <Compile Include="World101\Problems.cs" />
+    <Compile Include="World101\QuestionFormat.cs" />
+    <Compile Include="Home\Splash.cs" />
+    <Compile Include="Home\Stats.cs" />
+    <Compile Include="Home\Story.cs" />
+    <Compile Include="Home\ViewCreatures.cs" />
+    <Compile Include="World101\Hero.cs" />
     <Compile Include="World101\World101.cs" />
     <Compile Include="World101\World101EnergyBubbles.cs" />
     <Compile Include="World101\World101Input.cs" />
@@ -117,7 +119,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Global\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

@@ -73,14 +73,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProjectDelta.exe" size="97280">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProjectDelta.exe" size="101376">
       <assemblyIdentity name="ProjectDelta" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>cU+RdpEBvs7U2HcW2usJ5TcT5/4=</dsig:DigestValue>
+        <dsig:DigestValue>SOsyNYvLvv+ffKQImFIfLr7bckY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1927,6 +1927,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>XVgaTkD9adNbfudeSFrfG0brleA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Home\question_box_image.xnb" size="2664187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>qtUIBYe/PdFHv3sd0Z5Iyt9oC8E=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Home\start_next_level_button.xnb" size="114087">

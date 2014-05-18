@@ -37,6 +37,8 @@ namespace ProjectDelta
             Login,
             Home,
             Story,
+            Instructions,
+            Pretest,
             World101,
             Stats,
             ViewCreatures,
@@ -67,6 +69,8 @@ namespace ProjectDelta
         private Login login;
         private Story story;
         private Home home;
+        private Instructions instructions;
+        private PreWorld101 preWorld101;
         private World101 world101;
         private Stats stats;
         private ViewCreatures viewCreatures;
@@ -80,6 +84,8 @@ namespace ProjectDelta
         ContentManager world101ContentManager;
         ContentManager statsContentManager;
         ContentManager viewCreaturesContentManager;
+        ContentManager preWorld101ContentManager;
+        ContentManager instructionsContentManager;
 
         public Game1()
         {
@@ -93,6 +99,8 @@ namespace ProjectDelta
             world101ContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             statsContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
             viewCreaturesContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
+            preWorld101ContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
+            instructionsContentManager = new ContentManager(Content.ServiceProvider, Content.RootDirectory);
 
             screenWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             screenHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
@@ -141,6 +149,8 @@ namespace ProjectDelta
             world101 = new World101(context);
             stats = new Stats(context, scale);
             viewCreatures = new ViewCreatures(context, scale);
+            preWorld101 = new PreWorld101(context, scale);
+            instructions = new Instructions(scale);
 
             //when we initialize the login screen (and any screens
             //from here on out), we pass in the scale value to allow
@@ -224,9 +234,33 @@ namespace ProjectDelta
                 success = story.Update(gameTime);
                 if (success == true)
                 {
-                    state = State.Home;
+                    state = State.Instructions;
                     storyContentManager.Unload();
-                    home.LoadContent(loginContentManager, screenHeight, screenWidth);
+                    instructions.LoadContent(instructionsContentManager, screenHeight, screenWidth);
+                    success = false;
+                }
+            }
+
+            if (state == State.Instructions)
+            {
+                success = instructions.Update(gameTime);
+                if (success == true)
+                {
+                    state = State.Pretest;
+                    instructionsContentManager.Unload();
+                    preWorld101.LoadContent(preWorld101ContentManager, screenHeight, screenWidth);
+                    success = false;
+                }
+            }
+
+            if (state == State.Pretest)
+            {
+                success = preWorld101.Update(gameTime);
+                if (success == true)
+                {
+                    state = State.Home;
+                    preWorld101ContentManager.Unload();
+                    home.LoadContent(homeContentManager, screenHeight, screenWidth);
                     success = false;
                 }
             }
@@ -346,6 +380,16 @@ namespace ProjectDelta
             if (state == State.Story)
             {
                 story.Draw(spriteBatch);
+            }
+
+            if (state == State.Instructions)
+            {
+                instructions.Draw(spriteBatch);
+            }
+
+            if (state == State.Pretest)
+            {
+                preWorld101.Draw(spriteBatch);
             }
 
             if (state == State.Home)

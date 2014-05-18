@@ -32,7 +32,7 @@ namespace ProjectDelta
         private State state;
 
         private int MAX_STAGE;
-        DynamoDBContext context;
+        private DynamoDBContext context;
         private int countToContinue;
         private int correctInARow = 0;
         private int worldStage;
