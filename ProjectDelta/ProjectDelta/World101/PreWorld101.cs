@@ -56,6 +56,9 @@ namespace ProjectDelta
 
         private float backgroundSpeed = .1f;
 
+        private int currentlyTesting;
+        Dictionary<string, int>[] problem;
+
         public PreWorld101(DynamoDBContext context, float scale)
         {
             this.context = context;
@@ -68,8 +71,8 @@ namespace ProjectDelta
             this.screenHeight = screenHeight;
             this.screenWidth = screenWidth;
 
-            font = content.Load<SpriteFont>("huge_input_font");
-            questionStringPosition = new Vector2(50 * scale, 50 * scale);
+            font = content.Load<SpriteFont>("large_input_font");
+            questionStringPosition = new Vector2(screenWidth / 2 - (200 * scale), 75 * scale);
 
             heroSprite = content.Load<Texture2D>("General/Hero/running_sprite_sheet_5x5");
             backgroundOne = content.Load<Texture2D>("Story/story_background");
@@ -82,7 +85,7 @@ namespace ProjectDelta
             backgroundTwoPosition = new Vector2(backgroundOne.Width * scale, 0);
             backgroundThreePosition = new Vector2(backgroundOne.Width * scale + backgroundTwo.Width * scale, 0);
             heroPosition = new Vector2(275 * scale, 850 * scale);
-            shipPosition = new Vector2(1300 * scale, 280 * scale);
+            shipPosition = new Vector2(8300 * scale, 280 * scale);
             questionBoxPosition = new Vector2((screenWidth / 2 - questionBox.Width * scale / 2), (screenHeight / 4 - questionBox.Height * scale / 2));
 
             hero = new Animation(heroSprite, heroPosition, 5, 5, scale, 10f);
@@ -91,9 +94,8 @@ namespace ProjectDelta
 
             input.LoadContent(content);
             questionMonster = new World101Monster(0, 0, scale, 0f, 0);
-            Dictionary<string, int>[] problem = Problems.determineProblems(0, 1);
-            questionMonster.setFactors(problem[0]["operation"], problem[0]["factorOne"], problem[0]["factorTwo"]);
-            questionString = new QuestionFormat().question(questionMonster.getOperationValue(), questionMonster.getFactorOne(), questionMonster.getFactorTwo()) + " = ";
+            currentlyTesting = 0;
+            setUpProblem();
         }
 
         public bool Update(GameTime gameTime)
@@ -104,15 +106,34 @@ namespace ProjectDelta
 
             answerDone = input.Update(gameTime, false);
 
+            //If the answer is submitted and the string isn't the empty string...
             if (answerDone == true && input.getLastInput().Equals("") == false)
             {
+                //If the answer is correct, progress to a harder question...
+                if (questionMonster.getExpectedAnswer() == Int32.Parse(input.getLastInput()))
+                {
+                    currentlyTesting += 4;
+                    setUpProblem();
+                }
+                //Otherwise, maybe they got lucky, scale it back to a slightly easier question
+                else
+                {
+                    //Can't go lower than 0 for the level to test
+                    if (currentlyTesting > 0)
+                    {
+                        currentlyTesting -= 2;
+                    }
 
+                    setUpProblem();
+                }
             }
 
             //Once the hero arrives at the ship, the students time is up.
             //Figure out what level they are at, and then return to the home screen.
             if (shipCollisionBox.Intersects(heroCollisionBox))
             {
+                Game1.globalUser.world101 = currentlyTesting;
+                context.Save<User>(Game1.globalUser);
                 return true;
             }
 
@@ -123,7 +144,7 @@ namespace ProjectDelta
         {
             drawBackground(spriteBatch);
             hero.Draw(spriteBatch, heroPosition);
-            spriteBatch.DrawString(font, questionString, questionStringPosition, Color.Black, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
+            spriteBatch.DrawString(font, questionString + " " + input.getCurrentInput(), questionStringPosition, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);
         }
 
         private void cycleBackground(GameTime gameTime)
@@ -162,6 +183,13 @@ namespace ProjectDelta
             heroCollisionBox.X = (int)heroPosition.X;
             shipCollisionBox.Y = (int)shipPosition.Y;
             shipCollisionBox.X = (int)shipPosition.X;
+        }
+
+        private void setUpProblem()
+        {
+            problem = Problems.determineProblems(currentlyTesting, 1);
+            questionMonster.setFactors(problem[0]["operation"], problem[0]["factorOne"], problem[0]["factorTwo"]);
+            questionString = new QuestionFormat().question(questionMonster.getOperationValue(), questionMonster.getFactorOne(), questionMonster.getFactorTwo()) + " = ";
         }
     }
 }

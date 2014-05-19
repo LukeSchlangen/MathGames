@@ -41,7 +41,7 @@ namespace ProjectDelta
         {
             if (instCounter == 1000)
             {
-                instCounter = -1000;
+                instCounter = -8000;
             }
             if (instCounter < 0)
             {
